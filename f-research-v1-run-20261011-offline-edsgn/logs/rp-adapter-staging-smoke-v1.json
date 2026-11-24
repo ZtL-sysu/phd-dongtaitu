@@ -1,0 +1,184 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "torch_threads": 2,
+  "optimizer_steps": 0,
+  "future_targets_passed": false,
+  "elapsed_seconds": 0.5289665999880526,
+  "whole_command_wall_seconds": 3.820961,
+  "python_executable": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+  "checks": [
+    {
+      "adapter": "GraphWaveNetForecast",
+      "case": "mooc-shape",
+      "input_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 278716,
+      "parameters_with_gradient": 84,
+      "parameters_total": 104,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": 12
+    },
+    {
+      "adapter": "GraphWaveNetForecast",
+      "case": "email-shape",
+      "input_shape": [
+        1,
+        28,
+        5,
+        2
+      ],
+      "prediction_shape": [
+        1,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 273618,
+      "parameters_with_gradient": 84,
+      "parameters_total": 104,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": 16
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "case": "mooc-shape",
+      "input_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 746570,
+      "parameters_with_gradient": 11,
+      "parameters_total": 11,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": null
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "case": "email-shape",
+      "input_shape": [
+        1,
+        28,
+        5,
+        2
+      ],
+      "prediction_shape": [
+        1,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 749760,
+      "parameters_with_gradient": 11,
+      "parameters_total": 11,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": null
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "case": "mooc-shape",
+      "input_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 655800,
+      "parameters_with_gradient": 101,
+      "parameters_total": 101,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": null
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "case": "email-shape",
+      "input_shape": [
+        1,
+        28,
+        5,
+        2
+      ],
+      "prediction_shape": [
+        1,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite_nonnegative": true,
+      "trainable_parameters": 638278,
+      "parameters_with_gradient": 101,
+      "parameters_total": 101,
+      "gradient_finite": true,
+      "graphwavenet_temporal_outputs": null
+    }
+  ],
+  "official_source_hashes": [
+    {
+      "path": "sources\\Graph-WaveNet\\model.py",
+      "sha256": "b2fd1d7acd32d9c923f2a262c63d16e1493f174fe253a5d7dafb5e26baf5e6f8"
+    },
+    {
+      "path": "sources\\Graph-WaveNet\\LICENSE",
+      "sha256": "3fa452a8f852344684e83271874f89e0414c3faa0c6c0d26b148392840ea56f6"
+    },
+    {
+      "path": "sources\\AGCRN\\model\\AGCRN.py",
+      "sha256": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80"
+    },
+    {
+      "path": "sources\\AGCRN\\model\\AGCRNCell.py",
+      "sha256": "65ade82a8dc5765c62c0d527b3eb7509a59a1defcaf348766d856c00b8789128"
+    },
+    {
+      "path": "sources\\AGCRN\\model\\AGCN.py",
+      "sha256": "f9c74005a118e6c8f4189a23de5a2598de01a1ded002a0ede387d15dc021e77d"
+    },
+    {
+      "path": "sources\\AGCRN\\LICENSE",
+      "sha256": "a49d616a0c2b91ff138891f73a81774eea76a167148098f5cc5c528c35d27d93"
+    },
+    {
+      "path": "sources\\STAEformer-pinned\\model\\STAEformer.py",
+      "sha256": "ae50f056b123dd55b312ed408b7981281254cf6cd8799f38baea5dffcfd8da7c"
+    },
+    {
+      "path": "sources\\STAEformer-pinned\\model\\STAEformer.yaml",
+      "sha256": "95f27af91e64668de7da318515ac935ab87a03c4ee4fecb22ac6856ed7e6acf3"
+    }
+  ],
+  "active_source_checks": {
+    "baselines_py_sha256": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+    "external_baselines_py_sha256": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "registered_in_factory": false
+  },
+  "scope": "CPU toy shape/gradient smoke only; no dataset windows, optimizer, model selection, validation/test evaluation, or GPU run"
+}

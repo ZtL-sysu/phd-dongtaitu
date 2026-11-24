@@ -1,0 +1,511 @@
+{
+  "acf_dependence_length": null,
+  "acf_evidence": {
+    "expected_record_path": "protocols/primary-endpoint-plans-v1/validation-calibration/identity-L28-H7-acf.json",
+    "mode": "validation_derived",
+    "rule_id": "p3a-validation-acf-block-v1"
+  },
+  "block_length": null,
+  "claim": "H2",
+  "dataset_collection": {
+    "files": [
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/manifest.json",
+        "sha256": "d73bdc3044287d6503ff939234a464149121e820b61212aa47c2d437ba9eedd3"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed200.oracle.npz",
+        "sha256": "e2017d367198a84d42fd48d38b1571e79ad52832f510f8d80f88a610210ba823"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed201.oracle.npz",
+        "sha256": "b8154d4d3b573fc97eb06a7b23c229940a83c301253d2e184cbbaea0d858a5db"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed202.oracle.npz",
+        "sha256": "a7f8b3d606f94f50c3b210e0b7392025d96e5f05ecd4beafa6b0ffe1f73a573d"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed203.oracle.npz",
+        "sha256": "6a2c5d73c64054ebdd438495f9493adb90ae848dee98739de8461d0a281eb9fb"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed0.oracle.npz",
+        "sha256": "5840069fcb56721fc6574ea082d68d97d7f33c88e2f40d1faa98e633d4e2af65"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed1.oracle.npz",
+        "sha256": "f53be86e960003551462730e1161f1c56fc82e0291d61c043f764b249de09d15"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed2.oracle.npz",
+        "sha256": "37973cf326f06d9308ec802488669274411de352665c53d0118136b7cf2b9b92"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed3.oracle.npz",
+        "sha256": "829ebe13d2bd56b4b6ab169955b6457e6eae38f1612f7c4b9103fd85dc7064a3"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed4.oracle.npz",
+        "sha256": "44c30203f2d99fa8a5e6ff76446918acef1ea6761b4b74c734e09f31938ffcb2"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed5.oracle.npz",
+        "sha256": "554ac571a8bd79573be770c6edaee97953f9ccc9f7bd222a4f44eb1142d3ccab"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed6.oracle.npz",
+        "sha256": "216a4d8723226887edc8deca92dd9d7a5fc084c8657a2e58a07b5ef9c629f7de"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/train_seed7.oracle.npz",
+        "sha256": "54ae087d3ed3fd7d72739c9d025a724c7913f839dd13c7d392a26d17cd1cd4a5"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/validation_seed100.oracle.npz",
+        "sha256": "9a61d76336234212dcad9ac2693fd4473ed7710e03f7d4960b2494f68bf09840"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/validation_seed101.oracle.npz",
+        "sha256": "59368f7767bc26d9fa740bd9bee276bcecdbcf94bafb3fc7fa2b68b5372a92bc"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed200.npz",
+        "sha256": "56b11569d58c10c6a31b31404718edecdc3083acb2d03638c47dc223fb3c45a1"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed201.npz",
+        "sha256": "af353658b162a462b0ca3b73b41fd31d9125c7dfa9cd4f9194edfca7cf539db6"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed202.npz",
+        "sha256": "43026ec411a9550e9f036b6ff35638a5b76423542073ef473edc6d97a31ff5e9"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed203.npz",
+        "sha256": "bd041b20152a8687a87a801dc6c90f7a473a368019cfa34cd130d59d8fb84785"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed0.npz",
+        "sha256": "32a9d753c0ae872aa9b876eea3dffbe37eed4c712b1e579b3acc42c152a107d5"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed1.npz",
+        "sha256": "7bfa3d723830bdf363942511198d7282a56d0ca1e32bbf7b921206d101a92115"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed2.npz",
+        "sha256": "79c7f7cfe4259437c4998409d7544eb1c178e190e29ff5392f275de51ea85173"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed3.npz",
+        "sha256": "63a5b407dacec2aff6c7329d1cfd3348a4e8ad2d4b924c5ebceb2fd37e8110a0"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed4.npz",
+        "sha256": "c3f6321bf9fe129def616a3f882f5281204d5efc7c1b6179b08a2d6cd90677e5"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed5.npz",
+        "sha256": "f555ab127349d4bf7b11747ec8e9d0b74fa4a620476424d86a5c080c85a17828"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed6.npz",
+        "sha256": "ecdc3a6971ec1bd656e39d5a83f7ac846b92f24fb8e8381726a788e5f7683720"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed7.npz",
+        "sha256": "4ca071785ce7f9d7f5dd0eea0f9a745afb29af8f49ba2aac700b33167d6f9a09"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/validation_seed100.npz",
+        "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2"
+      },
+      {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/validation_seed101.npz",
+        "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54"
+      }
+    ],
+    "root": "data/processed/synthetic-n64-identity-change0.3-miss0"
+  },
+  "domain": {
+    "bounds": [
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 0
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 1
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 2
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 3
+      }
+    ],
+    "dataset_id": "identity",
+    "path": "protocols/primary-endpoint-plans-v2/domains/identity30-test-domain.json",
+    "sha256": "902341ebe25681dde907adce0a55a4abe8f0c34c85967e04f5daba81ddbc6ed4",
+    "split": "test"
+  },
+  "endpoint_id": "H2-identity30-matched-mae-informative-constant-g",
+  "epsilon_evidence": null,
+  "execution_binding_path": "runs/primary-endpoint-v1/execution-bindings/H2-identity30-matched-mae-informative-constant-g.json",
+  "global_test_campaign": {
+    "completion_path": "protocols/global-frozen-test-completion-v1.json",
+    "queue_path": "protocols/global-frozen-test-job-queue-v1.json"
+  },
+  "history": 28,
+  "left": {
+    "method_id": "V4-teacher-informative",
+    "producer_source_sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "seeds": [
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed0/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed0/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed0/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed0/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed0/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed1/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed1/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed1/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed1/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed1/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed2/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed2/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed2/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed2/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed2/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed3/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed3/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed3/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed3/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed3/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed4/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed4/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed4/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed4/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed4/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "max_horizon": 7,
+  "outcome_type": "forecast_mae_superiority",
+  "producer_sources": [
+    {
+      "path": "edsgn/staging/typed_endpoint_producer_v6.py",
+      "sha256": "6cf01d44052198ea9d093f9e03cdd2503153da58ea9332632f585607d85b018a"
+    },
+    {
+      "path": "edsgn/staging/typed_endpoint_plan_validator_v9.py",
+      "sha256": "afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24"
+    },
+    {
+      "path": "edsgn/scripts/verified_frozen_dispatch_v10.py",
+      "sha256": "bfcdacd6f2e08a7e551925e675ea021275e78fcac360d503a773fd14738f9b03"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py",
+      "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"
+    },
+    {
+      "path": "edsgn/staging/endpoint_sufficient_statistics_v4.py",
+      "sha256": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbe6956c62c3f994a2519"
+    },
+    {
+      "path": "edsgn/staging/paired_forecast_bootstrap_v1.py",
+      "sha256": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80"
+    },
+    {
+      "path": "edsgn/staging/paired_scalar_bootstrap_v1.py",
+      "sha256": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6"
+    },
+    {
+      "path": "edsgn/staging/prospective_training_candidate_binding_v1.py",
+      "sha256": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8"
+    },
+    {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    {
+      "path": "edsgn/staging/frozen_prediction_guarded_v5.py",
+      "sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4"
+    },
+    {
+      "path": "protocols/synthetic-stress-domain-preparation-v1/n64_identity_change30_main_reuse-test-domain.json",
+      "sha256": "883f8ea63f76f2e1652a027b9d0a0536db421d1600c2da14f6e82ec3769445fd"
+    },
+    {
+      "path": "protocols/synthetic-stress-domain-preparation-v1/n64_identity_change30_main_reuse-test-descriptor.json",
+      "sha256": "c6e27ba7c1644b1f3817fe4af5761f8296c7c782cbd77a9b639d51741e8aec33"
+    },
+    {
+      "path": "edsgn/staging/frozen_h2_matched_retention_v4.py",
+      "sha256": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578"
+    }
+  ],
+  "profile_device": null,
+  "reporting_switch_authority": {
+    "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_identity_change30_main_reuse-reporting-switch-authority.json",
+    "sha256": "ac6d78bd413b895c4e6544543d64357bc56f20955f9595d1273727b76931bfb8"
+  },
+  "required_horizons": [
+    1,
+    3,
+    7
+  ],
+  "right": {
+    "method_id": "V4-teacher-constant-g",
+    "producer_source_sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "seeds": [
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed0/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed0/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed0/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed0/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed0/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed1/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed1/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed1/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed1/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed1/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed2/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed2/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed2/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed2/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed2/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed3/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed3/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed3/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed3/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed3/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/matched/identity30/seed4/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/matched/identity30/seed4/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/matched/identity30/seed4/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/matched/identity30/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/matched/identity30/seed4/input-binding.json",
+          "matched_graph_proof": "runs/primary-endpoint-v1/matched/identity30/seed4/matched-graph-proof.json",
+          "phase_receipt": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/matched/identity30/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/matched/identity30/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "schema_version": 4,
+  "seed_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "slice": "post4L",
+  "switch_indices": null
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "scope": "independent_cpu_source_and_toy_review",
+  "verdict": "staging_prototype_acceptable_with_narrow_type_hardening",
+  "actual_replay_or_scientific_acceptance": false,
+  "reviewed_sources": {
+    "reporter": {
+      "path": "edsgn/staging/global_graph_oracle_report_v1.py",
+      "sha256": "84b6a1f4a434ebca33dcafb773acbb7246998e71987b3503e4c3ce6013f9f47b"
+    },
+    "tests": {
+      "path": "edsgn/staging/test_global_graph_oracle_report_v1.py",
+      "sha256": "b3324ba8b216f856c50fa78e1dc88595b0e519962b6bcf7730add461bc2c37a7"
+    },
+    "global_completion": {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    "ordinary_admission_after_missing-copy-fix": {
+      "path": "edsgn/staging/ordinary_frozen_test_admission_v1.py",
+      "sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48"
+    },
+    "ordinary_admission_tests": {
+      "path": "edsgn/tests/test_ordinary_frozen_test_admission_v1.py",
+      "sha256": "fcb99304d03db80ccaa6758c517b4332a5c97e0b3f8bb08290870609905f6457"
+    }
+  },
+  "test_results": {
+    "reporter_cpu_toy_fixtures": "9 passed",
+    "ordinary_admission_cpu_fixtures": "15 passed",
+    "environment": "Conda dyg-cold; CPU only"
+  },
+  "review_findings": [
+    {
+      "severity": "low",
+      "finding": "Authority trajectory_seed_id is equality-checked against the integer trajectory seed but is not itself exact-type checked; JSON true can compare equal to integer 1.",
+      "recommendation": "Require type(source['trajectory_seed_id']) is int before comparing or emitting the identity."
+    }
+  ],
+  "verified_properties": [
+    "root-attested global completion and full consumed-byte/membership fence precede any NPZ decode",
+    "authority, queue, job, reporter/completion source, trajectory, oracle, prediction, trace and report references are hash-pinned",
+    "prediction [B,H,N,F], source raw_values [T,N,F], hmax and requested horizons are validated as separate dimensions",
+    "exact full chronological test-origin and compact trace coverage; input time relation is bounded by origin",
+    "graph7 abrupt/gradual transition, directed positive support, sampled-only alignment semantics retained",
+    "no raw oracle matrices or target values are emitted",
+    "post-serialization completion/input/source/member/output hash fences and exclusive output creation"
+  ],
+  "limitations": [
+    "No actual dataset, checkpoint payload, oracle archive, GPU, training or test evaluation was read or run.",
+    "The toy fixture and code review do not establish any scientific result or actual global replay completion."
+  ]
+}

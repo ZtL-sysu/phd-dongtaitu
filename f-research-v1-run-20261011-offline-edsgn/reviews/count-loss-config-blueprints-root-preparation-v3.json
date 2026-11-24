@@ -1,0 +1,51 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "paired_count_loss_configs_static_blueprints_preparation_only",
+  "created_utc": "2026-10-11T13:25:33.292762+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "reviews/count-loss-training-adapter-root-engineering-v1.json": "1b2f1bd9ca4e8d13f19baef322416a12949ad63cafc911f545a234d77533c631",
+    "edsgn/staging/count_loss_training_adapter_v1.py": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+    "edsgn/staging/ordinary_frozen_test_admission_v1.py": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+    "configs/count-loss-v1/email-V4-Poisson-seed0.json": "26ddbbc0cf285658ecc218969745bb72ca945a50b06ff3f4050ab40add27b344",
+    "configs/core-development-bound-v3/email-V4-seed0.json": "f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e",
+    "protocols/count-loss-v1/email-V4-Poisson-seed0-static-input-blueprint-v3.json": "3f91bf7e5e034b0749af32ac6946dc879c8a36c09b608fd8711a6efd47120fd3",
+    "configs/count-loss-v1/mooc-V4-Poisson-seed0.json": "55fbdc2d29bd047a0b09217c54d6138c3fed095a135307cc9ffe21cbcba7c563",
+    "configs/core-development-bound-v3/mooc-V4-seed0.json": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603",
+    "protocols/count-loss-v1/mooc-V4-Poisson-seed0-static-input-blueprint-v3.json": "2c6e0fb73ee8fc4da83bb32e454b0bddcc8b0bfac3968ab554e41c3a67153a57"
+  },
+  "rows": [
+    {
+      "dataset": "email",
+      "method_id": "V4-Poisson",
+      "seed_id": 0,
+      "config": {
+        "path": "configs/count-loss-v1/email-V4-Poisson-seed0.json",
+        "sha256": "26ddbbc0cf285658ecc218969745bb72ca945a50b06ff3f4050ab40add27b344"
+      },
+      "blueprint": {
+        "path": "protocols/count-loss-v1/email-V4-Poisson-seed0-static-input-blueprint-v3.json",
+        "sha256": "3f91bf7e5e034b0749af32ac6946dc879c8a36c09b608fd8711a6efd47120fd3"
+      },
+      "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\count-loss-v1\\email\\V4-Poisson\\seed0\\input-binding-at-launch.json"
+    },
+    {
+      "dataset": "mooc",
+      "method_id": "V4-Poisson",
+      "seed_id": 0,
+      "config": {
+        "path": "configs/count-loss-v1/mooc-V4-Poisson-seed0.json",
+        "sha256": "55fbdc2d29bd047a0b09217c54d6138c3fed095a135307cc9ffe21cbcba7c563"
+      },
+      "blueprint": {
+        "path": "protocols/count-loss-v1/mooc-V4-Poisson-seed0-static-input-blueprint-v3.json",
+        "sha256": "2c6e0fb73ee8fc4da83bb32e454b0bddcc8b0bfac3968ab554e41c3a67153a57"
+      },
+      "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\count-loss-v1\\mooc\\V4-Poisson\\seed0\\input-binding-at-launch.json"
+    }
+  ],
+  "actual_training_completed": false,
+  "actual_admission_accepted": false
+}

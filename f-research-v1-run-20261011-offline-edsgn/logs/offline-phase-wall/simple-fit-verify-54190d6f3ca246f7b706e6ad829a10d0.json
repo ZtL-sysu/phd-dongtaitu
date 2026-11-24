@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\staging\\simple_baseline_train_fit_verification_v4.py",
+    "--dataset",
+    "synthetic",
+    "--legacy-output",
+    "runs/baselines/synthetic/simple",
+    "--output",
+    "logs/simple-fit-verify-v4-synthetic-result.json"
+  ],
+  "diagnostic_scope": "resource/functionality",
+  "exception_message": "legacy input missing/outside RUN: C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\runs\\baselines\\synthetic\\simple\\simple-baseline-manifest.json",
+  "exception_type": "VerificationError",
+  "finished_utc": "2026-10-13T10:08:29Z",
+  "id": "simple-fit-verify-54190d6f3ca246f7b706e6ad829a10d0",
+  "job_id": "simple-fit-verify-54190d6f3ca246f7b706e6ad829a10d0",
+  "lock_token_sha256": "74f54604fb5d7a5e356c7b0fc9981154caf2fc7506fb2eee8812036669ea8c0a",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\logs\\simple-fit-verify-v4-synthetic-result.json",
+  "phase": "training",
+  "returncode": 1,
+  "scope": "offline-experiment-phase",
+  "started_utc": "2026-10-13T10:08:21Z",
+  "status": "failed",
+  "wall_seconds": 8.655329999979585
+}

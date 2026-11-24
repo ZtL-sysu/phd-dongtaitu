@@ -1,0 +1,370 @@
+{
+  "acf_dependence_length": null,
+  "acf_evidence": {
+    "expected_record_path": "protocols/primary-endpoint-plans-v1/validation-calibration/snap-act-mooc-user-action-log-L24-H24-acf.json",
+    "mode": "validation_derived",
+    "rule_id": "p3a-validation-acf-block-v1"
+  },
+  "block_length": null,
+  "claim": "H3",
+  "dataset_collection": {
+    "files": [
+      {
+        "path": "data/processed/mooc/manifest.json",
+        "sha256": "f8c9e722ed4f6db1f4cceb20956f19b9f20c1b0565533fa5ddbf27edca9e930a"
+      },
+      {
+        "path": "data/processed/mooc/mooc.npz",
+        "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+      }
+    ],
+    "root": "data/processed/mooc"
+  },
+  "domain": {
+    "bounds": [
+      {
+        "first_origin": 570,
+        "last_origin": 689,
+        "origin_count": 120,
+        "split_start": 571,
+        "split_stop": 714,
+        "trajectory_index": 0
+      }
+    ],
+    "dataset_id": "SNAP act-mooc user action log",
+    "path": "protocols/primary-endpoint-plans-v3/domains/mooc-test-domain.json",
+    "sha256": "cf2180299d78302a81cd74c81d42f92016f20ab09c8674fda101de75863267c8",
+    "split": "test"
+  },
+  "endpoint_id": "H3-mooc-cuda-V7-V5-window-cost",
+  "epsilon_evidence": null,
+  "execution_binding_path": "runs/primary-endpoint-v1/execution-bindings/H3-mooc-cuda-V7-V5-window-cost.json",
+  "global_test_campaign": {
+    "completion_path": "protocols/global-frozen-test-completion-v1.json",
+    "queue_path": "protocols/global-frozen-test-job-queue-v1.json"
+  },
+  "history": 24,
+  "left": {
+    "method_id": "V7",
+    "producer_source_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "seeds": [
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V7/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "max_horizon": 24,
+  "outcome_type": "paired_window_cost_superiority",
+  "producer_sources": [
+    {
+      "path": "edsgn/staging/typed_endpoint_producer_v6.py",
+      "sha256": "6cf01d44052198ea9d093f9e03cdd2503153da58ea9332632f585607d85b018a"
+    },
+    {
+      "path": "edsgn/staging/typed_endpoint_plan_validator_v9.py",
+      "sha256": "afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24"
+    },
+    {
+      "path": "edsgn/scripts/verified_frozen_dispatch_v10.py",
+      "sha256": "bfcdacd6f2e08a7e551925e675ea021275e78fcac360d503a773fd14738f9b03"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py",
+      "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"
+    },
+    {
+      "path": "edsgn/staging/endpoint_sufficient_statistics_v4.py",
+      "sha256": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbe6956c62c3f994a2519"
+    },
+    {
+      "path": "edsgn/staging/paired_forecast_bootstrap_v1.py",
+      "sha256": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80"
+    },
+    {
+      "path": "edsgn/staging/paired_scalar_bootstrap_v1.py",
+      "sha256": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6"
+    },
+    {
+      "path": "edsgn/staging/prospective_training_candidate_binding_v1.py",
+      "sha256": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8"
+    },
+    {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    {
+      "path": "edsgn/staging/frozen_profile_guarded_v5.py",
+      "sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c"
+    },
+    {
+      "path": "protocols/c06-domain-preflight-root-v2/mooc-test-domain.json",
+      "sha256": "1806d30a23398354b104ba31d4c7f418dd1e46c496698e8cf261d5f7084da8a4"
+    },
+    {
+      "path": "protocols/c06-domain-preflight-root-v2/mooc-test-descriptor.json",
+      "sha256": "f5e707da9d542e0230c46b24eb679db7c5511325ab7a7fc100ebc04848e51592"
+    },
+    {
+      "path": "edsgn/staging/blind_reference_cost_policy_v1.py",
+      "sha256": "2500f9687aa277ad5e67f3d4d41dde095d2e51761109da2f9dfceb6a68e3218d"
+    },
+    {
+      "path": "reviews/blind-reference-cost-policy-root-acceptance-v1.json",
+      "sha256": "08c1a080c913e9f3489b82a6aeca4f81a196ec804a8fec255e63dfd2e08ac570"
+    }
+  ],
+  "profile_device": "cuda",
+  "reporting_switch_authority": null,
+  "required_horizons": [
+    1,
+    6,
+    24
+  ],
+  "right": {
+    "method_id": "V5",
+    "producer_source_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "seeds": [
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/mooc/cuda/profile/V5/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/mooc-V4.json",
+            "sha256": "e7442ead92d6e5a10a4b90d062d1f995789834357f95f8a5578fe4ef367f3f8d"
+          },
+          "comparison_id": "core-formal-mooc-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "schema_version": 4,
+  "seed_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "slice": "full_split",
+  "switch_indices": null
+}

@@ -1,0 +1,32 @@
+{
+  "dataset_id": "identity",
+  "entries": [
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed200.oracle.npz",
+      "sha256": "e2017d367198a84d42fd48d38b1571e79ad52832f510f8d80f88a610210ba823",
+      "trajectory_index": 0
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed201.oracle.npz",
+      "sha256": "b8154d4d3b573fc97eb06a7b23c229940a83c301253d2e184cbbaea0d858a5db",
+      "trajectory_index": 1
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed202.oracle.npz",
+      "sha256": "a7f8b3d606f94f50c3b210e0b7392025d96e5f05ecd4beafa6b0ffe1f73a573d",
+      "trajectory_index": 2
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed203.oracle.npz",
+      "sha256": "6a2c5d73c64054ebdd438495f9493adb90ae848dee98739de8461d0a281eb9fb",
+      "trajectory_index": 3
+    }
+  ],
+  "join_rule": "trajectory_index_exact_one",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "scope": "reporting_only_postrun"
+}

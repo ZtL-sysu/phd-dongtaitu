@@ -1,0 +1,34 @@
+{
+  "schema": "edsgn.split-history-domain.v1",
+  "dataset": {
+    "event_kind": "email",
+    "partition": "chronological",
+    "source_name": "SNAP email-Eu-core-temporal",
+    "shape_tnf": [
+      803,
+      986,
+      2
+    ],
+    "node_ids_sha256": "c361fbc6ff06549e10ad52dc528a12672d6d5d74d5c547d839a44c79d611d01c",
+    "split_bounds_start_inclusive": 642,
+    "split_bounds_end_exclusive": 803,
+    "history_length": 28,
+    "hmax": 7
+  },
+  "trajectories": [
+    {
+      "trajectory_index": 0,
+      "source_trajectory_seed": 0,
+      "source_input_mask_sha256": "54b89f0a411a348e0410c74156acd610b791af253b2dc66023053562b16bff14",
+      "split": "test",
+      "origin_first": 641,
+      "origin_last": 795,
+      "origin_count": 155,
+      "history_length": 28,
+      "history_union_start_inclusive": 614,
+      "history_union_end_exclusive": 796,
+      "domain_bounds_start_inclusive": 614,
+      "domain_bounds_end_exclusive": 796
+    }
+  ]
+}

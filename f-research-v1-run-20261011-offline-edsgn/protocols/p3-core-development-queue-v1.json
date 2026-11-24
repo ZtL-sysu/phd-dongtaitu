@@ -1,0 +1,213 @@
+{
+  "scope": "P3 full default seed0 train/validation; no test",
+  "jobs": [
+    {
+      "id": "core-dev-v1-synthetic-V3-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\synthetic-V3-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V3\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-synthetic-V4-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\synthetic-V4-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V4\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-synthetic-V2-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\synthetic-V2-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V2\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-synthetic-V9-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\synthetic-V9-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V9\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-mooc-V3-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\mooc-V3-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V3\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-mooc-V4-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\mooc-V4-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V4\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-mooc-V2-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\mooc-V2-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V2\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-mooc-V9-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\mooc-V9-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V9\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-V3-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-V3-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V3\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-V4-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-V4-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V4\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-V2-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-V2-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V2\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-V9-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-V9-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V9\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-episode-V3-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-episode-V3-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email-episode\\V3\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-episode-V4-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-episode-V4-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email-episode\\V4\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-episode-V2-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-episode-V2-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email-episode\\V2\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    },
+    {
+      "id": "core-dev-v1-email-episode-V9-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\core-development-v1\\email-episode-V9-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email-episode\\V9\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-core-default-training-allocation-v1.json"
+      ]
+    }
+  ]
+}

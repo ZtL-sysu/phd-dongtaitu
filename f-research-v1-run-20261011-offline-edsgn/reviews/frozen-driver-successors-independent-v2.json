@@ -1,0 +1,34 @@
+{
+  "review_role": "independent source/toy review; no scientific phase acceptance",
+  "verdicts": {
+    "frozen_graph_state_diagnostic_v6": {
+      "verdict": "staging-engineering-acceptable",
+      "source_sha256": "7c91a01f237d64c7f2db383fc31a823265edd7e42b4daa456744e755716302a7",
+      "tests": "3 passed, 21 deselected (focused v6 suite); post-report gate mutation and final budget failure covered"
+    },
+    "frozen_h2_matched_retention_v4": {
+      "verdict": "staging-engineering-acceptable",
+      "source_sha256": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+      "tests": "12 passed; plus independent CPU toy post-report pipeline mutation check passed",
+      "limitations": "full end-to-end test directly invoked run_checkpoint_collection; resource/receipt wrapper separately has mock coverage"
+    },
+    "frozen_validation_calibration_v5": {
+      "verdict": "needs-narrow-repair-before-execution",
+      "source_sha256": "eb9106ed1a70654ded658a03f7d4f3087e7ff10af8b4abc207fdd5cb4fbf918c",
+      "tests": "9 passed; plus independent CPU toy post-artifact P3A evidence mutation check passed",
+      "blocker": "after writing calibration artifacts, guard.checkpoint at line 632 runs before final input snapshot/canonical-gate/checkpoint fences at lines 633-637; no cumulative budget checkpoint follows those potentially long fences before status=\"completed\" line 638 / phase receipt finalization. Add same live guard after final fences and after final input-hash pass immediately before successful receipt completion."
+    }
+  },
+  "source_test_sha256": {
+    "edsgn/staging/frozen_graph_state_diagnostic_v6.py": "7c91a01f237d64c7f2db383fc31a823265edd7e42b4daa456744e755716302a7",
+    "edsgn/tests/test_frozen_graph_state_diagnostic_v6.py": "17791c4e2847a0f62ede501cfb285ac1d1a8b196fec0624e8e762dd34feaae4c",
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "edsgn/tests/test_frozen_h2_matched_retention_v4.py": "5e1f6e9ea8a53cc6d3f9ae60aa358da35e6ef3a46e177e7338ae24141c4822be",
+    "edsgn/staging/frozen_validation_calibration_v5.py": "eb9106ed1a70654ded658a03f7d4f3087e7ff10af8b4abc207fdd5cb4fbf918c",
+    "edsgn/tests/test_frozen_validation_calibration_v5.py": "01def2d3a7d81fe8402a9912d2a5441d40b39b52b4269ef4dd339d6aaa27b745"
+  },
+  "common_limitations": [
+    "P2/P3 are checked for passed/pass status but their own bound inputs/evidence are not rehashed by these drivers; P3A entries are checked. Root says managed P4 launch controller will bind passed-phase archives and canonical state.",
+    "Toy validation is CPU-only with temporary synthetic data/checkpoints; no real archive, test/oracle values, GPU, optimizer, full replay, or scientific P3A/P4 claim was evaluated."
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "audit": "source-coverage feasibility only; no processed bundle generated/changed, no training, no model predictions/evaluations opened",
+  "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\raw\\downloads\\email-Eu-core-temporal.txt.gz",
+  "source_sha256": "f6cc93249978e59d1aba111b55ea10ec553917419a3be1210012b5db3580efa6",
+  "source_rows": 332334,
+  "source_manifest_records": 332334,
+  "time_unit": "relative seconds; UTC epoch not asserted",
+  "binning": {
+    "seconds_per_day": 86400,
+    "semantics": "[b*86400,(b+1)*86400)",
+    "calendar_bins": 803,
+    "final_partial_bin_excluded": true,
+    "retained_source_rows": 332279,
+    "excluded_final_partial_bin_rows": 55,
+    "retained_day_start": 0,
+    "retained_day_end_exclusive": 803
+  },
+  "rule": {
+    "minimum_consecutive_empty_bins_to_cut": 35,
+    "history": 28,
+    "horizon": 7,
+    "split_rule": "within each episode, chronological 70/10/20 by floor(0.7*n), floor(0.1*n), remainder; keep all calendar bins inside episode",
+    "legal_origin_rule": "use frozen PreparedData split-origin rule: history remains within the episode and may extend before validation/test boundary; all origin+1..origin+H targets remain inside the evaluated split"
+  },
+  "episode_count": 2,
+  "first_long_gap": {
+    "start": 526,
+    "end": 797,
+    "length_days": 271
+  },
+  "first_feasible_episode_index": 0,
+  "candidate_episode": {
+    "episode_index": 0,
+    "day_start": 0,
+    "day_end_exclusive": 526,
+    "day_end_inclusive": 525,
+    "length_days": 526,
+    "event_rows": 329910,
+    "active_days": 519,
+    "split": {
+      "train": {
+        "bins": [
+          0,
+          368
+        ],
+        "length_days": 368,
+        "source_event_rows": 220126,
+        "active_days": 363,
+        "legal_origins": 334
+      },
+      "validation": {
+        "bins": [
+          368,
+          420
+        ],
+        "length_days": 52,
+        "source_event_rows": 25404,
+        "active_days": 52,
+        "legal_origins": 46
+      },
+      "test": {
+        "bins": [
+          420,
+          526
+        ],
+        "length_days": 106,
+        "source_event_rows": 84380,
+        "active_days": 104,
+        "legal_origins": 100
+      }
+    },
+    "training_defined_node_count": 893,
+    "all_splits_have_legal_origins": true
+  },
+  "all_episodes": [
+    {
+      "episode_index": 0,
+      "day_start": 0,
+      "day_end_exclusive": 526,
+      "day_end_inclusive": 525,
+      "length_days": 526,
+      "event_rows": 329910,
+      "active_days": 519,
+      "split": {
+        "train": {
+          "bins": [
+            0,
+            368
+          ],
+          "length_days": 368,
+          "source_event_rows": 220126,
+          "active_days": 363,
+          "legal_origins": 334
+        },
+        "validation": {
+          "bins": [
+            368,
+            420
+          ],
+          "length_days": 52,
+          "source_event_rows": 25404,
+          "active_days": 52,
+          "legal_origins": 46
+        },
+        "test": {
+          "bins": [
+            420,
+            526
+          ],
+          "length_days": 106,
+          "source_event_rows": 84380,
+          "active_days": 104,
+          "legal_origins": 100
+        }
+      },
+      "training_defined_node_count": 893,
+      "all_splits_have_legal_origins": true
+    },
+    {
+      "episode_index": 1,
+      "day_start": 797,
+      "day_end_exclusive": 803,
+      "day_end_inclusive": 802,
+      "length_days": 6,
+      "event_rows": 2369,
+      "active_days": 6,
+      "split": {
+        "train": {
+          "bins": [
+            797,
+            801
+          ],
+          "length_days": 4,
+          "source_event_rows": 1455,
+          "active_days": 4,
+          "legal_origins": 0
+        },
+        "validation": {
+          "bins": [
+            801,
+            801
+          ],
+          "length_days": 0,
+          "source_event_rows": 0,
+          "active_days": 0,
+          "legal_origins": 0
+        },
+        "test": {
+          "bins": [
+            801,
+            803
+          ],
+          "length_days": 2,
+          "source_event_rows": 914,
+          "active_days": 2,
+          "legal_origins": 0
+        }
+      },
+      "training_defined_node_count": 464,
+      "all_splits_have_legal_origins": false
+    }
+  ],
+  "feasibility_note": "This diagnostic ranks by chronological first feasible only; it does not select by activity rate or model results."
+}

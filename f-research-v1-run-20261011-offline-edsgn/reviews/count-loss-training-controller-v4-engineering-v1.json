@@ -1,0 +1,14 @@
+{
+  "scope":"writer_engineering_evidence_only",
+  "verdict":"ready_for_root_source_review",
+  "controller":{"path":"edsgn/scripts/count_loss_training_controller_v4.py","sha256":"11399b3e30e31b7a7b1252deb617d1ae92f53b62a9fda3e6fbc328ec702862bd"},
+  "tests":{"path":"edsgn/tests/test_count_loss_training_controller_v4.py","sha256":"2ff19cb4e7383048b4a10621db22b883a04adfb6334f5fbc59e074dc319f9bd5","result":"26 passed in 23.82s"},
+  "log":{"path":"logs/count-loss-controller-v4-tests.log","sha256":"1702b4c88f1a2de0a5239b8375fa8d0c691834a96b74544e47eb948c7504b10b"},
+  "scanner_fixes":{"python_prefix_options_parsed":true,"arbitrary_argument_text_not_scanned":true,"run_owned_c_refused_without_script_interpretation":true,"psutil_ad_value_none_name_fallback":true,"known_non_python_skipped":true,"process_gone_skipped":true,"unclassifiable_or_ownership_unknown_fails_closed":true},
+  "inherited_v3_cases":17,
+  "added_scanner_cases":9,
+  "live_host_refusal":{"pid":188,"fields":{"cmdline":"AccessDenied/None","cwd":"AccessDenied/None","exe":"AccessDenied/None","direct_name":"empty"},"action":"fail_closed; no job launched"},
+  "public_child_mock_test_scanner":"stubbed to isolate the temp-root successful workflow from unrelated unclassifiable host PID; scanner has separate direct coverage",
+  "real_execution":false,
+  "root_acceptance_pending":true
+}

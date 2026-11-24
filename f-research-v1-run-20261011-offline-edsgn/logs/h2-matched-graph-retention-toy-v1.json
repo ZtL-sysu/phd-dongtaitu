@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "scope": "CPU toy/mock functionality only",
+  "status": "passed",
+  "device": "cpu",
+  "py_compile": "passed",
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "pytest_seconds": 3.73,
+  "compile_and_test_wall_seconds": 5.28,
+  "real_data_accessed": false,
+  "checkpoint_accessed": false,
+  "oracle_accessed": false,
+  "test_replay": false,
+  "gpu": false,
+  "optimizer": false,
+  "scientific_result": false,
+  "prototype_integrated": false,
+  "test": "edsgn/tests/test_h2_matched_graph_retention_v1.py",
+  "review": "reviews/h2-matched-graph-retention-prototype-v1.md",
+  "log": "logs/h2-matched-graph-retention-toy-v1.log",
+  "hashes": {
+    "edsgn/tests/test_h2_matched_graph_retention_v1.py": "6944af8d6424751f378c1a170f945e91313b03bc8e2504f0d952dbb6aa1fa7fa",
+    "protocols/h2-matched-graph-retention-probe-v1.md": "2e48dacb23540b20f8d8f5cf9dcf3818cc81b4aa5774c9282eb5adcca6f655ff",
+    "edsgn/staging/h2_matched_graph_retention_v1.py": "33978777d43cb6da28f2a09d4d8bd1a4629f305a0db153f72916ee4b91adeac3",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "edsgn/src/edsgn/scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42"
+  }
+}

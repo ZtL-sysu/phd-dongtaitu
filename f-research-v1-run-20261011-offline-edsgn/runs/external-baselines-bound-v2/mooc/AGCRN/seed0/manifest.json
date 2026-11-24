@@ -1,0 +1,299 @@
+{
+  "source_sha256": {
+    "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "agcrn_checkpoint.py": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+    "baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "candidate_batch.py": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f",
+    "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "rp_baselines.py": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+    "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "dependency_source_sha256": {
+    "sources\\AGCRN\\lib\\add_window.py": "3fd9fff4ca8b923b2a07fa8762d45693949c12f830d87c53decf2125272fe179",
+    "sources\\AGCRN\\lib\\dataloader.py": "9feb767d2a85228368730ddcf7a4f2b3d8d9d3f6f52add12bcc91b9862b9fddb",
+    "sources\\AGCRN\\lib\\load_dataset.py": "bf7ed026a99a93f1b93e0aea59cebf0246849abf01330efbab84f73e5e40676a",
+    "sources\\AGCRN\\lib\\logger.py": "13b308c2596485ce2147d5f71595c0affbae93b20571e3f61f490a6b3094dd2a",
+    "sources\\AGCRN\\lib\\metrics.py": "7f54b62ac22b252ffeeb53ef7ac3f7e5501cb59203f1dda67018accb13d8bd70",
+    "sources\\AGCRN\\lib\\normalization.py": "4159658e97de2c909b95cc750c97e8aead417cae6b69f39a853d5ab2513241e8",
+    "sources\\AGCRN\\lib\\TrainInits.py": "247e1614ce18665a6b02ff40c4d3a1f7532298928b81a22b8577e6ea58a7ca47",
+    "sources\\AGCRN\\model\\AGCN.py": "f9c74005a118e6c8f4189a23de5a2598de01a1ded002a0ede387d15dc021e77d",
+    "sources\\AGCRN\\model\\AGCRN.py": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80",
+    "sources\\AGCRN\\model\\AGCRNCell.py": "65ade82a8dc5765c62c0d527b3eb7509a59a1defcaf348766d856c00b8789128",
+    "sources\\AGCRN\\model\\BasicTrainer.py": "df42e617bbc5cffba6a204f4259aeed0fc65a827ec859a8561a6bb22860eec67",
+    "sources\\AGCRN\\model\\Run.py": "2078a13d03c66a03057b7662b81fa0c4aa95755fe70f48f462faf5c9ed5c3adf"
+  },
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+  "model_statistics_train_only": {
+    "norm_mean": [
+      0.899565577507019
+    ],
+    "norm_std": [
+      1.356971263885498
+    ],
+    "residual_scale": [
+      [
+        15.5657320022583
+      ],
+      [
+        19.273799896240234
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        22.23900032043457
+      ],
+      [
+        20.756399154663086
+      ],
+      [
+        19.273799896240234
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        28.16939926147461
+      ],
+      [
+        37.064998626708984
+      ],
+      [
+        23.721599578857422
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        17.791200637817383
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ]
+    ],
+    "output_scale": [
+      15.565732082848674
+    ],
+    "output_mean": [
+      6.832716715482246
+    ]
+  },
+  "train_windows": 452,
+  "val_windows": 49,
+  "scope": "full_protocol",
+  "selection": "required-horizon average validation MAE; no test access",
+  "command": [
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+    "--config",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-AGCRN-seed0.json"
+  ]
+}

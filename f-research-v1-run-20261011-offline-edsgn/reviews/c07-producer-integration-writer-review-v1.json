@@ -1,0 +1,19 @@
+{
+  "schema": "c07-producer-integration-writer-review-v1",
+  "review_role": "writer-self-review",
+  "scope": "engineering-staging-only",
+  "verdict": "ready-for-root-review",
+  "scientific_acceptance": false,
+  "pipeline_advanced": false,
+  "test_result": "35 passed",
+  "evidence_sha256": {
+    "edsgn/staging/frozen_split_history_robustness_v5.py": "4886f02f4ad51035555154d10da4895dd459b50c2346f306793dd1e3328d8df4",
+    "edsgn/staging/c06_domain_manifest_preflight_v4.py": "919aa8b0ba27013e1489d86b7db440859f7c994ae763bbe1edecb132170266e4",
+    "edsgn/staging/frozen_graph_state_diagnostic_v7.py": "ffddb21ad40206bdbbfa1d6b94d71ca38e694d6fe861e89648f15c2516feaa45",
+    "edsgn/tests/test_frozen_split_history_robustness_v5.py": "bfcf97b6d3a93d95b26562da0099d9d2bbdd3442470ee919c9a8b8ba13b4b472",
+    "edsgn/tests/test_frozen_graph_state_diagnostic_v7.py": "dcc7e8d90a6669530d7247b39fbfc90a2204263671ba8033c10fb997a771c8b6",
+    "reviews/blind-reference-cost-policy-root-acceptance-v1.json": "08c1a080c913e9f3489b82a6aeca4f81a196ec804a8fec255e63dfd2e08ac570",
+    "edsgn/staging/blind_reference_cost_policy_v1.py": "2500f9687aa277ad5e67f3d4d41dde095d2e51761109da2f9dfceb6a68e3218d",
+    "logs/c07-producer-integration-cpu-v1.log": "9e0f2df69bb268b67bda3293ceaf5ddadf385f257a93e2986936df1602196c6d"
+  }
+}

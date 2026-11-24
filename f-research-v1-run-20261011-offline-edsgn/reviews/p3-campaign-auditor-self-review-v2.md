@@ -1,0 +1,13 @@
+# P3 campaign auditor v2 — implementation self-review
+
+This is a writer self-review, not an independent audit. It preserves v1 and does not run the live campaign. The wrapper performs metadata preflight over the same six root-accepted queues (80 unique jobs total) and can audit only already-completed training receipts.
+
+V2 supports the current chronological single-NPZ datasets. Before invoking the unchanged `audit_bound_baseline_numeric_v3.audit`, it reads only `metadata_json` to require a chronological bundle with declared train and validation splits. The numeric auditor remains the source of the validation-origin and metric checks. Every row says `scored_test_origins=false`; rows whose dataset path is a combined NPZ also say `source_array_may_materialize_other_partitions=true` and identify the source mode as combined chronological. The aggregate repeats this disclosure and does not claim that test bytes were untouched.
+
+Completed-run validation now requires `config_resolved.json` to equal the full requested configuration, the manifest dataset path to match, and `input-binding-at-launch.json` to be inside the same run output directory and bind the exact config path, config bytes/content and dataset root. The authoritative binding verifier is run before audit; its SHA and result are kept with the completed snapshot. A newly generated numeric report is serialized exclusively and then passed through the same strict validation used for report reuse. V1's phase queue, artifact and source checks remain in effect.
+
+Six CPU fixtures cover split-separated success, combined chronological success with disclosure, missing receipt/pending, output hash tampering, an extra resolved-config field (including an LR mismatch), and launch-binding config-hash mismatch. The live metadata preflight rechecked all 80 queue rows, root acceptance pins and config hashes; no numeric batch, model/checkpoint load, training, GPU, or real target/oracle array access occurred.
+
+Remaining limitation: the wrapper has not audited live completed jobs. For combined NPZs, the unchanged numeric-v3 implementation may materialize entire array members even though it scores only validation-origin targets. Such rows explicitly distinguish materialization risk from test-origin scoring. A wrapper result does not imply root acceptance, phase pass, or scientific/five-seed conclusions.
+
+Evidence: [metadata preflight](../logs/p3-campaign-auditor-v2-preflight.json), [CPU tests](../logs/p3-campaign-auditor-v2-tests.log). Source SHA-256: `ecbfd61d4ca0a67a568b7b4a8c9e88ab1d68356aa3e3ae3bd8fd6f720be9f798`; test SHA-256: `cb3791b3f59a5f61c1b5cebbe1e61066910ee506f945577ed7a9aef6b243bcd3`.

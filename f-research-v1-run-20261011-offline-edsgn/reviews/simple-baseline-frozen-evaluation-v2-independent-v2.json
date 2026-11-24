@@ -1,0 +1,14 @@
+{
+  "scope":"independent_staging_engineering_review",
+  "verdict":"pass_staging_path_only_no_launch_authorization",
+  "evaluator":{"path":"edsgn/staging/simple_baseline_frozen_evaluation_v2.py","sha256":"160F5A27903264374079928995A5DE0DA34F3050789937BE5419F8291A706D1A"},
+  "tests":{"path":"edsgn/staging/test_simple_baseline_frozen_evaluation_v2.py","sha256":"CBFECFC6EB2529EAE1D80F2E67859D74096DCB649070974C780FB6C8531E5DC1","result":"13 passed in 4.10s"},
+  "independent_test_log":{"path":"logs/simple-baseline-frozen-evaluation-v2-independent-tests.log","sha256":"684BB60EFB5A1354660FE78A830B646C444A7D82A1C268363C25DBBE9253924E"},
+  "c06_v4_metadata_descriptor_reconstruction_reviewed":true,
+  "engine_persistence_linear_math_parity_reviewed":true,
+  "preloader_final_budget_and_input_refence_reviewed":true,
+  "full_ordered_origin_and_raw_metric_verification_reviewed":true,
+  "managed_dispatcher_global_completion":"pending",
+  "real_data_fit_model_gpu_or_test_arrays_accessed":false,
+  "launch_authorized":false
+}

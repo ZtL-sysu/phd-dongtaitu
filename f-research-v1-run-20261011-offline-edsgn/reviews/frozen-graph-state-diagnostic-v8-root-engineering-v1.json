@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "oracle_free_graph_replay_engineering_only",
+  "created_utc": "2026-10-11T12:25:05.508995+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_graph_state_diagnostic_v8.py": "4d54488130639e3504d5da307d523249e3b18e08e768dfb01c6bc8680c8d8be4",
+    "edsgn/tests/test_frozen_graph_state_diagnostic_v8.py": "f485975e49fe954228d45aa872f0e82c2c5c8ae1ae22b4ff2dd7d79462852fe8",
+    "reviews/frozen-graph-state-diagnostic-v8-independent-review-v1.json": "c5c2d7ed72cfedba06c65850806eb2c1f4ab583d00ad929cc15a3a0441fd378e",
+    "reviews/frozen-graph-state-diagnostic-v8-independent-review-v1.md": "c18a611bacabf15283fe0ecbfb7e9b4298d287a20d4ac631b3bfcfb730aa6adf",
+    "logs/root-candidate-binding-and-graph8-toy-v1.log": "d2c8ea807ce675806eac47f9073a1126ac3a4f9b654187eaa4abda69287ceb00",
+    "protocols/global-test-oracle-separation-root-design-v1.md": "4de1f31de18d07d89d5363b1bf5b7169b09ba50dfd29f63406d7b83350958361"
+  },
+  "actual_test_replay": false,
+  "actual_oracle_analysis": false,
+  "global_completion_integration_accepted": false,
+  "test_execution_authorized": false
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "C05 source-only exact activation checkpoint integration",
+  "source_before_sha256": "6059c4d7024ac38597d36f8d139de04ced362cfe7d0335a1282fb79a47be2626",
+  "source_after_sha256": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+  "staged_helper_sha256": "8a1658ffd47bc057a12560840c04cda54726f72a13397dd1347ed37cc1f4ca43",
+  "runtime_helper_sha256": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+  "optimizer_steps": 0,
+  "real_data_accessed": false,
+  "gpu_used": false,
+  "default_enabled": false,
+  "eval_no_grad_reference_path": true
+}

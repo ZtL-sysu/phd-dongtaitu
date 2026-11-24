@@ -1,0 +1,673 @@
+{
+  "resource_contract": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+  "candidate_addendum": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+  "accepted_resource_contract_sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e",
+  "accepted_candidate_addendum_sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a",
+  "schema_version": 1,
+  "status": "prepared-not-launched",
+  "scope": "P3 baseline-only compact GRU seeds1-4 across four regimes, full train/validation; no test",
+  "required_predecessor": "successful immutable p3-serial-continuation-v1 completion and all source-bound seed0 queues",
+  "required_gates": {
+    "P3": "running"
+  },
+  "source_queue_sha256": {
+    "protocols/p3-fresh-remaining-bound-queue-v1.json": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+    "protocols/p3-internal-bound-queue-v4.json": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79"
+  },
+  "config_bindings": [
+    {
+      "config": "configs/p3-gru-replication-v1/synthetic-GRU-seed1.json",
+      "sha256": "9ed594b92827473009ee8907ed1a1360d24a37daa00d80647d2ff28f7a569489",
+      "seed": 1,
+      "dataset": "synthetic",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/synthetic-GRU-seed0.json",
+      "seed0_config_sha256": "9816d52b9cd0804598f3794987450ef750bd20cfce80d0c2be04ebca821c4df9"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/synthetic-GRU-seed2.json",
+      "sha256": "2c9b106906f7cafb70bb63d3fa2d2358bdc3cba92fe1ef75e964f3078aff2199",
+      "seed": 2,
+      "dataset": "synthetic",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/synthetic-GRU-seed0.json",
+      "seed0_config_sha256": "9816d52b9cd0804598f3794987450ef750bd20cfce80d0c2be04ebca821c4df9"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/synthetic-GRU-seed3.json",
+      "sha256": "f06bd981f2b0e61c05793971029323f11e92c120033ad2b9332eb471828bbb26",
+      "seed": 3,
+      "dataset": "synthetic",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/synthetic-GRU-seed0.json",
+      "seed0_config_sha256": "9816d52b9cd0804598f3794987450ef750bd20cfce80d0c2be04ebca821c4df9"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/synthetic-GRU-seed4.json",
+      "sha256": "88421842e561636d65d2d11c0f970d7e10c35171f5af110593e8a1124a87c358",
+      "seed": 4,
+      "dataset": "synthetic",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/synthetic-GRU-seed0.json",
+      "seed0_config_sha256": "9816d52b9cd0804598f3794987450ef750bd20cfce80d0c2be04ebca821c4df9"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/mooc-GRU-seed1.json",
+      "sha256": "422e6ab5657c0bb183322bfcabbb91952e6d5419474a6050c4525eaaf255a88f",
+      "seed": 1,
+      "dataset": "mooc",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/mooc-GRU-seed0.json",
+      "seed0_config_sha256": "4b3c214ff4a46128b66c79346ef4b7af33afd314ea63dc59c9a5b9752cefb18e"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/mooc-GRU-seed2.json",
+      "sha256": "37cbfcd4d112fd1179e5e87589713ddedbc5a7348a631f5e932ecd2f4679728b",
+      "seed": 2,
+      "dataset": "mooc",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/mooc-GRU-seed0.json",
+      "seed0_config_sha256": "4b3c214ff4a46128b66c79346ef4b7af33afd314ea63dc59c9a5b9752cefb18e"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/mooc-GRU-seed3.json",
+      "sha256": "74b65f360c71c8071e0710d40e5da1ebed4e1ae88dace554c7989fe815867b42",
+      "seed": 3,
+      "dataset": "mooc",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/mooc-GRU-seed0.json",
+      "seed0_config_sha256": "4b3c214ff4a46128b66c79346ef4b7af33afd314ea63dc59c9a5b9752cefb18e"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/mooc-GRU-seed4.json",
+      "sha256": "b2d944851fe8382e7d6c1e672ec82a8161a810e011c878508fb8fa7f3e7abe76",
+      "seed": 4,
+      "dataset": "mooc",
+      "seed0_config": "configs/p3-fresh-remaining-bound-v1/mooc-GRU-seed0.json",
+      "seed0_config_sha256": "4b3c214ff4a46128b66c79346ef4b7af33afd314ea63dc59c9a5b9752cefb18e"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-GRU-seed1.json",
+      "sha256": "42f7930b3482059b05e7ffbe53ad3ecf9dc3a7570214b7b1efbf4bcdd26c6f99",
+      "seed": 1,
+      "dataset": "email",
+      "seed0_config": "configs/p3-internal-bound-v4/email-GRU-seed0.json",
+      "seed0_config_sha256": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-GRU-seed2.json",
+      "sha256": "25d05f13e8cdaa013925b0c7ca79db477ca973c200e128f7177828eea9f6ae4b",
+      "seed": 2,
+      "dataset": "email",
+      "seed0_config": "configs/p3-internal-bound-v4/email-GRU-seed0.json",
+      "seed0_config_sha256": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-GRU-seed3.json",
+      "sha256": "7c0ab82293d1d2996ad1597c62441304f56694e53863a9933a3830a264e2d17e",
+      "seed": 3,
+      "dataset": "email",
+      "seed0_config": "configs/p3-internal-bound-v4/email-GRU-seed0.json",
+      "seed0_config_sha256": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-GRU-seed4.json",
+      "sha256": "aa2e9c1e87b5a436b0f7f7ce8b97e59c575b42e986d829743519989955ed2af8",
+      "seed": 4,
+      "dataset": "email",
+      "seed0_config": "configs/p3-internal-bound-v4/email-GRU-seed0.json",
+      "seed0_config_sha256": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-episode-GRU-seed1.json",
+      "sha256": "599eb23ab3a41a57d55f77b949e919a27411451a6be940a712379d8c0db4920a",
+      "seed": 1,
+      "dataset": "email-episode",
+      "seed0_config": "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json",
+      "seed0_config_sha256": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-episode-GRU-seed2.json",
+      "sha256": "88e06bfadde7370e9474295a63262ee1c04a73408a208b3793b9ceef90686a6c",
+      "seed": 2,
+      "dataset": "email-episode",
+      "seed0_config": "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json",
+      "seed0_config_sha256": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-episode-GRU-seed3.json",
+      "sha256": "8c0c05d768f4eecd4ad7cc42724a5cf0bed03fc5d9fa3227f22e1dfa909d68e6",
+      "seed": 3,
+      "dataset": "email-episode",
+      "seed0_config": "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json",
+      "seed0_config_sha256": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890"
+    },
+    {
+      "config": "configs/p3-gru-replication-v1/email-episode-GRU-seed4.json",
+      "sha256": "07aff8f2e9e88b2a048971c694ec499fc37c6db85d5effda93412243ec38ccbc",
+      "seed": 4,
+      "dataset": "email-episode",
+      "seed0_config": "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json",
+      "seed0_config_sha256": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "gru-five-seed-v1-synthetic-GRU-seed1",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed1.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed1.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\synthetic\\GRU\\seed1",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-synthetic-GRU-seed2",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed2.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed2.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\synthetic\\GRU\\seed2",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-synthetic-GRU-seed3",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed3.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed3.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\synthetic\\GRU\\seed3",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-synthetic-GRU-seed4",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed4.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed4.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\synthetic\\GRU\\seed4",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\synthetic-GRU-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-mooc-GRU-seed1",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed1.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed1.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed1",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-mooc-GRU-seed2",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-mooc-GRU-seed3",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed3.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed3.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed3",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-mooc-GRU-seed4",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed4.json",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed4.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed4",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py"
+      ],
+      "resource": {
+        "device": "cuda",
+        "threads": 2,
+        "batch_size": 128,
+        "max_epochs": 100,
+        "patience": 10
+      },
+      "selection": "full training and validation only; no test selection or access",
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-GRU-seed1",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed1.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email\\GRU\\seed1",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed1.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed1.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed1.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-GRU-seed2",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed2.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email\\GRU\\seed2",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed2.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed2.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed2.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-GRU-seed3",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed3.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email\\GRU\\seed3",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed3.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed3.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed3.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-GRU-seed4",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed4.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email\\GRU\\seed4",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed4.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed4.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-GRU-seed4.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-episode-GRU-seed1",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed1.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email-episode\\GRU\\seed1",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed1.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed1.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed1.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-episode-GRU-seed2",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed2.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email-episode\\GRU\\seed2",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed2.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed2.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed2.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-episode-GRU-seed3",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed3.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email-episode\\GRU\\seed3",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed3.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed3.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed3.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    },
+    {
+      "id": "gru-five-seed-v1-email-episode-GRU-seed4",
+      "phase": "training",
+      "scope": "baseline",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed4.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\email-episode\\GRU\\seed4",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed4.json"
+      ],
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed4.json",
+      "status": "prepared-not-launched",
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\email-episode-GRU-seed4.json"
+      ],
+      "coverage": "formal five-model-seed compact GRU replication; seed0 provided by unchanged bound baseline queue"
+    }
+  ],
+  "search_configs_introduced": 0,
+  "test_access_authorized": false,
+  "execution_authorized": false,
+  "budget": "same aggregate 72h ledger; actual unchanged bound controller guards every run"
+}

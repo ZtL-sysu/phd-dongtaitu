@@ -1,0 +1,424 @@
+{
+  "status": "root_shape_based_preparation_not_launch_authorization",
+  "scope": "conservative uncompressed graph diagnostic capacity per complete test collection",
+  "source_sha256": {
+    "edsgn/staging/frozen_graph_state_diagnostic_v7.py": "ffddb21ad40206bdbbfa1d6b94d71ca38e694d6fe861e89648f15c2516feaa45",
+    "edsgn/staging/c06_domain_manifest_preflight_v4.py": "919aa8b0ba27013e1489d86b7db440859f7c994ae763bbe1edecb132170266e4"
+  },
+  "free_disk_bytes_observed": 430080192512,
+  "rows": [
+    {
+      "collection_path": "data/processed/synthetic-n64-identity-change0.3-miss0",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed200.npz",
+          "sha256": "56b11569d58c10c6a31b31404718edecdc3083acb2d03638c47dc223fb3c45a1"
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed201.npz",
+          "sha256": "af353658b162a462b0ca3b73b41fd31d9125c7dfa9cd4f9194edfca7cf539db6"
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed202.npz",
+          "sha256": "43026ec411a9550e9f036b6ff35638a5b76423542073ef473edc6d97a31ff5e9"
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed203.npz",
+          "sha256": "bd041b20152a8687a87a801dc6c90f7a473a368019cfa34cd130d59d8fb84785"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n256-identity30-scale",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed200.npz",
+          "sha256": "9450a16e04bd8661dccf5f4ff3a1fec2202fe73fc27088cf1d6b9fae472dc5a2"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed201.npz",
+          "sha256": "1c16555c57fb85336834ac9cad7edcf53a8ab55c19a70bef1e81262b28f9d642"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed202.npz",
+          "sha256": "ba4ef91a956ec5fb582fe2abaecc090fde521b257a161a23589da32483226bbe"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed203.npz",
+          "sha256": "044e453ec6b29930dcb7622279baf151e1ae1dd497ea00a227c14abc161c84c7"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 256,
+      "detailed_origin_count": 32,
+      "prediction_elements": 14436352,
+      "conservative_estimate_bytes": 47340601344,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 49,
+      "required_free_bytes_at_launch": 59175751680,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed200.npz",
+          "sha256": "dfafbea084956570d9e254ecb801847d063164a1b38f409e80d71275feec64ca"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed201.npz",
+          "sha256": "a7a496359b2ab6f536a6a54a02f1e9d7803a2afa10da8c7580caf2ce71138c9b"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed202.npz",
+          "sha256": "fee039232279824b3d55e4f2721c3447c9b8229690df40f0886a301f9bcd429e"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed203.npz",
+          "sha256": "bd42f42bb99715479b24f94d431cd224f44e72eeb556837b1fc34d4174b507b2"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-identity10",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-identity10/test_seed200.npz",
+          "sha256": "0fe443c6737651301eaa0c450c54a3d6191e7c4f5455d581d21a27a271e4449a"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-identity10/test_seed201.npz",
+          "sha256": "e0fe9cc9928eb6d8b27e16bbc3f4b4fb0bae3174ab4137446573a9f27e316a21"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-identity10/test_seed202.npz",
+          "sha256": "0dbc25d0b813c7a2ace58cffc451b25b566f1e267b94839bbee3d449c68d28b9"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-identity10/test_seed203.npz",
+          "sha256": "6a54dd43fea1f467342f26f6137e348ea83cc7438dd26fc8be6bff29215b8579"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-local-shock",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-local-shock/test_seed200.npz",
+          "sha256": "79bac5c3b86c36fb43ca0ef548c2332d9dd5efa7684da3df8e97d64cba013c57"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-local-shock/test_seed201.npz",
+          "sha256": "67f42c41c0f18504c7024381730bb066297e96b2cffe8a59d5313ed8740027af"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-local-shock/test_seed202.npz",
+          "sha256": "1da38bb9ca9f81f2dcae604e9ef0948d14e05ba5ba6b66214eb965950787bab4"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-local-shock/test_seed203.npz",
+          "sha256": "08b7598e19bfb06dd1c52dc85f01165c5099947be47e2070c504e493654793d7"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-noise-only",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-noise-only/test_seed200.npz",
+          "sha256": "f66dafba51418fa20aab17f22e412ebe2138377a95882d1881b0fcdedc9811a3"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-noise-only/test_seed201.npz",
+          "sha256": "bafc05656f9fdc8052df8b187e81ccab83279eff4ac116e46ac7d668198bccf7"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-noise-only/test_seed202.npz",
+          "sha256": "b1e63772895817546957eeaddaf2e46cc0d5617221f7fc11e2b86d8b38702679"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-noise-only/test_seed203.npz",
+          "sha256": "5193dfadccb74e6c0282663297c39483d5d67a054e5ec1a823319e597fac1382"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-nonlinear",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed200.npz",
+          "sha256": "2cd6f43ded0c5aa9da5011981a6b748483bd4990e796de0a8783a496bb122614"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed201.npz",
+          "sha256": "3722734f3ad252167d620f8757e539d1cf71b4f41929a5307004955201b3518d"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed202.npz",
+          "sha256": "b1cb57ba78c836d1a60bc70a5a10def4406a7468dfe1a06fedf998c9e3257dca"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed203.npz",
+          "sha256": "2befdd074cd5fad0bdfdce969befd45ab5689a4bc5036a1d77342e55d7336153"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-weight10",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-weight10/test_seed200.npz",
+          "sha256": "ba4882f4fc3d2926c78c9d4db0e4b22fc05770b4476510b9af0e1dab08d6b3fa"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight10/test_seed201.npz",
+          "sha256": "0da79879174326a3419029a808163770da48dafea6e874b9fe05f706de72be2e"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight10/test_seed202.npz",
+          "sha256": "e23f861a237cc52dde2a0228aa0adc6b29baa63badf7406b0e7da940e7f70a2a"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight10/test_seed203.npz",
+          "sha256": "50b9f66c10964b499995dbaeb7de47c6a8cf14d6997eff8b72718c7e89748901"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    },
+    {
+      "collection_path": "data/processed/synthetic-stress-n64-weight30",
+      "ordered_test_archives": [
+        {
+          "path": "data/processed/synthetic-stress-n64-weight30/test_seed200.npz",
+          "sha256": "6b0e241f6f91d84fb6a283ba839bab9c229c9444210a408400581319d9b8981e"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight30/test_seed201.npz",
+          "sha256": "edf1397a848713f0b81b9757ca63d45aef198ca42adbeecfdca6c3a59905c904"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight30/test_seed202.npz",
+          "sha256": "d5d6c5254d64a10b8b75924d09187dcb94a468690de586918f0192a3f7211a98"
+        },
+        {
+          "path": "data/processed/synthetic-stress-n64-weight30/test_seed203.npz",
+          "sha256": "d65d57fe4f1adf4f01dce5bb155aa36eb558184e225e3b92fb7a2c23286eb22e"
+        }
+      ],
+      "trajectory_count": 4,
+      "origin_count": 8056,
+      "history": 28,
+      "node_count": 64,
+      "detailed_origin_count": 32,
+      "prediction_elements": 3609088,
+      "conservative_estimate_bytes": 13646155776,
+      "default_8gib_cap_sufficient": false,
+      "proposed_per_output_cap_gib": 14,
+      "required_free_bytes_at_launch": 17057694720,
+      "decoded_npz_members": [
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask",
+        "metadata_json",
+        "node_ids",
+        "input_mask"
+      ]
+    }
+  ],
+  "cap_rule": "ceil(1.10*conservative_estimated_bytes/GiB); freeze exact cap before replay",
+  "disk_rule": "recheck >=1.25*estimated_bytes before each actual replay; no total-matrix storage claim",
+  "compression_assumed_for_admission": false,
+  "test_values_or_targets_or_oracle_decoded": false,
+  "actual_model_or_graph_replay": false,
+  "pipeline_advanced": false,
+  "scientific_configuration_or_hypothesis_changed": false,
+  "note": "The default toy-size8GiB cap cannot admit these full synthetic collections under the accepted conservative estimator. These prospective resource limits do not change origin coverage or reduce traces, and are not actual measured output sizes."
+}

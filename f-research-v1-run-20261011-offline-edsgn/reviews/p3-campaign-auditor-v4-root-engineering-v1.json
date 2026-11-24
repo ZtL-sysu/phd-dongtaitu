@@ -1,0 +1,19 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed_p3_validation_auditor_interface_only",
+  "created_utc": "2026-10-11T13:09:47.128316+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/audit_completed_p3_campaign_v4.py": "6c4e2aace929a8c0f6dba5d5f02749fa1990104dc95850c0d80299b317660785",
+    "edsgn/tests/test_audit_completed_p3_campaign_v4.py": "191f88db0cded460aab023df039034523fc8ef846095ea733765a7be070046a3",
+    "edsgn/scripts/audit_bound_baseline_numeric_v3.py": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "reviews/p3-campaign-auditor-self-review-v4.md": "06be8b7f86136526a49280ba1b8e8d869ad57e6187eab0fc2cb72a0cfa50dfa4",
+    "logs/p3-campaign-auditor-v4-preflight.json": "ba68221d33bb5be70ca69ea32c5edf1001bd2f4b8bc82f04741f0d39c54a0615",
+    "logs/root-p3-campaign-auditor-v4-tests-v1.log": "ce794344396be5e2edd595b5c182c812dc4396b46f4f9685d9650e274f040ac7"
+  },
+  "actual_campaign_rows_accepted": false,
+  "actual_test_authorized": false
+}

@@ -1,0 +1,15 @@
+{
+  "dataset": "email-episode-v1",
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple",
+  "variant": "simple_baselines",
+  "split": "val",
+  "fit_partition": "train",
+  "expected_train_origins": 334,
+  "expected_validation_origins": 46,
+  "test_accessed": false,
+  "runner_source": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\p3_email_episode_simple.py",
+    "sha256": "2dd52089e9ba0335a0dab23a45c8d41f38c577c0d2e5153f10db0547ca7012c5"
+  }
+}

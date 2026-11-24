@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+STID,0,val,1,0,all,3.0822913646698,6.3155837059021,3822,49
+STID,0,val,6,0,all,3.65692400932312,7.184951305389404,3822,49
+STID,0,val,24,0,all,4.434933185577393,8.403276443481445,3822,49

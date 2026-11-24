@@ -1,0 +1,16 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+  "variant": "STAEformer",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 2,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email\\STAEformer\\seed0",
+  "baseline": {}
+}

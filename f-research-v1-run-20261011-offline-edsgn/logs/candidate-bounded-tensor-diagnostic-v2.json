@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "scope": "standalone CPU candidate equivalence and resource probe; density bounds K",
+  "scientific_gpu_benchmark": false,
+  "optimizer_steps": 0,
+  "dataset_accessed": false,
+  "contact_bound_evidence": "model._prior_events_raw_step uses K=candidate_cap and evicts a contact immediately whenever len(contacts)>K (model.py:297-331); fixture and matrix enforce <=K retained contacts",
+  "device": "cpu",
+  "threads": 2,
+  "python": "3.13.13",
+  "torch": "2.11.0+cu128",
+  "source_sha256": {
+    "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "script.py": "e261a34a75f93357be72d3260bf084dd6a41135b2f4dcf68d5396782e4631333"
+  },
+  "equivalence_cases": {
+    "full": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "candidate_values_compared": 336,
+      "contact_setup_seconds": 0.0013221999979577959,
+      "query_seconds": 0.0013947999977972358
+    },
+    "partial": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "candidate_values_compared": 138,
+      "contact_setup_seconds": 0.001317799964454025,
+      "query_seconds": 0.001538999960757792
+    },
+    "N1_K0": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 0,
+      "contact_setup_seconds": 7.320000440813601e-05,
+      "query_seconds": 0.00034610001603141427
+    },
+    "V0": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 252,
+      "contact_setup_seconds": 0.0007806000066921115,
+      "query_seconds": 0.0004124999977648258
+    }
+  },
+  "benchmark": {
+    "shape": {
+      "B": 8,
+      "N": 986,
+      "K": 32,
+      "steps": 2
+    },
+    "contacts_per_nonempty_row": [
+      12,
+      32
+    ],
+    "warmup_repeats_per_arm": 1,
+    "timed_repeats": 5,
+    "seconds": {
+      "12": {
+        "tensor": {
+          "combined_s": {
+            "samples": [
+              0.5214357000077143,
+              0.5058953000116162,
+              0.780601000005845,
+              0.5840787999914028,
+              0.5971945000055712
+            ],
+            "median": 0.5840787999914028
+          },
+          "setup_s": {
+            "samples": [
+              0.4149349999788683,
+              0.40128099999856204,
+              0.6300701999862213,
+              0.481572899967432,
+              0.4946009000123013
+            ],
+            "median": 0.481572899967432
+          },
+          "query_s": {
+            "samples": [
+              0.10531849999097176,
+              0.10307240000111051,
+              0.14881919996696524,
+              0.0989846000156831,
+              0.10137390001909807
+            ],
+            "median": 0.10307240000111051
+          }
+        },
+        "reference": {
+          "combined_s": {
+            "samples": [
+              0.25104709999868646,
+              0.29741750002722256,
+              0.36474400002043694,
+              0.2862448999949265,
+              0.3536886000074446
+            ],
+            "median": 0.29741750002722256
+          },
+          "setup_s": {
+            "samples": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0
+          },
+          "query_s": {
+            "samples": [
+              0.24978889999329112,
+              0.29588910000165924,
+              0.3633929000061471,
+              0.2847397000005003,
+              0.352055700001074
+            ],
+            "median": 0.29588910000165924
+          }
+        }
+      },
+      "32": {
+        "tensor": {
+          "combined_s": {
+            "samples": [
+              0.6538035999983549,
+              0.658136399986688,
+              0.5237080999941099,
+              0.6120773000002373,
+              0.42225909998524
+            ],
+            "median": 0.6120773000002373
+          },
+          "setup_s": {
+            "samples": [
+              0.5527091999829281,
+              0.5547386000107508,
+              0.41584629999124445,
+              0.511580500024138,
+              0.33400249999249354
+            ],
+            "median": 0.511580500024138
+          },
+          "query_s": {
+            "samples": [
+              0.09937539999373257,
+              0.10153729998273775,
+              0.10664029998588376,
+              0.09866670001065359,
+              0.0870234000030905
+            ],
+            "median": 0.09937539999373257
+          }
+        },
+        "reference": {
+          "combined_s": {
+            "samples": [
+              0.33061249999445863,
+              0.3383437000156846,
+              0.3112762999953702,
+              0.2468900000094436,
+              0.27545549999922514
+            ],
+            "median": 0.3112762999953702
+          },
+          "setup_s": {
+            "samples": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "median": 0.0
+          },
+          "query_s": {
+            "samples": [
+              0.32879030000185594,
+              0.3365365999925416,
+              0.3096871000016108,
+              0.24571660000947304,
+              0.27386630000546575
+            ],
+            "median": 0.3096871000016108
+          }
+        }
+      }
+    }
+  },
+  "output_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-bounded-tensor-diagnostic-v2.json",
+  "task_duration_seconds": 13.652080900006695
+}

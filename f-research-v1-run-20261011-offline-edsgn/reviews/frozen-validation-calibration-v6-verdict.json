@@ -1,0 +1,12 @@
+{
+  "role": "writer_self_review",
+  "scientific_acceptance": false,
+  "source": "edsgn/staging/frozen_validation_calibration_v6.py",
+  "source_sha256": "cdc4045a6ea1434031819a958e28626ca3e249a77680f67ea7f2ae78fa9512cc",
+  "test": "edsgn/tests/test_frozen_validation_calibration_v6.py",
+  "test_sha256": "2a6bad1ab5d2efda94b60b9d12aa8ab54dfb6964170b45ec4ae17f5db1622d7f",
+  "test_log": "logs/frozen-validation-calibration-v6-tests.log",
+  "test_log_sha256": "c6d182b44d93b2e6de6f060a33d1f61f95928f0e84e86c853db23ad57298186f",
+  "result": "10 passed; CPU toy only",
+  "repair": "final guard after final integrity fences and before completed; guard failure records failed receipt"
+}

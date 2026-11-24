@@ -1,0 +1,14 @@
+{
+  "coefficient_exact": true,
+  "dataset": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+  "legacy_output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\simple",
+  "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-mooc-result.json\\simple-baseline-train-fit-verification.json",
+  "manifest_sha256": "3f39d046106874e2b82026afa71982473e06c56ae1ea7699b4411f08fabadb1a",
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "root_acceptance": "pending",
+  "schema_version": 1,
+  "scope": "train_only_simple_baseline_fit_verification",
+  "status": "completed",
+  "test_origins_evaluated": false
+}

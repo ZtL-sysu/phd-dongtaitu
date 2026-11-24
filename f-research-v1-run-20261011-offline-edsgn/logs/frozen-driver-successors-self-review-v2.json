@@ -1,0 +1,9 @@
+{
+  "scope": "writer-implementation-self-review-cpu-toy-only",
+  "independent_review": false,
+  "h2_v4": {"path":"edsgn/staging/frozen_h2_matched_retention_v4.py","sha256":"6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578","tests":12,"result":"passed","coverage":["non-synthetic float32 mean/std/scale exact match","mismatch rejected before replay","actual PreparedData engine checkpoint and replay fixture"]},
+  "calibration_v5": {"path":"edsgn/staging/frozen_validation_calibration_v5.py","sha256":"eb9106ed1a70654ded658a03f7d4f3087e7ff10af8b4abc207fdd5cb4fbf918c","tests":9,"result":"passed","coverage":["canonical pipeline bytes captured after lease","final gate/evidence recheck","real toy calibrate_run and ForecastModel CPU path","real toy PreparedData and at-launch binding","controlled lease/receipt mocks"]},
+  "limits":["no production calibration","no real dataset values","no GPU","no optimizer training","dummy untrained full-protocol checkpoint only"],
+  "logs":["logs/frozen-h2-v4-tests.log","logs/frozen-calibration-v5-tests.log"],
+  "review":"reviews/frozen-driver-successors-implementation-self-review-v2.md"
+}

@@ -1,0 +1,23 @@
+{
+  "scope": "engineering-staging-only",
+  "status": "prepared_not_dispatched",
+  "actual_queue_dispatched": false,
+  "child_spawned": false,
+  "real_arrays_decoded": false,
+  "checkpoint_loaded": false,
+  "optimizer_or_training_run": false,
+  "gpu_used": false,
+  "focused_tests": {"passed": 9, "failed": 0, "duration_seconds": 0.50},
+  "standalone_helper_imports": true,
+  "prepared_config_adapter_metadata_checks": {"email": "passed", "mooc": "passed"},
+  "static_blueprint_checks": {
+    "email": {"exact": true, "metadata_refs": 25},
+    "mooc": {"exact": true, "metadata_refs": 25}
+  },
+  "current_execution_blockers": [
+    "root-accepted g00/m00 selection receipt is not yet supplied",
+    "full MSE V4 validation numeric root acceptance is not yet supplied",
+    "canonical P3A passed/pass and P4 running plus official before-P4 validator remain mandatory"
+  ],
+  "note": "NPZ byte hashes were computed only for static input identity; no NPZ arrays were decoded."
+}

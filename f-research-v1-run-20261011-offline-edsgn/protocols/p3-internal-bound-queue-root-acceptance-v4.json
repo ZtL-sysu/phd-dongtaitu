@@ -1,0 +1,202 @@
+{
+  "schema_version": 4,
+  "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-bound-queue-v4.json",
+  "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+  "scope": "root-approved P3 full development train/validation only; no test",
+  "accepted": true,
+  "jobs": [
+    {
+      "id": "internal-bound-v4-email-GRU-seed0",
+      "dataset": "email",
+      "variant": "GRU",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-GRU-seed0.json",
+      "config_sha256": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\GRU\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-episode-GRU-seed0",
+      "dataset": "email-episode",
+      "variant": "GRU",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-episode-GRU-seed0.json",
+      "config_sha256": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\GRU\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-STID-seed0",
+      "dataset": "email",
+      "variant": "STID",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-STID-seed0.json",
+      "config_sha256": "3b03ee02b528e2bfb8577f74df37c0f0fec96ec6a905ef4e588ddd83a0fff820",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\STID\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-episode-STID-seed0",
+      "dataset": "email-episode",
+      "variant": "STID",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-episode-STID-seed0.json",
+      "config_sha256": "1078e53ef1b2bd2a9f3e8c5ca73f73c10a239b4c9c6911201c7d30c0e27ba066",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\STID\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-V0-seed0",
+      "dataset": "email",
+      "variant": "V0",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-V0-seed0.json",
+      "config_sha256": "85559bcb1440118ae0441c2cab2ee670e14fa2ca2b5f0501ac147791987ba837",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-episode-V0-seed0",
+      "dataset": "email-episode",
+      "variant": "V0",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-episode-V0-seed0.json",
+      "config_sha256": "6a0469fb6d34d2583d271915f57f0834cd6a21a8fa7426d295621afe156c0c3d",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\V0\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-mooc-V0-seed0",
+      "dataset": "mooc",
+      "variant": "V0",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\mooc-V0-seed0.json",
+      "config_sha256": "4f5d1556645f8ccee37af75ac7233340da924d0b85e9d01b03dc2b0da6066583",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V0\\seed0",
+      "batch_size": 128,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-V1-seed0",
+      "dataset": "email",
+      "variant": "V1",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-V1-seed0.json",
+      "config_sha256": "8919a762d90d54ec4827e4218b086a6956d51d220234abced9f4463be5878d87",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V1\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-email-episode-V1-seed0",
+      "dataset": "email-episode",
+      "variant": "V1",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\email-episode-V1-seed0.json",
+      "config_sha256": "c76f5f4cec67e3ff38f334c84d06c2f0f91d7b8ddabad2e2863b9170f15e52cc",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\V1\\seed0",
+      "batch_size": 8,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    },
+    {
+      "id": "internal-bound-v4-mooc-V1-seed0",
+      "dataset": "mooc",
+      "variant": "V1",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-internal-bound-v4\\mooc-V1-seed0.json",
+      "config_sha256": "a27a75730e36204ea2d07c6a5121f0dcab42c310a4e468e8f7f455bf39f3eea6",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V1\\seed0",
+      "batch_size": 128,
+      "inputs": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+          "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+          "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+        }
+      ]
+    }
+  ],
+  "launch_condition": "prior strong campaign finishes and releases the serial resource lease",
+  "acceptance_boundary": "allocation/configuration only; actual complete outputs and independent numeric review remain required for P3/P3A",
+  "budget_policy": "single cumulative72-hour ledger, including failures; no reset"
+}

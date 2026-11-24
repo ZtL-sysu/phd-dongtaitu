@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scope": "writer_self_review_engineering_only",
+  "status": "tests_passed",
+  "independent_review": false,
+  "real_campaign_run": false,
+  "npz_or_oracle_payload_read": false,
+  "source": {
+    "path": "edsgn/staging/global_frozen_test_completion_v2.py",
+    "sha256": "0BC0C1BA79DB663A0EE1D37C4A9535B12BF10C2B28B939C7832079229D096972"
+  },
+  "tests": {
+    "path": "edsgn/staging/test_global_frozen_test_completion_v2.py",
+    "sha256": "A7C6CBCB62C0BA3FCA772263BC1CA60103C69CD56FA616FCA31177A86507184F",
+    "result": "31 passed"
+  },
+  "test_log": {
+    "path": "logs/global-frozen-test-completion-v2-tests.log",
+    "sha256": "24E993D8E8F2AACFE52EA2E905D79F479448CC899C6C5A8B6B99A459E2CEE426"
+  },
+  "public_api": ["verify_queued_job(root, queue_ref, job_path)", "verify_completion(root, completion_ref, expected_queue_ref)"],
+  "limits": [
+    "Metadata/path/hash closure only; no NPZ payload semantics are verified.",
+    "Consumers must separately pin and integrate this helper before any global closure claim.",
+    "No launch authorization or scientific acceptance is implied."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T11:42:56.476143+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "logs/p3-bound-email-SeqSNN-numeric-v3.json": "047e3b158d72281a279fafd9bfcbed935a0a0baddb239bfd0473557e8f3beca9",
+    "reviews/p3-bound-email-SeqSNN-independent-v3.json": "8844f1c460d354e93f65a29854bed41ac51818a0a08ac48f3e5159bfff40768c",
+    "reviews/p3-bound-email-SeqSNN-independent-v3.md": "a619e2c727f21fe738d53c9d4f1710d913632578a8e2583894d1038a95efd51a",
+    "logs/offline-phase-wall/baseline-bound-v3-email-SeqSNN-seed0.json": "15663a5204063b147e1cc26266699351160983f9408108bf5470e3d2dafab5cf",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/input-binding-at-launch.json": "d56ff3c508dcd850526bc15a24552a6de77d5abcb2a858163714f57d794c39de",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/training_summary.json": "7990c692abffe203af23b2fe96aa1ed46211eff4f1de5394fd718d230d4b4695",
+    "configs/baselines-bound-v3/email-SeqSNN-seed0.json": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59"
+  },
+  "dataset": "email",
+  "variant": "SeqSNN",
+  "model_seed": 0,
+  "formal_five_seed_result": false,
+  "final_test_result": false,
+  "required_horizon_mean_mae": 0.4197174658377965
+}

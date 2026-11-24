@@ -1,0 +1,284 @@
+{
+  "scope": "independent saved-validation numeric and metadata review; validation split only",
+  "status": "passed",
+  "test_origins_scored": false,
+  "oracle_read": false,
+  "checkpoint_deserialized": false,
+  "combined_npz_disclosure": "Only metadata_json was opened from the original chronological NPZ; full source file was hashed. Its targets member was not opened by this independent review. The pre-existing numeric-v3 audit attests validation target/mask source alignment; its implementation may materialize a full combined targets array.",
+  "rows": [
+    {
+      "dataset": "email",
+      "method": "GRU",
+      "seed": 0,
+      "prediction_shape": [
+        74,
+        7,
+        986,
+        2
+      ],
+      "train_windows": 528,
+      "validation_origins": 74,
+      "training_epochs": 47,
+      "best_epoch": 37,
+      "required_horizon_mean_feature_mae": 0.019513700312624376,
+      "required_horizon_feature_metrics": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "mae": 0.032659661024808884,
+          "rmse": 0.032659661024808884,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "mae": 0.010304602794349194,
+          "rmse": 0.010304602794349194,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "mae": 0.018577709794044495,
+          "rmse": 0.018577709794044495,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "mae": 0.006727534346282482,
+          "rmse": 0.006727534346282482,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "mae": 0.03753482922911644,
+          "rmse": 0.03753482922911644,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "mae": 0.011277864687144756,
+          "rmse": 0.011277864687144758,
+          "valid_cells": 72964
+        }
+      ],
+      "mask_all_valid": true,
+      "phase_receipt_sha256": "6743e6b15041beaaadc1ca100535b9769464f77e0fee2bb4ea95d06dca52e660",
+      "numeric_report_sha256": "bd371c668c975f0b8cd8636bc9349fa5ddccef86808a86c65cb88e1698f58148",
+      "validation_prediction_sha256": "d1a8ea5adaf64f74a42fb6b341cafd3eb1da44797bd9d3655449e19016f1f943",
+      "dataset_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+      "launch_binding_status": "verified",
+      "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "numeric_v3_auditor_sha256": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "GRU",
+      "seed": 0,
+      "prediction_shape": [
+        46,
+        7,
+        893,
+        2
+      ],
+      "train_windows": 334,
+      "validation_origins": 46,
+      "training_epochs": 41,
+      "best_epoch": 31,
+      "required_horizon_mean_feature_mae": 0.6905392248445713,
+      "required_horizon_feature_metrics": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "mae": 0.6338091206684853,
+          "rmse": 1.4812639803630412,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "mae": 0.7343599337462248,
+          "rmse": 2.8298461370819066,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "mae": 0.6502585746582786,
+          "rmse": 1.5214077861524753,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "mae": 0.7588165909345906,
+          "rmse": 2.8378016035679687,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "mae": 0.642323188816178,
+          "rmse": 1.4260602699565963,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "mae": 0.7236679402436709,
+          "rmse": 2.6418069568211653,
+          "valid_cells": 41078
+        }
+      ],
+      "mask_all_valid": true,
+      "phase_receipt_sha256": "a087a0a9ea4e9ca96ec3d56ef98b85551c0c6e519e8f7fada3637ed966c30d36",
+      "numeric_report_sha256": "ea98a9bf56fa55b3989454cb9920cc81df8f109d49b3dd4663aeb1bc84c305c0",
+      "validation_prediction_sha256": "3f3efdbbf9d98c8cbcd57be6f939e8f24066f755b10f493c96d8c5a1385d468b",
+      "dataset_sha256": "34d8706366c2230f70daabae1e86e0b24dc4050eede0e71d42b0709d76178293",
+      "launch_binding_status": "verified",
+      "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "numeric_v3_auditor_sha256": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94"
+    },
+    {
+      "dataset": "email",
+      "method": "STID",
+      "seed": 0,
+      "prediction_shape": [
+        74,
+        7,
+        986,
+        2
+      ],
+      "train_windows": 528,
+      "validation_origins": 74,
+      "training_epochs": 12,
+      "best_epoch": 2,
+      "required_horizon_mean_feature_mae": 0.0547726234784095,
+      "required_horizon_feature_metrics": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "mae": 0.05075839098542316,
+          "rmse": 0.051767050973926344,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "mae": 0.019112179816399438,
+          "rmse": 0.021209576888629914,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "mae": 0.056772233717861185,
+          "rmse": 0.05755956056285254,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "mae": 0.03374044726505777,
+          "rmse": 0.035623851791440876,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "mae": 0.09657833153829914,
+          "rmse": 0.09818548918469831,
+          "valid_cells": 72964
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "mae": 0.07167415754741632,
+          "rmse": 0.07566213543469331,
+          "valid_cells": 72964
+        }
+      ],
+      "mask_all_valid": true,
+      "phase_receipt_sha256": "8d3d8d3142b6c9d93398a2f9853ec6c61cce85284123f4fc910241d03fe2c307",
+      "numeric_report_sha256": "82a7efe4ff1fb123f5fd09ee3dc46b2fb5f60aa3a3ec2d15ebd34f531c015f60",
+      "validation_prediction_sha256": "9d051a5f4a975634b441c2f4bfc1fae82db270b3ce8bc4d2b3b877132089b122",
+      "dataset_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+      "launch_binding_status": "verified",
+      "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "numeric_v3_auditor_sha256": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "STID",
+      "seed": 0,
+      "prediction_shape": [
+        46,
+        7,
+        893,
+        2
+      ],
+      "train_windows": 334,
+      "validation_origins": 46,
+      "training_epochs": 34,
+      "best_epoch": 24,
+      "required_horizon_mean_feature_mae": 0.6565308858215679,
+      "required_horizon_feature_metrics": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "mae": 0.5826206737494595,
+          "rmse": 1.441526888084226,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "mae": 0.685698457056181,
+          "rmse": 2.8127980798094376,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "mae": 0.6195061254682571,
+          "rmse": 1.485174546096396,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "mae": 0.7347690267529737,
+          "rmse": 2.8277787701634307,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "mae": 0.6013269748582658,
+          "rmse": 1.4178810451803103,
+          "valid_cells": 41078
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "mae": 0.7152640570442707,
+          "rmse": 2.668272549240912,
+          "valid_cells": 41078
+        }
+      ],
+      "mask_all_valid": true,
+      "phase_receipt_sha256": "fa6f8a94311126c9b1078e355fcc906837f78e9118907a175d55bfe8778b91fe",
+      "numeric_report_sha256": "76eb2e3668b38ebee8e1e0350422415daf4d970ecdd49e7d2e8334edfa28248e",
+      "validation_prediction_sha256": "de2afd8812a24e26fa996ec392ef7913714a8aa2ce3bb2d323fb18622dd8d464",
+      "dataset_sha256": "34d8706366c2230f70daabae1e86e0b24dc4050eede0e71d42b0709d76178293",
+      "launch_binding_status": "verified",
+      "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "numeric_v3_auditor_sha256": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94"
+    }
+  ],
+  "review_path": "reviews/p3-internal-four-numeric-independent-v1.md",
+  "review_sha256": "0e95ad05f76058e204636c9d301f50c22f3a2f380404b8922e25f9cfc6313705"
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "metadata_only_current_full_process_scan",
+  "active_owned_jobs": [
+    {
+      "pid": 6236
+    },
+    {
+      "pid": 33368
+    }
+  ],
+  "launch_authorized": false,
+  "real_job_started": false
+}

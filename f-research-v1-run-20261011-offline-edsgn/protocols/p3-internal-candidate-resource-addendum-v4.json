@@ -1,0 +1,33 @@
+{
+  "schema_version": 4,
+  "status": "root-frozen-before-internal-optimizer-launch",
+  "scope": "P3 full development train/validation for GRU/STID/V0/V1 only",
+  "resource_contract": "protocols/p3-training-resource-contract-v2.json",
+  "training_candidate_tensor": {
+    "V0": false,
+    "V1": true,
+    "guard": "training plus gradients plus contacts, default off; eval/no-grad reference path",
+    "exactness_evidence": [
+      "reviews/p2-training-candidate-independent-review-v3.md",
+      "reviews/candidate-gpu-fullpath-probe-v3-independent-review.md",
+      "logs/candidate-gpu-fullpath-probe-v3.json",
+      "reviews/p2-c05-integrated-tests-v1.md"
+    ],
+    "memory_applicability": "The measured B8 email full forward/backward diagnostic matched the reference peak of1962480128bytes and exact outputs/loss/gradients/counters. The reference MOOC B128 finite-gradient resource allocation remains conservative: tensor helper only adds bounded temporary IDs/counts/membership, with CPU MOOC all-variant parity; actual full training records peak allocation and fail-closed budget/finite checks. No throughput or accuracy benefit is assumed."
+  },
+  "training_prior_cache": true,
+  "training_prior_cache_bytes": 1073741824,
+  "unchanged": [
+    "architecture and equations",
+    "task shapes/node cohorts/required horizons",
+    "all train/validation origins",
+    "train-only normalization/raw masked MSE",
+    "d64,k8,K32,tau1/8,beta1,lambda0.01",
+    "AdamW lr0.001 wd0.0001 clip1",
+    "maximum100 epochs patience10",
+    "formal core seeds0-4 and test isolation"
+  ],
+  "budget_policy": "single cumulative72-hour ledger, including failures; no reset",
+  "root_acceptance": "allocation and full baseline execution only; no P3/P3A/hypothesis acceptance",
+  "launch_condition": "serial resource lease released by prior campaign; P2passed/P3running"
+}

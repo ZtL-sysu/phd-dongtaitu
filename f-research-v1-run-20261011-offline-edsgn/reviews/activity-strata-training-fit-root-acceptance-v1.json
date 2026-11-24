@@ -1,0 +1,43 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "actual_training_only_descriptive_node_group_fits",
+  "created_utc": "2026-10-11T11:43:42.683637+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "configs/baselines-bound-v3/email-DGCRN-seed0.json": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+    "configs/baselines-bound-v3/email-episode-DGCRN-seed0.json": "0f21e6a192aad417290f4940b8b3efc965d47d7f6cdb4facde815e65df6b3bac",
+    "configs/baselines-bound-v3/mooc-DGCRN-seed0.json": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+    "configs/baselines-bound-v3/synthetic-DGCRN-seed0.json": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+    "data/processed/email-episode-v1/email-episode.npz": "34d8706366c2230f70daabae1e86e0b24dc4050eede0e71d42b0709d76178293",
+    "data/processed/email/email.npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+    "data/processed/mooc/mooc.npz": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed0.npz": "32a9d753c0ae872aa9b876eea3dffbe37eed4c712b1e579b3acc42c152a107d5",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed1.npz": "7bfa3d723830bdf363942511198d7282a56d0ca1e32bbf7b921206d101a92115",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed2.npz": "79c7f7cfe4259437c4998409d7544eb1c178e190e29ff5392f275de51ea85173",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed3.npz": "63a5b407dacec2aff6c7329d1cfd3348a4e8ad2d4b924c5ebceb2fd37e8110a0",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed4.npz": "c3f6321bf9fe129def616a3f882f5281204d5efc7c1b6179b08a2d6cd90677e5",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed5.npz": "f555ab127349d4bf7b11747ec8e9d0b74fa4a620476424d86a5c080c85a17828",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed6.npz": "ecdc3a6971ec1bd656e39d5a83f7ac846b92f24fb8e8381726a788e5f7683720",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/train_seed7.npz": "4ca071785ce7f9d7f5dd0eea0f9a745afb29af8f49ba2aac700b33167d6f9a09",
+    "edsgn/scripts/prepare_training_activity_strata_root_v1.py": "4838612d6683602454dbc70f6bf8246796e1bd5beac98837850217bc77f7c5f3",
+    "edsgn/staging/activity_stratified_metrics_v1.py": "f4f7358daf2872346b85030ed2d6d3ce258b93475f34a6d380a7448f708c9687",
+    "protocols/activity-strata-reporting-root-rule-v1.md": "ced31bbfe21b9940fa6cc933effb954cda38acc0edc0d9fae871bc052e9662d4",
+    "protocols/activity-strata-training-fit-email-episode-v1.json": "82934f6848219c370c119124bc9f1da59d4de07ebe3552bc9372e4c10515aff6",
+    "protocols/activity-strata-training-fit-email-v1.json": "697e1ad52391a45a38dda003f2fc44b4e1cbc6e4672b4611781790e52fbb438f",
+    "protocols/activity-strata-training-fit-mooc-v1.json": "f9d0c136fe2485019add390ad047908aab3997b3272a23a231d8fcf10b201bc1",
+    "protocols/activity-strata-training-fit-synthetic-v1.json": "d5d9600abbccc3214cab8e450da8b56a8c35b3f4ba7b1c64380b2f90f1a9e1e8",
+    "reviews/activity-strata-training-fit-independent-v1.json": "a446977879f3460f6a607fd38d7cdcbf63d53fc660ec00aabe95ad8ce457034c",
+    "reviews/activity-strata-training-fit-independent-v1.md": "7daa56ae0e2593a783765ec04166845f95255e95dce1647251c49339a357c375"
+  },
+  "regimes": [
+    "synthetic",
+    "email",
+    "mooc",
+    "email-episode"
+  ],
+  "actual_training_only_fits": 4,
+  "actual_test_metrics_computed": false,
+  "pretest_execution_binding_accepted": false
+}

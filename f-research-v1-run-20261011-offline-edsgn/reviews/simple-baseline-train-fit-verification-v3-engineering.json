@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "status": "writer_engineering_evidence_only",
+  "scope": "temporary_cpu_toy_fixtures_only",
+  "pytest": {"passed": 18, "failed": 0, "log": "logs/simple-baseline-train-fit-verification-v3-tests.log", "sha256": "3852ed4885a8a0c64f1a8b623cab7bf8572cb274739de404621be6fde012cf48"},
+  "source": {"path": "edsgn/staging/simple_baseline_train_fit_verification_v3.py", "sha256": "b4cfa29a5c5bdcf99c699a4c2af0a11276e2f70b9d89149776d9dd847b6bf21a"},
+  "tests": {"path": "edsgn/tests/test_simple_baseline_train_fit_verification_v3.py", "sha256": "822a956336cc3b0f00f2588eed265088336f689d59bb9e36f159e35be4fa8cbe"},
+  "canonical_engine_source": {"path": "edsgn/src/edsgn/engine.py", "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3", "package_module_count": 21, "fit_manifest_source_count_including_verifier": 22},
+  "assertions": ["canonical source inventory exact names/hashes, no hard-coded count", "same source reference across stages allowed", "duplicate source reference within stage rejected", "stale/conflicting digest rejected", "CLI successful receipt completed while both owned locks held", "CLI coefficient mismatch writes failed receipt while locks held", "input mutation before loader rejected", "unexpected output membership rejected", "evaluator-compatible train/val-only schema retained"],
+  "not_claimed": ["actual legacy fit verified", "production official validator pass", "root acceptance", "actual campaign or test/oracle access"]
+}

@@ -1,0 +1,22 @@
+{
+  "scope": "engineering_only_p3_completed_campaign_auditor_recovery_projection",
+  "status": "preparation_only_root_acceptance_pending",
+  "source_sha256": "ebf505415bb02e28541a6d0af4539e6d05d8f4de650e64da80dab98936ce8663",
+  "v5_source_preserved_sha256": "92014c522826ef80b653d856d7644cf220454b3c88d70586a4eb288d8e051bff",
+  "test_sha256": "ce68ddc423e56fff15138c3d88f3cf92b9063283af7f4ee89ddcb75a137ce631",
+  "test_log_path": "logs/audit-completed-p3-campaign-v6-tests.log",
+  "test_log_sha256": "c966565bdc9b4a4e95d333914b7a4b295c2df34853a0e1e04aa12e8f282972b8",
+  "tests_passed": 14,
+  "subtests_passed": 4,
+  "pytest_elapsed_seconds": 3.45,
+  "whole_command_wall_seconds": 4.41,
+  "logical_rows": 80,
+  "root_accepted_rows_expected": 12,
+  "host_recovery_rows_expected": 68,
+  "stopped_old_attempt_reported_separately": true,
+  "no_actual_campaign_audit": true,
+  "no_test_origins_scored": true,
+  "combined_npz_materialization_disclosure_inherited": true,
+  "root_acceptance_pending": false,
+  "review_role": "writer_self_review"
+}

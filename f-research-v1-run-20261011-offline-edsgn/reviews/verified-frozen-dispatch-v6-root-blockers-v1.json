@@ -1,0 +1,12 @@
+{
+  "reviewer": "root",
+  "verdict": "blocked",
+  "scope": "engineering-staging-only",
+  "actual_experiment_run": false,
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/verified_frozen_dispatch_v6.py": "21ca51e7702963976816243b4492e39b2209c9db9865abb34acc0f993a8e0c43",
+    "edsgn/tests/test_verified_frozen_dispatch_v6.py": "30dc01acff6295420409d2772517aaed249c673b0d45ee172faf3c1a5bb54b80"
+  }
+}

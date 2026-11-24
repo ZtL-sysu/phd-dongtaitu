@@ -1,0 +1,109 @@
+{
+  "scope": "P3 baseline-only full seed0 train/validation; no test; P2 delta must pass first",
+  "jobs": [
+    {
+      "id": "baseline-bound-v3-synthetic-DGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\DGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-synthetic-SeqSNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\SeqSNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-mooc-DGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\DGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-mooc-SeqSNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\SeqSNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-email-DGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\DGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-email-SeqSNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\SeqSNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-email-episode-DGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-episode-DGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\DGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    },
+    {
+      "id": "baseline-bound-v3-email-episode-SeqSNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-episode-SeqSNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\SeqSNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json"
+      ]
+    }
+  ]
+}

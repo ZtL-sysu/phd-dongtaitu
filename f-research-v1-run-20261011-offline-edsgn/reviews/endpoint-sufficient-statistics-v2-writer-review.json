@@ -1,0 +1,13 @@
+{
+  "schema": "endpoint-sufficient-statistics-v2-writer-review-v1",
+  "review_role": "writer-self-review",
+  "scope": "pure-array engineering only",
+  "verdict": "ready-for-root-review",
+  "scientific_result": false,
+  "test_result": "7 passed",
+  "evidence_sha256": {
+    "edsgn/staging/endpoint_sufficient_statistics_v2.py": "030f6b461bfb998e83c21f2a6a11ae2de62eda6cb7754a6d81440c2509b16a66",
+    "edsgn/tests/test_endpoint_sufficient_statistics_v2.py": "4184042c48c5c03faf3be54a85e4de354635a75764334387b8c0ad0b55c29124",
+    "logs/endpoint-sufficient-statistics-v2-tests.log": "0d000b43179b279b7c2f32383f3d97a268135ea0ca6680e8dfbfeec7a82c35e3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "scope": "engineering-only independent review",
+  "verdict": "blocked: actual metadata preflight cannot complete",
+  "source_sha256": "D1C12D6CFB9CBF696F2AF12C55EF3310F5761A619B24B1CD91DDE47224ECEF26",
+  "tests_sha256": "DC038F59BB5F09F4C0FB6BB427D1B03B4EC10973FE9C6003619FF10E1F30AD5E",
+  "root_acceptance_sha256": "6A38DF5F0FD95586A8675E44F9B500EFC175609E3B246B989205C37A44921148",
+  "test_result": "15 passed, 4 subtests passed",
+  "whole_command_wall_seconds": 5.1134543,
+  "metadata_preflight": "blocked at prior v1 acceptance evidence verification before logical campaign assembly",
+  "blocking_reference": {
+    "path": "protocols/training-budget-manual-ledger.json",
+    "prior_v1_expected_sha256": "5bbd6281658667520a6dfe7bcb257a40878e605f80e96b75ec3a0e7f4abace87",
+    "current_sha256": "26285a87f5bd9383772c62aaa94ab98ddf7245b9e261f087342a4450543e7205",
+    "accepted_v2_historical_snapshot": "protocols/training-budget-manual-ledger-before-host-repair-v2.json",
+    "historical_snapshot_sha256": "5bbd6281658667520a6dfe7bcb257a40878e605f80e96b75ec3a0e7f4abace87"
+  },
+  "confirmed_by_source_and_fixture": [
+    "canonical order is projected from the six source queues, with exact pending-set coverage enforced by project_recovery_jobs/order_logical_rows",
+    "12 previously accepted logical rows are reused by bound prior numeric acceptances and completed receipts; 68 recovery rows map to those remaining logical IDs",
+    "stopped/interrupted physical attempt is kept separate and is not counted as a completed or failed logical row",
+    "phase/config/output/binding hashes are checked before numeric reuse/audit and rechecked after numeric work",
+    "combined-archive disclosure states validation origins are scored while NPZ members may materialize other partitions"
+  ],
+  "limits": ["No run_recovered_campaign or actual numeric audit was executed", "No model, checkpoint payload, NPZ member, GPU, or optimizer was loaded", "The v6 actual recovery preflight remains unusable until its exact historical-ledger substitution is implemented and independently reviewed"]
+}

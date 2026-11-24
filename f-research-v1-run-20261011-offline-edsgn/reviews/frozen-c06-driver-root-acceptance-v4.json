@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:05:44.678436+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_split_history_robustness_v4.py": "15f8996b90e1bb6c01d139e6b9484b1d6272e4cade67b373c37446f97e08c107",
+    "edsgn/staging/c06_domain_manifest_preflight_v3.py": "ee1b093427407ded224db59d9a88d32f530ee6a1178db44e6ad82bdc252c2c86",
+    "edsgn/tests/test_frozen_split_history_robustness_v4.py": "dd25ec81c3747ab7d8c9eb3b6af2578e413ae1772de010e38e74fa38bc1b7e4f",
+    "reviews/frozen-c06-v4-independent-v1.md": "11981596b5b196ad2bab7d7650fe62e3973ea5cea4afb8a52ff53172a5630a07",
+    "reviews/frozen-c06-v4-independent-v1.json": "b9542ae7012caaf347ff2e724eee128e9f658680572a2d6792d1946e196a6dae"
+  },
+  "actual_robustness_replay_run": false,
+  "c06_experiment_closed": false
+}

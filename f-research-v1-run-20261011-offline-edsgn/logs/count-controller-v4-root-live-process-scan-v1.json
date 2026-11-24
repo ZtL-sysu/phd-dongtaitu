@@ -1,0 +1,19 @@
+{
+  "scope": "metadata_only_native_snapshot_and_exact_live_pid_scan_no_launch",
+  "native_snapshot_selected": {
+    "188": {
+      "name": "Secure System",
+      "parent_pid": 4
+    },
+    "33368": {
+      "name": "python.exe",
+      "parent_pid": 6236
+    }
+  },
+  "filtered_live_scan": [
+    {
+      "pid": 33368
+    }
+  ],
+  "global_scan_or_launch_authorized": false
+}

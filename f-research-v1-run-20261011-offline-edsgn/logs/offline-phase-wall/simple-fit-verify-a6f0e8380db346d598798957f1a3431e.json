@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\staging\\simple_baseline_train_fit_verification_v4.py",
+    "--dataset",
+    "../data/processed/email-episode-v1/email-episode.npz",
+    "--legacy-output",
+    "../runs/baselines/email-episode/simple",
+    "--output",
+    "../logs/simple-fit-verify-v4-email-episode-result.json"
+  ],
+  "diagnostic_scope": "resource/functionality",
+  "finished_utc": "2026-10-13T11:01:00Z",
+  "id": "simple-fit-verify-a6f0e8380db346d598798957f1a3431e",
+  "input_fence_after_sha256": "3310354627d5fc1ea8fe6e771c06c60659c1b2d48ff31bc9e9cac163baaa75b8",
+  "input_fence_before_sha256": "3310354627d5fc1ea8fe6e771c06c60659c1b2d48ff31bc9e9cac163baaa75b8",
+  "job_id": "simple-fit-verify-a6f0e8380db346d598798957f1a3431e",
+  "lock_token_sha256": "2da07b30eb6bda3be237b7de136b13a3b9f1c5a1478212c5bb22dd254f437ee8",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-email-episode-result.json",
+  "output_files": {
+    "simple-baseline-train-fit-verification.json": "33e881dde7a2d9695cafff54e571e6ed740386e80dd103215dd15557071be76a",
+    "verification-report.json": "b726e96d5ddf492e7289b629b85f6bb80f0b4e0b055aafd6e18de1fb3ce035e1"
+  },
+  "phase": "training",
+  "returncode": 0,
+  "scope": "offline-experiment-phase",
+  "started_utc": "2026-10-13T10:59:52Z",
+  "status": "completed",
+  "wall_seconds": 68.46814700000687
+}

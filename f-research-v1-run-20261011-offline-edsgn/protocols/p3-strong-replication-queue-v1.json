@@ -1,0 +1,2401 @@
+{
+  "schema_version": 3,
+  "status": "prepared-not-launched",
+  "scope": "P3 primary DGCRN/SeqSNN model-seed replication for synthetic/email/MOOC; full train/validation; no test",
+  "root_scientific_decision": "DGCRN and SeqSNN are primary-regime five-seed comparators; other RP baselines remain seed0 descriptive; email-episode remains secondary diagnostic",
+  "required_gates": {
+    "P2": "passed",
+    "P3": "running"
+  },
+  "launch_conditions": [
+    "explicit root acceptance of this queue",
+    "canonical P2/P3 gate revalidated immediately before launch",
+    "accepted P3 training-resource contract and two-lock/owned-process/serial guards",
+    "cumulative 72-hour aggregate budget coverage and remaining-budget gate pass",
+    "at-launch input binding records exact dataset/config/source hashes and verifies unchanged after each run",
+    "the corresponding seed0 run is independently accepted on full train/validation scope and immutable input/config hashes before five-seed aggregation"
+  ],
+  "predecessor": {
+    "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+    "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+    "scope": "accepted seed0 templates only; this successor does not edit or relaunch them"
+  },
+  "resource_contract": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+    "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+  },
+  "source_bindings": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+      "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+      "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+      "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+      "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+      "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+      "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+      "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+    }
+  ],
+  "config_bindings": [
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-DGCRN-seed1.json",
+      "config_sha256": "2df44010a55787d439ffe25bde4f70f14cdae3c29c12149d15d5b512e5c409ed",
+      "seed": 1,
+      "dataset": "synthetic",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-DGCRN-seed2.json",
+      "config_sha256": "943c70fae7636378ccc464c543c19f3b639f72e8aa3b5b255cd61d1c15f0d8c7",
+      "seed": 2,
+      "dataset": "synthetic",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-DGCRN-seed3.json",
+      "config_sha256": "f732a98ec561ead7cce1b4f75f058a024d754a379ef6aa8cbf3f084228fe0647",
+      "seed": 3,
+      "dataset": "synthetic",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-DGCRN-seed4.json",
+      "config_sha256": "dc87513ff6c822ae463d118a786206a738f4432da9156cbe5c198b54ebca8603",
+      "seed": 4,
+      "dataset": "synthetic",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-SeqSNN-seed1.json",
+      "config_sha256": "f6878b00deb7c7c1dd350dcdf9538908faebaba73db9d369d490dd41abe191fc",
+      "seed": 1,
+      "dataset": "synthetic",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-SeqSNN-seed2.json",
+      "config_sha256": "3fb300c073fce76f92d75d9141c920a28674213fb914347003a451920103daa0",
+      "seed": 2,
+      "dataset": "synthetic",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-SeqSNN-seed3.json",
+      "config_sha256": "fd18b4cafd4d0aae494a976402b2c25bd2182bbac7dace91092161d766261e2c",
+      "seed": 3,
+      "dataset": "synthetic",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/synthetic-SeqSNN-seed4.json",
+      "config_sha256": "3de751145584de578902cd65f298397de217b419c7fb6945e15b28d1f654e012",
+      "seed": 4,
+      "dataset": "synthetic",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-DGCRN-seed1.json",
+      "config_sha256": "0c26323cf114c366f296064d9d372dd082174af624e49c640de1bde036793b8c",
+      "seed": 1,
+      "dataset": "email",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-DGCRN-seed2.json",
+      "config_sha256": "49ebd5ba010bf109d76085241906b3b465f51ba6fd69ea079f865b4d189718ff",
+      "seed": 2,
+      "dataset": "email",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-DGCRN-seed3.json",
+      "config_sha256": "25a17d317153fdcf1ea160e11f67ba5b1191a2571e7b326ba42f51f632ca903f",
+      "seed": 3,
+      "dataset": "email",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-DGCRN-seed4.json",
+      "config_sha256": "8a261651c0031af51096fe17fa4278b8723726ad8b630331efadd89340a22939",
+      "seed": 4,
+      "dataset": "email",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-SeqSNN-seed1.json",
+      "config_sha256": "26caaaab15df16acd478aa5af87e988a9b22ed420c7577afb8f7b09262dce36b",
+      "seed": 1,
+      "dataset": "email",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-SeqSNN-seed2.json",
+      "config_sha256": "595043e146d43ba720f162f5ae8e324c44711b33423939924d369bc76054e0fc",
+      "seed": 2,
+      "dataset": "email",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-SeqSNN-seed3.json",
+      "config_sha256": "2449e65d9d00ed0573e19d1f597244a1b88098eb6509367c54528810d0b7750d",
+      "seed": 3,
+      "dataset": "email",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/email-SeqSNN-seed4.json",
+      "config_sha256": "da6630c198df43f3764c33f4490781d48ffb77ef125408d84741e88edd5510aa",
+      "seed": 4,
+      "dataset": "email",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-DGCRN-seed1.json",
+      "config_sha256": "9328b688d51a8a605c7d81bb85fbbb5bbb093031a13bd159b3dd1ccb2d3859a0",
+      "seed": 1,
+      "dataset": "mooc",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-DGCRN-seed2.json",
+      "config_sha256": "e94a43d88fa6ff97aae007b5bf5f91cbca82216e2c2096257b06a0129a996064",
+      "seed": 2,
+      "dataset": "mooc",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-DGCRN-seed3.json",
+      "config_sha256": "b8cccdc5941b7b3d6f5eae4181df80808a3aea1dfeba7afa0f9aa17c7778b4b6",
+      "seed": 3,
+      "dataset": "mooc",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-DGCRN-seed4.json",
+      "config_sha256": "1f29c42477d4b6e69f1be29ea4180ec8b4f87bae34c5020a702ab34312ef9bca",
+      "seed": 4,
+      "dataset": "mooc",
+      "method": "DGCRN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-SeqSNN-seed1.json",
+      "config_sha256": "ccccbcd5a17df2656780bc35d1fbc933b726ac67eb9df691b749a3bec3255055",
+      "seed": 1,
+      "dataset": "mooc",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-SeqSNN-seed2.json",
+      "config_sha256": "5c77455e39e505024393bb476aa1108d810a788e9b1b63ceff82236ebbc367e5",
+      "seed": 2,
+      "dataset": "mooc",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-SeqSNN-seed3.json",
+      "config_sha256": "e5ae46eaea576c86c63d248df5111dc32c8f5c22e787f67ec8c70f40994edb65",
+      "seed": 3,
+      "dataset": "mooc",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    },
+    {
+      "config": "configs/p3-strong-replication-v1/mooc-SeqSNN-seed4.json",
+      "config_sha256": "400e643fc2cb08735c87582f855891c4b38f1aa856f02be0c197f5719164803b",
+      "seed": 4,
+      "dataset": "mooc",
+      "method": "SeqSNN",
+      "seed0_config": "configs/baselines-bound-v3/mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "only_changed_fields": [
+        "seed",
+        "output_dir"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "strong-five-seed-v1-synthetic-DGCRN-seed1",
+      "dataset": "synthetic",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed1.json",
+      "config_sha256": "2df44010a55787d439ffe25bde4f70f14cdae3c29c12149d15d5b512e5c409ed",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\DGCRN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "2df44010a55787d439ffe25bde4f70f14cdae3c29c12149d15d5b512e5c409ed",
+        "seed0_reference_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-DGCRN-seed2",
+      "dataset": "synthetic",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed2.json",
+      "config_sha256": "943c70fae7636378ccc464c543c19f3b639f72e8aa3b5b255cd61d1c15f0d8c7",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\DGCRN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "943c70fae7636378ccc464c543c19f3b639f72e8aa3b5b255cd61d1c15f0d8c7",
+        "seed0_reference_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-DGCRN-seed3",
+      "dataset": "synthetic",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed3.json",
+      "config_sha256": "f732a98ec561ead7cce1b4f75f058a024d754a379ef6aa8cbf3f084228fe0647",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\DGCRN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "f732a98ec561ead7cce1b4f75f058a024d754a379ef6aa8cbf3f084228fe0647",
+        "seed0_reference_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-DGCRN-seed4",
+      "dataset": "synthetic",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed4.json",
+      "config_sha256": "dc87513ff6c822ae463d118a786206a738f4432da9156cbe5c198b54ebca8603",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+      "seed0_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\DGCRN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "dc87513ff6c822ae463d118a786206a738f4432da9156cbe5c198b54ebca8603",
+        "seed0_reference_config_sha256": "ea73d2541ec0ba5b59557934b09d1e852343dcb74c0fbdc1094e9a171f17d15a",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-SeqSNN-seed1",
+      "dataset": "synthetic",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed1.json",
+      "config_sha256": "f6878b00deb7c7c1dd350dcdf9538908faebaba73db9d369d490dd41abe191fc",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\SeqSNN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 256,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "f6878b00deb7c7c1dd350dcdf9538908faebaba73db9d369d490dd41abe191fc",
+        "seed0_reference_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-SeqSNN-seed2",
+      "dataset": "synthetic",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed2.json",
+      "config_sha256": "3fb300c073fce76f92d75d9141c920a28674213fb914347003a451920103daa0",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\SeqSNN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 256,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "3fb300c073fce76f92d75d9141c920a28674213fb914347003a451920103daa0",
+        "seed0_reference_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-SeqSNN-seed3",
+      "dataset": "synthetic",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed3.json",
+      "config_sha256": "fd18b4cafd4d0aae494a976402b2c25bd2182bbac7dace91092161d766261e2c",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\SeqSNN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 256,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "fd18b4cafd4d0aae494a976402b2c25bd2182bbac7dace91092161d766261e2c",
+        "seed0_reference_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-synthetic-SeqSNN-seed4",
+      "dataset": "synthetic",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed4.json",
+      "config_sha256": "3de751145584de578902cd65f298397de217b419c7fb6945e15b28d1f654e012",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+      "seed0_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\SeqSNN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 256,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\synthetic-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "3de751145584de578902cd65f298397de217b419c7fb6945e15b28d1f654e012",
+        "seed0_reference_config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-DGCRN-seed1",
+      "dataset": "email",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed1.json",
+      "config_sha256": "0c26323cf114c366f296064d9d372dd082174af624e49c640de1bde036793b8c",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\DGCRN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 4,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "0c26323cf114c366f296064d9d372dd082174af624e49c640de1bde036793b8c",
+        "seed0_reference_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-DGCRN-seed2",
+      "dataset": "email",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed2.json",
+      "config_sha256": "49ebd5ba010bf109d76085241906b3b465f51ba6fd69ea079f865b4d189718ff",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\DGCRN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 4,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "49ebd5ba010bf109d76085241906b3b465f51ba6fd69ea079f865b4d189718ff",
+        "seed0_reference_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-DGCRN-seed3",
+      "dataset": "email",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed3.json",
+      "config_sha256": "25a17d317153fdcf1ea160e11f67ba5b1191a2571e7b326ba42f51f632ca903f",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\DGCRN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 4,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "25a17d317153fdcf1ea160e11f67ba5b1191a2571e7b326ba42f51f632ca903f",
+        "seed0_reference_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-DGCRN-seed4",
+      "dataset": "email",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed4.json",
+      "config_sha256": "8a261651c0031af51096fe17fa4278b8723726ad8b630331efadd89340a22939",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+      "seed0_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\DGCRN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 4,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-DGCRN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "8a261651c0031af51096fe17fa4278b8723726ad8b630331efadd89340a22939",
+        "seed0_reference_config_sha256": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-SeqSNN-seed1",
+      "dataset": "email",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed1.json",
+      "config_sha256": "26caaaab15df16acd478aa5af87e988a9b22ed420c7577afb8f7b09262dce36b",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\SeqSNN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 2,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "26caaaab15df16acd478aa5af87e988a9b22ed420c7577afb8f7b09262dce36b",
+        "seed0_reference_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-SeqSNN-seed2",
+      "dataset": "email",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed2.json",
+      "config_sha256": "595043e146d43ba720f162f5ae8e324c44711b33423939924d369bc76054e0fc",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\SeqSNN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 2,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "595043e146d43ba720f162f5ae8e324c44711b33423939924d369bc76054e0fc",
+        "seed0_reference_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-SeqSNN-seed3",
+      "dataset": "email",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed3.json",
+      "config_sha256": "2449e65d9d00ed0573e19d1f597244a1b88098eb6509367c54528810d0b7750d",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\SeqSNN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 2,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "2449e65d9d00ed0573e19d1f597244a1b88098eb6509367c54528810d0b7750d",
+        "seed0_reference_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-email-SeqSNN-seed4",
+      "dataset": "email",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed4.json",
+      "config_sha256": "da6630c198df43f3764c33f4490781d48ffb77ef125408d84741e88edd5510aa",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+      "seed0_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\email\\SeqSNN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 2,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\email-SeqSNN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\email-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "da6630c198df43f3764c33f4490781d48ffb77ef125408d84741e88edd5510aa",
+        "seed0_reference_config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-DGCRN-seed1",
+      "dataset": "mooc",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed1.json",
+      "config_sha256": "9328b688d51a8a605c7d81bb85fbbb5bbb093031a13bd159b3dd1ccb2d3859a0",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\DGCRN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "9328b688d51a8a605c7d81bb85fbbb5bbb093031a13bd159b3dd1ccb2d3859a0",
+        "seed0_reference_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-DGCRN-seed2",
+      "dataset": "mooc",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed2.json",
+      "config_sha256": "e94a43d88fa6ff97aae007b5bf5f91cbca82216e2c2096257b06a0129a996064",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\DGCRN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "e94a43d88fa6ff97aae007b5bf5f91cbca82216e2c2096257b06a0129a996064",
+        "seed0_reference_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-DGCRN-seed3",
+      "dataset": "mooc",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed3.json",
+      "config_sha256": "b8cccdc5941b7b3d6f5eae4181df80808a3aea1dfeba7afa0f9aa17c7778b4b6",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\DGCRN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "b8cccdc5941b7b3d6f5eae4181df80808a3aea1dfeba7afa0f9aa17c7778b4b6",
+        "seed0_reference_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-DGCRN-seed4",
+      "dataset": "mooc",
+      "variant": "DGCRN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed4.json",
+      "config_sha256": "1f29c42477d4b6e69f1be29ea4180ec8b4f87bae34c5020a702ab34312ef9bca",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+      "seed0_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\DGCRN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-DGCRN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-DGCRN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "1f29c42477d4b6e69f1be29ea4180ec8b4f87bae34c5020a702ab34312ef9bca",
+        "seed0_reference_config_sha256": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-SeqSNN-seed1",
+      "dataset": "mooc",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed1.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed1.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed1.json",
+      "config_sha256": "ccccbcd5a17df2656780bc35d1fbc933b726ac67eb9df691b749a3bec3255055",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\SeqSNN\\seed1",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed1.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "ccccbcd5a17df2656780bc35d1fbc933b726ac67eb9df691b749a3bec3255055",
+        "seed0_reference_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-SeqSNN-seed2",
+      "dataset": "mooc",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed2.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed2.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed2.json",
+      "config_sha256": "5c77455e39e505024393bb476aa1108d810a788e9b1b63ceff82236ebbc367e5",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\SeqSNN\\seed2",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "5c77455e39e505024393bb476aa1108d810a788e9b1b63ceff82236ebbc367e5",
+        "seed0_reference_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-SeqSNN-seed3",
+      "dataset": "mooc",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed3.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed3.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed3.json",
+      "config_sha256": "e5ae46eaea576c86c63d248df5111dc32c8f5c22e787f67ec8c70f40994edb65",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\SeqSNN\\seed3",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "e5ae46eaea576c86c63d248df5111dc32c8f5c22e787f67ec8c70f40994edb65",
+        "seed0_reference_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    },
+    {
+      "id": "strong-five-seed-v1-mooc-SeqSNN-seed4",
+      "dataset": "mooc",
+      "variant": "SeqSNN",
+      "phase": "training",
+      "scope": "baseline",
+      "status": "prepared-not-launched",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed4.json"
+      ],
+      "command": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "-m",
+        "edsgn.train",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed4.json"
+      ],
+      "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed4.json",
+      "config_sha256": "400e643fc2cb08735c87582f855891c4b38f1aa856f02be0c197f5719164803b",
+      "seed0_config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+      "seed0_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\mooc\\SeqSNN\\seed4",
+      "epochs": 100,
+      "patience": 10,
+      "device": "cuda",
+      "batch_size": 128,
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\mooc-SeqSNN-seed4.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\baselines-bound-v3\\mooc-SeqSNN-seed0.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md"
+      ],
+      "input_binding": {
+        "at_launch": "edsgn/scripts/bind_training_inputs.py prepare, invoked by bound_phase_campaign.py",
+        "config_sha256": "400e643fc2cb08735c87582f855891c4b38f1aa856f02be0c197f5719164803b",
+        "seed0_reference_config_sha256": "81fa7aa2b1b3950b4f9e2f500acba13bbf572004a7118542a03909a3d0af7098",
+        "static_source_files": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+            "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+            "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\prepare_p3_strong_replication_v1.py",
+            "sha256": "c53ade884cb4dbb145d3cb7addc4936fe98a1431c2a82fd254ff9a9decc182ce"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+            "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+            "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+            "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+            "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+            "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+          }
+        ],
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "dataset_content_hashing": "mandatory at launch via input_binding.json; no dataset arrays read during preparation"
+      },
+      "formal_role": "primary forecasting comparator; seed0 is a separate existing run requiring hash and full train/validation independent acceptance before aggregation",
+      "test_access_authorized": false,
+      "execution_authorized": false
+    }
+  ],
+  "search_configs_introduced": 0,
+  "test_access_authorized": false,
+  "execution_authorized": false,
+  "accounting": "Use bound_phase_campaign.py only after the root gates; each phase has its own input_binding.json and receipt under the existing cumulative 72-hour ledger. This file is a prepared plan, not an execution authorization.",
+  "scope_decision": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\formal-comparator-and-secondary-matrix-root-decision-v1.md",
+    "sha256": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b"
+  }
+}

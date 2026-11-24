@@ -1,0 +1,21 @@
+{
+  "review_role": "independent source + CPU-array review",
+  "verdict": "engineering-only-pass-for-kernel; no statistical-family or scientific-phase acceptance",
+  "source_sha256": {
+    "edsgn/staging/paired_scalar_bootstrap_v1.py": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6",
+    "edsgn/staging/paired_statistics_shared_v4.py": "3cd8fd9e353b15df9a3fc791512d05fa97cf127c2b28b5406b745edc87eb37d9",
+    "edsgn/tests/test_paired_scalar_bootstrap_v1.py": "9249692162800401fb213a09ed72ba35f6dc70ac55e56a9cae3f7f4e27883175",
+    "edsgn/src/edsgn/statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "protocols/non-mae-endpoint-kernel-specification-v1.md": "0a859fd907dad59daa0bc9c318bfc102b0aa797ec6b90e56af692896b5237c38"
+  },
+  "checks": {
+    "existing_suite": "9 passed in 3.59s",
+    "independent_array_check": "passed; independently reconstructed 2000 seed-1234 per-trajectory circular block draws; verified pooled sums/counts by seed, equal five-seed mean, percentile/upper bound, centered two-sided and margin lower-tail p values; verified no trajectory crossings",
+    "input_rejection": "existing tests reject missing seed axis, NaN, unequal paired counts, gapped/strided or unordered origins, and insufficient block support"
+  },
+  "limitations": [
+    "pure kernel receives no seed IDs, so it enforces exactly five seed rows by shape but assumes caller binds row order to fixed seeds [0,1,2,3,4]",
+    "kernel requires strictly positive count at every origin; producers with origin-level zero support must emit endpoint-unidentifiable status rather than pass zeros or silently drop origins",
+    "not a complete scientific endpoint producer; inputs are not bound to real artifact hashes/freeze/coverage by this function"
+  ]
+}

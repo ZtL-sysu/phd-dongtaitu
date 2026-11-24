@@ -1,0 +1,29 @@
+{
+  "scope": "independent_read_only_source_review_engineering_only",
+  "verdict": "pass_for_static_blueprint_and_selected_binding_linkage_with_caller_prerequisites",
+  "actual_candidate_selection_or_training": false,
+  "actual_target_test_oracle_arrays_read": false,
+  "existing_root_toy_suite": {
+    "reported_by_root": "11 toy tests passed",
+    "rerun_by_reviewer": false
+  },
+  "sha256": {
+    "helper": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8",
+    "bind_training_inputs": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "design_protocol": "fb5b1e7e1c2fbf53aa78176a900d615c5846baa6d12583b3a10e089cb807e230"
+  },
+  "confirmed": [
+    "Schema4 prep and pool have exact top-level fields; candidate pools allow 1..12 ordered joint graph/memory choices, require unique candidate IDs and unique (graph,memory) pairs, and each candidate has ordered seeds 0..4.",
+    "Static blueprints bind config bytes and canonical content, dataset_root plus every NPZ/JSON source and fixed-prior input using bind_training_inputs file-set helpers, and variant-specific package/author code sources. The file policy hashes bytes without decoding NPZ arrays.",
+    "Blueprint identities bind comparison, candidate, dataset label, variant and seed. validate_preparation reconstructs and byte-compares the complete blueprint, rechecks current source hashes and expected binding/selection paths, and by default requires those future outputs to be absent.",
+    "The later selection receipt must be root accepted, train/validation-only, pool/hash/selector exact, complete in candidate order, and retain failed/unsupported rows with evidence. The ranker uses only synthetic/MOOC V4 model-seed-0 validation MAE normalized by positive GRU seed-0 references, equal-weight mean; ties use total validation wall time then candidate ID. Required horizons are domain-specific.",
+    "Selected-training validation requires exact selected config ref and expected binding path, invokes actual bind_training_inputs.verify_binding, compares static identity projection field-by-field, and separately requires the at-launch binding_type/status/timezone-aware recorded_utc fields. Its returned consumed-hash map includes pool, helper, configs, blueprints, current dataset/code sources, selection receipt/evidence, and actual binding."
+  ],
+  "caller_prerequisites_or_limitations": [
+    "The helper does not itself check the canonical P3A/P4 gate or prove that recorded_utc preceded optimizer start; callers must bind phase receipts and enforce the managed phase snapshot/TOCTOU contract.",
+    "allow_postrun_outputs=True deliberately only relaxes output nonexistence and is callable without a gate; only the separately verified caller may use it after P4.",
+    "The helper checks dataset_id as a frozen pool/blueprint label and checks the actual dataset_root/sources, but does not itself prove the label maps to that root; the P3A plan/catalog validator must cross-check this identity.",
+    "The generic helper does not enforce cross-candidate scientific config matching (width, optimizer, seed parity aside from each row, resource settings) or that evidence files semantically attest the candidate/config. Current singleton g00/m00 preparation avoids a ranking comparison; future multi-option pools need the preregistered comparator validator and independent numeric/root acceptance checks."
+  ],
+  "scientific_status": "No real candidate selection, score, checkpoint, or P3A acceptance is established by this helper review."
+}

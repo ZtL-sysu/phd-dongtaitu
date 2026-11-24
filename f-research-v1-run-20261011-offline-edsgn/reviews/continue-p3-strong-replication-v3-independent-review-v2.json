@@ -1,0 +1,22 @@
+{
+  "review_scope": "narrow_independent_source_pin_delta_review",
+  "verdict": "pass_engineering_metadata_only",
+  "source_path": "edsgn/scripts/continue_p3_strong_replication_serial_v3.py",
+  "source_sha256": "da8ba58ee3301900c7e2c066dec0c3bb697640fcbc8e70b5a83b95a68aa6e4d3",
+  "test_path": "edsgn/tests/test_continue_p3_strong_replication_serial_v3.py",
+  "test_sha256": "31558dd214f58e65f4e829f017abedf5f11348545e0edd8ee01616938a083aea",
+  "test_result": "5 passed in 0.53s",
+  "predecessor_sources": {
+    "edsgn/scripts/continue_p3_baselines_serial_v1.py": {
+      "expected_sha256": "fabfa9b6c84cfb5625522fbed9ed5de5cdb632bfd9aa785fbecd055b71385c26",
+      "observed_sha256": "fabfa9b6c84cfb5625522fbed9ed5de5cdb632bfd9aa785fbecd055b71385c26"
+    },
+    "edsgn/scripts/continue_p3_gru_replication_serial_v1.py": {
+      "expected_sha256": "4bb2aa86c22a4e83de46933fb9f3005b14b9a3d0024a5c386b40e0b3fe921e40",
+      "observed_sha256": "4bb2aa86c22a4e83de46933fb9f3005b14b9a3d0024a5c386b40e0b3fe921e40"
+    }
+  },
+  "source_pin_function": "require_coordinator_source_pins() checks each predecessor file exists and its SHA-256 equals COORDINATOR_SOURCE_PINS; invoked by verify_coordinator_queues and in polling/final checks. Current expected and observed hashes match.",
+  "actual_runner_status": "not_started; coordinator output logs/p3-strong-serial-continuation-v1.json absent at review time",
+  "scope_limit": "No queue launch, model/data-array access, training, or stage transition; this reviews only the corrected predecessor source-pin delta and CPU mock tests."
+}

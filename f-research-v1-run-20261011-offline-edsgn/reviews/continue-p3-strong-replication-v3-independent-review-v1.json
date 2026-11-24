@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "review_type": "independent_source_and_cpu_mock_review",
+  "verdict": "pass_engineering_preconditions_only",
+  "scope": "P3 serial continuation predecessor integrity; no launch",
+  "actual_runner_invoked": false,
+  "training_started": false,
+  "test_arrays_read": false,
+  "source_path": "edsgn/scripts/continue_p3_strong_replication_serial_v3.py",
+  "source_sha256": "d6137ce17c1b8658cd79cba45583616886c63a14588330904686c521822804d9",
+  "test_path": "edsgn/tests/test_continue_p3_strong_replication_serial_v3.py",
+  "test_sha256": "008742895033a3d2ac1735a906d63c68016269f18a169c02c7f415d264c6dc41",
+  "cpu_tests": {
+    "command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest edsgn/tests/test_continue_p3_strong_replication_serial_v3.py -q",
+    "passed": 4,
+    "failed": 0
+  },
+  "predecessor_registry": {
+    "seed0_queues": [
+      {
+        "path": "protocols/p3-bound-strong-baseline-queue-v3.json",
+        "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+        "jobs": 8
+      },
+      {
+        "path": "protocols/p3-internal-bound-queue-v4.json",
+        "sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+        "jobs": 10
+      },
+      {
+        "path": "protocols/p3-external-bound-queue-v2.json",
+        "sha256": "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d",
+        "jobs": 16
+      },
+      {
+        "path": "protocols/p3-fresh-remaining-bound-queue-v1.json",
+        "sha256": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+        "jobs": 6
+      }
+    ],
+    "gru_queue": {
+      "path": "protocols/p3-gru-replication-queue-v1.json",
+      "sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+      "jobs": 16
+    },
+    "required_unique_job_ids": 56,
+    "all_four_seed0_queues_compared_to_fixed_path_sha_count_acceptance_registry": true,
+    "all_56_phase_receipts_require_completed_rc0_matching_queue_and_output_paths_and_hash_all_inputs_outputs": true
+  },
+  "waiting_guards": {
+    "continuation_source_and_queue_hashed_each_poll": true,
+    "coordinator_source_pins_rechecked_each_poll": true,
+    "root_acceptance_and_metadata_pins_rechecked_each_poll": true,
+    "coordinator_status_failure_stops_without_launch": true,
+    "numeric_acceptance_wait_rechecks_source_queue_coordinator_pins": true,
+    "final_coordinator_log_bytes_snapshotted_and_rechecked_before_launch": true,
+    "official_P2_P3_gate_and_idle_locks_owned_process_and_72h_budget_checked": true
+  },
+  "limitation": "CPU tests validate registry uniqueness/duplicate failures only; no actual predecessor receipts/coordinator acceptance were consumed during this review. Runner execution remains gated on six root numeric acceptances and the existing resource checks."
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "staging-engineering-only",
+  "version": 3,
+  "result": "pass_toy_only",
+  "test_counts": {"v2_and_v3": 12, "failed": 0},
+  "py_compile": "passed",
+  "v2_sha256_unchanged": "f6bc77e7fd8b8faab4d98081de85d4ca995938a3da1783162c24764f2b619980",
+  "v3_sha256": "ff7350c281ded35dc238b017e3922efff3df9f8715eee15421aa4dc91fb9bf71",
+  "test_sha256": "59a861f4ce00cb8e34ae99acb21ff90f0b8258d6347202919d5daf1247b3748d",
+  "metadata_only_test_origin_support": {"email": 155, "mooc": 120, "email-episode": 100},
+  "toy": {"chronological_bundle_loader": true, "cpu_validation_origins_evaluated": 2, "changed_test_suffix_invariant_for_val_predictions_targets_masks": true, "batch_and_split_guards": true},
+  "not_run": ["real calibration", "real checkpoint/model", "GPU", "optimizer", "real heldout numeric arrays"],
+  "execution_log": "logs/frozen-validation-calibration-v3-tests.log",
+  "review": "reviews/frozen-validation-calibration-v3.md"
+}

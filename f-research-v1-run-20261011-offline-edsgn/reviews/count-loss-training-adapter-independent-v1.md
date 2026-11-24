@@ -1,0 +1,13 @@
+# Independent review: count-loss training adapter v1
+
+Verdict: **engineering preparation passes, with downstream binding limits**. This is a source/test review only; it does not root-accept the experiment or authorize training.
+
+The adapter's `FunctionType` uses a private copy of the engine `train_run` globals and replaces only `masked_mse`, `source_manifest`, and `build_model` (adapter lines 205–235). The original engine globals remain unchanged; the test suite explicitly checks that. The wrapped model factory requires `count_data is True` before invoking the original factory. The canonical `ForecastModel.readout` applies `softplus` to count outputs and then multiplies by training-fitted positive `output_scale` (model.py:505–507).
+
+The substituted loss is Poisson NLL with `log_input=False`, `full=False`, `reduction='none'`; it floors predictions at `1e-8`, sanitizes masked cells, rejects invalid valid-cell values, and reduces the valid-cell elementwise sum by valid-cell count (adapter lines 46–78). The source tests cover manual loss arithmetic, masking/gradients, finite/nonnegative checks, exact strict recipe types, reference-hash tampering, dataset guard, private-global isolation, and function behavior. Local Conda result: **23 passed**.
+
+The validator requires V4/seed0, original email or MOOC path, the exact preregistered recipe, full training defaults, and the canonical hashed `email-V4-seed0.json` or `mooc-V4-seed0.json` reference. It compares effective configs exactly after excluding only candidate `output_dir`, `training_loss`, and `mse_reference_config` (adapter lines 126–202). Current reference config SHA-256 values: email `f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e`; MOOC `dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603`. Both are V4 seed0 with 100 epochs/patience 10 and no embedded loss recipe.
+
+**Downstream binding limits:** the adapter prepares a training-only control; it does not bind a queue/controller admission, evaluate the paired checkpoints, or prove a completed comparison. The canonical training configs contain no g/m or policy fields, so this training adapter cannot itself enforce g00/m00. That candidate identity must be frozen in the later paired replay/queue. The function validates target nonnegativity/finiteness but not integer-valuedness; event-count preparation suggests integer counts stored as float32, but actual archive values were not inspected here.
+
+No real arrays, model/checkpoint, optimizer, training, GPU, validation or test results were accessed. Full hashes, checks, and limitations are recorded in the paired JSON review.

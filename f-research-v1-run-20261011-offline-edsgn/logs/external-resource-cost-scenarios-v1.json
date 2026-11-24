@@ -1,0 +1,542 @@
+{
+  "budget": {
+    "accounting_sources": 88,
+    "budget_seconds": 259200,
+    "conservative_bound_seconds": 525.0,
+    "coverage_complete": true,
+    "coverage_gaps": [],
+    "measured_seconds": 11254.811410900042,
+    "remaining_seconds": 247420.18858909997,
+    "spent_seconds": 11779.811410900042
+  },
+  "limitations": [
+    "One train-window forward/backward probe per cell; no optimizer steps or actual epochs.",
+    "Train FB extrapolation assumes unchanged throughput across batches and epochs; unvalidated.",
+    "Train+validation scenario prices every train and validation batch at the entire measured whole-probe wall. This is a conservative proxy, not a proven upper bound.",
+    "Epoch overhead, early stopping, checkpointing, logging, contention, retries, and seed variation are unknown.",
+    "No actual epoch count or completion-time prediction is claimed.",
+    "Only metadata_json NPZ members were read; no numeric arrays, targets, predictions, or checkpoints were read."
+  ],
+  "probe_cells": {
+    "email-episode/AGCRN": {
+      "actual_windows": 4,
+      "batch_size": 4,
+      "dataset": "email-episode",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 2.292954999982612,
+      "method": "AGCRN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "probe_sha256": "48f85f1969306aaeea55227f8e72427e822be63859755cac88b9eebddf5b1a2e",
+      "status": "passed",
+      "train_batches_per_epoch": 84,
+      "train_windows": 334,
+      "val_batches_per_epoch": 12,
+      "validation_windows": 46,
+      "whole_probe_wall_seconds": 2.4216410999943037
+    },
+    "email-episode/DCRNN": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email-episode",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 1.088062800001353,
+      "method": "DCRNN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-episode-DCRNN-seed0-B2.json",
+      "probe_sha256": "9f8ff0111f14f1d9417096fac7a1518014c2936e3da2567d9aceccb3d8f8afd1",
+      "status": "passed",
+      "train_batches_per_epoch": 167,
+      "train_windows": 334,
+      "val_batches_per_epoch": 23,
+      "validation_windows": 46,
+      "whole_probe_wall_seconds": 5.091015400015749
+    },
+    "email-episode/GraphWaveNet": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email-episode",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.5202162999776192,
+      "method": "GraphWaveNet",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-episode-GraphWaveNet-seed0-B2.json",
+      "probe_sha256": "579d9a11510c1957fac303fc4299aaa9ecb2a1881353bb0b26e9245ae76013c6",
+      "status": "passed",
+      "train_batches_per_epoch": 167,
+      "train_windows": 334,
+      "val_batches_per_epoch": 23,
+      "validation_windows": 46,
+      "whole_probe_wall_seconds": 0.6822011999902315
+    },
+    "email-episode/STAEformer": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email-episode",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.5543867999804206,
+      "method": "STAEformer",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-episode-STAEformer-seed0-B2.json",
+      "probe_sha256": "aaec9e63cf706f299fa8787c187366bdb8d7a3edeb0094766f13b5e8e3562ce1",
+      "status": "passed",
+      "train_batches_per_epoch": 167,
+      "train_windows": 334,
+      "val_batches_per_epoch": 23,
+      "validation_windows": 46,
+      "whole_probe_wall_seconds": 0.7369100000069011
+    },
+    "email/AGCRN": {
+      "actual_windows": 4,
+      "batch_size": 4,
+      "dataset": "email",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 2.473877000011271,
+      "method": "AGCRN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "probe_sha256": "11c1e15eebdf8420409c21c707831dd4e5ed938dd3790aaf7d1e030eee9f3d80",
+      "status": "passed",
+      "train_batches_per_epoch": 132,
+      "train_windows": 528,
+      "val_batches_per_epoch": 19,
+      "validation_windows": 74,
+      "whole_probe_wall_seconds": 2.6625944999977946
+    },
+    "email/DCRNN": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 1.14422860002378,
+      "method": "DCRNN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-DCRNN-seed0-B2.json",
+      "probe_sha256": "d1bebce3e25827e9c917ac4b8237b4cb0e6ddb77506310c6b71ad173e2de8318",
+      "status": "passed",
+      "train_batches_per_epoch": 264,
+      "train_windows": 528,
+      "val_batches_per_epoch": 37,
+      "validation_windows": 74,
+      "whole_probe_wall_seconds": 6.396752800006652
+    },
+    "email/GraphWaveNet": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.5352320999954827,
+      "method": "GraphWaveNet",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-GraphWaveNet-seed0-B2.json",
+      "probe_sha256": "91c05debe8bea36ef54426d0b457988f69c224aec0a90c3c8869264c67f9c949",
+      "status": "passed",
+      "train_batches_per_epoch": 264,
+      "train_windows": 528,
+      "val_batches_per_epoch": 37,
+      "validation_windows": 74,
+      "whole_probe_wall_seconds": 0.7532973999914248
+    },
+    "email/STAEformer": {
+      "actual_windows": 2,
+      "batch_size": 2,
+      "dataset": "email",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.5861764999863226,
+      "method": "STAEformer",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/email-STAEformer-seed0-B2.json",
+      "probe_sha256": "bf5eaeccb65a9dab43004893ae6974b80c2bba85569a74feadf825772a7c2c72",
+      "status": "passed",
+      "train_batches_per_epoch": 264,
+      "train_windows": 528,
+      "val_batches_per_epoch": 37,
+      "validation_windows": 74,
+      "whole_probe_wall_seconds": 0.7933155999926385
+    },
+    "mooc/AGCRN": {
+      "actual_windows": 32,
+      "batch_size": 32,
+      "dataset": "mooc",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.5474965999892447,
+      "method": "AGCRN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/mooc-AGCRN-seed0-B32.json",
+      "probe_sha256": "590abc26a26a00746a4e31086d27e7d3ec22852a301dbca616de8a217169aed3",
+      "status": "passed",
+      "train_batches_per_epoch": 15,
+      "train_windows": 452,
+      "val_batches_per_epoch": 2,
+      "validation_windows": 49,
+      "whole_probe_wall_seconds": 0.6649543000094127
+    },
+    "mooc/DCRNN": {
+      "actual_windows": 32,
+      "batch_size": 32,
+      "dataset": "mooc",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 1.707485099992482,
+      "method": "DCRNN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/mooc-DCRNN-seed0-B32.json",
+      "probe_sha256": "a4b36424128dca3eaa7ce7d2a5fe339be6d4e69c680ec1cf834f460cddf95c63",
+      "status": "passed",
+      "train_batches_per_epoch": 15,
+      "train_windows": 452,
+      "val_batches_per_epoch": 2,
+      "validation_windows": 49,
+      "whole_probe_wall_seconds": 3.0805728000123054
+    },
+    "mooc/GraphWaveNet": {
+      "actual_windows": 32,
+      "batch_size": 32,
+      "dataset": "mooc",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.4503699999768287,
+      "method": "GraphWaveNet",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/mooc-GraphWaveNet-seed0-B32.json",
+      "probe_sha256": "752929a62c415361ab36b8ad4f0396f93cfe6dace9c3717de57e73b0b5ebb184",
+      "status": "passed",
+      "train_batches_per_epoch": 15,
+      "train_windows": 452,
+      "val_batches_per_epoch": 2,
+      "validation_windows": 49,
+      "whole_probe_wall_seconds": 0.6048759999976028
+    },
+    "mooc/STAEformer": {
+      "actual_windows": 32,
+      "batch_size": 32,
+      "dataset": "mooc",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.3211468000081368,
+      "method": "STAEformer",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/mooc-STAEformer-seed0-B32.json",
+      "probe_sha256": "ef9ae3f7d73f6774166c38b35e1f792f6aa97eb22bba57dd5039d988c8efc928",
+      "status": "passed",
+      "train_batches_per_epoch": 15,
+      "train_windows": 452,
+      "val_batches_per_epoch": 2,
+      "validation_windows": 49,
+      "whole_probe_wall_seconds": 0.4723707000084687
+    },
+    "synthetic/AGCRN": {
+      "actual_windows": 64,
+      "batch_size": 64,
+      "dataset": "synthetic",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.7112529000150971,
+      "method": "AGCRN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/synthetic-AGCRN-seed0-B64.json",
+      "probe_sha256": "247ac6cc234943f774e487303292621398294bad5ea0da6b4cf66dcb7468a23e",
+      "status": "passed",
+      "train_batches_per_epoch": 252,
+      "train_windows": 16112,
+      "val_batches_per_epoch": 63,
+      "validation_windows": 4028,
+      "whole_probe_wall_seconds": 0.8807627999922261
+    },
+    "synthetic/DCRNN": {
+      "actual_windows": 64,
+      "batch_size": 64,
+      "dataset": "synthetic",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 1.6241807000187691,
+      "method": "DCRNN",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/synthetic-DCRNN-seed0-B64.json",
+      "probe_sha256": "d61799afaffec7c881244aaa02fed3c4c75b9cb1ec42291777035c7dab25f749",
+      "status": "passed",
+      "train_batches_per_epoch": 252,
+      "train_windows": 16112,
+      "val_batches_per_epoch": 63,
+      "validation_windows": 4028,
+      "whole_probe_wall_seconds": 2.9407542999833822
+    },
+    "synthetic/GraphWaveNet": {
+      "actual_windows": 64,
+      "batch_size": 64,
+      "dataset": "synthetic",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.6754330999974627,
+      "method": "GraphWaveNet",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/synthetic-GraphWaveNet-seed0-B64.json",
+      "probe_sha256": "044114cca0aa495fb5f0c782ea5673710cc85fbac6765818636c629a7fdff59a",
+      "status": "passed",
+      "train_batches_per_epoch": 252,
+      "train_windows": 16112,
+      "val_batches_per_epoch": 63,
+      "validation_windows": 4028,
+      "whole_probe_wall_seconds": 0.8981911999871954
+    },
+    "synthetic/STAEformer": {
+      "actual_windows": 64,
+      "batch_size": 64,
+      "dataset": "synthetic",
+      "finite_gradients": true,
+      "finite_predictions": true,
+      "forward_backward_seconds": 0.45800459999009036,
+      "method": "STAEformer",
+      "optimizer_steps": 0,
+      "probe_file": "logs/external-resource-v1/synthetic-STAEformer-seed0-B64.json",
+      "probe_sha256": "082279d51b6ad679fec60d21ca92e10e410bc2e771c1e196345337463f8f2849",
+      "status": "passed",
+      "train_batches_per_epoch": 252,
+      "train_windows": 16112,
+      "val_batches_per_epoch": 63,
+      "validation_windows": 4028,
+      "whole_probe_wall_seconds": 0.64121120001073
+    }
+  },
+  "scenarios": {
+    "10": {
+      "five_model_seeds_linear_scenario": {
+        "train_fb_only_seconds": 119900.32275998092,
+        "train_plus_val_wholeprobe_proxy_seconds": 301654.1635995454
+      },
+      "per_cell": {
+        "email-episode/AGCRN": {
+          "train_forward_backward_proxy_seconds": 1926.0821999853943,
+          "train_plus_validation_whole_probe_proxy_seconds": 2324.7754559945315
+        },
+        "email-episode/DCRNN": {
+          "train_forward_backward_proxy_seconds": 1817.0648760022596,
+          "train_plus_validation_whole_probe_proxy_seconds": 9672.929260029923
+        },
+        "email-episode/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 868.7612209626241,
+          "train_plus_validation_whole_probe_proxy_seconds": 1296.18227998144
+        },
+        "email-episode/STAEformer": {
+          "train_forward_backward_proxy_seconds": 925.8259559673024,
+          "train_plus_validation_whole_probe_proxy_seconds": 1400.129000013112
+        },
+        "email/AGCRN": {
+          "train_forward_backward_proxy_seconds": 3265.5176400148775,
+          "train_plus_validation_whole_probe_proxy_seconds": 4020.51769499667
+        },
+        "email/DCRNN": {
+          "train_forward_backward_proxy_seconds": 3020.7635040627792,
+          "train_plus_validation_whole_probe_proxy_seconds": 19254.225928020023
+        },
+        "email/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 1413.0127439880744,
+          "train_plus_validation_whole_probe_proxy_seconds": 2267.4251739741885
+        },
+        "email/STAEformer": {
+          "train_forward_backward_proxy_seconds": 1547.5059599638917,
+          "train_plus_validation_whole_probe_proxy_seconds": 2387.8799559778417
+        },
+        "mooc/AGCRN": {
+          "train_forward_backward_proxy_seconds": 82.12448999838671,
+          "train_plus_validation_whole_probe_proxy_seconds": 113.04223100160016
+        },
+        "mooc/DCRNN": {
+          "train_forward_backward_proxy_seconds": 256.1227649988723,
+          "train_plus_validation_whole_probe_proxy_seconds": 523.6973760020919
+        },
+        "mooc/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 67.5554999965243,
+          "train_plus_validation_whole_probe_proxy_seconds": 102.82891999959247
+        },
+        "mooc/STAEformer": {
+          "train_forward_backward_proxy_seconds": 48.17202000122052,
+          "train_plus_validation_whole_probe_proxy_seconds": 80.30301900143968
+        },
+        "synthetic/AGCRN": {
+          "train_forward_backward_proxy_seconds": 1792.3573080380447,
+          "train_plus_validation_whole_probe_proxy_seconds": 2774.402819975512
+        },
+        "synthetic/DCRNN": {
+          "train_forward_backward_proxy_seconds": 4092.935364047298,
+          "train_plus_validation_whole_probe_proxy_seconds": 9263.376044947654
+        },
+        "synthetic/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 1702.091411993606,
+          "train_plus_validation_whole_probe_proxy_seconds": 2829.3022799596656
+        },
+        "synthetic/STAEformer": {
+          "train_forward_backward_proxy_seconds": 1154.1715919750277,
+          "train_plus_validation_whole_probe_proxy_seconds": 2019.8152800337994
+        }
+      },
+      "single_model_seed": {
+        "train_fb_only_seconds": 23980.064551996184,
+        "train_plus_val_wholeprobe_proxy_seconds": 60330.832719909085
+      }
+    },
+    "100": {
+      "five_model_seeds_linear_scenario": {
+        "train_fb_only_seconds": 1199003.2275998092,
+        "train_plus_val_wholeprobe_proxy_seconds": 3016541.635995454
+      },
+      "per_cell": {
+        "email-episode/AGCRN": {
+          "train_forward_backward_proxy_seconds": 19260.821999853943,
+          "train_plus_validation_whole_probe_proxy_seconds": 23247.754559945315
+        },
+        "email-episode/DCRNN": {
+          "train_forward_backward_proxy_seconds": 18170.648760022596,
+          "train_plus_validation_whole_probe_proxy_seconds": 96729.29260029923
+        },
+        "email-episode/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 8687.61220962624,
+          "train_plus_validation_whole_probe_proxy_seconds": 12961.8227998144
+        },
+        "email-episode/STAEformer": {
+          "train_forward_backward_proxy_seconds": 9258.259559673024,
+          "train_plus_validation_whole_probe_proxy_seconds": 14001.29000013112
+        },
+        "email/AGCRN": {
+          "train_forward_backward_proxy_seconds": 32655.176400148775,
+          "train_plus_validation_whole_probe_proxy_seconds": 40205.1769499667
+        },
+        "email/DCRNN": {
+          "train_forward_backward_proxy_seconds": 30207.635040627792,
+          "train_plus_validation_whole_probe_proxy_seconds": 192542.25928020023
+        },
+        "email/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 14130.127439880744,
+          "train_plus_validation_whole_probe_proxy_seconds": 22674.251739741885
+        },
+        "email/STAEformer": {
+          "train_forward_backward_proxy_seconds": 15475.059599638917,
+          "train_plus_validation_whole_probe_proxy_seconds": 23878.799559778417
+        },
+        "mooc/AGCRN": {
+          "train_forward_backward_proxy_seconds": 821.2448999838671,
+          "train_plus_validation_whole_probe_proxy_seconds": 1130.4223100160016
+        },
+        "mooc/DCRNN": {
+          "train_forward_backward_proxy_seconds": 2561.227649988723,
+          "train_plus_validation_whole_probe_proxy_seconds": 5236.973760020919
+        },
+        "mooc/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 675.554999965243,
+          "train_plus_validation_whole_probe_proxy_seconds": 1028.2891999959247
+        },
+        "mooc/STAEformer": {
+          "train_forward_backward_proxy_seconds": 481.72020001220517,
+          "train_plus_validation_whole_probe_proxy_seconds": 803.0301900143968
+        },
+        "synthetic/AGCRN": {
+          "train_forward_backward_proxy_seconds": 17923.573080380447,
+          "train_plus_validation_whole_probe_proxy_seconds": 27744.02819975512
+        },
+        "synthetic/DCRNN": {
+          "train_forward_backward_proxy_seconds": 40929.35364047298,
+          "train_plus_validation_whole_probe_proxy_seconds": 92633.76044947654
+        },
+        "synthetic/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 17020.91411993606,
+          "train_plus_validation_whole_probe_proxy_seconds": 28293.022799596656
+        },
+        "synthetic/STAEformer": {
+          "train_forward_backward_proxy_seconds": 11541.715919750277,
+          "train_plus_validation_whole_probe_proxy_seconds": 20198.152800337994
+        }
+      },
+      "single_model_seed": {
+        "train_fb_only_seconds": 239800.64551996184,
+        "train_plus_val_wholeprobe_proxy_seconds": 603308.3271990909
+      }
+    },
+    "50": {
+      "five_model_seeds_linear_scenario": {
+        "train_fb_only_seconds": 599501.6137999046,
+        "train_plus_val_wholeprobe_proxy_seconds": 1508270.817997727
+      },
+      "per_cell": {
+        "email-episode/AGCRN": {
+          "train_forward_backward_proxy_seconds": 9630.410999926971,
+          "train_plus_validation_whole_probe_proxy_seconds": 11623.877279972658
+        },
+        "email-episode/DCRNN": {
+          "train_forward_backward_proxy_seconds": 9085.324380011298,
+          "train_plus_validation_whole_probe_proxy_seconds": 48364.646300149616
+        },
+        "email-episode/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 4343.80610481312,
+          "train_plus_validation_whole_probe_proxy_seconds": 6480.9113999072
+        },
+        "email-episode/STAEformer": {
+          "train_forward_backward_proxy_seconds": 4629.129779836512,
+          "train_plus_validation_whole_probe_proxy_seconds": 7000.64500006556
+        },
+        "email/AGCRN": {
+          "train_forward_backward_proxy_seconds": 16327.588200074388,
+          "train_plus_validation_whole_probe_proxy_seconds": 20102.58847498335
+        },
+        "email/DCRNN": {
+          "train_forward_backward_proxy_seconds": 15103.817520313896,
+          "train_plus_validation_whole_probe_proxy_seconds": 96271.12964010012
+        },
+        "email/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 7065.063719940372,
+          "train_plus_validation_whole_probe_proxy_seconds": 11337.125869870943
+        },
+        "email/STAEformer": {
+          "train_forward_backward_proxy_seconds": 7737.529799819458,
+          "train_plus_validation_whole_probe_proxy_seconds": 11939.399779889209
+        },
+        "mooc/AGCRN": {
+          "train_forward_backward_proxy_seconds": 410.62244999193354,
+          "train_plus_validation_whole_probe_proxy_seconds": 565.2111550080008
+        },
+        "mooc/DCRNN": {
+          "train_forward_backward_proxy_seconds": 1280.6138249943615,
+          "train_plus_validation_whole_probe_proxy_seconds": 2618.4868800104596
+        },
+        "mooc/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 337.7774999826215,
+          "train_plus_validation_whole_probe_proxy_seconds": 514.1445999979624
+        },
+        "mooc/STAEformer": {
+          "train_forward_backward_proxy_seconds": 240.86010000610258,
+          "train_plus_validation_whole_probe_proxy_seconds": 401.5150950071984
+        },
+        "synthetic/AGCRN": {
+          "train_forward_backward_proxy_seconds": 8961.786540190224,
+          "train_plus_validation_whole_probe_proxy_seconds": 13872.01409987756
+        },
+        "synthetic/DCRNN": {
+          "train_forward_backward_proxy_seconds": 20464.67682023649,
+          "train_plus_validation_whole_probe_proxy_seconds": 46316.88022473827
+        },
+        "synthetic/GraphWaveNet": {
+          "train_forward_backward_proxy_seconds": 8510.45705996803,
+          "train_plus_validation_whole_probe_proxy_seconds": 14146.511399798328
+        },
+        "synthetic/STAEformer": {
+          "train_forward_backward_proxy_seconds": 5770.8579598751385,
+          "train_plus_validation_whole_probe_proxy_seconds": 10099.076400168997
+        }
+      },
+      "single_model_seed": {
+        "train_fb_only_seconds": 119900.32275998092,
+        "train_plus_val_wholeprobe_proxy_seconds": 301654.1635995454
+      }
+    }
+  },
+  "scope": "prospective_onebatch_extrapolation_not_training_forecast",
+  "source_dir": "logs/external-resource-v1"
+}

@@ -1,0 +1,15 @@
+# Independent review: guarded primary family assembler v2
+
+**Reviewer role:** independent read-only source review. No implementation changes were made. The module is staging code; this review does not authorize or claim a P5 assembly.
+
+The P5 gate is fail-closed on the canonical `pipeline-state.json`: it requires the exact ordered stage ledger, P0–P4 `passed/pass`, P5 `running` with no final verdict, invokes the official before-P5 validator, and checks that canonical state bytes did not change during validation. It rechecks the same gate and state hash after exclusive output serialization. There is no public test-root or `official=False` route; the public entry point requires the canonical RUN and `official=True`.
+
+Input assembly binds exactly the 49 preregistered test plans and definitions, with exact H1/H2/H3 sizes 9/16/24 and seed IDs 0–4. It requires a root acceptance record for every expected endpoint output path and SHA. For each output, the assembler reruns validator-v7 metadata checks and verifies every postrun-manifest-consumed byte before mapping; it repeats this validation after serialization. It also rechecks plan, registry, acceptance, definitions, accepted Holm evidence/kernel, producer records, and source hashes. No prediction arrays are opened by the assembler.
+
+The endpoint mapping retains unidentifiable records with `raw_p: null`; it does not drop them or reduce the Holm denominator. The accepted Holm v3 kernel preserves all registered members and sets adjusted p-values and family decisions to null whenever a family contains an unidentifiable member. Identifiable NI rows use `centered_lower_tail_noninferiority_p`, require positive finite epsilon, and carry the one-sided upper bound for the directional gate. Superiority paths recompute directional decisions from the estimate and upper percentile interval. The root Holm acceptance file is explicitly engineering-only, with no actual inference or scientific acceptance.
+
+Independent Conda run of the seven focused tests passed: `7 passed in 14.62s` (`logs/guarded-primary-family-assembler-v2-cpu.log` records the same result). The tests cover public producer-to-row mapping for superiority and NI, postrun consumed-file mutation rejection, rejection of a public bypass, Holm acceptance scope, and the exact NI p-kind. These tests do not run a complete 49-row public assembly fixture.
+
+The current canonical pipeline ledger is P2 passed, P3 running, P3A/P4/P5 pending. Therefore the official P5 gate would reject an assembly now; P5 has not run. The code/test evidence supports engineering readiness of the inspected paths only. Residual coverage gap: the complete 49-record accepted-map-to-exclusive-output path has no end-to-end fixture, so global family assembly behavior is supported by the separately accepted typed Holm kernel and source inspection, not an assembler-level 49-row integration test.
+
+SHA-256: assembler `4807140339919F8867D530CAA1B91C47AD97C64F9C1583E69520E80316839373`; focused tests `A521F90F2FBA344F5C15925188524AAD4F7735F5958F095411194E0BFE0E503B`.

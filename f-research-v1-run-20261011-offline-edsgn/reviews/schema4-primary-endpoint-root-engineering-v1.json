@@ -1,0 +1,29 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "prospective_primary_endpoint_interface_engineering_only",
+  "created_utc": "2026-10-11T12:50:57.822955+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/typed_endpoint_producer_v5.py": "afbe2cb083b6fc7ffe62cfab1e9a164191225d3b96e6459884ac4afd3510e3d5",
+    "edsgn/staging/typed_endpoint_plan_validator_v8.py": "f3a33630d0787920d8bd5b964702a7cb5a94c8be6f6381c33a4c6884f8149d73",
+    "edsgn/scripts/verified_frozen_dispatch_v8.py": "b946169932699f5efad8ae187e5c42cf2e247ccf0c97c895c9103c21d7748998",
+    "edsgn/staging/prospective_training_candidate_binding_v1.py": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8",
+    "edsgn/staging/global_frozen_test_completion_v1.py": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af",
+    "edsgn/tests/test_typed_endpoint_producer_v5.py": "b2fa3fbcf82a8572cb46bed7b53bfb7b58e265c7dd7b94d06388b823d225e29f",
+    "edsgn/tests/test_typed_endpoint_plan_validator_v8.py": "684d6664a2c2e5e63a03e7e246421bbb50ef79eb35adf07e696a7973f42338d8",
+    "edsgn/tests/test_verified_frozen_dispatch_v8.py": "c681724fc2185f5cdc8e6a015ef625115b467b9099cf418d0615cb7da1eb87ff",
+    "logs/root-schema4-public-integration-v1.log": "60ad44c56c7e63464761fe00bb59a26b122d14ae3a78c7ec2854fbcbcdeb1ef8",
+    "logs/typed-endpoint-schema4-integration-v5-tests.log": "bcccc2db4dc9a91f09a33f23f7e1c450bb3752a381f3cab0f71b06c27c123a12",
+    "logs/typed-endpoint-schema4-public-outcomes-v6-tests.log": "e05c5488864660901adea2813db60bc3d8edd0eaaf2f7c00c261a619424b0bd9",
+    "reviews/schema4-public-outcome-integration-v6.md": "324ed54e3b01ea4df5af40341a8b7b7cc39e312c40ee02bfaacc18033e23673d",
+    "protocols/p3a-candidate-and-launch-binding-root-design-v1.md": "fb5b1e7e1c2fbf53aa78176a900d615c5846baa6d12583b3a10e089cb807e230",
+    "protocols/global-test-oracle-separation-root-design-v1.md": "4de1f31de18d07d89d5363b1bf5b7169b09ba50dfd29f63406d7b83350958361"
+  },
+  "public_toy_cases": 4,
+  "actual49_plans_accepted": false,
+  "actual_test_authorized": false,
+  "oracle_accessed": false,
+  "independent_full_matrix_scientific_review_pending": true
+}

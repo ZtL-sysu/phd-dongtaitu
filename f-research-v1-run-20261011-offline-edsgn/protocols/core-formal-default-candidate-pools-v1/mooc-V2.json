@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "scope": "prospective_training_candidate_pool",
+  "comparison_id": "core-formal-mooc-V2-selection-v1",
+  "dataset_id": "mooc",
+  "variant": "V2",
+  "selector": {
+    "rule_id": "normalized-syn-mooc-v4-seed0-v1",
+    "source": {
+      "path": "edsgn/staging/prospective_training_candidate_binding_v1.py",
+      "sha256": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8"
+    }
+  },
+  "candidates": [
+    {
+      "candidate_id": "g00-m00",
+      "graph_candidate_id": "g00",
+      "memory_candidate_id": "m00",
+      "seeds": [
+        {
+          "seed_id": 0,
+          "config": {
+            "path": "configs/core-development-v1/mooc-V2-seed0.json",
+            "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+          },
+          "input_blueprint": {
+            "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed0.json",
+            "sha256": "289eccccc52eaf260949e3931e18d53a490afec054d0926e621334a4cc371a36"
+          },
+          "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V2\\seed0\\input-binding-at-launch.json",
+          "selection_receipt_path": "runs/formal-candidate-selection-v1/mooc-V2.json"
+        },
+        {
+          "seed_id": 1,
+          "config": {
+            "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed1.json",
+            "sha256": "807b862bf9d4b2ab108bbee1e4fdbdd39a7fa0c89235a5686faf791c9ff3fde4"
+          },
+          "input_blueprint": {
+            "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed1.json",
+            "sha256": "51d7b5e572e246431b070975878a3f40c29f39ca5aa5467e050cebecc4060eb3"
+          },
+          "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed1\\input-binding-at-launch.json",
+          "selection_receipt_path": "runs/formal-candidate-selection-v1/mooc-V2.json"
+        },
+        {
+          "seed_id": 2,
+          "config": {
+            "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed2.json",
+            "sha256": "f2faceb24012b9852af7755fcad2cbdaca420d98d9e99c2500ef896458216dd6"
+          },
+          "input_blueprint": {
+            "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed2.json",
+            "sha256": "f77baba949f56af33cd41ec3a7edee07278205ff73556a4075d7ec2d639863ee"
+          },
+          "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed2\\input-binding-at-launch.json",
+          "selection_receipt_path": "runs/formal-candidate-selection-v1/mooc-V2.json"
+        },
+        {
+          "seed_id": 3,
+          "config": {
+            "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed3.json",
+            "sha256": "b9088221d08967b4f011078470549aebcddc00f8eea171752c9ff166e387f8f8"
+          },
+          "input_blueprint": {
+            "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed3.json",
+            "sha256": "9f345c75c67b763cb8a216b856b63ef3337dc57965aaca13544f0648eace3953"
+          },
+          "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed3\\input-binding-at-launch.json",
+          "selection_receipt_path": "runs/formal-candidate-selection-v1/mooc-V2.json"
+        },
+        {
+          "seed_id": 4,
+          "config": {
+            "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed4.json",
+            "sha256": "696440296cf8a4eb76d2da21dd605af916a51f665f62feb37ca507108392c743"
+          },
+          "input_blueprint": {
+            "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed4.json",
+            "sha256": "77c31388219457db45379ee5434f3762f0bc463ebd290f50c829be50fec9d959"
+          },
+          "training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed4\\input-binding-at-launch.json",
+          "selection_receipt_path": "runs/formal-candidate-selection-v1/mooc-V2.json"
+        }
+      ]
+    }
+  ]
+}

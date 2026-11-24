@@ -1,0 +1,13 @@
+{
+  "reviewer": "root",
+  "verdict": "blocked",
+  "scope": "engineering-staging-only",
+  "actual_experiment_run": false,
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/typed_endpoint_producer_v1.py": "eb7787dc052080b3efbffcfb43f30caa8207b80e6dc1821f8789747157499b70",
+    "edsgn/staging/typed_endpoint_plan_validator_v4.py": "9d099359bbbc4ea3bd97fbd015fbe9c7ddd95f79523d5fb0a278ef3154b4e032",
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578"
+  }
+}

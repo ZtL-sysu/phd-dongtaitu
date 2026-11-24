@@ -1,0 +1,10 @@
+{
+  "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-bound-queue-v2.json",
+  "queue_sha256": "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d",
+  "resource_contract": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json",
+  "resource_contract_sha256": "95c66e0d2eb0d955659722937fdbacb61ca294789de9c9450fc3a1d457246654",
+  "scope": "root-approved full P3 development train/validation only; no test or full proposed-method launch",
+  "jobs": 16,
+  "accepted": true,
+  "launch_condition": "current strong baseline queue completes and releases resource lease"
+}

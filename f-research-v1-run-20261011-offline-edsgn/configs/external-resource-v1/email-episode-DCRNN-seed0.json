@@ -1,0 +1,30 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+  "variant": "DCRNN",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 2,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-v1\\email-episode\\DCRNN\\seed0",
+  "resource_proposal": {
+    "batch_status": "proposed_unlaunched_unaccepted",
+    "batch_size_proposal": 2,
+    "purpose": "single actual train-window forward/backward resource probe; no optimizer step; no validation/test windows"
+  },
+  "baseline": {
+    "fixed_training_prior_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\email-episode.npz",
+    "fixed_training_prior_sha256": "59f5f354052457410a475d08d7a3b0d494395e1923d6f902bc2934d2297a1cd2",
+    "fixed_training_prior_manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\email-episode.json",
+    "fixed_training_prior_manifest_sha256": "be7704eadf675247cb081c3a173fec8ab7bffb0ebe49e87df27ba99dcb987c12",
+    "expected_dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+    "rnn_units": 64,
+    "num_rnn_layers": 2,
+    "max_diffusion_step": 2
+  }
+}

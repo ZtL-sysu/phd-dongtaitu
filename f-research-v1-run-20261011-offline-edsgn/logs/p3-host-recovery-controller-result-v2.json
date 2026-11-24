@@ -1,0 +1,7 @@
+{
+  "scope": "serial recovery controller exit",
+  "returncode": 0,
+  "finished_utc": "2026-10-13T01:12:47.140820+00:00",
+  "queue_sha256": "7752189ff13fad4a69b8792fa4a7010bb468897b37c9c9d26d16563464c8985f",
+  "training_completion_requires_per_job_receipts": true
+}

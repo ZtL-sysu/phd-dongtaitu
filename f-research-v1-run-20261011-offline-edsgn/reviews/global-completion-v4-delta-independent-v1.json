@@ -1,0 +1,31 @@
+{
+  "changes": [
+    "Require full output hash map in completed simple_v3 and case_v3 phase receipts.",
+    "Reject duplicate prediction_v5 phase output paths after path normalization, regardless of equal or differing claimed SHA."
+  ],
+  "limits": [
+    "No arrays, model checkpoints, oracle, GPU, queue, or real completion artifacts read.",
+    "This review covers only the v3\u2192v4 delta; earlier v3 findings remain applicable.",
+    "Global helper coverage remains limited to its registered seven drivers and does not itself establish complete scientific acceptance."
+  ],
+  "scope": "independent narrow source-delta review; engineering metadata only",
+  "source_sha256": {
+    "edsgn/staging/global_frozen_test_completion_v3.py": "6b4979738256b0ffe86dd30b94db6543c7ced3e578f88ca70410c0507d06a1c5",
+    "edsgn/staging/global_frozen_test_completion_v4.py": "e05ea055be0852aecc3b9a0113b177c54a3567ad8adf5c7bbb34aa08a887a5c3",
+    "edsgn/staging/ordinary_frozen_test_admission_v1.py": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+    "edsgn/staging/simple_baseline_freeze_v1.py": "1a5cb9d66f6e09c57779965fc7e6b44088bfc7acec2d73ba80ed4cf1046c1ad6",
+    "edsgn/staging/simple_baseline_frozen_evaluation_v2.py": "160f5a27903264374079928995a5de0da34f3050789937be5419f8291a706d1a",
+    "edsgn/staging/test_global_frozen_test_completion_v4_all_drivers.py": "07e8a7da83be37e56a81bbf8c2f979ad03251d10770fb7ff6118d0be7b7c3dad",
+    "protocols/simple-baseline-frozen-test-root-design-v1.md": "c984a1e4102b4bc1724517bb4d1da4bd79cb31067377171de25284fcfb256c06"
+  },
+  "tests": {
+    "command": "dyg-cold python -m pytest -q test_global_frozen_test_completion_v4_all_drivers.py -k \"required_simple_case_phase_output_map or duplicate_resolved_output_paths\"",
+    "deselected": 30,
+    "failed": 0,
+    "log": "logs/global-completion-v4-delta-independent.log",
+    "log_sha256": "aa9de60cc98f31ef4530d078b9009a84b20155a7c0ca4d0771af9aee1e27d0f6",
+    "passed": 4,
+    "whole_command_wall_seconds": 2.2763947
+  },
+  "verdict": "pass_delta"
+}

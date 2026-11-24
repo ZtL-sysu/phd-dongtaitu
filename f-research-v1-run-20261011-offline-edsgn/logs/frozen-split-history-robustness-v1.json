@@ -1,0 +1,13 @@
+{
+  "scope": "resource/functionality diagnostic",
+  "status": "passed",
+  "wall_seconds": 4.9493517,
+  "tests": 14,
+  "real_data": false,
+  "model_or_optimizer": false,
+  "gpu": false,
+  "files": {
+    "edsgn/staging/frozen_split_history_robustness_v1.py": "9688f2ea4c81485c3363a7ba1c24708dd4588bea0a57a49cada3defc886f41c3",
+    "edsgn/tests/test_frozen_split_history_robustness_v1.py": "7fe02904bccc649f5c30b35012f515f0683e8534dd71e2e49fd254a1e049b268"
+  }
+}

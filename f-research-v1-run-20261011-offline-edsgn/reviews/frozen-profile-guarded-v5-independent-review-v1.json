@@ -1,0 +1,22 @@
+{
+  "verdict": "acceptable_for_gated_engineering_preparation_with_limits",
+  "scientific_result": false,
+  "source": "edsgn/staging/frozen_profile_guarded_v5.py",
+  "source_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+  "tests": "edsgn/tests/test_frozen_profile_guarded_v5.py",
+  "tests_sha256": "519b7102a84eeadbd1bec3b6cf5a813cce3fbfcedb26440966352e2d6d202eeb",
+  "test_result": "11 passed in 14.44s",
+  "underlying_profile_source": "edsgn/src/edsgn/profile.py",
+  "training_normalization": "checkpoint training PreparedData stats verified; synthetic selected split recomputed with frozen stats",
+  "replay_protocol": "full origin order; B1 FP32; 10 warmup; 5 repeats; synchronized model wall timing",
+  "blind_controls": "periodic/random apply accepted helper and revalidate source/freeze acceptance",
+  "locks": [
+    "logs/model-resource.lock",
+    "logs/offline-phase-wall/campaign.lock"
+  ],
+  "limitations": [
+    "final receipt serialization follows the last cumulative budget guard",
+    "failure after partial test replay has no incremental completed-origin counter; started and complete flags distinguish this from successful full completion"
+  ],
+  "actual_data_checkpoint_gpu_or_phase_accessed": false
+}

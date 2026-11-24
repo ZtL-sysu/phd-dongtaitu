@@ -1,0 +1,19 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:14:48.859549+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/verified_frozen_dispatch_v3.py": "957fb75244125c32db5c667e9ea563d63ecaa024a6642e47ec1bc88a3d2ec579",
+    "edsgn/tests/test_verified_frozen_dispatch_v3.py": "232ff3a00c8f75ab87898f7565ea1a25ba2d1264f3a663c5642917af3cfaa860",
+    "reviews/verified-frozen-dispatch-independent-v2.md": "e7cf8968669e0325465ed92acbf6f155731c05dfc6e715db795cee05114cd84d",
+    "reviews/verified-frozen-dispatch-independent-v2.json": "728043b21633f92c22c2ea120e28a830741a398f6cb9ce8dc9b4ac25e7a21a1b",
+    "reviews/verified-frozen-dispatch-v3-writer-review.md": "ae7c099b627125d73f404db6a6295a09175f82e7f15301f687b52c4d61992c08",
+    "reviews/verified-frozen-dispatch-v3-writer-review.json": "d1c8a765259526796af64802aa691b6beba60517480115c001163b9956b8cb13",
+    "protocols/verified-pipeline-validator-source-v1.json": "b52382482de9b8238787fbe14b93ec6588d3bbf26942b223b794af193bc80a83"
+  },
+  "actual_child_run": false,
+  "parent_acquires_model_leases": false
+}

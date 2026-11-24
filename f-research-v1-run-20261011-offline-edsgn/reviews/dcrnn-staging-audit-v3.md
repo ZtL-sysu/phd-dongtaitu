@@ -1,0 +1,15 @@
+# DCRNN staging adapter audit v3
+
+This is an unregistered, local functionality/resource diagnostic. It does not integrate a package baseline or make a scientific or speed claim. v3 is copied from v2 and changes only the adapter-side graph-support construction and diagnostic expectations; v1/v2 evidence and all upstream files remain unchanged. The pinned source is `sources/DCRNN_PyTorch` at commit `d92490b808ba5c5be2f23d427d96e9a56b066d7f` (MIT). SHA-256 hashes for author cell/model/utils, YAML, README and license are unchanged before/after the smoke.
+
+## Sparse support correction
+
+The v2 audit found an upstream defect in `DCGRUCell._build_sparse_matrix`: it sorts COO coordinate rows but supplies the original, unsorted `L.data` to those new coordinates. On the deliberately nonuniform asymmetric toy prior, the legacy conversion differs from the hand-derived directional supports by maximum absolute error `0.6000000119`. v3 therefore does not call that one upstream helper when rebuilding `_supports`. Its `_paired_coo_tensor` preserves each SciPy COO `(row, col, value)` triple and coalesces the resulting Torch sparse tensor. The author's `calculate_random_walk_matrix` function, DCGRU recurrence, convolution weights, diffusion recurrence, parameter layout, and encoder/decoder remain unchanged. This is named **DCRNN-adapted (author architecture + sparse index/value correction)**, not a verbatim implementation.
+
+For the asymmetric nonuniform toy graph, expected supports are hand-derived as `(D_out^-1 A)^T` and `(D_in^-1 A^T)^T`, including zero-degree handling. Both stored `supports.to_dense()` tensors match these matrices. An isolated node has all-zero support row/column; an explicit isolated-node impulse confirms the zero-order input term remains present. For each directional support, sparse multiplication of identity impulses equals dense matrix multiplication. The old author sparse conversion is run only as a diagnostic and is not used by v3.
+
+## Other checks
+
+Four CPU toy cases covered B=2, N=5, L=24, H=7, F=1/2, with count and signed output. All cases passed finite predictions and gradients, stable materialized parameter count, same-seed repeatability, checkpoint graph persistence, support reconstruction after loading into a model constructed with a different graph, and prediction equality within `1e-7`. CPU device migration passed. Forward hooks confirmed the counters: 62 recurrent cell calls, 124 diffusion convolution calls, 496 support/order applications and 7 readout calls. No data, optimizer, GPU, test predictions or metrics were used. Whole-process wall time is recorded as resource bookkeeping only.
+
+Remaining integration conditions are real-data training-only graph construction/provenance, persisting and verifying graph identity in launch/checkpoint bindings, and a separate review of downstream launcher compatibility. The sparse index/value correction is intentionally confined to this staging adapter; it does not modify upstream or package code.

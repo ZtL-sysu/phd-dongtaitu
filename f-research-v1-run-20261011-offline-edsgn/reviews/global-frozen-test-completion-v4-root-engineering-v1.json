@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "scope": "whole_frozen_test_queue_metadata_completion_local_engineering_only",
+  "accepted_by": "root",
+  "verdict": "pass",
+  "accepted_utc": "2026-10-11T15:00:49.699008+00:00",
+  "evidence_sha256": {
+    "edsgn/staging/global_frozen_test_completion_v4.py": "e05ea055be0852aecc3b9a0113b177c54a3567ad8adf5c7bbb34aa08a887a5c3",
+    "edsgn/staging/global_frozen_test_completion_v3.py": "6b4979738256b0ffe86dd30b94db6543c7ced3e578f88ca70410c0507d06a1c5",
+    "edsgn/staging/test_global_frozen_test_completion_v4_all_drivers.py": "07e8a7da83be37e56a81bbf8c2f979ad03251d10770fb7ff6118d0be7b7c3dad",
+    "reviews/global-completion-v4-seven-driver-cpu-v1.md": "648cef49bac189aaa26ed12b16b57d776a8a16ca64f8da6e7575fd85ae49662d",
+    "logs/global-completion-v4-seven-driver-cpu-v1.json": "a8107b93bb2a4f40a435106f32cffcd9c10f945e329a25e44d8428198e2f2be0",
+    "reviews/global-completion-v4-delta-independent-v1.md": "87323e8d552c0dd8a4a7e4da210fed5841e3b7aa2bfe7b7140caf92f6ec956b8",
+    "reviews/global-completion-v4-delta-independent-v1.json": "e0fcdef2b3be2dcdb18cf6c311982d9374b285f13d1d9c031ce128df94aa286e",
+    "edsgn/staging/test_global_frozen_test_completion_v4.py": "cad154c3778d6dec2311438955c0351438b86c89ab96fbaf8aa2439397bdcecb",
+    "protocols/global-simple-case-extension-root-design-v2.md": "0a81a8eae75e37f84139f7c26c8150dfe45cb54da50046f1340d6498a4364ff6",
+    "reviews/global-frozen-test-completion-independent-v3.md": "aafac355ed6ee9e7da5b2d96af7534cb72f8835c0fd120e0c2074214c104e0e6",
+    "reviews/global-frozen-test-completion-independent-v3.json": "8535d1ed29e2c4b9668e1e35cc9e15bf550163b255ebbf544855803e712ce19d",
+    "reviews/global-completion-v3-seven-driver-mixed-cpu-v1.md": "5b70d72b8cfd48477ea8bcd4be5b1ad937b89a996d8c741d91c28e091f5a757e",
+    "logs/global-completion-v4-root-tests-v1.log": "5a2ce6e633c4d719553a73bdbe9d5a9c51f22aed1c2e49e686e00e83b5890aee"
+  },
+  "root_review": [
+    "Root reviewed the v3 full implementation and v4 minimal delta; prior 31 independent v3 tests and mixed seven-driver fixtures remain relevant.",
+    "Root65 CPU tests cover graph_v8, prediction_v5, h2_v4, profile_v5, c06_v5, simple_v3 and case_v3 together, without numerical NPZ decoding.",
+    "Completed simple/case phase receipts require exact full output filename-to-SHA maps; resealed omission attacks now reject.",
+    "Prediction output-list normalization rejects duplicate resolved paths even when hashes agree; exact original receipt, alias, dispatcher and output tree closure are retained.",
+    "Unknown mandatory drivers and incomplete all-queue completion fail before oracle/report consumers."
+  ],
+  "writer_cpu_tests_passed": 65,
+  "independent_delta_cpu_tests_passed": 4,
+  "root_cpu_tests_passed": 65,
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "actual_test_authorized": false,
+  "actual_execution_completed": false,
+  "limitations": [
+    "Metadata fixture acceptance does not prove numerical semantics, scientific outcomes or RP inventory completeness.",
+    "Graph/H2 legacy receipt contracts lack full phase maps; their exact closed output set and managed dispatcher closure remain mandatory.",
+    "Actual simple/case managed admission, compatible dispatcher, post-P4 bindings, all actual test jobs and completion remain pending."
+  ]
+}

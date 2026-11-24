@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "review_type": "independent source and CPU-toy review",
+  "overall": "blocked_pending_repairs",
+  "execution": "Conda dyg-cold; CPU toy tests only; no real data/archive, checkpoint, model training, optimizer, GPU, or replay loaded/launched.",
+  "test_command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/tests/test_frozen_graph_state_diagnostic_v5.py edsgn/tests/test_frozen_h2_matched_retention_v3.py edsgn/tests/test_frozen_validation_calibration_v4.py",
+  "tests": "39 passed in 5.36s",
+  "drivers": [
+    {
+      "driver": "frozen_graph_state_diagnostic_v5.py",
+      "verdict": "needs_repair_before_phase",
+      "source_sha256": "ffdf60273eb6dd2b45494df8f71ef57ecdbc9590ff63d75dc93001e963c02d45",
+      "checks": "Correct actual task schema (payload task dimensions), strict canonical P2/P3/P3A passed/pass with P4 running and bound evidence; engine.validate_freeze plus exact test+oracle byte authorization; per-origin guard and source/normalization/freeze/collection fences before/after replay; synthetic perturbations use frozen main-training normalization; oracle is first decoded after full inference and is not passed to model/policy; complete ordered test origins and full-origin outputs.",
+      "finding": "No live 72-hour aggregate budget check after final output report serialization. replay calls budget_guard before metrics/artifact writing, then serializes predictions/alignment/metrics/final JSON and performs integrity checks; main immediately sets receipt completed. Add a final budget_guard after write_final_artifact_report/final serialization before return/completion.",
+      "location": "edsgn/staging/frozen_graph_state_diagnostic_v5.py:697-755 and :845"
+    },
+    {
+      "driver": "frozen_h2_matched_retention_v3.py",
+      "verdict": "needs_repair_or_explicit_scope_limit",
+      "source_sha256": "3c7d25793817fd8e27af8cdae48f98e48063a347c844951c86fa58a2974fec32",
+      "checks": "Task dimensions are read from payload task (not fabricated config fields); test phase gate and hash-bound evidence; test freeze binds checkpoint/parameters/policy plus exact stress collection bytes/fingerprint and source/dependency/kernel; each origin checks budget; final report is fenced by guards before and after serialization and full source/data/freeze checks; targets are outside kernel inputs; complete ordered origins and 5-arm NPZs.",
+      "finding": "Stress task/node order and checkpoint train stats are checked, but frozen normalization is only applied/verified when every dataset is synthetic. For real non-synthetic stress collections the driver does not assert each PreparedData mean/std/scale equals checkpoint statistics before replay. Either assert exact train-normalizer equality or explicitly reject those collections; byte allowlisting alone does not bind normalization semantics.",
+      "location": "edsgn/staging/frozen_h2_matched_retention_v3.py:331-343; final fence at :380-390"
+    },
+    {
+      "driver": "frozen_validation_calibration_v4.py",
+      "verdict": "blocked_runtime_name_error",
+      "source_sha256": "821366792726e6703fe2e60aeb0ef4eff38d6e02d8bc58e53b7a66f9c8c4ddaa",
+      "checks": "Strict canonical gate validates passed/pass P2/P3/P3A, running P4, unique stage IDs and hash-bound inputs/evidence; validates accepted epsilon and test support from metadata; guards origins/batches to validation only; checks full ordered validation predictions/targets/masks, input hashes, checkpoint params, and exposes combined-NPZ materialization explicitly as test_accessed while stating no test origin/window/target feedback.",
+      "finding": "The final gate fence references local variable canonical_gate_bytes at line 632, but the function only binds canonical_state (line 521) and never assigns canonical_gate_bytes anywhere. Successful calibration therefore reaches a NameError after writing the validation artifacts and before status=completed. Capture canonical pipeline bytes alongside the initial state and pass them to _verify_final_canonical_gate. Existing CPU tests do not execute guarded_calibration through this finalization path.",
+      "location": "edsgn/staging/frozen_validation_calibration_v4.py:521,632"
+    }
+  ],
+  "limitations": [
+    "All three writer-owned CPU suites passed, but none establishes actual checkpoint replay or phase completion.",
+    "For combined chronological NPZ calibration, datasets_at may materialize whole-array test values/masks; guards prevent test-origin/window/target use, and result metadata discloses materialization rather than claiming no test bytes were touched.",
+    "This review is an independent engineering check only; it cannot pass a pipeline stage or establish a scientific outcome."
+  ],
+  "source_and_test_hashes": {
+    "frozen_graph_state_diagnostic_v5": {
+      "path": "edsgn/staging/frozen_graph_state_diagnostic_v5.py",
+      "sha256": "ffdf60273eb6dd2b45494df8f71ef57ecdbc9590ff63d75dc93001e963c02d45"
+    },
+    "frozen_h2_matched_retention_v3": {
+      "path": "edsgn/staging/frozen_h2_matched_retention_v3.py",
+      "sha256": "3c7d25793817fd8e27af8cdae48f98e48063a347c844951c86fa58a2974fec32"
+    },
+    "frozen_validation_calibration_v4": {
+      "path": "edsgn/staging/frozen_validation_calibration_v4.py",
+      "sha256": "821366792726e6703fe2e60aeb0ef4eff38d6e02d8bc58e53b7a66f9c8c4ddaa"
+    },
+    "test_graph_v5": {
+      "path": "edsgn/tests/test_frozen_graph_state_diagnostic_v5.py",
+      "sha256": "c6edb830f4f08a2a897840648df2c8c608965d7527d103a5355d1043007823e5"
+    },
+    "test_h2_v3": {
+      "path": "edsgn/tests/test_frozen_h2_matched_retention_v3.py",
+      "sha256": "b9add6d57d6a3dc7925d772643efc1fa06d736e5100441445f441079bae7d240"
+    },
+    "test_calibration_v4": {
+      "path": "edsgn/tests/test_frozen_validation_calibration_v4.py",
+      "sha256": "09ea8f3c346ed8dc1b8cbb4ee3fc495d97e62f7f2214185e98d98dd23b2acbf5"
+    }
+  }
+}

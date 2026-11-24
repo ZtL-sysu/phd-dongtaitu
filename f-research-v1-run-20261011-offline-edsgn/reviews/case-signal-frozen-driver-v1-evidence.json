@@ -1,0 +1,19 @@
+{
+  "scope": "writer_self_review_engineering_toy_only",
+  "driver": "edsgn/staging/frozen_case_signal_sensitivity_v1.py",
+  "driver_sha256": "869DAF224E2CDAFBF74ED14B60855776B0A09DCF37CBB378A51495E1A14FFACD",
+  "tests": "edsgn/tests/test_frozen_case_signal_sensitivity_v1.py",
+  "tests_sha256": "7297B34FD5216ED01024DA473CA4BE1EB5B949D9CE808A4EB796C3CD8865D6E8",
+  "test_log": "logs/case-signal-frozen-driver-v1-tests.log",
+  "test_log_sha256": "96B5843DA97A0A3A2D547F65496CB6078B5CE7C10B75E4DB3233E449565BB916",
+  "pytest_result": "6 passed in 5.19s",
+  "kernel_v2_sha256": "A49F823CDAE53A2F246DBA7875A033ADA470AB16BB05B8FFDFE811D9AC0C68B5",
+  "h2_kernel_v2_sha256": "2BB4D80F6F75A299BC56DCE66283730646426004F86600692FDD3010FCA35D91",
+  "kernel_acceptance_receipt_sha256": "54C0282E40D114FFE4FF27EB275DBD986DA341623AFEAB38A424A8C460B84065",
+  "actual_data_or_model_accessed": false,
+  "gpu_optimizer_or_real_launch": false,
+  "public_real_launch_enabled": false,
+  "managed_global_inventory_and_dispatcher": "pending",
+  "selection_artifact_schema_acceptance": "pending",
+  "science_or_p3a_acceptance": false
+}

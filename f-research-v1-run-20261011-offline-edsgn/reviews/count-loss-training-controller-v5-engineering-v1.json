@@ -1,0 +1,12 @@
+{
+  "scope":"engineering_implementation_evidence_only",
+  "controller":{"path":"edsgn/scripts/count_loss_training_controller_v5.py","sha256":"7E60B6993AB4437FA8F907D7E63E52EC220C2726C3A13888886FA3C0ACD025F0"},
+  "shared_inventory":{"path":"edsgn/scripts/owned_python_job_inventory_v1.py","sha256":"C31E70671F3846CDD8B1FB61E06AAB45C0110D9AD5C5F1F3823377AB6D267D06"},
+  "tests":{"path":"edsgn/tests/test_count_loss_training_controller_v5.py","sha256":"B2096A5951A2979CBC74A429DDC07D0E608807FB2EEBDE058CD876F55C398CFF","result":"34 passed in 27.36s"},
+  "test_log":{"path":"logs/count-loss-controller-v5-tests.log","sha256":"5D04E388EA6EEFFA9E8EDFF1A65BE30F2FE6D35927A27632313B6E6EDE713622"},
+  "native_diagnostic_source":{"path":"edsgn/scripts/root_native_process_metadata_v1.py","sha256":"C77D9AAC94170C83DF96C09E366392BFFDEBE1F0CA8951DF3703D0796BEAA548"},
+  "live_scan":{"path":"logs/count-loss-controller-v5-live-scan.json","sha256":"C8C903954CED5626888FBA70DAD14AE1581D0C62F4DF4F495CF75B9E70A2AB83","detected_pids":[6236,33368],"launch_authorized":false},
+  "v4_preserved":true,
+  "real_job_started":false,
+  "pipeline_or_science_advanced":false
+}

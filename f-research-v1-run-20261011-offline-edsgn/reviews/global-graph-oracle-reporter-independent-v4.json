@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "scope": "independent_narrow_cpu_source_and_toy_review",
+  "verdict": "type_hardening_verified_engineering_only",
+  "actual_replay_or_scientific_acceptance": false,
+  "prior_review": {
+    "path": "reviews/global-graph-oracle-reporter-independent-v3.md",
+    "sha256": "d30c3a3bf0f61d1305fcfcf85825fb8e819e99f743ba2cc2b5cf5543e9943a39",
+    "prior_json_sha256": "e1e86ae2fdb80fdbbd03f1c4f5dbb3ac9d53bd2282eca81f82a5934c5a3fb279"
+  },
+  "sources": {
+    "reporter": {
+      "path": "edsgn/staging/global_graph_oracle_report_v1.py",
+      "sha256": "41bbf29335820cc6359f32e169fb4434946b54fa01e7da5a0aaf70f876bb34bc"
+    },
+    "tests": {
+      "path": "edsgn/staging/test_global_graph_oracle_report_v1.py",
+      "sha256": "7e73aae2d7be8e1a817f772aa7f16f297665da127243f9bc4d15a9b6b77cdb2e"
+    },
+    "global_completion": {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    "ordinary_admission_helper": {
+      "path": "edsgn/staging/ordinary_frozen_test_admission_v1.py",
+      "sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48"
+    },
+    "ordinary_admission_tests": {
+      "path": "edsgn/tests/test_ordinary_frozen_test_admission_v1.py",
+      "sha256": "fcb99304d03db80ccaa6758c517b4332a5c97e0b3f8bb08290870609905f6457"
+    }
+  },
+  "verified_delta": {
+    "rule": "authority trajectory_seed_id must have exact int type and be >= 0",
+    "validation_order": "before trajectory/oracle NPZ member decode",
+    "negative_fixture": "boolean true rejected",
+    "npz_load_calls_before_rejection": 0
+  },
+  "test_results": {
+    "reporter": "10 passed in 2.59s",
+    "ordinary_admission": "15 passed in 7.69s",
+    "environment": "Conda dyg-cold; CPU only"
+  },
+  "limitations": [
+    "No real data, checkpoint payload, oracle archive, model, GPU, training or test evaluation was read or run.",
+    "This review does not establish actual global replay closure, scientific acceptance, or structural recovery."
+  ]
+}

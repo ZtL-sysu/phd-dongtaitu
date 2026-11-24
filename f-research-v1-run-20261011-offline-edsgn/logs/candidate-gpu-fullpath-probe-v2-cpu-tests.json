@@ -1,0 +1,20 @@
+{
+  "scope": "controller CPU mock tests and toy parity review",
+  "gpu_used": false,
+  "real_dataset_used": false,
+  "optimizer_steps": 0,
+  "exit_code": 0,
+  "process_wall_seconds": 6.331893499998841,
+  "test_output": ".......                                                                  [100%]\n7 passed in 4.63s",
+  "v1_unchanged_matches_snapshot": true,
+  "sha256": {
+    "snapshots/candidate-gpu-fullpath-probe-before-v2.py": "0ac8e659dbd6d54811b1c227a4b35ac91618fd1177210b328e9237595263e3e5",
+    "edsgn/scripts/candidate_gpu_fullpath_probe_v1.py": "0ac8e659dbd6d54811b1c227a4b35ac91618fd1177210b328e9237595263e3e5",
+    "edsgn/scripts/candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "edsgn/tests/test_candidate_gpu_fullpath_probe_v2.py": "7bdc430d65a1717b51682ba310d5cdc52f7356ea352054f2769d51725ad40e2d",
+    "edsgn/scripts/candidate_bounded_tensor_diagnostic_v2.py": "e261a34a75f93357be72d3260bf084dd6a41135b2f4dcf68d5396782e4631333",
+    "edsgn/src/edsgn/model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "logs/candidate-bounded-tensor-diagnostic-v2.json": "80a2513d01a86378988718294b304836e7402231db2e4722e83f5ef1a82485d9",
+    "logs/candidate-fullpath-cpu-toy-v1.json": "34c10c846a369d5b5dc36228d0eaaeab9ac37d15c4115b5a86d8e4bb59df06f4"
+  }
+}

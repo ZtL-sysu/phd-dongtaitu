@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "scope": "CPU toy engineering semantics only",
+  "wall_seconds": 2.45,
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "source_path": "edsgn/staging/case_signal_sensitivity_kernel_v1.py",
+  "source_sha256": "00be678117addce563d10aa84ba135e8d2578b9e39dab7b31c40689a0f9516aa",
+  "test_path": "edsgn/tests/test_case_signal_sensitivity_kernel_v1.py",
+  "test_sha256": "25fb159c27bad1ce85007ed0c57093a8591b81dcb4de8d86f45f0089d410bc3f",
+  "test_log_path": "logs/case-signal-sensitivity-kernel-v1-tests.log",
+  "test_log_sha256": "aa1b714d401ba0999d684cdd3e237c034bf371363fc09e455d2986360f54b459",
+  "environment": {
+    "python": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe",
+    "device": "CPU",
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2
+  },
+  "checks": [
+    "fixed directed neighbor removed at focal rows for B=2",
+    "candidate cap unchanged/no refill; focal self sentinel excluded",
+    "support renormalization and explicit empty support",
+    "c recomputed independently with aligned_change and differs from teacher at a refresh",
+    "informative replay parity; retention teacher graph/actions exact",
+    "focal log(g)=0 and nonfocal log(g) equals informative teacher",
+    "parameter SHA unchanged",
+    "N=2 empty support forward finite",
+    "labels/noncausal payload and self edge rejected"
+  ],
+  "limitations": [
+    "Toy random initialized V4 only; not a frozen selected validation edge or real-domain replay.",
+    "No actual data, checkpoint, oracle, GPU, optimizer, phase gate, or full-domain validation was used.",
+    "Relationship change may alter later predictions/monitoring and thus later nonfocal graphs; the direct nonfocal graph equality assertion is limited to the initial refresh."
+  ],
+  "dependencies": [
+    {
+      "path": "edsgn/staging/h2_matched_graph_retention_v2.py",
+      "sha256": "2bb4d80f6f75a299bc56dce66283730646426004f86600692fdd3010fca35d91"
+    }
+  ]
+}

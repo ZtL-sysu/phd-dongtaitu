@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "binding_type": "at-launch",
+  "recorded_utc": "2026-10-12T17:08:27+00:00",
+  "status": "captured-before-training",
+  "dataset_root": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "dataset_sources": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json",
+      "sha256": "d73bdc3044287d6503ff939234a464149121e820b61212aa47c2d437ba9eedd3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\test_seed200.oracle.npz",
+      "sha256": "e2017d367198a84d42fd48d38b1571e79ad52832f510f8d80f88a610210ba823"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\test_seed201.oracle.npz",
+      "sha256": "b8154d4d3b573fc97eb06a7b23c229940a83c301253d2e184cbbaea0d858a5db"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\test_seed202.oracle.npz",
+      "sha256": "a7f8b3d606f94f50c3b210e0b7392025d96e5f05ecd4beafa6b0ffe1f73a573d"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\test_seed203.oracle.npz",
+      "sha256": "6a2c5d73c64054ebdd438495f9493adb90ae848dee98739de8461d0a281eb9fb"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed0.oracle.npz",
+      "sha256": "5840069fcb56721fc6574ea082d68d97d7f33c88e2f40d1faa98e633d4e2af65"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed1.oracle.npz",
+      "sha256": "f53be86e960003551462730e1161f1c56fc82e0291d61c043f764b249de09d15"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed2.oracle.npz",
+      "sha256": "37973cf326f06d9308ec802488669274411de352665c53d0118136b7cf2b9b92"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed3.oracle.npz",
+      "sha256": "829ebe13d2bd56b4b6ab169955b6457e6eae38f1612f7c4b9103fd85dc7064a3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed4.oracle.npz",
+      "sha256": "44c30203f2d99fa8a5e6ff76446918acef1ea6761b4b74c734e09f31938ffcb2"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed5.oracle.npz",
+      "sha256": "554ac571a8bd79573be770c6edaee97953f9ccc9f7bd222a4f44eb1142d3ccab"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed6.oracle.npz",
+      "sha256": "216a4d8723226887edc8deca92dd9d7a5fc084c8657a2e58a07b5ef9c629f7de"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\train_seed7.oracle.npz",
+      "sha256": "54ae087d3ed3fd7d72739c9d025a724c7913f839dd13c7d392a26d17cd1cd4a5"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\validation_seed100.oracle.npz",
+      "sha256": "9a61d76336234212dcad9ac2693fd4473ed7710e03f7d4960b2494f68bf09840"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\oracle\\validation_seed101.oracle.npz",
+      "sha256": "59368f7767bc26d9fa740bd9bee276bcecdbcf94bafb3fc7fa2b68b5372a92bc"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed200.npz",
+      "sha256": "56b11569d58c10c6a31b31404718edecdc3083acb2d03638c47dc223fb3c45a1"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed201.npz",
+      "sha256": "af353658b162a462b0ca3b73b41fd31d9125c7dfa9cd4f9194edfca7cf539db6"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed202.npz",
+      "sha256": "43026ec411a9550e9f036b6ff35638a5b76423542073ef473edc6d97a31ff5e9"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed203.npz",
+      "sha256": "bd041b20152a8687a87a801dc6c90f7a473a368019cfa34cd130d59d8fb84785"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed0.npz",
+      "sha256": "32a9d753c0ae872aa9b876eea3dffbe37eed4c712b1e579b3acc42c152a107d5"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed1.npz",
+      "sha256": "7bfa3d723830bdf363942511198d7282a56d0ca1e32bbf7b921206d101a92115"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed2.npz",
+      "sha256": "79c7f7cfe4259437c4998409d7544eb1c178e190e29ff5392f275de51ea85173"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed3.npz",
+      "sha256": "63a5b407dacec2aff6c7329d1cfd3348a4e8ad2d4b924c5ebceb2fd37e8110a0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed4.npz",
+      "sha256": "c3f6321bf9fe129def616a3f882f5281204d5efc7c1b6179b08a2d6cd90677e5"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed5.npz",
+      "sha256": "f555ab127349d4bf7b11747ec8e9d0b74fa4a620476424d86a5c080c85a17828"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed6.npz",
+      "sha256": "ecdc3a6971ec1bd656e39d5a83f7ac846b92f24fb8e8381726a788e5f7683720"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed7.npz",
+      "sha256": "4ca071785ce7f9d7f5dd0eea0f9a745afb29af8f49ba2aac700b33167d6f9a09"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+      "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+      "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54"
+    }
+  ],
+  "config_source": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-DGCRN-seed3.json",
+    "sha256": "f732a98ec561ead7cce1b4f75f058a024d754a379ef6aa8cbf3f084228fe0647",
+    "canonical_config_sha256": "9cc29910cffe604de91c6ada4303b0156ba32af3ab779455187086b649785f2e",
+    "config": {
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+      "variant": "DGCRN",
+      "seed": 3,
+      "device": "cuda",
+      "threads": 2,
+      "batch_size": 128,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "epochs": 100,
+      "patience": 10,
+      "model": {
+        "d_total": 64,
+        "k": 8,
+        "candidate_cap": 32,
+        "tau_fast": 1.0,
+        "tau_slow": 8.0,
+        "beta_init": 1.0,
+        "lambda_temporal": 0.01
+      },
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-strong-five-seed-v1\\synthetic\\DGCRN\\seed3"
+    }
+  },
+  "variant": "DGCRN",
+  "code_sources": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\__init__.py",
+      "sha256": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\agcrn_checkpoint.py",
+      "sha256": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py",
+      "sha256": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\calibrate.py",
+      "sha256": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\candidate_batch.py",
+      "sha256": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+      "sha256": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+      "sha256": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\dcrnn_baseline.py",
+      "sha256": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+      "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\evaluate.py",
+      "sha256": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\external_baselines.py",
+      "sha256": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py",
+      "sha256": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prepare.py",
+      "sha256": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+      "sha256": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\profile.py",
+      "sha256": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\robustness.py",
+      "sha256": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\rp_baselines.py",
+      "sha256": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py",
+      "sha256": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\statistics.py",
+      "sha256": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\stid_baseline.py",
+      "sha256": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+      "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+    }
+  ],
+  "hash_policy": "SHA-256 of all .npz/.json files under dataset directory; filename labels do not exclude files; hashes do not load array contents"
+}

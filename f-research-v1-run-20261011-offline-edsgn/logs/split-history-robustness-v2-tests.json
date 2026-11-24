@@ -1,0 +1,14 @@
+{
+  "test": "edsgn/tests/test_split_history_robustness_v2.py",
+  "result": "passed",
+  "pytest_exit_code": 0,
+  "py_compile_exit_code": 0,
+  "wall_seconds": 1.83,
+  "scope": "CPU toy tests only",
+  "real_data": false,
+  "target_arrays_read": false,
+  "model": false,
+  "gpu": false,
+  "optimizer": false,
+  "pass_count": 12
+}

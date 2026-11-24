@@ -1,0 +1,64 @@
+{
+  "scope": "read-only metadata preflight only; campaign numeric audit not invoked",
+  "status": "prepared_not_executed",
+  "total_unique_jobs": 80,
+  "queues": [
+    {
+      "key": "strong8",
+      "path": "protocols/p3-bound-strong-baseline-queue-v3.json",
+      "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+      "acceptance_path": "reviews/p3-strong-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+      "jobs": 8
+    },
+    {
+      "key": "internal10",
+      "path": "protocols/p3-internal-bound-queue-v4.json",
+      "sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "acceptance_path": "protocols/p3-internal-bound-queue-root-acceptance-v4.json",
+      "acceptance_sha256": "9bde37a727c563b0e3478bed561489119cf7336bd959e8764762f7401547596e",
+      "jobs": 10
+    },
+    {
+      "key": "external16",
+      "path": "protocols/p3-external-bound-queue-v2.json",
+      "sha256": "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d",
+      "acceptance_path": "protocols/p3-external-bound-queue-root-acceptance-v2.json",
+      "acceptance_sha256": "78b70e59bc04b63b7116ccd5a3a170bccd920840667d1d8ed0ad80abdccde882",
+      "jobs": 16
+    },
+    {
+      "key": "fresh6",
+      "path": "protocols/p3-fresh-remaining-bound-queue-v1.json",
+      "sha256": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+      "acceptance_path": "protocols/p3-fresh-remaining-bound-root-acceptance-v1.json",
+      "acceptance_sha256": "492f8da126c1e2917e98d77bc3cfe1d461b13ae9658a741e2b5354341501a258",
+      "jobs": 6
+    },
+    {
+      "key": "gru16",
+      "path": "protocols/p3-gru-replication-queue-v1.json",
+      "sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+      "acceptance_path": "protocols/p3-gru-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "d4114562deee19ae06301660b4df25fb459caae1093c32e5e1a0ad763b39d8b0",
+      "jobs": 16
+    },
+    {
+      "key": "strong24",
+      "path": "protocols/p3-strong-replication-queue-v1.json",
+      "sha256": "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9",
+      "acceptance_path": "reviews/p3-strong-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+      "jobs": 24
+    }
+  ],
+  "tests": "6 passed",
+  "test_log_sha256": "335d0e98d4b1083b523f5e8e29a69ebf82c9b651baacfcd724cda6d02707757b",
+  "files_sha256": {
+    "edsgn/scripts/audit_completed_p3_campaign_v2.py": "ecbfd61d4ca0a67a568b7b4a8c9e88ab1d68356aa3e3ae3bd8fd6f720be9f798",
+    "edsgn/tests/test_audit_completed_p3_campaign_v2.py": "cb3791b3f59a5f61c1b5cebbe1e61066910ee506f945577ed7a9aef6b243bcd3"
+  },
+  "scored_test_origins": false,
+  "combined_archive_disclosure": "validation origins only; unchanged numeric-v3 may materialize entire array members in chronological combined NPZ",
+  "test_arrays_checkpoint_model_gpu_training_touched": false
+}

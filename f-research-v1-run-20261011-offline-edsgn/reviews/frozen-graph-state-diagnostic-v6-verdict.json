@@ -1,0 +1,19 @@
+{
+  "review_role": "writer_self_review",
+  "independent_review": false,
+  "source": "edsgn/staging/frozen_graph_state_diagnostic_v6.py",
+  "source_sha256": "7c91a01f237d64c7f2db383fc31a823265edd7e42b4daa456744e755716302a7",
+  "focused_tests": {
+    "path": "logs/frozen-graph-state-diagnostic-v6-focused-tests.log",
+    "sha256": "2871be95774350377cc29dcbf7cc6e9d3b01b3afb0bcbbad3dc8c9d355b3339",
+    "passed": 3,
+    "deselected": 21,
+    "scope": "CPU toy only; no real data/checkpoint/model/GPU/optimizer/training"
+  },
+  "cap_preflight": {
+    "path": "logs/frozen-graph-state-diagnostic-v6-cap-preflight.json",
+    "sha256": "63278a471ad9584dea8407065e75483f14a643e0d7685f3a5a025614ca47be8d",
+    "scope": "metadata and values header only; no array payload"
+  },
+  "result": "narrow stop-loss engineering checks pass; scientific and phase gates remain pending"
+}

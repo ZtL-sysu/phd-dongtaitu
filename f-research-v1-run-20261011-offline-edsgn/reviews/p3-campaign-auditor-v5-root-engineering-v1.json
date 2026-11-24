@@ -1,0 +1,21 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed_p3_public_validation_auditor_interface_only",
+  "created_utc": "2026-10-11T13:13:11.239203+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/audit_completed_p3_campaign_v5.py": "92014c522826ef80b653d856d7644cf220454b3c88d70586a4eb288d8e051bff",
+    "edsgn/tests/test_audit_completed_p3_campaign_v5.py": "d7f75cd66f0f10a09c42a6685937c7f98e7fbf658c7c32df5292c2c50f6796b2",
+    "edsgn/scripts/audit_bound_baseline_numeric_v3.py": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "reviews/p3-campaign-auditor-v4-root-engineering-v1.json": "edd9cad7a4b8b92d5af4591621fb6f51d255b80e06af416c55b16fbff10554a8",
+    "reviews/p3-campaign-auditor-v4-root-live-failure-v1.md": "403d48ab0a37af9cd79cb16b3b25b37e11537e1621a7249f5d3340152f8031f6",
+    "logs/completed-p3-campaign-root-audit-v1.log": "875de19bb230788d7ca2881390439e296175112be805328052be5e7623b37baa",
+    "logs/audit-completed-p3-campaign-v5-tests.log": "343c412617b43fbea7353b8151ea4447f619d4bcbd6df35be1e34de4b04038f9",
+    "logs/root-p3-campaign-auditor-v5-tests-v1.log": "9804dccb6e0a136e2c142c9d002d60686e015f65e7eadbfe36852bf3ef963a95"
+  },
+  "actual_campaign_rows_accepted": false,
+  "actual_test_authorized": false
+}

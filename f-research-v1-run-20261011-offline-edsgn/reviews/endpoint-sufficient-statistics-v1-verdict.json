@@ -1,0 +1,13 @@
+{
+  "role": "writer_self_review",
+  "scope": "pure CPU sufficient-statistics converters",
+  "scientific_acceptance": false,
+  "source": "edsgn/staging/endpoint_sufficient_statistics_v1.py",
+  "source_sha256": "ff6de7cd9d711a7cfa3d3d5bd28ce291f753c5b32390698c42b7bc4bc01ea4a1",
+  "test": "edsgn/tests/test_endpoint_sufficient_statistics_v1.py",
+  "test_sha256": "affe609b1e1d5227d86dc989a89fdcfda1604d2fe46e581c6f145359d81f141e",
+  "test_log": "logs/endpoint-sufficient-statistics-v1-tests.log",
+  "test_log_sha256": "d9a02e533b16a124af6fc5d0e49029581608102fb554b82321fe9c0fd515a35b",
+  "tests_passed": 12,
+  "scope_limit": "no file loading, data, model, gate, phase, or claim operations"
+}

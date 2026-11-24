@@ -1,0 +1,44 @@
+{
+  "scope": "independent_source_and_cpu_fixture_review",
+  "verdict": "engineering-source-and-toy-review-pass_with_output-receipt-limitation",
+  "actual_test_phase_run": false,
+  "actual_dataset_oracle_decoded": false,
+  "checkpoint_or_model_loaded": false,
+  "gpu_or_optimizer_used": false,
+  "source_sha256": "4d54488130639e3504d5da307d523249e3b18e08e768dfb01c6bc8680c8d8be4",
+  "test_source_sha256": "f485975e49fe954228d45aa872f0e82c2c5c8ae1ae22b4ff2dd7d79462852fe8",
+  "test_command": "conda dyg-cold; PYTHONPATH=edsgn/src;edsgn/scripts;edsgn/staging OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 python -m pytest -q edsgn/tests/test_frozen_graph_state_diagnostic_v8.py",
+  "test_result": {
+    "passed": 25,
+    "failed": 0,
+    "seconds": 3.61
+  },
+  "source_checks": [
+    {
+      "check": "oracle isolation",
+      "evidence": "collection_fingerprint hashes collection files; replay uses dataset loader on test_seed*.npz and emits oracle_npz_decoded=false; CPU test spies np.load and asserts no oracle path is opened."
+    },
+    {
+      "check": "full origin and output completeness",
+      "evidence": "replay forms expected_pairs from every PreparedData test origin, asserts exact order, B1 loop, writes validation-style predictions/targets/masks/origins/seed IDs, per-origin counters and compact trace."
+    },
+    {
+      "check": "frozen normalization and state compatibility",
+      "evidence": "main training checkpoint payload task schema is used; non-synthetic collections must match checkpoint train stats; synthetic path uses frozen_synthetic_stress.with_frozen_normalization; node order/horizons/count task are checked."
+    },
+    {
+      "check": "retention interpretation",
+      "evidence": "report explicitly states same-step graph can be matched but whole-window graph identity/refresh equality across retention arms is not claimed because future residual/adaptive feedback can differ."
+    },
+    {
+      "check": "source/gate/budget fences",
+      "evidence": "test requires P2/P3 passed/pass, P3A passed/pass with evidence hashes, P4 running; resource helper/source/checkpoint/freeze/input collection hashes are rechecked after artifact serialization; cumulative budget guard runs before each origin, post prediction serialization, before/after report, and before receipt completion."
+    },
+    {
+      "check": "disk and artifact controls",
+      "evidence": "conservative estimate and disk free-space margin precede writes; exact self-inclusive artifact-byte count and cap are enforced."
+    }
+  ],
+  "limitation": "The completed phase receipt is not populated with an explicit per-file outputs path/SHA list by this driver; it records output_dir and origin_count while the diagnostic report records artifact byte totals. Before any managed acceptance, the dispatcher/collector must hash and bind the final output files. The driver gate locally rechecks P2/P3 status/verdict but does not independently hash all P2/P3 predecessor evidence; it does hash P3A evidence. Root-managed dispatch must keep the full predecessor snapshot fence.",
+  "non_scientific": "These 25 tests are CPU toy/guard fixtures, not a real frozen diagnostic run, model evaluation, H1/H2 result, or oracle analysis."
+}

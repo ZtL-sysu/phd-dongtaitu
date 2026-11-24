@@ -1,0 +1,295 @@
+import csv, json, shutil, sys
+from pathlib import Path
+import pytest, torch, numpy as np
+RUN=Path(r'C:\code\phd-dongtaitu\f-research-v1-run-20261011-offline-edsgn')
+sys.path.insert(0,str(RUN/'edsgn/staging'))
+import frozen_profile_guarded_v5 as g
+from edsgn.model import ForecastModel, ModelConfig
+
+class TinyDataset:
+ def __init__(self):
+  self.values=np.zeros((4,3,1),np.float32); self.history=2; self.hmax=1; self.count_data=False; self.event_kind='synthetic'
+ def origins(self,split): return np.asarray([1,2],dtype=np.int64)
+ def window(self,origin):
+  vals=np.asarray([[origin,origin+1,origin+2],[origin+1,origin+2,origin+3]],np.float32)[...,None]
+  return {'values':vals,'input_mask':np.ones_like(vals,dtype=bool),'obs_age':np.zeros_like(vals),
+          'raw_observations':vals.copy(),'events':np.empty((0,3),np.int64),'time_indices':np.asarray([origin-1,origin]),
+          'interval_end':np.asarray([origin-1,origin],dtype=np.float64)}
+
+def write(p,s): p.parent.mkdir(parents=True,exist_ok=True); p.write_text(s,encoding='utf-8'); return p
+def digest(p):
+ import hashlib
+ return hashlib.sha256(p.read_bytes()).hexdigest()
+
+def fixture(tmp_path,monkeypatch):
+ root=tmp_path/'run';root.mkdir(parents=True)
+ shutil.copytree(RUN/'edsgn/src/edsgn',root/'edsgn/src/edsgn')
+ for rel in g.VALIDATOR_HASHES:
+  dst=root/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(RUN/rel,dst)
+ for rel in ['edsgn/scripts/aggregate_budget.py','edsgn/scripts/candidate_gpu_fullpath_probe_v3.py',g.NORMALIZER_HELPER_REL]:
+  dst=root/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(RUN/rel,dst)
+ wrapper='edsgn/staging/frozen_profile_guarded_v5.py';write(root/wrapper,(RUN/wrapper).read_text(encoding='utf-8'))
+ monkeypatch.setattr(g,'__file__',str(root/wrapper));monkeypatch.setattr(g,'ROOT',root)
+ from edsgn.prepare import write_bundle
+ train_dir=root/'data/train';train_dir.mkdir(parents=True)
+ train_raw=np.arange(18,dtype=np.float32).reshape(6,3,1)
+ train_mean=np.asarray([train_raw.mean()],np.float32);train_std=np.asarray([train_raw.std()],np.float32)
+ train_scale=np.ones((3,1),np.float32)
+ write_bundle(train_dir/'train_seed0.npz',raw_values=train_raw,input_mask=np.ones_like(train_raw,dtype=bool),
+     interval_end=np.arange(6,dtype=np.float64),node_ids=np.arange(3),events=np.empty((0,3),np.int64),
+     mean=train_mean,std=train_std,scale=train_scale,count_data=False,horizons=(1,),history=2,hmax=1,
+     splits={'train':(0,6),'validation':(0,0),'test':(0,0)},event_kind='synthetic',partition='train',metadata={'fixture':'train'})
+ datadir=root/'data';datadir.mkdir(exist_ok=True)
+ bundle_dir=datadir/'validation-collection';bundle_dir.mkdir()
+ bundle=bundle_dir/'validation_seed0.npz'
+ selected_raw=(100+np.arange(15,dtype=np.float32)).reshape(5,3,1)
+ selected_mean=np.asarray([selected_raw.mean()],np.float32);selected_std=np.asarray([selected_raw.std()],np.float32)
+ write_bundle(bundle,raw_values=selected_raw,input_mask=np.ones_like(selected_raw,dtype=bool),
+     interval_end=np.arange(5,dtype=np.float64),node_ids=np.arange(3),events=np.empty((0,3),np.int64),
+     mean=selected_mean,std=selected_std,scale=np.ones((3,1),np.float32),count_data=False,horizons=(1,),history=2,hmax=1,
+     splits={'train':(0,0),'validation':(0,5),'test':(0,0)},event_kind='synthetic',partition='validation',metadata={'fixture':'independent validation trajectory'})
+ combined=datadir/'combined.npz'
+ combined_raw=(200+np.arange(21,dtype=np.float32)).reshape(7,3,1)
+ combined_mean=np.asarray([combined_raw.mean()],np.float32);combined_std=np.asarray([combined_raw.std()],np.float32)
+ write_bundle(combined,raw_values=combined_raw,input_mask=np.ones_like(combined_raw,dtype=bool),
+     interval_end=np.arange(7,dtype=np.float64),node_ids=np.arange(3),events=np.empty((0,3),np.int64),
+     mean=combined_mean,std=combined_std,scale=np.ones((3,1),np.float32),count_data=False,horizons=(1,),history=2,hmax=1,
+     splits={'train':(0,2),'validation':(2,5),'test':(5,7)},event_kind='synthetic',metadata={'fixture':'combined with test suffix'})
+ freeze=write(root/'freeze.json','{}')
+ stats={'norm_mean':train_mean.tolist(),'norm_std':train_std.tolist(),'residual_scale':train_scale.tolist(),
+        'output_scale':[1.],'output_mean':[0.]}
+ from edsgn.model import ForecastModel,ModelConfig
+ model=ForecastModel(ModelConfig(n_nodes=3,n_features=1,history=2,hmax=1,variant='V4'),**stats)
+ config={'variant':'V4','model':{},'dataset_path':str(train_dir),'seed':0}
+ ckpt=root/'checkpoint.pt'
+ torch.save({'config':config,'task':{'n_nodes':3,'n_features':1,'history':2,'hmax':1,'count_data':False},
+     'statistics':stats,'state_dict':model.state_dict(),'provenance':{'scope':'full_protocol'}},ckpt)
+ write(root/'contract.md','contract'); stages=[];history=[]
+ for sid in ['P0','P1','P1A','P1B','P2','P3','P3A']:
+  inp=write(root/f'ev/{sid}-in',sid);ev=write(root/f'ev/{sid}-out',sid+'e')
+  stages.append({'id':sid,'status':'passed','contract_version':'v1','gate_verdict':'pass','inputs':[{'path':inp.relative_to(root).as_posix(),'sha256':digest(inp)}],'evidence':[{'path':ev.relative_to(root).as_posix(),'sha256':digest(ev)}]});history.append({'stage':sid,'action':'pass'})
+ stages.append({'id':'P4','status':'running','contract_version':'v1','gate_verdict':'running','inputs':[],'evidence':[]})
+ for sid in ['P5','P5A']+[f'P{i}' for i in range(6,22)]:stages.append({'id':sid,'status':'pending','contract_version':'v1','gate_verdict':'pending','inputs':[],'evidence':[]})
+ state={'schema_version':1,'pipeline':'f-research-v1','contract_version':'v1','delivery_mode':'preparation','contract':[{'path':'contract.md','sha256':digest(root/'contract.md')}],'stages':stages,'history':history,'readiness':[],'citation_gate':[]}
+ write(root/'pipeline-state.json',json.dumps(state))
+ outparent=root/'runs';outparent.mkdir()
+ import edsgn.profile as prof
+ monkeypatch.setattr(g,'PYTHON',Path(sys.executable))
+ def runner(cmd,**kwargs):return __import__('subprocess').run(cmd,**kwargs)
+ def agg(*args,**kwargs):return {'coverage_complete':True,'spent_seconds':1.0,'budget_seconds':g.WALL_BUDGET_S}
+ deps={'python':Path(sys.executable),'runner':runner,'aggregate':agg,'owned':lambda root:[]}
+ return root,ckpt,bundle_dir,freeze,outparent,prof,deps
+
+def test_full_cpu_profile_uses_real_profile_run_and_corrects_guard_overhead(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ original_prepare=prof.prepare_window;seen=[]
+ def capture(ds,origin):
+  batch=original_prepare(ds,origin)
+  if not seen:seen.append(batch['x'].cpu().numpy().copy())
+  return batch
+ monkeypatch.setattr(prof,'prepare_window',capture)
+ result=g.main_profile(ckpt,data,freeze,parent/'out','val','full',None,'cpu',root=root,deps=deps)
+ assert result['status']=='completed'; assert result['summary']['scope']=='full_selected_split'
+ assert result['summary']['repeats']==5 and result['summary']['warmup_windows']==10
+ assert result['summary']['n_windows']==3
+ out=parent/'out'; rows=(out/'window_timings.csv').read_text(encoding='utf-8').splitlines(); assert len(rows)==16
+ assert 'guard_overhead_ms' in rows[0]
+ overhead=json.loads((out/'profile-guard-overhead.json').read_text()); assert overhead['guard_calls_total']==28
+ assert overhead['measured_calls']==15 and overhead['warmup_calls']==10 and overhead['diagnostic_calls']==3
+ assert 'preprocessing_ms_per_window_including_guard' in result['summary']
+ with np.load(data/'validation_seed0.npz',allow_pickle=False) as z:
+  raw=z['raw_values']; train_mean=np.asarray([np.arange(18,dtype=np.float32).mean()],np.float32)
+  train_std=np.asarray([np.arange(18,dtype=np.float32).std()],np.float32)
+  own=z['mean'];own_std=z['std']
+ expected=((raw[:2]-train_mean)/train_std)[None]
+ own_normalized=((raw[:2]-own)/own_std)[None]
+ np.testing.assert_array_equal(seen[0],expected)
+ assert not np.array_equal(seen[0],own_normalized)
+ norm=result['summary']['normalization_provenance']
+ assert norm['normalization_source']=='checkpoint_training_statistics'
+ assert norm['combined_bundle_materialized'] is False and norm['test_values_materialized'] is False
+ assert norm['test_origins_evaluated'] is False and norm['test_feedback_used'] is False
+ input_snapshot=g.snapshot(root,ckpt,data,freeze,None,[])
+ assert input_snapshot[g.NORMALIZER_HELPER_REL]==digest(root/g.NORMALIZER_HELPER_REL)
+ assert norm['normalization_helper_sha256']==input_snapshot[g.NORMALIZER_HELPER_REL]
+ receipt=json.loads(Path(result['receipt']).read_text()); assert receipt['status']=='completed'; assert receipt['phase']=='profiling'
+ assert receipt['training_dataset_path']=='data/train'
+ assert receipt['test_values_materialized'] is False and receipt['test_origins_evaluated'] is False
+ assert not (root/'logs/model-resource.lock').exists() and not (root/'logs/offline-phase-wall/campaign.lock').exists()
+
+def test_training_collection_bytes_are_inside_before_after_snapshot(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ original=prof.profile_run
+ def mutate_training(*args,**kwargs):
+  result=original(*args,**kwargs)
+  train_file=root/'data/train/train_seed0.npz'
+  train_file.write_bytes(train_file.read_bytes()+b'changed')
+  return result
+ monkeypatch.setattr(prof,'profile_run',mutate_training)
+ with pytest.raises(g.GuardError,match='frozen source/data/checkpoint'):
+  g.main_profile(ckpt,data,freeze,parent/'maintrain-mutated','val','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0]
+ receipt=json.loads(rec.read_text(encoding='utf-8'))
+ assert receipt['status']=='failed' and receipt['training_dataset_path']=='data/train'
+ assert 'data/train/train_seed0.npz' in g.snapshot(root,ckpt,data,freeze,None,[root/'data/train'])
+ assert not (root/'logs/model-resource.lock').exists()
+
+def test_failed_loader_receipt_conservatively_records_possible_test_materialization(tmp_path,monkeypatch):
+ root,ckpt,_data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ from edsgn import engine
+ def fail_loader(*args,**kwargs): raise RuntimeError('fixture loader failure')
+ monkeypatch.setattr(engine,'datasets_at',fail_loader)
+ with pytest.raises(RuntimeError,match='fixture loader failure'):
+  g.main_profile(ckpt,root/'data/combined.npz',freeze,parent/'loader-failed','val','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0]
+ receipt=json.loads(rec.read_text(encoding='utf-8'))
+ assert receipt['status']=='failed'
+ assert receipt['combined_bundle_materialization_possible'] is True
+ assert receipt['combined_bundle_materialized'] is None and receipt['test_values_materialized'] is None
+ assert receipt['test_values_materialization_attempted'] is True
+ assert receipt['test_origins_evaluated'] is False and receipt['test_feedback_used'] is False
+
+def test_final_gate_mutation_fails_with_failed_receipt_and_releases_locks(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ original=prof.profile_run
+ def mutate(*args,**kwargs):
+  result=original(*args,**kwargs);(root/'ev/P3A-out').write_text('mutated',encoding='utf-8');return result
+ monkeypatch.setattr(prof,'profile_run',mutate)
+ with pytest.raises(g.GuardError,match='stale P3A evidence hash'):
+  g.main_profile(ckpt,data,freeze,parent/'mutated','val','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0];assert json.loads(rec.read_text())['status']=='failed'
+ assert (parent/'mutated/runtime_summary.json').exists()
+ assert not (root/'logs/model-resource.lock').exists() and not (root/'logs/offline-phase-wall/campaign.lock').exists()
+
+def test_single_bundle_reports_test_suffix_materialized_but_not_evaluated(tmp_path,monkeypatch):
+ root,ckpt,_data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ payload,datasets,metadata=g._normalization_contract(root,ckpt,root/'data/combined.npz','val')
+ assert payload['provenance']['scope']=='full_protocol' and len(datasets)==1
+ assert metadata['source_layout']=='single_chronological_bundle'
+ assert metadata['combined_bundle_materialized'] is True and metadata['test_values_materialized'] is True
+ assert metadata['test_origins_evaluated'] is False and metadata['test_feedback_used'] is False
+ assert metadata['normalization_helper_sha256']==digest(root/g.NORMALIZER_HELPER_REL)
+
+def test_main_training_bundle_test_suffix_is_reported_as_materialized(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ from edsgn.prepare import write_bundle
+ combined=root/'data/combined.npz'
+ with np.load(combined,allow_pickle=False) as z:
+  arrays={k:z[k].copy() for k in z.files}
+ train_raw=np.arange(18,dtype=np.float32).reshape(6,3,1)
+ write_bundle(combined,raw_values=arrays['raw_values'],input_mask=arrays['input_mask'],
+     interval_end=arrays['interval_end'],node_ids=arrays['node_ids'],events=arrays['events'],
+     mean=np.asarray([train_raw.mean()],np.float32),std=np.asarray([train_raw.std()],np.float32),
+     scale=np.ones((3,1),np.float32),count_data=False,horizons=(1,),history=2,hmax=1,
+     splits={'train':(0,2),'validation':(2,5),'test':(5,7)},event_kind='synthetic',partition='chronological',metadata={'fixture':'maintrain bundle'})
+ payload=torch.load(ckpt,map_location='cpu',weights_only=False);payload['config']['dataset_path']=str(combined)
+ torch.save(payload,ckpt)
+ _payload,_datasets,metadata=g._normalization_contract(root,ckpt,data,'val')
+ assert metadata['training_dataset_path']=='data/combined.npz'
+ assert metadata['combined_bundle_materialized'] is True and metadata['test_values_materialized'] is True
+ assert metadata['test_origins_evaluated'] is False
+
+def test_test_evaluation_receipt_distinguishes_started_from_full_completion(tmp_path,monkeypatch):
+ root,ckpt,_data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ test_freeze=root/'test-freeze.json';write(test_freeze,'{}')
+ original=prof.profile_run
+ def fail_profile(*args,**kwargs):
+  raise RuntimeError('fixture profile failure after entering test evaluation')
+ monkeypatch.setattr(prof,'profile_run',fail_profile)
+ with pytest.raises(RuntimeError,match='fixture profile failure'):
+  g.main_profile(ckpt,root/'data/combined.npz',test_freeze,parent/'test-failed','test','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0]
+ receipt=json.loads(rec.read_text(encoding='utf-8'))
+ assert receipt['test_evaluation_started'] is True
+ assert receipt['test_origins_evaluated'] is False and receipt['test_origin_evaluation_complete'] is False
+ assert receipt['test_values_materialized'] is True and receipt['test_values_materialization_attempted'] is True
+
+def test_successful_test_profile_marks_complete_origins_only_after_return(tmp_path,monkeypatch):
+ root,ckpt,_data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ from edsgn.prepare import write_bundle
+ combined=root/'data/combined.npz'
+ with np.load(combined,allow_pickle=False) as z: arrays={k:z[k].copy() for k in z.files}
+ train_raw=np.arange(18,dtype=np.float32).reshape(6,3,1)
+ write_bundle(combined,raw_values=arrays['raw_values'],input_mask=arrays['input_mask'],
+     interval_end=arrays['interval_end'],node_ids=arrays['node_ids'],events=arrays['events'],
+     mean=np.asarray([train_raw.mean()],np.float32),std=np.asarray([train_raw.std()],np.float32),
+     scale=np.ones((3,1),np.float32),count_data=False,horizons=(1,),history=2,hmax=1,
+     splits={'train':(0,2),'validation':(2,5),'test':(5,7)},event_kind='synthetic',partition='chronological',metadata={'fixture':'combined train/test'})
+ payload=torch.load(ckpt,map_location='cpu',weights_only=False);payload['config']['dataset_path']=str(combined)
+ torch.save(payload,ckpt)
+ test_freeze=root/'test-freeze.json';write(test_freeze,'{}')
+ monkeypatch.setattr(prof,'validate_test_freeze',lambda *args,**kwargs:('mock-accepted-freeze',{}))
+ result=g.main_profile(ckpt,combined,test_freeze,parent/'test-ok','test','full',None,'cpu',root=root,deps=deps)
+ receipt=json.loads(Path(result['receipt']).read_text(encoding='utf-8'))
+ assert receipt['status']=='completed' and receipt['test_evaluation_started'] is True
+ assert receipt['test_origins_evaluated'] is True and receipt['test_origin_evaluation_complete'] is True
+ assert receipt['test_values_materialized'] is True and receipt['test_feedback_used'] is False
+
+def test_final_budget_guard_failure_never_marks_completed(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch);calls={'n':0}
+ def aggregate(*args,**kwargs):
+  calls['n']+=1
+  spent=g.WALL_BUDGET_S if calls['n']>=24 else 1
+  return {'coverage_complete':True,'spent_seconds':spent,'budget_seconds':g.WALL_BUDGET_S}
+ deps['aggregate']=aggregate
+ with pytest.raises(g.GuardError,match='72-hour'):
+  g.main_profile(ckpt,data,freeze,parent/'budget','val','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0];assert json.loads(rec.read_text())['status']=='failed'
+ assert not (root/'logs/model-resource.lock').exists() and not (root/'logs/offline-phase-wall/campaign.lock').exists()
+
+def test_each_repeat_must_preserve_canonical_origin_order(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ original=prof.profile_run
+ def reorder_repeat(*args,**kwargs):
+  result=original(*args,**kwargs)
+  path=Path(args[3])/'window_timings.csv'
+  with path.open('r',newline='',encoding='utf-8-sig') as f: rows=list(csv.DictReader(f)); fields=list(rows[0])
+  inds=[i for i,r in enumerate(rows) if int(r['repeat'])==2]
+  rows[inds[0]],rows[inds[1]]=rows[inds[1]],rows[inds[0]]
+  with path.open('w',newline='',encoding='utf-8') as f:
+   writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(rows)
+  return result
+ monkeypatch.setattr(prof,'profile_run',reorder_repeat)
+ with pytest.raises(g.GuardError,match='repeat 2 does not preserve'):
+  g.main_profile(ckpt,data,freeze,parent/'reordered','val','full',None,'cpu',root=root,deps=deps)
+ rec=list((root/'logs/offline-phase-wall').glob('frozen-profile-*.json'))[0]
+ assert json.loads(rec.read_text())['status']=='failed'
+ assert not (root/'logs/model-resource.lock').exists()
+
+
+def _install_toy_blind_acceptance(root,freeze):
+ import importlib.util
+ helper_path=root/g.BLIND_HELPER_REL;helper_path.parent.mkdir(parents=True,exist_ok=True)
+ shutil.copy2(RUN/'edsgn/staging/blind_reference_cost_policy_v1.py',helper_path)
+ spec=importlib.util.spec_from_file_location('toy_blind_helper',helper_path);helper=importlib.util.module_from_spec(spec);spec.loader.exec_module(helper)
+ freeze.write_text(json.dumps({'extra':helper.freeze_extra_fields()}),encoding='utf-8')
+ acceptance=root/g.BLIND_ACCEPTANCE_REL;acceptance.parent.mkdir(parents=True,exist_ok=True)
+ acceptance.write_text(json.dumps({'accepted_by':'root','verdict':'pass','scope':'engineering-staging-only',
+     'pipeline_advanced':False,'scientific_hypothesis_accepted':False,'actual_blind_control_run':False,
+     'c07_experiment_closed':False,'evidence_sha256':{g.BLIND_HELPER_REL:helper.descriptor()['source_sha256']}}),encoding='utf-8')
+ return helper
+
+def test_periodic_control_requires_accepted_freeze_binding_and_records_descriptor(tmp_path,monkeypatch):
+ root,ckpt,data,freeze,parent,prof,deps=fixture(tmp_path,monkeypatch)
+ config={'kind':'periodic','graph_fraction':.5,'state_fraction':.5,'max_graph_age':8,'max_state_age':8,'audit_interval':0,'seed':7,'force_initialization':False,
+         'cost_table':{'graph':[[1,1.0],[4,4.0]],'state':[[1,1.0],[4,4.0]],'base_ms':.25,'batch_size':1,'units':'toy'},'runtime_budget_ms':4.25}
+ cfg=root/'policy.json';cfg.write_text(json.dumps(config),encoding='utf-8')
+ helper=_install_toy_blind_acceptance(root,freeze)
+ acceptance=root/g.BLIND_ACCEPTANCE_REL;acceptance.unlink()
+ # A valid source/rule freeze alone is not root acceptance.
+ with pytest.raises(g.GuardError,match='lacks independent root acceptance'):
+  g.main_profile(ckpt,data,freeze,parent/'denied','val','periodic',cfg,'cpu',root=root,deps=deps)
+ acceptance.write_text(json.dumps({'accepted_by':'root','verdict':'pass','scope':'engineering-staging-only',
+     'pipeline_advanced':False,'scientific_hypothesis_accepted':False,'actual_blind_control_run':False,
+     'c07_experiment_closed':False,'evidence_sha256':{g.BLIND_HELPER_REL:helper.descriptor()['source_sha256']}}),encoding='utf-8')
+ result=g.main_profile(ckpt,data,freeze,parent/'accepted','val','periodic',cfg,'cpu',root=root,deps=deps)
+ summary=json.loads((parent/'accepted/runtime_summary.json').read_text())
+ assert summary['blind_reference_cost_policy']['descriptor']['source_sha256']==helper.descriptor()['source_sha256']
+ assert summary['blind_reference_cost_policy']['frozen_binding']['rule_version']==helper.RULE_VERSION
+ assert 'preprocessing_ms_per_window_including_guard' in summary
+ assert result['status']=='completed'
+
+
+
+
+

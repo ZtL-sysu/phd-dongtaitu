@@ -1,0 +1,10 @@
+{
+  "count_noise_max_abs": 0,
+  "event_time_jitter_bins": 0,
+  "missing": {
+    "kind": "time_block",
+    "rate": 0.3
+  },
+  "schema_version": 1,
+  "seed": 2027
+}

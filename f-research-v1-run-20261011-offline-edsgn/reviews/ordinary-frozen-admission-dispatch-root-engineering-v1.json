@@ -1,0 +1,28 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "ordinary_static_or_singleton_admission_dispatch_interface_only",
+  "created_utc": "2026-10-11T13:07:23.221494+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/ordinary_frozen_test_admission_v1.py": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+    "edsgn/tests/test_ordinary_frozen_test_admission_v1.py": "fcb99304d03db80ccaa6758c517b4332a5c97e0b3f8bb08290870609905f6457",
+    "edsgn/scripts/verified_frozen_dispatch_v9.py": "34ab18bc9f5da5134615e204af314828c444ef041d0efa85847f5b936b039a19",
+    "edsgn/tests/test_verified_frozen_dispatch_v9.py": "1085213be6ec523d15ea93140a47edcfbde61ebcaeba5a26651fc0477677940a",
+    "edsgn/scripts/verified_frozen_dispatch_v8.py": "b946169932699f5efad8ae187e5c42cf2e247ccf0c97c895c9103c21d7748998",
+    "edsgn/staging/global_frozen_test_completion_v1.py": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af",
+    "edsgn/staging/prospective_training_candidate_binding_v1.py": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8",
+    "protocols/ordinary-frozen-test-job-admission-root-design-v1.md": "10754a61a4cf552927fcde1fad2ba801801c8376f8688af9bce30a13988d3452",
+    "protocols/byte-identical-checkpoint-replay-root-design-v1.md": "0b7f3639907f4008f9b75a3f295d11873f08c57700d787efa89728491d73c8bf",
+    "reviews/ordinary-admission-independent-v1.md": "a9486c89a4c269fe8b74150caba8b485f02f906edf562534b11c3065e866077f",
+    "reviews/ordinary-admission-independent-v1.json": "4105e0fe9a30dd740d208d1b9ec028e034a645b6f3037a9060a351890d6864a9",
+    "reviews/dispatcher9-ordinary-admission-v2.md": "34d2e59e07522e690ab8ec9be167e97fca12c5fb751176288520c05b1db7f680",
+    "logs/dispatcher9-ordinary-admission-v3-tests.log": "b2c1538a9ae4aba4e3099e2195ad85ab6dec7595e66ab75fdaf4213937872bd5",
+    "logs/root-ordinary-admission-dispatch-v1-tests.log": "057e1a0a9df56c465cf3a5de2eb590ef508789ba39aae8d8da9be953fcd90891",
+    "logs/root-ordinary-dispatch-v2-tests.log": "1dfa7ecbaf8169c42d7eb828935a33471c4f5e555be7cc6f02b4d4e4474ae524"
+  },
+  "actual_matrix_complete": false,
+  "actual_test_authorized": false,
+  "multiple_candidate_ordinary_linkage_accepted": false
+}

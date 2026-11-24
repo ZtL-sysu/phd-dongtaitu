@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "scope": "offline M0-M6; experimental gates P3/P3A/P4/P5/P5A; no P6+ manuscript/publication or later RP domains",
+  "authority": [
+    "execution-contract-v1.md",
+    "inputs/implementation-plan.md",
+    "inputs/rp-extracted.txt",
+    "protocols/strong-result-feasibility-contract.md",
+    "protocols/strong-result-feasibility-lock.md",
+    "protocols/p1b-protocol-repairs-v1.md",
+    "experiment-traceability.md"
+  ],
+  "pipeline_status_at_extraction": {
+    "P3": "running",
+    "P3A": "pending",
+    "P4": "pending",
+    "P5": "pending",
+    "P5A": "pending"
+  },
+  "completion_semantics": "A queue, prepared dataset, resource probe, unit test or smoke run is not completion of the corresponding full train/validation/frozen test/robustness/profile row. Preserve negative and failed results. No positive scientific outcome or arbitrary improvement threshold is required.",
+  "common_protocol": {
+    "required": true,
+    "datasets": [
+      "synthetic N64",
+      "email",
+      "MOOC"
+    ],
+    "supplemental_dataset": {
+      "name": "email-episode",
+      "status": "accepted additive within-source supplement",
+      "rule": "separate split, fit, checkpoint and validation choice; does not replace original email calendar"
+    },
+    "seeds": {
+      "formal_model_seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "synthetic_trajectory_train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "synthetic_trajectory_validation": [
+        100,
+        101
+      ],
+      "synthetic_trajectory_test": [
+        200,
+        201,
+        202,
+        203
+      ],
+      "trajectory_and_model_seeds_are_distinct": true
+    },
+    "task": {
+      "email": {
+        "history_days": 28,
+        "horizons_days": [
+          1,
+          3,
+          7
+        ],
+        "features": [
+          "incoming",
+          "outgoing"
+        ]
+      },
+      "MOOC": {
+        "history_hours": 24,
+        "horizons_hours": [
+          1,
+          6,
+          24
+        ],
+        "target": "hourly action count by activity node"
+      },
+      "synthetic": {
+        "burn_in": 256,
+        "effective_steps": 2048,
+        "default_N": 64,
+        "scale_N": 256
+      }
+    },
+    "splits": "chronological real-data 70/10/20; train-only nodes/normalization/prior; same full causal windows, perturbations, targets and scoring across compared methods; independent window runtime reset; no dropout label input",
+    "optimization": {
+      "optimizer": "AdamW",
+      "lr_initial": [
+        0.001,
+        0.0003
+      ],
+      "weight_decay": 0.0001,
+      "clip_norm": 1,
+      "epochs_max": 100,
+      "patience": 10,
+      "float": "float32",
+      "selection": "mean raw-unit MAE at preregistered required horizons on validation only"
+    }
+  },
+  "requirements": [
+    {
+      "id": "P3-B1",
+      "stage": "P3 baseline reproduction",
+      "strength": "required",
+      "coverage": {
+        "datasets": [
+          "synthetic",
+          "email",
+          "MOOC"
+        ],
+        "methods": [
+          "persistence",
+          "linear",
+          "compact GRU"
+        ],
+        "split": "full train+validation, no test model selection",
+        "formal_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "evidence": [
+        "resolved configs and at-launch bindings",
+        "train/validation logs/checkpoints",
+        "raw-unit MAE/RMSE by required horizon/feature and activity strata",
+        "seed-specific provenance"
+      ],
+      "current": "partial; simple baselines and development seed0 neural evidence exist; formal five-seed set incomplete",
+      "refs": [
+        "implementation-plan.md §10, §13(M0)",
+        "experiment-traceability.md B1"
+      ]
+    },
+    {
+      "id": "P3-B2",
+      "stage": "P3 matched internal baseline",
+      "strength": "required",
+      "coverage": {
+        "variants": [
+          "V0",
+          "V1"
+        ],
+        "datasets": [
+          "synthetic",
+          "email",
+          "MOOC"
+        ],
+        "split": "full train+validation seed0 baseline stage; formal selected contrasts later use seeds0-4"
+      },
+      "evidence": [
+        "static/dynamic ANN matched config",
+        "counts, checkpoints, raw-unit metrics, bindings"
+      ],
+      "current": "partial; synthetic V0/V1 development runs; other domains and formal seeds pending",
+      "refs": [
+        "implementation-plan.md §10",
+        "experiment-traceability.md B2"
+      ]
+    },
+    {
+      "id": "P3-B3",
+      "stage": "P3 compatible forecasting comparators",
+      "strength": "required subject to frozen compatibility decision",
+      "coverage": {
+        "methods": [
+          "official-source DGCRN adaptation",
+          "Graph WaveNet",
+          "AGCRN",
+          "DCRNN",
+          "STID",
+          "STAEformer",
+          "author-linked SeqSNN/iSpikformer adapted spiking forecaster"
+        ],
+        "datasets": [
+          "synthetic",
+          "email",
+          "MOOC"
+        ],
+        "email_episode": "additive baseline rows required by accepted supplement",
+        "development_seed": 0,
+        "formal_seeds": "five for principal comparisons where selected"
+      },
+      "evidence": [
+        "source/commit/license/fidelity/adaptation and same task/head/history/split",
+        "prior bindings for DCRNN",
+        "full train/validation numeric reruns; original paper scores excluded",
+        "explicit failed or unavailable route evidence"
+      ],
+      "current": "source/adapter and one-batch resource evidence do not equal full training; bound seed0 queue exists; full numeric runs pending",
+      "refs": [
+        "implementation-plan.md §10",
+        "p1b-protocol-repairs-v1.md Bounded external comparator rule",
+        "p3a-forecast-spiking-replacement-decision-v1.md",
+        "experiment-traceability.md B3/B4"
+      ]
+    },
+    {
+      "id": "P3A-FREEZE",
+      "stage": "P3A baseline/calibration gate",
+      "strength": "required gate",
+      "coverage": {
+        "freeze_before_test": [
+          "comparator queue/exclusions",
+          "selected configs/checkpoints",
+          "acceptable H3 accuracy tolerance",
+          "scheduler cost table/model",
+          "budget and maximum-age rules",
+          "robustness recipes",
+          "temporal block length and primary statistical contrasts",
+          "case-study and worst-slice rules"
+        ]
+      },
+      "evidence": [
+        "baseline variability and validation-only decision record",
+        "actual selective-policy validation replay (not simulated full-trajectory thresholds)",
+        "frozen model/source/data/policy/recipe digests"
+      ],
+      "current": "preparation artifacts exist; actual numeric baseline acceptance/calibration is pending",
+      "refs": [
+        "implementation-plan.md §§9.3-9.4",
+        "strong-result-feasibility-contract.md",
+        "p1b-protocol-repairs-v1.md",
+        "p3a-validation-calibration-preparation-v1.md"
+      ]
+    },
+    {
+      "id": "P4-CORE-PILOTS",
+      "stage": "P4 bounded development/pilot",
+      "strength": "required",
+      "coverage": {
+        "variants": [
+          "V0",
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V9"
+        ],
+        "datasets": [
+          "synthetic",
+          "email",
+          "MOOC"
+        ],
+        "development_seed": 0,
+        "pilot_cap_per_new_module": 12,
+        "train_validation_only": true,
+        "full_windows": true
+      },
+      "evidence": [
+        "pilot queue/configs and complete train/validation outputs",
+        "selection by frozen required-horizon validation MAE",
+        "all failures retained; no test used"
+      ],
+      "current": "prepared internal queue covers V2/V3/V4/V9 across the four data regimes; P4 not accepted/completed",
+      "refs": [
+        "implementation-plan.md §§4,9,10,13",
+        "p4-core-pilot-queue-v2.json",
+        "core-pilot-sequencing-correction-v2.md"
+      ]
+    },
+    {
+      "id": "H1-GRAPH",
+      "stage": "P4/P5 mechanism evidence",
+      "strength": "required contrast; outcome may be null",
+      "coverage": {
+        "contrasts": [
+          "V4 vs V9 (confidence effect)",
+          "V0 vs V1 (dynamic vs static reference)",
+          "dynamic vs fixed-periodic graph refresh"
+        ],
+        "synthetic_scenarios": [
+          "identity changes 10% and 30%",
+          "edge-weight changes 10% and 30%",
+          "noise-only/no structural change"
+        ],
+        "real_data": [
+          "email",
+          "MOOC"
+        ],
+        "metrics": [
+          "graph total variation/false changes",
+          "post-change prediction degradation/recovery and delay",
+          "forecast error at matched cost"
+        ]
+      },
+      "evidence": [
+        "switch truth evaluation-only for synthetic",
+        "no oracle candidate/model input",
+        "paired seed/time-block uncertainty"
+      ],
+      "refs": [
+        "implementation-plan.md §§3,10",
+        "rp-extracted.txt §5.4 Table 3",
+        "claim-evidence-matrix.md H1"
+      ]
+    },
+    {
+      "id": "H2-RETENTION",
+      "stage": "P4/P5 mechanism evidence",
+      "strength": "required contrast; outcome may be null",
+      "coverage": {
+        "contrasts": [
+          "V3 vs V4",
+          "V1 vs V2",
+          "informative c vs shuffled c",
+          "learned g vs constant g",
+          "relation-conditioned reset vs unconditional neighbor reset"
+        ],
+        "controls": [
+          "frozen tau vs learned tau",
+          "change-only vs hybrid level+change+mask+age encoding",
+          "periodic absolute-level refresh"
+        ],
+        "constraints": [
+          "same total state width/graph/candidates/head/history",
+          "same intervention times for shuffled/constant/unconditional controls"
+        ]
+      },
+      "evidence": [
+        "post-switch recovery curves",
+        "parameter counts",
+        "spike rates",
+        "finite gradients and controlled runtime"
+      ],
+      "refs": [
+        "implementation-plan.md §§6,10",
+        "p1b-protocol-repairs-v1.md H2A",
+        "claim-evidence-matrix.md H2"
+      ]
+    },
+    {
+      "id": "H3-SCHEDULING",
+      "stage": "P4/P5 frozen selective replay",
+      "strength": "required contrast; outcome may be null",
+      "coverage": {
+        "models": [
+          "V4 SNN",
+          "V2 ANN matched control"
+        ],
+        "policies": [
+          "full V4/V2",
+          "periodic V5",
+          "random V6",
+          "adaptive SNN V7",
+          "adaptive ANN V8"
+        ],
+        "independent_gate_sweeps": {
+          "graph": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "state": [
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "domains": [
+          "email",
+          "MOOC"
+        ],
+        "matched": [
+          "same frozen checkpoint/windows/perturbations",
+          "periodic/random realized budget",
+          "G/S separate and combined"
+        ],
+        "metrics": [
+          "accuracy-cost Pareto",
+          "actual elapsed cost",
+          "age/mandatory actions/overruns",
+          "transition degradation"
+        ]
+      },
+      "evidence": [
+        "validation calibrates thresholds/costs, then freeze; actual test replay after freeze",
+        "no full-history threshold simulation as substitute",
+        "H3 tolerance justified by baseline variability/application relevance"
+      ],
+      "refs": [
+        "implementation-plan.md §§7,9,10,13(M4)",
+        "rp-extracted.txt §§5.3-5.4",
+        "claim-evidence-matrix.md H3"
+      ]
+    },
+    {
+      "id": "R1-SYNTHETIC-BOUNDARIES",
+      "stage": "P4/P5 synthetic stress/scaling",
+      "strength": "required declared coverage",
+      "coverage": {
+        "N64": [
+          "identity changes 10/30%",
+          "fixed-support weight changes 10/30%",
+          "gradual 128-step endpoint interpolation",
+          "nonlinear tanh variant",
+          "noise-only",
+          "local shock"
+        ],
+        "N256": [
+          "scale check using identity/30% case"
+        ],
+        "missing_rates": [
+          0,
+          0.1,
+          0.3,
+          0.5
+        ],
+        "trajectory_partition": "train 0-7; validation 100-101; test 200-203, distinct trajectories",
+        "dynamics": "W=0.2I+0.6P; P nonnegative, zero diagonal, max8 neighbors/row; row sum W=0.8; burn256 then retain2048"
+      },
+      "evidence": [
+        "full scenario config, source/generator hash, raw target metrics",
+        "switches/oracle only in evaluation metadata",
+        "graph/state/update and recovery evidence"
+      ],
+      "note": "Identity gradual interpolation with union support >8 is not the fixed-support gradual recipe; use the separately named fixed-support implementation for the declared <=8 invariant.",
+      "refs": [
+        "implementation-plan.md §§3.1-3.3",
+        "protocols/synthetic-stress-preparation-evidence-v1.md",
+        "experiment-traceability.md R1"
+      ]
+    },
+    {
+      "id": "R2-MISSINGNESS",
+      "stage": "P5 robustness evaluation",
+      "strength": "required",
+      "coverage": {
+        "rates": [
+          0,
+          0.1,
+          0.3,
+          0.5
+        ],
+        "mechanisms": [
+          "random input masking",
+          "contiguous time-block input masking",
+          "related-group/history masking"
+        ],
+        "same_mask": "same seeded full-trajectory input mask for every compared method and all origins",
+        "targets": "clean target and target mask preserved",
+        "datasets": [
+          "synthetic",
+          "email",
+          "MOOC",
+          "email-episode supplement"
+        ]
+      },
+      "evidence": [
+        "frozen recipe digest",
+        "mask/input manifest",
+        "paired raw-unit metrics",
+        "before/after weight hash"
+      ],
+      "refs": [
+        "rp-extracted.txt §5.4 robustness experiments",
+        "protocols/robustness-recipes.md",
+        "experiment-traceability.md R2"
+      ]
+    },
+    {
+      "id": "R3-COUNT-TIME",
+      "stage": "P5 robustness evaluation",
+      "strength": "required declared perturbation coverage; numeric count bound must be preregistered",
+      "coverage": {
+        "count_noise": "bounded integer noise to observed input counts only; clip at zero; frozen train log1p normalization",
+        "event_time_jitter_bins": [
+          0,
+          1
+        ],
+        "causality": "future events excluded before jitter; only origin-visible events reach model",
+        "clean_targets": true,
+        "all_methods_same_recipe": true
+      },
+      "evidence": [
+        "freeze recipe and explicit bound before test",
+        "paired metrics and event filtering counters"
+      ],
+      "unknown": "The RP requires documented count-noise/event-timing perturbations, but the accepted recipe does not specify count_noise_max_abs; freeze this value before execution. Count noise does not apply to signed synthetic data.",
+      "refs": [
+        "rp-extracted.txt §5.4",
+        "protocols/robustness-recipes.md",
+        "experiment-traceability.md R3"
+      ]
+    },
+    {
+      "id": "S1-STATISTICS",
+      "stage": "P5 primary evidence",
+      "strength": "required",
+      "coverage": {
+        "formal_seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "paired": "same origins, targets, masks, perturbations per contrast",
+        "uncertainty": "moving/circular time-block bootstrap over temporal origins, retaining all nodes/features in a sampled origin; no node-as-independent units",
+        "seed_spread": "report separately from temporal CI",
+        "multiplicity": "Holm correction for named primary contrast families H1/H2/H3",
+        "block_length": "estimated on train/validation diagnostics and frozen before test",
+        "primary_metrics": "raw-unit horizon-wise MAE/RMSE; preregistered aggregate model-selection metric"
+      },
+      "evidence": [
+        "five predictions archives per contrast side",
+        "exact target/mask/origin identity check",
+        "95% CI and centered paired p values; frozen bootstrap config/seed"
+      ],
+      "refs": [
+        "rp-extracted.txt §5.4",
+        "protocols/statistical-implementation-evidence.md",
+        "protocols/statistics-primary-pooled-repair-v3.md"
+      ]
+    },
+    {
+      "id": "P1-RUNTIME",
+      "stage": "P5 cost/reproducibility",
+      "strength": "required for any measured acceleration claim",
+      "coverage": {
+        "device": [
+          "CPU",
+          "CUDA"
+        ],
+        "batch": 1,
+        "dtype": "float32",
+        "warmup_windows": 10,
+        "repeats": 5,
+        "same_replay_and_policy_seed": true,
+        "synchronization": "CUDA synchronize before/after end-to-end model timer",
+        "methods": "full and every selected selective policy/matched comparator on frozen common origins; both primary real domains, with synthetic diagnostics as declared",
+        "metrics": [
+          "end-to-end per-window median/p95 and whole-repeat totals",
+          "peak CPU RSS and CUDA allocated/reserved memory",
+          "graph/state updates and eligible rows",
+          "candidate scoring, source encoding, edge aggregation",
+          "monitor/candidate/graph/encode/state/readout/policy component diagnostics",
+          "preprocess and data materialization separately"
+        ],
+        "claim_limit": "operation count reduction alone is not runtime acceleration; CPU and CUDA reported separately"
+      },
+      "evidence": [
+        "runtime summary, per-window timings, frozen replay traces, configs/environment hashes"
+      ],
+      "current": "profile implementation/tests exist; no real formal CPU/CUDA replay evidence in profile evidence",
+      "refs": [
+        "implementation-plan.md §§11.1-11.3",
+        "execution-contract-v1.md Scientific acceptance",
+        "protocols/profile-implementation-evidence.md",
+        "protocols/profile-budget-accounting-v1.md"
+      ]
+    },
+    {
+      "id": "A1-CASE-STRATA",
+      "stage": "P5 interpretation",
+      "strength": "required report slices",
+      "coverage": {
+        "activity_strata": "train-fitted node activity strata, low/high activity and long inactive gaps",
+        "case_episodes": [
+          "typical stable episode",
+          "predefined high-change episode from permitted past statistics",
+          "worst predefined evaluation slice"
+        ],
+        "controls": "strong baseline and matched ungated/uncoupled control; remove highlighted relationship/retention signal and rerun as sensitivity, not causal proof"
+      },
+      "evidence": [
+        "slice selection rule frozen before final outcome access",
+        "per-slice forecast/error/runtime/update trajectory"
+      ],
+      "refs": [
+        "implementation-plan.md §11.1",
+        "rp-extracted.txt §5.6",
+        "experiment-traceability.md A1"
+      ]
+    },
+    {
+      "id": "F1-FIGURES",
+      "stage": "P5 delivery",
+      "strength": "required outputs",
+      "coverage": {
+        "figures": [
+          "forecast curves",
+          "known-switch recovery curves",
+          "graph/state refresh timeline",
+          "c and g vs memory retention",
+          "MAE vs measured runtime"
+        ],
+        "files": [
+          "resolved configs/manifests/environment/splits/checkpoints/training logs",
+          "horizon metrics/predictions/traces/runtime summaries",
+          "source/data hashes",
+          "exact commands and review/report"
+        ]
+      },
+      "refs": [
+        "implementation-plan.md §§11.3,15",
+        "rp-extracted.txt §§5.5-5.6",
+        "experiment-traceability.md F1"
+      ]
+    },
+    {
+      "id": "P5A-FINAL-AUDIT",
+      "stage": "P5A",
+      "strength": "required gate",
+      "coverage": {
+        "separation": [
+          "engineering invariants",
+          "P3 baseline reproduction",
+          "H1/H2/H3 outcomes separately",
+          "null/negative and failed runs preserved",
+          "test isolation and source/data bindings",
+          "scope and pending limitations"
+        ],
+        "independent_review": true,
+        "reproducibility": true
+      },
+      "current": "pending in canonical pipeline-state ledger",
+      "refs": [
+        "execution-contract-v1.md Delivery/Scientific acceptance",
+        "implementation-plan.md §12.2/§15",
+        "pipeline-state.md"
+      ]
+    }
+  ],
+  "scope_outside_current_M0_M6": [
+    {
+      "tasks": [
+        "tgbn-trade",
+        "tgbn-genre",
+        "tgbl-wiki-v2",
+        "tgbl-coin"
+      ],
+      "reason": "RP §§5.6-5.7 later application tasks with different distribution/ranking heads; execution contract authorizes offline M0-M6 synthetic/email/MOOC only. Do not silently claim these tasks complete or add them to this matrix."
+    },
+    {
+      "protocol_ambiguity": "RP describes both window and streaming protocols; implementation plan §9.1 explicitly selects independent-window protocol for this version and defines its efficiency scope. Streaming is not in the current M0-M6 required queue; report it as excluded/extension unless scope is formally revised."
+    }
+  ],
+  "existing_queue_coverage": {
+    "P3_core_seed0": "protocols/p3-internal-bound-queue-v4.json (internal/simple neural and V0/V1 development); P3 external full seed0: protocols/p3-external-bound-queue-v2.json (root acceptance v2); strong full seed0: protocols/p3-bound-strong-baseline-queue-v3.json",
+    "P4_seed0": "protocols/p4-core-pilot-queue-v2.json currently lists V3/V4/V2/V9 x synthetic/MOOC/email/email-episode; V5-V8 are frozen replay and need their shared checkpoint dependency rather than independent training",
+    "coverage_limit": "all are train/validation development queues; they do not cover five-seed final testing, robustness, statistical reports, or CPU/CUDA full profiles"
+  },
+  "budget": {
+    "campaign_cap_seconds": 259200,
+    "latest_available_reconciled_snapshot": {
+      "path": "logs/aggregate-budget-before-p3-v2.json",
+      "as_of": "before later P3/P4 receipts/training",
+      "spent_seconds": 4301.4013,
+      "reserved_seconds": 525,
+      "remaining_seconds_at_snapshot": 254898.5987,
+      "stale_for_current_remaining": true
+    },
+    "observed_full_training_times_seconds": [
+      {
+        "run": "runs/baselines/synthetic/GRU/seed0/training_summary.json",
+        "epochs": 27,
+        "wall": 429.5578
+      },
+      {
+        "run": "runs/baselines/mooc/GRU/seed0/training_summary.json",
+        "epochs": 100,
+        "wall": 430.0532
+      },
+      {
+        "run": "runs/baselines/synthetic/STID/seed0/training_summary.json",
+        "epochs": 18,
+        "wall": 187.015
+      },
+      {
+        "run": "runs/baselines/mooc/STID/seed0/training_summary.json",
+        "epochs": 76,
+        "wall": 287.696
+      },
+      {
+        "run": "runs/baselines/synthetic/V0/seed0/training_summary.json",
+        "epochs": 13,
+        "wall": 456.9548
+      },
+      {
+        "run": "runs/baselines/synthetic/V1/seed0/training_summary.json",
+        "epochs": 42,
+        "wall": 2324.5228
+      }
+    ],
+    "transparent_scenario_not_guarantee": {
+      "basis": "slowest observed average epoch among these full optimizer runs: synthetic V1 = 2324.5228/42 = 55.35 s/epoch; at max100 epochs approx 1.54 h/run",
+      "core_run_count_assumption": "six trainable full variants V0,V1,V2,V3,V4,V9 x three primary datasets x five formal seeds = 90 model runs; V5-V8 reuse frozen checkpoints",
+      "scenario_hours": 138.4,
+      "interpretation": "This observed-slowest-epoch scenario exceeds the entire 72h envelope before external baselines, robustness, validation calibration, profiles and report work. It is a conservative planning scenario only, not a claim that unknown runs cost the same. No valid full-matrix completion estimate can be made until ongoing run totals and representative epoch costs exist."
+    },
+    "unknowns": [
+      "actual full-train duration for unrun model/dataset/variant combinations",
+      "formal five-seed training duration after early stopping",
+      "robustness replay grid cost",
+      "P3A calibration and CPU/CUDA profile wall time",
+      "current cumulative budget after the stale aggregate snapshot"
+    ],
+    "budget_conclusion": "72h completion is not demonstrated and appears at risk under the observed-slowest core scenario. Preserve one cumulative budget/no reset; P3A must allocate from current measured evidence. This extraction makes no resource or scope decision."
+  },
+  "explicitly_optional_or_conditional": [
+    {
+      "item": "Seasonal average baseline",
+      "condition": "only when periodicity is justified; RP §5.3"
+    },
+    {
+      "item": "Oracle candidate/privileged change diagnostic",
+      "condition": "synthetic only, separately labeled upper bound; never model input"
+    },
+    {
+      "item": "Count-noise max bound",
+      "condition": "noise perturbation itself is required, but exact integer bound remains to be preregistered"
+    },
+    {
+      "item": "Conditional approximation/theory claim",
+      "condition": "only if assumptions/proof/threshold-margin diagnostics are supplied; otherwise do not claim"
+    },
+    {
+      "item": "P6+ manuscript/submission and RP later finance/recommendation/ranking applications",
+      "condition": "outside user-authorized offline M0-M6 scope"
+    }
+  ],
+  "queue_cap_check": {
+    "contract": "At most 12 preregistered pilot configurations per new module",
+    "observed_queue": "p4-core-pilot-queue-v2 has 16 jobs (4 variants x 4 dataset regimes)",
+    "status": "counting interpretation unresolved",
+    "note": "If each job is counted as one configuration for one new module, this exceeds 12. If the 12 cap is per module after grouping shared mechanisms or excludes the accepted supplementary email-episode rows, the queue may fit; no resolution is made here.",
+    "source": "protocols/p4-core-pilot-queue-v2.json and execution-contract-v1.md Resource and search contract"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "cli_checks": {
+    "train": "import and CLI help passed",
+    "calibrate": "import and CLI help passed",
+    "evaluate": "import and CLI help passed",
+    "profile": "import and CLI help passed",
+    "prepare": "import and CLI help passed"
+  },
+  "data_checks": {
+    "synthetic": {
+      "training_trajectories": 8,
+      "validation_trajectories": 2,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "train_origins": 16112,
+      "val_origins": 4028,
+      "scale_shape": [
+        64,
+        1
+      ]
+    },
+    "email": {
+      "training_trajectories": 1,
+      "validation_trajectories": 1,
+      "shape": [
+        803,
+        986,
+        2
+      ],
+      "train_origins": 528,
+      "val_origins": 74,
+      "scale_shape": [
+        986,
+        2
+      ]
+    },
+    "mooc": {
+      "training_trajectories": 1,
+      "validation_trajectories": 1,
+      "shape": [
+        714,
+        78,
+        1
+      ],
+      "train_origins": 452,
+      "val_origins": 49,
+      "scale_shape": [
+        78,
+        1
+      ]
+    }
+  },
+  "data_manifest_sha256": {
+    "data\\processed\\email\\manifest.json": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c",
+    "data\\processed\\mooc\\manifest.json": "f8c9e722ed4f6db1f4cceb20956f19b9f20c1b0565533fa5ddbf27edca9e930a",
+    "data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json": "d73bdc3044287d6503ff939234a464149121e820b61212aa47c2d437ba9eedd3"
+  },
+  "scope": "setup only; no test evaluation or optimizer"
+}

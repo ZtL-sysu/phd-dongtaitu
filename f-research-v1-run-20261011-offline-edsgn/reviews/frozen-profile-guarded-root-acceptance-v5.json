@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T11:01:16.907938+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_profile_guarded_v5.py": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "edsgn/tests/test_frozen_profile_guarded_v5.py": "519b7102a84eeadbd1bec3b6cf5a813cce3fbfcedb26440966352e2d6d202eeb",
+    "edsgn/src/edsgn/profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "reviews/frozen-profile-guarded-v5-self-review.md": "a90c848fd6e9ecfe8606b762f59d5aa7d4a8601e7fe858587a38e4a53bce5d1f",
+    "reviews/frozen-profile-guarded-v5-independent-review-v1.md": "dbe010b3ba6d531fae96b2ef014fe8ea48c7edf6fda33feb928e28978a2eb5c2",
+    "reviews/frozen-profile-guarded-v5-independent-review-v1.json": "5d7b2ce1a8c8609b9fca49ee3bee5385d10622f0d4bcb2b9a0de4585e897a9cb",
+    "logs/frozen-profile-guarded-v5-tests.log": "e8c5f77736b215a0e3ca81bacf1c4ebd139819c22b02a59a4bbb3c430bcadb68"
+  },
+  "actual_profile_run": false,
+  "actual_final_test_run": false,
+  "c07_experiment_closed": false
+}

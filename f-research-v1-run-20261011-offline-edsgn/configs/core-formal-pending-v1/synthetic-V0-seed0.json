@@ -1,0 +1,26 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "variant": "V0",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 128,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {
+    "d_total": 64,
+    "k": 8,
+    "candidate_cap": 32,
+    "tau_fast": 1.0,
+    "tau_slow": 8.0,
+    "beta_init": 1.0,
+    "lambda_temporal": 0.01,
+    "training_prior_cache": true,
+    "training_prior_cache_bytes": 1073741824,
+    "training_candidate_tensor": false
+  },
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed0"
+}

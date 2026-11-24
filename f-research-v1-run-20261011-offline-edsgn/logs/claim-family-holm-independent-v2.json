@@ -1,0 +1,13 @@
+{
+  "review": "claim-family-holm-independent-v2",
+  "scope": "changed gate/hash/path branches only; no actual reports or heldout arrays",
+  "source": "edsgn/staging/claim_family_holm_v2.py",
+  "source_sha256": "4c3330cb553814d4b8f3307665bce9169928f79019e950bae813913da8fc13dc",
+  "test_source": "edsgn/staging/test_claim_family_holm_v2.py",
+  "test_sha256": "307ece4709b5cc85b593b6fd334c397f7e5fb48b0446d6c137005a2019dca8ff",
+  "targeted_test": "pytest -q test_claim_family_holm_v2.py -k 'validation_gate or consumed_paths'",
+  "result": {"passed": 5, "deselected": 7},
+  "v1_blocker_closed": true,
+  "checks": ["passed P3A requires gate_verdict=pass and P4 running", "running/passed P3A rehash all inputs/evidence", "resolved consumed paths stay inside RUN"],
+  "actual_assembly_performed": false
+}

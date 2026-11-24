@@ -1,0 +1,31 @@
+{
+  "review": "endpoint-sufficient-statistics-v2-independent-review-v1",
+  "verdict": "needs-repair-blocked-for-family-assembly",
+  "engineering_only": true,
+  "inference_or_test_data_used": false,
+  "conda_test_command": "python -m pytest edsgn/tests/test_endpoint_sufficient_statistics_v2.py -q",
+  "test_result": "7 passed in 3.40s; includes real ForecastModel/TraceCapture CPU-schema fixture",
+  "independent_toy_check": "Two trajectories each had full contiguous origins 0..5, switch map {0:2,1:99}, L=2. The full_post_switch window selector, forecast converter, and graph stream converter all returned only trajectory 0 without raising.",
+  "blocking_issue": {
+    "severity": "high",
+    "functionality": "Both forecast _windows(slice_kind=\"full_post_switch\") and graph _select_graph_pairs / graph_tv_sufficient_statistics_v7 accept a selected set with zero post-switch support for one trajectory if another trajectory contributes rows. This silently omits a required family member/trajectory.",
+    "minimal_fix": "For this slice, validate positive post-switch origin support independently for every trajectory in expected_full_pairs (and reject a switch after that trajectory’s last authorized origin) before returning any rows. Keep full support/order validation unchanged."
+  },
+  "verified_semantics": [
+    "exact ordered contiguous full-pair support and five ordered seeds",
+    "strict switch mapping key coverage and mapping digest",
+    "complete half-open pre/post 4L response intervals with paired relative offsets and equal graph row counts",
+    "forecast sums/counts pool valid raw absolute error by origin/horizon/node/feature",
+    "graph trace reader enforces per-origin/per-step order, initialized-before semantics and all-node row coverage",
+    "timing converter enforces B1 FP32, 10 warmups, five repeats, frozen equal parameter hashes and exact seed/origin/repeat coverage"
+  ],
+  "source_sha256": {
+    "edsgn/staging/endpoint_sufficient_statistics_v2.py": "030f6b461bfb998e83c21f2a6a11ae2de62eda6cb7754a6d81440c2509b16a66",
+    "edsgn/tests/test_endpoint_sufficient_statistics_v2.py": "4184042c48c5c03faf3be54a85e4de354635a75764334387b8c0ad0b55c29124",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+  },
+  "scope_limitations": [
+    "Pure converter performs no provenance/gate/source-fence validation by design; eventual assembler must do that independently.",
+    "No actual prediction arrays, checkpoints, model runs, GPU or optimizer were used."
+  ]
+}

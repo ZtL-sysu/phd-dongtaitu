@@ -1,0 +1,55 @@
+{
+  "scope": "metadata queue preflight; no live campaign numeric audit",
+  "status": "prepared_not_executed",
+  "total_unique_jobs": 80,
+  "queue_hashes": [
+    {
+      "key": "strong8",
+      "sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+      "acceptance_path": "reviews/p3-strong-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+      "jobs": 8
+    },
+    {
+      "key": "internal10",
+      "sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "acceptance_path": "protocols/p3-internal-bound-queue-root-acceptance-v4.json",
+      "acceptance_sha256": "9bde37a727c563b0e3478bed561489119cf7336bd959e8764762f7401547596e",
+      "jobs": 10
+    },
+    {
+      "key": "external16",
+      "sha256": "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d",
+      "acceptance_path": "protocols/p3-external-bound-queue-root-acceptance-v2.json",
+      "acceptance_sha256": "78b70e59bc04b63b7116ccd5a3a170bccd920840667d1d8ed0ad80abdccde882",
+      "jobs": 16
+    },
+    {
+      "key": "fresh6",
+      "sha256": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+      "acceptance_path": "protocols/p3-fresh-remaining-bound-root-acceptance-v1.json",
+      "acceptance_sha256": "492f8da126c1e2917e98d77bc3cfe1d461b13ae9658a741e2b5354341501a258",
+      "jobs": 6
+    },
+    {
+      "key": "gru16",
+      "sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+      "acceptance_path": "protocols/p3-gru-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "d4114562deee19ae06301660b4df25fb459caae1093c32e5e1a0ad763b39d8b0",
+      "jobs": 16
+    },
+    {
+      "key": "strong24",
+      "sha256": "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9",
+      "acceptance_path": "reviews/p3-strong-replication-root-acceptance-v1.json",
+      "acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+      "jobs": 24
+    }
+  ],
+  "tests": "7 passed",
+  "sha256": {
+    "edsgn/scripts/audit_completed_p3_campaign_v3.py": "a03ba0994df6eb1d81383827d51d52b44bfa6a4a0fe7f9466d26211c83593479",
+    "edsgn/tests/test_audit_completed_p3_campaign_v3.py": "c6b70aa6f467515888846c698774a21cedc7d782ae043359ca957f3cd5c5cc4f",
+    "logs/p3-campaign-auditor-v3-tests.log": "be5beffbdbb0af35ca34f516fbb974359dfa4e4c4eb6e01c30b3a9e229116427"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "correction": "p3-synthetic-V1 numeric report v1 labelled a seven-horizon pooled metric as if it were pooled only over required horizons 1/3/7. The per-horizon rows and selection score are unchanged.",
+  "split": "validation only",
+  "test_arrays_or_metrics_opened": false,
+  "model_or_GPU_run": false,
+  "required_horizons": [
+    1,
+    3,
+    7
+  ],
+  "required_horizon_valid_cell_counts": [
+    257792,
+    257792,
+    257792
+  ],
+  "required_horizon_pooled_valid_cells": 773376,
+  "required_horizon_pooled_raw_mae": 0.02582132111771384,
+  "required_horizon_pooled_raw_rmse": 0.030223194485229952,
+  "required_horizon_mean_per_horizon_mae": 0.025821321117713836,
+  "required_horizon_mean_mae_equals_saved_selection": true,
+  "all_7_offsets_pooled_raw_mae_from_v1": 0.025913172024032954,
+  "all_7_offsets_pooled_raw_rmse_from_v1": 0.030372407117163953,
+  "clarification": "The prior values .02591317202/.03037240712 are pooled across all seven forecast offsets (H=7), not only the required selection horizons. The required 1/3/7 pooled MAE is .02582132112; its RMSE is separately recomputed here."
+}

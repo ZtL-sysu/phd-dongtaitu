@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T09:45:16.996243+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "logs/p3-bound-mooc-DGCRN-numeric-v3.json": "7622446b422f9267f86283208dd50b9f0b86c99f27fad5149567fc104339a81f",
+    "reviews/p3-bound-mooc-DGCRN-independent-v3.md": "fbc7627926cb81181cd8f0cb27d50873bf566668487af4269589175eb163a035",
+    "reviews/p3-bound-mooc-DGCRN-independent-v3.json": "8b8f4d76fb030679c439680c57e2e0ee22e964f10c896d3deff32f36055e756f",
+    "logs/offline-phase-wall/baseline-bound-v3-mooc-DGCRN-seed0.json": "b7f3eabf9318ff8f4a53c9de20b2efce86f51860f9894c84f27cfddb4bdb7883"
+  },
+  "dataset": "mooc",
+  "variant": "DGCRN",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 3.9835631287639344,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

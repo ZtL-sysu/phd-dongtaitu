@@ -1,0 +1,7 @@
+# Primary registry schema-2 preparation: clarification
+
+The earlier private validation experiment that yielded an `explicitrootaccepted` result used a temporary/projected schema-v1 registry fixture. It did **not** establish that the actual schema-v2 preparation registry passed the test-plan validator.
+
+The root reported its direct `_validate_plan` call on the actual `protocols/primary-endpoint-registry-root-preparation-v2.json` stopping at the schema guard. Source inspection confirms the actual registry declares `schema_version: 2` and `artifact_status: root_structural_preparation_not_frozen_not_executed`, while `typed_endpoint_plan_validator_v9.py` requires schema version 1 and `split: test`, then separately requires `artifact_status: accepted_pretest_registry`. Thus the actual schema-2 call ended in `schema-v1-rejection`; no conversion was performed on the actual registry and no accepted pretest registry or gate pass is established.
+
+The private schema-v1 fixture was only a structural/unit-test input. It must not be cited as acceptance of the actual preparation artifact. The actual registry needs a successor artifact and the complete pretest authorization path before it can be used by the validator. At review time, registry SHA-256 is `d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f`; validator SHA-256 is `afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24`.

@@ -1,0 +1,38 @@
+{
+  "batch_size": 128,
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+  "device": "cuda",
+  "epochs": 100,
+  "grad_clip": 1.0,
+  "lr": 0.001,
+  "model": {
+    "beta_init": 1.0,
+    "candidate_cap": 32,
+    "d_total": 64,
+    "k": 8,
+    "lambda_temporal": 0.01,
+    "tau_fast": 1.0,
+    "tau_slow": 8.0,
+    "training_candidate_tensor": true,
+    "training_prior_cache": true,
+    "training_prior_cache_bytes": 1073741824
+  },
+  "mse_reference_config": {
+    "path": "configs/core-development-bound-v3/mooc-V4-seed0.json",
+    "sha256": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603"
+  },
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\count-loss-v1\\mooc\\V4-Poisson\\seed0",
+  "patience": 10,
+  "seed": 0,
+  "threads": 2,
+  "training_loss": {
+    "full": false,
+    "kind": "masked_poisson_nll",
+    "log_input": false,
+    "normalization": "valid_target_cells",
+    "prediction_floor": 1e-08,
+    "reduction": "none"
+  },
+  "variant": "V4",
+  "weight_decay": 0.0001
+}

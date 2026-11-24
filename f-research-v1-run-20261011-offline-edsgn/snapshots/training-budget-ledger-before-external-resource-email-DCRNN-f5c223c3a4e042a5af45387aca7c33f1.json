@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "budget_seconds": 259200,
+  "policy": "One cumulative budget. Conservative reservations consume budget but are not scientific measured runtimes. No reset.",
+  "entries": [
+    {
+      "id": "setup-resource-history-reservation-v1",
+      "seconds": 300,
+      "timing_basis": "conservative-bound",
+      "source": "logs/setup-resource-probe.log",
+      "covers_source": "logs/setup-resource-probe.json",
+      "description": "Historical functionality forward/backward setup probe lacks a total-wall field. The log creation-to-last-write span is about73s, with subsequent report writing. Reserve300s for budget accounting; this is not a measured benchmark or claimed exact elapsed time. Preserve original files."
+    },
+    {
+      "id": "T26-two-engineering-optimizer-runs-v1",
+      "seconds": 180,
+      "timing_basis": "conservative-bound",
+      "source": "logs/T26-micro-overfit-v1.log",
+      "description": "Two executions of the fixed70-step micro-overfit (independent reproduction and pytest). Pytest measured46.19s; the combined log creation-to-last-write span was132.43s. Reserve180s including startup and both optimizer runs; do not claim180s as a scientific timing result. No formal training summaries exist for these toy runs."
+    },
+    {
+      "id": "email-prior-component-diagnostic-v1",
+      "seconds": 45,
+      "timing_basis": "conservative-bound",
+      "source": "logs/email-prior-candidate-cpu-v1.log",
+      "description": "Standalone CPU private-method diagnostic on24 training windows. Measured component sum8.441s is not complete forward time. Reserve45s including data/model construction and process overhead; no optimizer and no test-window evaluation."
+    },
+    {
+      "id": "rp-adapter-staging-cpu-v1",
+      "seconds": 3.820961,
+      "timing_basis": "measured",
+      "source": "logs/rp-adapter-staging-smoke-v1.json",
+      "covers_source": "logs/rp-adapter-staging-smoke-v1.json",
+      "description": "Whole command CPU forward/backward toy adapter checks, recorded whole_command_wall_seconds. No optimizer or real dataset. V1 retained as historical evidence after author initialization repair."
+    },
+    {
+      "id": "dcrnn-adapter-staging-cpu-v1",
+      "seconds": 4.1533011,
+      "timing_basis": "measured",
+      "source": "logs/dcrnn-staging-smoke-v1.json",
+      "covers_source": "logs/dcrnn-staging-smoke-v1.json",
+      "description": "Whole process CPU toy adapter checks, recorded process_wall_seconds. No optimizer or real dataset. Preserved original report."
+    },
+    {
+      "id": "dcrnn-adapter-staging-cpu-v2",
+      "seconds": 5.8561034,
+      "timing_basis": "measured",
+      "source": "logs/dcrnn-staging-smoke-v2.json",
+      "covers_source": "logs/dcrnn-staging-smoke-v2.json",
+      "description": "Whole process CPU toy adapter checks, recorded process_wall_seconds. Includes historical upstream sparse-helper behavior, subsequently corrected in v3; no optimizer or real dataset."
+    },
+    {
+      "id": "dcrnn-adapter-staging-cpu-v3",
+      "seconds": 5.7878324,
+      "timing_basis": "measured",
+      "source": "logs/dcrnn-staging-smoke-v3.json",
+      "covers_source": "logs/dcrnn-staging-smoke-v3.json",
+      "description": "Whole process CPU toy checks of corrected paired COO coordinates/values and author DCRNN recurrence, recorded process_wall_seconds. No optimizer or real dataset."
+    },
+    {
+      "id": "dcrnn-training-prior-independent-numeric-v1",
+      "seconds": 6.69752299998072,
+      "timing_basis": "measured",
+      "source": "logs/dcrnn-training-prior-independent-v1.json",
+      "covers_source": "logs/dcrnn-training-prior-independent-v1.json",
+      "description": "Independent train-only prior reconstruction process wall time, explicitly named elapsed_wall_seconds in immutable audit receipt; no model, optimizer, or test target access."
+    },
+    {
+      "id": "external-resource-synthetic-GraphWaveNet-055e7d8e0df8453db0499878b04ff11b",
+      "seconds": 10.484413800004404,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-GraphWaveNet-B64.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-GraphWaveNet-B64.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-GraphWaveNet-seed0-B64.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-synthetic-AGCRN-dfec99b041e34fa0b5752de040c57a5c",
+      "seconds": 5.305227400007425,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-AGCRN-B64.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-AGCRN-B64.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-AGCRN-seed0-B64.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-synthetic-STAEformer-9bb1742a581d4d408bab1d64e9b97f63",
+      "seconds": 5.312870499998098,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-STAEformer-B64.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-STAEformer-B64.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-STAEformer-seed0-B64.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-synthetic-DCRNN-7863b9b8ce1e475d8d34c8dc5d1668f6",
+      "seconds": 10.577036600006977,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-DCRNN-B64.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-DCRNN-B64.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-DCRNN-seed0-B64.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-email-GraphWaveNet-d0ebf4f3585a4dc7af5b5ed41e882fc4",
+      "seconds": 5.283727799978806,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-GraphWaveNet-B2.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-GraphWaveNet-B2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-GraphWaveNet-seed0-B2.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-email-AGCRN-3aa6784fdb3e48d0b2875cf46c785ef7",
+      "seconds": 5.310707399999956,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-AGCRN-B2.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-AGCRN-B2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-B2.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    },
+    {
+      "id": "external-resource-email-STAEformer-1317f13920994babafedcdb0dc8a3ebd",
+      "seconds": 5.261123600008432,
+      "timing_basis": "measured",
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-STAEformer-B2.json",
+      "covers_source": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-STAEformer-B2.json",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-STAEformer-seed0-B2.json"
+      ],
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting."
+    }
+  ]
+}

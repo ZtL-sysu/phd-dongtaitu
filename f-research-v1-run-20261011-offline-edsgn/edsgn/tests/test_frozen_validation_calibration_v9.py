@@ -1,0 +1,409 @@
+import json
+import importlib.util
+from pathlib import Path
+import sys
+
+import numpy as np
+import pytest
+import torch
+
+RUN = Path(r"C:\code\phd-dongtaitu\f-research-v1-run-20261011-offline-edsgn")
+sys.path[:0] = [str(RUN / "edsgn/staging"), str(RUN / "edsgn/src")]
+import frozen_validation_calibration_v9 as v3
+from edsgn import engine
+from edsgn.data import load_dataset
+
+
+def _make_bundle(path, test_offset=0.0):
+    T, N, F = 14, 2, 1
+    raw = np.arange(T*N*F, dtype=np.float32).reshape(T,N,F)
+    raw[9:] += test_offset
+    values = np.log1p(raw)
+    input_mask = np.ones_like(raw, dtype=bool)
+    target_mask = np.ones_like(raw, dtype=bool)
+    age = np.zeros_like(raw, dtype=np.float32)
+    metadata = {
+        "partition":"chronological", "count_data":True, "event_kind":"synthetic",
+        "history":2,"hmax":2,"horizons":[1,2],
+        "splits":{"train":[0,5],"validation":[5,9],"test":[9,14]},
+        "metadata":{"n_bins_total":T,"seed":17},
+    }
+    np.savez_compressed(path, metadata_json=np.asarray(json.dumps(metadata)),
+        values=values, raw_values=raw, targets=raw, input_mask=input_mask,
+        target_mask=target_mask, obs_age=age, interval_end=np.arange(T,dtype=np.float64)+1,
+        node_ids=np.arange(N), mean=np.zeros(F,np.float32), std=np.ones(F,np.float32),
+        scale=np.ones((N,F),np.float32), events=np.empty((0,3),np.int64))
+    return metadata
+
+
+class _ZeroModel(torch.nn.Module):
+    def forward(self, x, **kwargs):
+        return x.new_zeros((x.shape[0], 2, x.shape[2], x.shape[3]))
+
+
+class _Guard:
+    def __init__(self): self.calls = 0
+    def checkpoint(self): self.calls += 1
+
+
+def test_chronological_metadata_support_reads_metadata_member_and_matches_formula(tmp_path, monkeypatch):
+    path=tmp_path/"chron.npz"
+    meta=_make_bundle(path)
+    real_load=np.load; touched=[]
+    class Proxy:
+        def __init__(self, archive): self.archive=archive; self.files=archive.files
+        def __enter__(self): return self
+        def __exit__(self,*a): self.archive.close()
+        def __getitem__(self,k):
+            touched.append(k)
+            if k != "metadata_json": raise AssertionError(f"numeric member accessed: {k}")
+            return self.archive[k]
+    monkeypatch.setattr(v3.np,"load",lambda *a,**kw: Proxy(real_load(*a,**kw)))
+    assert v3._safe_val_collection(path)==[path]
+    assert v3.metadata_test_support(path)=={"17":4}  # metadata support only
+    assert set(touched)=={"metadata_json"}
+    assert v3._legal_origin_count(meta,"validation")==3
+
+
+def test_real_bundle_loader_and_two_origin_cpu_eval_ignore_test_suffix_targets(tmp_path):
+    p1=tmp_path/"a.npz"; p2=tmp_path/"b.npz"
+    _make_bundle(p1,0); _make_bundle(p2,100000)
+    ds1=engine.datasets_at(p1,"val"); ds2=engine.datasets_at(p2,"val")
+    assert len(ds1)==len(ds2)==1
+    assert np.array_equal(ds1[0].origins("val"),np.array([4,5,6]))
+    # Evaluate two validation origins with the production loader/evaluator on CPU.
+    model=_ZeroModel()
+    r1=engine.evaluate_batches(model,ds1,"val","cpu",batch_size=2,limit=2)
+    r2=engine.evaluate_batches(model,ds2,"val","cpu",batch_size=2,limit=2)
+    assert len(r1["pairs"])==2 and r1["pairs"]==r2["pairs"]
+    for key in ("predictions","targets","target_mask"):
+        assert np.array_equal(r1[key],r2[key]), key
+    # Metadata support and train-only statistics are independent of changed test suffix.
+    assert v3.metadata_test_support(p1)==v3.metadata_test_support(p2)=={"17":4}
+    assert np.array_equal(ds1[0].raw_values[:5],ds2[0].raw_values[:5])
+    import torch as _torch
+    ckpt=tmp_path/"toy.pt"
+    _torch.save({"state_dict":{"weight":_torch.ones(1)},"config":{"seed":0},
+                 "task":{"scope":"toy","normalization":"train-only"},
+                 "provenance":{"scope":"full_protocol"}},ckpt)
+    loaded=_torch.load(ckpt,map_location="cpu",weights_only=False)
+    v3._require_fp32_payload(loaded)
+    assert loaded["task"]["normalization"]=="train-only"
+
+
+def test_validation_guards_check_each_batch_and_reject_test_origins(tmp_path):
+    path=tmp_path/"chron.npz"; _make_bundle(path)
+    ds=engine.datasets_at(path,"val"); guard=_Guard(); restore=v3._install_validation_guards(engine,engine,ds,guard)
+    try:
+        b=engine.batch_at(ds,[(0,4)],"cpu")
+        assert b["targets"].shape[0]==1 and guard.calls==1
+        with pytest.raises(RuntimeError,match="unauthorized"):
+            engine.batch_at(ds,[(0,10)],"cpu")
+        with pytest.raises(RuntimeError,match="non-validation split"):
+            engine.index_origins(ds,"test")
+    finally: restore()
+    assert engine.index_origins(ds,"val")==[(0,4),(0,5),(0,6)]
+
+
+def test_hash_snapshot_and_gate_verdict_fail_closed(tmp_path):
+    f=tmp_path/"evidence"; f.write_text("ok",encoding="utf8")
+    inp=tmp_path/"input"; inp.write_text("input",encoding="utf8")
+    import hashlib
+    h=hashlib.sha256(f.read_bytes()).hexdigest(); ih=hashlib.sha256(inp.read_bytes()).hexdigest()
+    (tmp_path/"pipeline-state.json").write_text(json.dumps({"stages":[
+      {"id":"P2","status":"passed","gate_verdict":"pass"},
+      {"id":"P3","status":"passed","gate_verdict":"pass"},
+      {"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"input","sha256":ih}],"evidence":[{"path":"evidence","sha256":h}]},
+      {"id":"P4","status":"running"}]}),encoding="utf8")
+    assert v3._canonical_stage_gate(tmp_path)
+    with pytest.raises(RuntimeError,match="pass"):
+      state=json.loads((tmp_path/"pipeline-state.json").read_text()); state["stages"][2]["gate_verdict"]="fail"
+      (tmp_path/"pipeline-state.json").write_text(json.dumps(state)); v3._canonical_stage_gate(tmp_path)
+    with pytest.raises(RuntimeError,match="changed"):
+      v3._verify_hash_snapshot({"x":"a"},{"x":"b"})
+
+
+
+def test_strict_gate_rejects_duplicate_stage_and_json_keys(tmp_path):
+    proof=tmp_path/"proof";proof.write_text("ok",encoding="utf8")
+    evidence=tmp_path/"evidence";evidence.write_text("ok",encoding="utf8")
+    h=__import__("hashlib").sha256(proof.read_bytes()).hexdigest()
+    eh=__import__("hashlib").sha256(evidence.read_bytes()).hexdigest()
+    state={"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},
+      {"id":"P3","status":"passed","gate_verdict":"pass"},
+      {"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"proof","sha256":h}],"evidence":[{"path":"evidence","sha256":eh}]},
+      {"id":"P4","status":"running"}]}
+    pipe=tmp_path/"pipeline-state.json";pipe.write_text(json.dumps(state),encoding="utf8")
+    assert v3._canonical_stage_gate(tmp_path)["stages"]
+    duplicate=json.dumps(state).replace('"id": "P2"','"id": "P2", "id": "P2"',1)
+    pipe.write_text(duplicate,encoding="utf8")
+    with pytest.raises(ValueError,match="duplicate JSON key"):
+      v3._canonical_stage_gate(tmp_path)
+    state["stages"].append(state["stages"][0]);pipe.write_text(json.dumps(state),encoding="utf8")
+    with pytest.raises(RuntimeError,match="unique"):
+      v3._canonical_stage_gate(tmp_path)
+
+
+def test_strict_gate_requires_nonempty_distinct_inroot_bound_inputs_and_evidence(tmp_path):
+    proof=tmp_path/"proof";proof.write_text("ok",encoding="utf8")
+    evidence=tmp_path/"evidence";evidence.write_text("ok",encoding="utf8")
+    h=__import__("hashlib").sha256(proof.read_bytes()).hexdigest()
+    eh=__import__("hashlib").sha256(evidence.read_bytes()).hexdigest()
+    state={"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},
+      {"id":"P3","status":"passed","gate_verdict":"pass"},
+      {"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"proof","sha256":h}],"evidence":[{"path":"evidence","sha256":eh}]},
+      {"id":"P4","status":"running"}]}
+    pipe=tmp_path/"pipeline-state.json";pipe.write_text(json.dumps(state),encoding="utf8")
+    state["stages"][2]["evidence"]=[{"path":"proof","sha256":h}]
+    pipe.write_text(json.dumps(state),encoding="utf8")
+    with pytest.raises(RuntimeError,match="duplicate P3A"):
+      v3._canonical_stage_gate(tmp_path)
+    state["stages"][2]["evidence"]=[{"path":"..\\outside","sha256":h}]
+    pipe.write_text(json.dumps(state),encoding="utf8")
+    with pytest.raises(ValueError,match="escapes"):
+      v3._canonical_stage_gate(tmp_path)
+
+
+def test_final_gate_rechecks_bytes_and_bound_evidence(tmp_path):
+    proof=tmp_path/"proof";proof.write_text("ok",encoding="utf8")
+    h=__import__("hashlib").sha256(proof.read_bytes()).hexdigest()
+    state={"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},
+      {"id":"P3","status":"passed","gate_verdict":"pass"},
+      {"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"proof","sha256":h}],"evidence":[{"path":"evidence","sha256":h}]},
+      {"id":"P4","status":"running"}]}
+    evidence=tmp_path/"evidence";evidence.write_text("ok",encoding="utf8")
+    pipe=tmp_path/"pipeline-state.json";pipe.write_text(json.dumps(state),encoding="utf8")
+    before=pipe.read_bytes();initial=v3._canonical_stage_gate(tmp_path)
+    assert v3._verify_final_canonical_gate(tmp_path,before,initial)==initial
+    evidence.write_text("changed",encoding="utf8")
+    with pytest.raises(RuntimeError,match="stale/missing"):
+      v3._verify_final_canonical_gate(tmp_path,before,initial)
+
+
+def _write_calibration_toy_bundle(path, all_zero_validation=False):
+    T,N,F=20,2,1
+    raw=(np.arange(T*N*F,dtype=np.float32).reshape(T,N,F)%5)+1
+    if all_zero_validation: raw[8:14]=0
+    mean=np.array([0.],np.float32);std=np.array([1.],np.float32)
+    values=(np.log1p(raw)-mean)/std
+    metadata={"partition":"chronological","count_data":True,"event_kind":"synthetic","history":2,"hmax":1,"horizons":[1],
+      "splits":{"train":[0,8],"validation":[8,14],"test":[14,20]},"metadata":{"n_bins_total":T,"seed":3}}
+    np.savez_compressed(path,metadata_json=np.asarray(json.dumps(metadata)),values=values.astype(np.float32),raw_values=raw,
+      targets=raw,input_mask=np.ones_like(raw,bool),target_mask=np.ones_like(raw,bool),obs_age=np.zeros_like(values,np.float32),
+      interval_end=np.arange(T,dtype=np.float64)+1,node_ids=np.arange(N),mean=mean,std=std,
+      scale=np.ones((N,F),np.float32),events=np.empty((0,3),np.int64))
+
+
+class _ToyLease:
+    def __init__(self): self.token="controlled-toy-lease";self.released=False;self.checks=0;self.fail_next=False
+    def checkpoint(self):
+        self.checks+=1
+        if self.fail_next:
+            self.fail_next=False
+            raise RuntimeError("synthetic budget exhaustion after final fences")
+    def release(self): self.released=True
+
+
+class _ToyPhaseHelpers:
+    def __init__(self): self.lease=None
+    def _acquire_launch_guard(self,root,output,phase,job_id,*args):
+        self.lease=_ToyLease();return self.lease
+    def _phase_receipt(self,root,output,phase,job_id,started_perf,started_epoch,status,command,error=None,token=None):
+        p=Path(root)/"logs/offline-phase-wall"/f"{job_id}.json";p.parent.mkdir(parents=True,exist_ok=True)
+        doc={"job_id":job_id,"phase":phase,"status":status,"lock_token_sha256":__import__("hashlib").sha256(token.encode()).hexdigest() if token else None,
+             "error":None if error is None else str(error)}
+        p.write_text(json.dumps(doc),encoding="utf8")
+
+
+@pytest.mark.parametrize("final_case", ["pass", "budget_exhausted", "input_hash_mismatch", "all_zero_unidentifiable"])
+def test_full_cpu_guarded_calibration_uses_real_original_calibrate_run(tmp_path,monkeypatch,final_case):
+    import shutil,hashlib
+    root=tmp_path.resolve(); pkg=root/"edsgn/src/edsgn";scripts=root/"edsgn/scripts";staging=root/"edsgn/staging"
+    pkg.mkdir(parents=True);scripts.mkdir(parents=True);staging.mkdir(parents=True)
+    for src in (RUN/"edsgn/src/edsgn").glob("*.py"):shutil.copy2(src,pkg/src.name)
+    shutil.copy2(RUN/"edsgn/scripts/bind_training_inputs.py",scripts/"bind_training_inputs.py")
+    shutil.copy2(RUN/"edsgn/staging/validation_dependence_v2.py",staging/"validation_dependence_v2.py")
+    pipe_evidence=root/"acceptance-input.json";pipe_evidence.write_text('{"accepted":true}',encoding="utf8")
+    ds_path=root/"data/chron.npz";ds_path.parent.mkdir();_write_calibration_toy_bundle(ds_path,all_zero_validation=final_case=="all_zero_unidentifiable")
+    config={"dataset_path":str(ds_path),"variant":"V4","seed":0,"device":"cpu","threads":1,
+      "model":{"d_total":16,"encoder_width":8,"readout_hidden":8,"k":2,"candidate_cap":4,"retention_mode":"informative"}}
+    cfg=root/"config.json";cfg.write_text(json.dumps(config),encoding="utf8")
+    queue={"scheduler_pilots":[{"id":"s00","quantile":0.5,"max_graph_age":4,"max_state_age":4,"graph_fraction":0.0,"state_fraction":0.0}]}
+    qpath=root/"queue.json";qpath.write_text(json.dumps(queue),encoding="utf8")
+    base=root/"baseline-variability.json";base.write_text('{"toy":"preaccepted baseline evidence fixture"}',encoding="utf8")
+    unidentifiable=final_case=="all_zero_unidentifiable"
+    eps={"status":"unidentifiable" if unidentifiable else "accepted","accepted_by":"root","scope":"validation-only-epsilon","split":"val",
+      "primary_epsilon":None if unidentifiable else 0.02,"descriptive_calibration_epsilon":0 if unidentifiable else None,
+      "unidentifiable_reason":"all valid validation targets are zero" if unidentifiable else None,
+      "metric":"pooled_raw_mae","required_horizons":[1],"baseline_evidence_sha256":hashlib.sha256(base.read_bytes()).hexdigest(),
+      "application_relevance_rationale":"explicit toy-only accepted fixture","dataset_path":str(ds_path),
+      "baseline_evidence_path":str(base),"test_support_by_trajectory":{"3":6},
+      "candidate_plan_path":str(qpath.resolve()),"candidate_plan_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest()}
+    # Build an actual untrained, frozen-parameter ForecastModel checkpoint; no optimizer or training run.
+    sys.path.insert(0,str(RUN/"edsgn/src"));from edsgn import engine as eng
+    ds=eng.datasets_at(ds_path,"train")[0]
+    stats={"norm_mean":[0.],"norm_std":[1.],"residual_scale":np.ones((N:=2,F:=1),np.float32).tolist(),"output_scale":[1.],"output_mean":[0.]}
+    model=eng.build_model(config,ds,stats)
+    ckpt=root/"checkpoint.pt"
+    payload={"config":config,"task":{"n_nodes":N,"n_features":F,"history":2,"hmax":1,"count_data":True},
+      "statistics":stats,"state_dict":model.state_dict(),"provenance":{"scope":"full_protocol","source_sha256":eng.source_manifest(),"dependency_source_sha256":{},"dataset_path":str(ds_path)}}
+    torch.save(payload,ckpt)
+    epath=root/"epsilon-authority.json";epath.write_text(json.dumps(eps),encoding="utf8")
+    # Real at-launch binding creation/verification with the binder ROOT temporarily redirected to this fixture.
+    sys.path.insert(0,str(RUN/"edsgn/scripts"));import bind_training_inputs as binder
+    old_binder_root=binder.ROOT;binder.ROOT=root
+    try: binding=binder.prepare_binding(cfg,output_dir=root/"binding")
+    finally: binder.ROOT=old_binder_root
+    launch={"accepted":True,"accepted_by":"root","scope":"post-training-calibration-launch-binding",
+      "dataset_path":str(ds_path.resolve()),"checkpoint_sha256":hashlib.sha256(ckpt.read_bytes()).hexdigest(),
+      "config_sha256":hashlib.sha256(cfg.read_bytes()).hexdigest(),"queue_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest(),
+      "binding_sha256":hashlib.sha256(Path(binding).read_bytes()).hexdigest(),
+      "epsilon_authority_path":str(epath.resolve()),"epsilon_authority_sha256":hashlib.sha256(epath.read_bytes()).hexdigest(),
+      "candidate_plan_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest(),"allowed_candidate_ids":["s00"],
+      "epsilon_authority_status":"unidentifiable" if unidentifiable else "accepted",
+      "primary_epsilon":None if unidentifiable else 0.02,"calibration_epsilon":0.0 if unidentifiable else 0.02}
+    launch_path=root/"launch-binding.json";launch_path.write_text(json.dumps(launch),encoding="utf8")
+    p3a={"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"epsilon-authority.json","sha256":hashlib.sha256(epath.read_bytes()).hexdigest()},
+      {"path":"queue.json","sha256":hashlib.sha256(qpath.read_bytes()).hexdigest()}],
+      "evidence":[{"path":"baseline-variability.json","sha256":hashlib.sha256(base.read_bytes()).hexdigest()}]}
+    state={"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},{"id":"P3","status":"passed","gate_verdict":"pass"},p3a,{"id":"P4","status":"running"}]}
+    (root/"pipeline-state.json").write_text(json.dumps(state),encoding="utf8")
+    mod=v3;monkeypatch.setattr(mod,"ROOT",root);monkeypatch.setattr(mod,"V1_PATH",RUN/"edsgn/staging/frozen_validation_calibration_v1.py")
+    # Real binder verification is retained; phase lease/receipt alone are controlled test fixtures.
+    helpers=_ToyPhaseHelpers();out=root/"runs/calibration-toy"
+    if final_case in {"budget_exhausted","input_hash_mismatch"}:
+      original_hashes=mod._hashes
+      hash_calls={"n":0}
+      def inject_final_condition(files):
+        result=original_hashes(files)
+        hash_calls["n"]+=1
+        if hash_calls["n"]==3:
+          if final_case == "budget_exhausted":
+            assert helpers.lease is not None
+            helpers.lease.fail_next=True
+          elif final_case == "input_hash_mismatch":
+            result=dict(result);result["injected-source"]="0"*64
+        return result
+      monkeypatch.setattr(mod,"_hashes",inject_final_condition)
+      expected_exception=(mod.FinalBudgetCheckFailed if final_case=="budget_exhausted" else RuntimeError)
+      expected_message=("final receipt budget check failed" if final_case=="budget_exhausted" else "final input hash mismatch")
+      with pytest.raises(expected_exception,match=expected_message):
+        mod.guarded_calibration(root=root,checkpoint=ckpt,config_path=cfg,queue_path=qpath,authority_path=epath,launch_binding_path=launch_path,
+          binding_path=binding,output_dir=out,device="cpu",deps=helpers)
+      assert hash_calls["n"]==3
+      assert (out/"validation-predictions.npz").is_file() and (out/"calibration-validation-dependence-v2.json").is_file()
+      phase_receipts=list((root/"logs/offline-phase-wall").glob("validation-calibration-*.json"))
+      assert len(phase_receipts)==1
+      phase=json.loads(phase_receipts[0].read_text(encoding="utf8"))
+      assert phase["status"]=="failed" and expected_message in phase["error"]
+      assert helpers.lease.released
+      return
+    result=mod.guarded_calibration(root=root,checkpoint=ckpt,config_path=cfg,queue_path=qpath,authority_path=epath,launch_binding_path=launch_path,
+      binding_path=binding,output_dir=out,device="cpu",deps=helpers)
+    assert result["validation_origin_count"]==6
+    assert mod.metadata_test_support(ds_path)=={"3":6}
+    assert all(row["valid_cells"]==12 for row in result["validation_metrics"])
+    assert result["test_origins_evaluated"] is False and result["test_feedback_used"] is False
+    assert result["combined_bundle_materialized"] is True and result["test_accessed"] is True
+    if final_case=="all_zero_unidentifiable":
+      assert result["epsilon_authority_status"]=="unidentifiable" and result["primary_epsilon"] is None
+      assert result["descriptive_calibration_epsilon"]==0 and result["forecast_noninferiority_authorized"] is False
+      cal=json.loads((out/"calibration.json").read_text())
+      assert cal["primary_epsilon"] is None and cal["descriptive_calibration_epsilon"]==0
+      assert cal["primary_quality_identifiable"] is False and cal["epsilon_constraint_satisfied"] is False
+      assert cal["forecast_noninferiority_authorized"] is False and cal["selection_status"]=="unidentifiable-all-zero-validation-targets" and cal["chosen_id"]=="s00"
+    assert (out/"validation-predictions.npz").is_file() and (out/"calibration.json").is_file()
+    phase_receipts=list((root/"logs/offline-phase-wall").glob("validation-calibration-*.json"))
+    assert len(phase_receipts)==1
+    phase=json.loads(phase_receipts[0].read_text(encoding="utf8"))
+    assert phase["status"]=="completed" and phase["input_hashes_match"] is True
+    with np.load(out/"validation-predictions.npz",allow_pickle=False) as z:
+      assert z["origins"].shape==(6,2) and z["origins"][:,1].tolist()==[7,8,9,10,11,12]
+    assert helpers.lease and helpers.lease.released and helpers.lease.checks>0
+
+
+def test_calibration_end_gate_stale_evidence_is_rejected(tmp_path):
+    evidence=tmp_path/"bound";evidence.write_text("before",encoding="utf8")
+    digest=__import__("hashlib").sha256(evidence.read_bytes()).hexdigest()
+    state={"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},{"id":"P3","status":"passed","gate_verdict":"pass"},
+      {"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"input","sha256":digest}],"evidence":[{"path":"bound","sha256":digest}]},{"id":"P4","status":"running"}]}
+    (tmp_path/"input").write_text("input",encoding="utf8");state["stages"][2]["inputs"][0]["sha256"]=__import__("hashlib").sha256((tmp_path/"input").read_bytes()).hexdigest()
+    pipeline=tmp_path/"pipeline-state.json";pipeline.write_text(json.dumps(state),encoding="utf8")
+    before=pipeline.read_bytes();initial=v3._canonical_stage_gate(tmp_path)
+    evidence.write_text("after",encoding="utf8")
+    with pytest.raises(RuntimeError,match="stale/missing"):
+      v3._verify_final_canonical_gate(tmp_path,before,initial)
+
+
+
+
+
+
+def test_p3a_authority_has_no_future_p4_hash_fields(tmp_path,monkeypatch):
+    root,ckpt,cfg,qpath,epath,launch_path,binding = _launch_fixture_for_binding_tests(tmp_path,monkeypatch)
+    authority=json.loads(epath.read_text())
+    assert not ({"checkpoint_sha256","config_sha256","queue_sha256"} & set(authority))
+    assert v3._epsilon_contract(authority,dataset=Path(authority["dataset_path"]),queue_path=qpath,queue_sha=__import__("hashlib").sha256(qpath.read_bytes()).hexdigest())["primary_epsilon"]==0.02
+
+
+def _launch_fixture_for_binding_tests(tmp_path,monkeypatch):
+    # Reuse the full real-CPU test fixture setup without running calibration.
+    root=tmp_path.resolve(); pkg=root/"edsgn/src/edsgn";scripts=root/"edsgn/scripts";staging=root/"edsgn/staging"
+    import shutil,hashlib
+    pkg.mkdir(parents=True);scripts.mkdir(parents=True);staging.mkdir(parents=True)
+    for src in (RUN/"edsgn/src/edsgn").glob("*.py"):shutil.copy2(src,pkg/src.name)
+    shutil.copy2(RUN/"edsgn/scripts/bind_training_inputs.py",scripts/"bind_training_inputs.py")
+    shutil.copy2(RUN/"edsgn/staging/validation_dependence_v2.py",staging/"validation_dependence_v2.py")
+    data=root/"data/chron.npz";data.parent.mkdir();_write_calibration_toy_bundle(data)
+    config={"dataset_path":str(data),"variant":"V4","seed":0,"device":"cpu","threads":1,"model":{"d_total":16,"encoder_width":8,"readout_hidden":8,"k":2,"candidate_cap":4,"retention_mode":"informative"}}
+    cfg=root/"config.json";cfg.write_text(json.dumps(config),encoding="utf8")
+    qpath=root/"queue.json";qpath.write_text(json.dumps({"scheduler_pilots":[{"id":"s00"}]}),encoding="utf8")
+    base=root/"baseline.json";base.write_text("toy",encoding="utf8")
+    from edsgn import engine as eng
+    ds=eng.datasets_at(data,"train")[0];stats={"norm_mean":[0.],"norm_std":[1.],"residual_scale":np.ones((2,1),np.float32).tolist(),"output_scale":[1.],"output_mean":[0.]}
+    model=eng.build_model(config,ds,stats);ckpt=root/"checkpoint.pt"
+    torch.save({"config":config,"task":{"n_nodes":2,"n_features":1,"history":2,"hmax":1,"count_data":True},"statistics":stats,"state_dict":model.state_dict(),"provenance":{"scope":"full_protocol","source_sha256":eng.source_manifest(),"dependency_source_sha256":{},"dataset_path":str(data)}},ckpt)
+    auth={"status":"accepted","accepted_by":"root","scope":"validation-only-epsilon","split":"val","primary_epsilon":.02,"descriptive_calibration_epsilon":None,"metric":"pooled_raw_mae","required_horizons":[1],"baseline_evidence_sha256":hashlib.sha256(base.read_bytes()).hexdigest(),"application_relevance_rationale":"toy", "dataset_path":str(data),"baseline_evidence_path":str(base),"test_support_by_trajectory":{"3":6},"candidate_plan_path":str(qpath.resolve()),"candidate_plan_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest()}
+    epath=root/"epsilon-authority.json";epath.write_text(json.dumps(auth),encoding="utf8")
+    binder_spec=importlib.util.spec_from_file_location("binder_launch_toy",RUN/"edsgn/scripts/bind_training_inputs.py");binder=importlib.util.module_from_spec(binder_spec);binder_spec.loader.exec_module(binder);old=binder.ROOT;binder.ROOT=root
+    try:binding=binder.prepare_binding(cfg,output_dir=root/"binding")
+    finally:binder.ROOT=old
+    launch={"accepted":True,"accepted_by":"root","scope":"post-training-calibration-launch-binding","dataset_path":str(data.resolve()),"checkpoint_sha256":hashlib.sha256(ckpt.read_bytes()).hexdigest(),"config_sha256":hashlib.sha256(cfg.read_bytes()).hexdigest(),"queue_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest(),"binding_sha256":hashlib.sha256(Path(binding).read_bytes()).hexdigest(),"epsilon_authority_path":str(epath.resolve()),"epsilon_authority_sha256":hashlib.sha256(epath.read_bytes()).hexdigest(),"candidate_plan_sha256":hashlib.sha256(qpath.read_bytes()).hexdigest(),"allowed_candidate_ids":["s00"],"epsilon_authority_status":"accepted","primary_epsilon":.02,"calibration_epsilon":.02}
+    launch_path=root/"launch-binding.json";launch_path.write_text(json.dumps(launch),encoding="utf8")
+    p3a={"id":"P3A","status":"passed","gate_verdict":"pass","inputs":[{"path":"epsilon-authority.json","sha256":hashlib.sha256(epath.read_bytes()).hexdigest()},{"path":"queue.json","sha256":hashlib.sha256(qpath.read_bytes()).hexdigest()}],"evidence":[{"path":"baseline.json","sha256":hashlib.sha256(base.read_bytes()).hexdigest()}]}
+    (root/"pipeline-state.json").write_text(json.dumps({"stages":[{"id":"P2","status":"passed","gate_verdict":"pass"},{"id":"P3","status":"passed","gate_verdict":"pass"},p3a,{"id":"P4","status":"running"}]}),encoding="utf8")
+    monkeypatch.setattr(v3,"ROOT",root)
+    return root,ckpt,cfg,qpath,epath,launch_path,binding
+
+
+@pytest.mark.parametrize("mutate,match",[(lambda d:d.update(checkpoint_sha256="0"*64),"checkpoint_sha256"),(lambda d:d.update(epsilon_authority_sha256="0"*64),"epsilon_authority_sha256"),(lambda d:d.update(allowed_candidate_ids=["other"]),"candidate IDs")])
+def test_p4_launch_binding_rejects_wrong_future_or_candidate_binding(tmp_path,monkeypatch,mutate,match):
+    root,ckpt,cfg,qpath,epath,launch_path,binding=_launch_fixture_for_binding_tests(tmp_path,monkeypatch)
+    launch=json.loads(launch_path.read_text());mutate(launch);launch_path.write_text(json.dumps(launch),encoding="utf8")
+    with pytest.raises(ValueError,match=match):
+      v3.guarded_calibration(root=root,checkpoint=ckpt,config_path=cfg,queue_path=qpath,authority_path=epath,launch_binding_path=launch_path,binding_path=binding,output_dir=root/"runs/no",device="cpu",deps=_ToyPhaseHelpers())
+
+
+def test_p3a_authority_rejects_future_artifact_hashes(tmp_path,monkeypatch):
+    root,ckpt,cfg,qpath,epath,launch_path,binding=_launch_fixture_for_binding_tests(tmp_path,monkeypatch)
+    authority=json.loads(epath.read_text());authority["checkpoint_sha256"]="0"*64
+    with pytest.raises(ValueError,match="must not bind future P4 artifacts"):
+      v3._epsilon_contract(authority,dataset=Path(authority["dataset_path"]),queue_path=qpath,queue_sha=__import__("hashlib").sha256(qpath.read_bytes()).hexdigest())
+
+
+def test_unidentifiable_authority_rejects_nonzero_fallback_and_accepted_zero_margin(tmp_path,monkeypatch):
+    root,ckpt,cfg,qpath,epath,launch_path,binding=_launch_fixture_for_binding_tests(tmp_path,monkeypatch)
+    auth=json.loads(epath.read_text());auth.update(status="unidentifiable",primary_epsilon=None,descriptive_calibration_epsilon=.01,unidentifiable_reason="zero")
+    with pytest.raises(ValueError,match="fallback 0"):
+      v3._epsilon_contract(auth,dataset=Path(auth["dataset_path"]),queue_path=qpath,queue_sha=__import__("hashlib").sha256(qpath.read_bytes()).hexdigest())
+    auth.update(status="accepted",primary_epsilon=0,descriptive_calibration_epsilon=None,unidentifiable_reason=None)
+    with pytest.raises(ValueError,match="positive finite"):
+      v3._epsilon_contract(auth,dataset=Path(auth["dataset_path"]),queue_path=qpath,queue_sha=__import__("hashlib").sha256(qpath.read_bytes()).hexdigest())
+
+
+def test_p3a_must_bind_queue_before_calibration(tmp_path,monkeypatch):
+    root,ckpt,cfg,qpath,epath,launch_path,binding=_launch_fixture_for_binding_tests(tmp_path,monkeypatch)
+    path=root/"pipeline-state.json";doc=json.loads(path.read_text());p3a=next(x for x in doc["stages"] if x["id"]=="P3A")
+    p3a["inputs"]=[x for x in p3a["inputs"] if x["path"]!="queue.json"];path.write_text(json.dumps(doc),encoding="utf8")
+    with pytest.raises(RuntimeError,match="candidate queue/plan is not hash-bound"):
+      v3.guarded_calibration(root=root,checkpoint=ckpt,config_path=cfg,queue_path=qpath,authority_path=epath,launch_binding_path=launch_path,binding_path=binding,output_dir=root/"runs/unregistered",device="cpu",deps=_ToyPhaseHelpers())

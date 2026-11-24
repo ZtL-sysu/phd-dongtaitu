@@ -1,0 +1,7 @@
+# Budget update v2 (read-only snapshot)
+
+`aggregate_budget.aggregate(ROOT)` reported 72-hour cap **259,200 s**, spent **8,215.62 s**, remaining **250,984.38 s**, coverage complete with no gaps, 78 accounting sources, one offline phase receipt, and profiling not started. This is a live accounting snapshot, not a completion forecast.
+
+The active `baseline-bound-v3-synthetic-DGCRN-seed0` job had five CUDA epochs logged and 731.20 s epoch-log elapsed at the snapshot; the whole-process phase receipt was 865.64 s. The aggregate handles the training-output timer and phase receipt by its same-output max/increment rule, so these are not to be added manually. The final epoch count, early-stop point, and duration remain unknown.
+
+Runs have a 100-epoch cap and patience 10, but completed jobs stop at varying epochs. The slowest completed per-epoch mean observed in the available summaries is synthetic V1: 2,324.52 s / 42 epochs = 55.35 s/epoch. Multiplying that by 100 gives a 5,534.58 s (1.54 h) planning scenario per run, not a prediction or a guaranteed upper bound for other methods. The earlier 138 h figure remains only a hypothetical 90-run scenario with six trained variants × three primary datasets × five seeds all charged at this synthetic V1 rate and the full 100-epoch cap. It is not a campaign estimate: early stopping, completed/reusable seeds, external models, robustness and profile durations are unknown. No reliable overall forecast can be made yet.

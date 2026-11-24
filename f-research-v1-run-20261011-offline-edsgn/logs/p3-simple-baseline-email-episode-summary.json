@@ -1,0 +1,9 @@
+[
+  {
+    "dataset": "email-episode",
+    "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple",
+    "wall_seconds": 33.55873479999718,
+    "scope": "full_training_fit/full_validation_46_origins; test not accessed",
+    "test_accessed": false
+  }
+]

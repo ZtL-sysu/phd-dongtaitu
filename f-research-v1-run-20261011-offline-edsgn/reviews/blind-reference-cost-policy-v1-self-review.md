@@ -1,0 +1,13 @@
+# Blind reference cost policy v1 — writer self-review
+
+Role: writer self-review; engineering prototype only, not H3 evidence. The helper does not edit `edsgn/src/edsgn/scheduling.py` or active drivers.
+
+`apply_blind_reference_cost(policy)` accepts only `periodic`/`random` `Policy` objects and returns the same object. It binds an instance-local cost fitter plus a delegating `_select` recorder. The recorder is needed because the existing private fitter signature does not receive `runtime.step`; it records only the current step by graph/state salt while delegating the original offered-mask selection unchanged. This lets the fitter reproduce periodic rotation or the exact device-local random generator seed formula without reading scores. Both additions are non-dataclass attributes: `asdict` and `engine.policy_digest` remain byte-equivalent, and repeated binding is idempotent.
+
+The blind fitter uses only offered and mandatory masks. It preserves all mandatory actions even when their measured cost exceeds the budget; optional candidates are ordered by normalized offered rank/quota, then graph before state, then node ID. It subtracts the same cost-table `base_ms`, uses `Policy.incremental_cost` interpolation for the same per-action table, and rejects optional candidates that exceed the remaining envelope. It leaves the `Policy.plan` result schema/counters and original candidate offers intact.
+
+Freeze binding helpers expose the current source SHA-256 and rule version and reject absent/stale helper hashes or a wrong rule version. Descriptor function reports schema, exact priority/salt/merge rules and cost semantics. The CPU fixture verifies score swap invariance for both controls, proves the original score/cost fitter changes under score swaps, mandatory overrun retention, base-envelope fallback/tie ordering, periodic rotation, deterministic and independent random streams, digest/asdict stability, idempotent bind, freeze binding, and rejection of adaptive/full kinds.
+
+Local Conda test suite: `8 passed` in `logs/blind-reference-cost-policy-v1-tests.log`. Source SHA-256 `2500f9687aa277ad5e67f3d4d41dde095d2e51761109da2f9dfceb6a68e3218d`; tests SHA-256 `5de9480763af7dfabbb8449c0b5d827c67dac9331d086ba979f5293021f573ee`; log SHA-256 `576ad4f18a89395a904765a68e531708dfb322990977f1b3960993f1a56a27a1`.
+
+No actual freeze was written or tested. A future consumer must add `blind_reference_cost_policy_source_sha256` and `blind_reference_cost_policy_rule_version` to its frozen extra and call `validate_freeze_extra` before any frozen control use. This helper does not itself establish benchmark calibration, matched quality, energy/cost improvement, or an H3 result.

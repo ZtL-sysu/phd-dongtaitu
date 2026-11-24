@@ -1,0 +1,39 @@
+{
+  "reviewer_role": "independent",
+  "verdict": "wait_only_not_launch_ready",
+  "scope": "source_and_metadata_only_engineering_review",
+  "observed_utc": "2026-10-11T11:17:34Z",
+  "source_path": "edsgn/scripts/continue_p3_strong_replication_serial_v1.py",
+  "source_sha256": "e09ba2766cadac4544f75b0419a518588fa9f72ad25cc64d138a515a6cdf5f55",
+  "queue_sha256": "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9",
+  "controller_sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+  "root_acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+  "root_metadata_sha256": "57015b4822bcb8c9306c820858fa749d7872afb2a7a7c46625448fce1c495684",
+  "canonical_pipeline_sha256": "2717ad80c898393c410d6f964caa77a5903c9ae38ec40569252d5c5055f47093",
+  "gate": {"P2": "passed/pass", "P3": "running"},
+  "predecessors": {
+    "expected_receipts": 56,
+    "completed": 4,
+    "running": 1,
+    "missing": 51,
+    "seed0_coordinator": "awaiting_current_campaign",
+    "gru_coordinator": "awaiting_seed0_coordinator"
+  },
+  "strong_outputs_absent": 24,
+  "campaign_lock_present": true,
+  "continuation_record_present": false,
+  "aggregate_budget": {
+    "coverage_complete": true,
+    "spent_seconds": 17015.16974480003,
+    "remaining_seconds": 242184.83025519998,
+    "budget_seconds": 259200
+  },
+  "numeric_acceptance_compatibility": {
+    "existing_mooc_json_review_schema_accepted": false,
+    "existing_mooc_markdown_seed_literal_accepted": false,
+    "blocker": "JSON field schema differs; markdown fallback requires 'seed 0' but current MOOC reviews say 'seed0'"
+  },
+  "arrays_or_models_opened": false,
+  "test_or_oracle_access": false,
+  "training_or_phase_launch": false
+}

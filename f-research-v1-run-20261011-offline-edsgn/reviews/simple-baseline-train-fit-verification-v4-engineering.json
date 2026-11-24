@@ -1,0 +1,21 @@
+{
+  "scope": "engineering_only_simple_baseline_train_fit_guard_repair",
+  "status": "tests_passed_not_root_accepted",
+  "source_sha256": "ef3c91e9ffa75134298d6888d2c6b52ca13e746efd707366ebc01ecb155b7e1c",
+  "source_v3_preserved_sha256": "b4cfa29a5c5bdcf99c699a4c2af0a11276e2f70b9d89149776d9dd847b6bf21a",
+  "test_sha256": "844e51d932479f0250c7080efaa6ef0c7af0d3e8bfda9efc57ece90b4d31a28c",
+  "pytest_log_path": "logs/simple-baseline-train-fit-verification-v4-tests.log",
+  "pytest_log_sha256": "31f89af3cd3963c04206f53d1f3a75a80c0a98015f5b1b3cc13693e72b22ee8f",
+  "tests_passed": 20,
+  "pytest_elapsed_seconds": 6.62,
+  "whole_command_wall_seconds": 8.25,
+  "repair": "Guard.checkpoint now rejects any nonempty list returned by the accepted owned-process scanner before budget or dataset loading.",
+  "new_cases": [
+    "public CLI rejects an active owned process before any datasets_at call and records a failed receipt",
+    "public CLI rejects an owned process appearing on the second in-phase scan before any datasets_at call and records a failed receipt"
+  ],
+  "test_access": false,
+  "real_training_or_model_run": false,
+  "pipeline_advanced": false,
+  "review_role": "writer_self_review"
+}

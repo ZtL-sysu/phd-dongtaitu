@@ -1,0 +1,37 @@
+{
+  "review_role": "independent_source_and_cpu_toy_review",
+  "verdict": "pass_engineering_toy_scope",
+  "scientific_acceptance": false,
+  "actual_data_or_checkpoint_accessed": false,
+  "gpu_or_training_used": false,
+  "source": {
+    "path": "edsgn/staging/case_signal_sensitivity_kernel_v2.py",
+    "sha256": "a49f823cdae53a2f246dba7875a033ada470ab16bb05b8ffdfe811d9ac0c68b5",
+    "matches_requested_pin": true
+  },
+  "tests": {
+    "path": "edsgn/tests/test_case_signal_sensitivity_kernel_v2.py",
+    "sha256": "84b4f39782b0255ffc407368b5560b2cec751d4d13772a265f48467118a17189",
+    "result": "6 passed in 2.46s"
+  },
+  "consumed_sources": [
+    {"path":"edsgn/staging/h2_matched_graph_retention_v2.py","sha256":"2bb4d80f6f75a299bc56dce66283730646426004f86600692fdd3010fca35d91"},
+    {"path":"protocols/case-slices-and-signal-sensitivity-root-design-v1.md","sha256":"f79b25df17bff2928f36a3517b1fca4afa8d113a6c39526c0953744ee8565a8b"}
+  ],
+  "test_log": {"path":"logs/case-signal-kernel-independent-v2-tests.log","sha256":"6da04b49aae761c5923dc5e7b1853cee7464154ff2155b42d62061b433555a08"},
+  "findings": {
+    "relationship_candidate_cap_and_no_refill": "pass",
+    "empty_support_and_affected_row_renormalization": "pass",
+    "untouched_rows_bit_exact": "pass",
+    "actual_c_recomputed_from_altered_support": "pass",
+    "retention_teacher_support_weights_actions_replay": "pass_by_direct_assignment_and_toy_assertions",
+    "focal_deferred_log_g_zero_at_consumption": "pass",
+    "strict_node_ids_full_policy_causal_keys": "pass",
+    "temporary_hooks_and_methods_cleanup": "pass_by_finally_inspection",
+    "feedback_caveat": "later other-node states/monitor/candidates/predictions may change; no whole-run invariance claim"
+  },
+  "limitations": [
+    "CPU/toy only; no real-data or full-domain driver/admission validation",
+    "nonfocal support exactness is checked at the first refresh; later feedback-driven changes are not claimed invariant"
+  ]
+}

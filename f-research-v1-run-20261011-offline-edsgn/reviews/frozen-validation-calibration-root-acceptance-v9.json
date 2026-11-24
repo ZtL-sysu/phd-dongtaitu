@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:45:02.419374+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_validation_calibration_v9.py": "975505e0bf7cbfc80392d0c8259b7c8a1f79de2b67284c32c63cf6f6dfb07554",
+    "edsgn/tests/test_frozen_validation_calibration_v9.py": "d34271d62506506ac940f256f3007d653e32867e4b0a44ac2fb16759efb2ad7e",
+    "reviews/calibration-chronology-v9-writer-evidence.md": "3bfc79d9fef32d10569858fe50f486e95360d2b7d9af50ec469447377df3b03a",
+    "reviews/frozen-prediction-guarded-v4-independent-review-v1.md": "acaa2937e5181d23d6b90ed6952324ccd8781e233c6d02fed712bf1e8788197e",
+    "reviews/frozen-prediction-guarded-v4-independent-review-v1.json": "4517d37e438eb56a7c1c56102abf7e3da6dbfdf6f86187cfd6c8b5a81ef8ad80",
+    "logs/calibration-v9-root-cpu-v1.log": "02d4cf3f091b85d20ad00c5e9ed432484f57fbbc75629f2a5c43778391148424",
+    "protocols/prospective-and-post-training-binding-root-v1.md": "432da90133d68091520fac3dcd0874497c30f50c3325df0e8e8b1618f54b10e7"
+  },
+  "actual_calibration_run": false,
+  "actual_epsilon_accepted": false,
+  "actual_policy_selected": false
+}

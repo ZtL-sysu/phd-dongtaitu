@@ -1,0 +1,65 @@
+{
+  "all_checks_pass": true,
+  "cases": [
+    {
+      "F": 1,
+      "H": 24,
+      "L": 24,
+      "N": 5,
+      "finite_gradients_all_parameters": true,
+      "finite_prediction": true,
+      "parameter_count_stable": true,
+      "parameters_after_forward": 371393,
+      "parameters_materialized": 371393,
+      "prediction_shape": [
+        1,
+        24,
+        5,
+        1
+      ],
+      "state_reload_prediction_equal_atol_1e-7": true,
+      "supports_cpu_after_apply": true
+    },
+    {
+      "F": 2,
+      "H": 7,
+      "L": 28,
+      "N": 5,
+      "finite_gradients_all_parameters": true,
+      "finite_prediction": true,
+      "parameter_count_stable": true,
+      "parameters_after_forward": 373378,
+      "parameters_materialized": 373378,
+      "prediction_shape": [
+        1,
+        7,
+        5,
+        2
+      ],
+      "state_reload_prediction_equal_atol_1e-7": true,
+      "supports_cpu_after_apply": true
+    }
+  ],
+  "check_type": "CPU toy forward/backward/state smoke only; no optimizer or dataset",
+  "source_hashes_after": {
+    "LICENSE": "007d75a4e82ba61d90bd280b93e15525b7fdaf3bb1ca1d7e65544c3a01ae340e",
+    "README.md": "fdb3019d2be6107309075385ce6507d8d20cf76b115435513ddbbd409da09a61",
+    "data/model/dcrnn_la.yaml": "af60b00372c8aefe4ffade8b7e53c54ff391cb17ea7cdf690e6c10db3584bbfb",
+    "lib/utils.py": "66df1340060899cb63a62b7bd38dac327141ca578da91cfcb894d33c70b6d4c3",
+    "model/pytorch/dcrnn_cell.py": "06e36e0806c6831625db246a50ec38c4f75f5a69adb32448dabd9af7e90c2f5d",
+    "model/pytorch/dcrnn_model.py": "1e17315b237685920c50f301e02b63904e6eee62b2f9f6d54d1983aa312b84dc"
+  },
+  "source_hashes_before": {
+    "LICENSE": "007d75a4e82ba61d90bd280b93e15525b7fdaf3bb1ca1d7e65544c3a01ae340e",
+    "README.md": "fdb3019d2be6107309075385ce6507d8d20cf76b115435513ddbbd409da09a61",
+    "data/model/dcrnn_la.yaml": "af60b00372c8aefe4ffade8b7e53c54ff391cb17ea7cdf690e6c10db3584bbfb",
+    "lib/utils.py": "66df1340060899cb63a62b7bd38dac327141ca578da91cfcb894d33c70b6d4c3",
+    "model/pytorch/dcrnn_cell.py": "06e36e0806c6831625db246a50ec38c4f75f5a69adb32448dabd9af7e90c2f5d",
+    "model/pytorch/dcrnn_model.py": "1e17315b237685920c50f301e02b63904e6eee62b2f9f6d54d1983aa312b84dc"
+  },
+  "source_hashes_unchanged": true,
+  "process_wall_seconds": 4.1533011,
+  "upstream_commit": "d92490b808ba5c5be2f23d427d96e9a56b066d7f",
+  "upstream_license": "MIT (snapshot LICENSE)",
+  "data_or_training_used": false
+}

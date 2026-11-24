@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "purpose": "Run-scoped read-only copy of the f-research-v1 official pipeline_state validator and its imported policy dependencies for frozen dispatch.",
+  "source_root": "C:/Users/xhf/.codex/skills/f-research-v1",
+  "files": [
+    {"source": "scripts/pipeline_state.py", "run_copy": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py", "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"},
+    {"source": "scripts/citation_requirements.py", "run_copy": "edsgn/scripts/frozen-pipeline-validator/scripts/citation_requirements.py", "sha256": "efe945b9d14e9a24b9b18d2d2a9b318d4afff8b9d0683391ea6141017e46a069"},
+    {"source": "scripts/delivery_readiness.py", "run_copy": "edsgn/scripts/frozen-pipeline-validator/scripts/delivery_readiness.py", "sha256": "92ec18db25fb392ff55c9d164d89ffd0d3572de17c4e0622b515cc7ab5871988"},
+    {"source": "assets/pipeline-definition.json", "run_copy": "edsgn/scripts/frozen-pipeline-validator/assets/pipeline-definition.json", "sha256": "1d4aadcea7a2e6eaaf24825c08dcec1433c79a3e6b6323d1424861fee7005e6e"}
+  ],
+  "execution": "The dispatcher pins these hashes and runs the copied validator with the fixed local Conda interpreter. The copy is not part of the package and does not modify pipeline state."
+}

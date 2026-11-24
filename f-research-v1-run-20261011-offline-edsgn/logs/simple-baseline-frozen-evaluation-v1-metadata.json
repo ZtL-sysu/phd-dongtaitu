@@ -1,0 +1,189 @@
+{
+  "arrays_decoded": false,
+  "domains": {
+    "email": {
+      "admission_ready": false,
+      "coefficient_header": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          57,
+          14
+        ]
+      },
+      "coefficient_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email\\simple\\linear_coefficients.npy",
+      "coefficient_rel": "runs/baselines/email/simple/linear_coefficients.npy",
+      "coefficient_sha256": "47387e5586d700beeb9b67b6f44de0e69757300e69c8b31d63edd9436a46c50f",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email\\simple\\simple-baseline-manifest.json",
+      "manifest_rel": "runs/baselines/email/simple/simple-baseline-manifest.json",
+      "manifest_sha256": "db5fbff4231f1ce08c8ab90022aad0c7f07b63b6786e03a64bb86a34073d4421",
+      "missing_fit_bindings": [
+        "coefficient_sha256 in P3 fit manifest",
+        "training_statistics_sha256",
+        "node_ids_sha256",
+        "completed P3 root acceptance"
+      ],
+      "source_sha256": {
+        "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+        "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+        "calibrate.py": "65d5e1fc90f45fae08f31439fc33e976391b60b91711f3950b24de12ec41067c",
+        "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+        "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+        "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+        "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+        "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+        "model.py": "f20d5eed544ac56299f0faa2e027f8ffa5110cf660fef52c1eaa61db3e654d81",
+        "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+        "profile.py": "e0d3a1d312f1091e8ff8e7acba0993ec659d74e0bcfbba481d10e45bcde81070",
+        "robustness.py": "68d5b65377c9e46161d91ce8733a399c6a8b5bad913503f5133053aaafff1b4d",
+        "scheduling.py": "43a143c3106f3bd63fd7603ba25a219e1b12d2df3a1211102e203a13819ee0b2",
+        "statistics.py": "cb5c2e4c8ce0987967f84b7a9f20977cae3d9198a21853cd47da4ec264ae5aab",
+        "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+        "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+      },
+      "split": "val",
+      "test_accessed": false,
+      "train_node_window_samples": 520608
+    },
+    "email-episode": {
+      "admission_ready": false,
+      "coefficient_header": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          57,
+          14
+        ]
+      },
+      "coefficient_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple\\linear_coefficients.npy",
+      "coefficient_rel": "runs/baselines/email-episode/simple/linear_coefficients.npy",
+      "coefficient_sha256": "5eed74f3d7066db1e8389a2b400bc56c0839ca21ad52e7ff2268aee6fb75cf4f",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+      "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple\\simple-baseline-manifest.json",
+      "manifest_rel": "runs/baselines/email-episode/simple/simple-baseline-manifest.json",
+      "manifest_sha256": "175e251b062c209553db90fbe052b2f966bcef9ed2cd6b36b4c67f202a0350c2",
+      "missing_fit_bindings": [
+        "coefficient_sha256 in P3 fit manifest",
+        "training_statistics_sha256",
+        "node_ids_sha256",
+        "completed P3 root acceptance"
+      ],
+      "source_sha256": {
+        "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+        "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+        "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+        "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+        "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+        "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+        "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+        "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+        "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+        "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+        "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+        "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+        "robustness.py": "3c33907e2b55600a0629a392eb0354dea6976cd1dd7eaebf24397a93fd7d8450",
+        "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+        "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+        "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+        "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+      },
+      "split": "val",
+      "test_accessed": false,
+      "train_node_window_samples": 298262
+    },
+    "mooc": {
+      "admission_ready": false,
+      "coefficient_header": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          25,
+          24
+        ]
+      },
+      "coefficient_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\simple\\linear_coefficients.npy",
+      "coefficient_rel": "runs/baselines/mooc/simple/linear_coefficients.npy",
+      "coefficient_sha256": "8025646c7f4ae6901973e0245a574c767abe171129bfe79698cfd59fa94d8274",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\simple\\simple-baseline-manifest.json",
+      "manifest_rel": "runs/baselines/mooc/simple/simple-baseline-manifest.json",
+      "manifest_sha256": "a6d5bc2a28a31705ae013e5cca2954d90bbea0067d97e7853b1315f42a2520c7",
+      "missing_fit_bindings": [
+        "coefficient_sha256 in P3 fit manifest",
+        "training_statistics_sha256",
+        "node_ids_sha256",
+        "completed P3 root acceptance"
+      ],
+      "source_sha256": {
+        "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+        "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+        "calibrate.py": "65d5e1fc90f45fae08f31439fc33e976391b60b91711f3950b24de12ec41067c",
+        "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+        "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+        "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+        "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+        "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+        "model.py": "f20d5eed544ac56299f0faa2e027f8ffa5110cf660fef52c1eaa61db3e654d81",
+        "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+        "profile.py": "e0d3a1d312f1091e8ff8e7acba0993ec659d74e0bcfbba481d10e45bcde81070",
+        "robustness.py": "68d5b65377c9e46161d91ce8733a399c6a8b5bad913503f5133053aaafff1b4d",
+        "scheduling.py": "43a143c3106f3bd63fd7603ba25a219e1b12d2df3a1211102e203a13819ee0b2",
+        "statistics.py": "cb5c2e4c8ce0987967f84b7a9f20977cae3d9198a21853cd47da4ec264ae5aab",
+        "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+        "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+      },
+      "split": "val",
+      "test_accessed": false,
+      "train_node_window_samples": 35256
+    },
+    "synthetic": {
+      "admission_ready": false,
+      "coefficient_header": {
+        "dtype": "float64",
+        "fortran_order": false,
+        "shape": [
+          29,
+          7
+        ]
+      },
+      "coefficient_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\simple\\linear_coefficients.npy",
+      "coefficient_rel": "runs/baselines/synthetic/simple/linear_coefficients.npy",
+      "coefficient_sha256": "299d61435f0f0a784fa75f10bfe8b067b6974481b1ed9c33914b9b1bfe263668",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+      "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\simple\\simple-baseline-manifest.json",
+      "manifest_rel": "runs/baselines/synthetic/simple/simple-baseline-manifest.json",
+      "manifest_sha256": "669a15cff0d9e1fa88600061b44d0def05376294d55dce64b8e077d606d69d21",
+      "missing_fit_bindings": [
+        "coefficient_sha256 in P3 fit manifest",
+        "training_statistics_sha256",
+        "node_ids_sha256",
+        "completed P3 root acceptance"
+      ],
+      "source_sha256": {
+        "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+        "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+        "calibrate.py": "65d5e1fc90f45fae08f31439fc33e976391b60b91711f3950b24de12ec41067c",
+        "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+        "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+        "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+        "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+        "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+        "model.py": "f20d5eed544ac56299f0faa2e027f8ffa5110cf660fef52c1eaa61db3e654d81",
+        "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+        "profile.py": "e0d3a1d312f1091e8ff8e7acba0993ec659d74e0bcfbba481d10e45bcde81070",
+        "robustness.py": "68d5b65377c9e46161d91ce8733a399c6a8b5bad913503f5133053aaafff1b4d",
+        "scheduling.py": "43a143c3106f3bd63fd7603ba25a219e1b12d2df3a1211102e203a13819ee0b2",
+        "statistics.py": "cb5c2e4c8ce0987967f84b7a9f20977cae3d9198a21853cd47da4ec264ae5aab",
+        "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+        "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+      },
+      "split": "val",
+      "test_accessed": false,
+      "train_node_window_samples": 1031168
+    }
+  },
+  "scope": "metadata-only existing P3 simple artifact inventory",
+  "source_sha256": "62156171abedfc616b14ba00fdc130828d273d091023dd2dd6b94e1d8589686f",
+  "test_accessed": false
+}

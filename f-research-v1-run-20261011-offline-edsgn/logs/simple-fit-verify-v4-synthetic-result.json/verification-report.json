@@ -1,0 +1,14 @@
+{
+  "coefficient_exact": true,
+  "dataset": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "legacy_output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\simple",
+  "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-synthetic-result.json\\simple-baseline-train-fit-verification.json",
+  "manifest_sha256": "06c6f0dbdd0cd2b9679923c2547c028e30cbd877276873eb53d0f0979ae6bbfa",
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "root_acceptance": "pending",
+  "schema_version": 1,
+  "scope": "train_only_simple_baseline_fit_verification",
+  "status": "completed",
+  "test_origins_evaluated": false
+}

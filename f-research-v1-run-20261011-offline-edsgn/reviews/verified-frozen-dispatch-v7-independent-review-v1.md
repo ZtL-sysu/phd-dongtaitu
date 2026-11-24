@@ -1,0 +1,11 @@
+# Independent review: verified frozen dispatcher v7
+
+**Verdict: conditional engineering pass.** CPU mock tests pass (6/6), and the source binds test-job arguments to a prospective plan side/seed, selected producer SHA, frozen input roles, and expected output paths. No dispatch, model, GPU, or experiment was run.
+
+For test jobs, the dispatcher checks the checkpoint path against a bound run; dataset path against the planned collection root/member; policy-config, input binding, freeze, config, queue, and epsilon-authority paths against their roles; policy kind against the frozen policy document; planned output parents and stable phase-receipt alias; and exact producer SHA across the plan side, plan producer source list, and job source list. The H2 route correctly omits `--policy-config`: its implicit policy is `full` and must match the bound policy descriptor. The reporting-switch authority and referenced files enter the before/after snapshot, not argv. The implicit `checkpoint.parent/test-freeze.json` is checked against the bound freeze path. Child required artifact names and receipt fields match the inspected driver outputs.
+
+There is one concrete H3 CLI mismatch: dispatcher v7 accepts `--device cuda:0` as equivalent to planned `profile_device: cuda`, and its mock test reports success. The actual profile driver parser accepts only `cpu` or `cuda` (`frozen_profile_guarded_v5.py:424–427`), so a real child invoked with `cuda:0` fails at argument parsing. Use `--device cuda` for that driver or revise the source contract and tests before an H3 job uses `cuda:0`. The root-requested `cuda:1` case is now rejected before the child.
+
+No generated endpoint plan, accepted pretest execution binding, or dispatch job was present for an actual path-by-path association check. The current registry is explicitly `root_structural_preparation_not_frozen_not_executed`; test coverage uses synthetic metadata fixtures only. Thus this review does not validate any actual endpoint run or scientific result.
+
+Dispatcher SHA-256: `8cc2fbcd760aad7bc9354c6462dda3424963e2a87b339a925c0a6f9f6210a36a`. Test SHA-256: `164cd7dbb3cd3cb9dde66339d7e22fe4efa56e44c2475386996cfd9f6b5f901d`. Registry preparation SHA-256: `d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f`. Full evidence and the conditional finding are recorded in the companion JSON.

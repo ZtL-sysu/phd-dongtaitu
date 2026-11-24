@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:14:48.879539+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/paired_forecast_bootstrap_v1.py": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80",
+    "edsgn/tests/test_paired_forecast_bootstrap_v1.py": "8b91e2aa82bb87723c2eb8720672dc2de9e439fe8d710deaf5bc46f47340d299",
+    "reviews/paired-forecast-bootstrap-independent-v1.md": "e57ec61b2a865048b01d80c280f9e5ede56566c1efcad2591a54799ddac5b016",
+    "reviews/paired-forecast-bootstrap-independent-v1.json": "6ecf26ef7d9a6972fd3bb48fc2924111018780caef8fa75f24bc7bcfc96d5f8e",
+    "reviews/paired-forecast-bootstrap-v1-self-review.md": "c3bf18665a7ba894a84611f93719ee54c1dce8b9178860411a1818eb5d56bba2",
+    "reviews/paired-forecast-bootstrap-v1-verdict.json": "71f1e23b1c8cec00580f11307f6da45401ac25f36ce6f132eb417a3fd23ccee9"
+  },
+  "actual_inference_run": false
+}

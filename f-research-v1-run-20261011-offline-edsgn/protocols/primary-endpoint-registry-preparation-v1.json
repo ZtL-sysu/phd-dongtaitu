@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "artifact_status": "preparation_only_not_accepted_not_executed",
+  "title": "Prospective primary endpoint registry preparation",
+  "split": "test",
+  "primary_families": ["H1", "H2", "H3"],
+  "model_seed_ids": [0, 1, 2, 3, 4],
+  "bootstrap": {
+    "reps": 2000,
+    "random_seed": 1234,
+    "resampling_unit": "paired temporal origin blocks within trajectory; never cross trajectory boundary",
+    "sharing": "same draw schedule for every matched method, contrast, registered horizon and model seed in the same origin domain",
+    "block_length_windows": null,
+    "block_length_status": "baseline-calibration-pending; freeze per domain from accepted P3A validation dependence rule; reject unsupported lengths, never cap"
+  },
+  "forecast_metric_contract": {
+    "scale": "raw target units",
+    "per_horizon": "pool absolute residual sums/counts over valid cells within each model seed; compute horizon MAE",
+    "composite": "equal mean over predeclared required horizons, then equal mean over model seeds 0-4",
+    "required_horizons_by_domain": {"email": [1, 3, 7], "mooc": [1, 6, 24], "synthetic": "freeze exact required offsets from approved synthetic task protocol"},
+    "zero_valid_support": "unidentifiable; block endpoint and family decision, never silently drop the row"
+  },
+  "endpoint_templates": [
+    {
+      "endpoint_id": "H1-noise-only-graph-tv",
+      "claim": "H1",
+      "primary": true,
+      "outcome_type": "graph_noise_tv",
+      "contrast": "V4 minus V9 under the same noise-only input/seed/origin; lower V4 false graph TV is the predicted direction",
+      "direction": "left-minus-right; negative favors V4",
+      "temporal_slice": "all predeclared noise-only steps; exact synthetic strata and onset exclusions frozen before test",
+      "domain_conditions": "all synthetic noise-only strata required by implementation-plan §3 and claim-evidence matrix, including declared missingness levels; no data-driven selection",
+      "producer_expected_outputs": ["per-origin graph-TV sufficient statistics", "paired signed difference and CI", "raw p-value", "model seed IDs", "origin-domain/block schedule hash", "matched input/weight/policy proof"],
+      "holm_family": "H1",
+      "expected_result_path_template": "runs/statistics/test/H1-noise-only-graph-tv/{stratum}.json",
+      "inferential_producer": "pending; current paired_statistics_shared_v4 only supports forecast MAE/RMSE"
+    },
+    {
+      "endpoint_id": "H1-change-response-and-forecast-preservation",
+      "claim": "H1",
+      "primary": true,
+      "outcome_type": "graph_change_response_and_forecast_noninferiority",
+      "contrast": "V4 versus V9, with V0/V1 and fixed-periodic graph as required contextual controls; retain structural-change response and do not suppress prediction quality",
+      "direction": "signed response contrast plus one-sided forecast noninferiority; numeric tolerance baseline-calibration-pending",
+      "temporal_slice": "all preregistered identity/weight-change trajectories, with exact switch-relative slices fixed from approved synthetic protocol before test",
+      "domain_conditions": "10% and 30% dependency changes, identity versus weight changes, and all required missingness strata; no post hoc subset",
+      "producer_expected_outputs": ["graph-TV/change-response per origin and step", "switch-relative forecast errors and recovery/delay summary", "V4-V9 raw required-horizon paired MAE", "calibrated epsilon and its validation evidence hash", "CI/raw p and complete support counts"],
+      "holm_family": "H1",
+      "expected_result_path_template": "runs/statistics/test/H1-change-response/{stratum}.json",
+      "status": "candidate operationalization; exact primary response statistic and slice boundaries require root/P3A selection"
+    },
+    {
+      "endpoint_id": "H2-postchange-recovery-informative-specificity",
+      "claim": "H2",
+      "primary": true,
+      "outcome_type": "postchange_error_recovery",
+      "contrast": "informative-c matched-graph retention versus shuffled-c, constant-g, and unconditional neighbor-reset; include V3/V4 and V1/V2 context; compare matched-width arms",
+      "direction": "left-minus-control error/recovery; negative error or shorter predeclared recovery time favors informative-c",
+      "temporal_slice": "switch-relative post-change origin support only; freeze the complete supported post-change slice and recovery definition before test",
+      "domain_conditions": "all declared synthetic identity/weight-change conditions and relevant missingness strata; any real-data strata required by accepted family design must be explicit",
+      "producer_expected_outputs": ["full-origin predictions/targets/masks and switch-relative origins", "per-origin error curve and recovery statistic", "teacher graph/action match proof per step", "informative-teacher parity status", "weights and parameter-count match", "paired CI/raw p and support counts"],
+      "holm_family": "H2",
+      "expected_result_path_template": "runs/statistics/test/H2-postchange-recovery/{stratum}.json",
+      "prescribed_graph_supplement": "frozen_h2_matched_retention_v2; teacher V4 graph/action sequence is forced identically across retention arms; graph scorer work is diagnostic overhead and not a speed comparison",
+      "limitations": "ordinary shuffled/constant/reset runs may change later graphs through prediction-residual feedback; only the matched-graph supplement identifies memory-arm specificity"
+    },
+    {
+      "endpoint_id": "H3-accuracy-tolerance-and-cost-frontier",
+      "claim": "H3",
+      "primary": true,
+      "outcome_type": "forecast_noninferiority_and_measured_paired_cost",
+      "contrast": "V7 versus full V4 and periodic V5 and random V6; compare adaptive ANN V8 to V7 only as the separately named SNN-value contrast",
+      "direction": "forecast error must remain within validation-calibrated tolerance; lower measured cost favors selective policy",
+      "temporal_slice": "same frozen checkpoint, full required replay windows, same input/targets and policy seed; no subset timing",
+      "domain_conditions": "email and MOOC, CPU and CUDA reported separately; every registered policy/quota/cost-table cell required by accepted independent quota grid",
+      "producer_expected_outputs": ["validation-calibrated epsilon and source hash", "per-origin prediction sufficient statistics", "per-repeat whole-window synchronized wall times", "median/p95/end-to-end ms per window", "peak memory and action/cost/age/overrun counters", "source/checkpoint/policy hashes", "paired CI/raw p and full coverage"],
+      "holm_family": "H3",
+      "expected_result_path_template": "runs/statistics/test/H3-cost-frontier/{dataset}-{device}-{contrast}.json",
+      "status": "calibration-pending; measured cost inference requires an accepted paired timing producer; action-count reduction alone is not acceleration"
+    }
+  ],
+  "secondary_endpoints_unless_promoted_before_test": [
+    "per-horizon MAE/RMSE and activity strata",
+    "all non-required forecast offsets",
+    "spike rate, membrane summaries, graph/state ages and detailed trace diagnostics",
+    "structural edge recovery/alignment",
+    "additional robustness slices beyond the enumerated primary family"
+  ],
+  "family_assembly_rules": {
+    "complete_registry_before_P4_test": true,
+    "expand_every_template_to_all_dataset_condition_contrasts_and_expected_paths_before_outcomes": true,
+    "holm_once_per_complete_H1_H2_H3_primary_pvalue_set": true,
+    "missing_or_unidentifiable_endpoint": "family decision blocked; endpoint set cannot shrink",
+    "secondary_cannot_upgrade_primary": true,
+    "report": ["signed effects", "confidence intervals", "raw p-values", "family-corrected p-values", "full family membership", "all missing/negative/unidentifiable rows"],
+    "oracle": "may define preregistered synthetic reporting slices only after all model predictions/source/weight checks; never enters training, graph generation, memory or scheduler"
+  },
+  "unresolved_before_acceptance": [
+    "Root must choose and freeze exact synthetic primary strata and exact required synthetic horizons from the approved task protocol; this draft does not prune declared conditions.",
+    "Root must define the exact post-change primary slice and recovery functional; do not infer a switch interval or threshold from test outcomes.",
+    "H3 accuracy epsilon and block lengths require accepted baseline/validation calibration; no numeric values are proposed here.",
+    "The current Holm assembler rejects non-forecast outcome types. A versioned producer/schema is needed for graph-TV, post-change recovery/noninferiority and paired measured cost endpoints, with tests and explicit raw-p pointers.",
+    "Root must specify whether real-data strata belong in H1/H2 mechanism families and freeze that multiplicity before test; no cross-domain pooling or compensatory averaging is implied.",
+    "Timing uncertainty unit/repeat aggregation and inference method need a validated producer; repeated timings are not independent model seeds."
+  ]
+}

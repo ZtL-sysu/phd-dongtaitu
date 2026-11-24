@@ -1,0 +1,168 @@
+{
+  "scope": "validation-only independent audit; no model/checkpoint load, optimizer, GPU, test or oracle NPZ opened/hashed",
+  "config_sha256": "d7d61a0456fd7d2fd53d9e10fc54571cc88f0bee8332af160e739044941aa1b6",
+  "prediction_sha256": "55fa43495986e6bdd7760de51da954b4732260c87724f85c088317c9bf9d36fc",
+  "checkpoint_sha256_stream_hash_only": "de8893e63794be8452680a48c44ae08404161c082f532a04ade8ecbb736a745d",
+  "phase_receipt_sha256": "ab96320dc6fab1338c97646bc8a8d6d7fd699d72949df7bd398e171c77bd22d8",
+  "phase_wall_seconds": 542.4105906000186,
+  "variant": "SeqSNN",
+  "model_seed_id": 0,
+  "model_seed_matches_config": true,
+  "prediction_shape": [
+    4028,
+    7,
+    64,
+    1
+  ],
+  "origin_pairs_shape": [
+    4028,
+    2
+  ],
+  "train_metadata_files": 8,
+  "validation_target_metadata_files": 2,
+  "train_windows_from_metadata": 16112,
+  "val_origins_from_metadata": 4028,
+  "origin_pairs_match_source_split": true,
+  "targets_match_validation_source": true,
+  "masks_match_validation_source": true,
+  "horizon_feature_metrics": [
+    {
+      "horizon": 1,
+      "feature": 0,
+      "n_windows": 4028,
+      "n_valid_cells": 257792,
+      "mae": 0.026014978626841972,
+      "rmse": 0.03053842711133735
+    },
+    {
+      "horizon": 3,
+      "feature": 0,
+      "n_windows": 4028,
+      "n_valid_cells": 257792,
+      "mae": 0.02601567016390274,
+      "rmse": 0.030539718604055927
+    },
+    {
+      "horizon": 7,
+      "feature": 0,
+      "n_windows": 4028,
+      "n_valid_cells": 257792,
+      "mae": 0.026018990081756167,
+      "rmse": 0.030543128628735292
+    }
+  ],
+  "metric_csv_match": true,
+  "three_horizon_selection_mae_from_saved_predictions": 0.026016546290833626,
+  "best_epoch_from_log": 8,
+  "best_validation_selection_mae_log": 0.02601654641330242,
+  "summary_best_val_mae": 0.02601654641330242,
+  "selection_log_summary_match": true,
+  "prediction_selection_log_match": true,
+  "epochs_executed": 18,
+  "per_epoch_train_window_counts": [
+    16112
+  ],
+  "manifest_train_windows": 16112,
+  "manifest_val_windows": 4028,
+  "stop_loss_reached": false,
+  "test_accessed": false,
+  "binding_captured_before_training": true,
+  "binding_config_matches": true,
+  "binding_safe_train_validation_hashes": [
+    {
+      "name": "manifest.json",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed0.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed1.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed2.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed3.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed4.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed5.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed6.npz",
+      "sha_match": true
+    },
+    {
+      "name": "train_seed7.npz",
+      "sha_match": true
+    },
+    {
+      "name": "validation_seed100.npz",
+      "sha_match": true
+    },
+    {
+      "name": "validation_seed101.npz",
+      "sha_match": true
+    }
+  ],
+  "dataset_binding_file_count": 29,
+  "heldout_or_other_binding_entries_skipped": 18,
+  "code_source_hash_matches": 74,
+  "code_source_count": 74,
+  "all_phase_input_hashes_match": true,
+  "phase_outputs_hash_match": [
+    {
+      "name": "training_summary.json",
+      "sha_match": true
+    },
+    {
+      "name": "checkpoint.pt",
+      "sha_match": true
+    },
+    {
+      "name": "manifest.json",
+      "sha_match": true
+    },
+    {
+      "name": "config_resolved.json",
+      "sha_match": true
+    },
+    {
+      "name": "training_log.csv",
+      "sha_match": true
+    },
+    {
+      "name": "validation_predictions.npz",
+      "sha_match": true
+    },
+    {
+      "name": "metrics_by_horizon_val.csv",
+      "sha_match": true
+    }
+  ],
+  "phase_completed_returncode0": true,
+  "checkpoint_hash_matches_summary": true,
+  "train_only_statistics_declared_fields": [
+    "norm_mean",
+    "norm_std",
+    "residual_scale",
+    "output_scale",
+    "output_mean"
+  ],
+  "limitations": [
+    "Training numeric arrays were not read; train-only statistics were checked via saved manifest/source binding, not recomputed.",
+    "18 heldout/other dataset binding file entries were not opened or hashed to avoid test/oracle artifacts; this is partial independent binding verification.",
+    "No generalization, multi-seed or P3A conclusion."
+  ],
+  "elapsed_seconds": 0.15386190000572242,
+  "status": "pass"
+}

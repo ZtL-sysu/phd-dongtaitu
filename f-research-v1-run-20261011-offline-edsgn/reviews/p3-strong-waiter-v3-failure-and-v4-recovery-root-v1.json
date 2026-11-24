@@ -1,0 +1,26 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "P3_waiter_filesystem_recovery_only",
+  "created_utc": "2026-10-11T11:49:47.231277+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/continue_p3_strong_replication_serial_v4.py": "903b5015ad4ebd394e126493ea49f7b9b26712c62e7e08d73523ec18314488ab",
+    "edsgn/tests/test_continue_p3_strong_replication_serial_v4.py": "f35e78bb7cf9b8f17c022b47559f52c52d85c8afd88880ad15185fa2c1c892b5",
+    "logs/p3-strong-serial-continuation-v4-tests.log": "73552ad253a3e8f678485a5d2938599e359f504e38c1e09dc8bfe0513bfce7be",
+    "edsgn/scripts/continue_p3_strong_replication_serial_v3.py": "da8ba58ee3301900c7e2c066dec0c3bb697640fcbc8e70b5a83b95a68aa6e4d3",
+    "reviews/continue-p3-strong-replication-v3-root-engineering-v1.json": "4619e3cc7b6941fd66d14226cf184f15354f92a9f65bf3847e6cb3f255589436",
+    "reviews/p3-strong-seed0-numeric-root-acceptance-v1.json": "d49fe7283793e9d4da83ad20c8838b5a1efe81f6a7a1abd6a82d07654257e62e",
+    "logs/p3-strong-serial-continuation-v3.json": "ee48e16b43032e9c8df29e42a51b2ad3abc54ac3898ba9551074a6d4970356bb",
+    "logs/p3-strong-serial-continuation-v3.tmp": "776c89f0ebcd08c4f13527a1445d8b91ba8ea5d2fbed0e8e0bfd2184be726f84"
+  },
+  "failed_v3_pid": 27672,
+  "failed_v3_session": 15568,
+  "failed_v3_process_observed_absent": true,
+  "replacement_wait_authorized": true,
+  "actual_replica_training_started": false,
+  "pipeline_state_sha256": "2717ad80c898393c410d6f964caa77a5903c9ae38ec40569252d5c5055f47093",
+  "verified_preparation_pins": 112,
+  "unchanged_budget_hours": 72
+}

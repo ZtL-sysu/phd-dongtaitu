@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "CPU toy engineering semantics only",
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "wall_seconds": 2.5,
+  "source": {
+    "path": "edsgn/staging/case_signal_sensitivity_kernel_v2.py",
+    "sha256": "a49f823cdae53a2f246dba7875a033ada470ab16bb05b8ffdfe811d9ac0c68b5"
+  },
+  "tests": {
+    "path": "edsgn/tests/test_case_signal_sensitivity_kernel_v2.py",
+    "sha256": "84b4f39782b0255ffc407368b5560b2cec751d4d13772a265f48467118a17189"
+  },
+  "test_log": {
+    "path": "logs/case-signal-sensitivity-kernel-v2-tests.log",
+    "sha256": "6718a5abca2f8e98a791b0db71f7f9963f930ca9684ef3002c1d1f26dbd70ab9"
+  },
+  "dependency": {
+    "path": "edsgn/staging/h2_matched_graph_retention_v2.py",
+    "sha256": "2bb4d80f6f75a299bc56dce66283730646426004f86600692fdd3010fca35d91"
+  },
+  "environment": {
+    "python": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe",
+    "device": "CPU",
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2
+  },
+  "checks": [
+    "built-in int node IDs only; bool/float/string rejected",
+    "nonblocked rows preserve weights and valid-mask bit-exactly, including focal-unblocked rows",
+    "blocked focal support renormalized; empty support remains explicit",
+    "real B=2 first-refresh nonfocal support IDs/weights/valid equal teacher exactly",
+    "candidate cap, directed exclusion, recomputed c vs teacher, informative replay parity",
+    "retention replay teacher graph/actions exact; focal g=1 and nonfocal informative signal preserved",
+    "parameter hash unchanged",
+    "N=2 empty support finite",
+    "noncausal targets and self-edge rejected"
+  ],
+  "limitations": [
+    "Random-initialized CPU toy only; no selected validation edge/domain replay.",
+    "No real dataset/checkpoint/oracle, GPU, optimizer, full-domain execution, or phase gate.",
+    "Only the direct per-refresh intervention is localized; downstream prediction/monitor feedback can affect later nodes and local-state values. Full policy only; skip-policy semantics are not claimed."
+  ]
+}

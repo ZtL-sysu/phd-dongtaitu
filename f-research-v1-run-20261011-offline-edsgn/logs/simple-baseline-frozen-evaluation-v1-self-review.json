@@ -1,0 +1,22 @@
+{
+  "metadata_inventory": "logs/simple-baseline-frozen-evaluation-v1-metadata.json",
+  "metadata_inventory_sha256": "cb86c123e1c0524fa47097988dc817dc744a5f27a8e39813572e2c1b439f48a8",
+  "p3_current_state": "P3 running/P3A pending; official before-P4 validator prevents execution",
+  "production_dispatcher_integrated": false,
+  "real_model_or_gpu_or_optimizer_used": false,
+  "real_test_arrays_decoded": false,
+  "scope": "writer implementation self-review; staging-only, no actual scientific authorization/result",
+  "source": "edsgn/staging/simple_baseline_frozen_evaluation_v1.py",
+  "source_sha256": "62156171abedfc616b14ba00fdc130828d273d091023dd2dd6b94e1d8589686f",
+  "test_log": "logs/simple-baseline-frozen-evaluation-v1-tests.log",
+  "test_log_sha256": "65265f01554fb7b76ad17ae23b03acc1640d80a9f76c1a9d7423e0654c9c363a",
+  "test_result": "7 passed in 3.05s",
+  "tests": "edsgn/staging/test_simple_baseline_frozen_evaluation_v1.py",
+  "tests_sha256": "a4a2eabe63da3a9491a28939b1995e2069f7e368371c4232b658c61f3185b313",
+  "unresolved": [
+    "Existing four P3 simple outputs lack train-only fit role, coefficient byte digest in manifest, preprocessing/statistics/node hashes and root-bound development acceptance; no pretest authorization exists.",
+    "Managed dispatcher/global completion schema has no simple_v1 contract, stable alias or completed dispatcher receipt.",
+    "Evaluator requires the existing owned two-lock/72-hour checkpoint callback but supplies no managed production CLI/final phase receipt.",
+    "Single-NPZ PreparedData loading may materialize stored test/other partition arrays; only authorized test-origin targets are scored and manifest discloses bundle materialization."
+  ]
+}

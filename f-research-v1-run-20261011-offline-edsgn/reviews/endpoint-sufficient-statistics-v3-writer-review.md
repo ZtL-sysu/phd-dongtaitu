@@ -1,0 +1,5 @@
+# Endpoint sufficient-statistics v3 — writer self-review
+
+V3 preserves v2 and closes the per-trajectory support gap in `full_post_switch`. Both forecast and streamed graph-TV converters now validate the caller-bound switch mapping for every trajectory, require each switch to fall within that trajectory's ordered authorized origin range, and fail as unidentifiable if any trajectory has no authorized post-switch origin. A trajectory cannot silently disappear because another has support. A switch exactly at the last authorized origin is a supported one-origin boundary case. Fixed pre/post 4L slices still require their entire interval and are never truncated.
+
+CPU tests include a two-trajectory case with the second switch beyond its final authorized origin (both forecast and graph conversion reject), a positive final-origin boundary case for both converters, and short pre/post interval rejection. Local `dyg-cold` tests: 10 passed. This is pure-array engineering only; no actual data, checkpoint, model run, GPU, or scientific endpoint was used.

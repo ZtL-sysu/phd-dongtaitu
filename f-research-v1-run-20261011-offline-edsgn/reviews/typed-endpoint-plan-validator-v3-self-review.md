@@ -1,0 +1,12 @@
+# Typed endpoint plan validator v3 — implementation self-review
+
+This is a writer self-review, not an independent audit and not authorization to execute endpoints or access test outcomes. v2 and its self-review remain preserved as a chronology-blocked predecessor.
+
+- Source: `edsgn/staging/typed_endpoint_plan_validator_v3.py`, SHA-256 `1b2b873adfc3809d3f973388287f71a3e1ec50c4ea3fa0bd36e508b019a300d0`.
+- CPU tests: `edsgn/tests/test_typed_endpoint_plan_validator_v3.py`, SHA-256 `3b285d0a52f4c472a12c6f6d1a9906541469989cf976a84d27d5a78c953fa3db`; `logs/typed-endpoint-plan-validator-v3-tests.log`, SHA-256 `413f28dc98b3e62b92be32ea46bfa1a048ea91a53db80a9c0fb4379adb67e5d1`; 14 passed in 8.72s using the local `dyg-cold` Conda Python.
+
+The P3A plan freezes the prospective output roles and paths, existing source/data/training refs, and accepted decision rules, without output-byte hashes for later test replay. A separate schema-v2 pretest execution binding contains only checkpoint, freeze, training input, policy, validation authority and queue refs plus actual block/epsilon decisions. Exact row keys reject report/receipt/dispatch/archive/trace/CSV additions. The schema-v3 postrun manifest binds completed artifacts separately at the already frozen paths; the stable receipt alias must be under `runs/.../evidence`, while its original is under `logs/offline-phase-wall`. Both byte hashes, receipt identity/status and dispatch links are checked. A second metadata-only TOCTOU pass rehashes bound bytes.
+
+The registry remains exactly 49 rows (H1=9/H2=16/H3=24), and forecast superiority is H2 while forecast noninferiority allows H1 or H3. Accepted fixed epsilon must be finite and positive; the explicit unidentifiable rule retains endpoints with null epsilon. Support checks reject empty full-post-switch intervals and incomplete pre or post halves of paired 4L slices. The tests cover a prospective plan with no future outputs, a valid pretest binding before test artifacts exist, a rejection if that binding includes a driver report, postrun alias/original binding, output mutation, nonpositive epsilon, and unsupported switch ranges.
+
+Scope limit: the validator proves metadata/path/hash consistency only. It does not validate producer semantics, actual root-acceptance provenance beyond the declared record, prediction/trace/timing values, or claims. Dataset archive contents are not opened; the fixture archives are opaque bytes. No real data arrays, checkpoints, model outputs, GPU work, training, or endpoint calculations were used.

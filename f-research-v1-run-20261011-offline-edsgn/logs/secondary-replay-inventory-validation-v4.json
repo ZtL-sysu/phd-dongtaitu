@@ -1,0 +1,29 @@
+{
+  "all_rows_unadmitted_unexecuted": true,
+  "category_counts": {
+    "case-signal-sensitivity": 8,
+    "count-loss-poisson": 2,
+    "count-or-event-perturbation": 78,
+    "graph-only-periodic-reference": 8,
+    "missingness": 624,
+    "quota-age-grid": 1536,
+    "simple-baseline-clean": 8,
+    "synthetic-clean-scenario": 104,
+    "synthetic-n256-clean": 18,
+    "trained-state-control": 60
+  },
+  "domain_descriptor_sha_checks": "passed for all non-null refs",
+  "future_checkpoint_freeze_training_driver_policy_hashes": "all null",
+  "generator_source_path": "edsgn/scripts/prepare_secondary_replay_inventory_v4.py",
+  "generator_source_sha256": "5e70e3998579ec52f14bbdb1d9f1efb195b101e9e865074306a9c97bd022a8e7",
+  "inventory_path": "protocols/secondary-replay-rows-v4/logical-secondary-replay-inventory-v4.json",
+  "inventory_sha256": "d283d86a5616b1397f28efab377a603161f417fab8477754c1491f91071b9e8e",
+  "logical_row_count": 2446,
+  "schema_version": 1,
+  "scope": "metadata_inventory_validation_no_npz_payload_access",
+  "status": "pass",
+  "supporting_input_sha_checks": "passed",
+  "unique_ids": 2446,
+  "unique_prospective_outputs": 2446,
+  "windows_path_safety": "passed"
+}

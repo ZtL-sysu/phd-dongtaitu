@@ -1,0 +1,15 @@
+{
+  "review_role": "independent narrow CPU staging acceptance",
+  "verdict": "needs-one-final-budget-check-after-finally-input-hash-pass",
+  "source_sha256": {
+    "edsgn/staging/frozen_validation_calibration_v6.py": "cdc4045a6ea1434031819a958e28626ca3e249a77680f67ea7f2ae78fa9512cc",
+    "edsgn/staging/frozen_validation_calibration_v5.py": "eb9106ed1a70654ded658a03f7d4f3087e7ff10af8b4abc207fdd5cb4fbf918c",
+    "edsgn/tests/test_frozen_validation_calibration_v6.py": "2a6bad1ab5d2efda94b60b9d12aa8ab54dfb6964170b45ec4ae17f5db1622d7f"
+  },
+  "evidence": {
+    "focused_v6_suite": "10 passed in 6.06s; includes genuine CPU ForecastModel/PreparedData/original calibrate_run path and injected final-fence budget failure -> failed receipt",
+    "independent_finally_hash_probe": "1 passed in 4.09s; armed the live guard to fail at the third/final `_hashes(files)` call in finally; calibration still returned completed and the guard failure remained unconsumed",
+    "scope": "temporary toy arrays/checkpoint only; no real dataset, GPU, optimizer, or training"
+  },
+  "finding": "The added guard at v6 line 646 correctly follows the main final source/data/gate/checkpoint fences at lines 637-644 and converts failure to FinalBudgetCheckFailed; however finally repeats `_hashes(files)` at line 660 after the last guard, then `_finalize_phase` writes completed at line 667 without another guard. A live stop-loss can expire during that final full source/data/config hash pass. Move/duplicate completion guard after the final hash snapshot and before successful receipt status is written, while preserving failure receipt semantics."
+}

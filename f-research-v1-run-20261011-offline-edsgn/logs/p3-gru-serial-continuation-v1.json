@@ -1,0 +1,35 @@
+{
+  "status": "failed",
+  "pid": 25064,
+  "scope": "root-authorized P3 baseline GRU seeds1-4 serial continuation",
+  "queue_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-gru-replication-queue-v1.json",
+  "queue_sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+  "acceptance_sha256": "d4114562deee19ae06301660b4df25fb459caae1093c32e5e1a0ad763b39d8b0",
+  "awaited_queues": [
+    [
+      "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+      "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+    ],
+    [
+      "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-bound-queue-v4.json",
+      "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79"
+    ],
+    [
+      "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-bound-queue-v2.json",
+      "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d"
+    ],
+    [
+      "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-fresh-remaining-bound-queue-v1.json",
+      "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e"
+    ]
+  ],
+  "predecessor_source_sha256": "fabfa9b6c84cfb5625522fbed9ed5de5cdb632bfd9aa785fbecd055b71385c26",
+  "source_sha256": "4bb2aa86c22a4e83de46933fb9f3005b14b9a3d0024a5c386b40e0b3fe921e40",
+  "job_count": 16,
+  "started_utc": "2026-10-11T10:33:17.995794+00:00",
+  "test_access": false,
+  "training_started": false,
+  "clock": "unchanged per-output bound-controller 72h accounting; wait not charged",
+  "last_updated_utc": "2026-10-11T14:15:51.201765+00:00",
+  "error": "RuntimeError: seed0 predecessor failed; no GRU replication launched"
+}

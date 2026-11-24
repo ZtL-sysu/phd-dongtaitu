@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T09:45:16.992678+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "logs/p3-bound-synthetic-SeqSNN-numeric-v3.json": "98f3dcb116c43cfc6e45208111e2b4e4b2c7790c9f2b753c2ef9f52622b6ad52",
+    "reviews/p3-bound-synthetic-SeqSNN-independent-v3.md": "dcccd81053f0e9f354bb2fc913f8d2b4b2021b66b6b4ca08f7e3e64577a05a74",
+    "logs/p3-bound-synthetic-SeqSNN-independent-v3.json": "ccd7d2d757198229b45ed9efe93786911e13ee1eec0e88abc33c87e9c35d20bb",
+    "logs/offline-phase-wall/baseline-bound-v3-synthetic-SeqSNN-seed0.json": "ab96320dc6fab1338c97646bc8a8d6d7fd699d72949df7bd398e171c77bd22d8"
+  },
+  "dataset": "synthetic",
+  "variant": "SeqSNN",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.026016546290833626,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

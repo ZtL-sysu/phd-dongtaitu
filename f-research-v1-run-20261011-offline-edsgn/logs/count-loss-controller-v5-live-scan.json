@@ -1,0 +1,10 @@
+{
+  "scope": "read_only_full_process_inventory_no_launch",
+  "scanner": "count_loss_training_controller_v5+owned_python_job_inventory_v1",
+  "owned_python_job_pids": [
+    6236,
+    33368
+  ],
+  "pid_33368_detected": true,
+  "launch_authorized": false
+}

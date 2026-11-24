@@ -1,0 +1,28 @@
+{
+  "scope": "staging-cpu-toy-only",
+  "result": "pass",
+  "tests": 17,
+  "py_compile": "passed",
+  "artifacts": {
+    "h2_v3": {
+      "path": "edsgn/staging/frozen_h2_matched_retention_v3.py",
+      "sha256": "3c7d25793817fd8e27af8cdae48f98e48063a347c844951c86fa58a2974fec32"
+    },
+    "h2_v2_preserved_sha256": "3f8150b164e83b34ddfcfc8083bac4bf1f274c74125eb61e245ae469076934fb",
+    "calibration_v4": {
+      "path": "edsgn/staging/frozen_validation_calibration_v4.py",
+      "sha256": "821366792726e6703fe2e60aeb0ef4eff38d6e02d8bc58e53b7a66f9c8c4ddaa"
+    },
+    "calibration_v3_preserved_sha256": "ff7350c281ded35dc238b017e3922efff3df9f8715eee15421aa4dc91fb9bf71"
+  },
+  "log": "logs/h2-calibration-guard-successor-tests.log",
+  "review": "reviews/guard-successors-independent-v1.md",
+  "not_run": [
+    "real calibration",
+    "training",
+    "GPU",
+    "optimizer",
+    "real heldout values"
+  ],
+  "review_role": "writer_self_review_not_independent"
+}

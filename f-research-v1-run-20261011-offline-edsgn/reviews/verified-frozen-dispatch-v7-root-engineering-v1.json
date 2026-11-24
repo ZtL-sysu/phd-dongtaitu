@@ -1,0 +1,24 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "frozen_dispatch_engineering_only",
+  "created_utc": "2026-10-11T11:37:02.614573+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/verified_frozen_dispatch_v7.py": "1b95e9e9af3c6a28e009937148fd688ec361344c7865a7d857f7a3efec845f62",
+    "edsgn/tests/test_verified_frozen_dispatch_v7.py": "850239eb5b264b9ecc6ad825ee1b278a94da684bedf9e09d6a6eadbe296fb68f",
+    "reviews/verified-frozen-dispatch-v7-independent-review-v2.json": "bd3fb83560476b6d668a13cc5a29c2bbb04fff8a9513a34479b9e845419e8e95",
+    "reviews/verified-frozen-dispatch-v7-independent-review-v2.md": "3eff815cddeb7083f888cbaac7da3dcf303b6b394b30d5e69584fe5ed971ce27",
+    "reviews/verified-frozen-dispatch-v7-independent-review-v1.json": "d5fe61d0df49dcfd2fe6819fe7b7340c0f97593b3d96f1085eda2242bdf5295f",
+    "edsgn/staging/frozen_graph_state_diagnostic_v7.py": "ffddb21ad40206bdbbfa1d6b94d71ca38e694d6fe861e89648f15c2516feaa45",
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "edsgn/staging/frozen_validation_calibration_v9.py": "975505e0bf7cbfc80392d0c8259b7c8a1f79de2b67284c32c63cf6f6dfb07554",
+    "edsgn/staging/frozen_split_history_robustness_v5.py": "4886f02f4ad51035555154d10da4895dd459b50c2346f306793dd1e3328d8df4",
+    "edsgn/staging/frozen_prediction_guarded_v5.py": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "edsgn/staging/frozen_profile_guarded_v5.py": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c"
+  },
+  "actual_dispatch_performed": false,
+  "test_execution_authorized": false,
+  "actual_endpoint_binding_accepted": false
+}

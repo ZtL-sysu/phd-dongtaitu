@@ -1,0 +1,69 @@
+{
+  "dataset_id": "synthetic",
+  "dataset_root": "data/processed/synthetic-stress-n64-local-shock",
+  "oracle_npz_decoded": false,
+  "ordered_switch_refs": [
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/oracle/test_seed200.oracle.npz",
+        "sha256": "551a86ae15bd02c0f8486a7a0a87accc1e84861d98be543f5441790cc0a91b65"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/test_seed200.npz",
+        "sha256": "79bac5c3b86c36fb43ca0ef548c2332d9dd5efa7684da3df8e97d64cba013c57"
+      },
+      "trajectory_index": 0,
+      "trajectory_seed_id": 200
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/oracle/test_seed201.oracle.npz",
+        "sha256": "937e40a0792928bf985bfbb4d8e10316a210a91c74c9aabd716bd73c18ecb1f8"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/test_seed201.npz",
+        "sha256": "67f42c41c0f18504c7024381730bb066297e96b2cffe8a59d5313ed8740027af"
+      },
+      "trajectory_index": 1,
+      "trajectory_seed_id": 201
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/oracle/test_seed202.oracle.npz",
+        "sha256": "08bd0b6c0ebc8f92c763e887d4f1fc647a53ed8e3ca9031539e715277d2df734"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/test_seed202.npz",
+        "sha256": "1da38bb9ca9f81f2dcae604e9ef0948d14e05ba5ba6b66214eb965950787bab4"
+      },
+      "trajectory_index": 2,
+      "trajectory_seed_id": 202
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/oracle/test_seed203.oracle.npz",
+        "sha256": "379b572c4c08c80d92400ca2764cdb2e83187ecd5ef7c765aa580d6d8d6eb597"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-local-shock/test_seed203.npz",
+        "sha256": "08b7598e19bfb06dd1c52dc85f01165c5099947be47e2070c504e493654793d7"
+      },
+      "trajectory_index": 3,
+      "trajectory_seed_id": 203
+    }
+  ],
+  "purpose": "post-global-test-reporting-only; never a model input",
+  "regime_id": "n64_local_shock10_amp0.5_duration8",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "source_manifest": {
+    "path": "data/processed/synthetic-stress-n64-local-shock/manifest.json",
+    "sha256": "528cfc2e1c26d410199c95ce0788aa2fdbda20984aa43434e87f445d0478fbf5"
+  },
+  "split": "test",
+  "status": "prospective_metadata_only",
+  "value_decoded": false
+}

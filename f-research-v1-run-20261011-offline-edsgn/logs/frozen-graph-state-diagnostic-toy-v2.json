@@ -1,0 +1,32 @@
+{
+  "schema_version": 2,
+  "scope": "CPU toy/mock functionality only",
+  "status": "passed",
+  "device": "cpu",
+  "py_compile": "passed",
+  "tests_passed": 10,
+  "tests_failed": 0,
+  "pytest_seconds": 3.44,
+  "compile_and_test_wall_seconds": 5.2,
+  "actual_test_oracle_accessed": false,
+  "checkpoint_accessed": false,
+  "model_replay": false,
+  "gpu": false,
+  "optimizer": false,
+  "scientific_result": false,
+  "prototype_integrated": false,
+  "test": "edsgn/tests/test_frozen_graph_state_diagnostic_v2.py",
+  "report": "reviews/frozen-graph-state-diagnostic-preparation-v2.md",
+  "log": "logs/frozen-graph-state-diagnostic-toy-v2.log",
+  "hashes": {
+    "edsgn/scripts/aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "edsgn/staging/frozen_graph_state_diagnostic_v1.py": "888400ebec88126c5eec46076352e46c46154806ad218eeafb18a41e082ebcc2",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/tests/test_frozen_graph_state_diagnostic_v2.py": "fe1b962cecc5c4bef1fccb68b239c9a7e210ee7a65102911325002653c891af8",
+    "edsgn/staging/frozen_graph_state_diagnostic_v2.py": "e343deb9dfe04cd4d8d2d45a37480925fc49766ac58f81e297bc6551fdbe2289",
+    "edsgn/tests/test_frozen_graph_state_diagnostic.py": "fda971ffb174e5061eb31eeba65816310c4a2f4d1701a8050cc6fdfec1c8a402",
+    "reviews/frozen-graph-state-diagnostic-independent-v1.md": "0fc339799140b4a66f320580dfc3c25f58300142cb0c272126c17c7283b9ca3b",
+    "edsgn/scripts/candidate_gpu_fullpath_probe_v3.py": "1a40d0315d6e76c2e0d87d81fe02bfda3d912356892e76550043b38be8f70ed7",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "paired_v4_seed0_count_loss_adapter_engineering_only",
+  "created_utc": "2026-10-11T13:21:04.127715+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/count_loss_training_adapter_v1.py": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+    "edsgn/tests/test_count_loss_training_adapter_v1.py": "195a663f4960dcc9b4785f123cadca0448508bfb3e8ff8b3cc68e6e0c4f8379f",
+    "reviews/count-loss-training-adapter-independent-v1.md": "2b019b8f590223e0389297c551c34e70ef2d88b65743da38868c6873f15d5945",
+    "reviews/count-loss-training-adapter-independent-v1.json": "363ec0a8741b5bc842ea86c9bda403f5b1acba63483a3cc7df37fe905601b273",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "configs/core-development-bound-v3/email-V4-seed0.json": "f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e",
+    "configs/core-development-bound-v3/mooc-V4-seed0.json": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603",
+    "protocols/secondary-scope-and-count-controls-root-design-v1.md": "9f1ff25aa93b9f66abc2d79061c0fc32971238d61e5c03f1f4aa9c1310c3a5b8",
+    "protocols/count-loss-controller-root-design-v1.md": "3962fcffb7cf13efe5de206e3acf6a7be11321e56acc31ee75d30823af2e90a3",
+    "logs/root-count-loss-adapter-v1-tests.log": "6216c82de01444709939884b8d1ab8bc989b0d5913b5bc34f281374c5fa39b25"
+  },
+  "actual_training_completed": false,
+  "actual_test_authorized": false,
+  "selected_policy_linkage_accepted": false
+}

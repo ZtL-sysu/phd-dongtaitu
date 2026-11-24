@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "scope": "independent_ordinary_admission_helper_review",
+  "verdict": "pass_bounded_engineering_path",
+  "review_role": "independent_read_only_reviewer",
+  "actual_experiment_data_accessed": false,
+  "training_or_test_run": false,
+  "findings": {
+    "config_blueprint_and_method_identity": "pass",
+    "training_binding_and_source_inventory": "pass_with_dispatcher_prechild_snapshot_fence",
+    "byte_identical_checkpoint_copy_and_adjacent_freeze": "pass",
+    "serial_output_absence_scope": "pass_current_job_only",
+    "consumed_refs_and_queue_binding": "pass_no_hash_cycle",
+    "scientific_or_full_matrix_acceptance": "not_established"
+  },
+  "focused_tests": {"passed": 5, "failed": 0, "log": "logs/ordinary-admission-independent-check-v1.log", "sha256": "6e54aa20c7943afd05cbd991bec97e9f91da18837bc047dd805f2c3f81d43030"},
+  "combined_integration": {"passed": 32, "failed": 0, "log": "logs/dispatcher9-ordinary-admission-v3-tests.log", "sha256": "b2c1538a9ae4aba4e3099e2195ad85ab6dec7595e66ab75fdaf4213937872bd5"},
+  "source_sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+  "dispatcher9_source_sha256": "34ab18bc9f5da5134615e204af314828c444ef041d0efa85847f5b936b039a19",
+  "remaining_limit": "Admission completeness depends on dispatcher9 rechecking the frozen source snapshot after the official pre-P4 validator and immediately before driver launch; current focused integration exercises this fence. This review does not accept global test completion or scientific results."
+}

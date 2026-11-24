@@ -1,0 +1,160 @@
+{
+  "scope": "metadata-only per-collection v6 cap preflight; not whole-campaign guarantee",
+  "driver_sha256": "7c91a01f237d64c7f2db383fc31a823265edd7e42b4daa456744e755716302a7",
+  "source_method": "Only each actual test NPZ metadata_json.npy and values.npy header were read. No array payload, mask, target, oracle, checkpoint, or model was opened. The same immutable v5 geometry is recomputed with v6 estimator; dimensions and bounds are re-read and matched across each collection.",
+  "rows": [
+    {
+      "label": "N64",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-gradual-weight128-fixed-support",
+      "test_files": [
+        "test_seed200.npz",
+        "test_seed201.npz",
+        "test_seed202.npz",
+        "test_seed203.npz"
+      ],
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 64,
+        "n_features": 1,
+        "count_data": false,
+        "event_kind": "synthetic",
+        "values_shape": [
+          2048,
+          64,
+          1
+        ],
+        "test_split": [
+          0,
+          2048
+        ]
+      },
+      "per_file_metadata_and_header_sha256": {
+        "test_seed200.npz": {
+          "metadata_json": "636ee372812e4b4a284633c7e678af01c1008819e9375cdf8c9d09aa0ff7d89e",
+          "values_npy_header": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "metadata_seed": 200
+        },
+        "test_seed201.npz": {
+          "metadata_json": "5d73983a42ff86c4deeefd036b6da8922b285b67c852ad06c620623fbb70819b",
+          "values_npy_header": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "metadata_seed": 201
+        },
+        "test_seed202.npz": {
+          "metadata_json": "6867f183ef14242258196f5fca70d85bb2c9f76353fc95a24d35b4e0de2dd3c3",
+          "values_npy_header": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "metadata_seed": 202
+        },
+        "test_seed203.npz": {
+          "metadata_json": "d6956b50c736a7102c8689e1343e836e091a610e496d67108dcecfc0d93771ec",
+          "values_npy_header": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "metadata_seed": 203
+        }
+      },
+      "origins_per_trajectory": [
+        2014,
+        2014,
+        2014,
+        2014
+      ],
+      "detailed_origins_per_trajectory": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "origin_total": 8056,
+      "detailed_origin_total": 32,
+      "prediction_elements": 3609088,
+      "d_total": 64,
+      "estimate_bytes": 13646155776,
+      "estimate_gib": 12.708972930908203,
+      "cap_gib": 16.0,
+      "cap_bytes": 17179869184,
+      "cap_pass": true,
+      "headroom_bytes": 3533713408,
+      "current_free_disk_bytes": 430517174272,
+      "current_free_disk_gib": 400.9503631591797,
+      "single_run_1_25x_free_disk_pass": true
+    },
+    {
+      "label": "N256",
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n256-identity30-scale",
+      "test_files": [
+        "test_seed200.npz",
+        "test_seed201.npz",
+        "test_seed202.npz",
+        "test_seed203.npz"
+      ],
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 256,
+        "n_features": 1,
+        "count_data": false,
+        "event_kind": "synthetic",
+        "values_shape": [
+          2048,
+          256,
+          1
+        ],
+        "test_split": [
+          0,
+          2048
+        ]
+      },
+      "per_file_metadata_and_header_sha256": {
+        "test_seed200.npz": {
+          "metadata_json": "75ae419a194614a92f2ca0918578efe01d418640106c507528e59f7eab804461",
+          "values_npy_header": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "metadata_seed": 200
+        },
+        "test_seed201.npz": {
+          "metadata_json": "290197a68a71d396b1b0c796fb724b3872210bfcd0cb8d83f1acd37328b1e133",
+          "values_npy_header": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "metadata_seed": 201
+        },
+        "test_seed202.npz": {
+          "metadata_json": "b929b05c5b11629f9f1d0009b54397b0563608d02d8cc7731ff34017d46ffea0",
+          "values_npy_header": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "metadata_seed": 202
+        },
+        "test_seed203.npz": {
+          "metadata_json": "35bee389eedbb9b1ce7f31f9b8a353a8eb18cdfd9eb8fcda749967253e4fc378",
+          "values_npy_header": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "metadata_seed": 203
+        }
+      },
+      "origins_per_trajectory": [
+        2014,
+        2014,
+        2014,
+        2014
+      ],
+      "detailed_origins_per_trajectory": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "origin_total": 8056,
+      "detailed_origin_total": 32,
+      "prediction_elements": 14436352,
+      "d_total": 64,
+      "estimate_bytes": 47340601344,
+      "estimate_gib": 44.08937072753906,
+      "cap_gib": 64.0,
+      "cap_bytes": 68719476736,
+      "cap_pass": true,
+      "headroom_bytes": 21378875392,
+      "current_free_disk_bytes": 430517174272,
+      "current_free_disk_gib": 400.9503631591797,
+      "single_run_1_25x_free_disk_pass": true
+    }
+  ],
+  "limits": [
+    "Single collection, not campaign aggregate.",
+    "Instant free-space snapshot is not a reservation.",
+    "No RAM/runtime or actual-output-size guarantee."
+  ]
+}

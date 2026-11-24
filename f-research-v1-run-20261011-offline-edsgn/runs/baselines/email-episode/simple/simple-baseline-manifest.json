@@ -1,0 +1,27 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+  "split": "val",
+  "train_node_window_samples": 298262,
+  "ridge": 298.262,
+  "features": "same normalized L histories, raw target head; shared coefficients across nodes",
+  "source_sha256": {
+    "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+    "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+    "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "robustness.py": "3c33907e2b55600a0629a392eb0354dea6976cd1dd7eaebf24397a93fd7d8450",
+    "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "test_accessed": false
+}

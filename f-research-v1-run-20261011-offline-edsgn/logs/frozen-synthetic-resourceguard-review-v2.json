@@ -1,0 +1,24 @@
+{
+  "scope": "CPU toy/mock only; no actual test data/checkpoint/model/GPU/optimizer",
+  "result": "passed",
+  "tests": "31 passed in 3.12s",
+  "coverage": [
+    "foreign campaign lease preserved and partial resource lease removed",
+    "budget exhaustion before replay",
+    "budget rechecked between batches and both leases removed after stop",
+    "stable fingerprint causes final engine.validate_freeze recheck",
+    "changed fingerprint aborts before artifact write",
+    "final receipt write failure still releases acquired leases",
+    "P3 baseline scopes restricted and P4 pilot/formal gate regression"
+  ],
+  "hashes": {
+    "edsgn/scripts/frozen_synthetic_stress.py": "55dd6974dc821e2d93e30bb7de9e52352e0ed9be73abf420821259694f44d499",
+    "snapshots/frozen-synthetic-stress-before-receipt-cleanup-v1.py": "27df156f66f739daa1498adeb487016917bfd19122e90f13f1cfbc3f466184d9",
+    "edsgn/tests/test_frozen_synthetic_stress.py": "332bec785dbf807e560d3f00141ec88f26b87c772dc0e09eadd8fef32b501812",
+    "edsgn/scripts/candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "edsgn/scripts/aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "snapshots/bound-phase-campaign-before-formal-scope-fix-v1.py": "d7698668dc961d275b10c6a0bb90074d01ab00f2442f92509fb78f5cfd0a3bb8",
+    "edsgn/tests/test_bound_phase_campaign.py": "7d682af371e7d22503656f05dd837e75ae37999aa513d58bfcb78fa9afe07e30"
+  }
+}

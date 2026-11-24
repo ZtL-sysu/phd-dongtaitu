@@ -1,0 +1,26 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T11:27:14.428691+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "logs/p3-bound-email-DGCRN-numeric-v3.json": "8340f18bc91a2489162265de2f5f540c41fc6e8f340c11bef3accb25ebf39b32",
+    "reviews/p3-bound-email-DGCRN-independent-v3.json": "35b87a63660924ce5cd787e54283831be35fce8ce4b09a463d89cd9bb40c3fe6",
+    "reviews/p3-bound-email-DGCRN-independent-v3.md": "97794e04979ada0b86f8b279a1407d9c7fe51751c1007938ca99cd3a5c9c0f9a",
+    "logs/offline-phase-wall/baseline-bound-v3-email-DGCRN-seed0.json": "77dc211d3fc767e77b7b533aa9c7a74e7dd29641fab859380b737e13ce302b48",
+    "runs/baselines-bound-v3/email/DGCRN/seed0/input-binding-at-launch.json": "4e9684319ae1631b574d8101afb1a0dd1792d1d173def52a0b0a5b4643a001bc",
+    "runs/baselines-bound-v3/email/DGCRN/seed0/training_summary.json": "830209c63785eecf4d074b0c66c2302cedd703de62e9267b969b7033ddfcffca",
+    "runs/baselines-bound-v3/email/DGCRN/seed0/config_resolved.json": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066",
+    "runs/baselines-bound-v3/email/DGCRN/seed0/training_log.csv": "fb4acaff42ccd0a4fe187193321b07b7b8324e7fb57697141dbfc92c68ab25c6",
+    "configs/baselines-bound-v3/email-DGCRN-seed0.json": "dec700f636bd17ed299b49ffdb71d6fa74b805edcb12a4953e0a0827ecc34066"
+  },
+  "dataset": "email",
+  "variant": "DGCRN",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.0018601083259029525,
+  "formal_five_seed_result": false,
+  "final_test_result": false,
+  "main_email_margin_status": "unidentifiable_by_predeclared_rule"
+}

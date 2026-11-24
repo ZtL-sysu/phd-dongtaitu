@@ -1,0 +1,16 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T09:45:58.768286+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/claim_family_holm_v2.py": "4c3330cb553814d4b8f3307665bce9169928f79019e950bae813913da8fc13dc",
+    "edsgn/staging/test_claim_family_holm_v2.py": "307ece4709b5cc85b593b6fd334c397f7e5fb48b0446d6c137005a2019dca8ff",
+    "reviews/claim-family-holm-independent-v1.md": "7a364b47c7223b1a96c1a48ed0b1c10ecd1d3361a0cacc654aa894b35963e22f",
+    "reviews/claim-family-holm-independent-v2.md": "0305bcf303818a20843ae4c2af348de0593b126a09efa265d30e8e455c752cd8",
+    "logs/claim-family-holm-v2-tests.log": "d78f9a6d8bfca17f3edbf234e4b13776023895cbd43f07d7af053e5dc8321f1b"
+  },
+  "actual_inference_run": false
+}

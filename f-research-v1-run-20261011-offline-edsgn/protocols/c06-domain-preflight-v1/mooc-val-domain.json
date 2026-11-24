@@ -1,0 +1,34 @@
+{
+  "schema": "edsgn.split-history-domain.v1",
+  "dataset": {
+    "event_kind": "mooc",
+    "partition": "chronological",
+    "source_name": "SNAP act-mooc user action log",
+    "shape_tnf": [
+      714,
+      78,
+      1
+    ],
+    "node_ids_sha256": "58b8e8054c706b441b6a0cff1e509bfbc6adefe0ce02755d6fd338569c02f4a1",
+    "split_bounds_start_inclusive": 499,
+    "split_bounds_end_exclusive": 571,
+    "history_length": 24,
+    "hmax": 24
+  },
+  "trajectories": [
+    {
+      "trajectory_index": 0,
+      "source_trajectory_seed": 0,
+      "source_input_mask_sha256": "8942e37832e538e8a11ef096737f10bca7eb877c770aa4e10cb2a88932a46bc6",
+      "split": "val",
+      "origin_first": 498,
+      "origin_last": 546,
+      "origin_count": 49,
+      "history_length": 24,
+      "history_union_start_inclusive": 475,
+      "history_union_end_exclusive": 547,
+      "domain_bounds_start_inclusive": 475,
+      "domain_bounds_end_exclusive": 547
+    }
+  ]
+}

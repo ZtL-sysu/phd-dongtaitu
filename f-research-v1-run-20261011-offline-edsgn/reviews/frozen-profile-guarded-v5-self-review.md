@@ -1,0 +1,9 @@
+# Frozen profile v5 — writer self-review
+
+Writer self-review of isolated staging code; not an independent audit, actual profile, or scientific result. v5 preserves v4's main-training collection hash fence and normalization checks.
+
+Three receipt semantics changed. The phase timer now starts before CPU checkpoint metadata loading. The initial phase receipt always records `test_origins_evaluated=false` and `test_evaluation_started=false`; immediately before a requested test replay it marks `test_evaluation_started=true`, and only after the full profile call returns does it mark `test_origins_evaluated=true` and `test_origin_evaluation_complete=true`. If the replay raises, the failed receipt retains started=true but completed/evaluated=false, so it does not imply that zero partial test work occurred.
+
+For a combined NPZ referenced by either the checkpoint's training path or the requested profile path, initial receipt records materialization as possible/unknown. After successful PreparedData loading, the confirmed materialization fields account for test splits in both sources, including a train collection stored as one chronological file even when the selected validation split is a separate collection. Loader failure leaves the confirmed flag unknown (`null`) and records materialization attempted=true, not false.
+
+Validation: `python -m pytest -q edsgn/tests/test_frozen_profile_guarded_v5.py` — 11 passed. Tests cover a main-train bundle carrying a test suffix, a failure after entering the test replay, and a successful full CPU toy replay. The successful test replay mocks only the independent freeze validator to isolate receipt transitions; it uses the real tiny PreparedData loader and original profile replay. No actual dataset/checkpoint, GPU, optimizer, or campaign output was used.

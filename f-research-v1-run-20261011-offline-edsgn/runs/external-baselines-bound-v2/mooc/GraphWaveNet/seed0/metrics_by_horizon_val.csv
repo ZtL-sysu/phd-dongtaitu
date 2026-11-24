@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+GraphWaveNet,0,val,1,0,all,3.117886543273926,6.234081745147705,3822,49
+GraphWaveNet,0,val,6,0,all,3.602329730987549,7.391421794891357,3822,49
+GraphWaveNet,0,val,24,0,all,4.28514289855957,8.18606948852539,3822,49

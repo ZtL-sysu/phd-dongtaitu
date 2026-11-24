@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "binding_type": "at-launch",
+  "recorded_utc": "2026-10-12T08:24:59+00:00",
+  "status": "captured-before-training",
+  "dataset_root": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+  "dataset_sources": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\manifest.json",
+      "sha256": "f8c9e722ed4f6db1f4cceb20956f19b9f20c1b0565533fa5ddbf27edca9e930a"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\mooc.json",
+      "sha256": "68253afd7d16a64e79b9f67139a8128f06ea1b5821a9665a47cf6197e8608269"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\mooc.npz",
+      "sha256": "313508be3acda657b56ad5750ab104aee9e196d2c92427fe53df3a5c7e3b4dac"
+    }
+  ],
+  "config_source": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-DCRNN-seed0.json",
+    "sha256": "32a03cf7fba2bbb284a2fc448fa1e03b6ffbffec20690b3553f2d96d38327ffa",
+    "canonical_config_sha256": "c743cc0f9eca7390a49c8083f4e00cda05001c61d741b3ea4d6c77b2ac85a3a1",
+    "config": {
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "variant": "DCRNN",
+      "seed": 0,
+      "device": "cuda",
+      "threads": 2,
+      "batch_size": 32,
+      "lr": 0.001,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "epochs": 100,
+      "patience": 10,
+      "model": {},
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\mooc\\DCRNN\\seed0",
+      "baseline": {
+        "fixed_training_prior_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\mooc.npz",
+        "fixed_training_prior_sha256": "313508be3acda657b56ad5750ab104aee9e196d2c92427fe53df3a5c7e3b4dac",
+        "fixed_training_prior_manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\mooc.json",
+        "fixed_training_prior_manifest_sha256": "68253afd7d16a64e79b9f67139a8128f06ea1b5821a9665a47cf6197e8608269",
+        "expected_dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+        "rnn_units": 64,
+        "num_rnn_layers": 2,
+        "max_diffusion_step": 2
+      }
+    }
+  },
+  "variant": "DCRNN",
+  "code_sources": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\__init__.py",
+      "sha256": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\agcrn_checkpoint.py",
+      "sha256": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py",
+      "sha256": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\calibrate.py",
+      "sha256": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\candidate_batch.py",
+      "sha256": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+      "sha256": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+      "sha256": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\dcrnn_baseline.py",
+      "sha256": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+      "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\evaluate.py",
+      "sha256": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\external_baselines.py",
+      "sha256": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py",
+      "sha256": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prepare.py",
+      "sha256": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+      "sha256": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\profile.py",
+      "sha256": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\robustness.py",
+      "sha256": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\rp_baselines.py",
+      "sha256": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py",
+      "sha256": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\statistics.py",
+      "sha256": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\stid_baseline.py",
+      "sha256": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+      "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\dcrnn_train.py",
+      "sha256": "e96a9feb4a8dac20f5491fdbae2fbc7f2b563d3f2d39098f7ce05a2b27f3ad60"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\dcrnn_train_pytorch.py",
+      "sha256": "9df4c2ff362e7144871c751e625039dfdb9d6fed977c3b127f7979256a0268b2"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\lib\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\lib\\AMSGrad.py",
+      "sha256": "caa9cdd2f32282abf4097c1a03358ac9bfe05f696c16fa99b576f71b44ce4b9e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\lib\\metrics.py",
+      "sha256": "56c5c5195277df3c74319d164920a76d4472e32b025fe284f73349424d9c8684"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\lib\\metrics_test.py",
+      "sha256": "5d0f4ef9cb4866650fd12d78d209a3808ffb7e578b341cb37f2185931ac520c0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\lib\\utils.py",
+      "sha256": "66df1340060899cb63a62b7bd38dac327141ca578da91cfcb894d33c70b6d4c3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\pytorch\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\pytorch\\dcrnn_cell.py",
+      "sha256": "06e36e0806c6831625db246a50ec38c4f75f5a69adb32448dabd9af7e90c2f5d"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\pytorch\\dcrnn_model.py",
+      "sha256": "1e17315b237685920c50f301e02b63904e6eee62b2f9f6d54d1983aa312b84dc"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\pytorch\\dcrnn_supervisor.py",
+      "sha256": "f168afdaa2c12a2b9fa58715d6139ef960a99266f48917ece1783fa3207f1c64"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\pytorch\\loss.py",
+      "sha256": "627e78e0729821c4adf2f7251a28dd540adceec3514bedd6d1b79226431d32f8"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\tf\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\tf\\dcrnn_cell.py",
+      "sha256": "7bf4d77b3568d9ae79861e2e5270da13897de2b5f719d51e6dfffa9b853f00a3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\tf\\dcrnn_model.py",
+      "sha256": "6dd70c4a44104e6a8fe463ad4d97fed39fa17fd0f54e70321564c33f878a123e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\model\\tf\\dcrnn_supervisor.py",
+      "sha256": "75edd9d34c672f0fc9cdeb25eca1d0f004df304c46b5bb9856b73c7d57766743"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\run_demo.py",
+      "sha256": "773ca6f6a22ed7c1fc64ba2815731d167ed622a9e6826b8f162d422ffc63cc53"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\run_demo_pytorch.py",
+      "sha256": "6927bfe009b4124431d004c8e95daa52e35856e8e71500ac5d3bc462aff420bc"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\scripts\\__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\scripts\\eval_baseline_methods.py",
+      "sha256": "dfb51d51bf0cb7df8c3883af4d9cddfaf116f2edb92f62f0ef454ca944eb8d17"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\scripts\\gen_adj_mx.py",
+      "sha256": "28c490d49d26e68369d2afd85c712c5dda3c74d62a16cf12e9b499c7b61188ee"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\sources\\DCRNN_PyTorch\\scripts\\generate_training_data.py",
+      "sha256": "408cba8fe17c8b52ab3ab347eef30ad2a480fcb633e3949ea59a1c1e125eba52"
+    }
+  ],
+  "hash_policy": "SHA-256 of all .npz/.json files under dataset directory; filename labels do not exclude files; hashes do not load array contents"
+}

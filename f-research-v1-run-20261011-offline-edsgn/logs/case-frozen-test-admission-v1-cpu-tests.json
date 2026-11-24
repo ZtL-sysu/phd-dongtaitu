@@ -1,0 +1,8 @@
+{
+  "returncode": 0,
+  "wall_seconds": 1.412,
+  "passed": true,
+  "diagnostic_scope": "case_frozen_test_admission_v1_cpu_tests",
+  "tests": 6,
+  "scope": "resource/functionality diagnostic"
+}

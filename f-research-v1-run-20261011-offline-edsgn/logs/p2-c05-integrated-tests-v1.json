@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "C05 integrated CPU package regression; CPU mocks/toys only; no real dataset, GPU, or optimizer",
+  "command": "python -m pytest -q edsgn/tests -m \"not pending_training\"",
+  "interpreter": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+  "pythonpath": "edsgn/src;edsgn/scripts;edsgn/staging",
+  "omp_threads": 2,
+  "mkl_threads": 2,
+  "passed": 211,
+  "deselected": 1,
+  "failed": 0,
+  "warnings": 62,
+  "pytest_exit_code": 0,
+  "pytest_seconds": 13.3,
+  "task_duration_seconds": 14.9197805,
+  "excluded_test": "test_core.py::test_T26_fixed_sample_overfit_pending (pending_training marker; explicit task exclusion)",
+  "included_staging_mocks": "phase gate, serial resource queue, robustness bundle, candidate fullpath guards",
+  "dataset_accessed": false,
+  "gpu_used": false,
+  "optimizer_steps": 0
+}

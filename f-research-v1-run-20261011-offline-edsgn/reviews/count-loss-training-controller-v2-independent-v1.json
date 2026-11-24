@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "scope": "independent_engineering_review_only",
+  "verdict": "revise_before_launch",
+  "runroot": "C:/code/phd-dongtaitu/f-research-v1-run-20261011-offline-edsgn",
+  "source_sha256": "bff6e993ead515f281716c8c4591a8a33e14067988aa84ebb7acac8ca2033250",
+  "test_sha256": "b5d32be16574fddaa564bc70af8ca2319b5e4f925c44b987ea7689c62eca72a2",
+  "stored_test_log_sha256": "930d7bcdf02957d733e9f8802e33f09c43b13970a0b1a1907a2e453468323937",
+  "stored_log_result": "5 passed in 29.98s",
+  "fresh_conda_cpu_result": "5 passed in 29.77s",
+  "blocking_findings": [
+    "The private runner replaces the broad bound-controller process barrier with _owned_processes, which recognizes only the count-loss controller/adapter and misses other owned training/resource jobs.",
+    "_owned_processes ignores psutil.AccessDenied rather than failing closed; owned Python-process visibility is therefore not guaranteed."
+  ],
+  "checked_paths": {
+    "public_validate_queue": "temporary schema-faithful fixtures for email and MOOC; numeric-v3 actual schema includes dataset_path",
+    "public_run_queue": "two mocked child processes; exact adapter argv and pinned-input checks",
+    "budget": "mocked aggregate reaching the 72-hour boundary blocks spawn",
+    "lease_cleanup": "temporary success/refusal fixtures",
+    "official_validator": "mocked only"
+  },
+  "limitations": [
+    "No actual phase, model, optimizer, real archive/checkpoint load, GPU, or canonical authorization.",
+    "No test covers another owned process or AccessDenied; those remain launch blockers."
+  ],
+  "historical_duration_note": "Prior engineering prose reports 30.91s, while its pinned log and JSON report 29.98s; a fresh local run was 29.77s."
+}

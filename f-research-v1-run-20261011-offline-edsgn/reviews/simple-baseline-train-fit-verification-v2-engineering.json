@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "status": "writer_engineering_evidence_only",
+  "scope": "temporary_cpu_toy_fixtures_no_real_data_or_model",
+  "pytest": {"passed": 14, "failed": 0, "log": "logs/simple-baseline-train-fit-verification-v2-tests.log", "sha256": "4f5dfda8f24e7caa431799c009d6f57926b32eab1c2ac3e851462cd5b8dee616"},
+  "source": {"path": "edsgn/staging/simple_baseline_train_fit_verification_v2.py", "sha256": "307bedf8d62ae1b451f18579873b456a79c256def583c35b8fa9e0c8829781b5"},
+  "tests": {"path": "edsgn/tests/test_simple_baseline_train_fit_verification_v2.py", "sha256": "15766f2af875b3890d12f055ed8808537895358b0d038f3b2ba4b6006903b703"},
+  "evaluator_v2_sha256": "160f5a27903264374079928995a5de0da34f3050789937be5419f8291a706d1a",
+  "owned_scanner": {"path": "edsgn/scripts/owned_python_job_inventory_v1.py", "sha256": "c31e70671f3846cdd8b1fb61e06aab45c0110d9ad5c5f1f3823377ab6d267d06", "root_receipt": "reviews/count-loss-training-controller-v5-root-engineering-v1.json", "root_receipt_sha256": "348b2e085cf7677010140e9c73cdd98f136c1a245b70bcd24ac007a9e7d548ea"},
+  "assertions": ["evaluator manifest compatibility fields", "train/validation ordered nodes and normalization match", "legacy train count and ridge checked", "pre-validator snapshot and pre-load mutation detection", "recursive output membership/hash fence", "coefficient mismatch report is non-completed and guarded receipt fails", "outer caller retains lease lifecycle", "Python option-prefixed active job detection"],
+  "not_claimed": ["production gate passed", "root acceptance", "real baseline fit audit", "test/oracle access", "phase completion"]
+}

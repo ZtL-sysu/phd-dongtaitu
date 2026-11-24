@@ -1,0 +1,23 @@
+{
+  "scope": "engineering_only_host_interruption_reconciliation",
+  "status": "terminal_processes_confirmed_absent",
+  "observed_utc": "2026-10-11T14:37:45+00:00",
+  "reconciled_utc": "2026-10-11T14:40:49.137942+00:00",
+  "controller_pid": 37416,
+  "active_owned_jobs": [],
+  "stale_dead_owner_locks": [
+    {
+      "path": "logs/offline-phase-wall/campaign.lock",
+      "pid": 37416,
+      "backup": "logs/host-interruption-evidence-v2/campaign.lock.saved",
+      "sha256": "d56a8052e6c0ce975608f010a3c12410aa68e893ecf6655fea9a4b33549173ed"
+    }
+  ],
+  "raw_phase_receipt": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\host-interruption-evidence-v2\\raw-running-phase.json",
+  "raw_phase_sha256": "5b35b43d929bd23af1d2eba25b5649d0f849026af2d8017432f2f723659fc43d",
+  "measured_controller_seconds": 67.37345189999905,
+  "conservative_supplement_seconds": 90.62654810000095,
+  "total_budget_allowance_seconds": 158.0,
+  "original_output_reused": false,
+  "new_training_launched": false
+}

@@ -1,0 +1,200 @@
+{
+  "scope": "prospective graph/state artifact capacity, metadata/header only",
+  "created_utc": "2026-10-11T09:37:48.477072+00:00",
+  "free_disk_bytes": 434920591360,
+  "rows": [
+    {
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 64,
+        "n_features": 1,
+        "d_total": 64
+      },
+      "full_origin_count": 8056,
+      "detailed_origins": 32,
+      "chosen_artifact_cap_gib": 16,
+      "estimate": {
+        "estimated_bytes": 13646155776,
+        "compact_trace_bytes": 13396934656,
+        "detailed_trace_bytes": 88080384,
+        "array_bytes": 144363520,
+        "artifact_cap_bytes": 17179869184
+      },
+      "required_free_disk_bytes_with_1_25_safety": 17057694720,
+      "sources": [
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed200.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            64,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed201.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            64,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed202.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            64,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed203.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            64,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        }
+      ]
+    },
+    {
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n256-identity30-scale",
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 256,
+        "n_features": 1,
+        "d_total": 64
+      },
+      "full_origin_count": 8056,
+      "detailed_origins": 32,
+      "chosen_artifact_cap_gib": 64,
+      "estimate": {
+        "estimated_bytes": 47340601344,
+        "compact_trace_bytes": 46658289664,
+        "detailed_trace_bytes": 88080384,
+        "array_bytes": 577454080,
+        "artifact_cap_bytes": 68719476736
+      },
+      "required_free_disk_bytes_with_1_25_safety": 59175751680,
+      "sources": [
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed200.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            256,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed201.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            256,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed202.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            256,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        },
+        {
+          "path": "data/processed/synthetic-stress-n256-identity30-scale/test_seed203.npz",
+          "n_origins": 2014,
+          "values_header_shape": [
+            2048,
+            256,
+            1
+          ],
+          "values_header_dtype": "float32",
+          "decoded_members": [
+            "metadata_json"
+          ],
+          "header_only_members": [
+            "values"
+          ]
+        }
+      ]
+    }
+  ],
+  "inputs_sha256": {
+    "edsgn/scripts/graph_state_artifact_metadata_preflight_v1.py": "e2078922ebd76aedcb640e41fbb3e024101bc8d9e6ba76045b2383daa982a77e",
+    "edsgn/staging/frozen_graph_state_diagnostic_v4.py": "0d50c92f11392b88e2bccea4ca0ded7f97d907e94c7b7f704d826b50e8807fd2",
+    "edsgn/staging/c06_domain_manifest_preflight_v1.py": "ee3cbd723d0074d9a2f701abeb47ce4b2af862fb543579b3232ee98819d07a8e",
+    "edsgn/scripts/audit_bound_baseline_numeric_v3.py": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed200.npz": "56b11569d58c10c6a31b31404718edecdc3083acb2d03638c47dc223fb3c45a1",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed201.npz": "af353658b162a462b0ca3b73b41fd31d9125c7dfa9cd4f9194edfca7cf539db6",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed202.npz": "43026ec411a9550e9f036b6ff35638a5b76423542073ef473edc6d97a31ff5e9",
+    "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed203.npz": "bd041b20152a8687a87a801dc6c90f7a473a368019cfa34cd130d59d8fb84785",
+    "data/processed/synthetic-stress-n256-identity30-scale/test_seed200.npz": "9450a16e04bd8661dccf5f4ff3a1fec2202fe73fc27088cf1d6b9fae472dc5a2",
+    "data/processed/synthetic-stress-n256-identity30-scale/test_seed201.npz": "1c16555c57fb85336834ac9cad7edcf53a8ab55c19a70bef1e81262b28f9d642",
+    "data/processed/synthetic-stress-n256-identity30-scale/test_seed202.npz": "ba4ef91a956ec5fb582fe2abaecc090fde521b257a161a23589da32483226bbe",
+    "data/processed/synthetic-stress-n256-identity30-scale/test_seed203.npz": "044e453ec6b29930dcb7622279baf151e1ae1dd497ea00a227c14abc161c84c7"
+  },
+  "test_values_or_oracle_decoded": false,
+  "actual_replay": false,
+  "p3a_or_p4_acceptance": false,
+  "freeze_rule": "Pass16GiB for N64 or64GiB for N256 explicitly to frozen_diagnostic_extras; recheck capacity before each serial replay. Values are per-artifact caps, not a reservation or assertion that the full campaign fits disk.",
+  "storage_rule": "Preserve all outputs. Stop on insufficient measured free disk; never delete prior evidence automatically."
+}

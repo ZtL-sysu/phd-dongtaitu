@@ -1,0 +1,20 @@
+{
+  "review": "claim-family-holm-independent-v1",
+  "runner": "edsgn/staging/claim_family_holm_v1.py",
+  "runner_sha256": "5c4dbff461b1d70ac9593e0a69713ed4ef8c2686c7a765dcc4df6be39c9fdc72",
+  "test_file": "edsgn/staging/test_claim_family_holm_v1.py",
+  "test_sha256": "bab0aee6bb73ba83aced2e64e378f8f9f568b15900277724e1e5e82a136e5107",
+  "test_command": "dyg-cold python -m pytest -q edsgn/staging/test_claim_family_holm_v1.py",
+  "test_result": {"passed": 7, "failed": 0},
+  "scope": "CPU toy fixtures; no actual reports, predictions, heldout arrays, model, optimizer, or GPU",
+  "verdict": "staging-only; blocker found",
+  "blocking_finding": {
+    "file": "edsgn/staging/claim_family_holm_v1.py",
+    "lines": "70-76",
+    "issue": "validation assembly permits P3A status=passed without gate_verdict=pass",
+    "reproduced": true,
+    "minimal_fix": "require P3A gate_verdict=pass when status=passed; preserve separately authorized P3A-running validation"
+  },
+  "protocol_limitation": "Endpoint completeness is relative to the P3A-hash-bound registry; non-MAE mechanism gates are separate and this assembler does not claim an H1/H2/H3 decision.",
+  "actual_family_assembly_performed": false
+}

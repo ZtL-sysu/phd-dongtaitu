@@ -1,0 +1,38 @@
+{
+  "scope": "independent_source_and_cpu_toy_review",
+  "global_completion": {
+    "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+    "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af",
+    "verdict": "pass_cross_job_isolation_repair",
+    "prior_collision_counterexample_rejected": true,
+    "shared_immutable_binding_allowed": true
+  },
+  "oracle_reporter": {
+    "path": "edsgn/staging/global_graph_oracle_report_v1.py",
+    "sha256": "ea944f8e26ac947b5d4caf82ae4af04dd10786636eefd0042ee32ecbab14287b",
+    "design_sha256": "b9fc5195eaf99538e28b3a686fb1d46b22c516b70f9ad0d8be9b981526e14534",
+    "verdict": "needs_final_collection_membership_fence",
+    "blocker": "A late file added to dataset collection during toy oracle alignment did not prevent successful report completion; emitted collection fingerprint did not include the late member.",
+    "suggested_repair": "At final post-serialization barrier, recompute full collection fingerprint for every graph job and require exact equality to initial and report fingerprints."
+  },
+  "tests": {
+    "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/staging/test_global_frozen_test_completion_v1.py edsgn/staging/test_global_graph_oracle_report_v1.py",
+    "result": "26 passed in 3.83s",
+    "global_completion_test_sha256": "f5aebfb55351341a08199274eb361029504afbb680ca4bccb5c9c972ba0b5311",
+    "oracle_reporter_test_sha256": "3d521332191ac4f1ef0571e3cb46067cc853f783bb8ed889964eb832eb55e02c"
+  },
+  "oracle_reporter_checks": {
+    "global_completion_before_npz_open": true,
+    "queue_job_and_authority_membership_checked": true,
+    "source_and_output_hashes_fenced_before_decode": true,
+    "graph7_abrupt_and_gradual_formula_toy_pass": true,
+    "trace_history_time_relation_checked": true,
+    "sampled_alignment_scope_disclosed": true,
+    "final_full_collection_membership_rechecked": false
+  },
+  "actual_oracle_or_test_npz_read": false,
+  "actual_test_targets_read": false,
+  "checkpoint_or_model_loaded": false,
+  "gpu_used": false,
+  "claim_limit": "Metadata closure only for enumerated jobs; no full RP matrix or scientific result is established."
+}

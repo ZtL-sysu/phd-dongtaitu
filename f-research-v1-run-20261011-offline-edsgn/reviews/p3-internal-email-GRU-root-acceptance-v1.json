@@ -1,0 +1,29 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T13:08:35.597113+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "configs/p3-internal-bound-v4/email-GRU-seed0.json": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804",
+    "logs/offline-phase-wall/internal-bound-v4-email-GRU-seed0.json": "6743e6b15041beaaadc1ca100535b9769464f77e0fee2bb4ea95d06dca52e660",
+    "logs/p3-internal-email-GRU-numeric-v3.json": "bd371c668c975f0b8cd8636bc9349fa5ddccef86808a86c65cb88e1698f58148",
+    "runs/internal-bound-v4/email/GRU/seed0/input-binding-at-launch.json": "28ceb2bf8482fda984abff20fb744db57eac3b151b64013d37898004884b38f4",
+    "runs/internal-bound-v4/email/GRU/seed0/training_summary.json": "29986a3390fc219a65bc6376e6549517e09bb535fdfaef2311be491d446ab5d9",
+    "runs/internal-bound-v4/email/GRU/seed0/checkpoint.pt": "ed5c0b4a16b91929aff30554e1cc7bf40ab7f68d616210c96bf5915171903333",
+    "runs/internal-bound-v4/email/GRU/seed0/manifest.json": "8da6f748227c083ae7f8cc33ca06d11c56cf648a1a741fffcc8d2546d668ab01",
+    "runs/internal-bound-v4/email/GRU/seed0/config_resolved.json": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804",
+    "runs/internal-bound-v4/email/GRU/seed0/training_log.csv": "2a267fd239626db3ed780d079c351770b59157128e68a174da34805ad3114b7a",
+    "runs/internal-bound-v4/email/GRU/seed0/validation_predictions.npz": "d1a8ea5adaf64f74a42fb6b341cafd3eb1da44797bd9d3655449e19016f1f943",
+    "runs/internal-bound-v4/email/GRU/seed0/metrics_by_horizon_val.csv": "1dd7c724a654a1ce62f5c8a2054ae5afb6629ec464dc79532cda020b02be65a0",
+    "reviews/p3-internal-four-numeric-independent-v1.md": "0e95ad05f76058e204636c9d301f50c22f3a2f380404b8922e25f9cfc6313705",
+    "logs/p3-internal-four-numeric-independent-v1.json": "057b14fb72f60bb5b472c047c4d5ecaa5d467af612bd66f12c59446b61d5fb12"
+  },
+  "dataset": "email",
+  "variant": "GRU",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.019513700312624376,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

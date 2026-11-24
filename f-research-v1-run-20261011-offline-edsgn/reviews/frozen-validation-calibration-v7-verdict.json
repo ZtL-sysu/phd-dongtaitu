@@ -1,0 +1,12 @@
+{
+  "role": "writer_self_review",
+  "source": "edsgn/staging/frozen_validation_calibration_v7.py",
+  "source_sha256": "d0212737ed0f02e6f9342f788efda73c8c3bba53d12662f15e734b96cb6d2d9e",
+  "test": "edsgn/tests/test_frozen_validation_calibration_v7.py",
+  "test_sha256": "bfc01d7f96a0b91825cf0416c6b3644a87d4932ce24475a74a17c45cd828ad8",
+  "test_log": "logs/frozen-validation-calibration-v7-tests.log",
+  "test_log_sha256": "e811e53e95c64a3fa57db2166f42cc6d826273e486e2a962529cac8bd0bbd88e",
+  "tests_passed": 11,
+  "finalization": "final live guard after last input hash, immediately before success receipt; failed check/mismatch writes failed receipt, releases lock, and propagates",
+  "scope": "CPU toy engineering only; no real calibration run"
+}

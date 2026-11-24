@@ -1,0 +1,26 @@
+{
+  "scope": "CPU engineering regression after raw_values H/N/F geometry fix",
+  "tests": "9 passed",
+  "command": "conda dyg-cold: python -m pytest -q edsgn/staging/test_global_graph_oracle_report_v1.py",
+  "test_arrays_oracle_realdata_model_gpu": false,
+  "files": {
+    "edsgn/staging/global_graph_oracle_report_v1.py": "84b6a1f4a434ebca33dcafb773acbb7246998e71987b3503e4c3ce6013f9f47b",
+    "edsgn/staging/test_global_graph_oracle_report_v1.py": "b3324ba8b216f856c50fa78e1dc88595b0e519962b6bcf7730add461bc2c37a7"
+  },
+  "fixture": {
+    "requested_horizons": [
+      1,
+      3,
+      7
+    ],
+    "forecast_hmax": 7,
+    "raw_values_features": 1,
+    "prediction_shape": [
+      6,
+      7,
+      2,
+      1
+    ]
+  },
+  "result": "pass"
+}

@@ -1,0 +1,99 @@
+{
+  "artifact_role": "fixed_training_prior; proposal recipe accepted for builder validation only",
+  "builder_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\build_dcrnn_training_prior.py",
+  "builder_sha256": "002cc011c6a4d4293f555a5e3147f7034f2af8378578f0b49f56d99609001d5d",
+  "created_at_utc": "2026-10-11T07:48:39Z",
+  "dataset": "email",
+  "direction_and_dcrnn_support": "Prior rows are sources and columns destinations; DCRNN uses its source dual supports R(A)^T and R(A^T)^T, where R(A)=D^-1 A and zero-degree rows stay zero.",
+  "fields_loaded": [
+    "events",
+    "metadata_json",
+    "node_ids"
+  ],
+  "fit_source_train_only": true,
+  "fixed_training_prior_array_sha256": "c63ee0272b6772b646846a78e2428d4a9566db29f406b61024e86c559124b116",
+  "graph_diagnostics": {
+    "density_excluding_diagonal": 0.025574283625580462,
+    "dtype": "float32",
+    "finite": true,
+    "in_degree_nonzeros": {
+      "max": 211,
+      "median": 18.0,
+      "min": 0,
+      "p95": 82.0
+    },
+    "isolated_nodes_both_directions": 0,
+    "nonnegative": true,
+    "nonzero_entries": 24838,
+    "out_degree_nonzeros": {
+      "max": 333,
+      "median": 15.0,
+      "min": 0,
+      "p95": 88.75
+    },
+    "shape": [
+      986,
+      986
+    ],
+    "weight_max": 2777.0,
+    "weight_min_nonzero": 1.0,
+    "zero_diagonal": true
+  },
+  "no_top_k_or_self_loops": true,
+  "node_count": 986,
+  "node_ids_sha256": "c361fbc6ff06549e10ad52dc528a12672d6d5d74d5c547d839a44c79d611d01c",
+  "oracle_used": false,
+  "recipe": {
+    "dataset": "email",
+    "formula": "train-only directed count of relation event rows; preserve duplicates; A[src,dst]+=1",
+    "random_walk_normalization": "delegated unchanged to pinned DCRNN dual_random_walk utility",
+    "recipe_id": "dcrnn-fixed-training-prior-v1",
+    "self_loops": false,
+    "top_k": null
+  },
+  "recipe_sha256": "c9120af1f5c5b1af0bf1db1ccdca3f6a420f93543a55d7bd8075a0a44b059f45",
+  "schema_version": 1,
+  "source_manifest": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\manifest.json",
+    "read_scope": "hashed as bytes; not parsed",
+    "sha256": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c"
+  },
+  "sources": [
+    {
+      "bytes": 1963123,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "events"
+      ],
+      "note": "The compressed NPZ events array is materialized in full; only rows with train-bin in [start,stop) contribute to the prior. No outside-train event counts/statistics are computed.",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1"
+    }
+  ],
+  "target_arrays_loaded": false,
+  "target_mask_arrays_loaded": false,
+  "test_used": false,
+  "training_fit_details": {
+    "direction": "A[source_node,destination_node]; duplicate source rows add repeated weight",
+    "event_read_scope": "The compressed NPZ events array is materialized in full; only rows with train-bin in [start,stop) contribute to the prior. No outside-train event counts/statistics are computed.",
+    "event_rows_materialized": 332279,
+    "fields_loaded": [
+      "metadata_json",
+      "node_ids",
+      "events"
+    ],
+    "self_events_ignored": true,
+    "split_partition": "chronological",
+    "training_relation_event_rows_used": 329910,
+    "training_split_bounds": [
+      0,
+      562
+    ]
+  },
+  "training_split_bounds": [
+    0,
+    562
+  ],
+  "validation_used": false
+}

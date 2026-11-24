@@ -1,0 +1,195 @@
+{
+  "schema_version": 3,
+  "status": "root-frozen-before-external-optimizer-launch",
+  "scope": "P3 full seed0 train/validation; allocation acceptance only",
+  "budget_policy": "one cumulative72-hour training/profile/resource ledger; no reset",
+  "methods": [
+    {
+      "dataset": "synthetic",
+      "method": "GraphWaveNet",
+      "device": "cuda",
+      "batch_size": 64,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 1368432128,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-GraphWaveNet-seed0-B64.json",
+      "resource_report_sha256": "044114cca0aa495fb5f0c782ea5673710cc85fbac6765818636c629a7fdff59a"
+    },
+    {
+      "dataset": "synthetic",
+      "method": "AGCRN",
+      "device": "cuda",
+      "batch_size": 64,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 1453982720,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-AGCRN-seed0-B64.json",
+      "resource_report_sha256": "247ac6cc234943f774e487303292621398294bad5ea0da6b4cf66dcb7468a23e"
+    },
+    {
+      "dataset": "synthetic",
+      "method": "STAEformer",
+      "device": "cuda",
+      "batch_size": 64,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 4355039232,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-STAEformer-seed0-B64.json",
+      "resource_report_sha256": "082279d51b6ad679fec60d21ca92e10e410bc2e771c1e196345337463f8f2849"
+    },
+    {
+      "dataset": "synthetic",
+      "method": "DCRNN",
+      "device": "cuda",
+      "batch_size": 64,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 1703629824,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-DCRNN-seed0-B64.json",
+      "resource_report_sha256": "d61799afaffec7c881244aaa02fed3c4c75b9cb1ec42291777035c7dab25f749"
+    },
+    {
+      "dataset": "email",
+      "method": "GraphWaveNet",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 677856256,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-GraphWaveNet-seed0-B2.json",
+      "resource_report_sha256": "91c05debe8bea36ef54426d0b457988f69c224aec0a90c3c8869264c67f9c949"
+    },
+    {
+      "dataset": "email",
+      "method": "AGCRN",
+      "device": "cuda",
+      "batch_size": 4,
+      "training_checkpoint_cells": true,
+      "peak_cuda_allocated_bytes_diagnostic": 485430784,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "resource_report_sha256": "11c1e15eebdf8420409c21c707831dd4e5ed938dd3790aaf7d1e030eee9f3d80"
+    },
+    {
+      "dataset": "email",
+      "method": "STAEformer",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 6808375808,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-STAEformer-seed0-B2.json",
+      "resource_report_sha256": "bf5eaeccb65a9dab43004893ae6974b80c2bba85569a74feadf825772a7c2c72"
+    },
+    {
+      "dataset": "email",
+      "method": "DCRNN",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 830418944,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-DCRNN-seed0-B2.json",
+      "resource_report_sha256": "d1bebce3e25827e9c917ac4b8237b4cb0e6ddb77506310c6b71ad173e2de8318"
+    },
+    {
+      "dataset": "mooc",
+      "method": "GraphWaveNet",
+      "device": "cuda",
+      "batch_size": 32,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 681207808,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-GraphWaveNet-seed0-B32.json",
+      "resource_report_sha256": "752929a62c415361ab36b8ad4f0396f93cfe6dace9c3717de57e73b0b5ebb184"
+    },
+    {
+      "dataset": "mooc",
+      "method": "AGCRN",
+      "device": "cuda",
+      "batch_size": 32,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 1059828224,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-AGCRN-seed0-B32.json",
+      "resource_report_sha256": "590abc26a26a00746a4e31086d27e7d3ec22852a301dbca616de8a217169aed3"
+    },
+    {
+      "dataset": "mooc",
+      "method": "STAEformer",
+      "device": "cuda",
+      "batch_size": 32,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 2315565056,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-STAEformer-seed0-B32.json",
+      "resource_report_sha256": "ef9ae3f7d73f6774166c38b35e1f792f6aa97eb22bba57dd5039d988c8efc928"
+    },
+    {
+      "dataset": "mooc",
+      "method": "DCRNN",
+      "device": "cuda",
+      "batch_size": 32,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 1434248704,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-DCRNN-seed0-B32.json",
+      "resource_report_sha256": "a4b36424128dca3eaa7ce7d2a5fe339be6d4e69c680ec1cf834f460cddf95c63"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "GraphWaveNet",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 616061440,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-GraphWaveNet-seed0-B2.json",
+      "resource_report_sha256": "579d9a11510c1957fac303fc4299aaa9ecb2a1881353bb0b26e9245ae76013c6"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "AGCRN",
+      "device": "cuda",
+      "batch_size": 4,
+      "training_checkpoint_cells": true,
+      "peak_cuda_allocated_bytes_diagnostic": 438849024,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "resource_report_sha256": "48f85f1969306aaeea55227f8e72427e822be63859755cac88b9eebddf5b1a2e"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "STAEformer",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 5727748608,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-STAEformer-seed0-B2.json",
+      "resource_report_sha256": "aaec9e63cf706f299fa8787c187366bdb8d7a3edeb0094766f13b5e8e3562ce1"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "DCRNN",
+      "device": "cuda",
+      "batch_size": 2,
+      "training_checkpoint_cells": false,
+      "peak_cuda_allocated_bytes_diagnostic": 750752768,
+      "resource_report": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-DCRNN-seed0-B2.json",
+      "resource_report_sha256": "9f8ff0111f14f1d9417096fac7a1518014c2936e3da2567d9aceccb3d8f8afd1"
+    }
+  ],
+  "formal_core_seed_policy": "unchanged seeds0-4",
+  "training": {
+    "epochs_max": 100,
+    "patience": 10,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "threads": 2
+  },
+  "applicability": "Fourteen pre-C05 passes retain unchanged method equations/default-off AGCRN; the exact C05 branch is verified separately on both large AGCRN tasks. Resource checks bound memory, not optimizer convergence or frozen inference throughput.",
+  "independent_evidence": [
+    "reviews/p3-external-resource-independent-v1.md",
+    "reviews/p3-agcrn-checkpoint-resource-independent-v4.md",
+    "reviews/agcrn-checkpoint-runtime-independent-v1.md"
+  ],
+  "unchanged": [
+    "node cohorts",
+    "all train/validation origins",
+    "history/horizon/features",
+    "train-only statistics",
+    "author architecture and parameters",
+    "raw masked MSE",
+    "test isolation"
+  ],
+  "training_batch_fairness": "Complete epochs and stopping cap are shared; accepted batch sizes differ, so optimizer update counts differ and are reported.",
+  "scientific_hypothesis_accepted": false,
+  "inference_speed_accepted": false
+}

@@ -1,0 +1,29 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T13:08:35.647224+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890",
+    "logs/offline-phase-wall/internal-bound-v4-email-episode-GRU-seed0.json": "a087a0a9ea4e9ca96ec3d56ef98b85551c0c6e519e8f7fada3637ed966c30d36",
+    "logs/p3-internal-email-episode-GRU-numeric-v3.json": "ea98a9bf56fa55b3989454cb9920cc81df8f109d49b3dd4663aeb1bc84c305c0",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/input-binding-at-launch.json": "f1b2e00d86ee53d76156d28a8a805ced7e6a1e2ab3ef1763926070881813b5f8",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/training_summary.json": "a08ea9b76cfaa07809ed9914379ea927201a7991b3bbf51ee7668ba6f7130ee7",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/checkpoint.pt": "fb7e004d418e450f65c2054bf5406bebe6e3550dfd0adddb9d8002ca35ad6b43",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/manifest.json": "8de493318094c36ab3331c8c1811f92e5f92276a5444e74011fad32c60606f94",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/config_resolved.json": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/training_log.csv": "d171c1d75033acb8f7255032e3f589879af31fc47fdf26ea0e8fad4639ed0736",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/validation_predictions.npz": "3f3efdbbf9d98c8cbcd57be6f939e8f24066f755b10f493c96d8c5a1385d468b",
+    "runs/internal-bound-v4/email-episode/GRU/seed0/metrics_by_horizon_val.csv": "b99a465c7c3ec3d1e6e0590e37e0a26adc63998e578f5f054dc286f89d2e49f8",
+    "reviews/p3-internal-four-numeric-independent-v1.md": "0e95ad05f76058e204636c9d301f50c22f3a2f380404b8922e25f9cfc6313705",
+    "logs/p3-internal-four-numeric-independent-v1.json": "057b14fb72f60bb5b472c047c4d5ecaa5d467af612bd66f12c59446b61d5fb12"
+  },
+  "dataset": "email-episode",
+  "variant": "GRU",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.6905392248445713,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

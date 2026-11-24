@@ -1,0 +1,457 @@
+"""Wait for accepted seed0/GRU coordinators, then dispatch strong seeds 1-4 serially.
+
+Waiting is not charged to the shared phase ledger. Actual work is delegated only
+to the unchanged bound_phase_campaign controller after all gates and bindings pass.
+This continuation never opens prediction arrays or test values.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+ROOT = Path(__file__).resolve().parents[2]
+PYTHON = Path(r"C:\Users\xhf\miniconda3\envs\dyg-cold\python.exe")
+QUEUE = ROOT / "protocols/p3-strong-replication-queue-v1.json"
+ROOT_ACCEPTANCE = ROOT / "reviews/p3-strong-replication-root-acceptance-v1.json"
+ROOT_METADATA = ROOT / "logs/p3-strong-replication-root-metadata-v1.json"
+SEED0_NUMERIC_ACCEPTANCE = ROOT / "reviews/p3-strong-seed0-numeric-root-acceptance-v1.json"
+SEED0_COORDINATOR = ROOT / "logs/p3-serial-continuation-v1.json"
+GRU_COORDINATOR = ROOT / "logs/p3-gru-serial-continuation-v1.json"
+SEED0_QUEUE = ROOT / "protocols/p3-bound-strong-baseline-queue-v3.json"
+SEED0_QUEUE_SHA256 = "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+TRAINING_OUTPUTS = {
+    "training_summary.json", "checkpoint.pt", "manifest.json", "config_resolved.json",
+    "training_log.csv", "validation_predictions.npz", "metrics_by_horizon_val.csv",
+}
+DATASETS = ("synthetic", "email", "mooc")
+METHODS = ("DGCRN", "SeqSNN")
+
+
+def sha(path: str | Path) -> str:
+    with Path(path).open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def read(path: str | Path):
+    return json.loads(Path(path).read_text(encoding="utf-8-sig"))
+
+
+def inside(raw: str | Path) -> Path:
+    path = Path(raw)
+    path = (ROOT / path).resolve() if not path.is_absolute() else path.resolve()
+    if not path.is_relative_to(ROOT):
+        raise RuntimeError(f"continuation input escapes RUN: {path}")
+    return path
+
+
+def require_hash_map(mapping: dict, *, exact_count: int | None = None, exclude: set[str] = frozenset()):
+    if not isinstance(mapping, dict) or (exact_count is not None and len(mapping) != exact_count):
+        raise RuntimeError("invalid or incomplete SHA-256 pin map")
+    for rel, expected in mapping.items():
+        path = inside(rel)
+        if not path.is_file() or sha(path) != expected:
+            raise RuntimeError(f"pinned input changed or missing: {rel}")
+
+
+def verify_replication_acceptance(expected_queue_sha: str):
+    acceptance = read(ROOT_ACCEPTANCE)
+    metadata = read(ROOT_METADATA)
+    if (acceptance.get("accepted_by") != "root" or acceptance.get("verdict") != "pass"
+            or acceptance.get("scope") != "P3 primary strong baseline replication preparation"
+            or acceptance.get("pipeline_advanced") is not False
+            or acceptance.get("scientific_hypothesis_accepted") is not False
+            or acceptance.get("actual_training_started") is not False
+            or acceptance.get("test_access_authorized") is not False
+            or acceptance.get("queue_path") != "protocols/p3-strong-replication-queue-v1.json"
+            or acceptance.get("queue_sha256") != expected_queue_sha
+            or acceptance.get("job_count") != 24):
+        raise RuntimeError("strong replication root acceptance does not match its prepared-only scope")
+    pins = acceptance.get("evidence_sha256")
+    require_hash_map(pins, exact_count=112)
+    if pins.get("logs/p3-strong-replication-root-metadata-v1.json") != sha(ROOT_METADATA):
+        raise RuntimeError("root metadata review is not the accepted pinned record")
+    if (metadata.get("status") != "pass-prepared-only" or metadata.get("reviewer") != "root"
+            or metadata.get("job_count") != 24 or metadata.get("metadata_controller_validation") is not True
+            or metadata.get("actual_training_started") is not False or metadata.get("arrays_decoded") is not False):
+        raise RuntimeError("root metadata/controller review no longer proves preparation only")
+    metadata_pins = metadata.get("file_inputs_sha256")
+    if not isinstance(metadata_pins, dict) or len(metadata_pins) != 111:
+        raise RuntimeError("unexpected root metadata pin schema")
+    expected_without_metadata = {k: v for k, v in pins.items() if k != "logs/p3-strong-replication-root-metadata-v1.json"}
+    if metadata_pins != expected_without_metadata:
+        raise RuntimeError("root acceptance evidence pins differ from the metadata review pin set")
+    return {"acceptance_sha256": sha(ROOT_ACCEPTANCE), "metadata_sha256": sha(ROOT_METADATA), "pins_verified": len(pins)}
+
+
+def verify_queue_and_configs(expected_queue_sha: str, expected_acceptance_pins: dict):
+    if sha(QUEUE) != expected_queue_sha:
+        raise RuntimeError("prepared strong queue bytes changed")
+    queue = read(QUEUE)
+    if (queue.get("schema_version") != 3 or queue.get("status") != "prepared-not-launched"
+            or queue.get("required_gates") != {"P2": "passed", "P3": "running"}
+            or queue.get("test_access_authorized") is not False
+            or queue.get("execution_authorized") is not False):
+        raise RuntimeError("strong queue no longer has the accepted schema/gates/scope")
+    if len(queue.get("jobs", [])) != 24 or len(queue.get("config_bindings", [])) != 24:
+        raise RuntimeError("strong queue job/config binding count changed")
+    require_hash_map({Path(item["path"]).relative_to(ROOT).as_posix(): item["sha256"] for item in queue["source_bindings"]})
+    seen = set()
+    for job in queue["jobs"]:
+        dataset, method = job.get("dataset"), job.get("variant")
+        if dataset not in DATASETS or method not in METHODS:
+            raise RuntimeError("strong queue contains an out-of-scope dataset/method")
+        args = job.get("args", [])
+        if len(args) != 2 or args[0] != "--config" or str(inside(args[1])) != str(inside(job["config_path"])):
+            raise RuntimeError("strong queue config argv is not exact")
+        config_path = inside(job["config_path"])
+        config = read(config_path)
+        source0 = inside(job["seed0_config_path"])
+        config0 = read(source0)
+        seed = config.get("seed")
+        identity = (dataset, method, seed)
+        if identity in seen or seed not in (1, 2, 3, 4):
+            raise RuntimeError("duplicate or out-of-range strong model seed")
+        seen.add(identity)
+        rel = config_path.relative_to(ROOT).as_posix()
+        seed0_rel = source0.relative_to(ROOT).as_posix()
+        if (sha(config_path) != job.get("config_sha256") or sha(source0) != job.get("seed0_config_sha256")
+                or expected_acceptance_pins.get(rel) != sha(config_path)
+                or expected_acceptance_pins.get(seed0_rel) != sha(source0)):
+            raise RuntimeError("strong config or seed0 template hash is not root-pinned")
+        if config.get("variant") != method or config.get("output_dir") != job.get("output_dir"):
+            raise RuntimeError("strong config/job method or output path mismatch")
+        if config.get("epochs") != 100 or config.get("patience") != 10:
+            raise RuntimeError("strong config training cap changed")
+        if {k: v for k, v in config.items() if k not in {"seed", "output_dir"}} != {
+            k: v for k, v in config0.items() if k not in {"seed", "output_dir"}
+        }:
+            raise RuntimeError("replication config changed fields beyond seed/output_dir")
+        output = inside(job["output_dir"])
+        if output.exists():
+            raise RuntimeError(f"strong replication output already exists: {output}")
+        if job.get("phase") != "training" or job.get("scope") != "baseline":
+            raise RuntimeError("strong jobs must remain P3 baseline training")
+        for row in job.get("input_binding", {}).get("static_source_files", []):
+            path = inside(row["path"])
+            if not path.is_file() or sha(path) != row.get("sha256"):
+                raise RuntimeError(f"strong static source binding changed: {path}")
+    if len(seen) != 24:
+        raise RuntimeError("expected all 3x2x4 distinct replication configurations")
+    return queue
+
+
+def verify_bound_root_acceptance(path: Path, queue_path: Path, expected_sha: str):
+    accepted = read(path)
+    if accepted.get("accepted") is not True and accepted.get("verdict") != "pass":
+        raise RuntimeError(f"predecessor queue is not root accepted: {path}")
+    if accepted.get("queue_sha256") != expected_sha or sha(queue_path) != expected_sha:
+        raise RuntimeError(f"predecessor queue/acceptance hash mismatch: {path}")
+    for rel, expected in accepted.get("file_inputs_sha256", {}).items():
+        target = inside(rel)
+        if not target.is_file() or sha(target) != expected:
+            raise RuntimeError(f"predecessor accepted input changed: {rel}")
+
+
+def verify_receipt(queue_path: Path, queue_sha: str, job: dict):
+    receipt_path = ROOT / "logs/offline-phase-wall" / f"{job['id']}.json"
+    receipt = read(receipt_path)
+    if (receipt.get("status") != "completed" or receipt.get("returncode") != 0
+            or receipt.get("queue_sha256") != queue_sha or receipt.get("phase") != "training"
+            or inside(receipt.get("output_dir", "")) != inside(job["output_dir"])):
+        raise RuntimeError(f"predecessor phase receipt incomplete or mismatched: {job['id']}")
+    input_rows, output_rows = receipt.get("inputs", []), receipt.get("outputs", [])
+    if not input_rows or not output_rows:
+        raise RuntimeError(f"predecessor receipt lacks input/output bindings: {job['id']}")
+    for row in [*input_rows, *output_rows]:
+        path = inside(row["path"])
+        if not path.is_file() or sha(path) != row.get("sha256"):
+            raise RuntimeError(f"predecessor receipt artifact changed: {path}")
+    names = {Path(row["path"]).name for row in output_rows}
+    if not TRAINING_OUTPUTS.issubset(names):
+        raise RuntimeError(f"predecessor training receipt lacks full-protocol outputs: {job['id']}")
+    config_index = job.get("config")
+    if not config_index:
+        args = job.get("args", [])
+        if args.count("--config") != 1:
+            raise RuntimeError(f"predecessor queue job lacks exact --config: {job['id']}")
+        config_index = args[args.index("--config") + 1]
+    config_path = inside(config_index)
+    expected_cfg = sha(config_path)
+    if not any(inside(row["path"]) == config_path and row["sha256"] == expected_cfg for row in input_rows):
+        raise RuntimeError(f"phase inputs do not bind the exact config: {job['id']}")
+    return receipt_path
+
+
+def verify_coordinator_queues():
+    seed0 = read(SEED0_COORDINATOR)
+    gru = read(GRU_COORDINATOR)
+    if seed0.get("status") != "completed_all_baseline_queues":
+        raise RuntimeError("seed0 coordinator has not completed all four source-bound queues")
+    if gru.get("status") != "completed_gru_replications":
+        raise RuntimeError("GRU coordinator has not completed its 16 replications")
+    current_path = inside(seed0["awaited_queue"])
+    if current_path != SEED0_QUEUE or seed0.get("awaited_queue_sha256") != SEED0_QUEUE_SHA256:
+        raise RuntimeError("seed0 coordinator's original strong-baseline queue binding changed")
+    seed0_queues = [(current_path, SEED0_QUEUE_SHA256)] + [
+        (inside(row["queue"]), row["queue_sha256"]) for row in seed0.get("queues", [])
+    ]
+    gru_queue_path = inside(gru["queue_path"])
+    if gru_queue_path != inside("protocols/p3-gru-replication-queue-v1.json"):
+        raise RuntimeError("GRU coordinator queue path changed")
+    gru_queue_sha = gru.get("queue_sha256")
+    if sha(gru_queue_path) != gru_queue_sha:
+        raise RuntimeError("GRU replication queue hash changed")
+    declared_seed0 = {(str(path), value) for path, value in seed0_queues}
+    declared_gru = {(inside(row[0]), row[1]) for row in gru.get("awaited_queues", [])}
+    if {(path, digest) for path, digest in seed0_queues} != {(Path(p), d) for p, d in declared_gru}:
+        raise RuntimeError("GRU continuation did not await the same four seed0 queues")
+    total_jobs = 0
+    receipts = []
+    for queue_path, queue_sha in seed0_queues:
+        if sha(queue_path) != queue_sha:
+            raise RuntimeError(f"seed0 queue changed: {queue_path}")
+        queue = read(queue_path)
+        jobs = queue.get("jobs", [])
+        if not jobs:
+            raise RuntimeError(f"seed0 queue has no jobs: {queue_path}")
+        # Each root-accepted continuation queue (not the original campaign queue) has an acceptance record.
+        for descriptor in seed0.get("queues", []):
+            if inside(descriptor["queue"]) == queue_path:
+                acceptance_path = inside(descriptor["acceptance"])
+                if sha(acceptance_path) != descriptor.get("acceptance_sha256"):
+                    raise RuntimeError(f"seed0 queue acceptance changed: {acceptance_path}")
+                verify_bound_root_acceptance(acceptance_path, queue_path, queue_sha)
+        for job in jobs:
+            verify_receipt(queue_path, queue_sha, job)
+            total_jobs += 1
+            receipts.append(f"{job['id']}.json")
+    gru_acceptance_path = ROOT / "protocols/p3-gru-replication-root-acceptance-v1.json"
+    verify_bound_root_acceptance(gru_acceptance_path, gru_queue_path, gru_queue_sha)
+    gru_queue = read(gru_queue_path)
+    if len(gru_queue.get("jobs", [])) != 16:
+        raise RuntimeError("expected exactly 16 completed GRU model-seed replications")
+    for job in gru_queue["jobs"]:
+        verify_receipt(gru_queue_path, gru_queue_sha, job)
+        total_jobs += 1
+        receipts.append(f"{job['id']}.json")
+    if total_jobs != 56:
+        raise RuntimeError(f"expected 40 seed0 plus 16 GRU phase receipts, found {total_jobs}")
+    return {"seed0_queues": [{"path": str(p), "sha256": h, "jobs": len(read(p)["jobs"])} for p, h in seed0_queues],
+            "gru_queue": {"path": str(gru_queue_path), "sha256": gru_queue_sha, "jobs": 16},
+            "receipt_count": total_jobs}
+
+
+def verify_seed0_numeric_acceptance(path: Path, seed0_summary: dict):
+    """Require a root-authored six-row independent numeric acceptance; absence means wait."""
+    acceptance = read(path)
+    if (acceptance.get("accepted_by") != "root" or acceptance.get("verdict") != "pass"
+            or acceptance.get("scope") != "P3 strong seed0 full train/validation independent numeric acceptance"
+            or acceptance.get("pipeline_advanced") is not False
+            or acceptance.get("scientific_hypothesis_accepted") is not False
+            or acceptance.get("test_accessed") is not False):
+        raise RuntimeError("seed0 numerical root acceptance is not pass/full train-validation/non-test")
+    rows = acceptance.get("seed0_records")
+    if not isinstance(rows, list) or len(rows) != 6:
+        raise RuntimeError("seed0 numerical root acceptance must bind six dataset/method rows")
+    expected = {(d, m) for d in DATASETS for m in METHODS}
+    observed = set()
+    for row in rows:
+        key = (row.get("dataset"), row.get("method"))
+        if key not in expected or key in observed or row.get("seed") != 0 or row.get("accepted") is not True:
+            raise RuntimeError("seed0 acceptance row is duplicate, out of scope, or not explicitly accepted")
+        observed.add(key)
+        for path_key, hash_key in (("independent_review_path", "independent_review_sha256"),
+                                   ("phase_receipt_path", "phase_receipt_sha256"),
+                                   ("input_binding_path", "input_binding_sha256"),
+                                   ("config_path", "config_sha256")):
+            evidence_path = inside(row[path_key])
+            if not evidence_path.is_file() or sha(evidence_path) != row[hash_key]:
+                raise RuntimeError(f"seed0 accepted evidence changed: {evidence_path}")
+            rel = evidence_path.relative_to(ROOT).as_posix()
+            if acceptance.get("evidence_sha256", {}).get(rel) != row[hash_key]:
+                raise RuntimeError(f"seed0 acceptance does not pin evidence: {rel}")
+        review = inside(row["independent_review_path"])
+        if review.suffix.lower() == ".json":
+            report = read(review)
+            if (report.get("reviewer_role") != "independent" or report.get("verdict") != "pass"
+                    or report.get("dataset") != row["dataset"] or report.get("method") != row["method"]
+                    or report.get("seed") != 0 or report.get("test_accessed") is not False
+                    or report.get("scope") != "full_train_validation_numeric"):
+                raise RuntimeError(f"seed0 independent review lacks required scope: {review}")
+        else:
+            body = review.read_text(encoding="utf-8-sig").casefold()
+            for required_text in (row["dataset"].casefold(), row["method"].casefold(), "seed 0", "train", "validation", "independent", "test"):
+                if required_text not in body:
+                    raise RuntimeError(f"seed0 review lacks explicit {required_text!r} scope: {review}")
+    if observed != expected:
+        raise RuntimeError("seed0 root acceptance omits a primary dataset/method pair")
+    require_hash_map(acceptance.get("evidence_sha256"), exact_count=len(acceptance["evidence_sha256"]))
+    if len(seed0_summary) != 4:
+        raise RuntimeError("expected source receipts from all four completed seed0 queues")
+    return {"acceptance_path": str(path), "acceptance_sha256": sha(path), "accepted_seed0_pairs": 6}
+
+
+def require_p3():
+    state_path = ROOT / "pipeline-state.json"
+    rows = {row["id"]: row for row in read(state_path)["stages"]}
+    if (rows["P2"].get("status") != "passed" or rows["P2"].get("gate_verdict") != "pass"
+            or rows["P3"].get("status") != "running"):
+        raise RuntimeError("strong replication requires canonical P2 passed/pass and P3 running")
+    validator = ROOT / "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py"
+    result = subprocess.run([str(PYTHON), str(validator), str(state_path), "--before", "P3"],
+                            cwd=ROOT, capture_output=True, text=True, shell=False)
+    if result.returncode:
+        raise RuntimeError(f"official before-P3 validator rejected: {result.stdout[-1000:]} {result.stderr[-1000:]}")
+    return sha(state_path)
+
+
+def owned_model_processes():
+    helper_path = ROOT / "edsgn/scripts/candidate_gpu_fullpath_probe_v2.py"
+    spec = importlib.util.spec_from_file_location("_strong_continuation_process_scan", helper_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot load accepted owned-process scanner")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module._owned_model_processes(ROOT)
+
+
+def require_idle_and_budget():
+    lock_paths = [ROOT / "logs/model-resource.lock", ROOT / "logs/offline-phase-wall/campaign.lock"]
+    present = [str(p) for p in lock_paths if p.exists()]
+    if present:
+        raise RuntimeError(f"resource locks are still held: {present}")
+    active = owned_model_processes()
+    if active:
+        raise RuntimeError(f"owned model/resource process remains active: {active}")
+    scripts = ROOT / "edsgn/scripts"
+    if str(scripts) not in sys.path:
+        sys.path.insert(0, str(scripts))
+    from aggregate_budget import aggregate
+    from baseline_campaign import WALL_BUDGET_S
+    budget = aggregate(ROOT)
+    if not budget.get("coverage_complete") or budget.get("spent_seconds", WALL_BUDGET_S) >= WALL_BUDGET_S:
+        raise RuntimeError(f"aggregate 72-hour budget/coverage refuses continuation: {budget.get('coverage_gaps')}")
+    return {"budget_spent_seconds": budget["spent_seconds"], "budget_remaining_seconds": budget["remaining_seconds"],
+            "coverage_complete": True, "locks_clear": True, "owned_model_processes": 0}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--seed0-acceptance", default=str(SEED0_NUMERIC_ACCEPTANCE),
+                        help="future root-authored six-pair independent numeric acceptance; absent file means waiting")
+    args = parser.parse_args()
+    if Path(sys.executable).resolve() != PYTHON.resolve():
+        raise RuntimeError("use the selected local Conda interpreter")
+    target = ROOT / "logs/p3-strong-serial-continuation-v1.json"
+    if target.exists():
+        raise FileExistsError(target)
+    queue_sha = sha(QUEUE)
+    if queue_sha != "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9":
+        raise RuntimeError("strong queue SHA differs from root-accepted preparation")
+    acceptance_info = verify_replication_acceptance(queue_sha)
+    queue = verify_queue_and_configs(queue_sha, read(ROOT_ACCEPTANCE)["evidence_sha256"])
+    own_sha = sha(Path(__file__))
+    record = {
+        "schema_version": 1, "scope": "root-authorized P3 primary strong-baseline seeds1-4 serial continuation",
+        "status": "awaiting_seed0_and_gru_coordinators", "pid": os.getpid(),
+        "queue_path": str(QUEUE), "queue_sha256": queue_sha,
+        "root_acceptance_path": str(ROOT_ACCEPTANCE), "root_acceptance_sha256": acceptance_info["acceptance_sha256"],
+        "root_pin_count": acceptance_info["pins_verified"],
+        "seed0_numeric_acceptance_path": str(inside(args.seed0_acceptance)),
+        "seed0_coordinator_path": str(SEED0_COORDINATOR), "gru_coordinator_path": str(GRU_COORDINATOR),
+        "source_sha256": own_sha, "bound_controller_sha256": sha(ROOT / "edsgn/scripts/bound_phase_campaign.py"),
+        "job_count": len(queue["jobs"]), "test_access": False, "training_started": False,
+        "clock": "wait time is not charged; only the unchanged bound controller writes phase receipts against the shared cumulative 72-hour ledger",
+        "required_seed0_phase_receipts": 40, "required_gru_phase_receipts": 16,
+        "seed0_numeric_acceptance_schema": "root acceptance: accepted_by=root, verdict=pass, scope=P3 strong seed0 full train/validation independent numeric acceptance, seed0_records exactly six dataset/method rows; each pins independent review, original phase receipt, at-launch binding, config via evidence_sha256",
+        "started_utc": dt.datetime.now(dt.timezone.utc).isoformat(),
+    }
+
+    def save():
+        record["last_updated_utc"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        temp = target.with_suffix(".tmp")
+        temp.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        os.replace(temp, target)
+
+    save()
+    try:
+        while True:
+            if sha(Path(__file__)) != own_sha or sha(QUEUE) != queue_sha:
+                raise RuntimeError("continuation source or prepared queue changed while awaiting predecessors")
+            current_acceptance = verify_replication_acceptance(queue_sha)
+            if (current_acceptance["acceptance_sha256"] != acceptance_info["acceptance_sha256"]
+                    or current_acceptance["metadata_sha256"] != acceptance_info["metadata_sha256"]):
+                raise RuntimeError("prepared replication root acceptance changed while awaiting predecessors")
+            seed0 = read(SEED0_COORDINATOR)
+            gru = read(GRU_COORDINATOR)
+            if seed0.get("status") == "failed" or gru.get("status") == "failed":
+                raise RuntimeError("a predecessor coordinator failed; preserve outputs and do not launch")
+            if seed0.get("status") == "completed_all_baseline_queues" and gru.get("status") == "completed_gru_replications":
+                break
+            record.update(status="awaiting_seed0_and_gru_coordinators",
+                          predecessor_status={"seed0": seed0.get("status"), "gru": gru.get("status")})
+            save()
+            time.sleep(5)
+
+        predecessor = verify_coordinator_queues()
+        record.update(status="awaiting_six_seed0_numeric_acceptances", predecessor_receipts=predecessor)
+        save()
+        while not inside(args.seed0_acceptance).is_file():
+            if sha(Path(__file__)) != own_sha or sha(QUEUE) != queue_sha:
+                raise RuntimeError("continuation source or prepared queue changed while awaiting numeric acceptance")
+            time.sleep(5)
+        numeric_acceptance = verify_seed0_numeric_acceptance(inside(args.seed0_acceptance), predecessor["seed0_queues"])
+        p3_sha = require_p3()
+        final_root_acceptance = verify_replication_acceptance(queue_sha)
+        if (final_root_acceptance["acceptance_sha256"] != acceptance_info["acceptance_sha256"]
+                or final_root_acceptance["metadata_sha256"] != acceptance_info["metadata_sha256"]):
+            raise RuntimeError("prepared replication root acceptance changed before launch")
+        queue = verify_queue_and_configs(queue_sha, read(ROOT_ACCEPTANCE)["evidence_sha256"])
+        for job in queue["jobs"]:
+            output = inside(job["output_dir"])
+            if output.exists():
+                raise RuntimeError(f"strong output path is no longer empty: {output}")
+        guard = require_idle_and_budget()
+        # Final prelaunch barriers: accepted pins/source/queue/state, receipts, and numeric review bytes.
+        if sha(Path(__file__)) != own_sha or sha(QUEUE) != queue_sha:
+            raise RuntimeError("strong continuation source/queue changed at launch barrier")
+        if sha(inside(args.seed0_acceptance)) != numeric_acceptance["acceptance_sha256"]:
+            raise RuntimeError("seed0 acceptance changed at launch barrier")
+        if sha(ROOT / "pipeline-state.json") != p3_sha:
+            raise RuntimeError("pipeline state changed after official before-P3 validation")
+        verify_coordinator_queues()
+        verify_replication_acceptance(queue_sha)
+        require_idle_and_budget()
+        record.update(status="running_strong_replications", training_started=True,
+                      seed0_numeric_acceptance=numeric_acceptance, pipeline_state_sha256=p3_sha,
+                      final_root_acceptance_sha256=final_root_acceptance["acceptance_sha256"],
+                      prelaunch_guard=guard)
+        save()
+        child = subprocess.run([str(PYTHON), str(ROOT / "edsgn/scripts/bound_phase_campaign.py"),
+                                "--queue", str(QUEUE)], cwd=ROOT, shell=False)
+        record["returncode"] = child.returncode
+        if child.returncode != 0:
+            raise RuntimeError("strong replication campaign failed; preserve all phase receipts")
+        verify_coordinator_queues()
+        queue_obj = read(QUEUE)
+        for job in queue_obj["jobs"]:
+            verify_receipt(QUEUE, queue_sha, job)
+        record.update(status="completed_strong_replications", training_started=True,
+                      completed_jobs=24, test_access=False)
+    except BaseException as exc:
+        record.update(status="failed", error=f"{type(exc).__name__}: {exc}")
+        raise
+    finally:
+        save()
+
+
+if __name__ == "__main__":
+    main()

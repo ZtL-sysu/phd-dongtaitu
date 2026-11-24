@@ -1,0 +1,31 @@
+{
+  "review_role": "independent reviewer",
+  "verdict": "revise_before_use",
+  "blocking_findings": [
+    "Kernel ignores registry primary flag and holm_family field; a false-primary or wrong-family row is silently included by endpoint-id prefix."
+  ],
+  "verified": {
+    "registry_rows": 49,
+    "family_sizes": {
+      "H1": 9,
+      "H2": 16,
+      "H3": 24
+    },
+    "hand_calculated_non_equal_holm": true,
+    "claim_and_type_mismatch_rejection": true,
+    "unidentifiable_ni_retains_family_and_nulls_decision": true,
+    "identifiable_negative_support_distinguished": true,
+    "ni_strict_upper_bound": true,
+    "superiority_directional_gates": true,
+    "writer_tests": 12,
+    "independent_tests": 7
+  },
+  "calibration_v9": "source-only chronology review appears consistent; no runtime/arrays/phase executed",
+  "hashes": {
+    "edsgn/staging/typed_primary_family_holm_v2.py": "005EEF360B88864CBA1DA13A893AD817F5B7CD1A54BFAA791D673CFA715BC0CD",
+    "protocols/primary-endpoint-registry-root-preparation-v2.json": "D2686C9BF4F1F0574A60774284A77E033B9E25D973F691C2B3E822381FDB476F",
+    "protocols/primary-endpoint-operational-definitions-root-v1.md": "0F1BF0EC944701518882011964BC3AA42D9E136A7632059C7A319A03266C819E",
+    "protocols/statistical-family-assembly-requirement-v1.md": "C4D54BF1FEE9AB37260E480A9195D54DEDA5B8B449F7DDB8A7DA88571EE39EB5",
+    "edsgn/staging/frozen_validation_calibration_v9.py": "975505E0BF7CBFC80392D0C8259B7C8A1F79DE2B67284C32C63CF6F6DFB07554"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "global_queue_and_completion_metadata_engineering_only",
+  "created_utc": "2026-10-11T12:39:33.596959+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/global_frozen_test_completion_v1.py": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af",
+    "edsgn/staging/test_global_frozen_test_completion_v1.py": "f5aebfb55351341a08199274eb361029504afbb680ca4bccb5c9c972ba0b5311",
+    "reviews/global-frozen-test-and-oracle-reporter-independent-v2.json": "a4a6611a13534380f6922742a84760f95dafc0da93d6bac2ff031c9222f18627",
+    "reviews/global-frozen-test-and-oracle-reporter-independent-v2.md": "2af834670bdb622f1ee8e64d6c525fd1803b8669c59d884447f7b7567e2a931f",
+    "reviews/global-frozen-test-completion-independent-v1.json": "b43d0a1a9f2e24e68bf6356a45df7838c353fd953369925f5717470501277b6a",
+    "protocols/global-test-oracle-separation-root-design-v1.md": "4de1f31de18d07d89d5363b1bf5b7169b09ba50dfd29f63406d7b83350958361",
+    "logs/global-completion-and-oracle-sourcepin-v3-tests.log": "1a98670fbffc170b06089fd4e5df2b2574137d97a3257662256a265c36146042"
+  },
+  "actual_global_completion": false,
+  "complete_rp_matrix_accepted": false,
+  "oracle_reporter_accepted": false
+}

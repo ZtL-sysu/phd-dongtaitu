@@ -1,0 +1,43 @@
+{
+  "scope": "metadata_only_auditor_v4_cpu_tests_and_queue_preflight",
+  "tests_command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest -q edsgn/tests/test_audit_completed_p3_campaign_v4.py",
+  "tests": "9 passed",
+  "live_campaign_audit_run": false,
+  "training_or_model_run": false,
+  "test_arrays_read": false,
+  "queue_preflight": {
+    "queue_count": 6,
+    "unique_jobs": 80,
+    "dataset_counts": {
+      "synthetic": 22,
+      "email": 22,
+      "mooc": 22,
+      "email-episode": 14
+    },
+    "horizons_by_dataset": {
+      "synthetic": [
+        1,
+        3,
+        7
+      ],
+      "email": [
+        1,
+        3,
+        7
+      ],
+      "email-episode": [
+        1,
+        3,
+        7
+      ],
+      "mooc": [
+        1,
+        6,
+        24
+      ]
+    },
+    "unknown_dataset_count": 0
+  },
+  "source_sha256": "6c4e2aace929a8c0f6dba5d5f02749fa1990104dc95850c0d80299b317660785",
+  "test_sha256": "191f88db0cded460aab023df039034523fc8ef846095ea733765a7be070046a3"
+}

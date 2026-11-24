@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+persistence,0,val,1,0,all,4.058346271514893,8.10231876373291,3822,49
+persistence,0,val,6,0,all,8.119309425354004,14.556535720825195,3822,49
+persistence,0,val,24,0,all,4.9089484214782715,10.058359146118164,3822,49

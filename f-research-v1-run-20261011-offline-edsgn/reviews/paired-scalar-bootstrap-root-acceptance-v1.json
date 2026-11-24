@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:05:44.681875+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/paired_scalar_bootstrap_v1.py": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6",
+    "edsgn/tests/test_paired_scalar_bootstrap_v1.py": "9249692162800401fb213a09ed72ba35f6dc70ac55e56a9cae3f7f4e27883175",
+    "edsgn/staging/paired_statistics_shared_v4.py": "3cd8fd9e353b15df9a3fc791512d05fa97cf127c2b28b5406b745edc87eb37d9",
+    "protocols/non-mae-endpoint-kernel-specification-v1.md": "0a859fd907dad59daa0bc9c318bfc102b0aa797ec6b90e56af692896b5237c38",
+    "reviews/paired-scalar-bootstrap-independent-v1.md": "25b8bd4744d4ac923d67d13bea3e67dae7355e7dc75370f1a0a75508ecd4b65c",
+    "reviews/paired-scalar-bootstrap-independent-v1.json": "1168997593014e6ca0cc7538e53df880f59528ddc076ce9e7ceea893947a025f"
+  },
+  "actual_inference_run": false
+}

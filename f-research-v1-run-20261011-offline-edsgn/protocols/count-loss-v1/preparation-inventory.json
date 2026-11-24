@@ -1,0 +1,110 @@
+{
+  "adapter_source": {
+    "path": "edsgn/staging/count_loss_training_adapter_v1.py",
+    "sha256": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7"
+  },
+  "arrays_or_oracle_decoded": false,
+  "artifacts": [
+    {
+      "adapter_source_sha256": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+      "blueprint_code_source_count": 22,
+      "blueprint_dataset_sources": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+          "sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\manifest.json",
+          "sha256": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c"
+        }
+      ],
+      "canonical_mse_reference": {
+        "path": "configs/core-development-bound-v3/email-V4-seed0.json",
+        "sha256": "f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e"
+      },
+      "config": {
+        "path": "configs/count-loss-v1/email-V4-Poisson-seed0.json",
+        "sha256": "26ddbbc0cf285658ecc218969745bb72ca945a50b06ff3f4050ab40add27b344"
+      },
+      "dataset": "email",
+      "method_id": "V4-Poisson",
+      "model_seed": 0,
+      "ordinary_blueprint_helper_sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\count-loss-v1\\email\\V4-Poisson\\seed0",
+      "static_input_blueprint": {
+        "path": "protocols/count-loss-v1/email-V4-Poisson-seed0-static-input-blueprint.json",
+        "sha256": "192e70f1a974e38b67450fce08861fae7187624e97b5d9398a7e62981834b822"
+      },
+      "variant": "V4"
+    },
+    {
+      "adapter_source_sha256": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+      "blueprint_code_source_count": 22,
+      "blueprint_dataset_sources": [
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\manifest.json",
+          "sha256": "f8c9e722ed4f6db1f4cceb20956f19b9f20c1b0565533fa5ddbf27edca9e930a"
+        },
+        {
+          "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+          "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+        }
+      ],
+      "canonical_mse_reference": {
+        "path": "configs/core-development-bound-v3/mooc-V4-seed0.json",
+        "sha256": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603"
+      },
+      "config": {
+        "path": "configs/count-loss-v1/mooc-V4-Poisson-seed0.json",
+        "sha256": "55fbdc2d29bd047a0b09217c54d6138c3fed095a135307cc9ffe21cbcba7c563"
+      },
+      "dataset": "mooc",
+      "method_id": "V4-Poisson",
+      "model_seed": 0,
+      "ordinary_blueprint_helper_sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\count-loss-v1\\mooc\\V4-Poisson\\seed0",
+      "static_input_blueprint": {
+        "path": "protocols/count-loss-v1/mooc-V4-Poisson-seed0-static-input-blueprint.json",
+        "sha256": "b47f1f4a2283af916983bb65e72d479962df5ce0459fdf1802730b39873d22b2"
+      },
+      "variant": "V4"
+    }
+  ],
+  "future_checkpoint_or_freeze_hashes": null,
+  "model_method_identity": {
+    "datasets": [
+      "email",
+      "mooc"
+    ],
+    "method_id": "V4-Poisson",
+    "seed_ids": [
+      0
+    ],
+    "variant": "V4"
+  },
+  "note": "Blueprint helper hashes NPZ/source bytes only; this preparation does not certify root-selected policy linkage, P3A admission, training, or paired evaluation.",
+  "ordinary_blueprint_helper": {
+    "path": "edsgn/staging/ordinary_frozen_test_admission_v1.py",
+    "sha256": "7e265b84d33a98c16032ed152ab6f3668fd1d6ddb7a6d0193ab5de0eada24b48"
+  },
+  "paired_config_rule": "canonical V4 seed0 deep-copy; only output_dir changed and training_loss/mse_reference_config added",
+  "queue_or_admission_created": false,
+  "recipe": {
+    "full": false,
+    "kind": "masked_poisson_nll",
+    "log_input": false,
+    "normalization": "valid_target_cells",
+    "prediction_floor": 1e-08,
+    "reduction": "none"
+  },
+  "root_engineering_acceptance": {
+    "path": "reviews/count-loss-training-adapter-root-engineering-v1.json",
+    "scientific_hypothesis_accepted": false,
+    "scope": "paired_v4_seed0_count_loss_adapter_engineering_only",
+    "sha256": "1b2f1bd9ca4e8d13f19baef322416a12949ad63cafc911f545a234d77533c631"
+  },
+  "schema_version": 1,
+  "scope": "count_loss_config_and_static_input_blueprint_preparation",
+  "status": "prepared_only_not_queued_not_admitted_not_launched",
+  "training_or_evaluation_run": false
+}

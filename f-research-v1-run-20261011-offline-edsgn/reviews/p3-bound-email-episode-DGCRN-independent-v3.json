@@ -1,0 +1,92 @@
+{
+  "scope": "independent_validation_numeric_and_provenance_review",
+  "verdict": "pass_with_source-array-boundary-limitation",
+  "dataset": "email-episode",
+  "variant": "DGCRN",
+  "seed": 0,
+  "validation_origins": 46,
+  "origin_order_matches_metadata": true,
+  "training_origins_metadata": 334,
+  "epochs": 30,
+  "best_epoch": 20,
+  "best_validation_selection_mae": 0.6264445384343466,
+  "required_horizon_rows": [
+    {
+      "horizon": 1,
+      "feature": 0,
+      "n": 41078,
+      "mae": 0.5601625951309726,
+      "rmse": 1.4963751565691747,
+      "abs_sum": 23010.35908279009,
+      "sq_sum": 91979.33578861172
+    },
+    {
+      "horizon": 1,
+      "feature": 1,
+      "n": 41078,
+      "mae": 0.663228183057624,
+      "rmse": 2.850561886792222,
+      "abs_sum": 27244.087303641078,
+      "sq_sum": 333787.63072722347
+    },
+    {
+      "horizon": 3,
+      "feature": 0,
+      "n": 41078,
+      "mae": 0.579813465728223,
+      "rmse": 1.5344800500981803,
+      "abs_sum": 23817.577545183944,
+      "sq_sum": 96723.45105400552
+    },
+    {
+      "horizon": 3,
+      "feature": 1,
+      "n": 41078,
+      "mae": 0.6843189898388015,
+      "rmse": 2.937179196021253,
+      "abs_sum": 28110.455464598286,
+      "sq_sum": 354380.7944982464
+    },
+    {
+      "horizon": 7,
+      "feature": 0,
+      "n": 41078,
+      "mae": 0.5829256158802346,
+      "rmse": 1.4357570882668278,
+      "abs_sum": 23945.41844912828,
+      "sq_sum": 84678.12415333369
+    },
+    {
+      "horizon": 7,
+      "feature": 1,
+      "n": 41078,
+      "mae": 0.6882184085878187,
+      "rmse": 2.7887486020077774,
+      "abs_sum": 28270.635787970416,
+      "sq_sum": 319468.4846368993
+    }
+  ],
+  "required_pooled_count": 246468,
+  "required_pooled_mae": 0.626444543037279,
+  "required_pooled_rmse": 2.279802970837173,
+  "checkpoint_sha256": "a73cb28e63d087e6eba64130077642040e89df9f2a647b9bf143f7f6bd4313ac",
+  "binding_status": "verified",
+  "binding_code_hashes_verified": 22,
+  "binding_dataset_file_hashes_verified": 2,
+  "phase_receipt_inputs": 25,
+  "phase_receipt_outputs": 7,
+  "phase_output_hashes_match": true,
+  "test_accessed_declared_false": true,
+  "test_oracle_arrays_decoded": false,
+  "source_validation_target_equivalence": "relied on prior root numeric-v3 audit; the source is one NPZ containing all splits, so this independent pass read only metadata_json from source and did not decode source target/value arrays",
+  "elapsed_seconds": 0.11341779999202117,
+  "source_sha256": {
+    "config": "0f21e6a192aad417290f4940b8b3efc965d47d7f6cdb4facde815e65df6b3bac",
+    "binding": "5028c3ab544c264d0c7415783f04a88cba3d93a3694141c1cd3c4593a278d840",
+    "prediction_archive": "8fa0dae571ce10e73b9ce3b31e843661d3350774f96767e5bcc3354cd5430663",
+    "dataset_archive_bytes": "34d8706366c2230f70daabae1e86e0b24dc4050eede0e71d42b0709d76178293",
+    "manifest": "7ec64dabaa9df64a61dbe4ed54b5da8153ca3c991323daf80c83367d21d65894",
+    "training_summary": "c7e2e99f98eaed44da718875350d7d7e85191ba97cb06a8a2952a6d0933c3967",
+    "phase_receipt": "a1ab668f33fd6532a04dc2f2ce035f3f6e55e828df4af6f0c3f6988a544d6e01"
+  }
+}

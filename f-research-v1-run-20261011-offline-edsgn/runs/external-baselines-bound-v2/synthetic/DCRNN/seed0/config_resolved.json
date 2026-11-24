@@ -1,0 +1,25 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "variant": "DCRNN",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\DCRNN\\seed0",
+  "baseline": {
+    "fixed_training_prior_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\synthetic.npz",
+    "fixed_training_prior_sha256": "134716eb83656c79bf6d3bc4b17c8c73375c1e629e7ad260b3381f20b0ab1cc2",
+    "fixed_training_prior_manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\training-priors-v1\\synthetic.json",
+    "fixed_training_prior_manifest_sha256": "0f2be87134b28f54dda1b60e3e3558853c48a141607393c6809f0f5cb967b45a",
+    "expected_dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+    "rnn_units": 64,
+    "num_rnn_layers": 2,
+    "max_diffusion_step": 2
+  }
+}

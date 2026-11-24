@@ -1,0 +1,20 @@
+{
+  "review_role": "writer self-review",
+  "verdict": "staging_engineering_prototype_pending_root_review",
+  "scope": "CPU toy fixtures only; no accepted real-run producer call or experiment phase",
+  "tests_passed": 28,
+  "official_validator_fixture": "temporary 49-row registry and P3A-passed/P4-running fixture using the official pipeline-state validator; not canonical experiment authority",
+  "v1_preserved": true,
+  "files": {
+    "edsgn/staging/typed_endpoint_plan_validator_v5.py": "bb77c06c780079d825bcb43bdfffbf2f2ebe3e267080ed629415c0d56cca5e15",
+    "edsgn/staging/typed_endpoint_producer_v2.py": "e848d1116a1b867bb6622dc8a84335e3eb2d947932eba7f842a972b05d4e0dbe",
+    "edsgn/tests/test_typed_endpoint_plan_validator_v5.py": "37a6e93daf3ce8b57c24c98d3673ec9b4edadcede8510e3f684bd686f91e3fc0",
+    "edsgn/tests/test_typed_endpoint_producer_v2.py": "46687e9d1a3c5ba6237d98caf56d84e4967101d01b67483c9c4c5fd693e6ed40",
+    "logs/typed-endpoint-producer-v2-focused-tests.log": "aedc426afeec9a71dd9c82cbc34b168d2ad83c68d5bb1ccf2a334e4a7a197f5c"
+  },
+  "limitations": [
+    "No complete public producer call against accepted canonical P3A/P4 metadata was possible or performed.",
+    "Actual output plan paths and report schemas remain to be bound and checked against a future accepted run.",
+    "Switch-relative endpoints fail closed unless prepared-domain metadata carries an exact switch_indices map."
+  ]
+}

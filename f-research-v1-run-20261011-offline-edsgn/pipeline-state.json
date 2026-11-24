@@ -1,0 +1,815 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [],
+  "citation_gate": [],
+  "contract": [
+    {
+      "path": "execution-contract-v1.md",
+      "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+    },
+    {
+      "path": "inputs/implementation-plan.md",
+      "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+    },
+    {
+      "path": "inputs/PhD_Research_Proposal.pdf",
+      "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+    },
+    {
+      "path": "path-containment-manifest.json",
+      "sha256": "17aab6330659fa7254d4652be5e2876003e22df48cca1807eae2c5c9d52a1d0f"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "pass",
+      "stage": "P1"
+    },
+    {
+      "action": "pass",
+      "stage": "P1A"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "reopen",
+      "stage": "P1B",
+      "preserved_ledger": "snapshots\\pipeline-before-p1b-revalidation-v2.json",
+      "preserved_ledger_sha256": "2a3d7443788b9891550380994fc5167ca345cd1d7d1f6c1510deae2b6a7d6f9c",
+      "prior_suffix_statuses": [
+        {
+          "id": "P1B",
+          "prior_status": "passed"
+        },
+        {
+          "id": "P2",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P3",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P3A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P4",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P6",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P7",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P8",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P9",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P10",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P11",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P12",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P13",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P14",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P15",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P16",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P17",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P18",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P19",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P20",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P21",
+          "prior_status": "pending"
+        }
+      ],
+      "contract_changed": false,
+      "reason": "P2 validator stale P1B review hash; current report requires explicit independent revalidation"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "reopen",
+      "stage": "P2",
+      "reason": "C03: baseline-stage audit found batch-position-dependent random scheduling and batch1 cost-table scope violation; explicit engineering delta and suffix revalidation before core training",
+      "preserved_ledger": "snapshots\\pipeline-before-p2-scheduler-delta-v2.json",
+      "preserved_ledger_sha256": "ac0024a5475e8a047d9f56f637e61816a6530fd89547f91e548387f68377066b",
+      "prior_suffix_statuses": [
+        {
+          "id": "P2",
+          "prior_status": "passed"
+        },
+        {
+          "id": "P3",
+          "prior_status": "running"
+        },
+        {
+          "id": "P3A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P4",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P6",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P7",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P8",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P9",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P10",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P11",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P12",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P13",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P14",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P15",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P16",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P17",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P18",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P19",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P20",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P21",
+          "prior_status": "pending"
+        }
+      ],
+      "contract_changed": false
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "reopen",
+      "stage": "P2",
+      "reason": "C04 root backedge: audited RP forecasting adapters, robustness recipe-bundle freeze, training-only equivalent bounded tensor candidate optimization, and phase guards require engineering revalidation after V1 and GPU probe completed",
+      "preserved_ledger": "snapshots\\pipeline-before-p2-rp-and-candidate-delta-v3.json",
+      "preserved_ledger_sha256": "e93c6d959b7247aaa17e183e0f22c2799d9b094495630341cd366ea55e5300e0",
+      "prior_suffix_statuses": [
+        {
+          "id": "P2",
+          "prior_status": "passed"
+        },
+        {
+          "id": "P3",
+          "prior_status": "running"
+        },
+        {
+          "id": "P3A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P4",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P6",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P7",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P8",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P9",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P10",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P11",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P12",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P13",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P14",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P15",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P16",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P17",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P18",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P19",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P20",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P21",
+          "prior_status": "pending"
+        }
+      ],
+      "contract_changed": false
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    },
+    {
+      "action": "reopen",
+      "stage": "P2",
+      "reason": "C05: actual AGCRN main-email B2 and B1 and episode B2 training-only probes exhaust declared CUDA memory; preserve author architecture with verified training-only activation checkpoint repair, requiring P2 delta revalidation before baseline training",
+      "preserved_ledger": "snapshots\\pipeline-before-p2-agcrn-memory-delta-v4.json",
+      "preserved_ledger_sha256": "d3cf4d0e2d71e1016d586328c87969d20ddb72ba53a923782b8df80186553b31",
+      "prior_suffix_statuses": [
+        {
+          "id": "P2",
+          "prior_status": "passed"
+        },
+        {
+          "id": "P3",
+          "prior_status": "running"
+        },
+        {
+          "id": "P3A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P4",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P6",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P7",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P8",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P9",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P10",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P11",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P12",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P13",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P14",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P15",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P16",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P17",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P18",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P19",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P20",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P21",
+          "prior_status": "pending"
+        }
+      ],
+      "contract_changed": false
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "inputs/implementation-plan.md",
+          "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+        },
+        {
+          "path": "inputs/PhD_Research_Proposal.pdf",
+          "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/p0-gate.md",
+          "sha256": "52f75d1f7475d4e237a1c9a6b7dfb574c678318ef417a2c602fd5acdee052c40"
+        },
+        {
+          "path": "path-containment-manifest.json",
+          "sha256": "17aab6330659fa7254d4652be5e2876003e22df48cca1807eae2c5c9d52a1d0f"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "inputs/implementation-plan.md",
+          "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+        },
+        {
+          "path": "inputs/PhD_Research_Proposal.pdf",
+          "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+        },
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/guidance-extraction.md",
+          "sha256": "bd511a63ad5dd707ef0777754aa5e5e310fd89cc4565dc0f8858d6a6bb9defea"
+        },
+        {
+          "path": "reviews/sibling-data-inventory.md",
+          "sha256": "7caaa08cefdd6e4210275a591588862af02a31bf031040a13015cc70430b70f0"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/guidance-extraction.md",
+          "sha256": "bd511a63ad5dd707ef0777754aa5e5e310fd89cc4565dc0f8858d6a6bb9defea"
+        },
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/mechanism-card.md",
+          "sha256": "79d1a5416bd2af1b9d56780df6c392886f64e6ec0871f0c17eb574160a803908"
+        },
+        {
+          "path": "protocols/claim-evidence-matrix.md",
+          "sha256": "9e5b3efe9cc3d0e2163ede24e56919a73cc730e8901665d51fe50f6fe779c2ac"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-contract.md",
+          "sha256": "3585927eb3fd5e1fa40d726f4477693c29b0367d8fa2266d7d823b9922e3f7f1"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-lock.md",
+          "sha256": "a88dd242010f2f71b8f74af28c78f5d8d42746b4b28eb630fb8b02c305de8df1"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/mechanism-card.md",
+          "sha256": "79d1a5416bd2af1b9d56780df6c392886f64e6ec0871f0c17eb574160a803908"
+        },
+        {
+          "path": "protocols/claim-evidence-matrix.md",
+          "sha256": "9e5b3efe9cc3d0e2163ede24e56919a73cc730e8901665d51fe50f6fe779c2ac"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-contract.md",
+          "sha256": "3585927eb3fd5e1fa40d726f4477693c29b0367d8fa2266d7d823b9922e3f7f1"
+        },
+        {
+          "path": "reviews/p1-literature-map.md",
+          "sha256": "d42317298f1eaf77f3b7fa034f4bc3d10b9e35c48940b0a67bfc3090b9d27dcd"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reviews/ccfa-pre-experiment-review.md",
+          "sha256": "213dfc0838158cac2e8744be0e863ef509344b905bf0027e22403ced6d48f74d"
+        },
+        {
+          "path": "reviews/ccfa-pre-experiment-integrity.md",
+          "sha256": "6a5db2202e623ed3c7d4751fbe878c3eb920a1c72106b9c28edd4372822170b6"
+        },
+        {
+          "path": "reviews/p1b-concern-action-ledger.md",
+          "sha256": "c2c8be9509c7a8756a88d5211dd053a421e77cc997dbb54c6812796e2095765e"
+        },
+        {
+          "path": "protocols/p1b-protocol-repairs-v1.md",
+          "sha256": "e5d68d41815d9b92dfef97dce0a8c31fb45309fb56978f495bdb3a0767938475"
+        },
+        {
+          "path": "reviews/p1b-revalidation-v2.md",
+          "sha256": "56f93045d5503dc62ad4c6750a7060d8d9e046e2559f6c39ef1fd1e80c51cc82"
+        },
+        {
+          "path": "snapshots/pipeline-before-p1b-revalidation-v2.json",
+          "sha256": "2a3d7443788b9891550380994fc5167ca345cd1d7d1f6c1510deae2b6a7d6f9c"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+        },
+        {
+          "path": "protocols/p1b-protocol-repairs-v1.md",
+          "sha256": "e5d68d41815d9b92dfef97dce0a8c31fb45309fb56978f495bdb3a0767938475"
+        },
+        {
+          "path": "protocols/c05-agcrn-memory-repair-v1.md",
+          "sha256": "a213dbe9fded5aa6ca740556249edf7e445bd188a61acf09cb16612b73f73713"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/p2-engineering-delta-gate-v4.md",
+          "sha256": "146f8a4c6791c01792c7301cb0c59b626cff01a878b0cbc23580949107126051"
+        },
+        {
+          "path": "protocols/p2-engineering-delta-gate-v3.md",
+          "sha256": "60a31df5aaadc2350b06e466a23b3501445b877a0b6a0dfa03f194e033bf525c"
+        },
+        {
+          "path": "reviews/agcrn-checkpoint-independent-v1.md",
+          "sha256": "88b392ac0ac2559b2e6b080fceabd0d9bcf3754819f2930313da16a71b08f183"
+        },
+        {
+          "path": "reviews/agcrn-checkpoint-runtime-independent-v1.md",
+          "sha256": "771ec8e4c4ac63d7f004a3db6859db71afd4d32163d3eae17e9f8fe497cdf5dc"
+        },
+        {
+          "path": "reviews/p2-c05-integrated-tests-v1.md",
+          "sha256": "a974fd2bc20c6dc133ebb27d085cd077bb45f7200281b3701d7dd3dc0a803ded"
+        },
+        {
+          "path": "logs/p2-c05-integrated-tests-v1.json",
+          "sha256": "918ce24345da80b5ce6d9ceb66c2ee6690e9dd9d13f2741e35f93f5b6bb72bc2"
+        },
+        {
+          "path": "reviews/p3-external-resource-independent-v1.md",
+          "sha256": "75eb2f1f7ee3d025e02ce61d45e9363d39f2e2231251663319242aa4bb51b165"
+        },
+        {
+          "path": "snapshots/agcrn-checkpoint-integration-receipt-v1.json",
+          "sha256": "9946215598cdef02ded1f914f986fc02c38eeb725ff6a484186c44e1ec5457e9"
+        },
+        {
+          "path": "snapshots/p2-code-v4.zip",
+          "sha256": "e2caf6491c7eebf03de98d6e453fe54ea81120f70edb78bdd2efce6dfc297535"
+        },
+        {
+          "path": "snapshots/p2-code-v4-manifest.json",
+          "sha256": "c9e2b6f792b9dbd2df299959d2ab43b9b4a40f56e3ecfa9a73e97e11acfb7044"
+        },
+        {
+          "path": "snapshots/pipeline-before-p2-agcrn-memory-delta-v4.json",
+          "sha256": "d3cf4d0e2d71e1016d586328c87969d20ddb72ba53a923782b8df80186553b31"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "running",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P3A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P4",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P5",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "scope": "CPU toy/functionality; no real archives, checkpoint, replay, GPU, optimizer",
+  "command": "python -m pytest -q edsgn/tests/test_frozen_split_history_robustness_v3.py",
+  "result": "7 passed in 3.46s",
+  "source_sha256": {
+    "edsgn/staging/frozen_split_history_robustness_v3.py": "1c0418f6e9ca40aa67ad36be0fd3ee585fb7a1cc233219f5a49128882f74af04",
+    "edsgn/staging/c06_domain_manifest_preflight_v2.py": "ea3de3ded9e75fd5ef72bece28420f6015db80eb0ea07c76ee20eac44efe30d0",
+    "edsgn/tests/test_frozen_split_history_robustness_v3.py": "d261ce358b68b4dc029aa748ada686e4dec6d0db450a5c3c4c0f07116725eb5e"
+  },
+  "final_budget_test": "synthetic cumulative budget exhaustion on fifth callback after serialization; asserts failed receipt and no completed status",
+  "preflight_descriptor": "v2 descriptor binds v3 evaluator source; domain manifest function remains v1-derived to preserve manifest identity"
+}

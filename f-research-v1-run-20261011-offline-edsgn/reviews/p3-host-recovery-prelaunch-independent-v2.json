@@ -1,0 +1,56 @@
+{
+  "review_type": "independent_read_only_host_recovery_v2_delta_review",
+  "scope": "metadata/source-only; no arrays, checkpoints, model execution, launch, or phase-state mutation",
+  "verdict": "delta_checks_pass; root_acceptance_required_before_launch",
+  "queue": {
+    "path": "protocols/p3-host-recovery-queue-v2.json",
+    "sha256": "7752189ff13fad4a69b8792fa4a7010bb468897b37c9c9d26d16563464c8985f",
+    "rows": 68,
+    "first_row_id": "host-recovery-v2-internal-bound-v4-email-V0-seed0",
+    "first_row_config_training_fields_unchanged": true,
+    "first_row_output_dir_only_config_change": true,
+    "first_row_additional_inputs": 3,
+    "remaining_67_exactly_equal_to_accepted_v1_queue": true,
+    "all_68_output_dirs_absent": true,
+    "preparation_source_pins": 301,
+    "pin_hash_mismatches": 0
+  },
+  "preparation": {
+    "path": "logs/p3-host-recovery-preparation-v2.json",
+    "sha256": "1104a533765f736818100024307bc97372ddf6cdfc62345533aa49dd562fe539",
+    "scope": "engineering_only_recovery_delta_preparation",
+    "new_training_started": false,
+    "pipeline_advanced": false,
+    "actual_budget_seconds": 27979.204501300013,
+    "coverage_complete": true,
+    "stop_loss_reached": false
+  },
+  "interruption_reconciliation": {
+    "raw_phase_path": "logs/host-interruption-evidence-v2/raw-running-phase.json",
+    "raw_phase_sha256": "5b35b43d929bd23af1d2eba25b5649d0f849026af2d8017432f2f723659fc43d",
+    "reconciled_phase_path": "logs/offline-phase-wall/coverage-recovery-v1-internal-bound-v4-email-V0-seed0.json",
+    "reconciled_phase_sha256": "e53de87803d129a5cebabb29350c8622424f6e03be629a1d56f04c7f30bf9749",
+    "status": "stopped",
+    "returncode": null,
+    "last_measured_wall_seconds": 67.37345189999905,
+    "conservative_unobserved_allowance_seconds": 90.62654810000095,
+    "total_allowance_seconds": 158.0,
+    "host_reconciliation_event_sha256": "11b26f8c3ba29cf84dd8b14dc585e45f5e241ea826a7a77c4725efe1ede6afd6",
+    "ledger_supplement_present_once": true
+  },
+  "launcher": {
+    "path": "edsgn/scripts/launch_p3_host_recovery_root_v2.py",
+    "sha256": "f99ec0945fb97fecc1e2bec939b303f5636b460e16a5a2e05196a7269dfd15f0",
+    "only_fixed_recovery_reference_strings_changed_from_accepted_launcher_v1": true,
+    "still_uses_official_before_P3_validator": true,
+    "still_rechecks_full_preflight_after_validator_and_before_controller": true,
+    "unchanged_serial_controller_and_fixed_conda_shell_false": true,
+    "acceptance_path": "reviews/p3-host-recovery-root-acceptance-v2.json",
+    "acceptance_file_exists": false,
+    "executed": false
+  },
+  "conditions": [
+    "Root host-recovery acceptance v2 must be created and its exact source/queue/evidence SHA pins must pass launcher preflight.",
+    "No launch authorization inferred from this independent review."
+  ]
+}

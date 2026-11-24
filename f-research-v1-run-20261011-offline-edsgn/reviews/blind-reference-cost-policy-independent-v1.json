@@ -1,0 +1,13 @@
+{
+  "review": "blind-reference-cost-policy-independent-v1",
+  "verdict": "engineering-only-pass",
+  "scientific_acceptance": false,
+  "source": "edsgn/staging/blind_reference_cost_policy_v1.py",
+  "source_sha256": "2500F9687AA277AD5E67F3D4D41DDE095D2E51761109DA2F9DFCEB6A68E3218D",
+  "test": "edsgn/tests/test_blind_reference_cost_policy_v1.py",
+  "test_sha256": "5DE9480763AF7DFABBB8449C0B5D827C67DAC9331D086BA979F5293021F573EE",
+  "scheduling_source_sha256": "544941A6BBE5717E3A7F1ACA20D578725C3722A180AE78838578F5F465F07D42",
+  "test_result": "8 passed in 2.88s",
+  "checks": ["periodic rotation parity", "random seeded priority parity and independent action salts", "recording wrapper calls original selector unchanged", "score-swap invariance for both controls", "normalized rank/quota tie behavior", "mandatory overrun and base-subtracted cost envelope", "adaptive/full untouched", "asdict and policy_digest unchanged", "freeze source/rule hash rejection"],
+  "limitations": ["CPU toy only", "does not prove actual run installed/froze helper", "no runtime or scientific performance claim"]
+}

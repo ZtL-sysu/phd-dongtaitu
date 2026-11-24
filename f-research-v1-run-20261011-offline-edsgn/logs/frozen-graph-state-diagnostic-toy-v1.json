@@ -1,0 +1,30 @@
+{
+  "passed": 5,
+  "gpu": false,
+  "scope": "CPU toy/mock functionality only",
+  "device": "cpu",
+  "wall_seconds": 4.497315,
+  "command": "dyg-cold python -m pytest -q edsgn/tests/test_frozen_graph_state_diagnostic.py; python -m py_compile edsgn/staging/frozen_graph_state_diagnostic_v1.py",
+  "actual_test_replay": false,
+  "failed": 0,
+  "pipeline_status": {
+    "P3": "running",
+    "P4": "pending",
+    "P3A": "pending"
+  },
+  "optimizer": false,
+  "py_compile": "passed",
+  "test": "edsgn/tests/test_frozen_graph_state_diagnostic.py",
+  "hashes": {
+    "edsgn/tests/test_frozen_graph_state_diagnostic.py": "fda971ffb174e5061eb31eeba65816310c4a2f4d1701a8050cc6fdfec1c8a402",
+    "inputs/implementation-plan.md": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466",
+    "edsgn/scripts/frozen_synthetic_stress.py": "55dd6974dc821e2d93e30bb7de9e52352e0ed9be73abf420821259694f44d499",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/staging/frozen_graph_state_diagnostic_v1.py": "888400ebec88126c5eec46076352e46c46154806ad218eeafb18a41e082ebcc2",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "execution-contract-v1.md": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+  },
+  "real_data_read": false,
+  "log": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\frozen-graph-state-diagnostic-toy-v1.log"
+}

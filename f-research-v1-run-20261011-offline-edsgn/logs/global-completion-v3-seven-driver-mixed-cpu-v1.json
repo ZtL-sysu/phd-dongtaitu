@@ -1,0 +1,17 @@
+{
+  "scope": "engineering-only",
+  "status": "passed",
+  "wall_seconds": 16.772269,
+  "process_wall_seconds": 16.772269,
+  "whole_command_wall_seconds": 16.772269,
+  "command": "Conda dyg-cold pytest -q test_global_frozen_test_completion_v3.py test_global_frozen_test_completion_v3_all_drivers.py",
+  "result": "61 passed",
+  "new_mixed_fixture_cases": 30,
+  "existing_suite_cases": 31,
+  "drivers": ["graph_v8", "prediction_v5", "h2_v4", "profile_v5", "c06_v5", "simple_v3", "case_v3"],
+  "npz_load_spy": "passed; payloads were opaque fixture bytes and no numpy.load occurred",
+  "source_sha256": "6B4979738256B0FFE86DD30B94DB6543C7CED3E578F88CA70410C0507D06A1C5",
+  "existing_test_sha256": "7F6C88DA0ACA881B1F245C252C50F16EC3003E3A37AEE2181A51F85046B5C54D",
+  "new_test_sha256": "77407CD81D862237CEA01E5B60A580E5A3B66BA4FB4B5E97FCE6E1942DC86FCB",
+  "limitations": ["metadata/hash closure engineering fixture only", "no actual data, checkpoints, models, test replay, oracle, GPU or phase dispatch", "does not establish science acceptance or actual global campaign completion"]
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "focused tests-only repair verification; CPU mocks/toy fixtures; no package source, real data, GPU, or optimizer changes",
+  "command": "python -m pytest -q edsgn/tests/test_robustness.py edsgn/tests/test_robustness_bundle_integration_plan.py edsgn/tests/test_bound_phase_campaign.py edsgn/tests/test_campaign_budget.py",
+  "interpreter": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+  "pythonpath": "edsgn/src;edsgn/scripts;edsgn/staging",
+  "omp_threads": 2,
+  "mkl_threads": 2,
+  "passed": 57,
+  "failed": 0,
+  "pytest_exit_code": 0,
+  "elapsed_seconds": 7.5211428,
+  "failure_evidence": "p2-integrated-tests-v3.log and p2-integrated-regression-v3.md preserved"
+}

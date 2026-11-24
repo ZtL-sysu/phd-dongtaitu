@@ -1,0 +1,54 @@
+{
+  "authorities": [
+    {
+      "dataset_id": "gradual_weight128_fixed_support",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_gradual_weight128_fixed_support-reporting-switch-authority.json",
+      "sha256": "e49e5cc2820bcc26c9cae9bfca094313f2641d714a6559fe004f9fdebc1514bd"
+    },
+    {
+      "dataset_id": "identity",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_identity_change10-reporting-switch-authority.json",
+      "sha256": "bd7c271b1226c9e9227c71d0ed951343a2b01b331bd4c7756595326a93457295"
+    },
+    {
+      "dataset_id": "identity",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_identity_change30_main_reuse-reporting-switch-authority.json",
+      "sha256": "ac6d78bd413b895c4e6544543d64357bc56f20955f9595d1273727b76931bfb8"
+    },
+    {
+      "dataset_id": "shock",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_local_shock10_amp0.5_duration8-reporting-switch-authority.json",
+      "sha256": "81181ce971aa93c25fa41ea0ba0624053bcad95461cf6ec26a58e13626846f9f"
+    },
+    {
+      "dataset_id": "noise_only",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_noise_only-reporting-switch-authority.json",
+      "sha256": "e3fa58880177aeecfc619cb26fbf230600953e2cbada678ec649f616ffca235b"
+    },
+    {
+      "dataset_id": "nonlinear",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_nonlinear_identity30-reporting-switch-authority.json",
+      "sha256": "9b449451eca7035d8961c24d5e3464331945759539e77bcb05f098412fe496d5"
+    },
+    {
+      "dataset_id": "weight",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_weight_change10-reporting-switch-authority.json",
+      "sha256": "1acf6df4f28e168712ebe593a3e40347448f38b3175a82f73f8a444115c877ce"
+    },
+    {
+      "dataset_id": "weight",
+      "entry_count": 4,
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_weight_change30-reporting-switch-authority.json",
+      "sha256": "eceb9ce7a70719e7ae21a2314f033236647f56bb4bb288e741cf58ee608dc13b"
+    }
+  ],
+  "scope": "metadata-only typed reporting authority successors; oracle payloads not decoded",
+  "source_authorities": "protocols/synthetic-stress-domain-preparation-v1"
+}

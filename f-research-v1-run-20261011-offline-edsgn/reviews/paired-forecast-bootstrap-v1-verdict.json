@@ -1,0 +1,11 @@
+{
+  "role": "writer_self_review",
+  "source": "edsgn/staging/paired_forecast_bootstrap_v1.py",
+  "source_sha256": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80",
+  "test": "edsgn/tests/test_paired_forecast_bootstrap_v1.py",
+  "test_sha256": "8b91e2aa82bb87723c2eb8720672dc2de9e439fe8d710deaf5bc46f47340d299",
+  "test_log": "logs/paired-forecast-bootstrap-v1-tests.log",
+  "test_log_sha256": "6a62ba3b3cb09b5e51e238bb801a8b8dcc11ea12bdd853063f08dda3830c5a5b",
+  "tests_passed": 9,
+  "scope": "pure-array CPU math only; no claim or actual phase"
+}

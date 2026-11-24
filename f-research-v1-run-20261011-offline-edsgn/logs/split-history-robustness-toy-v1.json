@@ -1,0 +1,25 @@
+{
+  "device": "cpu",
+  "py_compile": "passed",
+  "prototype_integrated": false,
+  "gpu": false,
+  "passed": 6,
+  "optimizer": false,
+  "scope": "CPU toy/mock functionality only",
+  "hashes": {
+    "edsgn/staging/split_history_robustness_v1.py": "2e615af60ba6d9dd1755419575df31631cbe2da38606ccf9ad18c1ff85126ced",
+    "edsgn/tests/test_split_history_robustness_v1.py": "c2ae51fc5cfcfb1e465bbdff05e2e800d01344808c0e84b1f41ed0e912303c9e",
+    "inputs/implementation-plan.md": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "reviews/robustness-time-block-metadata-coverage-v1.json": "83e6725264c826459be8bab0476aa48e3758b0cb92265ba1c3b4bb9f6cae3a79",
+    "execution-contract-v1.md": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21",
+    "reviews/robustness-time-block-metadata-coverage-v1.md": "a0fda5e5eb8fd6eb781b4b931b5a026ca5320e733f625d5077212fa3900ded4e"
+  },
+  "real_data_read": false,
+  "failed": 0,
+  "test": "edsgn/tests/test_split_history_robustness_v1.py",
+  "actual_test_replay": false,
+  "wall_seconds": 1.6782654,
+  "log": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\split-history-robustness-toy-v1.log",
+  "command": "dyg-cold python -m pytest -q edsgn/tests/test_split_history_robustness_v1.py; python -m py_compile edsgn/staging/split_history_robustness_v1.py"
+}

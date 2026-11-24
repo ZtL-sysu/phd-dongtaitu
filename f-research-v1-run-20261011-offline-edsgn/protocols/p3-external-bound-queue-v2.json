@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "status": "prepared_not_accepted_not_launched",
+  "scope": "full train/validation seed0 only after separate resource contract and root acceptance; no test",
+  "root": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn",
+  "source_proposal_configs_preserved": true,
+  "common": {
+    "lr": 0.001,
+    "seed": 0,
+    "smoke_limits": false,
+    "full_windows": true,
+    "epochs": 100,
+    "grad_clip": 1.0,
+    "weight_decay": 0.0001,
+    "threads": 2,
+    "device": "cuda",
+    "patience": 10
+  },
+  "batch_policy": {
+    "mooc": 32,
+    "email": {
+      "DCRNN": 2,
+      "AGCRN": 4,
+      "STAEformer": 2,
+      "GraphWaveNet": 2
+    },
+    "synthetic": 64,
+    "email-episode": {
+      "DCRNN": 2,
+      "AGCRN": 4,
+      "STAEformer": 2,
+      "GraphWaveNet": 2
+    }
+  },
+  "required_pending_input": "protocols/p3-external-training-resource-contract-v3.json",
+  "jobs": [
+    {
+      "id": "external-bound-v2-synthetic-GraphWaveNet-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\synthetic-GraphWaveNet-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\GraphWaveNet\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "ac4796ad2351d0e5e947f98bf6da29ed95d21772b2957cae0a4260028daa84da",
+      "batch_size": 64,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-synthetic-STAEformer-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\synthetic-STAEformer-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\STAEformer\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "f44c5f29bad256fb70edfce95abcc0b6db31e5704d31b7124029baa3e97b7357",
+      "batch_size": 64,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-synthetic-DCRNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\synthetic-DCRNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\DCRNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "e80c38e406758f63021357205572f65a491678350df156c03a66eef09006cd39",
+      "batch_size": 64,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-synthetic-AGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\synthetic-AGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\AGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "b7f774733ff3c932c036b6ea844da4308749d8dcef5637f0af2e927b73039a14",
+      "batch_size": 64,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-mooc-GraphWaveNet-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-GraphWaveNet-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\mooc\\GraphWaveNet\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "5a79f77e9ce2ead1268e97f7ecd04fca6d61fac2850f710a446c54f6a3261e25",
+      "batch_size": 32,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-mooc-STAEformer-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-STAEformer-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\mooc\\STAEformer\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "1dcd905eb8bd67b250c1d8e08fe4583d4fd7f3572dc461f3c767d683f0331840",
+      "batch_size": 32,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-mooc-DCRNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-DCRNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\mooc\\DCRNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "32a03cf7fba2bbb284a2fc448fa1e03b6ffbffec20690b3553f2d96d38327ffa",
+      "batch_size": 32,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-mooc-AGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\mooc-AGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\mooc\\AGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "2646b3bd14730b64c571325e9abf9ffe3355e61a4a99cac6782648dea00c4649",
+      "batch_size": 32,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-GraphWaveNet-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-GraphWaveNet-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email\\GraphWaveNet\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "a3fa9c6da062107a3e779fdcb406a114f59192237d368b0339d12f3a9b219e1a",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-STAEformer-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-STAEformer-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email\\STAEformer\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "35748087849373884c224fc364669d68494d8a6bed3983ec8492511b34b3c413",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-DCRNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-DCRNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email\\DCRNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "259b220eeeb7feb21d812f8a75ddd7cee80e41df23d96905475326ef2cc72ad0",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-AGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-AGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email\\AGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "7e3361b0b76e80baebb866bddb5aa57bd52ff0e35c202a5063d097d54fb23989",
+      "batch_size": 4,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-episode-GraphWaveNet-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-episode-GraphWaveNet-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email-episode\\GraphWaveNet\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "8bf1f4b09fc277e772e81d3bc1262d85d64de4508a72e0d5226b021e6695466b",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-episode-STAEformer-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-episode-STAEformer-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email-episode\\STAEformer\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "b969f5da932763c820e5c3936728541dd19d1f5a2e7c247bc12e6738af773c19",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-episode-DCRNN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-episode-DCRNN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email-episode\\DCRNN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "da14d905ad1ceccc183f757b0735cb123a0eda9f97cce8f29f44b11cbe6a7b7e",
+      "batch_size": 2,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    },
+    {
+      "id": "external-bound-v2-email-episode-AGCRN-seed0",
+      "phase": "training",
+      "scope": "development",
+      "args": [
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-baselines-bound-v2\\email-episode-AGCRN-seed0.json"
+      ],
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\email-episode\\AGCRN\\seed0",
+      "inputs": [
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-training-resource-contract-v3.json"
+      ],
+      "config_sha256": "eab4f7d86fa5f4f4a27b83da801d5ba7a4d931d3fa077cb546f1d20e45d68218",
+      "batch_size": 4,
+      "status": "prepared_pending_root_resource_contract_and_queue_acceptance"
+    }
+  ]
+}

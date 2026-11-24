@@ -1,0 +1,509 @@
+{
+  "acf_dependence_length": null,
+  "acf_evidence": {
+    "expected_record_path": "protocols/primary-endpoint-plans-v1/validation-calibration/weight-L28-H7-acf.json",
+    "mode": "validation_derived",
+    "rule_id": "p3a-validation-acf-block-v1"
+  },
+  "block_length": null,
+  "claim": "H1",
+  "dataset_collection": {
+    "files": [
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/manifest.json",
+        "sha256": "e4cb03430c481c3977b1d375d9c54fd62c8430ff34f4d89e8c0c35bd46587365"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/test_seed200.oracle.npz",
+        "sha256": "bbeb397c7bb788d6aaa666bf0cf8e5543e5965d1f216ff06c8c906395300388d"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/test_seed201.oracle.npz",
+        "sha256": "304fb5065dc718c8d3f736a0b712fb395196a6d5e70c48b57f449a225884dc64"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/test_seed202.oracle.npz",
+        "sha256": "ac0f74d9535463b723b55de27d1794beebc4feadd0a522d970c56ff666f21920"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/test_seed203.oracle.npz",
+        "sha256": "17869115d3a569e1d75ba3974b335aa683c07ccc3618c25a63339486d7f76dc2"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed0.oracle.npz",
+        "sha256": "12e11566d99abd57ff380471e25b27a40e72f4112a518efc357f1992ec9e1869"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed1.oracle.npz",
+        "sha256": "fdee9d6965a8cc104c2a3b14695e70c1e5db7e61c40d3317d35ec705ac133546"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed2.oracle.npz",
+        "sha256": "fbe87bab94ee90df071aa0c8546048ace83738c8a8b22b6a4842a981f761472b"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed3.oracle.npz",
+        "sha256": "e488432720aee1968cd044990e2e972ed9ab84f33775ecd1a16d92bdbac71caf"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed4.oracle.npz",
+        "sha256": "8a32c3e82614fdfdf80be493af001c15572a4bb1236d95c6766c71b674c92b4f"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed5.oracle.npz",
+        "sha256": "8134aecb92b330cf5c73a4f3977bc8a30fd2f3a5baafde59fa674a893669dcb0"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed6.oracle.npz",
+        "sha256": "870314b4c876478c15a4dedd56adfe05d0f5f26f98e4666018bd835f9c6c2d82"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/train_seed7.oracle.npz",
+        "sha256": "b6b3eebef49b66759e3853cc78ba145b980dc040b6a3401ecc851aae8cf76967"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/validation_seed100.oracle.npz",
+        "sha256": "e5361ff5788a8ec5b70f3ac63856fb21191c1fea7464acbdf525cc45e12a5acc"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/oracle/validation_seed101.oracle.npz",
+        "sha256": "b9b07fac3458b40149e706bad4fd1aa100e91dec10af4d28dc94c9a505c8efcf"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/test_seed200.npz",
+        "sha256": "ba4882f4fc3d2926c78c9d4db0e4b22fc05770b4476510b9af0e1dab08d6b3fa"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/test_seed201.npz",
+        "sha256": "0da79879174326a3419029a808163770da48dafea6e874b9fe05f706de72be2e"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/test_seed202.npz",
+        "sha256": "e23f861a237cc52dde2a0228aa0adc6b29baa63badf7406b0e7da940e7f70a2a"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/test_seed203.npz",
+        "sha256": "50b9f66c10964b499995dbaeb7de47c6a8cf14d6997eff8b72718c7e89748901"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed0.npz",
+        "sha256": "494fbae46636035e008013bd8707719a0af298f194eb8f1db63462a781d3dc30"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed1.npz",
+        "sha256": "885305e2b8dac4265fe3a2c0d28ee5a25fd8a82304db931e34db4c51324f8419"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed2.npz",
+        "sha256": "27fb7cc3f64cd36af8234a59131bd237e3e082a268db9fdb714fe9b78072bc88"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed3.npz",
+        "sha256": "44875137379d9dc7bf1a50c4d5c16f393c4268dc57fd68e27178a42d99cc4e1c"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed4.npz",
+        "sha256": "3dd131fd98489a46fe72a590a1f571ac78595a1a1ce5307d3dbddb341b945c2d"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed5.npz",
+        "sha256": "99779414585c1a7281ed77921ba09c6d6dd13e228cc8c9b5f56b0ef30c69b2b9"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed6.npz",
+        "sha256": "7b8a1b1de291d70baf23129cc6e7dcab9a65eefafeb53d5923d58a026729dfe6"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/train_seed7.npz",
+        "sha256": "5bf5b73598cf7cb31f34cb42359ae50b6ac79f8c7969d8cf9d6087d65fb3b043"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/validation_seed100.npz",
+        "sha256": "3f6e25f94caf169cbe0c9eaf8faaba467dc84693fa72c1b4f73fc8a9f86e8f5a"
+      },
+      {
+        "path": "data/processed/synthetic-stress-n64-weight10/validation_seed101.npz",
+        "sha256": "c7d5024c3686a4dcf98ad8b54a3942016119464b8dd96dec757be35b7581c002"
+      }
+    ],
+    "root": "data/processed/synthetic-stress-n64-weight10"
+  },
+  "domain": {
+    "bounds": [
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 0
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 1
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 2
+      },
+      {
+        "first_origin": 27,
+        "last_origin": 2040,
+        "origin_count": 2014,
+        "split_start": 0,
+        "split_stop": 2048,
+        "trajectory_index": 3
+      }
+    ],
+    "dataset_id": "weight",
+    "path": "protocols/primary-endpoint-plans-v3/domains/weight10-test-domain.json",
+    "sha256": "6de59e4ff18f7558cd0c99c381952c8c5c2110dd8086fa989a6cb05e9867b2e5",
+    "split": "test"
+  },
+  "endpoint_id": "H1-weight10-mae-ni-V4-V9",
+  "epsilon_evidence": {
+    "dataset_id": "weight",
+    "expected_record_path": "protocols/primary-endpoint-plans-v1/validation-calibration/weight-H1-3-7-epsilon.json",
+    "horizons": [
+      1,
+      3,
+      7
+    ],
+    "metric": "raw_mae",
+    "mode": "validation_derived",
+    "rule_id": "p3a-validation-raw-mae-epsilon-v1",
+    "scope": "validation_only"
+  },
+  "execution_binding_path": "runs/primary-endpoint-v1/execution-bindings/H1-weight10-mae-ni-V4-V9.json",
+  "global_test_campaign": {
+    "completion_path": "protocols/global-frozen-test-completion-v1.json",
+    "queue_path": "protocols/global-frozen-test-job-queue-v1.json"
+  },
+  "history": 28,
+  "left": {
+    "method_id": "V4",
+    "producer_source_sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "seeds": [
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V4/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V4/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V4/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V4/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V4/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V4.json",
+            "sha256": "d74f683f21434e0a095d4bf3e29976bf653e9a6ee3302c7c96737a93bd982509"
+          },
+          "comparison_id": "core-formal-synthetic-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "max_horizon": 7,
+  "outcome_type": "forecast_mae_noninferiority",
+  "producer_sources": [
+    {
+      "path": "edsgn/staging/typed_endpoint_producer_v6.py",
+      "sha256": "6cf01d44052198ea9d093f9e03cdd2503153da58ea9332632f585607d85b018a"
+    },
+    {
+      "path": "edsgn/staging/typed_endpoint_plan_validator_v9.py",
+      "sha256": "afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24"
+    },
+    {
+      "path": "edsgn/scripts/verified_frozen_dispatch_v10.py",
+      "sha256": "bfcdacd6f2e08a7e551925e675ea021275e78fcac360d503a773fd14738f9b03"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py",
+      "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"
+    },
+    {
+      "path": "edsgn/staging/endpoint_sufficient_statistics_v4.py",
+      "sha256": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbe6956c62c3f994a2519"
+    },
+    {
+      "path": "edsgn/staging/paired_forecast_bootstrap_v1.py",
+      "sha256": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80"
+    },
+    {
+      "path": "edsgn/staging/paired_scalar_bootstrap_v1.py",
+      "sha256": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6"
+    },
+    {
+      "path": "edsgn/staging/prospective_training_candidate_binding_v1.py",
+      "sha256": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8"
+    },
+    {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    {
+      "path": "edsgn/staging/frozen_prediction_guarded_v5.py",
+      "sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4"
+    },
+    {
+      "path": "protocols/synthetic-stress-domain-preparation-v1/n64_weight_change10-test-domain.json",
+      "sha256": "d0d583bc917834bebd54ebcb1b4c3009867296813a81db13bb0996226fee6861"
+    },
+    {
+      "path": "protocols/synthetic-stress-domain-preparation-v1/n64_weight_change10-test-descriptor.json",
+      "sha256": "1c90902abdc3722e0cfe8b8426e3d86f4cc2b2275ccc26cf74196a09a9535ff7"
+    }
+  ],
+  "profile_device": null,
+  "reporting_switch_authority": {
+    "path": "protocols/synthetic-reporting-switch-authorities-v2/n64_weight_change10-reporting-switch-authority.json",
+    "sha256": "1acf6df4f28e168712ebe593a3e40347448f38b3175a82f73f8a444115c877ce"
+  },
+  "required_horizons": [
+    1,
+    3,
+    7
+  ],
+  "right": {
+    "method_id": "V9",
+    "producer_source_sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "seeds": [
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V9/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V9.json",
+            "sha256": "5d7a724b73a236c5e23f69019c515459dc0c510db910af30f93087fca3df02ac"
+          },
+          "comparison_id": "core-formal-synthetic-V9-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V9/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V9.json",
+            "sha256": "5d7a724b73a236c5e23f69019c515459dc0c510db910af30f93087fca3df02ac"
+          },
+          "comparison_id": "core-formal-synthetic-V9-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V9/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V9.json",
+            "sha256": "5d7a724b73a236c5e23f69019c515459dc0c510db910af30f93087fca3df02ac"
+          },
+          "comparison_id": "core-formal-synthetic-V9-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V9/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V9.json",
+            "sha256": "5d7a724b73a236c5e23f69019c515459dc0c510db910af30f93087fca3df02ac"
+          },
+          "comparison_id": "core-formal-synthetic-V9-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "archive": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/predictions.npz",
+          "checkpoint": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/checkpoint.pt",
+          "dispatch_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/frozen-prediction-report.json",
+          "freeze": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/forecast/weight10/V9/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/synthetic-V9.json",
+            "sha256": "5d7a724b73a236c5e23f69019c515459dc0c510db910af30f93087fca3df02ac"
+          },
+          "comparison_id": "core-formal-synthetic-V9-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "schema_version": 4,
+  "seed_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "slice": "post4L",
+  "switch_indices": null
+}

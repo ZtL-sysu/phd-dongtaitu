@@ -1,0 +1,36 @@
+{
+  "schema_version": 2,
+  "scope": "read-only current aggregate summary; no budget rows dumped",
+  "captured_utc_local": "2026-10-11T16:49 Asia/Shanghai (approximate file/evaluation time)",
+  "aggregate_source": "edsgn/scripts/aggregate_budget.py aggregate(ROOT)",
+  "budget_seconds": 259200,
+  "spent_seconds": 8215.620539000023,
+  "remaining_seconds": 250984.37946099997,
+  "coverage_complete": true,
+  "coverage_gaps": [],
+  "accounting_sources": 78,
+  "offline_phase_receipts_seen": 1,
+  "profile_execution_status": "not-started",
+  "active_run": {
+    "receipt": "logs/offline-phase-wall/baseline-bound-v3-synthetic-DGCRN-seed0.json",
+    "status": "running",
+    "phase": "training",
+    "output": "runs/baselines-bound-v3/synthetic/DGCRN/seed0",
+    "whole_process_wall_seconds_at_snapshot": 865.640459399991,
+    "training_log": "runs/baselines-bound-v3/synthetic/DGCRN/seed0/training_log.csv",
+    "logged_epochs_at_snapshot": 5,
+    "last_epoch_elapsed_seconds": 731.2027197999996,
+    "last_log_device": "cuda",
+    "test_accessed": false
+  },
+  "duration_interpretation": {
+    "configured_epoch_cap": 100,
+    "early_stopping": "patience 10; actual completed baseline runs stopped at differing epochs; the cap is not an observed duration",
+    "observed_slowest_completed_epoch_average": {"run":"runs/baselines/synthetic/V1/seed0","epochs":42,"training_wall_seconds":2324.5228459000064,"seconds_per_epoch":55.34578204523825,"status":"early_stopped_before_100"},
+    "100_epoch_scenario_seconds": 5534.578204523825,
+    "scenario_label": "planning scenario using observed slowest completed per-epoch mean; not a forecast or guaranteed upper bound for unknown models",
+    "138_hour_scenario": "Retained only as the prior hypothetical 90-run core scenario; not a project forecast. It assumes six trained variants x three primary datasets x five model seeds all cost 100 epochs at the observed V1 average. It ignores early stopping, current completed seeds, external runs, robustness and profiles, so it must not be reported as predicted completion time.",
+    "unknown_methods": ["active full DGCRN final epoch count/duration", "unrun model-dataset epoch rates and early stopping", "formal robustness and CPU/CUDA profile duration"],
+    "current_prediction": "No reliable full-campaign time prediction; latest aggregate covers observed accounting and the active DGCRN elapsed process only."
+  }
+}

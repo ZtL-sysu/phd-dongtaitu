@@ -1,0 +1,9 @@
+# Staged frozen simple-baseline CLI v1
+
+- Added inert staging code at `edsgn/staging/simple_baseline_freeze_v1.py`; it is not imported by the package or campaign.
+- `fit` calls only `datasets_at(..., "train")`, fits the existing shared-node linear ridge formula from `engine.simple_baselines`, and writes a no-overwrite coefficient bundle with train-origin list, train-statistics/node-order digests, source hashes, and explicit validation/test-access flags. Persistence and linear evaluation use the existing raw-unit `metric_rows` contract and engine-style NPZ keys (`predictions`, `targets`, `target_mask`, `origins`, `seed_id=0`).
+- `evaluate` fails closed unless P3A is passed with `gate_verdict=pass`, all declared P3A input/evidence hashes verify, and a hash-bound acceptance JSON binds the fit manifest, coefficients, training statistics, node order, full dataset fingerprint, and nonempty raw validation-metric artifacts. It rechecks the current train statistics and coefficient digest before/after evaluation. Paths in gate artifacts may be run-root-relative.
+- CLI `finally` emits a unique `offline-experiment-phase` receipt with whole-process wall duration, requested output directory, `training`/`evaluation` phase, and completed/failed status.
+- Validation: local Conda `dyg-cold` pytest, 5 passed. Tests use only a tiny fake PreparedData object and mocked gates; one isolated gate fixture verifies actual P3A/file-hash enforcement. Log: `logs/simple-baseline-freeze-cli-tests-v1.log`.
+
+Current runroot `pipeline-state.json` still has P3A pending. No production fit, validation evaluation, test evaluation, GPU work, or model prediction access was performed. The staged CLI therefore cannot yet evaluate real splits; root must first record and freeze accepted P3A evidence and ensure the acceptance JSON uses the `simple_baseline_freeze` schema checked by this CLI. This work does not modify `engine.py`, package code, the campaign queue, or prior outputs.

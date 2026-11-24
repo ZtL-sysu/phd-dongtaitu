@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "review_role": "independent_source_and_CPU_fixture_review",
+  "status": "pass_engineering_preparation_with_downstream_binding_limit",
+  "scope": "staging count-loss adapter only; no real-data execution",
+  "hashes": {
+    "edsgn/staging/count_loss_training_adapter_v1.py": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+    "edsgn/tests/test_count_loss_training_adapter_v1.py": "195a663f4960dcc9b4785f123cadca0448508bfb3e8ff8b3cc68e6e0c4f8379f",
+    "protocols/secondary-scope-and-count-controls-root-design-v1.md": "9f1ff25aa93b9f66abc2d79061c0fc32971238d61e5c03f1f4aa9c1310c3a5b8",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+  },
+  "test_result": {
+    "command": "set PYTHONPATH=edsgn/staging;edsgn/src; python -m pytest -q edsgn/tests/test_count_loss_training_adapter_v1.py",
+    "passed": 23,
+    "elapsed_seconds": 2.55
+  },
+  "canonical_reference_configs": {
+    "email": {
+      "path": "configs/core-development-bound-v3/email-V4-seed0.json",
+      "sha256": "f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e",
+      "variant": "V4",
+      "seed": 0,
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "epochs": 100,
+      "patience": 10,
+      "batch_size": 8,
+      "model": {
+        "d_total": 64,
+        "k": 8,
+        "candidate_cap": 32,
+        "tau_fast": 1.0,
+        "tau_slow": 8.0,
+        "beta_init": 1.0,
+        "lambda_temporal": 0.01,
+        "training_prior_cache": true,
+        "training_prior_cache_bytes": 1073741824,
+        "training_candidate_tensor": true
+      },
+      "has_training_loss": false,
+      "has_g_or_m_policy_field": false
+    },
+    "mooc": {
+      "path": "configs/core-development-bound-v3/mooc-V4-seed0.json",
+      "sha256": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603",
+      "variant": "V4",
+      "seed": 0,
+      "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "epochs": 100,
+      "patience": 10,
+      "batch_size": 128,
+      "model": {
+        "d_total": 64,
+        "k": 8,
+        "candidate_cap": 32,
+        "tau_fast": 1.0,
+        "tau_slow": 8.0,
+        "beta_init": 1.0,
+        "lambda_temporal": 0.01,
+        "training_prior_cache": true,
+        "training_prior_cache_bytes": 1073741824,
+        "training_candidate_tensor": true
+      },
+      "has_training_loss": false,
+      "has_g_or_m_policy_field": false
+    }
+  },
+  "findings": [],
+  "limits": [
+    "No queue/controller binding, root training admission, or completed matched numeric comparison is supplied by this adapter; preparation only.",
+    "Neither canonical V4 training config contains g/m or policy fields. Adapter locks exact training config and seed0, but g00/m00 identity must be frozen by the paired downstream replay/queue because g/m is not a training-config parameter.",
+    "Targets are validated finite/nonnegative, but not integer-valued. Prepared email/MOOC inputs are event-count datasets and are stored as float32 raw targets; no arrays were read here, so integer-valuedness of the actual archives was not independently inspected."
+  ],
+  "checks": {
+    "private_function_type_uses_copy_of_engine_train_run_globals": true,
+    "replacement_globals": [
+      "masked_mse",
+      "source_manifest",
+      "build_model"
+    ],
+    "shared_engine_globals_mutated": false,
+    "count_data_guard_precedes_original_factory": true,
+    "recipe": {
+      "kind": "masked_poisson_nll",
+      "log_input": false,
+      "full": false,
+      "reduction": "none",
+      "prediction_floor": 1e-08,
+      "normalization": "valid_target_cells"
+    },
+    "loss_uses_raw_targets_and_valid_cell_sum_over_count": true,
+    "masked_invalid_cells_sanitized_and_zero_gradient": true,
+    "valid_nonfinite_or_negative_target_or_prediction_rejected": true,
+    "count_head_nonnegative": {
+      "model_line": 505,
+      "mechanism": "softplus when count_data, followed by positive output_scale"
+    },
+    "paired_config_exactness": "candidate vs hashed canonical original config after excluding output_dir/training_loss/mse_reference_config only; original excludes output_dir only",
+    "reference_locations": [
+      "configs/core-development-bound-v3/email-V4-seed0.json",
+      "configs/core-development-bound-v3/mooc-V4-seed0.json"
+    ],
+    "count_data_true_required": true,
+    "output_dir_distinct_RUN_runs": true,
+    "source_manifest_binds_adapter_and_reference_sha": true,
+    "canonical_seed0_V4_email_mooc_only": true
+  }
+}

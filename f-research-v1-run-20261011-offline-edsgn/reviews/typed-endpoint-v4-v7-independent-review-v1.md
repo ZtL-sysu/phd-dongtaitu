@@ -1,0 +1,18 @@
+# Independent review: typed endpoint producer v4 / plan validator v7
+
+Verdict: **engineering preparation passes with one narrow H3 device-validation defect**. This does not constitute execution or an endpoint result.
+
+Reviewed source pins:
+
+- `edsgn/staging/typed_endpoint_producer_v4.py` SHA-256 `932dabcc886c745386098feccd07867403368076cfa374b60d8ead3e4e416565`
+- `edsgn/staging/typed_endpoint_plan_validator_v7.py` SHA-256 `71113caad8e7f28cbc092c3ea0cd6fbb645e7a944b1234df70f5ff8be75315e6`
+- converter `edsgn/staging/endpoint_sufficient_statistics_v4.py` SHA-256 `afbbd2f459cc680f2689334fe69decc63f87d37308cbbeb6956c62c3f994a2519`
+- tests SHA-256: producer `092477d5b06148573d0899b118a852b7b8b04ee7d1d724eeb3c2b1b2c83fc7f8`; validator `a40d520ddcfaa5cba0b6a07d2422f91b567d54ae2ef94f5ceb0e1e4dabb46fc9`.
+
+The reviewed v4/v7 routes improve the earlier producer/validator design in the requested areas. Pretest plans must keep decoded `switch_indices` null. The validator requires a separately hash-bound, strict report-only authority, validates its schema and trajectory mapping, and only hashes the source files; it does not call `np.load` or inspect oracle members. Producer v4 joins only scalar `switch_index` after `_semantic_receipts` verifies all ten side/seed receipts. It rejects non-scalar values and ignores other NPZ members. Slice support is checked per trajectory; unsupported support returns an explicit `identifiable: false`, `raw_p: null` result rather than silently shortening a window. The converter receives only the accepted slice and enforces the declared full-origin pairing.
+
+The validator follows the public `validate(..., official=True)` path and invokes the fixed local `pipeline_state.py --before P4` validator after its own P2/P3/P3A and bound-input checks. It rechecks canonical state and consumed hashes at exit. `produce_endpoint` rejects noncanonical roots and injected validators, loads the pinned validator itself, checks semantic receipts before opening forecast/trace/timing payloads, and reruns validation and byte checks after output serialization. The producer tests exercise public official H1/H3/forecast fixtures; H2 fixtures additionally check role-specific proof sharing. The 49-plan fixture and negative cases retain unsupported/unidentifiable members with null p-values; they do not shrink the family. H3 requires `cpu` or `cuda`, with `cuda` meaning device 0 in converter v4.
+
+One narrow defect remains in `typed_endpoint_producer_v4.py` around lines 178–190: its H3 semantic receipt canonicalizer maps every string beginning `cuda` to `cuda`, so `cuda:1` reports can satisfy the pre-compute receipt check for a plan declaring `cuda`. The pinned converter's `_canonical_device` correctly maps that plan to `cuda:0` and will reject `cuda:1` during timing-statistic conversion, so the inspected path fails closed before emitting an endpoint result; however, the semantic receipt proof is looser than its declaration and rejection occurs later than intended. The current wrong-device test uses `cpu` versus `cuda`, not `cuda:1`. Minimal repair: reuse the converter's exact canonicalization (or strict local equivalent) in `_semantic_receipts` and add a public H3 regression with a `cuda:1` report, asserting rejection before CSV consumption.
+
+Validation run: local Conda CPU pytest on both designated files: **40 passed in 39.11 s**. No actual dataset arrays, endpoint outputs, oracle values, model, GPU, or training were accessed. Test fixtures are synthetic and do not establish readiness or validity of any real endpoint. The expected stable test-log file was not modified.

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "scope": "writer_engineering_evidence_only",
+  "verdict": "ready_for_root_source_review",
+  "test_result": "17 passed in 34.18s",
+  "controller": {
+    "path": "edsgn/scripts/count_loss_training_controller_v3.py",
+    "sha256": "53decda89ed7548b0bbe2c37e65eff1a257d32450b9cf4b0691cdd26c4a26033"
+  },
+  "tests": {
+    "path": "edsgn/tests/test_count_loss_training_controller_v3.py",
+    "sha256": "3c559e4b8e009da3ef772c74abe951f014daf405fc2c560de531c93f2eb0b9b8"
+  },
+  "log": {
+    "path": "logs/count-loss-controller-v3-tests.log",
+    "sha256": "722a5d2a72a497dbc48657e6e651e92264a78ca015b63ffc43379a02d3f1ad67"
+  },
+  "v2_preserved_sha256": "bff6e993ead515f281716c8c4591a8a33e14067988aa84ebb7acac8ca2033250",
+  "scanner_cases": [
+    "-m edsgn.train and -m edsgn.calibrate",
+    "baseline, other frozen drivers, resource probes, count controller/adapter",
+    "self PID and parent ancestry excluded",
+    "PowerShell command text does not match as Python job",
+    "RUN-owned Python without usable argv fails closed",
+    "AccessDenied on Python process inspection fails closed",
+    "public mocked child blocked when a relevant process appears before spawn"
+  ],
+  "inherited_public_cases": [
+    "temporary public queue validation for email and MOOC",
+    "two mocked child jobs with completed receipts and lease release",
+    "missing mandatory input rejected",
+    "official-validator input mutation rejected before spawn",
+    "extra scientific command argument rejected"
+  ],
+  "limitations": [
+    "No actual training, optimizer, real archive/checkpoint, or GPU execution.",
+    "This does not establish canonical P4 authorization or root source acceptance."
+  ]
+}

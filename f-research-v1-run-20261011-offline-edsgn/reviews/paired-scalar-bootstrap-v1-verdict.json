@@ -1,0 +1,13 @@
+{
+  "role": "writer_self_review",
+  "scientific_acceptance": false,
+  "source": "edsgn/staging/paired_scalar_bootstrap_v1.py",
+  "source_sha256": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6",
+  "test_path": "edsgn/tests/test_paired_scalar_bootstrap_v1.py",
+  "test_sha256": "9249692162800401fb213a09ed72ba35f6dc70ac55e56a9cae3f7f4e27883175",
+  "test_log": "logs/paired-scalar-bootstrap-v1-tests.log",
+  "test_log_sha256": "8a15b22be726860ee4accec7843f1f8688f38620782e4b33c0596ae577ce1928",
+  "tests_passed": 9,
+  "schedule": "paired_statistics_shared_v4._common_draws; reps=2000; seed=1234",
+  "scope": "pure array CPU kernel only; no real data, checkpoint, model, GPU, optimizer, actual phase or claim"
+}

@@ -1,0 +1,362 @@
+{
+  "acf_dependence_length": null,
+  "acf_evidence": {
+    "expected_record_path": "protocols/primary-endpoint-plans-v1/validation-calibration/snap-email-eu-core-temporal-L28-H7-acf.json",
+    "mode": "validation_derived",
+    "rule_id": "p3a-validation-acf-block-v1"
+  },
+  "block_length": null,
+  "claim": "H3",
+  "dataset_collection": {
+    "files": [
+      {
+        "path": "data/processed/email/email.npz",
+        "sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1"
+      },
+      {
+        "path": "data/processed/email/manifest.json",
+        "sha256": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c"
+      }
+    ],
+    "root": "data/processed/email"
+  },
+  "domain": {
+    "bounds": [
+      {
+        "first_origin": 641,
+        "last_origin": 795,
+        "origin_count": 155,
+        "split_start": 642,
+        "split_stop": 803,
+        "trajectory_index": 0
+      }
+    ],
+    "dataset_id": "SNAP email-Eu-core-temporal",
+    "path": "protocols/primary-endpoint-plans-v2/domains/email-test-domain.json",
+    "sha256": "f8c5b6c39740e467627ca6478eddc8a777536eac713ec907de0472420247dc48",
+    "split": "test"
+  },
+  "endpoint_id": "H3-email-cpu-V7-V4-window-cost",
+  "epsilon_evidence": null,
+  "execution_binding_path": "runs/primary-endpoint-v1/execution-bindings/H3-email-cpu-V7-V4-window-cost.json",
+  "global_test_campaign": {
+    "completion_path": "protocols/global-frozen-test-completion-v1.json",
+    "queue_path": "protocols/global-frozen-test-job-queue-v1.json"
+  },
+  "history": 28,
+  "left": {
+    "method_id": "V7",
+    "producer_source_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "seeds": [
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V7/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "max_horizon": 7,
+  "outcome_type": "paired_window_cost_superiority",
+  "producer_sources": [
+    {
+      "path": "edsgn/staging/typed_endpoint_producer_v6.py",
+      "sha256": "6cf01d44052198ea9d093f9e03cdd2503153da58ea9332632f585607d85b018a"
+    },
+    {
+      "path": "edsgn/staging/typed_endpoint_plan_validator_v9.py",
+      "sha256": "afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24"
+    },
+    {
+      "path": "edsgn/scripts/verified_frozen_dispatch_v10.py",
+      "sha256": "bfcdacd6f2e08a7e551925e675ea021275e78fcac360d503a773fd14738f9b03"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+    },
+    {
+      "path": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py",
+      "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"
+    },
+    {
+      "path": "edsgn/staging/endpoint_sufficient_statistics_v4.py",
+      "sha256": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbe6956c62c3f994a2519"
+    },
+    {
+      "path": "edsgn/staging/paired_forecast_bootstrap_v1.py",
+      "sha256": "260a83f91f6e46dfeefd9814746b0c265095ee1565d1fb4b5d7a0417413e0d80"
+    },
+    {
+      "path": "edsgn/staging/paired_scalar_bootstrap_v1.py",
+      "sha256": "ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6"
+    },
+    {
+      "path": "edsgn/staging/prospective_training_candidate_binding_v1.py",
+      "sha256": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8"
+    },
+    {
+      "path": "edsgn/staging/global_frozen_test_completion_v1.py",
+      "sha256": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af"
+    },
+    {
+      "path": "edsgn/staging/frozen_profile_guarded_v5.py",
+      "sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c"
+    },
+    {
+      "path": "protocols/c06-domain-preflight-root-v2/email-test-domain.json",
+      "sha256": "6aff7d0fbb842199eea538d8bdcd6f548c7fb72e80e2f445d52eb120f2c89652"
+    },
+    {
+      "path": "protocols/c06-domain-preflight-root-v2/email-test-descriptor.json",
+      "sha256": "26a7ebd4dc84eb226ffc44445363c007cd4724fc29cfdd8b6c081943b804609b"
+    }
+  ],
+  "profile_device": "cpu",
+  "reporting_switch_authority": null,
+  "required_horizons": [
+    1,
+    3,
+    7
+  ],
+  "right": {
+    "method_id": "V4",
+    "producer_source_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "seeds": [
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed0/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 0
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed1/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 1
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed2/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 2
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed3/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 3
+      },
+      {
+        "planned_paths": {
+          "checkpoint": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/checkpoint.pt",
+          "csv": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/profile-rows.csv",
+          "dispatch_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/evidence/dispatch-receipt.json",
+          "driver_report": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/profile-report.json",
+          "freeze": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/freeze.json",
+          "input_binding": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/input-binding.json",
+          "phase_receipt": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/evidence/phase-receipt.json",
+          "policy": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/policy.json",
+          "queue_plan": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/evidence/queue-plan.json",
+          "validation_authority": "runs/primary-endpoint-v1/H3/email/cpu/profile/V4/seed4/evidence/validation-authority.json"
+        },
+        "preparation": {
+          "candidate_pool": {
+            "path": "protocols/core-formal-default-candidate-pools-v2/email-V4.json",
+            "sha256": "be4bc6e1c89169ff4033b2e9e5b373f9641f96491978f0160178a628b251d94d"
+          },
+          "comparison_id": "core-formal-email-V4-selection-v2",
+          "schema_version": 4
+        },
+        "seed_id": 4
+      }
+    ]
+  },
+  "schema_version": 4,
+  "seed_ids": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "slice": "full_split",
+  "switch_indices": null
+}

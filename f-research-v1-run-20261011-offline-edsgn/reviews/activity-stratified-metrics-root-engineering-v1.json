@@ -1,0 +1,16 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "pure-reporting-engineering-only",
+  "created_utc": "2026-10-11T11:19:15.896350+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/activity_stratified_metrics_v1.py": "f4f7358daf2872346b85030ed2d6d3ce258b93475f34a6d380a7448f708c9687",
+    "edsgn/tests/test_activity_stratified_metrics_v1.py": "95f6e987ce7f1d7711eff7f86b197dba518a0ca83f417ac0015bda1a461a52ca",
+    "logs/activity-stratified-metrics-v1-root-tests.log": "b632eb4b402d52de48059cf2ed27c39eaadb22b69252ff769d862682103f00c9",
+    "protocols/activity-strata-reporting-root-rule-v1.md": "ced31bbfe21b9940fa6cc933effb954cda38acc0edc0d9fae871bc052e9662d4"
+  },
+  "actual_strata_fit": false,
+  "actual_test_report": false
+}

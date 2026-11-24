@@ -1,0 +1,22 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "post_global_completion_oracle_reporting_interface_only",
+  "created_utc": "2026-10-11T13:07:23.217884+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/global_graph_oracle_report_v1.py": "41bbf29335820cc6359f32e169fb4434946b54fa01e7da5a0aaf70f876bb34bc",
+    "edsgn/staging/test_global_graph_oracle_report_v1.py": "7e73aae2d7be8e1a817f772aa7f16f297665da127243f9bc4d15a9b6b77cdb2e",
+    "edsgn/staging/global_frozen_test_completion_v1.py": "59b3d529efa76dc475448b3eccf88529a5ab12cc7ade53913f66d46b7a3850af",
+    "protocols/global-graph-oracle-report-authority-root-design-v1.md": "b9fc5195eaf99538e28b3a686fb1d46b22c516b70f9ad0d8be9b981526e14534",
+    "reviews/global-graph-oracle-reporter-independent-v3.md": "d30c3a3bf0f61d1305fcfcf85825fb8e819e99f743ba2cc2b5cf5543e9943a39",
+    "reviews/global-graph-oracle-reporter-independent-v3.json": "e1e86ae2fdb80fdbbd03f1c4f5dbb3ac9d53bd2282eca81f82a5934c5a3fb279",
+    "reviews/global-graph-oracle-reporter-independent-v4.md": "a6a85daa47ae4a093991d0ea7ea759397d17d3bb0f71d964d7d67b25e352ea2a",
+    "reviews/global-graph-oracle-reporter-independent-v4.json": "8c9d53e6f334dd91772cff85a622077abf4e7b6765651ae1aaebf29859c002e3",
+    "logs/root-global-graph-oracle-reporter-v2-tests.log": "1f2a54daf8a911cf9368612e1fddba9303fad34098a558fd91335a7f229753b0"
+  },
+  "actual_global_completion_accepted": false,
+  "actual_oracle_accessed": false,
+  "actual_test_authorized": false
+}

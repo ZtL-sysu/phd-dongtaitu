@@ -1,0 +1,13 @@
+{
+  "scope": "controller-mock-validation-only",
+  "formal_phase_launched": false,
+  "model_data_gpu_or_optimizer_used": false,
+  "tests_exit_code": 0,
+  "tests_output": ".............                                                            [100%]\n13 passed in 3.21s",
+  "duration_seconds": 4.435950040817261,
+  "source_sha256": {
+    "edsgn/scripts/bound_phase_campaign.py": "a0619007c85cbea5ad4a8d46547efa0c133e2a9312a3360cb1d02f3ca05b73cb",
+    "edsgn/tests/test_bound_phase_campaign.py": "80aaaf417c248b4f0456f81047df5fd392ae3e320cff33129f8de61b30548f6f",
+    "snapshots/bound-phase-campaign-before-v4.py": "5e1036b633f5fb4309cb2fa76a220bf253adb1715ca3d0e7e8da6a097fb912dd"
+  }
+}

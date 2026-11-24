@@ -1,0 +1,30 @@
+{
+  "review": "typed-endpoint-v4-v7-independent-review-v1",
+  "verdict": "engineering_preparation_pass_with_minor_h3_semantic_device_validation_defect",
+  "scope": "independent source and CPU toy-test review only; no real arrays, oracle values, model, GPU, training, or endpoint inference",
+  "source_sha256": {
+    "producer_v4": "932dabcc886c745386098feccd07867403368076cfa374b60d8ead3e4e416565",
+    "validator_v7": "71113caad8e7f28cbc092c3ea0cd6fbb645e7a944b1234df70f5ff8be75315e6",
+    "converter_v4": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbeb6956c62c3f994a2519",
+    "test_producer_v4": "092477d5b06148573d0899b118a852b7b8b04ee7d1d724eeb3c2b1b2c83fc7f8",
+    "test_validator_v7": "a40d520ddcfaa5cba0b6a07d2422f91b567d54ae2ef94f5ceb0e1e4dabb46fc9"
+  },
+  "tests": {"command": "dyg-cold python -m pytest edsgn/tests/test_typed_endpoint_producer_v4.py edsgn/tests/test_typed_endpoint_plan_validator_v7.py -q", "passed": 40, "failed": 0, "duration_seconds": 39.11},
+  "confirmed": [
+    "pretest switch indices must be null",
+    "switch authority is report-only, schema/hash validated without NPZ member loading in validator",
+    "only scalar switch_index is read by producer after all ten semantic run receipts pass",
+    "per-trajectory support failures remain explicit unidentifiable/null-p outcomes",
+    "official validator path is invoked; public producer forbids injected validator and noncanonical root",
+    "H3 converter enforces cuda == cuda:0 and rejects cuda:1 before producing an endpoint",
+    "test fixtures include public official forecast, H1, and H3 paths; 49-member registry fixture"
+  ],
+  "finding": {
+    "severity": "minor",
+    "path": "edsgn/staging/typed_endpoint_producer_v4.py",
+    "lines": "178-190",
+    "detail": "H3 semantic receipt normalization treats any cuda-prefixed device, including cuda:1, as cuda. Converter v4 later rejects it against plan cuda (canonical cuda:0), so no erroneous endpoint result is emitted, but receipt validation is not exact and failure is delayed until statistic conversion.",
+    "minimal_fix": "Use converter-equivalent device canonicalization in semantic receipt validation; add public H3 cuda:1 rejection-before-CSV test."
+  },
+  "status": "engineering_only_actual_endpoint_plans_and_results_pending"
+}

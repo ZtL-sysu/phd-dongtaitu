@@ -1,0 +1,28 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "P3_strong_continuation_conditional_wait_authorization",
+  "created_utc": "2026-10-11T11:38:42.564333+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/scripts/continue_p3_strong_replication_serial_v3.py": "da8ba58ee3301900c7e2c066dec0c3bb697640fcbc8e70b5a83b95a68aa6e4d3",
+    "edsgn/tests/test_continue_p3_strong_replication_serial_v3.py": "31558dd214f58e65f4e829f017abedf5f11348545e0edd8ee01616938a083aea",
+    "reviews/continue-p3-strong-replication-v3-independent-review-v2.json": "30644d1a1d6b9d8b7244fd9353c4fa21ce83c1176fea58787f73262682642454",
+    "reviews/continue-p3-strong-replication-v3-independent-review-v2.md": "6a7bf4dcec01e53be677dd61c8975d235452fd9a03982dd4e64cfff5fee7bade",
+    "reviews/continue-p3-strong-replication-v3-independent-review-v1.json": "fc1380f84fd4fce1018df68f41d03e944ef3c605a77d13398157c9846adb6fa2",
+    "reviews/p3-strong-replication-root-acceptance-v1.json": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+    "logs/p3-strong-replication-root-metadata-v1.json": "57015b4822bcb8c9306c820858fa749d7872afb2a7a7c46625448fce1c495684",
+    "edsgn/scripts/continue_p3_baselines_serial_v1.py": "fabfa9b6c84cfb5625522fbed9ed5de5cdb632bfd9aa785fbecd055b71385c26",
+    "edsgn/scripts/continue_p3_gru_replication_serial_v1.py": "4bb2aa86c22a4e83de46933fb9f3005b14b9a3d0024a5c386b40e0b3fe921e40"
+  },
+  "wait_authorized": true,
+  "replica_launch_conditional": true,
+  "actual_replica_training_started": false,
+  "actual_predecessor_receipts_accepted": false,
+  "six_seed0_numeric_acceptance_present": false,
+  "preparation_pins_verified": 112,
+  "state_sha256_at_acceptance": "2717ad80c898393c410d6f964caa77a5903c9ae38ec40569252d5c5055f47093",
+  "unchanged_aggregate_budget_hours": 72,
+  "test_execution_authorized": false
+}

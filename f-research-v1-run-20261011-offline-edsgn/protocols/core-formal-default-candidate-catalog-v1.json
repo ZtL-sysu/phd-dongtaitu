@@ -1,0 +1,3395 @@
+{
+  "schema_version": 1,
+  "status": "prepared-metadata-only-not-selected-not-launched",
+  "scope": "90 formal core config/source/binding identities; no arrays/models/checkpoints/test",
+  "row_dimensions": {
+    "datasets": [
+      "synthetic",
+      "email",
+      "mooc"
+    ],
+    "variants": [
+      "V0",
+      "V1",
+      "V2",
+      "V3",
+      "V4",
+      "V9"
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "counts": {
+    "rows": 90,
+    "existing_config_refs": 42,
+    "new_seed_output_clones": 48,
+    "prospective_pools": 12,
+    "input_blueprints": 60
+  },
+  "input_manifest_sha256": {
+    "protocols/p3-internal-bound-queue-v4.json": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+    "protocols/p3-internal-bound-queue-root-acceptance-v4.json": "9bde37a727c563b0e3478bed561489119cf7336bd959e8764762f7401547596e",
+    "protocols/p3-fresh-remaining-bound-queue-v1.json": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+    "protocols/p3-fresh-remaining-bound-root-acceptance-v1.json": "492f8da126c1e2917e98d77bc3cfe1d461b13ae9658a741e2b5354341501a258",
+    "protocols/p3-training-resource-contract-v2.json": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e",
+    "protocols/p3-internal-candidate-resource-addendum-v4.json": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a",
+    "protocols/p3-core-default-training-allocation-v1.json": "0d43cbb55a272ecac09b79a828026e30d5e30900636c8b0c9cabcdf29087cfda",
+    "protocols/p4-core-pilot-queue-v3.json": "017119437d59358fbd6f47cd2662d8a7de323d2024793ed8fb1a3721534c021f",
+    "protocols/p4-core-pilot-queue-root-acceptance-v3.json": "1f888612636d5bbb9696b0561385a89c357b459cbd91821eacc9cded90a24f0b",
+    "protocols/core-formal-config-matrix-preparation-v1.json": "95a694c0837b73e8d1968a0a2431bff5ee288cde88ced704d82aaa117c901ede",
+    "reviews/core-formal-config-matrix-root-preparation-v1.json": "e5e542bc5394f252dd79b12956e09e9bbab531aef74c4f1a8a1a8ad48a676cf8",
+    "protocols/formal-comparator-and-secondary-matrix-root-decision-v1.md": "f9a1a9bd9be3ccb077dff4571af8bc3975f99fb481cbebe4425ef17a5259e95b",
+    "protocols/p3a-candidate-and-launch-binding-root-design-v1.md": "fb5b1e7e1c2fbf53aa78176a900d615c5846baa6d12583b3a10e089cb807e230",
+    "protocols/prospective-and-post-training-binding-root-v1.md": "432da90133d68091520fac3dcd0874497c30f50c3325df0e8e8b1618f54b10e7",
+    "execution-contract-v1.md": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21",
+    "inputs/implementation-plan.md": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466",
+    "edsgn/staging/prospective_training_candidate_binding_v1.py": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8",
+    "edsgn/scripts/prepare_primary_default_candidate_catalog_v1.py": "34487da3ee7deb3546f1690a0c67ea4e30a995680955ba51533d69bd122325e1"
+  },
+  "accepted_queue_proofs": {
+    "internal_queue": {
+      "path": "protocols/p3-internal-bound-queue-v4.json",
+      "sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "root_acceptance": {
+        "path": "protocols/p3-internal-bound-queue-root-acceptance-v4.json",
+        "sha256": "9bde37a727c563b0e3478bed561489119cf7336bd959e8764762f7401547596e"
+      }
+    },
+    "fresh_queue": {
+      "path": "protocols/p3-fresh-remaining-bound-queue-v1.json",
+      "sha256": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+      "root_acceptance": {
+        "path": "protocols/p3-fresh-remaining-bound-root-acceptance-v1.json",
+        "sha256": "492f8da126c1e2917e98d77bc3cfe1d461b13ae9658a741e2b5354341501a258"
+      }
+    },
+    "p4_pilot_v3": {
+      "path": "protocols/p4-core-pilot-queue-v3.json",
+      "sha256": "017119437d59358fbd6f47cd2662d8a7de323d2024793ed8fb1a3721534c021f",
+      "root_acceptance": {
+        "path": "protocols/p4-core-pilot-queue-root-acceptance-v3.json",
+        "sha256": "1f888612636d5bbb9696b0561385a89c357b459cbd91821eacc9cded90a24f0b"
+      },
+      "reuse": "core-development-v1 config refs are recorded as instructed; pilot output reuse remains pending exact audit"
+    },
+    "formal_matrix_preparation": {
+      "path": "protocols/core-formal-config-matrix-preparation-v1.json",
+      "sha256": "95a694c0837b73e8d1968a0a2431bff5ee288cde88ced704d82aaa117c901ede",
+      "root_preparation": {
+        "path": "reviews/core-formal-config-matrix-root-preparation-v1.json",
+        "sha256": "e5e542bc5394f252dd79b12956e09e9bbab531aef74c4f1a8a1a8ad48a676cf8"
+      }
+    }
+  },
+  "resource_constraints": {
+    "resource_contract": {
+      "path": "protocols/p3-training-resource-contract-v2.json",
+      "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+    },
+    "candidate_addendum": {
+      "path": "protocols/p3-internal-candidate-resource-addendum-v4.json",
+      "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+    },
+    "core_allocation": {
+      "path": "protocols/p3-core-default-training-allocation-v1.json",
+      "sha256": "0d43cbb55a272ecac09b79a828026e30d5e30900636c8b0c9cabcdf29087cfda"
+    },
+    "device": "cuda",
+    "threads": 2,
+    "batch_sizes": {
+      "V0": {
+        "synthetic": 128,
+        "email": 8,
+        "mooc": 128,
+        "email-episode": 8
+      },
+      "V1": {
+        "synthetic": 128,
+        "email": 8,
+        "mooc": 128,
+        "email-episode": 8
+      },
+      "V2": {
+        "synthetic": 128,
+        "mooc": 128,
+        "email": 8,
+        "email-episode": 8
+      },
+      "V3": {
+        "synthetic": 128,
+        "mooc": 128,
+        "email": 8,
+        "email-episode": 8
+      },
+      "V4": {
+        "synthetic": 128,
+        "mooc": 128,
+        "email": 8,
+        "email-episode": 8
+      },
+      "V9": {
+        "synthetic": 128,
+        "mooc": 128,
+        "email": 8,
+        "email-episode": 8
+      }
+    },
+    "max_epochs": 100,
+    "patience": 10,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0
+  },
+  "scientific_parameters_verified": {
+    "d_total": 64,
+    "k": 8,
+    "candidate_cap": 32,
+    "tau_fast": 1.0,
+    "tau_slow": 8.0,
+    "beta_init": 1.0,
+    "lambda_temporal": 0.01
+  },
+  "candidate_status": "g00/m00 is a shared singleton prospective identity and is NOT selected; no root scientific acceptance is implied",
+  "seed0_reuse_status": "pending required actual numeric review and root acceptance; no P3/P3A pass asserted",
+  "arrays_decoded": false,
+  "checkpoint_loaded": false,
+  "model_constructed": false,
+  "training_started": false,
+  "validation_evaluated": false,
+  "test_accessed": false,
+  "generated_files": [
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed1.json",
+      "sha256": "9448eac523ed84b5c67077459b82754e9657f7e77a593b2ab5ee07f42ca43b1f"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed2.json",
+      "sha256": "813aff73f546a0da8d85eda157bfa12550cd04b21eaca0336b2b8627ac0b2313"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed3.json",
+      "sha256": "d81e59599410074205117ce32cfc5e9e90dfc4218b80e9de74c2fb689d0caa4e"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed4.json",
+      "sha256": "12ed49846ef00f256068a252efb8d7b3bb643e08f3a219a0102ccc6fe3b539e0"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed1.json",
+      "sha256": "4f4422e21e3c34724755881370e1ea00d417bc3e16b7f97230bfa37ae166e099"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed2.json",
+      "sha256": "7b7c9883b7b7237cc7917ff7caf9c532defc9f10fb5e7648e07d2463cd2601de"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed3.json",
+      "sha256": "2e0d5e077609a932df3b2ae9cb3e8d94aa84d38a7d446027e76bcb7b71f771c2"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed4.json",
+      "sha256": "f09e42ef78d56351a066bffc912bf3c13a7379f95986e7df783dc145bf000b87"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed1.json",
+      "sha256": "3fe393da040ee2ee0a4a18e2962c3d70f26d72b3a30fbc203af12dfcfe33dea8"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed2.json",
+      "sha256": "30156ea1a727b180d95bd3bb66067408c7ad1d186f660c11a80d4a576d30924d"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed3.json",
+      "sha256": "c023c0ec2e5521347128fed93a81ce6815275eefbdf3d6efeaed6731a4f8c479"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed4.json",
+      "sha256": "6e412484c321f9a6d1594584e3dec5d94452faef212da2423d534c13d266673c"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed1.json",
+      "sha256": "e25484d78a89a493ee6f13adcb785d96e50216a6095413bca4126d94f873a5a0"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed2.json",
+      "sha256": "ed1e758562c8b2e91d63cfa1504ca39b5bb26f0c5426cc4370a17157784f01ce"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed3.json",
+      "sha256": "5606b28faacbb4aa96fe357703cc744889e80cae5c45afc49ba0ad0c5a8adc58"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed4.json",
+      "sha256": "f2902651d4474f63a673fa553740e2d6227936dd6c52efb43ca9bac84f14562e"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed1.json",
+      "sha256": "807b862bf9d4b2ab108bbee1e4fdbdd39a7fa0c89235a5686faf791c9ff3fde4"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed2.json",
+      "sha256": "f2faceb24012b9852af7755fcad2cbdaca420d98d9e99c2500ef896458216dd6"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed3.json",
+      "sha256": "b9088221d08967b4f011078470549aebcddc00f8eea171752c9ff166e387f8f8"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed4.json",
+      "sha256": "696440296cf8a4eb76d2da21dd605af916a51f665f62feb37ca507108392c743"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed1.json",
+      "sha256": "3ab10db789035f07f7d49e717aa88b7cff9681511ee6c35fda4ab64131740d7c"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed2.json",
+      "sha256": "35b9072fc1796c2a6f36d28007b2fa52f4f5dff8badb5cf3642314b6f15ed6e7"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed3.json",
+      "sha256": "a9273524aee14f3966a211e20272cd911594b6b160875a345fa17baca8d5d0a8"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed4.json",
+      "sha256": "62b75b704f11ae4f058b00568f32e72ae200f5dc67949cdc6e6cfe90e575daaf"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed1.json",
+      "sha256": "f18f7c7043224b900013b7e99c4a04ca2caf33eb6da140edb1348a2e7636a131"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed2.json",
+      "sha256": "c39046008222048fed3b7bda7cc8d6a0f4b3291a7638d9b8bca4288db81b1d7f"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed3.json",
+      "sha256": "e8d229dd79fe63251624ae9b16ad58250ef6c8ee46285b86aa24bd3adb4d1972"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed4.json",
+      "sha256": "22b69f967293b9af878920da88cfe16a0e30f09f170066c71c35eec4ab816d81"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed1.json",
+      "sha256": "5ebb88f7b113feff17f30f7cd854e37e16ec490cf43d10fa06645abe1183903b"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed2.json",
+      "sha256": "577535005bde11055119110d1cc0edc0c83d9bfbdb1361a2ec3c708ed99a5886"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed3.json",
+      "sha256": "fe34eb4b2ce702e3e3b42a4a7acbdff826e4f22c61f3f68d821cd3c8293cade2"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed4.json",
+      "sha256": "b83e13c02447ce1ac06e13ade484c483fa64b3e42a7d7f1bd3f9515b2afb2be8"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed1.json",
+      "sha256": "cab711e7f524a77d610ce7e2a444f1f41f606207c2990db3af0dc7b4651a5b38"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed2.json",
+      "sha256": "a41a17c5e39dd27f168ffa1b7b9da505f0c48fa47c07091b68805121b11d75d1"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed3.json",
+      "sha256": "693513c12b01f6f41153897fe583cf9f71feb681ce97ed31ef2c297665fbb232"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed4.json",
+      "sha256": "31847956279af2abf2a81811ec2c77eb81cc9f84a40c7ba9ff328049c3f1c6b6"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed1.json",
+      "sha256": "4e14d23ccb4317b498e1f670a116cb25b99cf45a04ed9f6806fd38bb7fbfec85"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed2.json",
+      "sha256": "af649957aca6436354563355a6510d201f73760cc7692023bdb13ccbab89fdd0"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed3.json",
+      "sha256": "b689093cb670464e18791d62951b87836c7cdcea016e0c5381e82da8d5ab0089"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed4.json",
+      "sha256": "b9c834e014be106eea92024520618f5f9be2b5115bb13346e80fdf8065d55a36"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed1.json",
+      "sha256": "e75556dfa59b5517f5bd959cbe172b747634f237d0569bf8a3df7ba9a1b19557"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed2.json",
+      "sha256": "db1f39c0fc3ced957c7529c19a8975be523c66df01e6c379bd427adbdd026968"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed3.json",
+      "sha256": "d40112271d0f619cb4d6562c1593b1f2d2c124452b876f2cee62138eea5f6a94"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed4.json",
+      "sha256": "7ff0e7cb5f856b6b86a7f630c03e5632021c526168387095446990273b4f7b58"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed1.json",
+      "sha256": "b5e4fac4187fa06bea9cda1fa8fa357131f5b6c46571c5b68adde5955dd565ff"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed2.json",
+      "sha256": "6515eac9178b5e377562697967dd5e630e655a3ca21ca7b6d5d371fc2e190c68"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed3.json",
+      "sha256": "debef4697a4a45dc403cd47fcc7a3972e56dc31ea6bba1ac828e1869657c5ecc"
+    },
+    {
+      "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed4.json",
+      "sha256": "6c15cca9af4fd180ab7098c07a21b5a8e868117b00907a73048629071682ae17"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+      "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+      "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+      "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+      "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+      "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+      "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+      "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+      "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+      "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+      "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+      "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+    },
+    {
+      "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+      "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed0.json",
+      "sha256": "f33b4f314082ebe0a96a99b832278dac720e97bc437fd080fddea79924f0f3c1"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed1.json",
+      "sha256": "365b173984c99f22f85b5d4ef2173ca72d2e57ecb6dc14c8f71d26d574e44c4f"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed2.json",
+      "sha256": "545a5c297ff64c4bc0453db026be8c296ce3f1c01addbd153d11940dc95f25aa"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed3.json",
+      "sha256": "f5c765481b5185f0df08f5bc434ee49843b0ea40e0be188be0a0aabe91eb4d64"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed4.json",
+      "sha256": "b2c27970089bc3a294685befdbd72540631a89f0cd798e5dd7c76da39d5c5867"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed0.json",
+      "sha256": "58b1d33d731806f045907dfa0130b737f453933454c20632e632cf942a943b01"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed1.json",
+      "sha256": "58986bfadc5b7ae3faa3bf9af185c2b9ac0b64c133ef05a9e014aab0507efbe4"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed2.json",
+      "sha256": "1493202a4593450b39ebe43af23e4a61e3e6b50c8d349b4cf6541d9c13917e30"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed3.json",
+      "sha256": "eb244af59562c8b53e8ebea1f14a54eb81bcbbaa0d4f3590e9ad54cf751d1c79"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed4.json",
+      "sha256": "95395fccf21b7140b95745cb00a19d96c14ad7c4eb7eef7dcf9b1ec089bd4108"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed0.json",
+      "sha256": "5b699c81961971db5f1b6dd18fa4c7c31184f7992b0482be950d310232f3bc22"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed1.json",
+      "sha256": "7d8cdfa0d458fddfac39efd3e6142600c4b06d5b3c26310c757d3afb1159fe0d"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed2.json",
+      "sha256": "74093a28a2bb279539a3cd109d1e48f56ab3c3b09106c66ffd636160e103c536"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed3.json",
+      "sha256": "087a5651c015250692f324f4d2f91f78c2fd7132c4a0cc968553b90026dec147"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed4.json",
+      "sha256": "6ea750011262f745785ff7986ad11fc25faf22aa5b9eee7028a3602972a20f60"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed0.json",
+      "sha256": "2a64628a89c350b659f2c4dd2ddf3db5301298a5092fb2e9f0379502d1fa45f7"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed1.json",
+      "sha256": "f46e8ab9e3c423b1c146fcf091c6be0b3b246a6d7e25cfe32a17ae902f6f9e14"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed2.json",
+      "sha256": "809a38ad00e9e245658bbed0e7befa2295dfc2ce9bf73371902a0a86700a0209"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed3.json",
+      "sha256": "fd8455dcd0a6537c4332cca39138c735361908acd6a5e6579d77a34aab016011"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed4.json",
+      "sha256": "60f8035a68cc416701c6922e95bd60732df76ba1984206612f45c33b79ad418d"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed0.json",
+      "sha256": "289eccccc52eaf260949e3931e18d53a490afec054d0926e621334a4cc371a36"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed1.json",
+      "sha256": "51d7b5e572e246431b070975878a3f40c29f39ca5aa5467e050cebecc4060eb3"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed2.json",
+      "sha256": "f77baba949f56af33cd41ec3a7edee07278205ff73556a4075d7ec2d639863ee"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed3.json",
+      "sha256": "9f345c75c67b763cb8a216b856b63ef3337dc57965aaca13544f0648eace3953"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed4.json",
+      "sha256": "77c31388219457db45379ee5434f3762f0bc463ebd290f50c829be50fec9d959"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed0.json",
+      "sha256": "6f5d73859bd3741c96c2f88acfa618e8b75acde65b08024c41e566a1c228396f"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed1.json",
+      "sha256": "bebcad24745b0963daea2a447ff0662f7d7c73e9f24585d240620cde2564d8c1"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed2.json",
+      "sha256": "7796559860fa9a753785180fe7179c685cc6fd60f62f53e6da53b4520753187b"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed3.json",
+      "sha256": "353463e48ca10b1f8210ee9f2b3f9174eec89edf9cd454e2b8bc45c721eba7ee"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed4.json",
+      "sha256": "3e80af6688a7e751418271b32ca9cd760bf755b3d0ca7460163b8f1955320007"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed0.json",
+      "sha256": "c97040759ffaf2b6bcf07fbf618a3a12bc60f8844d212dcffd33063898389912"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed1.json",
+      "sha256": "72dcc2c0e760fca623fbc37c674cd9575aa0d426c2b4cda40f9957e11a1010e1"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed2.json",
+      "sha256": "7211280cefffb5be7b28afae2ac8406711f9dd52df5a3c02197a1570a755462d"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed3.json",
+      "sha256": "1468e4371e493e2bfdbf36f4ab8be3ed64f3f5320423e232e97da5f26cd77722"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed4.json",
+      "sha256": "35820ce785072485f93df931c648b863bfb7cde3d5c2232b0b40bd446d088e36"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed0.json",
+      "sha256": "015d1b8a1f84c76ada43f754f8bef4875770890112e392b751763e17e247d099"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed1.json",
+      "sha256": "ce92e048274b79fc966d508bfbcc055eb2b147080f4139593215e2385a126ff7"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed2.json",
+      "sha256": "cceb042a60dfe67d92a3d398efbac427b5ccc93f4c8d03e9d1f974e94bd20353"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed3.json",
+      "sha256": "4645fe2b4d23386264d3edc22f1167e441c8e32434a0c4869dd264c75fa0f1d4"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed4.json",
+      "sha256": "9e87ecc9de27ee5bfc6929250777989249058c85d22b74d56fb1545689147253"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed0.json",
+      "sha256": "e0b54b050b660480bc7865bbab60f327df1ff7e10118fe5a670bf12a1898ea93"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed1.json",
+      "sha256": "5472a03961963db830e5d094aa6e1e474882c20f5c31d21f79fb97ec87407eee"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed2.json",
+      "sha256": "1c1255c62219d40f23841a6b830f33f0a16f40897eb3bdd4a24530f4ab834936"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed3.json",
+      "sha256": "918fa6e3904ea90e067c16695551167182b5fd14841819625f21e494024560ca"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed4.json",
+      "sha256": "52d8f26711e0096244911e947b7ea2378189703e91100899735baf04c710daa3"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed0.json",
+      "sha256": "982d69522f4d6da7ff562d199c3916cc0c081e8d15849b5e5cda33fe7ff558a6"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed1.json",
+      "sha256": "3003108739a32a4bcb388b403f35b37423b5630648bbd74ab7019cb1a855c897"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed2.json",
+      "sha256": "e4d2e6f6cb3b2b9e012ecd6212de17429055b00d075874f464abcc630d7656b8"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed3.json",
+      "sha256": "9d087b0a2cfe2cd4f5696cdc211b68b749448cce7a9c7bfb81c14ac174d71276"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed4.json",
+      "sha256": "1d5ca0ffc0d46eed8c59ee6a4bfe6245b4459e9adddf80eabd955e105515697c"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed0.json",
+      "sha256": "6cdbc0982054386c37330e011622476a27bfd9da6f9f796a88e58594f5efe5f2"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed1.json",
+      "sha256": "d3c0c1cba09279fd2bf3563db75d7a7c4e793ec65a673a23638aafd9c0c9e442"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed2.json",
+      "sha256": "960e73584d6e33c6600160d92e850a654c0e6b8d41fffc4c2fd2307b644a624d"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed3.json",
+      "sha256": "4880137e01df11e36c89cc24af5bbff6f0f0d0a954b251c0fff606675538e394"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed4.json",
+      "sha256": "68e73bf98450e727c02a8224f56a238b4c5b5029adfcbca0a54b2f4e848c33c7"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed0.json",
+      "sha256": "e1549654367f697353e15acf4df78a100d095ab8bc68a9de3bff4e6f1ea69729"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed1.json",
+      "sha256": "ce5d781b4fc89de231d7b87f88bb913d728f98817d794067105b75fed0167835"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed2.json",
+      "sha256": "1557f8feac7cb8e34361f1eecacb14cfd4dca0b593ef2a29c2208b5c4c9b8302"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed3.json",
+      "sha256": "be9ea905e7b23dce898337cb2f67f38150f26b19f5cc191b705f9c23adb02dad"
+    },
+    {
+      "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed4.json",
+      "sha256": "4794c0c2495768587b2fd4b496914a7d90962a2453c6b365550a29d46555b780"
+    }
+  ],
+  "pools": [
+    {
+      "dataset": "synthetic",
+      "variant": "V2",
+      "comparison_id": "core-formal-synthetic-V2-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "synthetic",
+      "variant": "V3",
+      "comparison_id": "core-formal-synthetic-V3-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "synthetic",
+      "variant": "V4",
+      "comparison_id": "core-formal-synthetic-V4-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "synthetic",
+      "variant": "V9",
+      "comparison_id": "core-formal-synthetic-V9-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "email",
+      "variant": "V2",
+      "comparison_id": "core-formal-email-V2-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "email",
+      "variant": "V3",
+      "comparison_id": "core-formal-email-V3-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "email",
+      "variant": "V4",
+      "comparison_id": "core-formal-email-V4-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "email",
+      "variant": "V9",
+      "comparison_id": "core-formal-email-V9-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "mooc",
+      "variant": "V2",
+      "comparison_id": "core-formal-mooc-V2-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "mooc",
+      "variant": "V3",
+      "comparison_id": "core-formal-mooc-V3-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "mooc",
+      "variant": "V4",
+      "comparison_id": "core-formal-mooc-V4-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    },
+    {
+      "dataset": "mooc",
+      "variant": "V9",
+      "comparison_id": "core-formal-mooc-V9-selection-v1",
+      "status": "prospective-singleton-default-not-selected",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "selector_rule_id": "normalized-syn-mooc-v4-seed0-v1"
+    }
+  ],
+  "rows": [
+    {
+      "row_id": "core-formal-synthetic-V0-seed0",
+      "dataset": "synthetic",
+      "variant": "V0",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-fresh-remaining-bound-v1/synthetic-V0-seed0.json",
+        "sha256": "915ab1a5e50561da0c48bcc53089364f16501c96499bcdf17376315470f85643"
+      },
+      "source_config": {
+        "path": "configs/p3-fresh-remaining-bound-v1/synthetic-V0-seed0.json",
+        "sha256": "915ab1a5e50561da0c48bcc53089364f16501c96499bcdf17376315470f85643"
+      },
+      "lineage": "p3-fresh-remaining-bound-queue-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-fresh-v1\\synthetic\\V0\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-fresh-v1\\synthetic\\V0\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V0-seed1",
+      "dataset": "synthetic",
+      "variant": "V0",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed1.json",
+        "sha256": "1854762549d5309b0a6c97040ab52a5d9b9323529a8c7b077b2ce25c6f131313"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed1.json",
+        "sha256": "1854762549d5309b0a6c97040ab52a5d9b9323529a8c7b077b2ce25c6f131313"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V0-seed2",
+      "dataset": "synthetic",
+      "variant": "V0",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed2.json",
+        "sha256": "926db43efd81643207392772986934897d7cc2d46ab8b90a01c4050b62857165"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed2.json",
+        "sha256": "926db43efd81643207392772986934897d7cc2d46ab8b90a01c4050b62857165"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V0-seed3",
+      "dataset": "synthetic",
+      "variant": "V0",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed3.json",
+        "sha256": "c4c91fd211c82be76323658c071477e9620b762c25d300254ac499b78e9b1d06"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed3.json",
+        "sha256": "c4c91fd211c82be76323658c071477e9620b762c25d300254ac499b78e9b1d06"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V0-seed4",
+      "dataset": "synthetic",
+      "variant": "V0",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed4.json",
+        "sha256": "4f6f734112f7b7a2642f356fbad85cb1a17f4fe548120d8c5a80a56cbfe8388e"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V0-seed4.json",
+        "sha256": "4f6f734112f7b7a2642f356fbad85cb1a17f4fe548120d8c5a80a56cbfe8388e"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V0\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V1-seed0",
+      "dataset": "synthetic",
+      "variant": "V1",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-fresh-remaining-bound-v1/synthetic-V1-seed0.json",
+        "sha256": "be5c88733043acda8842098ce270e5b307d57c91787fa1076ec945cd386616d8"
+      },
+      "source_config": {
+        "path": "configs/p3-fresh-remaining-bound-v1/synthetic-V1-seed0.json",
+        "sha256": "be5c88733043acda8842098ce270e5b307d57c91787fa1076ec945cd386616d8"
+      },
+      "lineage": "p3-fresh-remaining-bound-queue-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-fresh-v1\\synthetic\\V1\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-fresh-v1\\synthetic\\V1\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V1-seed1",
+      "dataset": "synthetic",
+      "variant": "V1",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed1.json",
+        "sha256": "50544ce582d4d2fa7a41ef6be407ba8170a7032e01b4cfff9ba338f4f395dbca"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed1.json",
+        "sha256": "50544ce582d4d2fa7a41ef6be407ba8170a7032e01b4cfff9ba338f4f395dbca"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V1-seed2",
+      "dataset": "synthetic",
+      "variant": "V1",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed2.json",
+        "sha256": "c732fedc0b3249f41b01533750300b666da6fc800aa2c06a401930cd21e6f84e"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed2.json",
+        "sha256": "c732fedc0b3249f41b01533750300b666da6fc800aa2c06a401930cd21e6f84e"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V1-seed3",
+      "dataset": "synthetic",
+      "variant": "V1",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed3.json",
+        "sha256": "b637c06c704de210071c20fbe8148326475911fa6aa097c9613db0e2bb56412e"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed3.json",
+        "sha256": "b637c06c704de210071c20fbe8148326475911fa6aa097c9613db0e2bb56412e"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V1-seed4",
+      "dataset": "synthetic",
+      "variant": "V1",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed4.json",
+        "sha256": "b7f1ac2a4f07c6af9a2d802adff1eb063ad18b320f078869c6204066d611e396"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/synthetic-V1-seed4.json",
+        "sha256": "b7f1ac2a4f07c6af9a2d802adff1eb063ad18b320f078869c6204066d611e396"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\synthetic\\V1\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V2-seed0",
+      "dataset": "synthetic",
+      "variant": "V2",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V2\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V2\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed0.json",
+        "sha256": "e0b54b050b660480bc7865bbab60f327df1ff7e10118fe5a670bf12a1898ea93"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V2-seed1",
+      "dataset": "synthetic",
+      "variant": "V2",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed1.json",
+        "sha256": "cab711e7f524a77d610ce7e2a444f1f41f606207c2990db3af0dc7b4651a5b38"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed1.json",
+        "sha256": "5472a03961963db830e5d094aa6e1e474882c20f5c31d21f79fb97ec87407eee"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V2-seed2",
+      "dataset": "synthetic",
+      "variant": "V2",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed2.json",
+        "sha256": "a41a17c5e39dd27f168ffa1b7b9da505f0c48fa47c07091b68805121b11d75d1"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed2.json",
+        "sha256": "1c1255c62219d40f23841a6b830f33f0a16f40897eb3bdd4a24530f4ab834936"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V2-seed3",
+      "dataset": "synthetic",
+      "variant": "V2",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed3.json",
+        "sha256": "693513c12b01f6f41153897fe583cf9f71feb681ce97ed31ef2c297665fbb232"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed3.json",
+        "sha256": "918fa6e3904ea90e067c16695551167182b5fd14841819625f21e494024560ca"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V2-seed4",
+      "dataset": "synthetic",
+      "variant": "V2",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V2-seed4.json",
+        "sha256": "31847956279af2abf2a81811ec2c77eb81cc9f84a40c7ba9ff328049c3f1c6b6"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V2-seed0.json",
+        "sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V2\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V2.json",
+        "sha256": "7fde1960f475ddab5a091575748363dbe525a697afea65daad557277665351bc"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V2-seed4.json",
+        "sha256": "52d8f26711e0096244911e947b7ea2378189703e91100899735baf04c710daa3"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V3-seed0",
+      "dataset": "synthetic",
+      "variant": "V3",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V3\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V3\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed0.json",
+        "sha256": "982d69522f4d6da7ff562d199c3916cc0c081e8d15849b5e5cda33fe7ff558a6"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V3-seed1",
+      "dataset": "synthetic",
+      "variant": "V3",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed1.json",
+        "sha256": "4e14d23ccb4317b498e1f670a116cb25b99cf45a04ed9f6806fd38bb7fbfec85"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed1.json",
+        "sha256": "3003108739a32a4bcb388b403f35b37423b5630648bbd74ab7019cb1a855c897"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V3-seed2",
+      "dataset": "synthetic",
+      "variant": "V3",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed2.json",
+        "sha256": "af649957aca6436354563355a6510d201f73760cc7692023bdb13ccbab89fdd0"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed2.json",
+        "sha256": "e4d2e6f6cb3b2b9e012ecd6212de17429055b00d075874f464abcc630d7656b8"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V3-seed3",
+      "dataset": "synthetic",
+      "variant": "V3",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed3.json",
+        "sha256": "b689093cb670464e18791d62951b87836c7cdcea016e0c5381e82da8d5ab0089"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed3.json",
+        "sha256": "9d087b0a2cfe2cd4f5696cdc211b68b749448cce7a9c7bfb81c14ac174d71276"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V3-seed4",
+      "dataset": "synthetic",
+      "variant": "V3",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V3-seed4.json",
+        "sha256": "b9c834e014be106eea92024520618f5f9be2b5115bb13346e80fdf8065d55a36"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V3-seed0.json",
+        "sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V3\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V3.json",
+        "sha256": "712c548e792762895762ccce914a24f04b2d51c9f00c5c777118e757476f495e"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V3-seed4.json",
+        "sha256": "1d5ca0ffc0d46eed8c59ee6a4bfe6245b4459e9adddf80eabd955e105515697c"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V4-seed0",
+      "dataset": "synthetic",
+      "variant": "V4",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V4\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V4\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed0.json",
+        "sha256": "6cdbc0982054386c37330e011622476a27bfd9da6f9f796a88e58594f5efe5f2"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V4-seed1",
+      "dataset": "synthetic",
+      "variant": "V4",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed1.json",
+        "sha256": "e75556dfa59b5517f5bd959cbe172b747634f237d0569bf8a3df7ba9a1b19557"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed1.json",
+        "sha256": "d3c0c1cba09279fd2bf3563db75d7a7c4e793ec65a673a23638aafd9c0c9e442"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V4-seed2",
+      "dataset": "synthetic",
+      "variant": "V4",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed2.json",
+        "sha256": "db1f39c0fc3ced957c7529c19a8975be523c66df01e6c379bd427adbdd026968"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed2.json",
+        "sha256": "960e73584d6e33c6600160d92e850a654c0e6b8d41fffc4c2fd2307b644a624d"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V4-seed3",
+      "dataset": "synthetic",
+      "variant": "V4",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed3.json",
+        "sha256": "d40112271d0f619cb4d6562c1593b1f2d2c124452b876f2cee62138eea5f6a94"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed3.json",
+        "sha256": "4880137e01df11e36c89cc24af5bbff6f0f0d0a954b251c0fff606675538e394"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V4-seed4",
+      "dataset": "synthetic",
+      "variant": "V4",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V4-seed4.json",
+        "sha256": "7ff0e7cb5f856b6b86a7f630c03e5632021c526168387095446990273b4f7b58"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V4-seed0.json",
+        "sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V4\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V4.json",
+        "sha256": "d5d0d4fd0536727fdad5a7a9578bf152f067783437edcb550fc95bf281af7874"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V4-seed4.json",
+        "sha256": "68e73bf98450e727c02a8224f56a238b4c5b5029adfcbca0a54b2f4e848c33c7"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V9-seed0",
+      "dataset": "synthetic",
+      "variant": "V9",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V9\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\synthetic\\V9\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed0.json",
+        "sha256": "e1549654367f697353e15acf4df78a100d095ab8bc68a9de3bff4e6f1ea69729"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V9-seed1",
+      "dataset": "synthetic",
+      "variant": "V9",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed1.json",
+        "sha256": "b5e4fac4187fa06bea9cda1fa8fa357131f5b6c46571c5b68adde5955dd565ff"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed1.json",
+        "sha256": "ce5d781b4fc89de231d7b87f88bb913d728f98817d794067105b75fed0167835"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V9-seed2",
+      "dataset": "synthetic",
+      "variant": "V9",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed2.json",
+        "sha256": "6515eac9178b5e377562697967dd5e630e655a3ca21ca7b6d5d371fc2e190c68"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed2.json",
+        "sha256": "1557f8feac7cb8e34361f1eecacb14cfd4dca0b593ef2a29c2208b5c4c9b8302"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V9-seed3",
+      "dataset": "synthetic",
+      "variant": "V9",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed3.json",
+        "sha256": "debef4697a4a45dc403cd47fcc7a3972e56dc31ea6bba1ac828e1869657c5ecc"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed3.json",
+        "sha256": "be9ea905e7b23dce898337cb2f67f38150f26b19f5cc191b705f9c23adb02dad"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-synthetic-V9-seed4",
+      "dataset": "synthetic",
+      "variant": "V9",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/synthetic-V9-seed4.json",
+        "sha256": "6c15cca9af4fd180ab7098c07a21b5a8e868117b00907a73048629071682ae17"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/synthetic-V9-seed0.json",
+        "sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\synthetic\\V9\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/synthetic-V9.json",
+        "sha256": "12256f755571c413dbd9bdfc6e015528fea2d8cb692867c7202ae529709a7d95"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/synthetic-V9-seed4.json",
+        "sha256": "4794c0c2495768587b2fd4b496914a7d90962a2453c6b365550a29d46555b780"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V0-seed0",
+      "dataset": "email",
+      "variant": "V0",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-internal-bound-v4/email-V0-seed0.json",
+        "sha256": "85559bcb1440118ae0441c2cab2ee670e14fa2ca2b5f0501ac147791987ba837"
+      },
+      "source_config": {
+        "path": "configs/p3-internal-bound-v4/email-V0-seed0.json",
+        "sha256": "85559bcb1440118ae0441c2cab2ee670e14fa2ca2b5f0501ac147791987ba837"
+      },
+      "lineage": "p3-internal-bound-queue-v4",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V0-seed1",
+      "dataset": "email",
+      "variant": "V0",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed1.json",
+        "sha256": "3d982cd3836eaf505d3a23f3d73902c2e169e559578fddff218a2cf082484a45"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed1.json",
+        "sha256": "3d982cd3836eaf505d3a23f3d73902c2e169e559578fddff218a2cf082484a45"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V0-seed2",
+      "dataset": "email",
+      "variant": "V0",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed2.json",
+        "sha256": "cbe4c6f8124d8b3b9d1ba688a47325a7093029fdb33f77d8502e3900be2208fb"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed2.json",
+        "sha256": "cbe4c6f8124d8b3b9d1ba688a47325a7093029fdb33f77d8502e3900be2208fb"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V0-seed3",
+      "dataset": "email",
+      "variant": "V0",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed3.json",
+        "sha256": "99f86d0a2ba3556aea380ffda7a0d2b5b485b5b5f6c165dc1ed9844fe6e8cb59"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed3.json",
+        "sha256": "99f86d0a2ba3556aea380ffda7a0d2b5b485b5b5f6c165dc1ed9844fe6e8cb59"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V0-seed4",
+      "dataset": "email",
+      "variant": "V0",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed4.json",
+        "sha256": "88ccddae1763be0aca704b594c650a40790c1c59f6c68a28813fa8f2dd8a30d3"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V0-seed4.json",
+        "sha256": "88ccddae1763be0aca704b594c650a40790c1c59f6c68a28813fa8f2dd8a30d3"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V0\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V1-seed0",
+      "dataset": "email",
+      "variant": "V1",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-internal-bound-v4/email-V1-seed0.json",
+        "sha256": "8919a762d90d54ec4827e4218b086a6956d51d220234abced9f4463be5878d87"
+      },
+      "source_config": {
+        "path": "configs/p3-internal-bound-v4/email-V1-seed0.json",
+        "sha256": "8919a762d90d54ec4827e4218b086a6956d51d220234abced9f4463be5878d87"
+      },
+      "lineage": "p3-internal-bound-queue-v4",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V1\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V1\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V1-seed1",
+      "dataset": "email",
+      "variant": "V1",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed1.json",
+        "sha256": "7f628759eea10ab264688d453174c11a2c5168a5bf5206f3166230ee9a8cb51d"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed1.json",
+        "sha256": "7f628759eea10ab264688d453174c11a2c5168a5bf5206f3166230ee9a8cb51d"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V1-seed2",
+      "dataset": "email",
+      "variant": "V1",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed2.json",
+        "sha256": "8aa0a87202afbdcc6ac123071c83741aef5f5bf5deef7f0b4419d09e969521d8"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed2.json",
+        "sha256": "8aa0a87202afbdcc6ac123071c83741aef5f5bf5deef7f0b4419d09e969521d8"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V1-seed3",
+      "dataset": "email",
+      "variant": "V1",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed3.json",
+        "sha256": "c8d598bd1d5071409bbfebe22aa17974260ffa8fde137204dcbcf1816e7ebdf9"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed3.json",
+        "sha256": "c8d598bd1d5071409bbfebe22aa17974260ffa8fde137204dcbcf1816e7ebdf9"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V1-seed4",
+      "dataset": "email",
+      "variant": "V1",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed4.json",
+        "sha256": "d626307ec80ee68c4f4e2bd88c3d86d686da7373d00c223939d8cd06d218da82"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/email-V1-seed4.json",
+        "sha256": "d626307ec80ee68c4f4e2bd88c3d86d686da7373d00c223939d8cd06d218da82"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\email\\V1\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V2-seed0",
+      "dataset": "email",
+      "variant": "V2",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V2\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V2\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed0.json",
+        "sha256": "f33b4f314082ebe0a96a99b832278dac720e97bc437fd080fddea79924f0f3c1"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V2-seed1",
+      "dataset": "email",
+      "variant": "V2",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed1.json",
+        "sha256": "9448eac523ed84b5c67077459b82754e9657f7e77a593b2ab5ee07f42ca43b1f"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed1.json",
+        "sha256": "365b173984c99f22f85b5d4ef2173ca72d2e57ecb6dc14c8f71d26d574e44c4f"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V2-seed2",
+      "dataset": "email",
+      "variant": "V2",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed2.json",
+        "sha256": "813aff73f546a0da8d85eda157bfa12550cd04b21eaca0336b2b8627ac0b2313"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed2.json",
+        "sha256": "545a5c297ff64c4bc0453db026be8c296ce3f1c01addbd153d11940dc95f25aa"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V2-seed3",
+      "dataset": "email",
+      "variant": "V2",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed3.json",
+        "sha256": "d81e59599410074205117ce32cfc5e9e90dfc4218b80e9de74c2fb689d0caa4e"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed3.json",
+        "sha256": "f5c765481b5185f0df08f5bc434ee49843b0ea40e0be188be0a0aabe91eb4d64"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V2-seed4",
+      "dataset": "email",
+      "variant": "V2",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V2-seed4.json",
+        "sha256": "12ed49846ef00f256068a252efb8d7b3bb643e08f3a219a0102ccc6fe3b539e0"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V2-seed0.json",
+        "sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V2\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V2.json",
+        "sha256": "c320b490b0a9a8cbfe4f3b11994daffa5954a822a62e2afb0e726e4cee2a7132"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V2-seed4.json",
+        "sha256": "b2c27970089bc3a294685befdbd72540631a89f0cd798e5dd7c76da39d5c5867"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V3-seed0",
+      "dataset": "email",
+      "variant": "V3",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V3\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V3\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed0.json",
+        "sha256": "58b1d33d731806f045907dfa0130b737f453933454c20632e632cf942a943b01"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V3-seed1",
+      "dataset": "email",
+      "variant": "V3",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed1.json",
+        "sha256": "4f4422e21e3c34724755881370e1ea00d417bc3e16b7f97230bfa37ae166e099"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed1.json",
+        "sha256": "58986bfadc5b7ae3faa3bf9af185c2b9ac0b64c133ef05a9e014aab0507efbe4"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V3-seed2",
+      "dataset": "email",
+      "variant": "V3",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed2.json",
+        "sha256": "7b7c9883b7b7237cc7917ff7caf9c532defc9f10fb5e7648e07d2463cd2601de"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed2.json",
+        "sha256": "1493202a4593450b39ebe43af23e4a61e3e6b50c8d349b4cf6541d9c13917e30"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V3-seed3",
+      "dataset": "email",
+      "variant": "V3",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed3.json",
+        "sha256": "2e0d5e077609a932df3b2ae9cb3e8d94aa84d38a7d446027e76bcb7b71f771c2"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed3.json",
+        "sha256": "eb244af59562c8b53e8ebea1f14a54eb81bcbbaa0d4f3590e9ad54cf751d1c79"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V3-seed4",
+      "dataset": "email",
+      "variant": "V3",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V3-seed4.json",
+        "sha256": "f09e42ef78d56351a066bffc912bf3c13a7379f95986e7df783dc145bf000b87"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V3-seed0.json",
+        "sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V3\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V3.json",
+        "sha256": "76f61bf83876c24fa2a03ce30b8d76f2e6684eaf37d5816990172a4db2e78a7f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V3-seed4.json",
+        "sha256": "95395fccf21b7140b95745cb00a19d96c14ad7c4eb7eef7dcf9b1ec089bd4108"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V4-seed0",
+      "dataset": "email",
+      "variant": "V4",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V4\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V4\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed0.json",
+        "sha256": "5b699c81961971db5f1b6dd18fa4c7c31184f7992b0482be950d310232f3bc22"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V4-seed1",
+      "dataset": "email",
+      "variant": "V4",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed1.json",
+        "sha256": "3fe393da040ee2ee0a4a18e2962c3d70f26d72b3a30fbc203af12dfcfe33dea8"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed1.json",
+        "sha256": "7d8cdfa0d458fddfac39efd3e6142600c4b06d5b3c26310c757d3afb1159fe0d"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V4-seed2",
+      "dataset": "email",
+      "variant": "V4",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed2.json",
+        "sha256": "30156ea1a727b180d95bd3bb66067408c7ad1d186f660c11a80d4a576d30924d"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed2.json",
+        "sha256": "74093a28a2bb279539a3cd109d1e48f56ab3c3b09106c66ffd636160e103c536"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V4-seed3",
+      "dataset": "email",
+      "variant": "V4",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed3.json",
+        "sha256": "c023c0ec2e5521347128fed93a81ce6815275eefbdf3d6efeaed6731a4f8c479"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed3.json",
+        "sha256": "087a5651c015250692f324f4d2f91f78c2fd7132c4a0cc968553b90026dec147"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V4-seed4",
+      "dataset": "email",
+      "variant": "V4",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V4-seed4.json",
+        "sha256": "6e412484c321f9a6d1594584e3dec5d94452faef212da2423d534c13d266673c"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V4-seed0.json",
+        "sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V4\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V4.json",
+        "sha256": "2278d4b972ca6377cadc4090b5cf5f52a9f1c3fd7447c6919cb91130c92f56a7"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V4-seed4.json",
+        "sha256": "6ea750011262f745785ff7986ad11fc25faf22aa5b9eee7028a3602972a20f60"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V9-seed0",
+      "dataset": "email",
+      "variant": "V9",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V9\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\email\\V9\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed0.json",
+        "sha256": "2a64628a89c350b659f2c4dd2ddf3db5301298a5092fb2e9f0379502d1fa45f7"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V9-seed1",
+      "dataset": "email",
+      "variant": "V9",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed1.json",
+        "sha256": "e25484d78a89a493ee6f13adcb785d96e50216a6095413bca4126d94f873a5a0"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed1.json",
+        "sha256": "f46e8ab9e3c423b1c146fcf091c6be0b3b246a6d7e25cfe32a17ae902f6f9e14"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V9-seed2",
+      "dataset": "email",
+      "variant": "V9",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed2.json",
+        "sha256": "ed1e758562c8b2e91d63cfa1504ca39b5bb26f0c5426cc4370a17157784f01ce"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed2.json",
+        "sha256": "809a38ad00e9e245658bbed0e7befa2295dfc2ce9bf73371902a0a86700a0209"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V9-seed3",
+      "dataset": "email",
+      "variant": "V9",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed3.json",
+        "sha256": "5606b28faacbb4aa96fe357703cc744889e80cae5c45afc49ba0ad0c5a8adc58"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed3.json",
+        "sha256": "fd8455dcd0a6537c4332cca39138c735361908acd6a5e6579d77a34aab016011"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-email-V9-seed4",
+      "dataset": "email",
+      "variant": "V9",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/email-V9-seed4.json",
+        "sha256": "f2902651d4474f63a673fa553740e2d6227936dd6c52efb43ca9bac84f14562e"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/email-V9-seed0.json",
+        "sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\email\\V9\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/email-V9.json",
+        "sha256": "a75c72173a6645de361dbc6a2058bf349569b43780eaf426c4ce67e0a3e387f4"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/email-V9-seed4.json",
+        "sha256": "60f8035a68cc416701c6922e95bd60732df76ba1984206612f45c33b79ad418d"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V0-seed0",
+      "dataset": "mooc",
+      "variant": "V0",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-internal-bound-v4/mooc-V0-seed0.json",
+        "sha256": "4f5d1556645f8ccee37af75ac7233340da924d0b85e9d01b03dc2b0da6066583"
+      },
+      "source_config": {
+        "path": "configs/p3-internal-bound-v4/mooc-V0-seed0.json",
+        "sha256": "4f5d1556645f8ccee37af75ac7233340da924d0b85e9d01b03dc2b0da6066583"
+      },
+      "lineage": "p3-internal-bound-queue-v4",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V0\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V0\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V0-seed1",
+      "dataset": "mooc",
+      "variant": "V0",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed1.json",
+        "sha256": "376f76e6a3bfffd889ce7513d0175d099bd4c6e098294a1043d0082e1209797d"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed1.json",
+        "sha256": "376f76e6a3bfffd889ce7513d0175d099bd4c6e098294a1043d0082e1209797d"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V0-seed2",
+      "dataset": "mooc",
+      "variant": "V0",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed2.json",
+        "sha256": "5a0082ff487c79e10cbb3476a4450e0c7cfcc723500be6a7840535bdad35fd0c"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed2.json",
+        "sha256": "5a0082ff487c79e10cbb3476a4450e0c7cfcc723500be6a7840535bdad35fd0c"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V0-seed3",
+      "dataset": "mooc",
+      "variant": "V0",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed3.json",
+        "sha256": "817d395899b39e4713fe3f58be0e7cdbdd99467d7556abe52a10874effa407e7"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed3.json",
+        "sha256": "817d395899b39e4713fe3f58be0e7cdbdd99467d7556abe52a10874effa407e7"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V0-seed4",
+      "dataset": "mooc",
+      "variant": "V0",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed4.json",
+        "sha256": "783eeace3770e5684fe08d5965f48629652e97e69d426688321c5b302c793d69"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V0-seed4.json",
+        "sha256": "783eeace3770e5684fe08d5965f48629652e97e69d426688321c5b302c793d69"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V0\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V1-seed0",
+      "dataset": "mooc",
+      "variant": "V1",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/p3-internal-bound-v4/mooc-V1-seed0.json",
+        "sha256": "a27a75730e36204ea2d07c6a5121f0dcab42c310a4e468e8f7f455bf39f3eea6"
+      },
+      "source_config": {
+        "path": "configs/p3-internal-bound-v4/mooc-V1-seed0.json",
+        "sha256": "a27a75730e36204ea2d07c6a5121f0dcab42c310a4e468e8f7f455bf39f3eea6"
+      },
+      "lineage": "p3-internal-bound-queue-v4",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V1\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\mooc\\V1\\seed0\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V1-seed1",
+      "dataset": "mooc",
+      "variant": "V1",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed1.json",
+        "sha256": "9d1d7203578f87badfe50691b140c4cefa84bc6fcbe9f2274ab78b609adb5b42"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed1.json",
+        "sha256": "9d1d7203578f87badfe50691b140c4cefa84bc6fcbe9f2274ab78b609adb5b42"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed1\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V1-seed2",
+      "dataset": "mooc",
+      "variant": "V1",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed2.json",
+        "sha256": "6830a8cc982fd83806df44186395283271b7ab7fe02906d88d9620ca62fb7a7c"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed2.json",
+        "sha256": "6830a8cc982fd83806df44186395283271b7ab7fe02906d88d9620ca62fb7a7c"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed2\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V1-seed3",
+      "dataset": "mooc",
+      "variant": "V1",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed3.json",
+        "sha256": "0d9eb2f42fbc43feadb3a0cacb85a4993b7e382b69c6f0fa7a21412981ff1916"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed3.json",
+        "sha256": "0d9eb2f42fbc43feadb3a0cacb85a4993b7e382b69c6f0fa7a21412981ff1916"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed3\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V1-seed4",
+      "dataset": "mooc",
+      "variant": "V1",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed4.json",
+        "sha256": "e596ca302df4b7e9591f7c83889d862a70da8e63d2b0350e9157f134b3e39282"
+      },
+      "source_config": {
+        "path": "configs/core-formal-pending-v1/mooc-V1-seed4.json",
+        "sha256": "e596ca302df4b7e9591f7c83889d862a70da8e63d2b0350e9157f134b3e39282"
+      },
+      "lineage": "root-prepared-formal-control-config",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-pending-v1\\mooc\\V1\\seed4\\input-binding-at-launch.json",
+      "candidate_id": null,
+      "candidate_selection_status": "control-pending-seed0-p3-or-formal-launch",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": null,
+      "input_blueprint": null,
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V2-seed0",
+      "dataset": "mooc",
+      "variant": "V2",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V2\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V2\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed0.json",
+        "sha256": "289eccccc52eaf260949e3931e18d53a490afec054d0926e621334a4cc371a36"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V2-seed1",
+      "dataset": "mooc",
+      "variant": "V2",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed1.json",
+        "sha256": "807b862bf9d4b2ab108bbee1e4fdbdd39a7fa0c89235a5686faf791c9ff3fde4"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed1.json",
+        "sha256": "51d7b5e572e246431b070975878a3f40c29f39ca5aa5467e050cebecc4060eb3"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V2-seed2",
+      "dataset": "mooc",
+      "variant": "V2",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed2.json",
+        "sha256": "f2faceb24012b9852af7755fcad2cbdaca420d98d9e99c2500ef896458216dd6"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed2.json",
+        "sha256": "f77baba949f56af33cd41ec3a7edee07278205ff73556a4075d7ec2d639863ee"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V2-seed3",
+      "dataset": "mooc",
+      "variant": "V2",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed3.json",
+        "sha256": "b9088221d08967b4f011078470549aebcddc00f8eea171752c9ff166e387f8f8"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed3.json",
+        "sha256": "9f345c75c67b763cb8a216b856b63ef3337dc57965aaca13544f0648eace3953"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V2-seed4",
+      "dataset": "mooc",
+      "variant": "V2",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V2-seed4.json",
+        "sha256": "696440296cf8a4eb76d2da21dd605af916a51f665f62feb37ca507108392c743"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V2-seed0.json",
+        "sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V2\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V2.json",
+        "sha256": "9d89bc7f53bcef4c509af7e47a329c127042f7fc1077eae70e36b675b9287738"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V2-seed4.json",
+        "sha256": "77c31388219457db45379ee5434f3762f0bc463ebd290f50c829be50fec9d959"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V3-seed0",
+      "dataset": "mooc",
+      "variant": "V3",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V3\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V3\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed0.json",
+        "sha256": "6f5d73859bd3741c96c2f88acfa618e8b75acde65b08024c41e566a1c228396f"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V3-seed1",
+      "dataset": "mooc",
+      "variant": "V3",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed1.json",
+        "sha256": "3ab10db789035f07f7d49e717aa88b7cff9681511ee6c35fda4ab64131740d7c"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed1.json",
+        "sha256": "bebcad24745b0963daea2a447ff0662f7d7c73e9f24585d240620cde2564d8c1"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V3-seed2",
+      "dataset": "mooc",
+      "variant": "V3",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed2.json",
+        "sha256": "35b9072fc1796c2a6f36d28007b2fa52f4f5dff8badb5cf3642314b6f15ed6e7"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed2.json",
+        "sha256": "7796559860fa9a753785180fe7179c685cc6fd60f62f53e6da53b4520753187b"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V3-seed3",
+      "dataset": "mooc",
+      "variant": "V3",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed3.json",
+        "sha256": "a9273524aee14f3966a211e20272cd911594b6b160875a345fa17baca8d5d0a8"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed3.json",
+        "sha256": "353463e48ca10b1f8210ee9f2b3f9174eec89edf9cd454e2b8bc45c721eba7ee"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V3-seed4",
+      "dataset": "mooc",
+      "variant": "V3",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V3-seed4.json",
+        "sha256": "62b75b704f11ae4f058b00568f32e72ae200f5dc67949cdc6e6cfe90e575daaf"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V3-seed0.json",
+        "sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V3\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V3.json",
+        "sha256": "485213d71c297d73f616d602cf0cae980d23a0d63554d781c0e059293a65321f"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V3-seed4.json",
+        "sha256": "3e80af6688a7e751418271b32ca9cd760bf755b3d0ca7460163b8f1955320007"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V4-seed0",
+      "dataset": "mooc",
+      "variant": "V4",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V4\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V4\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed0.json",
+        "sha256": "c97040759ffaf2b6bcf07fbf618a3a12bc60f8844d212dcffd33063898389912"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V4-seed1",
+      "dataset": "mooc",
+      "variant": "V4",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed1.json",
+        "sha256": "f18f7c7043224b900013b7e99c4a04ca2caf33eb6da140edb1348a2e7636a131"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed1.json",
+        "sha256": "72dcc2c0e760fca623fbc37c674cd9575aa0d426c2b4cda40f9957e11a1010e1"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V4-seed2",
+      "dataset": "mooc",
+      "variant": "V4",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed2.json",
+        "sha256": "c39046008222048fed3b7bda7cc8d6a0f4b3291a7638d9b8bca4288db81b1d7f"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed2.json",
+        "sha256": "7211280cefffb5be7b28afae2ac8406711f9dd52df5a3c02197a1570a755462d"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V4-seed3",
+      "dataset": "mooc",
+      "variant": "V4",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed3.json",
+        "sha256": "e8d229dd79fe63251624ae9b16ad58250ef6c8ee46285b86aa24bd3adb4d1972"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed3.json",
+        "sha256": "1468e4371e493e2bfdbf36f4ab8be3ed64f3f5320423e232e97da5f26cd77722"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V4-seed4",
+      "dataset": "mooc",
+      "variant": "V4",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V4-seed4.json",
+        "sha256": "22b69f967293b9af878920da88cfe16a0e30f09f170066c71c35eec4ab816d81"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V4-seed0.json",
+        "sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V4\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V4.json",
+        "sha256": "e061d1581844cb6767903dc77cf5fbe64ace8cb5d6f0678eb49f9c4e8dde7bed"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V4-seed4.json",
+        "sha256": "35820ce785072485f93df931c648b863bfb7cde3d5c2232b0b40bd446d088e36"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V9-seed0",
+      "dataset": "mooc",
+      "variant": "V9",
+      "model_seed": 0,
+      "config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "lineage": "accepted-p4-pilot-v3-hyperparameter-reference-core-development-v1",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V9\\seed0",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-development-v1\\mooc\\V9\\seed0\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": "actual numeric review plus root acceptance; output/config/source/binding must match",
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed0.json",
+        "sha256": "015d1b8a1f84c76ada43f754f8bef4875770890112e392b751763e17e247d099"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V9-seed1",
+      "dataset": "mooc",
+      "variant": "V9",
+      "model_seed": 1,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed1.json",
+        "sha256": "5ebb88f7b113feff17f30f7cd854e37e16ec490cf43d10fa06645abe1183903b"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed1",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed1\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed1.json",
+        "sha256": "ce92e048274b79fc966d508bfbcc055eb2b147080f4139593215e2385a126ff7"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V9-seed2",
+      "dataset": "mooc",
+      "variant": "V9",
+      "model_seed": 2,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed2.json",
+        "sha256": "577535005bde11055119110d1cc0edc0c83d9bfbdb1361a2ec3c708ed99a5886"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed2",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed2\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed2.json",
+        "sha256": "cceb042a60dfe67d92a3d398efbac427b5ccc93f4c8d03e9d1f974e94bd20353"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V9-seed3",
+      "dataset": "mooc",
+      "variant": "V9",
+      "model_seed": 3,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed3.json",
+        "sha256": "fe34eb4b2ce702e3e3b42a4a7acbdff826e4f22c61f3f68d821cd3c8293cade2"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed3",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed3\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed3.json",
+        "sha256": "4645fe2b4d23386264d3edc22f1167e441c8e32434a0c4869dd264c75fa0f1d4"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    },
+    {
+      "row_id": "core-formal-mooc-V9-seed4",
+      "dataset": "mooc",
+      "variant": "V9",
+      "model_seed": 4,
+      "config": {
+        "path": "configs/core-formal-candidate-catalog-v1/mooc-V9-seed4.json",
+        "sha256": "b83e13c02447ce1ac06e13ade484c483fa64b3e42a7d7f1bd3f9515b2afb2be8"
+      },
+      "source_config": {
+        "path": "configs/core-development-v1/mooc-V9-seed0.json",
+        "sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6"
+      },
+      "lineage": "seed0-template-only-seed-output-clone",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed4",
+      "expected_training_binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core-formal-candidate-catalog-v1\\mooc\\V9\\seed4\\input-binding-at-launch.json",
+      "candidate_id": "g00-m00",
+      "candidate_selection_status": "prospective-only-not-selected",
+      "seed0_reuse_precondition": null,
+      "candidate_pool": {
+        "path": "protocols/core-formal-default-candidate-pools-v1/mooc-V9.json",
+        "sha256": "60c995bd46180beb69b4ce93ed3bf77f270600dff36686677b3e992c1fe9fc92"
+      },
+      "input_blueprint": {
+        "path": "protocols/core-formal-default-input-blueprints-v1/mooc-V9-seed4.json",
+        "sha256": "9e87ecc9de27ee5bfc6929250777989249058c85d22b74d56fb1545689147253"
+      },
+      "selected": false,
+      "training_started": false,
+      "test_accessed": false
+    }
+  ],
+  "generated_file_count": 120,
+  "preparation_script_sha256": "34487da3ee7deb3546f1690a0c67ea4e30a995680955ba51533d69bd122325e1"
+}

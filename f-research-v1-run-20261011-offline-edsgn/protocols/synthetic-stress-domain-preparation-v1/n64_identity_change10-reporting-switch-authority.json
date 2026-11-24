@@ -1,0 +1,69 @@
+{
+  "dataset_id": "synthetic",
+  "dataset_root": "data/processed/synthetic-stress-n64-identity10",
+  "oracle_npz_decoded": false,
+  "ordered_switch_refs": [
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-identity10/oracle/test_seed200.oracle.npz",
+        "sha256": "769354449f6094e158e2180d50e4eaa668fe351392097f79d0ccad1c970b4bb7"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-identity10/test_seed200.npz",
+        "sha256": "0fe443c6737651301eaa0c450c54a3d6191e7c4f5455d581d21a27a271e4449a"
+      },
+      "trajectory_index": 0,
+      "trajectory_seed_id": 200
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-identity10/oracle/test_seed201.oracle.npz",
+        "sha256": "267acf347f88d9f09d65f635f7e2f9d6e3d6cec7cedd78e8a27c530573480e7c"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-identity10/test_seed201.npz",
+        "sha256": "e0fe9cc9928eb6d8b27e16bbc3f4b4fb0bae3174ab4137446573a9f27e316a21"
+      },
+      "trajectory_index": 1,
+      "trajectory_seed_id": 201
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-identity10/oracle/test_seed202.oracle.npz",
+        "sha256": "adcd3a3b9a76bde19ffbc85a9806662b4428e1648a5f7132f331051beef849ad"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-identity10/test_seed202.npz",
+        "sha256": "0dbc25d0b813c7a2ace58cffc451b25b566f1e267b94839bbee3d449c68d28b9"
+      },
+      "trajectory_index": 2,
+      "trajectory_seed_id": 202
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-identity10/oracle/test_seed203.oracle.npz",
+        "sha256": "707b2c671930b265468b94e34fbc470795ddf701721a7a7a5888554124d7a61c"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-identity10/test_seed203.npz",
+        "sha256": "6a54dd43fea1f467342f26f6137e348ea83cc7438dd26fc8be6bff29215b8579"
+      },
+      "trajectory_index": 3,
+      "trajectory_seed_id": 203
+    }
+  ],
+  "purpose": "post-global-test-reporting-only; never a model input",
+  "regime_id": "n64_identity_change10",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "source_manifest": {
+    "path": "data/processed/synthetic-stress-n64-identity10/manifest.json",
+    "sha256": "1dd78b3039c092fefd0491f079d93ca1d994ce879c96e56dfffb81551df8504e"
+  },
+  "split": "test",
+  "status": "prospective_metadata_only",
+  "value_decoded": false
+}

@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "event_kind": "email",
+    "history_length": 28,
+    "hmax": 7,
+    "node_ids_sha256": "c361fbc6ff06549e10ad52dc528a12672d6d5d74d5c547d839a44c79d611d01c",
+    "partition": "chronological",
+    "shape_tnf": [
+      803,
+      986,
+      2
+    ],
+    "source_name": "SNAP email-Eu-core-temporal",
+    "split_bounds_end_exclusive": 803,
+    "split_bounds_start_inclusive": 642
+  },
+  "ordered_collection": [
+    {
+      "archive_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+      "path": "data/processed/email/email.npz",
+      "trajectory_index": 0
+    }
+  ],
+  "schema": "edsgn.split-history-domain.v1",
+  "trajectories": [
+    {
+      "domain_bounds_end_exclusive": 796,
+      "domain_bounds_start_inclusive": 614,
+      "history_length": 28,
+      "history_union_end_exclusive": 796,
+      "history_union_start_inclusive": 614,
+      "origin_count": 155,
+      "origin_first": 641,
+      "origin_last": 795,
+      "source_input_mask_sha256": "54b89f0a411a348e0410c74156acd610b791af253b2dc66023053562b16bff14",
+      "source_trajectory_seed": 0,
+      "split": "test",
+      "trajectory_index": 0
+    }
+  ]
+}

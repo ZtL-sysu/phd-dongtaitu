@@ -1,0 +1,19 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "prospective_candidate_linkage_engineering_only",
+  "created_utc": "2026-10-11T12:39:33.470058+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/prospective_training_candidate_binding_v1.py": "3dce0d58bf59dcb16b86699c35e7ac6664f4357ce6cfe6390982b1b0ebc998d8",
+    "reviews/prospective-training-candidate-binding-independent-v1.json": "03341e076f48938fba400c8403a489064920043fb6db40539ef394f415335fe1",
+    "reviews/prospective-training-candidate-binding-independent-v1.md": "50960e704b91437d78bf0a1638b2de4188744a75ecef8bfb6912b8aa253b07f9",
+    "edsgn/tests/test_prospective_training_candidate_binding_v1.py": "3f64049f0b71ad8f7b2c9e711a8cdfd778d696cb844b78b029d8e2d7b1681fc2",
+    "logs/root-candidate-binding-and-graph8-toy-v1.log": "d2c8ea807ce675806eac47f9073a1126ac3a4f9b654187eaa4abda69287ceb00",
+    "protocols/p3a-candidate-and-launch-binding-root-design-v1.md": "fb5b1e7e1c2fbf53aa78176a900d615c5846baa6d12583b3a10e089cb807e230",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59"
+  },
+  "actual_candidate_selection": false,
+  "actual_training_authorized": false
+}

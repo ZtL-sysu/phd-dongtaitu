@@ -1,0 +1,1068 @@
+{
+  "schema_version": 1,
+  "budget_policy": "one cumulative 72-hour budget; no reset",
+  "budget_seconds": 259200,
+  "spent_seconds": 22391.518227000004,
+  "measured_seconds": 21866.518227000004,
+  "conservative_bound_seconds": 525.0,
+  "remaining_seconds": 236808.481773,
+  "stop_loss_reached": false,
+  "budget_completion_claim": false,
+  "coverage_complete": true,
+  "coverage_gaps": [],
+  "accounting_rows": [
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\GRU\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\GRU\\seed0",
+      "seconds": 430.05316969999694
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\STID\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\STID\\seed0",
+      "seconds": 287.69598710001446
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\GRU\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\GRU\\seed0",
+      "seconds": 429.5577858000179
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\STID\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\STID\\seed0",
+      "seconds": 187.01495330000762
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V0\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V0\\seed0",
+      "seconds": 456.9547808000061
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V1\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V1\\seed0",
+      "seconds": 2324.5228459000064
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\DGCRN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\DGCRN\\seed0",
+      "seconds": 6604.2449318
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\SeqSNN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\SeqSNN\\seed0",
+      "seconds": 814.8283446000132
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\DGCRN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\DGCRN\\seed0",
+      "seconds": 2494.784115599992
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\SeqSNN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\SeqSNN\\seed0",
+      "seconds": 507.7926288000017
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\DGCRN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\DGCRN\\seed0",
+      "seconds": 434.06971550002345
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\SeqSNN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\SeqSNN\\seed0",
+      "seconds": 24.36607930000173
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\DGCRN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\DGCRN\\seed0",
+      "seconds": 2352.7667433999886
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\SeqSNN\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\SeqSNN\\seed0",
+      "seconds": 531.2923307999736
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\GRU\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\GRU\\seed0",
+      "seconds": 99.11437080000178
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\STID\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\STID\\seed0",
+      "seconds": 19.68094370001927
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\GRU\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\GRU\\seed0",
+      "seconds": 52.1250413999951
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\STID\\seed0\\training_summary.json",
+      "kind": "training_summary",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\STID\\seed0",
+      "seconds": 37.160216500022216
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0\\training_log.csv",
+      "kind": "unsummarized_training_log_last_elapsed",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0",
+      "seconds": 841.3653445999953
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\baseline-campaign-queue.json#runs[1]",
+      "kind": "queue_process_wall_adjustment",
+      "duration_basis": "started_finished_utc_span",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\STID\\seed0",
+      "seconds": 53.98504669999238,
+      "note": "same output; only max queue duration above output-side timer counted"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\baseline-campaign-queue.json#runs[2]",
+      "kind": "queue_process_wall_adjustment",
+      "duration_basis": "started_finished_utc_span",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\GRU\\seed0",
+      "seconds": 49.94683030000306,
+      "note": "same output; only max queue duration above output-side timer counted"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\baseline-campaign-queue.json#runs[3]",
+      "kind": "queue_process_wall_adjustment",
+      "duration_basis": "started_finished_utc_span",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\STID\\seed0",
+      "seconds": 43.30401289998554,
+      "note": "same output; only max queue duration above output-side timer counted"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\baseline-campaign-queue.json#runs[4]",
+      "kind": "queue_process_wall_adjustment",
+      "duration_basis": "started_finished_utc_span",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V0\\seed0",
+      "seconds": 16.04521919999388,
+      "note": "same output; only max queue duration above output-side timer counted"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\baseline-campaign-queue.json#runs[5]",
+      "kind": "queue_process_wall_adjustment",
+      "duration_basis": "process_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V1\\seed0",
+      "seconds": 7.530574599979445,
+      "note": "same output; only max queue duration above output-side timer counted"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-simple-baseline-email-episode-summary.json#[0]",
+      "kind": "simple_baseline_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple",
+      "seconds": 33.55873479999718
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-simple-baseline-summary.json#[0]",
+      "kind": "simple_baseline_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\simple",
+      "seconds": 9.094076799985487
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-simple-baseline-summary.json#[1]",
+      "kind": "simple_baseline_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email\\simple",
+      "seconds": 10.363759600004414
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-simple-baseline-summary.json#[2]",
+      "kind": "simple_baseline_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\simple",
+      "seconds": 6.233783500007121
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-fullpath-cpu-toy-v1.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 0.1008923000190407,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-gpu-fullpath-probe-v2.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 11.394194200023776,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-gpu-fullpath-probe-v3.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 30.57797029998619,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\cuda-resource-diagnostic.json",
+      "kind": "resource_diagnostic_started_completed_span",
+      "duration_basis": "started_utc+completed_utc",
+      "seconds": 23.0,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "random tensor forward-only functionality/resource diagnostic; not a benchmark"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\dcrnn-training-prior-build-v1.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 2.6030158,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "resource/functionality diagnostic: CPU DCRNN training-prior builder; not a scientific benchmark"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\email-training-component-resource-v1.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 75.07579060000717,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\frozen-c06-preflight-v2-toy-tests.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 5.0079034,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\frozen-split-history-robustness-v1.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 4.9493517,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p2-rp-robust-runtime-independent-v3.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 3.182174900022801,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v2-email-SeqSNN-B8.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 7.5263762999966275,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v2-email-V1-B24.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 176.6493812999979,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v2-synthetic-DGCRN-B128.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 14.552189899986843,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v3-email-DGCRN-B1.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 11.200677699991502,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v3-email-SeqSNN-B2.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 12.948982200003229,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v3-mooc-V1-B512.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 924.8356326,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-email-DGCRN-B4-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 15.026020000019344,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-email-V1-B8-cpu.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 131.8746747999976,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-email-V1-B8-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 76.56124650000129,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-email-V4-B8-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 62.1146824999887,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-mooc-DGCRN-B128-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 25.18113110002014,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-mooc-SeqSNN-B128-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 10.182593399978941,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-mooc-V1-B128-cpu.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 285.94529999999213,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-mooc-V1-B128-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 178.16220010002144,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-synthetic-V4-B512-cuda.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 10.15463170001749,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-DGCRN-B64-resource-probe.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 6.288045099994633,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-SeqSNN-official-B256-resource-probe.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 16.263948100007838,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-SeqSNN-official-B32-resource-probe.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 12.64375220000511,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-V0-resource-probe-v2.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 2.8541021999844816,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-V0-resource-probe.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 0.00010049997945316136,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-synthetic-V1-B512-resource-probe.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 5.551679299998796,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "single-real-training-batch-resource-probe"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\performance-diagnostic.json",
+      "kind": "resource_diagnostic_started_completed_span",
+      "duration_basis": "started_utc+completed_utc",
+      "seconds": 151.0,
+      "timing_basis": "measured",
+      "optimizer_steps": null,
+      "scope": "random tensor resource/functionality diagnostic; not a scientific benchmark"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\rp-adapter-staging-smoke-v2.json",
+      "kind": "resource_probe_wall_seconds",
+      "duration_basis": "wall_seconds",
+      "seconds": 2.0947546000243165,
+      "timing_basis": "measured",
+      "optimizer_steps": 0,
+      "scope": "resource/functionality diagnostic"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-email-DGCRN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\DGCRN\\seed0",
+      "seconds": 6.484705599985318,
+      "phase_total_wall_seconds": 6610.729637399985,
+      "already_accounted_seconds": 6604.2449318,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-email-DGCRN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-email-episode-DGCRN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\DGCRN\\seed0",
+      "seconds": 6.389236899995012,
+      "phase_total_wall_seconds": 2501.1733524999872,
+      "already_accounted_seconds": 2494.784115599992,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-email-episode-DGCRN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-email-episode-SeqSNN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email-episode\\SeqSNN\\seed0",
+      "seconds": 8.170054699992761,
+      "phase_total_wall_seconds": 515.9626834999945,
+      "already_accounted_seconds": 507.7926288000017,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-email-episode-SeqSNN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-email-SeqSNN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\email\\SeqSNN\\seed0",
+      "seconds": 6.995303200004855,
+      "phase_total_wall_seconds": 821.8236478000181,
+      "already_accounted_seconds": 814.8283446000132,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-email-SeqSNN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-mooc-DGCRN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\DGCRN\\seed0",
+      "seconds": 9.190953999990597,
+      "phase_total_wall_seconds": 443.26066950001405,
+      "already_accounted_seconds": 434.06971550002345,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-mooc-DGCRN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-mooc-SeqSNN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\mooc\\SeqSNN\\seed0",
+      "seconds": 6.950616599991918,
+      "phase_total_wall_seconds": 31.316695899993647,
+      "already_accounted_seconds": 24.36607930000173,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-mooc-SeqSNN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-synthetic-DGCRN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\DGCRN\\seed0",
+      "seconds": 9.933499200007645,
+      "phase_total_wall_seconds": 2362.7002425999963,
+      "already_accounted_seconds": 2352.7667433999886,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-synthetic-DGCRN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\baseline-bound-v3-synthetic-SeqSNN-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-bound-v3\\synthetic\\SeqSNN\\seed0",
+      "seconds": 11.118259800045053,
+      "phase_total_wall_seconds": 542.4105906000186,
+      "already_accounted_seconds": 531.2923307999736,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "baseline-bound-v3-synthetic-SeqSNN-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\internal-bound-v4-email-episode-GRU-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\GRU\\seed0",
+      "seconds": 6.614360699983081,
+      "phase_total_wall_seconds": 58.73940209997818,
+      "already_accounted_seconds": 52.1250413999951,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "internal-bound-v4-email-episode-GRU-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\internal-bound-v4-email-episode-STID-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email-episode\\STID\\seed0",
+      "seconds": 5.628943899995647,
+      "phase_total_wall_seconds": 42.78916040001786,
+      "already_accounted_seconds": 37.160216500022216,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "internal-bound-v4-email-episode-STID-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\internal-bound-v4-email-GRU-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\GRU\\seed0",
+      "seconds": 7.780553699994925,
+      "phase_total_wall_seconds": 106.8949244999967,
+      "already_accounted_seconds": 99.11437080000178,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "internal-bound-v4-email-GRU-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\internal-bound-v4-email-STID-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\STID\\seed0",
+      "seconds": 6.979322399973171,
+      "phase_total_wall_seconds": 26.66026609999244,
+      "already_accounted_seconds": 19.68094370001927,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "completed"
+      ],
+      "job_ids": [
+        "internal-bound-v4-email-STID-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\offline-phase-wall\\internal-bound-v4-email-V0-seed0.json",
+      "kind": "offline_experiment_phase_wall_seconds",
+      "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\internal-bound-v4\\email\\V0\\seed0",
+      "seconds": 120.57012039999245,
+      "phase_total_wall_seconds": 961.9354649999877,
+      "already_accounted_seconds": 841.3653445999953,
+      "duration_basis": "whole_process_receipts_max_existing_output_timers",
+      "phases": [
+        "training"
+      ],
+      "statuses": [
+        "running"
+      ],
+      "job_ids": [
+        "internal-bound-v4-email-V0-seed0"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-bounded-tensor-diagnostic-v1.json",
+      "kind": "standalone_candidate_probe_duration_seconds",
+      "duration_basis": "task_duration_seconds",
+      "scope": "standalone cpu candidate equivalence and resource probe",
+      "seconds": 8.440108700015116,
+      "timing_basis": "measured"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-bounded-tensor-diagnostic-v2.json",
+      "kind": "standalone_candidate_probe_duration_seconds",
+      "duration_basis": "task_duration_seconds",
+      "scope": "standalone cpu candidate equivalence and resource probe; density bounds k",
+      "seconds": 13.652080900006695,
+      "timing_basis": "measured"
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-cpu-mirror-diagnostic-v1.json",
+      "kind": "standalone_candidate_probe_duration_seconds",
+      "duration_basis": "wall_seconds",
+      "scope": "cpu candidate function equivalence/resource probe only",
+      "seconds": 2.5143694000144023,
+      "timing_basis": "measured"
+    },
+    {
+      "source": "logs/setup-resource-probe.log",
+      "kind": "manual_audit_allowance",
+      "id": "setup-resource-history-reservation-v1",
+      "seconds": 300.0,
+      "timing_basis": "conservative-bound",
+      "description": "Historical functionality forward/backward setup probe lacks a total-wall field. The log creation-to-last-write span is about73s, with subsequent report writing. Reserve300s for budget accounting; this is not a measured benchmark or claimed exact elapsed time. Preserve original files.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\setup-resource-probe.json"
+      ]
+    },
+    {
+      "source": "logs/T26-micro-overfit-v1.log",
+      "kind": "manual_audit_allowance",
+      "id": "T26-two-engineering-optimizer-runs-v1",
+      "seconds": 180.0,
+      "timing_basis": "conservative-bound",
+      "description": "Two executions of the fixed70-step micro-overfit (independent reproduction and pytest). Pytest measured46.19s; the combined log creation-to-last-write span was132.43s. Reserve180s including startup and both optimizer runs; do not claim180s as a scientific timing result. No formal training summaries exist for these toy runs.",
+      "covers_sources": []
+    },
+    {
+      "source": "logs/email-prior-candidate-cpu-v1.log",
+      "kind": "manual_audit_allowance",
+      "id": "email-prior-component-diagnostic-v1",
+      "seconds": 45.0,
+      "timing_basis": "conservative-bound",
+      "description": "Standalone CPU private-method diagnostic on24 training windows. Measured component sum8.441s is not complete forward time. Reserve45s including data/model construction and process overhead; no optimizer and no test-window evaluation.",
+      "covers_sources": []
+    },
+    {
+      "source": "logs/rp-adapter-staging-smoke-v1.json",
+      "kind": "manual_audit_measured",
+      "id": "rp-adapter-staging-cpu-v1",
+      "seconds": 3.820961,
+      "timing_basis": "measured",
+      "description": "Whole command CPU forward/backward toy adapter checks, recorded whole_command_wall_seconds. No optimizer or real dataset. V1 retained as historical evidence after author initialization repair.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\rp-adapter-staging-smoke-v1.json"
+      ]
+    },
+    {
+      "source": "logs/dcrnn-staging-smoke-v1.json",
+      "kind": "manual_audit_measured",
+      "id": "dcrnn-adapter-staging-cpu-v1",
+      "seconds": 4.1533011,
+      "timing_basis": "measured",
+      "description": "Whole process CPU toy adapter checks, recorded process_wall_seconds. No optimizer or real dataset. Preserved original report.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\dcrnn-staging-smoke-v1.json"
+      ]
+    },
+    {
+      "source": "logs/dcrnn-staging-smoke-v2.json",
+      "kind": "manual_audit_measured",
+      "id": "dcrnn-adapter-staging-cpu-v2",
+      "seconds": 5.8561034,
+      "timing_basis": "measured",
+      "description": "Whole process CPU toy adapter checks, recorded process_wall_seconds. Includes historical upstream sparse-helper behavior, subsequently corrected in v3; no optimizer or real dataset.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\dcrnn-staging-smoke-v2.json"
+      ]
+    },
+    {
+      "source": "logs/dcrnn-staging-smoke-v3.json",
+      "kind": "manual_audit_measured",
+      "id": "dcrnn-adapter-staging-cpu-v3",
+      "seconds": 5.7878324,
+      "timing_basis": "measured",
+      "description": "Whole process CPU toy checks of corrected paired COO coordinates/values and author DCRNN recurrence, recorded process_wall_seconds. No optimizer or real dataset.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\dcrnn-staging-smoke-v3.json"
+      ]
+    },
+    {
+      "source": "logs/dcrnn-training-prior-independent-v1.json",
+      "kind": "manual_audit_measured",
+      "id": "dcrnn-training-prior-independent-numeric-v1",
+      "seconds": 6.69752299998072,
+      "timing_basis": "measured",
+      "description": "Independent train-only prior reconstruction process wall time, explicitly named elapsed_wall_seconds in immutable audit receipt; no model, optimizer, or test target access.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\dcrnn-training-prior-independent-v1.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-GraphWaveNet-B64.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-synthetic-GraphWaveNet-055e7d8e0df8453db0499878b04ff11b",
+      "seconds": 10.484413800004404,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-graphwavenet-b64.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-graphwavenet-seed0-b64.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-AGCRN-B64.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-synthetic-AGCRN-dfec99b041e34fa0b5752de040c57a5c",
+      "seconds": 5.305227400007425,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-agcrn-b64.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-agcrn-seed0-b64.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-STAEformer-B64.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-synthetic-STAEformer-9bb1742a581d4d408bab1d64e9b97f63",
+      "seconds": 5.312870499998098,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-staeformer-b64.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-staeformer-seed0-b64.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-DCRNN-B64.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-synthetic-DCRNN-7863b9b8ce1e475d8d34c8dc5d1668f6",
+      "seconds": 10.577036600006977,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\synthetic-dcrnn-b64.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\synthetic-dcrnn-seed0-b64.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-GraphWaveNet-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-GraphWaveNet-d0ebf4f3585a4dc7af5b5ed41e882fc4",
+      "seconds": 5.283727799978806,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-graphwavenet-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-graphwavenet-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-AGCRN-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-AGCRN-3aa6784fdb3e48d0b2875cf46c785ef7",
+      "seconds": 5.310707399999956,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-agcrn-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-agcrn-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-STAEformer-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-STAEformer-1317f13920994babafedcdb0dc8a3ebd",
+      "seconds": 5.261123600008432,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-staeformer-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-staeformer-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-DCRNN-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-DCRNN-f5c223c3a4e042a5af45387aca7c33f1",
+      "seconds": 10.423516500013648,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-dcrnn-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-dcrnn-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-GraphWaveNet-B32.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-mooc-GraphWaveNet-8f91b24b679841288c2a565efb8345f4",
+      "seconds": 5.252813099999912,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-graphwavenet-seed0-b32.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-graphwavenet-b32.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-AGCRN-B32.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-mooc-AGCRN-7d0248e738ee447c8c5803099a4e6a0e",
+      "seconds": 5.26287009997759,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-agcrn-seed0-b32.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-agcrn-b32.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-STAEformer-B32.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-mooc-STAEformer-a96035a563de41a2846df7bce2fc540f",
+      "seconds": 5.269250899989856,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-staeformer-seed0-b32.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-staeformer-b32.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-DCRNN-B32.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-mooc-DCRNN-6ebdce4383c146039a7eda461f1b10cb",
+      "seconds": 10.438962899992475,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\mooc-dcrnn-seed0-b32.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\mooc-dcrnn-b32.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-GraphWaveNet-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-episode-GraphWaveNet-5cecd6284299457388a81d3f5f02e772",
+      "seconds": 5.326290099998005,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-graphwavenet-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-graphwavenet-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-AGCRN-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-episode-AGCRN-e0af64e2c574441f9a3ce218626f7124",
+      "seconds": 10.459736999997403,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-agcrn-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-agcrn-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-STAEformer-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-episode-STAEformer-cca8d627453e46e2845e825d544c8eff",
+      "seconds": 5.287328699982027,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-staeformer-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-staeformer-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-DCRNN-B2.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-episode-DCRNN-dd85eb3f94754e8a8e4639c4d6839c80",
+      "seconds": 10.465778899990255,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-dcrnn-seed0-b2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-dcrnn-b2.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-AGCRN-B1.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-AGCRN-9a1b0f44aa114ad38cf0a9030eae2740",
+      "seconds": 5.305267499992624,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-agcrn-seed0-b1-v2.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-agcrn-b1.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\agcrn-checkpoint-adapter-cpu-v1.json",
+      "kind": "manual_audit_measured",
+      "id": "agcrn-checkpoint-staged-cpu-v1",
+      "seconds": 5.8576293,
+      "timing_basis": "measured",
+      "description": "Whole staged CPU toy checkpoint parity command, explicit task_duration_seconds; zero optimizer and actual dataset; no GPU.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\agcrn-checkpoint-adapter-cpu-v1.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-AGCRN-B4.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-AGCRN-abe684ce91254846b2319f0948f8fd33",
+      "seconds": 10.496254300000146,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-agcrn-seed0-checkpoint-b4-v4.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-agcrn-b4.json"
+      ]
+    },
+    {
+      "source": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-AGCRN-B4.json",
+      "kind": "manual_audit_measured",
+      "id": "external-resource-email-episode-AGCRN-840a058dde2e43bf92377feb89fb6f02",
+      "seconds": 10.453446500003338,
+      "timing_basis": "measured",
+      "description": "Serial guarded single-batch resource probe attempt; measured=max(parent whole-attempt wall, child probe wall); covers parent receipt and child report to avoid double counting.",
+      "covers_sources": [
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-agcrn-seed0-checkpoint-b4-v4.json",
+        "c:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\queue-attempts\\email-episode-agcrn-b4.json"
+      ]
+    }
+  ],
+  "accounting_sources": 104,
+  "profile_json_files_seen": 0,
+  "profile_execution_status": "not-started",
+  "resource_probe_json_files_seen": 75,
+  "offline_phase_receipts_seen": 13,
+  "note": "Conservative bounds count toward stop-loss as upper allowances and are reported separately from measured time. Runtime-summary replay sample medians are never treated as run-total wall time. Whole-process phase receipts are deduplicated against existing per-output timers by counting only their incremental maximum. No replay record means not-started, not a timing gap; below-budget does not mean campaign complete."
+}

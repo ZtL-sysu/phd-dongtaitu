@@ -1,0 +1,405 @@
+{
+  "schema_version": 1,
+  "scope": "resource/functionality diagnostic",
+  "primary_scientific_timing": false,
+  "status": "passed",
+  "device": "cpu",
+  "torch_threads": 2,
+  "torch_version": "2.11.0+cu128",
+  "torchinfo_version": "1.8.0",
+  "optimizer_steps": 0,
+  "dataset_accessed": false,
+  "test_accessed": false,
+  "future_targets_passed": false,
+  "case_count": 12,
+  "agcrn_author_init_seed_repeatable": true,
+  "gwnet_conv2d_compatibility_parity": {
+    "random": {
+      "output_max_abs_diff": 0.0,
+      "input_grad_max_abs_diff": 0.0,
+      "weight_grad_max_abs_diff": 0.0,
+      "bias_grad_max_abs_diff": 0.0
+    },
+    "impulse": {
+      "output_max_abs_diff": 0.0,
+      "input_grad_max_abs_diff": 0.0,
+      "weight_grad_max_abs_diff": 0.0,
+      "bias_grad_max_abs_diff": 0.0
+    }
+  },
+  "checks": [
+    {
+      "adapter": "GraphWaveNetForecast",
+      "features": 1,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 269995,
+      "parameter_gradient_count": 84,
+      "counters": {
+        "adaptive_adjacency_builds": 1,
+        "graph_convolution_calls": 8,
+        "recurrent_cell_updates": 0,
+        "readout_calls": 2,
+        "gate_conv2d_compat_calls_per_forward": 8,
+        "native_temporal_outputs": 16
+      }
+    },
+    {
+      "adapter": "GraphWaveNetForecast",
+      "features": 2,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 273618,
+      "parameter_gradient_count": 84,
+      "counters": {
+        "adaptive_adjacency_builds": 1,
+        "graph_convolution_calls": 8,
+        "recurrent_cell_updates": 0,
+        "readout_calls": 2,
+        "gate_conv2d_compat_calls_per_forward": 8,
+        "native_temporal_outputs": 16
+      }
+    },
+    {
+      "adapter": "GraphWaveNetForecast",
+      "features": 1,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 269995,
+      "parameter_gradient_count": 84,
+      "counters": {
+        "adaptive_adjacency_builds": 1,
+        "graph_convolution_calls": 8,
+        "recurrent_cell_updates": 0,
+        "readout_calls": 2,
+        "gate_conv2d_compat_calls_per_forward": 8,
+        "native_temporal_outputs": 16
+      }
+    },
+    {
+      "adapter": "GraphWaveNetForecast",
+      "features": 2,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 273618,
+      "parameter_gradient_count": 84,
+      "counters": {
+        "adaptive_adjacency_builds": 1,
+        "graph_convolution_calls": 8,
+        "recurrent_cell_updates": 0,
+        "readout_calls": 2,
+        "gate_conv2d_compat_calls_per_forward": 8,
+        "native_temporal_outputs": 16
+      }
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "features": 1,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 745465,
+      "parameter_gradient_count": 11,
+      "counters": {
+        "adaptive_adjacency_builds": 112,
+        "graph_convolution_calls": 112,
+        "recurrent_cell_updates": 56,
+        "readout_calls": 1,
+        "horizon_decoder_steps": 0
+      }
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "features": 2,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 749760,
+      "parameter_gradient_count": 11,
+      "counters": {
+        "adaptive_adjacency_builds": 112,
+        "graph_convolution_calls": 112,
+        "recurrent_cell_updates": 56,
+        "readout_calls": 1,
+        "horizon_decoder_steps": 0
+      }
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "features": 1,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 745465,
+      "parameter_gradient_count": 11,
+      "counters": {
+        "adaptive_adjacency_builds": 112,
+        "graph_convolution_calls": 112,
+        "recurrent_cell_updates": 56,
+        "readout_calls": 1,
+        "horizon_decoder_steps": 0
+      }
+    },
+    {
+      "adapter": "AGCRNForecast",
+      "features": 2,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 749760,
+      "parameter_gradient_count": 11,
+      "counters": {
+        "adaptive_adjacency_builds": 112,
+        "graph_convolution_calls": 112,
+        "recurrent_cell_updates": 56,
+        "readout_calls": 1,
+        "horizon_decoder_steps": 0
+      }
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "features": 1,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 617863,
+      "parameter_gradient_count": 101,
+      "counters": {
+        "adaptive_adjacency_builds": 0,
+        "graph_convolution_calls": 0,
+        "recurrent_cell_updates": 0,
+        "attention_module_calls": 6,
+        "readout_calls": 1
+      }
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "features": 2,
+      "count_data": true,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": true,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 638278,
+      "parameter_gradient_count": 101,
+      "counters": {
+        "adaptive_adjacency_builds": 0,
+        "graph_convolution_calls": 0,
+        "recurrent_cell_updates": 0,
+        "attention_module_calls": 6,
+        "readout_calls": 1
+      }
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "features": 1,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        1
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 617863,
+      "parameter_gradient_count": 101,
+      "counters": {
+        "adaptive_adjacency_builds": 0,
+        "graph_convolution_calls": 0,
+        "recurrent_cell_updates": 0,
+        "attention_module_calls": 6,
+        "readout_calls": 1
+      }
+    },
+    {
+      "adapter": "STAEformerForecast",
+      "features": 2,
+      "count_data": false,
+      "batch_size": 2,
+      "nodes": 5,
+      "history": 28,
+      "horizon": 7,
+      "prediction_shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "prediction_finite": true,
+      "count_nonnegative": null,
+      "all_nonnull_gradients_finite": true,
+      "parameter_hash_unchanged": true,
+      "checkpoint_reload_predictions_exact": true,
+      "parameter_count": 638278,
+      "parameter_gradient_count": 101,
+      "counters": {
+        "adaptive_adjacency_builds": 0,
+        "graph_convolution_calls": 0,
+        "recurrent_cell_updates": 0,
+        "attention_module_calls": 6,
+        "readout_calls": 1
+      }
+    }
+  ],
+  "upstream_source_sha256_before": {
+    "sources\\Graph-WaveNet\\model.py": "b2fd1d7acd32d9c923f2a262c63d16e1493f174fe253a5d7dafb5e26baf5e6f8",
+    "sources\\AGCRN\\model\\AGCN.py": "f9c74005a118e6c8f4189a23de5a2598de01a1ded002a0ede387d15dc021e77d",
+    "sources\\AGCRN\\model\\AGCRN.py": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80",
+    "sources\\AGCRN\\model\\AGCRNCell.py": "65ade82a8dc5765c62c0d527b3eb7509a59a1defcaf348766d856c00b8789128",
+    "sources\\AGCRN\\model\\BasicTrainer.py": "df42e617bbc5cffba6a204f4259aeed0fc65a827ec859a8561a6bb22860eec67",
+    "sources\\AGCRN\\model\\Run.py": "2078a13d03c66a03057b7662b81fa0c4aa95755fe70f48f462faf5c9ed5c3adf",
+    "sources\\STAEformer-pinned\\model\\STAEformer.py": "ae50f056b123dd55b312ed408b7981281254cf6cd8799f38baea5dffcfd8da7c"
+  },
+  "upstream_source_sha256_after": {
+    "sources\\Graph-WaveNet\\model.py": "b2fd1d7acd32d9c923f2a262c63d16e1493f174fe253a5d7dafb5e26baf5e6f8",
+    "sources\\AGCRN\\model\\AGCN.py": "f9c74005a118e6c8f4189a23de5a2598de01a1ded002a0ede387d15dc021e77d",
+    "sources\\AGCRN\\model\\AGCRN.py": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80",
+    "sources\\AGCRN\\model\\AGCRNCell.py": "65ade82a8dc5765c62c0d527b3eb7509a59a1defcaf348766d856c00b8789128",
+    "sources\\AGCRN\\model\\BasicTrainer.py": "df42e617bbc5cffba6a204f4259aeed0fc65a827ec859a8561a6bb22860eec67",
+    "sources\\AGCRN\\model\\Run.py": "2078a13d03c66a03057b7662b81fa0c4aa95755fe70f48f462faf5c9ed5c3adf",
+    "sources\\STAEformer-pinned\\model\\STAEformer.py": "ae50f056b123dd55b312ed408b7981281254cf6cd8799f38baea5dffcfd8da7c"
+  },
+  "upstream_sources_unchanged": true,
+  "wall_seconds": 2.0947546000243165,
+  "smoke_wall_seconds": 2.0857164000044577
+}

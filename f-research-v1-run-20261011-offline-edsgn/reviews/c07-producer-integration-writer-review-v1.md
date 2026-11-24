@@ -1,0 +1,9 @@
+# C07 producer integration v5/v7 — writer self-review
+
+Scope is staging engineering integration only. I copied the prior accepted C06 v4/preflight v3 and graph diagnostic v6 into successors; no package/controller/queue or scientific execution was changed. Root acceptance remains limited to `engineering-staging-only`; this is not scientific acceptance or a C07 experiment result.
+
+For C06 v5, periodic/random policies are checked against the root acceptance record and the accepted helper source SHA before replay. The helper adapter runs before freeze validation while preserving the policy dataclass digest. The C06 freeze extra binds helper rule/descriptor and exact acceptance-file SHA; `_SOURCE_PATHS` also binds the v5 evaluator, v4 preflight, helper, and acceptance bytes, so expected extras and final input/source fences recheck them. Preflight v4 retains the existing domain-manifest schema/identity and binds its own successor source plus helper/acceptance source bytes.
+
+For graph diagnostic v7, `frozen_diagnostic_extras(..., policy_kind=...)` can bind the accepted helper/acceptance for periodic/random freezes. CLI/replay validates policy kind and acceptance before inference, applies the adapter before prediction, and revalidates helper/acceptance at replay fences. Other policy kinds retain the prior path. CPU toy coverage checks exact accepted-byte rejection, stable policy digest after adaptation, and a real `ForecastModel` periodic forward with quarter quotas and mandatory initialization retained.
+
+Validation: local `dyg-cold` pytest, 35 passed. These are engineering toy tests only; no actual data, checkpoint, GPU, optimizer, full trace, profile, or candidate run was executed. The graph producer still requires a corresponding newly bound freeze extra before periodic/random use; old freezes are not silently reusable.

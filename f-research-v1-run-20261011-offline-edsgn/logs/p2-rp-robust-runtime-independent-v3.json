@@ -1,0 +1,126 @@
+{
+  "scope": "resource/functionality diagnostic",
+  "data_access": "none; in-memory tensors only; no actual dataset or target arrays",
+  "gpu_used": false,
+  "optimizer_used": false,
+  "source_sha256_before": {
+    "edsgn/src/edsgn/baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "edsgn/src/edsgn/rp_baselines.py": "6059c4d7024ac38597d36f8d139de04ced362cfe7d0335a1282fb79a47be2626",
+    "edsgn/src/edsgn/dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "sources/Graph-WaveNet/model.py": "b2fd1d7acd32d9c923f2a262c63d16e1493f174fe253a5d7dafb5e26baf5e6f8",
+    "sources/AGCRN/model/AGCRN.py": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80",
+    "sources/STAEformer-pinned/model/STAEformer.py": "ae50f056b123dd55b312ed408b7981281254cf6cd8799f38baea5dffcfd8da7c",
+    "sources/DCRNN_PyTorch/model/pytorch/dcrnn_model.py": "1e17315b237685920c50f301e02b63904e6eee62b2f9f6d54d1983aa312b84dc"
+  },
+  "smokes": [
+    {
+      "variant": "GraphWaveNet",
+      "count_data": false,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 84,
+      "parameters": 273618,
+      "loss": 0.16215679049491882
+    },
+    {
+      "variant": "GraphWaveNet",
+      "count_data": true,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 84,
+      "parameters": 273618,
+      "loss": 0.5469232201576233
+    },
+    {
+      "variant": "AGCRN",
+      "count_data": false,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 11,
+      "parameters": 749760,
+      "loss": 0.501311719417572
+    },
+    {
+      "variant": "AGCRN",
+      "count_data": true,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 11,
+      "parameters": 749760,
+      "loss": 0.9513381123542786
+    },
+    {
+      "variant": "STAEformer",
+      "count_data": false,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 101,
+      "parameters": 638278,
+      "loss": 0.44041046500205994
+    },
+    {
+      "variant": "STAEformer",
+      "count_data": true,
+      "shape": [
+        2,
+        7,
+        5,
+        2
+      ],
+      "finite_prediction": true,
+      "exact_state_reload_atol_1e-6": true,
+      "finite_non_none_gradients": 101,
+      "parameters": 638278,
+      "loss": 0.720669150352478
+    }
+  ],
+  "status": "passed",
+  "source_sha256_after": {
+    "edsgn/src/edsgn/baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "edsgn/src/edsgn/rp_baselines.py": "6059c4d7024ac38597d36f8d139de04ced362cfe7d0335a1282fb79a47be2626",
+    "edsgn/src/edsgn/dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "sources/Graph-WaveNet/model.py": "b2fd1d7acd32d9c923f2a262c63d16e1493f174fe253a5d7dafb5e26baf5e6f8",
+    "sources/AGCRN/model/AGCRN.py": "40b6a1ef84cf0510250d0cedcd1d253e116869803cd7b8be0973733148936a80",
+    "sources/STAEformer-pinned/model/STAEformer.py": "ae50f056b123dd55b312ed408b7981281254cf6cd8799f38baea5dffcfd8da7c",
+    "sources/DCRNN_PyTorch/model/pytorch/dcrnn_model.py": "1e17315b237685920c50f301e02b63904e6eee62b2f9f6d54d1983aa312b84dc"
+  },
+  "source_unchanged": true,
+  "wall_seconds": 3.182174900022801,
+  "duration_basis": "whole_process_perf_counter_including_imports_and_smokes"
+}

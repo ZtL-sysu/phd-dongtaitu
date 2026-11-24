@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:05:44.671264+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_graph_state_diagnostic_v6.py": "7c91a01f237d64c7f2db383fc31a823265edd7e42b4daa456744e755716302a7",
+    "edsgn/tests/test_frozen_graph_state_diagnostic_v6.py": "17791c4e2847a0f62ede501cfb285ac1d1a8b196fec0624e8e762dd34feaae4c",
+    "reviews/frozen-driver-successors-independent-v2.md": "4692d8f693033883062f3261e09dc4e79ace68ae6c70be2b3e7c1d85cd8990dd",
+    "reviews/frozen-driver-successors-independent-v2.json": "4b56c53ed819b554026f42c79590501985f5dca072c36259313455d8ebd72a09",
+    "logs/frozen-graph-state-diagnostic-v6-focused-tests.log": "2871be95774350377cc29dcbdf7cc6e9d3b01b3afb0bcbbad3dc8c9d355b3339",
+    "logs/frozen-graph-state-diagnostic-v6-cap-preflight.json": "63278a471ad9584dea8407065e75483f14a643e0d7685f3a5a025614ca47be8d"
+  },
+  "actual_diagnostic_run": false
+}

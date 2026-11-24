@@ -1,0 +1,93 @@
+{
+  "output_sha256": {
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "edsgn/src/edsgn/baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "edsgn/src/edsgn/dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/rp_baselines.py": "6059c4d7024ac38597d36f8d139de04ced362cfe7d0335a1282fb79a47be2626",
+    "edsgn/tests/test_rp_baseline_integration.py": "17837052ab6b85a5e5f49dd6eb64b3850486215db4b6b47dc7fec83faa7423b2"
+  },
+  "prior_artifacts": {
+    "official_source_roots": [
+      "Graph-WaveNet",
+      "AGCRN",
+      "STAEformer-pinned",
+      "DCRNN_PyTorch"
+    ],
+    "prior_artifact_hashes": {
+      "email": {
+        "array_sha256": "c63ee0272b6772b646846a78e2428d4a9566db29f406b61024e86c559124b116",
+        "json_sha256": "1586baf4ce7d1f7c1cfdfaaa020733bb603ed98a8554e5ce25b0846b67b56d5c",
+        "npz_sha256": "69aa3e34b5f00a05cb1f0e5a6f56574b7ebc8bdf64cb886eb23676ca97bed844"
+      },
+      "email-episode": {
+        "array_sha256": "285185d4a77c0e46db64e270b92b116c98eda75cde5716bfbc17b26e52df42ca",
+        "json_sha256": "be7704eadf675247cb081c3a173fec8ab7bffb0ebe49e87df27ba99dcb987c12",
+        "npz_sha256": "59f5f354052457410a475d08d7a3b0d494395e1923d6f902bc2934d2297a1cd2"
+      },
+      "mooc": {
+        "array_sha256": "079dbe2e0c1fac8d524b4519cb2863a578c4ae1b21bb38d52fcd6be3124a0079",
+        "json_sha256": "68253afd7d16a64e79b9f67139a8128f06ea1b5821a9665a47cf6197e8608269",
+        "npz_sha256": "313508be3acda657b56ad5750ab104aee9e196d2c92427fe53df3a5c7e3b4dac"
+      },
+      "synthetic": {
+        "array_sha256": "989c086354143be0b584e8ebf3fc677c1d1880842c68ca57715cbfbac0f9c3b5",
+        "json_sha256": "0f2be87134b28f54dda1b60e3e3558853c48a141607393c6809f0f5cb967b45a",
+        "npz_sha256": "134716eb83656c79bf6d3bc4b17c8c73375c1e629e7ad260b3381f20b0ab1cc2"
+      }
+    }
+  },
+  "process_barrier": [],
+  "snapshot_root": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\snapshots\\p2-rp-delta-originals-v3",
+  "snapshots": [
+    {
+      "path": "edsgn/src/edsgn/baselines.py",
+      "sha256": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/src/edsgn/engine.py",
+      "sha256": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "2253630b2f9d8beac2bd333968cbc019ef44e8dfde37bc9921494c7cac4059f6",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/src/edsgn/rp_baselines.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    },
+    {
+      "path": "edsgn/src/edsgn/dcrnn_baseline.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    },
+    {
+      "path": "edsgn/tests/test_rp_baseline_integration.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    }
+  ],
+  "source_sha256_before": {
+    "edsgn/scripts/bind_training_inputs.py": "2253630b2f9d8beac2bd333968cbc019ef44e8dfde37bc9921494c7cac4059f6",
+    "edsgn/src/edsgn/baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+    "edsgn/src/edsgn/engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d"
+  },
+  "stage_gate": {
+    "explicit_root_backedge": true,
+    "p2_gate": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p2-engineering-delta-gate-v2.md",
+    "p3_contract": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+    "pipeline_state": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\pipeline-state.json",
+    "stage_statuses": {
+      "P1B": "passed",
+      "P2": "pending",
+      "P3": "pending"
+    }
+  },
+  "status": "package integration written; no model tests executed",
+  "writes_only_if_explicitly_executed": true,
+  "written_utc": "2026-10-11T08:17:05.741382+00:00"
+}

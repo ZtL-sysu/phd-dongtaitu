@@ -1,0 +1,22 @@
+{
+  "scope": "resource/functionality diagnostic",
+  "status": "passed",
+  "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/staging/test_frozen_case_signal_sensitivity_v2.py",
+  "environment": {
+    "PYTHONPATH": "edsgn/src;edsgn/scripts;edsgn/staging",
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2
+  },
+  "tests_passed": 6,
+  "tests_failed": 0,
+  "elapsed_seconds": 6.21,
+  "real_data_oracle_checkpoint_gpu_or_training_used": false,
+  "driver_sha256": "887897ba8d08153806b7ee4f4e3517ca765f74344bde82e3f40af77f81641ec7",
+  "test_sha256": "b6d57a8d9dcd158f7b2bf10d690ee38f26233df2a4cdd9d801902809b83a89a0",
+  "shared_process_inventory_sha256": "c31e70671f3846cdd8b1fb61e06aab45c0110d9ad5c5f1f3823377ab6d267d06",
+  "inventory_engineering_receipt_sha256": "348b2e085cf7677010140e9c73cdd98f136c1a245b70bcd24ac007a9e7d548ea",
+  "limitations": [
+    "Temporary CPU fixture only; no actual test collection or experiment was executed.",
+    "Global dispatcher/completion integration remains pending."
+  ]
+}

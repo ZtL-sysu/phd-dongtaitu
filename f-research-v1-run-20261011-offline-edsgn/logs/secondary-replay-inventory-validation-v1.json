@@ -1,0 +1,24 @@
+{
+  "all_future_checkpoint_freeze_training_hashes_null": true,
+  "all_rows_unadmitted_unexecuted": true,
+  "category_counts": {
+    "case-signal-sensitivity": 8,
+    "count-loss-poisson": 2,
+    "count-or-event-perturbation": 78,
+    "graph-only-periodic-reference": 8,
+    "missingness": 624,
+    "quota-age-grid": 1536,
+    "simple-baseline-clean": 8,
+    "synthetic-clean-scenario": 104,
+    "synthetic-n256-clean": 18,
+    "trained-state-control": 60
+  },
+  "inventory_sha256": "7543b66ef6623704c2a5194052176eef0cce9fd970689b0b8d96146dd3cf373a",
+  "logical_row_count": 2446,
+  "recipe_count": 14,
+  "recipe_digests_recomputed": true,
+  "scope": "metadata_only_inventory_validation_noarrays",
+  "status": "pass",
+  "synthetic_count_noise_rows": 0,
+  "unique_logical_ids": 2446
+}

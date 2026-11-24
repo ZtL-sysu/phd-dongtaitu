@@ -1,0 +1,191 @@
+{
+  "audit": "synthetic V1 seed0 independent validation-only numeric check",
+  "result": "saved predictions, origins, target/mask alignment and raw-unit CSV metrics verified",
+  "checks": [
+    {
+      "dataset": "synthetic",
+      "method": "V1",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\synthetic\\V1\\seed0\\validation_predictions.npz",
+      "metrics_file": "runs\\baselines\\synthetic\\V1\\seed0\\metrics_by_horizon_val.csv",
+      "manifest_file": "runs\\baselines\\synthetic\\V1\\seed0\\manifest.json",
+      "n_windows": 4028,
+      "n_trajectories_or_series": 2,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        4028,
+        7,
+        64,
+        1
+      ],
+      "n_nodes": 64,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": "feature ids only in artifact; no channel names declared",
+      "units": "synthetic raw target units; generator metadata defines process",
+      "input_transform": "identity signed real values",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+          "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+          "partition": "validation",
+          "data_seed": null
+        },
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+          "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+          "partition": "validation",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json",
+        "validation_entries": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+            "declared_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "actual_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "matches": true
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+            "declared_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "actual_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "matches": true
+          }
+        ]
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.030372407117163953,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.025913172024032954,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.025477498769760132,
+          "recomputed_mae": 0.025477497943795422,
+          "saved_rmse": 0.0296575166285038,
+          "recomputed_rmse": 0.02965751731658173,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.025972235947847366,
+          "recomputed_mae": 0.025972237644371194,
+          "saved_rmse": 0.03046887181699276,
+          "recomputed_rmse": 0.0304688716284884,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.02601422742009163,
+          "recomputed_mae": 0.026014227764974904,
+          "saved_rmse": 0.030535290017724037,
+          "recomputed_rmse": 0.030535290779349918,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": null,
+      "prediction_zero_fraction": null,
+      "zero_prediction_counts_by_feature": null,
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 257792
+        }
+      ],
+      "test_accessed_declaration": {
+        "summary": false,
+        "manifest_selection": "required-horizon average validation MAE; no test access"
+      },
+      "notes": [],
+      "training_summary": {
+        "epochs_executed": 42,
+        "best_val_mae": 0.025821320712566376,
+        "scope": "full_protocol",
+        "test_accessed": false,
+        "stop_loss_reached": false
+      },
+      "recorded_train_val_window_counts": {
+        "train": 16112,
+        "val": 4028
+      },
+      "resolved_config": {
+        "variant": "V1",
+        "seed": 0,
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "epochs": 100,
+        "patience": 10,
+        "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\V1\\seed0"
+      },
+      "test_data_arrays_or_metrics_opened": false,
+      "model_loaded_or_forwarded": false,
+      "GPU_or_optimizer_run": false,
+      "launch_binding_validation_subset_sha_matches": {
+        "validation_seed100.npz": true,
+        "validation_seed101.npz": true
+      },
+      "train_windows_each_epoch": 16112,
+      "full_train_epoch_rows": 42,
+      "manifest_train_windows": 16112,
+      "manifest_val_windows": 4028,
+      "summary_epochs_executed": 42,
+      "best_epoch_from_log": 32,
+      "actual_checkpoint_sha256": "fd887e06befe3d0433a7cc29afd49ff785c31cb46c9985c7ad3ba7967bc677c8",
+      "checkpoint_hash_matches_summary": true,
+      "training_wall_seconds": 2324.5228459000064,
+      "artifact_sha256": {
+        "validation_predictions.npz": "cfe206e4101719ee1d6c6f1a114a4394ed35fa33bd49760f43de49cd6ec1c4a3",
+        "metrics_by_horizon_val.csv": "73e05fd6a97044c35cc8ca47dd18c6a388a279b34bad728afcbce72250b2995e",
+        "training_summary.json": "19e89777e3aca7578c95a187ab1f16ce64a7835033b59e02d9db4a568eca72da",
+        "manifest.json": "3aae51c7a1b193b29e420cd94c4b331029e51d3b0e61080386b0961ca19a6bec",
+        "config_resolved.json": "caa9f1e7b88a46df57d9aaa8ebcf6365720b0336f2b47dde78731e62595611fd",
+        "input-binding-at-launch.json": "2cbc5b3eafcfe3c8612a060fac0eb439933f359d1151f8d66e45f6af625bce77"
+      },
+      "limitations": [
+        "Single development seed; no formal five-seed inference or hypothesis conclusion.",
+        "Only prepared validation archives were opened. Root reported complete launch-binding end-verification; this audit independently matched the two validation file hashes recorded in binding.",
+        "Not a P3/P3A acceptance."
+      ],
+      "recomputed_by_existing_check_one": true
+    }
+  ],
+  "audit_wall_seconds": 0.2169002000009641
+}

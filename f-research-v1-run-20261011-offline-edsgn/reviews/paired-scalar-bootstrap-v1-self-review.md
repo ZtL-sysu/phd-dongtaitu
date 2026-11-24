@@ -1,0 +1,9 @@
+# Paired scalar bootstrap v1 — writer self-review
+
+Role: implementation self-review of the pure numerical kernel; not an independent review, phase executor, endpoint registry, claim decision, or scientific result.
+
+The kernel accepts exactly five seed-by-origin arrays of left/right sums and counts plus canonical ordered `(trajectory_id, origin)` pairs. It rejects nonfinite values, shape mismatch, nonpositive or unequal paired support counts, duplicate/out-of-order/gapped origins, nonconsecutive trajectory IDs, and a block longer than any trajectory. It uses `paired_statistics_shared_v4._common_draws` verbatim with 2,000 replicates and seed 1234. Each draw pools sums/counts per seed, then averages the five seed-level left-minus-right contrasts equally. Output includes signed estimate, seed estimates and sample SD, percentile interval, one-sided upper 95% bound, finite-resample corrected centered two-sided and lower-tail margin p-values, and draw schedule SHA-256.
+
+Focused local Conda CPU tests: `9 passed` in `logs/paired-scalar-bootstrap-v1-tests.log`. Tests compare the draw digest against shared v4, check fractional-count weighting and equal seed weighting, confirm signed/perfect-shift and nonzero-margin direction, and reject bad support, nonfinite values, gaps, order/seed-shape mismatch, and unsupported block lengths. Source SHA-256 `ad2ae2683f8b0df245e1ca60700e58cf62c1746b6599c1c1ed690b873cdaccf6`; tests SHA-256 `9249692162800401fb213a09ed72ba35f6dc70ac55e56a9cae3f7f4e27883175`; test log SHA-256 `8a15b22be726860ee4accec7843f1f8688f38620782e4b33c0596ae577ce1928`.
+
+The kernel has no CLI, archive access, phase/gate access, claim registration, or outcome interpretation. It does not replace required-horizon forecast MAE pooling or whole-family multiplicity correction. Any scientific use still requires a separately accepted producer, support/unit/temporal-slice binding, accepted block choice and margin, and registered family-level inference.

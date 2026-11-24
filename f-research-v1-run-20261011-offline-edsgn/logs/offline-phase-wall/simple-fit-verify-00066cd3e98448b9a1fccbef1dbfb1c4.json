@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\staging\\simple_baseline_train_fit_verification_v4.py",
+    "--dataset",
+    "synthetic",
+    "--legacy-output",
+    "../runs/baselines/synthetic/simple",
+    "--output",
+    "../logs/simple-fit-verify-v4-synthetic-result.json"
+  ],
+  "diagnostic_scope": "resource/functionality",
+  "exception_message": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\synthetic",
+  "exception_type": "FileNotFoundError",
+  "finished_utc": "2026-10-13T10:09:13Z",
+  "id": "simple-fit-verify-00066cd3e98448b9a1fccbef1dbfb1c4",
+  "job_id": "simple-fit-verify-00066cd3e98448b9a1fccbef1dbfb1c4",
+  "lock_token_sha256": "f20770461a364a4bf65fc63fba679d51b3d851c7f424ebd6509fe7471cc49a9b",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-synthetic-result.json",
+  "phase": "training",
+  "returncode": 1,
+  "scope": "offline-experiment-phase",
+  "started_utc": "2026-10-13T10:09:05Z",
+  "status": "failed",
+  "wall_seconds": 7.670890200010035
+}

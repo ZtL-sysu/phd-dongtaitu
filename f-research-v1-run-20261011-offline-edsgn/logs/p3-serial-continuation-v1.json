@@ -1,0 +1,38 @@
+{
+  "scope": "root-authorized serial P3 continuation",
+  "status": "failed",
+  "pid": 36340,
+  "awaited_queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-bound-strong-baseline-queue-v3.json",
+  "awaited_queue_sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+  "started_utc": "2026-10-11T09:30:20.986728+00:00",
+  "queues": [
+    {
+      "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-bound-queue-v4.json",
+      "queue_sha256": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+      "acceptance": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-bound-queue-root-acceptance-v4.json",
+      "acceptance_sha256": "9bde37a727c563b0e3478bed561489119cf7336bd959e8764762f7401547596e",
+      "jobs": 10,
+      "returncode": 1
+    },
+    {
+      "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-bound-queue-v2.json",
+      "queue_sha256": "41c116fc812817ed1152c5030a626aa96922e94d468e84512335b4efada8865d",
+      "acceptance": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-external-bound-queue-root-acceptance-v2.json",
+      "acceptance_sha256": "78b70e59bc04b63b7116ccd5a3a170bccd920840667d1d8ed0ad80abdccde882",
+      "jobs": 16
+    },
+    {
+      "queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-fresh-remaining-bound-queue-v1.json",
+      "queue_sha256": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+      "acceptance": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-fresh-remaining-bound-root-acceptance-v1.json",
+      "acceptance_sha256": "492f8da126c1e2917e98d77bc3cfe1d461b13ae9658a741e2b5354341501a258",
+      "jobs": 6
+    }
+  ],
+  "training_clock_accounting": "Per-output unchanged bound-controller receipts, deduplicated with training timers; wait time is not charged twice.",
+  "test_access": false,
+  "proposed_training": false,
+  "current_queue": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-bound-queue-v4.json",
+  "error": "RuntimeError: Preserved failed continuation; no later queue launched",
+  "last_updated_utc": "2026-10-11T14:15:48.701474+00:00"
+}

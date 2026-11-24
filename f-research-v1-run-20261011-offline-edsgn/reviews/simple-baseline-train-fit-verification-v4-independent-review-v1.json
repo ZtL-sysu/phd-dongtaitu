@@ -1,0 +1,20 @@
+{
+  "scope": "engineering-only",
+  "verdict": "pass for CPU-mock engineering review",
+  "source": "edsgn/staging/simple_baseline_train_fit_verification_v4.py",
+  "source_sha256": "EF3C91E9FFA75134298D6888D2C6B52CA13E746EFD707366EBC01ECB155B7E1C",
+  "tests": "edsgn/tests/test_simple_baseline_train_fit_verification_v4.py",
+  "tests_sha256": "844E51D932479F0250C7080EFAA6EF0C7AF0D3E8BFDA9EFC57ECE90B4D31A28C",
+  "test_result": "20 passed",
+  "pytest_seconds": 7.09,
+  "whole_command_wall_seconds": 8.3679893,
+  "checks": [
+    "train-only coefficient reconstruction and validation-only replay parity",
+    "official P3 validation order and source/input fences",
+    "exclusive two-resource leases and cumulative budget stop-loss",
+    "CLI writes failed receipt and refuses active owned jobs before dataset loading",
+    "midphase process appearance aborts before loader and releases both owned locks",
+    "no test-origin target access in toy validation fixture"
+  ],
+  "limitations": ["CPU temporary fixtures and mocked process inventory only", "no real archives, coefficients, model, GPU, or training phase loaded", "does not itself attest any canonical campaign result"]
+}

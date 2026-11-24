@@ -1,0 +1,25 @@
+{
+  "scope": "independent_metadata_cpu_review_only",
+  "verdict": "needs_repair_cross_job_output_uniqueness",
+  "actual_test_data_read": false,
+  "checkpoint_loaded": false,
+  "model_or_gpu_run": false,
+  "tests": {
+    "path": "edsgn/staging/test_global_frozen_test_completion_v1.py",
+    "sha256": "5d4588292282a22abca583a7683eefc85f2664e8a057b389f2c32a6c48ea7402",
+    "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/staging/test_global_frozen_test_completion_v1.py",
+    "result": "12 passed in 1.69s"
+  },
+  "source_hashes": {
+    "edsgn/staging/global_frozen_test_completion_v1.py": "d90476b02d530862673fb520316b3b52b0c81b34222a6dfc6a15f4c15ccf3e75",
+    "edsgn/scripts/verified_frozen_dispatch_v8.py": "b946169932699f5efad8ae187e5c42cf2e247ccf0c97c895c9103c21d7748998",
+    "edsgn/staging/typed_endpoint_plan_validator_v8.py": "389322379fe39ce707106f80762cd45eb63f76d8f4f5967dd42fe63fa36e10ea",
+    "edsgn/staging/frozen_graph_state_diagnostic_v8.py": "4d54488130639e3504d5da307d523249e3b18e08e768dfb01c6bc8680c8d8be4",
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "edsgn/staging/frozen_prediction_guarded_v5.py": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "edsgn/staging/frozen_profile_guarded_v5.py": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "edsgn/staging/frozen_split_history_robustness_v5.py": "4886f02f4ad51035555154d10da4895dd459b50c2346f306793dd1e3328d8df4"
+  },
+  "independent_counterexample": "_load_queue accepted two distinct job IDs whose output_dir/report/principal_files were identical.",
+  "claim_limit": "Proves only metadata closure for listed queue entries; does not prove the complete RP endpoint matrix or scientific validity."
+}

@@ -1,0 +1,864 @@
+{
+  "schema_version": 1,
+  "dataset": "n64_weight_change10",
+  "created_at_utc": "2026-10-11T06:37:09Z",
+  "config": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\synthetic-stress-n64-weight10.json",
+    "sha256": "a6f6fee768b4abbe4161cf36d47aa1afc631af4c083fa2ebfaddcf06e1a32e07",
+    "values": {
+      "schema_version": 1,
+      "dataset": "synthetic",
+      "steps": 2048,
+      "burn_in": 256,
+      "degree": 8,
+      "missing_rate": 0.0,
+      "missing_kind": "random",
+      "noise_amplitude": 0.05,
+      "shock_amplitude": 0.5,
+      "shock_duration": 8,
+      "gradual_length": 128,
+      "seeds": {
+        "train": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "validation": [
+          100,
+          101
+        ],
+        "test": [
+          200,
+          201,
+          202,
+          203
+        ]
+      },
+      "scenario_id": "n64_weight_change10",
+      "n_nodes": 64,
+      "case": "weight",
+      "change_fraction": 0.1,
+      "output_dir": "data/processed/synthetic-stress-n64-weight10"
+    }
+  },
+  "generator": {
+    "implementation": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prepare.py",
+    "implementation_sha256": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "case": "weight",
+    "case_definition": "multiply selected existing weights by exp(U[-1,1]) and renormalize rows; P1 applied after switch",
+    "n_nodes": 64,
+    "steps": 2048,
+    "burn_in": 256,
+    "degree": 8,
+    "change_fraction": 0.1,
+    "missing_rate": 0.0,
+    "noise_amplitude": 0.05,
+    "shock_amplitude": 0.5,
+    "shock_duration": 8,
+    "gradual_length": 128,
+    "W": "0.2I+0.6P",
+    "P_contract": "nonnegative, row stochastic, zero diagonal, at most degree outgoing edges per stored P_before/P_after",
+    "W_row_sum": 0.8,
+    "innovation": "Uniform[-noise_amplitude,+noise_amplitude]",
+    "same_background_and_pairing": "P0 is identical across cases for matching seed/N/degree. This fixed-support gradual-weight variant and abrupt weight case consume identical RNG draws through innovations for matched seeds; other cases may consume different RNG draws, so innovation arrays are not generally common-random-number paired."
+  },
+  "seeds": {
+    "train": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "validation": [
+      100,
+      101
+    ],
+    "test": [
+      200,
+      201,
+      202,
+      203
+    ]
+  },
+  "normalization": {
+    "transform": "identity signed real values",
+    "fit_split": "train seeds 0-7 only",
+    "mean": [
+      0.0001525156549178064
+    ],
+    "std": [
+      0.03053402714431286
+    ],
+    "scale": [
+      [
+        0.03697213530540466
+      ],
+      [
+        0.03702133521437645
+      ],
+      [
+        0.03709741681814194
+      ],
+      [
+        0.03720609098672867
+      ],
+      [
+        0.037705209106206894
+      ],
+      [
+        0.03725598379969597
+      ],
+      [
+        0.03710010647773743
+      ],
+      [
+        0.037142153829336166
+      ],
+      [
+        0.03697676211595535
+      ],
+      [
+        0.037030745297670364
+      ],
+      [
+        0.03711167722940445
+      ],
+      [
+        0.03651287034153938
+      ],
+      [
+        0.03702683374285698
+      ],
+      [
+        0.03678813949227333
+      ],
+      [
+        0.03733667731285095
+      ],
+      [
+        0.03697202354669571
+      ],
+      [
+        0.03691766783595085
+      ],
+      [
+        0.03706981986761093
+      ],
+      [
+        0.03669034317135811
+      ],
+      [
+        0.0371859036386013
+      ],
+      [
+        0.03697824478149414
+      ],
+      [
+        0.03745671734213829
+      ],
+      [
+        0.037158068269491196
+      ],
+      [
+        0.03700822964310646
+      ],
+      [
+        0.03698517009615898
+      ],
+      [
+        0.0371517650783062
+      ],
+      [
+        0.03754048049449921
+      ],
+      [
+        0.03641749545931816
+      ],
+      [
+        0.03735261783003807
+      ],
+      [
+        0.03735535219311714
+      ],
+      [
+        0.03687407448887825
+      ],
+      [
+        0.037204157561063766
+      ],
+      [
+        0.03661969676613808
+      ],
+      [
+        0.037118665874004364
+      ],
+      [
+        0.037220828235149384
+      ],
+      [
+        0.036854855716228485
+      ],
+      [
+        0.03726897016167641
+      ],
+      [
+        0.03718937933444977
+      ],
+      [
+        0.0368151031434536
+      ],
+      [
+        0.0375642329454422
+      ],
+      [
+        0.03783322870731354
+      ],
+      [
+        0.03679899871349335
+      ],
+      [
+        0.03744299337267876
+      ],
+      [
+        0.03730678930878639
+      ],
+      [
+        0.03678503260016441
+      ],
+      [
+        0.03675910457968712
+      ],
+      [
+        0.03702858090400696
+      ],
+      [
+        0.037018246948719025
+      ],
+      [
+        0.037277910858392715
+      ],
+      [
+        0.03703951835632324
+      ],
+      [
+        0.0368172824382782
+      ],
+      [
+        0.037037502974271774
+      ],
+      [
+        0.037276800721883774
+      ],
+      [
+        0.036467451602220535
+      ],
+      [
+        0.037013351917266846
+      ],
+      [
+        0.037247270345687866
+      ],
+      [
+        0.037129875272512436
+      ],
+      [
+        0.03727199509739876
+      ],
+      [
+        0.03694384917616844
+      ],
+      [
+        0.03673618286848068
+      ],
+      [
+        0.0367058664560318
+      ],
+      [
+        0.03698520362377167
+      ],
+      [
+        0.03690171241760254
+      ],
+      [
+        0.03701690956950188
+      ]
+    ],
+    "reuse_warning": "scenario-local stats; frozen models from another scenario require an explicitly designed normalization adapter"
+  },
+  "split_isolation": "independent seed IDs: train 0-7, validation 100-101, test 200-203; no trajectory is shared across roles",
+  "missingness_plan": "Only clean r0 bundles generated. Do not materialize a missingness Cartesian product; apply frozen 0/0.1/0.3/0.5 input-mask recipes through the robustness wrapper.",
+  "oracle_separation": "P_before/P_after/switch/shock metadata are in oracle/ subdirectory and are not in split_seed*.npz loaded by load_collection",
+  "artifacts": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed0.npz",
+      "bytes": 1461064,
+      "sha256": "494fbae46636035e008013bd8707719a0af298f194eb8f1db63462a781d3dc30",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 0,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed0.oracle.npz",
+        "bytes": 7591,
+        "sha256": "12e11566d99abd57ff380471e25b27a40e72f4112a518efc357f1992ec9e1869"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed1.npz",
+      "bytes": 1460735,
+      "sha256": "885305e2b8dac4265fe3a2c0d28ee5a25fd8a82304db931e34db4c51324f8419",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 1,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed1.oracle.npz",
+        "bytes": 7573,
+        "sha256": "fdee9d6965a8cc104c2a3b14695e70c1e5db7e61c40d3317d35ec705ac133546"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed2.npz",
+      "bytes": 1460778,
+      "sha256": "27fb7cc3f64cd36af8234a59131bd237e3e082a268db9fdb714fe9b78072bc88",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 2,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed2.oracle.npz",
+        "bytes": 7530,
+        "sha256": "fbe87bab94ee90df071aa0c8546048ace83738c8a8b22b6a4842a981f761472b"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed3.npz",
+      "bytes": 1460963,
+      "sha256": "44875137379d9dc7bf1a50c4d5c16f393c4268dc57fd68e27178a42d99cc4e1c",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 3,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed3.oracle.npz",
+        "bytes": 7608,
+        "sha256": "e488432720aee1968cd044990e2e972ed9ab84f33775ecd1a16d92bdbac71caf"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed4.npz",
+      "bytes": 1460770,
+      "sha256": "3dd131fd98489a46fe72a590a1f571ac78595a1a1ce5307d3dbddb341b945c2d",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 4,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed4.oracle.npz",
+        "bytes": 7595,
+        "sha256": "8a32c3e82614fdfdf80be493af001c15572a4bb1236d95c6766c71b674c92b4f"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed5.npz",
+      "bytes": 1460775,
+      "sha256": "99779414585c1a7281ed77921ba09c6d6dd13e228cc8c9b5f56b0ef30c69b2b9",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 5,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed5.oracle.npz",
+        "bytes": 7595,
+        "sha256": "8134aecb92b330cf5c73a4f3977bc8a30fd2f3a5baafde59fa674a893669dcb0"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed6.npz",
+      "bytes": 1460696,
+      "sha256": "7b8a1b1de291d70baf23129cc6e7dcab9a65eefafeb53d5923d58a026729dfe6",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 6,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed6.oracle.npz",
+        "bytes": 7587,
+        "sha256": "870314b4c876478c15a4dedd56adfe05d0f5f26f98e4666018bd835f9c6c2d82"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\train_seed7.npz",
+      "bytes": 1460787,
+      "sha256": "5bf5b73598cf7cb31f34cb42359ae50b6ac79f8c7969d8cf9d6087d65fb3b043",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "train",
+      "seed": 7,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\train_seed7.oracle.npz",
+        "bytes": 7585,
+        "sha256": "b6b3eebef49b66759e3853cc78ba145b980dc040b6a3401ecc851aae8cf76967"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\validation_seed100.npz",
+      "bytes": 1460802,
+      "sha256": "3f6e25f94caf169cbe0c9eaf8faaba467dc84693fa72c1b4f73fc8a9f86e8f5a",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation",
+      "seed": 100,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\validation_seed100.oracle.npz",
+        "bytes": 7603,
+        "sha256": "e5361ff5788a8ec5b70f3ac63856fb21191c1fea7464acbdf525cc45e12a5acc"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\validation_seed101.npz",
+      "bytes": 1460997,
+      "sha256": "c7d5024c3686a4dcf98ad8b54a3942016119464b8dd96dec757be35b7581c002",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation",
+      "seed": 101,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\validation_seed101.oracle.npz",
+        "bytes": 7609,
+        "sha256": "b9b07fac3458b40149e706bad4fd1aa100e91dec10af4d28dc94c9a505c8efcf"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\test_seed200.npz",
+      "bytes": 1460479,
+      "sha256": "ba4882f4fc3d2926c78c9d4db0e4b22fc05770b4476510b9af0e1dab08d6b3fa",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test",
+      "seed": 200,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\test_seed200.oracle.npz",
+        "bytes": 7609,
+        "sha256": "bbeb397c7bb788d6aaa666bf0cf8e5543e5965d1f216ff06c8c906395300388d"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\test_seed201.npz",
+      "bytes": 1460812,
+      "sha256": "0da79879174326a3419029a808163770da48dafea6e874b9fe05f706de72be2e",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test",
+      "seed": 201,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\test_seed201.oracle.npz",
+        "bytes": 7592,
+        "sha256": "304fb5065dc718c8d3f736a0b712fb395196a6d5e70c48b57f449a225884dc64"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\test_seed202.npz",
+      "bytes": 1460571,
+      "sha256": "e23f861a237cc52dde2a0228aa0adc6b29baa63badf7406b0e7da940e7f70a2a",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test",
+      "seed": 202,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\test_seed202.oracle.npz",
+        "bytes": 7611,
+        "sha256": "ac0f74d9535463b723b55de27d1794beebc4feadd0a522d970c56ff666f21920"
+      }
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\test_seed203.npz",
+      "bytes": 1460833,
+      "sha256": "50b9f66c10964b499995dbaeb7de47c6a8cf14d6997eff8b72718c7e89748901",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test",
+      "seed": 203,
+      "oracle": {
+        "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-stress-n64-weight10\\oracle\\test_seed203.oracle.npz",
+        "bytes": 7615,
+        "sha256": "17869115d3a569e1d75ba3974b335aa683c07ccc3618c25a63339486d7f76dc2"
+      }
+    }
+  ],
+  "qc_by_trajectory": [
+    {
+      "split": "train",
+      "seed": 0,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999843537808,
+      "w_after_row_sum_max": 0.8000000089406968,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 727,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 1,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000089406968,
+      "w_after_row_sum_min": 0.7999999843537807,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1325,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 2,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999910593032,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 938,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 3,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000089406968,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 799,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 4,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999888241291,
+      "w_after_row_sum_max": 0.8000000089406967,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 627,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 5,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 1.4901161193847656e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000089406968,
+      "w_after_row_sum_min": 0.7999999821186066,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1051,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 6,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.60770320892334e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000156462193,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.8000000156462193,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 750,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "train",
+      "seed": 7,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999910593032,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1089,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "validation",
+      "seed": 100,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 789,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "validation",
+      "seed": 101,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.800000013411045,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.800000013411045,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 925,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "test",
+      "seed": 200,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000134110451,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1185,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "test",
+      "seed": 201,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.2351741790771484e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000089406967,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.800000013411045,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 773,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "test",
+      "seed": 202,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.9802322387695312e-08,
+      "w_before_row_sum_min": 0.7999999910593032,
+      "w_before_row_sum_max": 0.8000000178813935,
+      "w_after_row_sum_min": 0.7999999888241291,
+      "w_after_row_sum_max": 0.8000000134110451,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1201,
+      "shock_nodes_count": 0
+    },
+    {
+      "split": "test",
+      "seed": 203,
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "p_before_max_outdegree": 8,
+      "p_after_max_outdegree": 8,
+      "p_before_min_outdegree": 8,
+      "p_after_min_outdegree": 8,
+      "p_before_row_sum_max_abs_error": 2.9802322387695312e-08,
+      "w_before_row_sum_min": 0.7999999865889549,
+      "w_before_row_sum_max": 0.8000000178813933,
+      "w_after_row_sum_min": 0.7999999865889549,
+      "w_after_row_sum_max": 0.8000000178813933,
+      "changed_edge_record_count": 51,
+      "same_support_before_after": true,
+      "dynamic_max_outdegree": 8,
+      "oracle_switch_index": 1305,
+      "shock_nodes_count": 0
+    }
+  ]
+}

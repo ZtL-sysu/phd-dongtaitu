@@ -1,0 +1,330 @@
+{
+  "artifact_role": "fixed_training_prior; proposal recipe accepted for builder validation only",
+  "builder_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\build_dcrnn_training_prior.py",
+  "builder_sha256": "002cc011c6a4d4293f555a5e3147f7034f2af8378578f0b49f56d99609001d5d",
+  "created_at_utc": "2026-10-11T07:48:38Z",
+  "dataset": "synthetic",
+  "direction_and_dcrnn_support": "Prior rows are sources and columns destinations; DCRNN uses its source dual supports R(A)^T and R(A^T)^T, where R(A)=D^-1 A and zero-degree rows stay zero.",
+  "fields_loaded": [
+    "input_mask",
+    "metadata_json",
+    "node_ids",
+    "values"
+  ],
+  "fit_source_train_only": true,
+  "fixed_training_prior_array_sha256": "989c086354143be0b584e8ebf3fc677c1d1880842c68ca57715cbfbac0f9c3b5",
+  "graph_diagnostics": {
+    "density_excluding_diagonal": 0.9985119047619048,
+    "dtype": "float32",
+    "finite": true,
+    "in_degree_nonzeros": {
+      "max": 63,
+      "median": 63.0,
+      "min": 62,
+      "p95": 63.0
+    },
+    "isolated_nodes_both_directions": 0,
+    "nonnegative": true,
+    "nonzero_entries": 4026,
+    "out_degree_nonzeros": {
+      "max": 63,
+      "median": 63.0,
+      "min": 62,
+      "p95": 63.0
+    },
+    "shape": [
+      64,
+      64
+    ],
+    "weight_max": 0.08231717348098755,
+    "weight_min_nonzero": 0.0005167508497834206,
+    "zero_diagonal": true
+  },
+  "no_top_k_or_self_loops": true,
+  "node_count": 64,
+  "node_ids_sha256": "7a4644928f3a08db905254fd7e5e53ef19a46d932a2ecd372b45462413a82619",
+  "oracle_used": false,
+  "recipe": {
+    "dataset": "synthetic",
+    "formula": "positive lag-one Pearson association pooled over train trajectories, pair masks, no boundary crossing",
+    "random_walk_normalization": "delegated unchanged to pinned DCRNN dual_random_walk utility",
+    "recipe_id": "dcrnn-fixed-training-prior-v1",
+    "self_loops": false,
+    "top_k": null
+  },
+  "recipe_sha256": "906cc9880d4c57d78e34985948a60288ddcb78e4608cbd11c28026f1316978cc",
+  "schema_version": 1,
+  "source_manifest": null,
+  "sources": [
+    {
+      "bytes": 1460244,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed0.npz",
+      "seed": 0,
+      "sha256": "32a9d753c0ae872aa9b876eea3dffbe37eed4c712b1e579b3acc42c152a107d5",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460156,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed1.npz",
+      "seed": 1,
+      "sha256": "7bfa3d723830bdf363942511198d7282a56d0ca1e32bbf7b921206d101a92115",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460445,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed2.npz",
+      "seed": 2,
+      "sha256": "79c7f7cfe4259437c4998409d7544eb1c178e190e29ff5392f275de51ea85173",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460053,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed3.npz",
+      "seed": 3,
+      "sha256": "63a5b407dacec2aff6c7329d1cfd3348a4e8ad2d4b924c5ebceb2fd37e8110a0",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460250,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed4.npz",
+      "seed": 4,
+      "sha256": "c3f6321bf9fe129def616a3f882f5281204d5efc7c1b6179b08a2d6cd90677e5",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460294,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed5.npz",
+      "seed": 5,
+      "sha256": "f555ab127349d4bf7b11747ec8e9d0b74fa4a620476424d86a5c080c85a17828",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460257,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed6.npz",
+      "seed": 6,
+      "sha256": "ecdc3a6971ec1bd656e39d5a83f7ac846b92f24fb8e8381726a788e5f7683720",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    },
+    {
+      "bytes": 1460052,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "partition": "train",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\train_seed7.npz",
+      "seed": 7,
+      "sha256": "4ca071785ce7f9d7f5dd0eea0f9a745afb29af8f49ba2aac700b33167d6f9a09",
+      "training_split_bounds": [
+        0,
+        2048
+      ]
+    }
+  ],
+  "target_arrays_loaded": false,
+  "target_mask_arrays_loaded": false,
+  "test_used": false,
+  "training_fit_details": {
+    "direction": "A[source_node_j,destination_node_i]=max(0,Pearson(x[t,j],x[t+1,i])); diagonal zero",
+    "fields_loaded": [
+      "metadata_json",
+      "node_ids",
+      "values",
+      "input_mask"
+    ],
+    "lag_pair_count_max": 16376,
+    "lag_pair_count_min": 16376,
+    "lag_pair_entries_with_at_least_two_valid_pairs": 4096,
+    "nontraining_files_enumerated": false,
+    "oracle_directory_opened": false,
+    "positive_lag_correlation_edges": 4026,
+    "training_lag_pairs_per_trajectory_sum": 16376,
+    "training_split_bounds": [
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ]
+    ],
+    "training_split_bounds_by_source": [
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ],
+      [
+        0,
+        2048
+      ]
+    ],
+    "training_steps_pooled_without_cross_trajectory_pairs": 16384,
+    "training_trajectory_files": 8,
+    "training_trajectory_seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "training_split_bounds": [
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ],
+    [
+      0,
+      2048
+    ]
+  ],
+  "validation_used": false
+}

@@ -1,0 +1,76 @@
+{
+  "scope": "independent_single_seed_validation_numeric_review",
+  "verdict": "validation_artifacts_consistent",
+  "dataset": "email-episode",
+  "variant": "SeqSNN",
+  "seed": 0,
+  "validation_only_indices_used": true,
+  "test_indices_or_test_metrics_read": false,
+  "checkpoint_loaded": false,
+  "model_or_gpu_run": false,
+  "optimizer_run": false,
+  "array_materialization_limit": "The source is one chronological NPZ. Reading its targets/target_mask members may materialize arrays containing other partitions; this review indexed and scored only validation origins, and does not claim test-containing array bytes were never read.",
+  "source": {
+    "npz": "data/processed/email-episode-v1/email-episode.npz",
+    "sha256": "34d8706366c2230f70daabae1e86e0b24dc4050eede0e71d42b0709d76178293",
+    "partition": "chronological"
+  },
+  "binding": {
+    "status": "verified",
+    "dataset_file_count": 2,
+    "code_file_count": 74,
+    "binding_sha256": "d2caec90118a07bd101ae7a9254c7bb2e77229262d4b48f0f1209c3d54d30a99"
+  },
+  "prediction_archive": {
+    "shape": [46, 7, 893, 2],
+    "seed_id": 0,
+    "ordered_validation_origins": 46,
+    "expected_origin_range_inclusive": [367, 412],
+    "targets_and_masks_match_source_at_validation_offsets": true,
+    "archive_sha256": "72b9fdf25e708d0b3360b937e441598692a03d99d7eb9c431a6662bfa9c2cbf6"
+  },
+  "required_horizons": {
+    "1": {
+      "feature0": {"n": 41078, "mae": 1.0791220188088633, "rmse": 1.9478830293448084},
+      "feature1": {"n": 41078, "mae": 1.7690130343855783, "rmse": 3.5226141750876603}
+    },
+    "3": {
+      "feature0": {"n": 41078, "mae": 0.6213172456962676, "rmse": 1.9700451780219121},
+      "feature1": {"n": 41078, "mae": 0.6800790834208648, "rmse": 3.370359720770437}
+    },
+    "7": {
+      "feature0": {"n": 41078, "mae": 0.5927680620484798, "rmse": 1.7471180486196842},
+      "feature1": {"n": 41078, "mae": 0.7212291717082385, "rmse": 3.0052352811029337}
+    },
+    "csv_rows_match": true,
+    "selection_score_mean_of_six_rows": 0.9105881024
+  },
+  "training": {
+    "epochs_executed": 16,
+    "best_epoch": 6,
+    "best_logged_validation_score": 0.9105881253878275,
+    "summary_best_matches_log_min_and_saved_predictions": true,
+    "train_windows_per_epoch": 334,
+    "validation_windows": 46,
+    "declared_epoch_max": 100,
+    "declared_patience": 10,
+    "stop_loss_reached": false,
+    "test_accessed_in_summary": false
+  },
+  "checkpoint": {
+    "sha256_only": "b824367f12e4618ab290ee9b6069595b555575539f3571a9a5b53a209c3d8afe",
+    "matches_summary_and_phase_output": true
+  },
+  "phase_receipt": {
+    "path": "logs/offline-phase-wall/baseline-bound-v3-email-episode-SeqSNN-seed0.json",
+    "sha256": "24270435a42795357af0b6f46eeb169ef2908861abd9e9ca33bb9a27028207b9",
+    "status": "completed",
+    "returncode": 0,
+    "inputs": 25,
+    "outputs": 7,
+    "all_input_hashes_current": true,
+    "all_output_hashes_current": true,
+    "queue_sha256": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f"
+  },
+  "claim_limit": "Single development seed validation audit; does not establish five-seed performance, test performance, or scientific acceptance."
+}

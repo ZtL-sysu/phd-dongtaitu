@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:48:30.932331+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/typed_primary_family_holm_v3.py": "68efecae5e1def030844fdd881f20e0509141fa9de2bb32d0a738a4c8bb8e3f2",
+    "edsgn/tests/test_typed_primary_family_holm_v3.py": "c6099202f2fd6bd2d65f8c3ea51cbe2b45e36979e875749982765b3efbb0c552",
+    "reviews/typed-primary-family-holm-v3-writer-evidence.md": "0fa434fbc778fc5ec0282fe364c3bcf746fbf0664cf13e7836ab766e0a02a026",
+    "reviews/typed-primary-family-holm-v2-independent-review-v1.md": "edafe2e1708f9a33554615521c1d7dd0f0d6224d80fbae62f608812ee92af1ba",
+    "reviews/typed-primary-family-holm-v2-independent-review-v1.json": "62f43db81f089f434365786a73b3b2f5c678b6302b6232659b3c9c2b097f523f",
+    "logs/typed-primary-family-holm-v3-root-cpu-v1.log": "d26403ec694504e7969cecf47b94ff073cfcf2bd86600d15c3dc8fd86a8c0504"
+  },
+  "actual_primary_inference_run": false
+}

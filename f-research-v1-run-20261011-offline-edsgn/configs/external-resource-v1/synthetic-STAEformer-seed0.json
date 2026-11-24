@@ -1,0 +1,21 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "variant": "STAEformer",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-v1\\synthetic\\STAEformer\\seed0",
+  "resource_proposal": {
+    "batch_status": "proposed_unlaunched_unaccepted",
+    "batch_size_proposal": 64,
+    "purpose": "single actual train-window forward/backward resource probe; no optimizer step; no validation/test windows"
+  },
+  "baseline": {}
+}

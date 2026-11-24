@@ -1,0 +1,47 @@
+{
+  "schema_version": 2,
+  "status": "root-frozen-before-baseline-optimizer-launch",
+  "scope": "P3 development seed0 full train/validation; no final test selection",
+  "budget_policy": "one cumulative 72-hour aggregate training/profile budget; no reset",
+  "batch_sizes": {
+    "GRU": {"synthetic": 128, "email": 8, "mooc": 128, "email-episode": 8},
+    "V0": {"synthetic": 128, "email": 8, "mooc": 128, "email-episode": 8},
+    "V1": {"synthetic": 128, "email": 8, "mooc": 128, "email-episode": 8},
+    "STID": {"synthetic": 128, "email": 8, "mooc": 128, "email-episode": 8},
+    "DGCRN": {"synthetic": 128, "email": 4, "mooc": 128, "email-episode": 4},
+    "SeqSNN": {"synthetic": 256, "email": 2, "mooc": 128, "email-episode": 2}
+  },
+  "devices": {
+    "GRU": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"},
+    "V0": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"},
+    "V1": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"},
+    "STID": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"},
+    "DGCRN": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"},
+    "SeqSNN": {"synthetic": "cuda", "email": "cuda", "mooc": "cuda", "email-episode": "cuda"}
+  },
+  "training_prior_cache": true,
+  "training_prior_cache_bytes": 1073741824,
+  "cache_scope": "training gradient-enabled prior replay only; inference and measured replay retain uncached raw-history processing; estimated retained plan byte cap, not an exact RSS cap",
+  "unchanged": ["architecture families", "genuine LIF for SNN methods", "node cohort", "all train/validation origins", "history/horizons", "train-only normalization", "raw masked MSE", "AdamW lr0.001 wd0.0001 clip1", "max100 epochs patience10", "formal core seeds0-4"],
+  "rationale": {
+    "core": "Preserve synthetic128 optimizer update coverage. Email8 and MOOC128 have finite actual gradient probes. Synthetic V4 at the larger512 batch passed as a memory upper-batch check, not as measured128 throughput. V0/V1 full optimizer convergence remains to be observed.",
+    "strong_baselines": "Use exact finite-gradient measured batches DGCRN synthetic128/email4/MOOC128 and official SeqSNN synthetic256/email2/MOOC128. Email SeqSNN8 OOM is preserved and excluded on resource evidence, without reducing dimensions or using an ANN substitute.",
+    "email_episode": "Prospective inherited memory bound from main email: same history, features and head with893 versus986 nodes. The episode uses its own training statistics and weights. Its selected batches have not been independently throughput-probed; all actual training timings will be logged.",
+    "training_fairness": "Methods share complete epochs, optimizer family, stopping cap and evaluation protocol. Different batch sizes imply different optimizer update counts; report those configurations rather than claim identical update budgets.",
+    "runtime": "CUDA selected from actual finite-gradient probes; resource timings under shared load are development diagnostics and do not establish scientific speed or energy claims. Formal CPU/CUDA B1 profiling remains required."
+  },
+  "evidence": [
+    "logs/p3-resource-v2-synthetic-DGCRN-B128.json",
+    "logs/p3-resource-v3-email-SeqSNN-B2.json",
+    "logs/p3-resource-v4-email-V1-B8-cuda.json",
+    "logs/p3-resource-v4-email-V4-B8-cuda.json",
+    "logs/p3-resource-v4-mooc-V1-B128-cuda.json",
+    "logs/p3-resource-v4-synthetic-V4-B512-cuda.json",
+    "logs/p3-resource-v4-email-DGCRN-B4-cuda.json",
+    "logs/p3-resource-v4-mooc-SeqSNN-B128-cuda.json",
+    "logs/p3-resource-v4-mooc-DGCRN-B128-cuda.json",
+    "logs/email-training-component-resource-v1.json",
+    "reviews/training-prior-cache-independent-review-v1.md"
+  ],
+  "root_acceptance": "Resource choice only. P3 and P3A scientific gates remain pending; no hypothesis is accepted by this contract."
+}

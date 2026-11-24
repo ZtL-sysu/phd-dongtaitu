@@ -1,0 +1,13 @@
+{
+  "scope": "CPU toy/functionality only; no real data/checkpoint/GPU/optimizer/replay",
+  "command": "python -m pytest -q edsgn/tests/test_frozen_split_history_robustness_v4.py",
+  "result": "8 passed in 4.36s",
+  "source_sha256": {
+    "edsgn/staging/frozen_split_history_robustness_v4.py": "15f8996b90e1bb6c01d139e6b9484b1d6272e4cade67b373c37446f97e08c107",
+    "edsgn/staging/c06_domain_manifest_preflight_v3.py": "ee1b093427407ded224db59d9a88d32f530ee6a1178db44e6ad82bdc252c2c86",
+    "edsgn/tests/test_frozen_split_history_robustness_v4.py": "dd25ec81c3747ab7d8c9eb3b6af2578e413ae1772de010e38e74fa38bc1b7e4f"
+  },
+  "prewrite_budget_test": "guard triggers from receipt origins_completed==2 while output path does not exist; confirms no output tree/prediction archive and failed receipt",
+  "postwrite_budget_test": "guard triggers only after predictions.npz and perturbation-manifest.json both exist; confirms failed receipt and artifacts retained",
+  "domain_identity": "v3 preflight uses unchanged v1 domain-manifest function and schema; binds v4 evaluator source"
+}

@@ -1,0 +1,57 @@
+{
+  "files": {
+    "dispatcher": {
+      "path": "edsgn/scripts/verified_frozen_dispatch_v10.py",
+      "sha256": "bfcdacd6f2e08a7e551925e675ea021275e78fcac360d503a773fd14738f9b03"
+    },
+    "dispatcher_tests": {
+      "path": "edsgn/tests/test_verified_frozen_dispatch_v10.py",
+      "sha256": "6feeeaee4f9351ba13474db10b4626194eb4f45c4fa6c33559eaa1fbe577d184"
+    },
+    "producer": {
+      "path": "edsgn/staging/typed_endpoint_producer_v6.py",
+      "sha256": "6cf01d44052198ea9d093f9e03cdd2503153da58ea9332632f585607d85b018a"
+    },
+    "producer_tests": {
+      "path": "edsgn/tests/test_typed_endpoint_producer_v6.py",
+      "sha256": "2de588420c3419fc0065fbeee52e4adfab9da5eebb6868787b82eb517c452f0d"
+    },
+    "switch_authority_index": {
+      "path": "protocols/synthetic-reporting-switch-authorities-v2/index.json",
+      "sha256": "eb22b959bf8038f27e6f4ab517e862282b4e9d0362925f85f98e1dfd3de4f365"
+    },
+    "test_log": {
+      "path": "logs/typed-endpoint-successors-v9-v6-dispatch10-final-tests.log",
+      "sha256": "e9cef3fb273386c1502838e63099a37637e1d4d45dd218a0f113c2c7c6003f83"
+    },
+    "validator": {
+      "path": "edsgn/staging/typed_endpoint_plan_validator_v9.py",
+      "sha256": "afa83f423bfd8f7f96534fb3234812e91e4a4b4c5a37baaca90e638f57ff2f24"
+    },
+    "validator_tests": {
+      "path": "edsgn/tests/test_typed_endpoint_plan_validator_v9.py",
+      "sha256": "ac525c4edfd2c92d4fa95a452b994a1670e95e6890663483ad7d84fd33fe3193"
+    }
+  },
+  "findings": [],
+  "limitations": [
+    "No actual P3A/root acceptance, pretest binding, global campaign completion, real artifact run, or producer result was accepted.",
+    "Switch authority bytes are hash-bound here; switch scalar values are only decoded by the postrun producer after receipt/global-completion validation.",
+    "This engineering review does not establish scientific claims or authorize campaign execution."
+  ],
+  "review_path": "reviews/typed-endpoint-successors-v9-v6-dispatch10-independent-v1.md",
+  "review_role": "independent_source_and_cpu_toy_review",
+  "review_sha256": "8a3dce9460567a437899cf26555a2ad530cafaecbd29dd21d996b722446b70e7",
+  "revision_note": "Successor v2 repairs the provenance JSON: v1 review_sha256 did not match the final preserved Markdown bytes. The report/source/test/log/index bytes were not changed; hashes below are recomputed from the current files.",
+  "schema_version": 1,
+  "scope": "metadata/toy-only; no production arrays, model, checkpoint, optimizer, GPU, endpoint values, or scientific claim acceptance",
+  "tests": {
+    "command": "dyg-cold python -m pytest edsgn/tests/test_typed_endpoint_plan_validator_v9.py edsgn/tests/test_typed_endpoint_producer_v6.py edsgn/tests/test_verified_frozen_dispatch_v10.py -q",
+    "elapsed_seconds": 126.48,
+    "failed": 0,
+    "log": "logs/typed-endpoint-successors-v9-v6-dispatch10-final-tests.log",
+    "log_sha256": "e9cef3fb273386c1502838e63099a37637e1d4d45dd218a0f113c2c7c6003f83",
+    "passed": 53
+  },
+  "verdict": "pass_engineering_staging_review_no_blocker_found"
+}

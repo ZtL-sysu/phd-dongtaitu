@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "scope": "offline-experiment-phase",
+  "id": "coverage-recovery-v1-gru-five-seed-v1-mooc-GRU-seed2",
+  "job_id": "coverage-recovery-v1-gru-five-seed-v1-mooc-GRU-seed2",
+  "phase": "training",
+  "queue_sha256": "7752189ff13fad4a69b8792fa4a7010bb468897b37c9c9d26d16563464c8985f",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2",
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "-m",
+    "edsgn.train",
+    "--config",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json"
+  ],
+  "inputs": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-gru-replication-v1\\mooc-GRU-seed2.json",
+      "sha256": "37cbfcd4d112fd1179e5e87589713ddedbc5a7348a631f5e932ecd2f4679728b"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\bound_phase_campaign.py",
+      "sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\__init__.py",
+      "sha256": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\agcrn_checkpoint.py",
+      "sha256": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\baselines.py",
+      "sha256": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\calibrate.py",
+      "sha256": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\candidate_batch.py",
+      "sha256": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py",
+      "sha256": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py",
+      "sha256": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\dcrnn_baseline.py",
+      "sha256": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py",
+      "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\evaluate.py",
+      "sha256": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\external_baselines.py",
+      "sha256": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py",
+      "sha256": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prepare.py",
+      "sha256": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py",
+      "sha256": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\profile.py",
+      "sha256": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\robustness.py",
+      "sha256": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\rp_baselines.py",
+      "sha256": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py",
+      "sha256": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\statistics.py",
+      "sha256": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\stid_baseline.py",
+      "sha256": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+      "sha256": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-gru-replication-queue-v1.json",
+      "sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-gru-replication-root-acceptance-v1.json",
+      "sha256": "d4114562deee19ae06301660b4df25fb459caae1093c32e5e1a0ad763b39d8b0"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-host-recovery-queue-v2.json",
+      "sha256": "7752189ff13fad4a69b8792fa4a7010bb468897b37c9c9d26d16563464c8985f"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-internal-candidate-resource-addendum-v4.json",
+      "sha256": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-training-resource-contract-v2.json",
+      "sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+    }
+  ],
+  "status": "completed",
+  "wall_seconds": 81.90467289998196,
+  "started_utc": "2026-10-12T16:01:07+00:00",
+  "binding_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\input-binding-at-launch.json",
+  "budget_policy": "single cumulative72-hour budget",
+  "finished_utc": "2026-10-12T16:02:29+00:00",
+  "returncode": 0,
+  "outputs": [
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\training_summary.json",
+      "sha256": "ed6370c064f6a4d657fd4f8d9fba7c14fa0e052ebecdc1d5a137e28c2c5ffc89"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\checkpoint.pt",
+      "sha256": "0f2e8df2a825efcbb868e73ab075cc21b5fd9d02e1f2bbcfe57a54b6facd776b"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\manifest.json",
+      "sha256": "f2d6f04553edc08f091b860008c6e715aeca0143c8b4a0bf451b3b8a866f290c"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\config_resolved.json",
+      "sha256": "37cbfcd4d112fd1179e5e87589713ddedbc5a7348a631f5e932ecd2f4679728b"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\training_log.csv",
+      "sha256": "224d20e900024f8ea5f9326787dd5d13357777f7a69faf41ac4a283499f10ec3"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\validation_predictions.npz",
+      "sha256": "23f409a537b972afb733fe90a393da818d583a5babd54665120e2a2c7f4009cc"
+    },
+    {
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines-gru-five-seed-v1\\mooc\\GRU\\seed2\\metrics_by_horizon_val.csv",
+      "sha256": "f9d4fe8b2b2f43c62c9d9d13cd01d7ca97334a2005b3a5d9550531810da8471b"
+    }
+  ]
+}

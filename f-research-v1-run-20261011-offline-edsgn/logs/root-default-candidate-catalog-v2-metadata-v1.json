@@ -1,0 +1,16 @@
+{
+  "status": "passed_metadata_only",
+  "created_utc": "2026-10-11T12:23:22.930176+00:00",
+  "catalog_sha256": "d7ebd1328219cbc6f1bdbe0a3a27042bb5e34a3a9939a4592416ec7464881298",
+  "rows": 90,
+  "generated_file_pins": 120,
+  "exact_accepted_pilot_seed0_templates": 12,
+  "seed_output_only_clones": 48,
+  "blueprint_checks": 60,
+  "unselected_singleton_pools": 12,
+  "arrays_decoded": false,
+  "model_constructed": false,
+  "test_accessed": false,
+  "scientific_result_accepted": false,
+  "pipeline_advanced": false
+}

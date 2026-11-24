@@ -1,0 +1,20 @@
+[
+  {
+    "dataset": "synthetic",
+    "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\simple",
+    "wall_seconds": 9.094076799985487,
+    "scope": "full_training_fit/full_validation; no test evaluation"
+  },
+  {
+    "dataset": "email",
+    "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email\\simple",
+    "wall_seconds": 10.363759600004414,
+    "scope": "full_training_fit/full_validation; no test evaluation"
+  },
+  {
+    "dataset": "mooc",
+    "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\mooc\\simple",
+    "wall_seconds": 6.233783500007121,
+    "scope": "full_training_fit/full_validation; no test evaluation"
+  }
+]

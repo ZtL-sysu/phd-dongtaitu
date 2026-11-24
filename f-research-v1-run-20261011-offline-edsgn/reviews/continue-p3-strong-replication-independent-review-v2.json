@@ -1,0 +1,44 @@
+{
+  "reviewer_role": "independent",
+  "verdict": "pass_wait_runner_only_future_dispatch_blocked_on_unique_predecessors",
+  "scope": "source_and_metadata_only_engineering_review",
+  "observed_utc": "2026-10-11T11:19:00Z",
+  "source_path": "edsgn/scripts/continue_p3_strong_replication_serial_v2.py",
+  "source_sha256": "c0b781cc8369b19d7e3e8849571b266f5688f8ee19f9fce72a176f436194931b",
+  "queue_sha256": "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9",
+  "controller_sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+  "root_acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+  "root_metadata_sha256": "57015b4822bcb8c9306c820858fa749d7872afb2a7a7c46625448fce1c495684",
+  "canonical_pipeline_sha256": "2717ad80c898393c410d6f964caa77a5903c9ae38ec40569252d5c5055f47093",
+  "gate": {"P2": "passed/pass", "P3": "running"},
+  "predecessors": {
+    "expected_receipts": 56,
+    "completed": 5,
+    "running": 1,
+    "missing": 50,
+    "distinct_expected_job_ids": 56,
+    "seed0_coordinator": "awaiting_current_campaign",
+    "gru_coordinator": "awaiting_seed0_coordinator"
+  },
+  "strong_outputs_absent": 24,
+  "campaign_lock_present": true,
+  "numeric_acceptance_present": false,
+  "continuation_receipt_present": false,
+  "aggregate_budget": {
+    "coverage_complete": true,
+    "spent_seconds": 17509.101859700033,
+    "remaining_seconds": 241690.89814029998,
+    "budget_seconds": 259200
+  },
+  "numeric_acceptance_fixture_tests": {
+    "accepted_existing_mixed_json_markdown_schemas": true,
+    "rejected_duplicate_or_missing_pair": true,
+    "rejected_json_test_access": true,
+    "fixture_count": 3,
+    "arrays_or_models_opened": false
+  },
+  "future_dispatch_blocker": "coordinator queue lists are not hash-pinned and receipt verification lacks queue/job identity uniqueness; duplicate queue descriptors can inflate the count of 56",
+  "test_or_oracle_access": false,
+  "training_or_phase_launch": false,
+  "pipeline_advanced": false
+}

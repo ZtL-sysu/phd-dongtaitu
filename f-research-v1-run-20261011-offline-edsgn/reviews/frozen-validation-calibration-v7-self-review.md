@@ -1,0 +1,7 @@
+# Validation calibration v7 — writer self-review
+
+Role: writer self-review; not independent review or scientific calibration acceptance. v6 is preserved. v7 closes receipt-finalization gaps found after v6: the caller completes its last full input hash, then `_finalize_phase` calls the live guard immediately before the successful phase receipt. No large input hashing follows this final live check. If it fails, v7 emits a failed receipt, augments it with the established bindings, releases the phase locks, then raises `FinalBudgetCheckFailed` so a pending return cannot produce a success exit. A final input-hash mismatch or hash exception after an otherwise successful body similarly writes a failed receipt and propagates failure; an earlier body exception remains the reported cause.
+
+Focused local Conda CPU suite: `11 passed in 6.76s` (`logs/frozen-validation-calibration-v7-tests.log`). It includes the full original calibration routine on a toy PreparedData/checkpoint fixture, a budget failure armed after the third/final input-hash pass, and a final-hash mismatch case. Both failure cases retain generated outputs but write failed receipts and raise; the success path writes a completed receipt. No real data, GPU, optimizer, training, or actual calibration run was used.
+
+Source SHA-256 `d0212737ed0f02e6f9342f788efda73c8c3bba53d12662f15e734b96cb6d2d9e`; test SHA-256 `bfc01d7f96a0b91825cf0416c6b3644a87d4932ce24475a74a17c45cd828ad8`; log SHA-256 `e811e53e95c64a3fa57db2166f42cc6d826273e486e2a962529cac8bd0bbd88e`.

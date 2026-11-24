@@ -1,0 +1,20 @@
+{
+  "scope": "mock/controller test and source audit only; no package/model/GPU/real-data execution",
+  "controller_tests": "24 passed in 4.09s",
+  "frozen_synthetic_tests_included": true,
+  "real_stress_replay": "not run",
+  "frozen_stress_finding": "standalone CLI creates receipt but does not acquire logs/model-resource.lock or gate aggregate remaining budget; block actual launch until managed resource/budget guard is added",
+  "pipeline_state_at_audit": {
+    "P2": "passed",
+    "P3": "running",
+    "P3A": "pending",
+    "P4": "pending"
+  },
+  "sha256": {
+    "edsgn/scripts/bound_phase_campaign.py": "d7698668dc961d275b10c6a0bb90074d01ab00f2442f92509fb78f5cfd0a3bb8",
+    "snapshots/bound-phase-campaign-before-p3gate-fix-v1.py": "a0619007c85cbea5ad4a8d46547efa0c133e2a9312a3360cb1d02f3ca05b73cb",
+    "edsgn/tests/test_bound_phase_campaign.py": "2ac005db8f0785d130b39f943eb12ac9f65b609b04d66a7f87759fcb571c01e5",
+    "edsgn/scripts/frozen_synthetic_stress.py": "8495659a908a7040c15721a370051a4b8222993cecc7b632e22b889f6a3a3f75",
+    "edsgn/tests/test_frozen_synthetic_stress.py": "14dbff0ab2d171d310f9f456a4d8bed8ef2129f0464cb0cc626c5a1683c2025c"
+  }
+}

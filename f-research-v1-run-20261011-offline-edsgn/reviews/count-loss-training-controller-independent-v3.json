@@ -1,0 +1,30 @@
+{
+  "review_role": "independent_source_and_cpu_mock_review",
+  "verdict": "pass_engineering_scope",
+  "execution_authorization": false,
+  "scientific_acceptance": false,
+  "real_training_or_data_access": false,
+  "controller": {"path":"edsgn/scripts/count_loss_training_controller_v3.py","sha256":"53decda89ed7548b0bbe2c37e65eff1a257d32450b9cf4b0691cdd26c4a26033","matches_worker_pin":true},
+  "tests": {"path":"edsgn/tests/test_count_loss_training_controller_v3.py","sha256":"3c559e4b8e009da3ef772c74abe951f014daf405fc2c560de531c93f2eb0b9b8","result":"17 passed in 34.67s"},
+  "fresh_test_log": {"path":"logs/count-loss-controller-independent-v3-tests.log","sha256":"51b7dfac9fac0ce8362282155daedce70f68a48c0e0989d7243be58cff096c41"},
+  "consumed_evidence": [
+    {"path":"protocols/count-loss-controller-root-design-v1.md","sha256":"3962fcffb7cf13efe5de206e3acf6a7be11321e56acc31ee75d30823af2e90a3"},
+    {"path":"reviews/count-loss-training-controller-v3-engineering-v1.md","sha256":"e80b861cdc0ed8e967d6a4476b60d97868d98c753de502fe10ec096c59076f7b"},
+    {"path":"reviews/count-loss-training-controller-v3-engineering-v1.json","sha256":"c40e4ec3d40f2d47d20464c6cd2b12014f4189f7c96beffd61af6e4a0d308d85"},
+    {"path":"edsgn/scripts/bound_phase_campaign.py","sha256":"12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3"}
+  ],
+  "checks": {
+    "bound_modules_train_calibrate_evaluate_profile_recognized": true,
+    "baseline_bound_frozen_probe_count_controller_adapter_routes_recognized": true,
+    "self_and_ancestors_excluded": true,
+    "owned_python_missing_argv_fails_closed": true,
+    "access_denied_python_fails_closed": true,
+    "foreign_or_new_process_blocks_mock_child": true,
+    "exact_adapter_argv": true,
+    "official_before_p4_and_complete_passed_input_fences": true,
+    "resource_and_campaign_leases_and_cumulative_72h_controls": true,
+    "inherited_full_window_output_and_after_child_hash_checks": true
+  },
+  "minor_note": "evaluate/profile module routes are covered by source predicate but not separate parameterized scanner test rows",
+  "limitations": ["temporary metadata fixtures and mocked children only", "root gate/source acceptance and real execution remain separate"]
+}

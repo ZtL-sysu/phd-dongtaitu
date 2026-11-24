@@ -1,0 +1,27 @@
+{
+  "review": "paired-forecast-bootstrap-independent-v1",
+  "verdict": "engineering-only-cpu-math-check-pass",
+  "scientific_acceptance": false,
+  "forecast_kernel_sha256": "260A83F91F6E46DFEEFD9814746B0C265095EE1565D1FB4B5D7A0417413E0D80",
+  "shared_assembly_sha256": "3CD8FD9E353B15DF9A3FC791512D05FA97CF127C2B28B5406B745EDC87EB37D9",
+  "reference_statistics_sha256": "EA49B355AE069D9C7E8E810A3BE689E66C6B7B7CFAF1CD4828CB73E89B6B2BC6",
+  "toy": {
+    "seeds": 5,
+    "horizons": 3,
+    "origins": 40,
+    "trajectories": 2,
+    "block_length": 4,
+    "margin": 0.15,
+    "estimate": 0.004476018562108119,
+    "reference_estimate": 0.004476018562108108,
+    "percentile_95_interval": [-0.014229795263383426, 0.02387255576470619],
+    "reference_percentile_95_interval": [-0.01422979526338344, 0.023872555764706226],
+    "centered_two_sided_p": 0.6526736631684158,
+    "reference_centered_two_sided_p": 0.6526736631684158,
+    "centered_lower_tail_noninferiority_p": 0.0004997501249375312,
+    "common_draw_sha_match": true,
+    "max_point_estimate_abs_diff": 1.1e-17
+  },
+  "formula": "pool sampled-origin counts/sums per seed and horizon; equal-average required horizon MAEs per seed; equal-average five seeds; D=left-right. NI H0 D>=margin uses centered bootstrap lower tail.",
+  "limitations": ["toy only", "margin acceptance and family-level multiplicity remain external", "no scientific result or P3A acceptance"]
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "actual P3 hidden background recovery launch",
+  "launcher_pid": 26200,
+  "started_utc": "2026-10-11T14:49:00.4856029Z",
+  "queue_sha256": "7752189ff13fad4a69b8792fa4a7010bb468897b37c9c9d26d16563464c8985f",
+  "root_acceptance_sha256": "6a38df5f0fd95586a8675e44f9b500efc175609e3b246b989205c37a44921148",
+  "stdout_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-host-recovery-background-v2.stdout.log",
+  "stderr_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-host-recovery-background-v2.stderr.log",
+  "window_style": "Hidden",
+  "conda_interpreter": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+  "test_access": false,
+  "completion_claim": false
+}

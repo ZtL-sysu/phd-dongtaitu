@@ -1,0 +1,524 @@
+{
+  "scope": "P3 baseline-validation dependence preparation only",
+  "status": "computed",
+  "variant": "DGCRN",
+  "model_seed": 0,
+  "n_validation_origins": 49,
+  "numeric_audit_passed": true,
+  "checkpoint_sha256": "4b30d875fc426f48b5a11df0c175d601e2c79aa204999d44010af50a1015c563",
+  "dependence": {
+    "rule": "per-trajectory-centered biased ACF; block=max(history,hmax,max per-trajectory first crossing)",
+    "acf_threshold": 0.1,
+    "max_lag": 64,
+    "max_supported_lag": 48,
+    "required_horizons": [
+      1,
+      6,
+      24
+    ],
+    "history_length": 24,
+    "hmax": 24,
+    "n_valid_origins": 49,
+    "trajectory_count": 1,
+    "all_valid_targets_zero": false,
+    "primary_quality_identifiable": true,
+    "positive_quality_claim_supported": null,
+    "dependence_status": "max-per-trajectory-first-crossing-heuristic",
+    "dependence_length": 6,
+    "per_trajectory_dependence": [
+      {
+        "trajectory_id": 0,
+        "n_origins": 49,
+        "max_supported_lag": 48,
+        "acf": [
+          {
+            "lag": 1,
+            "acf": 0.8023462541298342
+          },
+          {
+            "lag": 2,
+            "acf": 0.577404764475074
+          },
+          {
+            "lag": 3,
+            "acf": 0.405009184106797
+          },
+          {
+            "lag": 4,
+            "acf": 0.27642122680921566
+          },
+          {
+            "lag": 5,
+            "acf": 0.24996352555008292
+          },
+          {
+            "lag": 6,
+            "acf": 0.09214685429333731
+          },
+          {
+            "lag": 7,
+            "acf": -0.12035260714566616
+          },
+          {
+            "lag": 8,
+            "acf": -0.2962346446411912
+          },
+          {
+            "lag": 9,
+            "acf": -0.4640122359086453
+          },
+          {
+            "lag": 10,
+            "acf": -0.4538138349419177
+          },
+          {
+            "lag": 11,
+            "acf": -0.40742188803775103
+          },
+          {
+            "lag": 12,
+            "acf": -0.38877111272899867
+          },
+          {
+            "lag": 13,
+            "acf": -0.4166862150245989
+          },
+          {
+            "lag": 14,
+            "acf": -0.49820415520635786
+          },
+          {
+            "lag": 15,
+            "acf": -0.48231197854048574
+          },
+          {
+            "lag": 16,
+            "acf": -0.34064193187576136
+          },
+          {
+            "lag": 17,
+            "acf": -0.17294565555720798
+          },
+          {
+            "lag": 18,
+            "acf": -0.020412287817970002
+          },
+          {
+            "lag": 19,
+            "acf": 0.015302102821551812
+          },
+          {
+            "lag": 20,
+            "acf": 0.05560371992039875
+          },
+          {
+            "lag": 21,
+            "acf": 0.12844039774948177
+          },
+          {
+            "lag": 22,
+            "acf": 0.2278479858271167
+          },
+          {
+            "lag": 23,
+            "acf": 0.34873821170136177
+          },
+          {
+            "lag": 24,
+            "acf": 0.35928672146060475
+          },
+          {
+            "lag": 25,
+            "acf": 0.30872704356803643
+          },
+          {
+            "lag": 26,
+            "acf": 0.2241207189753749
+          },
+          {
+            "lag": 27,
+            "acf": 0.10824220612068679
+          },
+          {
+            "lag": 28,
+            "acf": 0.0927912839959853
+          },
+          {
+            "lag": 29,
+            "acf": 0.07594090237854335
+          },
+          {
+            "lag": 30,
+            "acf": 0.04542069838340043
+          },
+          {
+            "lag": 31,
+            "acf": -0.017388446357230563
+          },
+          {
+            "lag": 32,
+            "acf": -0.13049822516131865
+          },
+          {
+            "lag": 33,
+            "acf": -0.16894025746984587
+          },
+          {
+            "lag": 34,
+            "acf": -0.12569424736947105
+          },
+          {
+            "lag": 35,
+            "acf": -0.09348006545277704
+          },
+          {
+            "lag": 36,
+            "acf": -0.08233847290312535
+          },
+          {
+            "lag": 37,
+            "acf": -0.10189414518651191
+          },
+          {
+            "lag": 38,
+            "acf": -0.1060148274994538
+          },
+          {
+            "lag": 39,
+            "acf": -0.07531635316943869
+          },
+          {
+            "lag": 40,
+            "acf": -0.03703926895107386
+          },
+          {
+            "lag": 41,
+            "acf": -0.003273527921592845
+          },
+          {
+            "lag": 42,
+            "acf": 0.022096543892754512
+          },
+          {
+            "lag": 43,
+            "acf": 0.01254738580833473
+          },
+          {
+            "lag": 44,
+            "acf": 0.004164421757524681
+          },
+          {
+            "lag": 45,
+            "acf": 0.0117337953027663
+          },
+          {
+            "lag": 46,
+            "acf": 0.023657907818615383
+          },
+          {
+            "lag": 47,
+            "acf": 0.024199927418790252
+          },
+          {
+            "lag": 48,
+            "acf": 0.01153260060272196
+          }
+        ],
+        "dependence_length": 6,
+        "status": "first-threshold-crossing-heuristic"
+      }
+    ],
+    "per_trajectory": [
+      {
+        "trajectory_id": 0,
+        "origins": [
+          498,
+          499,
+          500,
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508,
+          509,
+          510,
+          511,
+          512,
+          513,
+          514,
+          515,
+          516,
+          517,
+          518,
+          519,
+          520,
+          521,
+          522,
+          523,
+          524,
+          525,
+          526,
+          527,
+          528,
+          529,
+          530,
+          531,
+          532,
+          533,
+          534,
+          535,
+          536,
+          537,
+          538,
+          539,
+          540,
+          541,
+          542,
+          543,
+          544,
+          545,
+          546
+        ],
+        "n_origins": 49,
+        "residual_mean": 3.9835631287639344,
+        "centered_variance_sum": 149.93817523467774,
+        "zero_variance_unidentifiable": false,
+        "acf": [
+          {
+            "lag": 1,
+            "acf": 0.8023462541298342
+          },
+          {
+            "lag": 2,
+            "acf": 0.577404764475074
+          },
+          {
+            "lag": 3,
+            "acf": 0.405009184106797
+          },
+          {
+            "lag": 4,
+            "acf": 0.27642122680921566
+          },
+          {
+            "lag": 5,
+            "acf": 0.24996352555008292
+          },
+          {
+            "lag": 6,
+            "acf": 0.09214685429333731
+          },
+          {
+            "lag": 7,
+            "acf": -0.12035260714566616
+          },
+          {
+            "lag": 8,
+            "acf": -0.2962346446411912
+          },
+          {
+            "lag": 9,
+            "acf": -0.4640122359086453
+          },
+          {
+            "lag": 10,
+            "acf": -0.4538138349419177
+          },
+          {
+            "lag": 11,
+            "acf": -0.40742188803775103
+          },
+          {
+            "lag": 12,
+            "acf": -0.38877111272899867
+          },
+          {
+            "lag": 13,
+            "acf": -0.4166862150245989
+          },
+          {
+            "lag": 14,
+            "acf": -0.49820415520635786
+          },
+          {
+            "lag": 15,
+            "acf": -0.48231197854048574
+          },
+          {
+            "lag": 16,
+            "acf": -0.34064193187576136
+          },
+          {
+            "lag": 17,
+            "acf": -0.17294565555720798
+          },
+          {
+            "lag": 18,
+            "acf": -0.020412287817970002
+          },
+          {
+            "lag": 19,
+            "acf": 0.015302102821551812
+          },
+          {
+            "lag": 20,
+            "acf": 0.05560371992039875
+          },
+          {
+            "lag": 21,
+            "acf": 0.12844039774948177
+          },
+          {
+            "lag": 22,
+            "acf": 0.2278479858271167
+          },
+          {
+            "lag": 23,
+            "acf": 0.34873821170136177
+          },
+          {
+            "lag": 24,
+            "acf": 0.35928672146060475
+          },
+          {
+            "lag": 25,
+            "acf": 0.30872704356803643
+          },
+          {
+            "lag": 26,
+            "acf": 0.2241207189753749
+          },
+          {
+            "lag": 27,
+            "acf": 0.10824220612068679
+          },
+          {
+            "lag": 28,
+            "acf": 0.0927912839959853
+          },
+          {
+            "lag": 29,
+            "acf": 0.07594090237854335
+          },
+          {
+            "lag": 30,
+            "acf": 0.04542069838340043
+          },
+          {
+            "lag": 31,
+            "acf": -0.017388446357230563
+          },
+          {
+            "lag": 32,
+            "acf": -0.13049822516131865
+          },
+          {
+            "lag": 33,
+            "acf": -0.16894025746984587
+          },
+          {
+            "lag": 34,
+            "acf": -0.12569424736947105
+          },
+          {
+            "lag": 35,
+            "acf": -0.09348006545277704
+          },
+          {
+            "lag": 36,
+            "acf": -0.08233847290312535
+          },
+          {
+            "lag": 37,
+            "acf": -0.10189414518651191
+          },
+          {
+            "lag": 38,
+            "acf": -0.1060148274994538
+          },
+          {
+            "lag": 39,
+            "acf": -0.07531635316943869
+          },
+          {
+            "lag": 40,
+            "acf": -0.03703926895107386
+          },
+          {
+            "lag": 41,
+            "acf": -0.003273527921592845
+          },
+          {
+            "lag": 42,
+            "acf": 0.022096543892754512
+          },
+          {
+            "lag": 43,
+            "acf": 0.01254738580833473
+          },
+          {
+            "lag": 44,
+            "acf": 0.004164421757524681
+          },
+          {
+            "lag": 45,
+            "acf": 0.0117337953027663
+          },
+          {
+            "lag": 46,
+            "acf": 0.023657907818615383
+          },
+          {
+            "lag": 47,
+            "acf": 0.024199927418790252
+          },
+          {
+            "lag": 48,
+            "acf": 0.01153260060272196
+          }
+        ],
+        "dependence_length": 6,
+        "dependence_status": "first-threshold-crossing-heuristic"
+      }
+    ],
+    "block_length": 24,
+    "test_support_status": "declared",
+    "test_support_by_trajectory": [
+      {
+        "trajectory_id": "0",
+        "n_origins": 120
+      }
+    ],
+    "test_trajectory_count": 1,
+    "selection_status": "available-for-prospective-use",
+    "unavailable_reasons": [],
+    "threshold_rule_caveat": "Each trajectory's first |ACF|<=threshold is a prespecified heuristic, not proof of independence; any censored or unidentifiable trajectory makes the block unavailable."
+  },
+  "test_support_metadata": [
+    {
+      "path": "data/processed/mooc/mooc.npz",
+      "trajectory_id": "0",
+      "n_test_origins": 120,
+      "decoded_members": [
+        "metadata_json"
+      ]
+    }
+  ],
+  "inputs_sha256": {
+    "edsgn/scripts/baseline_validation_dependence_preparation_v1.py": "33cf8d7a48da41925960dacc36184cc8d6a08188f156129542f863ee5db9bd76",
+    "edsgn/staging/validation_dependence_v2.py": "df887995cbc98f1e2af2ccd002eea7fd80aa6928c0156c22b15bc0f47e38a90e",
+    "edsgn/scripts/audit_bound_baseline_numeric_v3.py": "0da7155a9a58778fad470c228abac3541d27b3783448a8bf252ffdf029bdfb94",
+    "configs/baselines-bound-v3/mooc-DGCRN-seed0.json": "d587aa7fc8f5e7244a19d00c68c16bf399184ffe41ca9036e9029d0ba2d4b9fb",
+    "runs/baselines-bound-v3/mooc/DGCRN/seed0/validation_predictions.npz": "50a69a1d103229c1e310ac852bdb5cc371a216698eb20d2ff7e24a56cf2e0d29",
+    "data/processed/mooc/mooc.npz": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+  },
+  "test_values_targets_masks_or_oracle_decoded": false,
+  "epsilon_selected": false,
+  "policy_selected": false,
+  "p3a_accepted": false,
+  "started_utc": "2026-10-11T09:34:18.122808+00:00",
+  "elapsed_seconds": 0.08960599999409169
+}

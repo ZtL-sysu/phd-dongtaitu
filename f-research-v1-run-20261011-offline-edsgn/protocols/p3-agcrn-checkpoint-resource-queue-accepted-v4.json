@@ -1,0 +1,88 @@
+{
+  "schema_version": 4,
+  "status": "accepted_for_resource_probe",
+  "resource_probe_script": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+  "configs": [
+    {
+      "dataset": "email",
+      "method": "AGCRN",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "batch_size_proposed": 4,
+      "config_sha256": "5751b9e0700358c07b9aacf242281dfd9a57de3749865fff2afbad60e77d84d1"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "AGCRN",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "batch_size_proposed": 4,
+      "config_sha256": "f14f6b686209a8a240129fde4b239eb9dcc2a1e8277ff817e29f55a4eac59709"
+    }
+  ],
+  "queue": [
+    {
+      "dataset": "email",
+      "method": "AGCRN",
+      "batch_size_proposed": 4,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-checkpoint-B4-v4.json",
+        "--batch-size",
+        "4",
+        "--repeats",
+        "1"
+      ],
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "accepted_for_resource_probe_only",
+      "note": "C05 author-cell recomputation; new measured memory required; no optimizer"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "AGCRN",
+      "batch_size_proposed": 4,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+        "--batch-size",
+        "4",
+        "--repeats",
+        "1"
+      ],
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "accepted_for_resource_probe_only",
+      "note": "C05 author-cell recomputation; new measured memory required; no optimizer"
+    }
+  ],
+  "conditions": [
+    "C05 engineering gate accepted",
+    "One train-only pass per task; optimizer0; validation/test windows0"
+  ],
+  "root_acceptance": {
+    "protocol": "protocols/c05-agcrn-memory-repair-v1.md",
+    "training_batch_acceptance": false,
+    "scientific_result_acceptance": false
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "scope": "CPU toy rule preparation only",
+  "status": "passed",
+  "wall_seconds": 0.84,
+  "timestamp_local": "2026-10-11",
+  "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/tests/test_validation_dependence_v2.py",
+  "environment": {
+    "PYTHONPATH": "edsgn/staging",
+    "OMP_NUM_THREADS": 2,
+    "MKL_NUM_THREADS": 2
+  },
+  "result": {"passed": 16, "failed": 0},
+  "helper_sha256": "df887995cbc98f1e2af2ccd002eea7fd80aa6928c0156c22b15bc0f47e38a90e",
+  "test_sha256": "ec99a03a3010da3215de7a289727d58fa2e9d416230a6904f72c004ba16cbc57",
+  "real_archives_read": false,
+  "gpu_used": false,
+  "optimizer_run": false,
+  "package_or_controller_modified": false
+}

@@ -1,0 +1,243 @@
+{
+  "all_checks_pass": true,
+  "blocking_datasets": [],
+  "checks": {
+    "email": {
+      "event_rows_materialized": 332279,
+      "exact_matrix_match": true,
+      "fields_read": [
+        "metadata_json",
+        "node_ids",
+        "events"
+      ],
+      "finite_zero_diagonal": true,
+      "manifest_direction": "A[source_node,destination_node]; duplicate source rows add repeated weight",
+      "manifest_direction_semantics_match_independent_orientation": true,
+      "max_abs_error": 0.0,
+      "node_order_equal": true,
+      "node_order_hash_match": true,
+      "prior_sha_match": true,
+      "shape": [
+        986,
+        986
+      ],
+      "source_sha_match": true,
+      "train_bounds": [
+        0,
+        562
+      ],
+      "train_event_rows": 329910,
+      "train_only_flags": true
+    },
+    "email-episode": {
+      "event_rows_materialized": 324055,
+      "exact_matrix_match": true,
+      "fields_read": [
+        "metadata_json",
+        "node_ids",
+        "events"
+      ],
+      "finite_zero_diagonal": true,
+      "manifest_direction": "A[source_node,destination_node]; duplicate source rows add repeated weight",
+      "manifest_direction_semantics_match_independent_orientation": true,
+      "max_abs_error": 0.0,
+      "node_order_equal": true,
+      "node_order_hash_match": true,
+      "prior_sha_match": true,
+      "shape": [
+        893,
+        893
+      ],
+      "source_sha_match": true,
+      "train_bounds": [
+        0,
+        368
+      ],
+      "train_event_rows": 220126,
+      "train_only_flags": true
+    },
+    "mooc": {
+      "event_rows_materialized": 394130,
+      "exact_matrix_match": true,
+      "fields_read": [
+        "metadata_json",
+        "node_ids",
+        "events"
+      ],
+      "finite_zero_diagonal": true,
+      "manifest_direction": "undirected activity co-occurrence; one contribution per distinct user/activity pair",
+      "manifest_direction_semantics_match_independent_orientation": true,
+      "max_abs_error": 0.0,
+      "node_order_equal": true,
+      "node_order_hash_match": true,
+      "prior_sha_match": true,
+      "shape": [
+        78,
+        78
+      ],
+      "source_sha_match": true,
+      "train_bounds": [
+        0,
+        499
+      ],
+      "train_event_rows": 265943,
+      "train_only_flags": true
+    },
+    "synthetic": {
+      "bounds_match_manifest": true,
+      "constant_or_less_than_two_pairs_zero_rule_independently_checked": {
+        "constant_left_zero": true,
+        "constant_right_zero": true,
+        "single_pair_zero": true,
+        "varying_identity_one": true
+      },
+      "constant_side_pairs": 0,
+      "fields_read": [
+        "metadata_json",
+        "node_ids",
+        "values",
+        "input_mask"
+      ],
+      "finite_zero_diagonal": true,
+      "lag_pair_max": 16376,
+      "lag_pair_min": 16376,
+      "lag_pairs": 67076096,
+      "low_sample_pairs": 0,
+      "manifest_direction": "A[source_node_j,destination_node_i]=max(0,Pearson(x[t,j],x[t+1,i])); diagonal zero",
+      "manifest_direction_semantics_match_independent_orientation": true,
+      "manifest_train_only": true,
+      "matches_tolerance_1e-6": true,
+      "max_abs_error": 0.0,
+      "node_order_equal": true,
+      "node_order_hash_match": true,
+      "oracle_val_test_or_targets_loaded": false,
+      "prior_sha_match": true,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "shape": [
+        64,
+        64
+      ],
+      "train_bounds": [
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ],
+        [
+          0,
+          2048
+        ]
+      ],
+      "train_file_hashes_match": true,
+      "train_sources": [
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed0.npz",
+          "partition": "train",
+          "sha256": "32a9d753c0ae872aa9b876eea3dffbe37eed4c712b1e579b3acc42c152a107d5"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed1.npz",
+          "partition": "train",
+          "sha256": "7bfa3d723830bdf363942511198d7282a56d0ca1e32bbf7b921206d101a92115"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed2.npz",
+          "partition": "train",
+          "sha256": "79c7f7cfe4259437c4998409d7544eb1c178e190e29ff5392f275de51ea85173"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed3.npz",
+          "partition": "train",
+          "sha256": "63a5b407dacec2aff6c7329d1cfd3348a4e8ad2d4b924c5ebceb2fd37e8110a0"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed4.npz",
+          "partition": "train",
+          "sha256": "c3f6321bf9fe129def616a3f882f5281204d5efc7c1b6179b08a2d6cd90677e5"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed5.npz",
+          "partition": "train",
+          "sha256": "f555ab127349d4bf7b11747ec8e9d0b74fa4a620476424d86a5c080c85a17828"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed6.npz",
+          "partition": "train",
+          "sha256": "ecdc3a6971ec1bd656e39d5a83f7ac846b92f24fb8e8381726a788e5f7683720"
+        },
+        {
+          "bounds": [
+            0,
+            2048
+          ],
+          "file": "train_seed7.npz",
+          "partition": "train",
+          "sha256": "4ca071785ce7f9d7f5dd0eea0f9a745afb29af8f49ba2aac700b33167d6f9a09"
+        }
+      ],
+      "train_trajectory_count": 8
+    }
+  },
+  "elapsed_wall_seconds": 6.69752299998072,
+  "scope": "resource/functionality diagnostic; independent numeric integrity; no model/GPU/optimizer/test target arrays"
+}

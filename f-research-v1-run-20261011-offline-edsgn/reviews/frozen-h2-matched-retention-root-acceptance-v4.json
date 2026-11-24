@@ -1,0 +1,16 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:05:44.674542+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "edsgn/tests/test_frozen_h2_matched_retention_v4.py": "5e1f6e9ea8a53cc6d3f9ae60aa358da35e6ef3a46e177e7338ae24141c4822be",
+    "edsgn/staging/h2_matched_graph_retention_v2.py": "2bb4d80f6f75a299bc56dce66283730646426004f86600692fdd3010fca35d91",
+    "reviews/frozen-driver-successors-independent-v2.md": "4692d8f693033883062f3261e09dc4e79ace68ae6c70be2b3e7c1d85cd8990dd",
+    "reviews/frozen-driver-successors-independent-v2.json": "4b56c53ed819b554026f42c79590501985f5dca072c36259313455d8ebd72a09"
+  },
+  "actual_matched_graph_replay_run": false
+}

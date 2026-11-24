@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "status": "accepted_for_resource_probe",
+  "resource_probe_script": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+  "conditions": [
+    "Run only after package integration and canonical P2 revalidation.",
+    "These batch sizes are proposals, not accepted training allocations.",
+    "Each command performs one train-window forward/backward pass without optimizer steps and accesses no validation/test windows.",
+    "Do not use probe results as scientific training results."
+  ],
+  "configs": [
+    {
+      "dataset": "email-episode",
+      "method": "STAEformer",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-STAEformer-seed0.json",
+      "batch_size_proposed": 2,
+      "config_sha256": "15111b92b1f76097170e2c586b8ef8e81f471c58b4f0da6df59a25cd8efad3b4"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "DCRNN",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-DCRNN-seed0.json",
+      "batch_size_proposed": 2,
+      "config_sha256": "22db6133270f668ceb3c61d55ed5722f923d6724dd6783b2074d052bb3d51653"
+    },
+    {
+      "dataset": "email",
+      "method": "AGCRN",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-B1-v2.json",
+      "batch_size_proposed": 1,
+      "config_sha256": "3a4feaf4797a539e26e54519c768998daca22c33a173e0915f60754612ca826a"
+    },
+    {
+      "dataset": "email-episode",
+      "method": "AGCRN",
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-B1-v3.json",
+      "batch_size_proposed": 1,
+      "config_sha256": "db6e16ca3a48549723e61887798da41d765148839498b1fc561e5d1bde744763"
+    }
+  ],
+  "queue": [
+    {
+      "dataset": "email-episode",
+      "method": "STAEformer",
+      "batch_size_proposed": 2,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-STAEformer-seed0.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-STAEformer-seed0-B2.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-STAEformer-seed0.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-STAEformer-seed0-B2.json",
+        "--batch-size",
+        "2",
+        "--repeats",
+        "1"
+      ],
+      "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py --config C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-STAEformer-seed0.json --output C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-STAEformer-seed0-B2.json --batch-size 2 --repeats 1",
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "pending_package_integration_and_resource_acceptance",
+      "note": "Not launched. The currently registered engine factory does not yet include these variants; root must integrate/revalidate and authorize probe queue before execution."
+    },
+    {
+      "dataset": "email-episode",
+      "method": "DCRNN",
+      "batch_size_proposed": 2,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-DCRNN-seed0.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-DCRNN-seed0-B2.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-DCRNN-seed0.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-DCRNN-seed0-B2.json",
+        "--batch-size",
+        "2",
+        "--repeats",
+        "1"
+      ],
+      "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py --config C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-DCRNN-seed0.json --output C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-DCRNN-seed0-B2.json --batch-size 2 --repeats 1",
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "pending_package_integration_and_resource_acceptance",
+      "note": "Not launched. The currently registered engine factory does not yet include these variants; root must integrate/revalidate and authorize probe queue before execution."
+    },
+    {
+      "dataset": "email",
+      "method": "AGCRN",
+      "batch_size_proposed": 1,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-B1-v2.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-B1-v2.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0-B1-v2.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-B1-v2.json",
+        "--batch-size",
+        "1",
+        "--repeats",
+        "1"
+      ],
+      "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py --config C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-AGCRN-seed0.json --output C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-AGCRN-seed0-B2.json --batch-size 2 --repeats 1",
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "pending_package_integration_and_resource_acceptance",
+      "note": "Not launched. The currently registered engine factory does not yet include these variants; root must integrate/revalidate and authorize probe queue before execution."
+    },
+    {
+      "dataset": "email-episode",
+      "method": "AGCRN",
+      "batch_size_proposed": 1,
+      "config": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-B1-v3.json",
+      "output": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-B1-v3.json",
+      "argv": [
+        "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py",
+        "--config",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0-B1-v3.json",
+        "--output",
+        "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-B1-v3.json",
+        "--batch-size",
+        "1",
+        "--repeats",
+        "1"
+      ],
+      "command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_resource_probe.py --config C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\external-resource-v1\\email-episode-AGCRN-seed0.json --output C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\external-resource-v1\\email-episode-AGCRN-seed0-B2.json --batch-size 2 --repeats 1",
+      "windows": "train only (baseline_resource_probe.py calls datasets_at(config.dataset_path, \"train\") and index_origins(..., \"train\")[:batch_size])",
+      "steps": {
+        "forward_backward_passes": 1,
+        "optimizer_steps": 0,
+        "validation_windows": 0,
+        "test_accessed": false
+      },
+      "status": "pending_package_integration_and_resource_acceptance",
+      "note": "Not launched. The currently registered engine factory does not yet include these variants; root must integrate/revalidate and authorize probe queue before execution."
+    }
+  ],
+  "root_acceptance": {
+    "scope": "single train-only forward/backward resource pass, zero optimizer steps",
+    "proposal_sha256": "a9f78624359fc3b65aa532847e3b820afd1aac4e42720be923ce85c26c99fb9f",
+    "p2_gate": "protocols/p2-engineering-delta-gate-v3.md",
+    "p2_source_archive_sha256": "f3885a199b219bd19ec09c5447a49ca2128f340a362d93ca55b268799affdaf3",
+    "training_batch_acceptance": false,
+    "scientific_result_acceptance": false
+  },
+  "continuation": {
+    "parent_queue_sha256": "851efee06d9133e10dab78406cb2ba84a7ce306265a70a04b73ccfa80b3810e3",
+    "reason": "completed probes retained; episode AGCRN B2 OOM preserved; unstarted probes plus episode B1 retry",
+    "architecture_changed": false,
+    "training_batch_acceptance": false
+  }
+}

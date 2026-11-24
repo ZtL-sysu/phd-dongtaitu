@@ -1,0 +1,7 @@
+# Root acceptance — C06 metadata preflight and replay driver v2
+
+Accepted as an isolated engineering route. Root reviewed the actual source and real PreparedData/ForecastModel CPU fixture, with eight passing tests. Metadata preflight decodes only metadata_json, node_ids and input_mask and reads values shape from its NPY header. Original archives are committed by raw-byte hashes. Its ordered domain identity is required to match the later ordinary PreparedData load.
+
+The driver uses actual nested checkpoint task fields, B1/fp32 complete origins, the main checkpoint's training normalizer for synthetic collections and equal stored training statistics for real data. Perturbations affect inputs while clean targets and target masks remain unchanged. Strict canonical phase gates bind pass verdicts and every predecessor input/evidence hash; source/data/freeze/policy/parameters and the complete canonical state are rechecked after serialization. Every origin uses the same cumulative budget callback and both resource leases. These properties close the earlier driver blockers at source/toy level.
+
+This does not close C06 as an executed experiment. Exact real domain manifests and pre-test freeze extras, valid P3/P3A/P4 gates, accepted resources and actual complete robustness replay remain required. Metadata/mask-only real preflight may now prepare those prospective identities without reading test values/targets. No hypothesis or acceleration finding follows from this acceptance.

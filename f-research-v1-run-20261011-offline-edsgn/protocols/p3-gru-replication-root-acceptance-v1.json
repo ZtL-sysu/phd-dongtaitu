@@ -1,0 +1,146 @@
+{
+  "accepted": true,
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "P3 baseline five-seed replication preparation",
+  "queue_path": "protocols/p3-gru-replication-queue-v1.json",
+  "queue_sha256": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+  "job_count": 16,
+  "jobs": [
+    {
+      "config_path": "configs/p3-gru-replication-v1/synthetic-GRU-seed1.json",
+      "config_sha256": "9ed594b92827473009ee8907ed1a1360d24a37daa00d80647d2ff28f7a569489",
+      "dataset": "synthetic",
+      "seed": 1
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/synthetic-GRU-seed2.json",
+      "config_sha256": "2c9b106906f7cafb70bb63d3fa2d2358bdc3cba92fe1ef75e964f3078aff2199",
+      "dataset": "synthetic",
+      "seed": 2
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/synthetic-GRU-seed3.json",
+      "config_sha256": "f06bd981f2b0e61c05793971029323f11e92c120033ad2b9332eb471828bbb26",
+      "dataset": "synthetic",
+      "seed": 3
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/synthetic-GRU-seed4.json",
+      "config_sha256": "88421842e561636d65d2d11c0f970d7e10c35171f5af110593e8a1124a87c358",
+      "dataset": "synthetic",
+      "seed": 4
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/mooc-GRU-seed1.json",
+      "config_sha256": "422e6ab5657c0bb183322bfcabbb91952e6d5419474a6050c4525eaaf255a88f",
+      "dataset": "mooc",
+      "seed": 1
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/mooc-GRU-seed2.json",
+      "config_sha256": "37cbfcd4d112fd1179e5e87589713ddedbc5a7348a631f5e932ecd2f4679728b",
+      "dataset": "mooc",
+      "seed": 2
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/mooc-GRU-seed3.json",
+      "config_sha256": "74b65f360c71c8071e0710d40e5da1ebed4e1ae88dace554c7989fe815867b42",
+      "dataset": "mooc",
+      "seed": 3
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/mooc-GRU-seed4.json",
+      "config_sha256": "b2d944851fe8382e7d6c1e672ec82a8161a810e011c878508fb8fa7f3e7abe76",
+      "dataset": "mooc",
+      "seed": 4
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-GRU-seed1.json",
+      "config_sha256": "42f7930b3482059b05e7ffbe53ad3ecf9dc3a7570214b7b1efbf4bcdd26c6f99",
+      "dataset": "email",
+      "seed": 1
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-GRU-seed2.json",
+      "config_sha256": "25d05f13e8cdaa013925b0c7ca79db477ca973c200e128f7177828eea9f6ae4b",
+      "dataset": "email",
+      "seed": 2
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-GRU-seed3.json",
+      "config_sha256": "7c0ab82293d1d2996ad1597c62441304f56694e53863a9933a3830a264e2d17e",
+      "dataset": "email",
+      "seed": 3
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-GRU-seed4.json",
+      "config_sha256": "aa2e9c1e87b5a436b0f7f7ce8b97e59c575b42e986d829743519989955ed2af8",
+      "dataset": "email",
+      "seed": 4
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-episode-GRU-seed1.json",
+      "config_sha256": "599eb23ab3a41a57d55f77b949e919a27411451a6be940a712379d8c0db4920a",
+      "dataset": "email-episode",
+      "seed": 1
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-episode-GRU-seed2.json",
+      "config_sha256": "88e06bfadde7370e9474295a63262ee1c04a73408a208b3793b9ceef90686a6c",
+      "dataset": "email-episode",
+      "seed": 2
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-episode-GRU-seed3.json",
+      "config_sha256": "8c0c05d768f4eecd4ad7cc42724a5cf0bed03fc5d9fa3227f22e1dfa909d68e6",
+      "dataset": "email-episode",
+      "seed": 3
+    },
+    {
+      "config_path": "configs/p3-gru-replication-v1/email-episode-GRU-seed4.json",
+      "config_sha256": "07aff8f2e9e88b2a048971c694ec499fc37c6db85d5effda93412243ec38ccbc",
+      "dataset": "email-episode",
+      "seed": 4
+    }
+  ],
+  "file_inputs_sha256": {
+    "protocols/p3-gru-replication-queue-v1.json": "9712f88677bb459a96a89d62b4804c2c4b3201b7938d80f29a8f3915671152ab",
+    "edsgn/scripts/prepare_p3_gru_replication_v1.py": "d3053947faab0704a9e6c7c774b4d2930c077b173b8f87b61051d90d022e1e74",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "protocols/p3-fresh-remaining-bound-queue-v1.json": "a7d0a2d23425724c6bdcb920f2bff89a49b4570b445f3d571d09ff442db94e0e",
+    "protocols/p3-internal-bound-queue-v4.json": "cef3d05099c5a910f4c69aa3b5b10cf804779ba4d2c76ea15c21ab9f30f85f79",
+    "protocols/p3-training-resource-contract-v2.json": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e",
+    "protocols/p3-internal-candidate-resource-addendum-v4.json": "074ff46a60d2a038e5927b3ebf10436f0c15feba4e9c7f194fec45637ce77a0a",
+    "configs/p3-gru-replication-v1/synthetic-GRU-seed1.json": "9ed594b92827473009ee8907ed1a1360d24a37daa00d80647d2ff28f7a569489",
+    "configs/p3-gru-replication-v1/synthetic-GRU-seed2.json": "2c9b106906f7cafb70bb63d3fa2d2358bdc3cba92fe1ef75e964f3078aff2199",
+    "configs/p3-gru-replication-v1/synthetic-GRU-seed3.json": "f06bd981f2b0e61c05793971029323f11e92c120033ad2b9332eb471828bbb26",
+    "configs/p3-gru-replication-v1/synthetic-GRU-seed4.json": "88421842e561636d65d2d11c0f970d7e10c35171f5af110593e8a1124a87c358",
+    "configs/p3-gru-replication-v1/mooc-GRU-seed1.json": "422e6ab5657c0bb183322bfcabbb91952e6d5419474a6050c4525eaaf255a88f",
+    "configs/p3-gru-replication-v1/mooc-GRU-seed2.json": "37cbfcd4d112fd1179e5e87589713ddedbc5a7348a631f5e932ecd2f4679728b",
+    "configs/p3-gru-replication-v1/mooc-GRU-seed3.json": "74b65f360c71c8071e0710d40e5da1ebed4e1ae88dace554c7989fe815867b42",
+    "configs/p3-gru-replication-v1/mooc-GRU-seed4.json": "b2d944851fe8382e7d6c1e672ec82a8161a810e011c878508fb8fa7f3e7abe76",
+    "configs/p3-gru-replication-v1/email-GRU-seed1.json": "42f7930b3482059b05e7ffbe53ad3ecf9dc3a7570214b7b1efbf4bcdd26c6f99",
+    "configs/p3-gru-replication-v1/email-GRU-seed2.json": "25d05f13e8cdaa013925b0c7ca79db477ca973c200e128f7177828eea9f6ae4b",
+    "configs/p3-gru-replication-v1/email-GRU-seed3.json": "7c0ab82293d1d2996ad1597c62441304f56694e53863a9933a3830a264e2d17e",
+    "configs/p3-gru-replication-v1/email-GRU-seed4.json": "aa2e9c1e87b5a436b0f7f7ce8b97e59c575b42e986d829743519989955ed2af8",
+    "configs/p3-gru-replication-v1/email-episode-GRU-seed1.json": "599eb23ab3a41a57d55f77b949e919a27411451a6be940a712379d8c0db4920a",
+    "configs/p3-gru-replication-v1/email-episode-GRU-seed2.json": "88e06bfadde7370e9474295a63262ee1c04a73408a208b3793b9ceef90686a6c",
+    "configs/p3-gru-replication-v1/email-episode-GRU-seed3.json": "8c0c05d768f4eecd4ad7cc42724a5cf0bed03fc5d9fa3227f22e1dfa909d68e6",
+    "configs/p3-gru-replication-v1/email-episode-GRU-seed4.json": "07aff8f2e9e88b2a048971c694ec499fc37c6db85d5effda93412243ec38ccbc",
+    "configs/p3-fresh-remaining-bound-v1/synthetic-GRU-seed0.json": "9816d52b9cd0804598f3794987450ef750bd20cfce80d0c2be04ebca821c4df9",
+    "configs/p3-fresh-remaining-bound-v1/mooc-GRU-seed0.json": "4b3c214ff4a46128b66c79346ef4b7af33afd314ea63dc59c9a5b9752cefb18e",
+    "configs/p3-internal-bound-v4/email-GRU-seed0.json": "b71d38d33183acc740fd6262d222169d912d67e8d7afaf0120d80849b033f804",
+    "configs/p3-internal-bound-v4/email-episode-GRU-seed0.json": "4cb0880be4e018a58b778e1ff91fef4d0cc9415c09f2083e33a0d4df4641c890",
+    "reviews/p3-gru-replication-queue-independent-review-v1.json": "05b3a150ceded14930fafa2b8eb419828db5efb62e554a69ee88e037ee5faaf2",
+    "reviews/p3-gru-replication-queue-independent-review-v1.md": "0fed9e6f1143505df120d3d6e7199dbbdbaef7c1e01da6ca800885055dc6944e",
+    "edsgn/scripts/root_accept_p3_gru_replication_v1.py": "47c9491299c7debc99f4b55b201931df3ce2808cd8d106972305f9ded790b380"
+  },
+  "launch_authorization": "only_after_unchanged_seed0_coordinator_success_full_receipt_verification_P3_running_and_72h_guard",
+  "actual_training_started": false,
+  "test_access_authorized": false,
+  "scientific_hypothesis_accepted": false,
+  "pipeline_advanced": false,
+  "resource_contract": "protocols/p3-training-resource-contract-v2.json",
+  "resource_contract_sha256": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+}

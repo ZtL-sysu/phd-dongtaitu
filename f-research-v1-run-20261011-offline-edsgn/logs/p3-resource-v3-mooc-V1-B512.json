@@ -1,0 +1,19 @@
+{
+  "scope": "single-real-training-batch-resource-probe",
+  "status": "controlled-stop",
+  "reason": "Oversized raw-event batch exceeded 15 minutes without completing and exporting its three passes; root terminated only the verified owned Conda worker. Smaller batching must be evaluated separately.",
+  "batch_size": 512,
+  "optimizer_steps": 0,
+  "test_accessed": false,
+  "wall_seconds": 924.8356326,
+  "wall_measurement": "owned-process UTC creation timestamp to termination confirmation; not scientific component timing",
+  "started_utc": "2026-10-11T06:43:27.5577338Z",
+  "completed_utc": "2026-10-11T06:58:52.3933664Z",
+  "cpu_seconds_at_stop": 365.140625,
+  "completed_pass_metrics_available": false,
+  "peak_cuda_allocated_bytes": null,
+  "source_manifest_at_launch_exported": false,
+  "config_path": "logs/p3-resource-v3-mooc-V1-B512-config.json",
+  "active_model_source_pre_cache_snapshot": "reviews/model-pre-training-prior-cache-snapshot.py",
+  "no_other_process_modified": true
+}

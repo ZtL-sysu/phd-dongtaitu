@@ -1,0 +1,1119 @@
+{
+  "title": "Partial preliminary numeric check",
+  "scope": "validation-only saved predictions and targets; no test predictions/metrics read",
+  "generated_utc": "2026-10-11T06:23:57+00:00",
+  "checks": [
+    {
+      "dataset": "synthetic",
+      "method": "persistence",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\synthetic\\simple\\persistence_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\synthetic\\simple\\persistence_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\synthetic\\simple\\simple-baseline-manifest.json",
+      "n_windows": 4028,
+      "n_trajectories_or_series": 2,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        4028,
+        7,
+        64,
+        1
+      ],
+      "n_nodes": 64,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": "feature ids only in artifact; no channel names declared",
+      "units": "synthetic raw target units; generator metadata defines process",
+      "input_transform": "identity signed real values",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+          "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+          "partition": "validation",
+          "data_seed": null
+        },
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+          "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+          "partition": "validation",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json",
+        "validation_entries": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+            "declared_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "actual_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "matches": true
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+            "declared_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "actual_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "matches": true
+          }
+        ]
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.042028321530124715,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.03423148007272719,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.031074082478880882,
+          "recomputed_mae": 0.03107408172219871,
+          "saved_rmse": 0.03798255696892738,
+          "recomputed_rmse": 0.03798255726924808,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.03465643897652626,
+          "recomputed_mae": 0.03465644005233143,
+          "saved_rmse": 0.042532000690698624,
+          "recomputed_rmse": 0.04253199994871197,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.03506017476320267,
+          "recomputed_mae": 0.035060177668930756,
+          "saved_rmse": 0.043029140681028366,
+          "recomputed_rmse": 0.043029138695099396,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": true,
+      "prediction_zero_fraction": 0.0,
+      "zero_prediction_counts_by_feature": {
+        "0": 0
+      },
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 257792
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 1031168,
+      "source_code_sha256_recorded": true
+    },
+    {
+      "dataset": "synthetic",
+      "method": "linear",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\synthetic\\simple\\linear_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\synthetic\\simple\\linear_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\synthetic\\simple\\simple-baseline-manifest.json",
+      "n_windows": 4028,
+      "n_trajectories_or_series": 2,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        4028,
+        7,
+        64,
+        1
+      ],
+      "n_nodes": 64,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": "feature ids only in artifact; no channel names declared",
+      "units": "synthetic raw target units; generator metadata defines process",
+      "input_transform": "identity signed real values",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+          "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+          "partition": "validation",
+          "data_seed": null
+        },
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+          "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+          "partition": "validation",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json",
+        "validation_entries": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+            "declared_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "actual_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "matches": true
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+            "declared_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "actual_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "matches": true
+          }
+        ]
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.030411889661619812,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.025936813030146763,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.025525165413812168,
+          "recomputed_mae": 0.025525165413812168,
+          "saved_rmse": 0.029736963480785493,
+          "recomputed_rmse": 0.029736963480785493,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.0260046519135359,
+          "recomputed_mae": 0.0260046519135359,
+          "saved_rmse": 0.03052182600582705,
+          "recomputed_rmse": 0.03052182600582705,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.02601855680741618,
+          "recomputed_mae": 0.02601855680741618,
+          "saved_rmse": 0.03054217162022498,
+          "recomputed_rmse": 0.03054217162022498,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": null,
+      "prediction_zero_fraction": null,
+      "zero_prediction_counts_by_feature": null,
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 257792
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 1031168,
+      "source_code_sha256_recorded": true
+    },
+    {
+      "dataset": "email",
+      "method": "persistence",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\email\\simple\\persistence_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\email\\simple\\persistence_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\email\\simple\\simple-baseline-manifest.json",
+      "n_windows": 74,
+      "n_trajectories_or_series": 1,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        74,
+        7,
+        986,
+        2
+      ],
+      "n_nodes": 986,
+      "n_features": 2,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": [
+        "incoming_count",
+        "outgoing_count"
+      ],
+      "units": "raw count per interval; manifest transform log1p applies only inputs",
+      "input_transform": "log1p(raw_count)",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\email\\email.npz",
+          "sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+          "partition": "chronological",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\email\\manifest.json",
+        "declared_processed_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+        "actual_processed_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+        "matches": true
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.0,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.0,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": true,
+      "prediction_zero_fraction": 1.0,
+      "zero_prediction_counts_by_feature": {
+        "0": 510748,
+        "1": 510748
+      },
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 1,
+          "feature": 1,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 3,
+          "feature": 1,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 7,
+          "feature": 1,
+          "n_scored": 72964
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 520608,
+      "source_code_sha256_recorded": true,
+      "feature0_zero_check": {
+        "name": "incoming_count",
+        "predictions_all_zero": true,
+        "zero_cells": 510748,
+        "total_cells": 510748,
+        "validation_target_feature0_nonzero_valid_cells": 0
+      },
+      "email_all_feature_zero_evidence": [
+        {
+          "feature": 0,
+          "channel": "incoming_count",
+          "prediction_zero_cells": 510748,
+          "prediction_cells": 510748,
+          "predictions_all_zero": true,
+          "scored_target_cells": 510748,
+          "scored_target_nonzero_cells": 0,
+          "scored_targets_all_zero": true
+        },
+        {
+          "feature": 1,
+          "channel": "outgoing_count",
+          "prediction_zero_cells": 510748,
+          "prediction_cells": 510748,
+          "predictions_all_zero": true,
+          "scored_target_cells": 510748,
+          "scored_target_nonzero_cells": 0,
+          "scored_targets_all_zero": true
+        }
+      ]
+    },
+    {
+      "dataset": "email",
+      "method": "linear",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\email\\simple\\linear_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\email\\simple\\linear_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\email\\simple\\simple-baseline-manifest.json",
+      "n_windows": 74,
+      "n_trajectories_or_series": 1,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        74,
+        7,
+        986,
+        2
+      ],
+      "n_nodes": 986,
+      "n_features": 2,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": [
+        "incoming_count",
+        "outgoing_count"
+      ],
+      "units": "raw count per interval; manifest transform log1p applies only inputs",
+      "input_transform": "log1p(raw_count)",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\email\\email.npz",
+          "sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+          "partition": "chronological",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\email\\manifest.json",
+        "declared_processed_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+        "actual_processed_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+        "matches": true
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.0,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.0,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 1,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 1,
+          "saved_mae": 0.0,
+          "recomputed_mae": 0.0,
+          "saved_rmse": 0.0,
+          "recomputed_rmse": 0.0,
+          "saved_n_scored": 72964,
+          "recomputed_n_scored": 72964,
+          "saved_n_windows": 74,
+          "recomputed_n_windows": 74,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": null,
+      "prediction_zero_fraction": null,
+      "zero_prediction_counts_by_feature": null,
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 1,
+          "feature": 1,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 3,
+          "feature": 1,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 72964
+        },
+        {
+          "horizon_index": 7,
+          "feature": 1,
+          "n_scored": 72964
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 520608,
+      "source_code_sha256_recorded": true,
+      "feature0_zero_check": {
+        "name": "incoming_count",
+        "predictions_all_zero": true,
+        "zero_cells": 510748,
+        "total_cells": 510748,
+        "validation_target_feature0_nonzero_valid_cells": 0
+      },
+      "email_all_feature_zero_evidence": [
+        {
+          "feature": 0,
+          "channel": "incoming_count",
+          "prediction_zero_cells": 510748,
+          "prediction_cells": 510748,
+          "predictions_all_zero": true,
+          "scored_target_cells": 510748,
+          "scored_target_nonzero_cells": 0,
+          "scored_targets_all_zero": true
+        },
+        {
+          "feature": 1,
+          "channel": "outgoing_count",
+          "prediction_zero_cells": 510748,
+          "prediction_cells": 510748,
+          "predictions_all_zero": true,
+          "scored_target_cells": 510748,
+          "scored_target_nonzero_cells": 0,
+          "scored_targets_all_zero": true
+        }
+      ]
+    },
+    {
+      "dataset": "mooc",
+      "method": "persistence",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\mooc\\simple\\persistence_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\mooc\\simple\\persistence_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\mooc\\simple\\simple-baseline-manifest.json",
+      "n_windows": 49,
+      "n_trajectories_or_series": 1,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        49,
+        24,
+        78,
+        1
+      ],
+      "n_nodes": 78,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        6,
+        24
+      ],
+      "horizons_scored": [
+        1,
+        6,
+        24
+      ],
+      "feature_channels": [
+        "hourly_target_activity_action_count"
+      ],
+      "units": "raw count per interval; manifest transform log1p applies only inputs",
+      "input_transform": "log1p(raw_count)",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\mooc\\mooc.npz",
+          "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+          "partition": "chronological",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\mooc\\manifest.json",
+        "declared_processed_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+        "actual_processed_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+        "matches": true
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 14.534201830515693,
+      "pooled_mae_all_saved_horizon_feature_cells": 8.250305250305251,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 4.058346271514893,
+          "recomputed_mae": 4.0583464154892726,
+          "saved_rmse": 8.10231876373291,
+          "recomputed_rmse": 8.10231860142486,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        },
+        {
+          "horizon": 6,
+          "feature": 0,
+          "saved_mae": 8.119309425354004,
+          "recomputed_mae": 8.119309262166405,
+          "saved_rmse": 14.556535720825195,
+          "recomputed_rmse": 14.556535519185111,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        },
+        {
+          "horizon": 24,
+          "feature": 0,
+          "saved_mae": 4.9089484214782715,
+          "recomputed_mae": 4.9089481946624804,
+          "saved_rmse": 10.058359146118164,
+          "recomputed_rmse": 10.05835927542104,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": true,
+      "prediction_zero_fraction": 0.3704866562009419,
+      "zero_prediction_counts_by_feature": {
+        "0": 33984
+      },
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 3822
+        },
+        {
+          "horizon_index": 6,
+          "feature": 0,
+          "n_scored": 3822
+        },
+        {
+          "horizon_index": 24,
+          "feature": 0,
+          "n_scored": 3822
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 35256,
+      "source_code_sha256_recorded": true,
+      "feature0_zero_check": {
+        "name": "hourly_target_activity_action_count",
+        "predictions_all_zero": false,
+        "zero_cells": 33984,
+        "total_cells": 91728,
+        "validation_target_feature0_nonzero_valid_cells": 61513
+      }
+    },
+    {
+      "dataset": "mooc",
+      "method": "linear",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\mooc\\simple\\linear_val_predictions.npz",
+      "metrics_file": "runs\\baselines\\mooc\\simple\\linear_val_metrics.csv",
+      "manifest_file": "runs\\baselines\\mooc\\simple\\simple-baseline-manifest.json",
+      "n_windows": 49,
+      "n_trajectories_or_series": 1,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        49,
+        24,
+        78,
+        1
+      ],
+      "n_nodes": 78,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        6,
+        24
+      ],
+      "horizons_scored": [
+        1,
+        6,
+        24
+      ],
+      "feature_channels": [
+        "hourly_target_activity_action_count"
+      ],
+      "units": "raw count per interval; manifest transform log1p applies only inputs",
+      "input_transform": "log1p(raw_count)",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\mooc\\mooc.npz",
+          "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+          "partition": "chronological",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\mooc\\manifest.json",
+        "declared_processed_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+        "actual_processed_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+        "matches": true
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 10.268816088487576,
+      "pooled_mae_all_saved_horizon_feature_cells": 6.4832805189447065,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 5.990911345943586,
+          "recomputed_mae": 5.990911345943586,
+          "saved_rmse": 9.716745474725895,
+          "recomputed_rmse": 9.716745474725895,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        },
+        {
+          "horizon": 6,
+          "feature": 0,
+          "saved_mae": 6.2191970229455915,
+          "recomputed_mae": 6.2191970229455915,
+          "saved_rmse": 9.941359931884405,
+          "recomputed_rmse": 9.941359931884405,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        },
+        {
+          "horizon": 24,
+          "feature": 0,
+          "saved_mae": 6.657011218292277,
+          "recomputed_mae": 6.657011218292277,
+          "saved_rmse": 10.546678562686315,
+          "recomputed_rmse": 10.546678562686315,
+          "saved_n_scored": 3822,
+          "recomputed_n_scored": 3822,
+          "saved_n_windows": 49,
+          "recomputed_n_windows": 49,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": null,
+      "prediction_zero_fraction": null,
+      "zero_prediction_counts_by_feature": null,
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 3822
+        },
+        {
+          "horizon_index": 6,
+          "feature": 0,
+          "n_scored": 3822
+        },
+        {
+          "horizon_index": 24,
+          "feature": 0,
+          "n_scored": 3822
+        }
+      ],
+      "test_accessed_declaration": {
+        "simple_manifest": false,
+        "split": "val"
+      },
+      "notes": [],
+      "linear_training_node_window_samples": 35256,
+      "source_code_sha256_recorded": true,
+      "feature0_zero_check": {
+        "name": "hourly_target_activity_action_count",
+        "predictions_all_zero": false,
+        "zero_cells": 28531,
+        "total_cells": 91728,
+        "validation_target_feature0_nonzero_valid_cells": 61513
+      }
+    },
+    {
+      "dataset": "synthetic",
+      "method": "GRU",
+      "split": "val",
+      "prediction_file": "runs\\baselines\\synthetic\\GRU\\seed0\\validation_predictions.npz",
+      "metrics_file": "runs\\baselines\\synthetic\\GRU\\seed0\\metrics_by_horizon_val.csv",
+      "manifest_file": "runs\\baselines\\synthetic\\GRU\\seed0\\manifest.json",
+      "n_windows": 4028,
+      "n_trajectories_or_series": 2,
+      "origins_order_matches_full_val_origins": true,
+      "tensor_shape": [
+        4028,
+        7,
+        64,
+        1
+      ],
+      "n_nodes": 64,
+      "n_features": 1,
+      "horizons_declared": [
+        1,
+        3,
+        7
+      ],
+      "horizons_scored": [
+        1,
+        3,
+        7
+      ],
+      "feature_channels": "feature ids only in artifact; no channel names declared",
+      "units": "synthetic raw target units; generator metadata defines process",
+      "input_transform": "identity signed real values",
+      "model_seed": 0,
+      "validation_source_files": [
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+          "sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+          "partition": "validation",
+          "data_seed": null
+        },
+        {
+          "path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+          "sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+          "partition": "validation",
+          "data_seed": null
+        }
+      ],
+      "data_manifest_processed_hash_relation": {
+        "manifest_path": "data\\processed\\synthetic-n64-identity-change0.3-miss0\\manifest.json",
+        "validation_entries": [
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+            "declared_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "actual_sha256": "eef45dfac45238da71515b55d822704176e907d86994ee1d71594c71730a4bc2",
+            "matches": true
+          },
+          {
+            "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+            "declared_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "actual_sha256": "a894c7da4f046e578af2fa91231d5057d1b9e6670ec3038645976c36c3812d54",
+            "matches": true
+          }
+        ]
+      },
+      "saved_targets_equal_source_val_targets": true,
+      "saved_masks_equal_source_val_masks": true,
+      "pooled_rmse_all_saved_horizon_feature_cells": 0.030411405329396735,
+      "pooled_mae_all_saved_horizon_feature_cells": 0.025936504721986716,
+      "metric_row_comparisons": [
+        {
+          "horizon": 1,
+          "feature": 0,
+          "saved_mae": 0.025525620207190514,
+          "recomputed_mae": 0.025525620949378495,
+          "saved_rmse": 0.02973722480237484,
+          "recomputed_rmse": 0.029737224542421635,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 3,
+          "feature": 0,
+          "saved_mae": 0.026004616171121597,
+          "recomputed_mae": 0.026004616766723054,
+          "saved_rmse": 0.030521882697939873,
+          "recomputed_rmse": 0.030521882918031824,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        },
+        {
+          "horizon": 7,
+          "feature": 0,
+          "saved_mae": 0.026017671450972557,
+          "recomputed_mae": 0.026017671721082655,
+          "saved_rmse": 0.03054117225110531,
+          "recomputed_rmse": 0.030541172592395135,
+          "saved_n_scored": 257792,
+          "recomputed_n_scored": 257792,
+          "saved_n_windows": 4028,
+          "recomputed_n_windows": 4028,
+          "match": true
+        }
+      ],
+      "all_saved_metric_rows_match_recompute": true,
+      "persistence_matches_last_causal_observation": null,
+      "prediction_zero_fraction": null,
+      "zero_prediction_counts_by_feature": null,
+      "mask_true_counts_by_horizon_feature": [
+        {
+          "horizon_index": 1,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 3,
+          "feature": 0,
+          "n_scored": 257792
+        },
+        {
+          "horizon_index": 7,
+          "feature": 0,
+          "n_scored": 257792
+        }
+      ],
+      "test_accessed_declaration": {
+        "summary": false,
+        "manifest_selection": "required-horizon average validation MAE; no test access"
+      },
+      "notes": [],
+      "training_summary": {
+        "epochs_executed": 27,
+        "best_val_mae": 0.025849302609761555,
+        "scope": "full_protocol",
+        "test_accessed": false,
+        "stop_loss_reached": false
+      },
+      "recorded_train_val_window_counts": {
+        "train": 16112,
+        "val": 4028
+      },
+      "resolved_config": {
+        "variant": "GRU",
+        "seed": 0,
+        "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+        "epochs": 100,
+        "patience": 10,
+        "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\synthetic\\GRU\\seed0"
+      }
+    }
+  ],
+  "limitations": [
+    "Not a P3A pass and not a judgment on the research hypothesis.",
+    "Does not replace strong or internal baselines that have not run.",
+    "Simple-baseline manifests and prediction NPZs do not record data-file SHA-256; hashes are bridged here through processed-data manifests.",
+    "GRU run manifest records train/validation window counts and split selection but no explicit dataset archive hash.",
+    "Feature labels for email/MOOC are read from source data manifests; stored prediction NPZ itself carries no feature/unit metadata."
+  ]
+}

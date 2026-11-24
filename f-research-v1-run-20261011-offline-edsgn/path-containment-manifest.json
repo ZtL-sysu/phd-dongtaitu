@@ -1,0 +1,8 @@
+{
+  "guidance_dir": "C:/code/phd-dongtaitu",
+  "run_root": "C:/code/phd-dongtaitu/f-research-v1-run-20261011-offline-edsgn",
+  "policy": "Every created process and deliverable artifact is under run_root; sibling originals and installed skills/environments are read-only dependencies.",
+  "original_inputs": ["C:/code/phd-dongtaitu/博士RP_离线三模块详细实施方案.md", "C:/code/phd-dongtaitu/PhD_Research_Proposal.pdf"],
+  "external_read_only_data_search": "C:/code/dongtaitu",
+  "external_execution": "none"
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "independent_engineering_review_only",
+  "verdict": "pass_bounded_engineering_no_launch_authorization",
+  "controller": {"path":"edsgn/scripts/count_loss_training_controller_v4.py","sha256":"11399B3E30E31B7A7B1252DEB617D1AE92F53B62A9FDA3E6FBC328EC702862BD"},
+  "tests": {"path":"edsgn/tests/test_count_loss_training_controller_v4.py","sha256":"2FF19CB4E7383048B4A10621DB22B883A04ADFB6334F5FBC59E074DC319F9BD5","result":"26 passed in 24.30s"},
+  "independent_test_log": {"path":"logs/count-loss-controller-v4-independent-tests.log","sha256":"62CCD2E0ECEE0FE65E72672F5593CD500AB9EFB2F10A780A845474D5217C410D"},
+  "unchanged_bound_controller_sha256_expected":"12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+  "public_mock_positive_path": true,
+  "process_prefix_and_fail_closed_cases": true,
+  "same_72h_budget_and_dual_lease_path": true,
+  "host_scanner": {"status":"refused_fail_closed","pid":188,"reason":"cannot classify process 188; refusing launch"},
+  "real_data_model_gpu_optimizer_or_campaign": false,
+  "actual_launch_authorized": false
+}

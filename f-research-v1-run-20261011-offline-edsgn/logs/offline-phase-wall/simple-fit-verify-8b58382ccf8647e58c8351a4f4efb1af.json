@@ -1,0 +1,30 @@
+{
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\staging\\simple_baseline_train_fit_verification_v4.py",
+    "--dataset",
+    "../data/processed/mooc/mooc.npz",
+    "--legacy-output",
+    "../runs/baselines/mooc/simple",
+    "--output",
+    "../logs/simple-fit-verify-v4-mooc-result.json"
+  ],
+  "diagnostic_scope": "resource/functionality",
+  "finished_utc": "2026-10-13T11:02:21Z",
+  "id": "simple-fit-verify-8b58382ccf8647e58c8351a4f4efb1af",
+  "input_fence_after_sha256": "41d60dc80a86068000a893e090960af398061b538ae20bd274834bbd62e78969",
+  "input_fence_before_sha256": "41d60dc80a86068000a893e090960af398061b538ae20bd274834bbd62e78969",
+  "job_id": "simple-fit-verify-8b58382ccf8647e58c8351a4f4efb1af",
+  "lock_token_sha256": "ef338e8bfa37c67a4d40565dc1aff7b11cc17d10cdde96e3b29ff15dcf565bd2",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-mooc-result.json",
+  "output_files": {
+    "simple-baseline-train-fit-verification.json": "3f39d046106874e2b82026afa71982473e06c56ae1ea7699b4411f08fabadb1a",
+    "verification-report.json": "beb4bacfc4e88c95d3378b1bcfa0c2b733c86a06975062c669b975e7364c9f29"
+  },
+  "phase": "training",
+  "returncode": 0,
+  "scope": "offline-experiment-phase",
+  "started_utc": "2026-10-13T11:01:01Z",
+  "status": "completed",
+  "wall_seconds": 80.02726679999614
+}

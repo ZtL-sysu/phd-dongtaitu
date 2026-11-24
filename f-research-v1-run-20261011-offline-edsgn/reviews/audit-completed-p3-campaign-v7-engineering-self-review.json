@@ -1,0 +1,43 @@
+{
+  "historical_budget_stop": {
+    "path": "logs/offline-phase-wall/internal-bound-v4-email-V0-seed0.json",
+    "returncode": 1,
+    "sha256": "a6ab0a0a003bce773faaa1a62217fa519f82615fe08753f23b267f3d13723ca0",
+    "wall_seconds": 6331.621739299997
+  },
+  "host_interruption_attempt": {
+    "conservative_supplement_seconds": 90.62654810000095,
+    "measured_wall_seconds": 67.37345189999905,
+    "no_inferred_returncode_or_finish_time": true,
+    "path": "logs/offline-phase-wall/coverage-recovery-v1-internal-bound-v4-email-V0-seed0.json",
+    "raw_path": "logs/host-interruption-evidence-v2/raw-running-phase.json",
+    "raw_sha256": "5b35b43d929bd23af1d2eba25b5649d0f849026af2d8017432f2f723659fc43d",
+    "reconciliation": "logs/p3-host-interruption-root-v2.json",
+    "reconciliation_sha256": "11b26f8c3ba29cf84dd8b14dc585e45f5e241ea826a7a77c4725efe1ede6afd6",
+    "sha256": "e53de87803d129a5cebabb29350c8622424f6e03be629a1d56f04c7f30bf9749"
+  },
+  "limitations": [
+    "No checkpoint/model/prediction/NPZ numeric payload or GPU was opened.",
+    "The 80-row result is only a metadata preflight; it does not run the validation numeric auditor or accept P3/scientific claims.",
+    "The accepted root record authorizes serial recovery only; later training and root acceptance remain required."
+  ],
+  "metadata_preflight_log": "logs/audit-completed-p3-campaign-v7-metadata-preflight.log",
+  "metadata_preflight_log_sha256": "8c2d19c26881f9e97b64c450d720103bc0c6022fcd571ae2ebb7ff979cd3dc80",
+  "metadata_preflight_result": {
+    "canonical_logical_rows": 80,
+    "numeric_audit_invoked": false,
+    "prior_accepted": 12,
+    "recovery_rows": 68,
+    "whole_command_wall_seconds": 3.0259775
+  },
+  "root_authority_v2_sha256": "6a38df5f0fd95586a8675e44f9b500efc175609e3b246b989205c37a44921148",
+  "scope": "writer implementation self-review; metadata-only engineering; no actual P3 numeric audit",
+  "source": "edsgn/scripts/audit_completed_p3_campaign_v7.py",
+  "source_sha256": "d7bae9727e7027e0ecc0f7beebc44cbe2df9065e87ba6322474f6e514b749893",
+  "test_log": "logs/audit-completed-p3-campaign-v7-tests.log",
+  "test_log_sha256": "563ff0de6043dc170783d8dba92f8d4b01db1214d0ef340ae39f10c8ab51bba3",
+  "test_result": "19 passed, 4 subtests passed",
+  "test_whole_command_wall_seconds": 4.806565,
+  "tests": "edsgn/tests/test_audit_completed_p3_campaign_v7.py",
+  "tests_sha256": "729ba5314d704ac0e14ee1d610e7e6ab0b687ad4b29985f00873f2efe39fa1ac"
+}

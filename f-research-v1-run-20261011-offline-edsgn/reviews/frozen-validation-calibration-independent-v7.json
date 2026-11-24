@@ -1,0 +1,22 @@
+{
+  "review": "frozen-validation-calibration-independent-v7",
+  "verdict": "engineering-only-pass",
+  "scientific_or_pipeline_acceptance": false,
+  "source": "edsgn/staging/frozen_validation_calibration_v7.py",
+  "source_sha256": "D0212737ED0F02E6F9342F788EFDA73C8C3BBA53D12662F15E734B96CB6D2D9E",
+  "test": "edsgn/tests/test_frozen_validation_calibration_v7.py",
+  "test_sha256": "BFC01D7F96A0B91825CF0416C6B3644A87D4932CE24475A74A17C45CD828AD8B",
+  "combined_command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/tests/test_frozen_validation_calibration_v7.py edsgn/tests/test_verified_frozen_dispatch_v2.py",
+  "combined_result": "20 passed in 11.98s",
+  "checks": ["real CPU calibration path with toy PreparedData and ForecastModel", "final budget failure after third/finally hash pass leaves failed receipt and raises", "final input hash mismatch leaves failed receipt and raises", "all validation origins/output schema", "real producer source inspection for child receipt fields"],
+  "limitations": ["real resource lease mocked", "no actual data/checkpoint/GPU/optimizer", "P2/P3 archives must remain bound by managed P4 controller", "combined NPZ materializes test suffix but no test indexing/feedback"],
+  "dispatcher": {
+    "source": "edsgn/scripts/verified_frozen_dispatch_v2.py",
+    "source_sha256": "BC0EDA83133173F1C1D3EB28C2E75D6A4AF3ED8207E40CF12C40637306BF37FB",
+    "test": "edsgn/tests/test_verified_frozen_dispatch_v2.py",
+    "test_sha256": "362F6B23439DEA3AC20EA97C06D6A1C536F410A788929523D82FD65589F592A6",
+    "verdict": "engineering-only-pass-with-hardening-gap",
+    "hardening_gap": "C06 outputs map is not required to include all principal artifacts, despite validating listed hashes and separately requiring artifacts",
+    "scientific_caveat": "dispatcher does not establish periodic/random controls are action-blind; scheduler cost fitter may rank by graph/state scores"
+  }
+}

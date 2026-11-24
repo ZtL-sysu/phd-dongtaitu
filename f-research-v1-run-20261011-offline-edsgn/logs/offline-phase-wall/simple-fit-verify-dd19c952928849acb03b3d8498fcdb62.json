@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\staging\\simple_baseline_train_fit_verification_v4.py",
+    "--dataset",
+    "../data/processed/synthetic-n64-identity-change0.3-miss0",
+    "--legacy-output",
+    "../runs/baselines/synthetic/simple",
+    "--output",
+    "../logs/simple-fit-verify-v4-synthetic-result.json"
+  ],
+  "diagnostic_scope": "resource/functionality",
+  "exception_message": "foreign/stale shared resource lease exists",
+  "exception_type": "VerificationError",
+  "finished_utc": "2026-10-13T10:20:47Z",
+  "id": "simple-fit-verify-dd19c952928849acb03b3d8498fcdb62",
+  "job_id": "simple-fit-verify-dd19c952928849acb03b3d8498fcdb62",
+  "lock_token_sha256": "3d26cbb85261de3741d0f3ed3bb11e4f21780b9146e56f5fab85cccafb1e7471",
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-synthetic-result.json",
+  "phase": "training",
+  "returncode": 1,
+  "scope": "offline-experiment-phase",
+  "started_utc": "2026-10-13T10:20:47Z",
+  "status": "failed",
+  "wall_seconds": 0.0006531999679282308
+}

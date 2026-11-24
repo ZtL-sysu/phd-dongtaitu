@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:48:30.926802+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_prediction_guarded_v5.py": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+    "edsgn/tests/test_frozen_prediction_guarded_v5.py": "eb6ac7a80cf165ddfb072e61b8b1b0441779c3806a1ac2518e9f4871bbb62459",
+    "edsgn/tests/test_frozen_prediction_guarded_v5_independent_review.py": "ca9d4d40269cffb993cfed1c1e3038c6e7169036344b7f9599e4c8fdd0fedc6e",
+    "reviews/frozen-prediction-guarded-v4-independent-review-v1.md": "acaa2937e5181d23d6b90ed6952324ccd8781e233c6d02fed712bf1e8788197e",
+    "reviews/frozen-prediction-guarded-v4-independent-review-v1.json": "4517d37e438eb56a7c1c56102abf7e3da6dbfdf6f86187cfd6c8b5a81ef8ad80",
+    "logs/frozen-prediction-guarded-v5-writer-tests.log": "410247d33582fffcebf0552e6533d3d9550337886f89fe49b4bfbebb2ec99d72",
+    "logs/frozen-prediction-guarded-v5-independent-tests.log": "c907266da40b80c610b91475061616160628f9125d519d0e6d5c5a20c1b1a2e6",
+    "logs/frozen-prediction-v5-root-cpu-v1.log": "4690887b9663e5ab2c4ef4ef589051f7775b2e880464a056ecc764d800f99a84"
+  },
+  "actual_test_prediction_run": false,
+  "c07_experiment_closed": false
+}

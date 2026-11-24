@@ -1,0 +1,21 @@
+{
+  "scope": "CPU toy mocks only; no actual test data/model/GPU/optimizer",
+  "result": "passed",
+  "combined_test_command": "pytest -q edsgn/tests/test_bound_phase_campaign.py edsgn/tests/test_frozen_synthetic_stress.py",
+  "passed": "29 passed in 3.99s",
+  "coverage": [
+    "foreign campaign lock preserved; partial own lease released",
+    "budget exhaustion before replay; no leases acquired",
+    "per-batch budget guard stops and both own leases are released",
+    "dataset fingerprint drift after two mocked batches is rejected",
+    "full controller stage-scope regressions"
+  ],
+  "sha256": {
+    "edsgn/scripts/frozen_synthetic_stress.py": "27df156f66f739daa1498adeb487016917bfd19122e90f13f1cfbc3f466184d9",
+    "edsgn/scripts/candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "edsgn/scripts/aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "edsgn/tests/test_frozen_synthetic_stress.py": "454bf5d97daf18cd420e55765751036810662ccebc781654b979ead5b4001e1b",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "edsgn/tests/test_bound_phase_campaign.py": "7d682af371e7d22503656f05dd837e75ae37999aa513d58bfcb78fa9afe07e30"
+  }
+}

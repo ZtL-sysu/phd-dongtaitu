@@ -1,0 +1,69 @@
+{
+  "dataset_id": "synthetic",
+  "dataset_root": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support",
+  "oracle_npz_decoded": false,
+  "ordered_switch_refs": [
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/oracle/test_seed200.oracle.npz",
+        "sha256": "33655b0c2a1dd5c2074d3cf6cbe4281695d6a04ce7e9985c46da0909a5bd8b66"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed200.npz",
+        "sha256": "dfafbea084956570d9e254ecb801847d063164a1b38f409e80d71275feec64ca"
+      },
+      "trajectory_index": 0,
+      "trajectory_seed_id": 200
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/oracle/test_seed201.oracle.npz",
+        "sha256": "fe0b620652320473e2d94114bd4ec5d12711db553a569b8850402215417b5c69"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed201.npz",
+        "sha256": "a7a496359b2ab6f536a6a54a02f1e9d7803a2afa10da8c7580caf2ce71138c9b"
+      },
+      "trajectory_index": 1,
+      "trajectory_seed_id": 201
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/oracle/test_seed202.oracle.npz",
+        "sha256": "d77e8350e2d7b1acc68cbd653c9c5128dcc9e9de9ca9a9de8f7f9e6e08b72832"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed202.npz",
+        "sha256": "fee039232279824b3d55e4f2721c3447c9b8229690df40f0886a301f9bcd429e"
+      },
+      "trajectory_index": 2,
+      "trajectory_seed_id": 202
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/oracle/test_seed203.oracle.npz",
+        "sha256": "5ba7e1a355b1795f8b7b37eb850e4014cd5b39cf7685a4239ffe9bd2ff016b4f"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed203.npz",
+        "sha256": "bd42f42bb99715479b24f94d431cd224f44e72eeb556837b1fc34d4174b507b2"
+      },
+      "trajectory_index": 3,
+      "trajectory_seed_id": 203
+    }
+  ],
+  "purpose": "post-global-test-reporting-only; never a model input",
+  "regime_id": "n64_gradual_weight128_fixed_support",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "source_manifest": {
+    "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/manifest.json",
+    "sha256": "f53fd976e93e6fc6e9fbcc8b1f0e9f74ea0dbcb045da4fdd69eb140fa350c801"
+  },
+  "split": "test",
+  "status": "prospective_metadata_only",
+  "value_decoded": false
+}

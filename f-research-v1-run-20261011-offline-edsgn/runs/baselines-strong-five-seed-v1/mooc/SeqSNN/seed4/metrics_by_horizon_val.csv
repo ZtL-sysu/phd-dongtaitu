@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+SeqSNN,4,val,1,0,all,7.87929105758667,12.478403091430664,3822,49
+SeqSNN,4,val,6,0,all,7.870644569396973,12.515507698059082,3822,49
+SeqSNN,4,val,24,0,all,7.710415840148926,12.111610412597656,3822,49

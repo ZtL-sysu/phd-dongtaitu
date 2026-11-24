@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "pipeline": "f-research-v1",
+  "contract_version": "v1",
+  "delivery_mode": "preparation",
+  "readiness": [],
+  "citation_gate": [],
+  "contract": [
+    {
+      "path": "execution-contract-v1.md",
+      "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+    },
+    {
+      "path": "inputs/implementation-plan.md",
+      "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+    },
+    {
+      "path": "inputs/PhD_Research_Proposal.pdf",
+      "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+    },
+    {
+      "path": "path-containment-manifest.json",
+      "sha256": "17aab6330659fa7254d4652be5e2876003e22df48cca1807eae2c5c9d52a1d0f"
+    }
+  ],
+  "history": [
+    {
+      "action": "pass",
+      "stage": "P0"
+    },
+    {
+      "action": "pass",
+      "stage": "P1"
+    },
+    {
+      "action": "pass",
+      "stage": "P1A"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "reopen",
+      "stage": "P1B",
+      "preserved_ledger": "snapshots\\pipeline-before-p1b-revalidation-v2.json",
+      "preserved_ledger_sha256": "2a3d7443788b9891550380994fc5167ca345cd1d7d1f6c1510deae2b6a7d6f9c",
+      "prior_suffix_statuses": [
+        {
+          "id": "P1B",
+          "prior_status": "passed"
+        },
+        {
+          "id": "P2",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P3",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P3A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P4",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P5A",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P6",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P7",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P8",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P9",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P10",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P11",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P12",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P13",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P14",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P15",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P16",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P17",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P18",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P19",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P20",
+          "prior_status": "pending"
+        },
+        {
+          "id": "P21",
+          "prior_status": "pending"
+        }
+      ],
+      "contract_changed": false,
+      "reason": "P2 validator stale P1B review hash; current report requires explicit independent revalidation"
+    },
+    {
+      "action": "pass",
+      "stage": "P1B"
+    },
+    {
+      "action": "pass",
+      "stage": "P2"
+    }
+  ],
+  "stages": [
+    {
+      "id": "P0",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "inputs/implementation-plan.md",
+          "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+        },
+        {
+          "path": "inputs/PhD_Research_Proposal.pdf",
+          "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/p0-gate.md",
+          "sha256": "52f75d1f7475d4e237a1c9a6b7dfb574c678318ef417a2c602fd5acdee052c40"
+        },
+        {
+          "path": "path-containment-manifest.json",
+          "sha256": "17aab6330659fa7254d4652be5e2876003e22df48cca1807eae2c5c9d52a1d0f"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "inputs/implementation-plan.md",
+          "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466"
+        },
+        {
+          "path": "inputs/PhD_Research_Proposal.pdf",
+          "sha256": "393f6c5eef1e0e932346092f42654d08f4172f542d87fef3e48f92e5c00f07f9"
+        },
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/guidance-extraction.md",
+          "sha256": "bd511a63ad5dd707ef0777754aa5e5e310fd89cc4565dc0f8858d6a6bb9defea"
+        },
+        {
+          "path": "reviews/sibling-data-inventory.md",
+          "sha256": "7caaa08cefdd6e4210275a591588862af02a31bf031040a13015cc70430b70f0"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1A",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/guidance-extraction.md",
+          "sha256": "bd511a63ad5dd707ef0777754aa5e5e310fd89cc4565dc0f8858d6a6bb9defea"
+        },
+        {
+          "path": "execution-contract-v1.md",
+          "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/mechanism-card.md",
+          "sha256": "79d1a5416bd2af1b9d56780df6c392886f64e6ec0871f0c17eb574160a803908"
+        },
+        {
+          "path": "protocols/claim-evidence-matrix.md",
+          "sha256": "9e5b3efe9cc3d0e2163ede24e56919a73cc730e8901665d51fe50f6fe779c2ac"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-contract.md",
+          "sha256": "3585927eb3fd5e1fa40d726f4477693c29b0367d8fa2266d7d823b9922e3f7f1"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-lock.md",
+          "sha256": "a88dd242010f2f71b8f74af28c78f5d8d42746b4b28eb630fb8b02c305de8df1"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P1B",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/mechanism-card.md",
+          "sha256": "79d1a5416bd2af1b9d56780df6c392886f64e6ec0871f0c17eb574160a803908"
+        },
+        {
+          "path": "protocols/claim-evidence-matrix.md",
+          "sha256": "9e5b3efe9cc3d0e2163ede24e56919a73cc730e8901665d51fe50f6fe779c2ac"
+        },
+        {
+          "path": "protocols/strong-result-feasibility-contract.md",
+          "sha256": "3585927eb3fd5e1fa40d726f4477693c29b0367d8fa2266d7d823b9922e3f7f1"
+        },
+        {
+          "path": "reviews/p1-literature-map.md",
+          "sha256": "d42317298f1eaf77f3b7fa034f4bc3d10b9e35c48940b0a67bfc3090b9d27dcd"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reviews/ccfa-pre-experiment-review.md",
+          "sha256": "213dfc0838158cac2e8744be0e863ef509344b905bf0027e22403ced6d48f74d"
+        },
+        {
+          "path": "reviews/ccfa-pre-experiment-integrity.md",
+          "sha256": "6a5db2202e623ed3c7d4751fbe878c3eb920a1c72106b9c28edd4372822170b6"
+        },
+        {
+          "path": "reviews/p1b-concern-action-ledger.md",
+          "sha256": "c2c8be9509c7a8756a88d5211dd053a421e77cc997dbb54c6812796e2095765e"
+        },
+        {
+          "path": "protocols/p1b-protocol-repairs-v1.md",
+          "sha256": "e5d68d41815d9b92dfef97dce0a8c31fb45309fb56978f495bdb3a0767938475"
+        },
+        {
+          "path": "reviews/p1b-revalidation-v2.md",
+          "sha256": "56f93045d5503dc62ad4c6750a7060d8d9e046e2559f6c39ef1fd1e80c51cc82"
+        },
+        {
+          "path": "snapshots/pipeline-before-p1b-revalidation-v2.json",
+          "sha256": "2a3d7443788b9891550380994fc5167ca345cd1d7d1f6c1510deae2b6a7d6f9c"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P2",
+      "status": "passed",
+      "contract_version": "v1",
+      "inputs": [
+        {
+          "path": "protocols/p1b-protocol-repairs-v1.md",
+          "sha256": "e5d68d41815d9b92dfef97dce0a8c31fb45309fb56978f495bdb3a0767938475"
+        },
+        {
+          "path": "protocols/engineering-interfaces.md",
+          "sha256": "7b12fb957ea823a8f498975344715b8a3bd33d677914aa1b89adc65cb660fbea"
+        },
+        {
+          "path": "protocols/pilot-queue.json",
+          "sha256": "ab75b3b53b3e8f8a68eaf6d673c1f154fad9e630ee673823f6c1ec640fbe4c95"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "protocols/p2-local-setup-gate.md",
+          "sha256": "91428f2a449768da958a909b231f94c345c3b35d7dd9a1bdbf17ef5f25eff4d5"
+        },
+        {
+          "path": "protocols/data-implementation-evidence.md",
+          "sha256": "7042ddad2ec7c07b515364d3c212f0e6b3a54f0899f95f08db7a544ee4d5c213"
+        },
+        {
+          "path": "protocols/profile-implementation-evidence.md",
+          "sha256": "28ee5c01de96fdeb8933cb3fdba9e538bff2b9a1eedbeb19143bcb3309fe3c81"
+        },
+        {
+          "path": "reviews/external-baseline-code-audit.md",
+          "sha256": "35488271090441b99f532e12b7580c3d138e2a40c40115cf4e066cb205056105"
+        },
+        {
+          "path": "snapshots/p2-code-v1.zip",
+          "sha256": "38adee52f9076b16940311213c748603ad5ae56dbb7de720607e812cbde6dd6c"
+        },
+        {
+          "path": "snapshots/p2-code-v1-manifest.json",
+          "sha256": "634e2fe5dff78997677d91a481f020077fa08bd25c35d622f6c3d8d331069ae5"
+        },
+        {
+          "path": "logs/environment.json",
+          "sha256": "ec63b7447ec1574c760c2922200ee693c10bb75bd0e2b243ac570ea9e87d3da1"
+        },
+        {
+          "path": "logs/setup-resource-probe.json",
+          "sha256": "ec5caa2410c1ba508bdacc2c9b6ac40685c8277a6e58d8ef44059d5e0a583de1"
+        },
+        {
+          "path": "logs/p2-gate-checks.json",
+          "sha256": "1e3eed619f1fe430be0b3d1b97ce03864422d28acdf84b16f2ea8b0c1e9d15b4"
+        },
+        {
+          "path": "logs/p2-integration-tests-v2.log",
+          "sha256": "41f39c3c0549aa499654f7d122613f3994f8cc32f3fbf479ec01799ff5622afc"
+        },
+        {
+          "path": "logs/p2-acceptance-integration-v3.log",
+          "sha256": "da87c0b021e284146efc915c1e131ec15e95af6cdb8c70b7d952de39846b3858"
+        },
+        {
+          "path": "logs/p2-engine-final-check-v4.log",
+          "sha256": "954149e1ce459cd533882b4ef7347de81919dd49875870ed6b6ec670827f6ff7"
+        },
+        {
+          "path": "logs/cuda-resource-diagnostic.json",
+          "sha256": "4de15b3f42537b3d95847e87b9b894eb47050b4f261ad6a5b8fd7a88c97c9cd3"
+        }
+      ],
+      "gate_verdict": "pass"
+    },
+    {
+      "id": "P3",
+      "status": "running",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P3A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P4",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P5",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P5A",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P6",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P7",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P8",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P9",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P10",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P11",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P12",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P13",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P14",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P15",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P16",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P17",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P18",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P19",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P20",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    },
+    {
+      "id": "P21",
+      "status": "pending",
+      "contract_version": "v1",
+      "inputs": [],
+      "evidence": []
+    }
+  ]
+}

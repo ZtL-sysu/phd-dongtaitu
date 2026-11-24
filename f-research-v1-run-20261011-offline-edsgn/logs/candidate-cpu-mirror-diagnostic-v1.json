@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "diagnostic_scope": "CPU candidate function equivalence/resource probe only",
+  "scientific_gpu_benchmark": false,
+  "optimizer_steps": 0,
+  "dataset_accessed": false,
+  "device": "cpu",
+  "threads": 2,
+  "python": "3.13.13",
+  "torch": "2.11.0+cu128",
+  "source_sha256": {
+    "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "script.py": "078d99d422ff911526b8f3f0aff698baba88d8798cd14eea48339f2ad52fa2d5"
+  },
+  "equivalence_cases": {
+    "full": {
+      "max_candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "counter_mirror": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "candidate_values_compared": 336
+    },
+    "partial": {
+      "max_candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "counter_mirror": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "candidate_values_compared": 138
+    },
+    "N1_K0": {
+      "max_candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0,
+      "counter_reference": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_mirror": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 0
+    },
+    "V0": {
+      "max_candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_mirror": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 252
+    }
+  },
+  "benchmark": {
+    "shape": {
+      "B": 8,
+      "N": 986,
+      "K": 32,
+      "steps": 2
+    },
+    "repeats": 2,
+    "seconds": {
+      "reference_s": [
+        0.29947150000953116,
+        0.20782110001891851
+      ],
+      "mirror_s": [
+        0.4885673000244424,
+        0.46341880000545643
+      ]
+    }
+  },
+  "wall_seconds": 2.5143694000144023,
+  "output_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-cpu-mirror-diagnostic-v1.json"
+}

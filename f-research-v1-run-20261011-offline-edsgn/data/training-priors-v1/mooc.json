@@ -1,0 +1,101 @@
+{
+  "artifact_role": "fixed_training_prior; proposal recipe accepted for builder validation only",
+  "builder_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\build_dcrnn_training_prior.py",
+  "builder_sha256": "002cc011c6a4d4293f555a5e3147f7034f2af8378578f0b49f56d99609001d5d",
+  "created_at_utc": "2026-10-11T07:48:40Z",
+  "dataset": "mooc",
+  "direction_and_dcrnn_support": "Prior rows are sources and columns destinations; DCRNN uses its source dual supports R(A)^T and R(A^T)^T, where R(A)=D^-1 A and zero-degree rows stay zero.",
+  "fields_loaded": [
+    "events",
+    "metadata_json",
+    "node_ids"
+  ],
+  "fit_source_train_only": true,
+  "fixed_training_prior_array_sha256": "079dbe2e0c1fac8d524b4519cb2863a578c4ae1b21bb38d52fcd6be3124a0079",
+  "graph_diagnostics": {
+    "density_excluding_diagonal": 0.6993006993006993,
+    "dtype": "float32",
+    "finite": true,
+    "in_degree_nonzeros": {
+      "max": 77,
+      "median": 59.0,
+      "min": 25,
+      "p95": 65.09999999999988
+    },
+    "isolated_nodes_both_directions": 0,
+    "nonnegative": true,
+    "nonzero_entries": 4200,
+    "out_degree_nonzeros": {
+      "max": 77,
+      "median": 59.0,
+      "min": 25,
+      "p95": 65.09999999999988
+    },
+    "shape": [
+      78,
+      78
+    ],
+    "weight_max": 5365.0,
+    "weight_min_nonzero": 1.0,
+    "zero_diagonal": true
+  },
+  "no_top_k_or_self_loops": true,
+  "node_count": 78,
+  "node_ids_sha256": "58b8e8054c706b441b6a0cff1e509bfbc6adefe0ce02755d6fd338569c02f4a1",
+  "oracle_used": false,
+  "recipe": {
+    "dataset": "mooc",
+    "formula": "train-only binary user-activity incidence; A[i,j]=distinct shared-user count; symmetric",
+    "random_walk_normalization": "delegated unchanged to pinned DCRNN dual_random_walk utility",
+    "recipe_id": "dcrnn-fixed-training-prior-v1",
+    "self_loops": false,
+    "top_k": null
+  },
+  "recipe_sha256": "26996013e5a1f37e163297be3db8401fc22bb191cf71ba187d43e05da633167c",
+  "schema_version": 1,
+  "source_manifest": {
+    "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\manifest.json",
+    "read_scope": "hashed as bytes; not parsed",
+    "sha256": "f8c9e722ed4f6db1f4cceb20956f19b9f20c1b0565533fa5ddbf27edca9e930a"
+  },
+  "sources": [
+    {
+      "bytes": 1263751,
+      "fields_loaded": [
+        "metadata_json",
+        "node_ids",
+        "events"
+      ],
+      "note": "The compressed NPZ events array is materialized in full; only rows with train-bin in [start,stop) contribute to the prior. No outside-train event counts/statistics are computed.",
+      "path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5"
+    }
+  ],
+  "target_arrays_loaded": false,
+  "target_mask_arrays_loaded": false,
+  "test_used": false,
+  "training_fit_details": {
+    "direction": "undirected activity co-occurrence; one contribution per distinct user/activity pair",
+    "distinct_training_users": 6397,
+    "event_read_scope": "The compressed NPZ events array is materialized in full; only rows with train-bin in [start,stop) contribute to the prior. No outside-train event counts/statistics are computed.",
+    "event_rows_materialized": 394130,
+    "fields_loaded": [
+      "metadata_json",
+      "node_ids",
+      "events"
+    ],
+    "repeat_clicks_deduplicated_within_user_activity": true,
+    "self_events_ignored": true,
+    "split_partition": "chronological",
+    "training_relation_event_rows_used": 265943,
+    "training_split_bounds": [
+      0,
+      499
+    ]
+  },
+  "training_split_bounds": [
+    0,
+    499
+  ],
+  "validation_used": false
+}

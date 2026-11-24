@@ -1,0 +1,49 @@
+{
+  "policy": "At most12 preregistered configurations per new component; only train/validation may select. Baselines receive a comparable bounded search. Do not run a Cartesian product.",
+  "default": {"d_total":64,"k":8,"candidate_cap":32,"tau_fast":1.0,"tau_slow":8.0,"beta_init":1.0,"lambda_temporal":0.01,"lr":0.001,"weight_decay":0.0001,"grad_clip":1.0,"epochs":100,"patience":10,"internal_steps":1,"precision":"float32","exploration_interval":8,"surrogate_slope":5.0,"encoding_mode":"hybrid","retention_mode":"informative","learn_tau":true},
+  "graph_pilots": [
+    {"id":"g00","changes":{}},
+    {"id":"g01","changes":{"d_total":32}},
+    {"id":"g02","changes":{"k":16,"candidate_cap":64}},
+    {"id":"g03","changes":{"k":32,"candidate_cap":128}},
+    {"id":"g04","changes":{"lr":0.0003}},
+    {"id":"g05","changes":{"lambda_temporal":0.001}},
+    {"id":"g06","changes":{"lambda_temporal":0.03}},
+    {"id":"g07","changes":{"lambda_temporal":0.1}},
+    {"id":"g08","changes":{"summary_length":8}},
+    {"id":"g09","changes":{"residual_clip":3.0}},
+    {"id":"g10","changes":{"exploration_interval":4}},
+    {"id":"g11","changes":{"quality_ewma":0.2}}
+  ],
+  "memory_pilots": [
+    {"id":"m00","changes":{}},
+    {"id":"m01","changes":{"tau_fast":2.0,"tau_slow":16.0}},
+    {"id":"m02","changes":{"beta_init":0.1}},
+    {"id":"m03","changes":{"beta_init":0.5}},
+    {"id":"m04","changes":{"beta_init":2.0}},
+    {"id":"m05","changes":{"d_total":32}},
+    {"id":"m06","changes":{"surrogate_slope":2.0}},
+    {"id":"m07","changes":{"surrogate_slope":10.0}},
+    {"id":"m08","changes":{"lr":0.0003}},
+    {"id":"m09","changes":{"encoder_width":32}},
+    {"id":"m10","changes":{"auxiliary_one_step_weight":0.1}},
+    {"id":"m11","changes":{"readout_hidden":32}}
+  ],
+  "scheduler_pilots": [
+    {"id":"s00","graph_fraction":0.5,"state_fraction":0.5,"max_graph_age":4,"max_state_age":4,"quantile":0.5},
+    {"id":"s01","graph_fraction":0.25,"state_fraction":0.25,"max_graph_age":4,"max_state_age":4,"quantile":0.5},
+    {"id":"s02","graph_fraction":0.75,"state_fraction":0.75,"max_graph_age":4,"max_state_age":4,"quantile":0.5},
+    {"id":"s03","graph_fraction":0.5,"state_fraction":0.5,"max_graph_age":8,"max_state_age":8,"quantile":0.5},
+    {"id":"s04","graph_fraction":0.25,"state_fraction":0.25,"max_graph_age":8,"max_state_age":8,"quantile":0.5},
+    {"id":"s05","graph_fraction":0.75,"state_fraction":0.75,"max_graph_age":8,"max_state_age":8,"quantile":0.5},
+    {"id":"s06","graph_fraction":0.25,"state_fraction":0.75,"max_graph_age":4,"max_state_age":4,"quantile":0.5},
+    {"id":"s07","graph_fraction":0.75,"state_fraction":0.25,"max_graph_age":4,"max_state_age":4,"quantile":0.5},
+    {"id":"s08","graph_fraction":0.5,"state_fraction":0.5,"max_graph_age":4,"max_state_age":4,"quantile":0.25},
+    {"id":"s09","graph_fraction":0.5,"state_fraction":0.5,"max_graph_age":4,"max_state_age":4,"quantile":0.75},
+    {"id":"s10","graph_fraction":0.5,"state_fraction":0.5,"max_graph_age":2,"max_state_age":2,"quantile":0.5},
+    {"id":"s11","graph_fraction":1.0,"state_fraction":1.0,"max_graph_age":4,"max_state_age":4,"quantile":0.0}
+  ],
+  "formal_model_seeds":[0,1,2,3,4],
+  "synthetic_trajectory_seeds":{"train":[0,1,2,3,4,5,6,7],"val":[100,101],"test":[200,201,202,203]},
+  "frozen_test_rule":"Choose configurations/checkpoints/calibration on validation only. Save a freeze manifest before test; test-exposed redesign must mark the exposed holdout and obtain independent confirmation."
+}

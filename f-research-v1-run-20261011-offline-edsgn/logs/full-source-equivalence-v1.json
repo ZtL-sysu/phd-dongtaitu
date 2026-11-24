@@ -1,0 +1,1651 @@
+{
+  "scope": "CPU semantic equality; no host timing comparison",
+  "torch_threads": 2,
+  "legacy_snapshot": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\snapshots\\model-before-full-source-fastpath-v1.py",
+  "current_model": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py",
+  "variants": [
+    "V0",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V9"
+  ],
+  "case_count": 19,
+  "cases": [
+    {
+      "variant": "V0",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 12,
+          "none_parameters": [
+            "graph_scorer.0.bias",
+            "graph_scorer.0.weight",
+            "graph_scorer.2.bias",
+            "graph_scorer.2.weight",
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V0",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 12,
+          "none_parameters": [
+            "graph_scorer.0.bias",
+            "graph_scorer.0.weight",
+            "graph_scorer.2.bias",
+            "graph_scorer.2.weight",
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V0",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 12,
+          "none_parameters": [
+            "graph_scorer.0.bias",
+            "graph_scorer.0.weight",
+            "graph_scorer.2.bias",
+            "graph_scorer.2.weight",
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V1",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V1",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V1",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V2",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V2",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V2",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V3",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V3",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V3",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 15,
+          "none_parameters": [
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V4",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V4",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V4",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V9",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ],
+        "state_action_sizes": [
+          14,
+          14,
+          14,
+          14,
+          14,
+          14
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V9",
+      "policy": "adaptive",
+      "reference_source_map_path": false,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V9",
+      "policy": "adaptive",
+      "reference_source_map_path": true,
+      "n": 7,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 140,
+      "partial_action_evidence": {
+        "graph": true,
+        "state": true,
+        "graph_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ],
+        "state_action_sizes": [
+          14,
+          6,
+          6,
+          6,
+          6,
+          6
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 16,
+          "none_parameters": []
+        }
+      },
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "variant": "V4",
+      "policy": "full",
+      "reference_source_map_path": false,
+      "n": 1,
+      "features": 2,
+      "batch": 2,
+      "history": 6,
+      "horizon": 3,
+      "input_observed_nonzero_count": 24,
+      "partial_action_evidence": {
+        "graph": false,
+        "state": false,
+        "graph_action_sizes": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "state_action_sizes": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ]
+      },
+      "checks": {
+        "predictions": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "graph_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "forward_loss": {
+          "shape_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true
+        },
+        "intermediate": [],
+        "runtime": {
+          "neighbors": [],
+          "weights": [],
+          "neighbor_valid": [],
+          "initialized": [],
+          "u": [],
+          "spike_pending": [],
+          "pending_log_g": [],
+          "graph_age": [],
+          "state_age": [],
+          "last_input": [],
+          "last_input_valid": [],
+          "previous_pred_1": [],
+          "previous_pred_valid": [],
+          "q": [],
+          "r_smooth": [],
+          "levels": [],
+          "candidate_pool": [],
+          "exploration_phase": [],
+          "contacts": [],
+          "user_history": [],
+          "step": [],
+          "counters": []
+        },
+        "trace": [],
+        "gradients": {
+          "parameter_keys_match": true,
+          "none_pattern_match": true,
+          "max_abs_diff": 0.0,
+          "allclose": true,
+          "compared_non_none_parameters": 11,
+          "none_parameters": [
+            "graph_scorer.0.bias",
+            "graph_scorer.0.weight",
+            "graph_scorer.2.bias",
+            "graph_scorer.2.weight",
+            "raw_beta"
+          ]
+        }
+      },
+      "status": "pass",
+      "issues": []
+    }
+  ],
+  "status": "pass",
+  "failures": []
+}

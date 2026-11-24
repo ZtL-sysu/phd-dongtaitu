@@ -1,0 +1,23 @@
+# Independent review: staged simple-baseline freeze v1
+
+**Disposition: revise before launch.** The copied persistence and ridge equations match the legacy implementation by inspection, and the mock suite passes, but two binding/launch blockers remain. This review is code and mock evidence only; no real dataset, validation/test prediction, optimizer, or GPU was run.
+
+## Verified behavior
+
+- `fit_arrays` in `edsgn/staging/simple_baseline_freeze_v1.py` matches `engine.simple_baselines`: it builds node-shared rows from normalized `[L,F]` windows, appends an intercept, flattens raw `[H,F]` targets, retains a node row only when every target horizon/feature mask is valid, solves pooled normal equations with ridge `1e-3 * valid_node_window_count`, exempts the intercept from ridge, and adds `1e-10 I` for numerical stabilization. Persistence repeats the latest raw observation for all H steps; the shared linear forecast clips at zero only for count data. The output reshape/order matches the engine implementation.
+- The fitter requests only the train partition and records train origins, source hashes, training statistics, node order, coefficient hashes, and explicit split-use declarations. Frozen evaluation requires P3A passed, verifies P3A input/evidence hashes and the acceptance evidence hash, binds the fit manifest/coefficient/statistics/node IDs/full-data fingerprint and accepted validation-metric hashes, checks the coefficient digest before and after, and never calls the fitter during evaluation.
+- Local Conda mock suite: **5 passed** (`edsgn/staging/test_simple_baseline_freeze_v1.py`, 3.81 s). Tests cover train-origin fit calls, no-overwrite, pending-gate rejection before split loading, P3A/hash verification, failed-evaluation receipt status, and coefficient reuse in a fake validation case.
+
+## Blocking fixes
+
+1. **The fitted source fingerprint is not verified against the evaluation dataset.** The fit manifest stores `training_source_fingerprint` and its digest, but `_verify_fit_manifest` does not validate that digest, the manifest dataset path, its node-ID digest/list, or the current train-only source fingerprint. `frozen_evaluate` checks a P3A-bound full fingerprint independently, then recomputes train statistics/node order; a changed train bundle with unchanged moments could therefore pass. Before loading val/test, require canonical dataset-path equality, self-consistent train-fingerprint digest, current train-only fingerprint equality to the fitted fingerprint, and consistency between the manifest node-ID list/hash/statistics. Bind the same dataset identity in the acceptance entry.
+
+2. **The CLI has no pre-launch resource lock or cumulative-budget guard.** `main()` runs `fit`/`frozen_evaluate` directly and only writes an `offline-phase-wall` receipt in `finally`; it does not check the shared model/campaign locks, active workers, or remaining 72-hour budget. The receipt cannot prevent overlap or an over-budget launch. Route invocation through the guarded phase driver or add an equivalent fail-closed launch guard before any real fit/evaluation. Do not delete stale locks automatically.
+
+## P3A path and remaining limits
+
+The P3A dependency is not inherently circular: train-only `fit` can create a frozen coefficient bundle during P3; P3A can then bind that bundle plus already-produced baseline validation metrics and variability evidence; only after P3A passes can `evaluate` reuse the coefficients. Today P3A is pending, so real evaluation remains blocked. The acceptance schema is only exercised by a toy fixture, not by a canonical P3A artifact.
+
+For single-NPZ datasets, `data.load_dataset` materializes `targets` and `target_mask` arrays for the entire bundle even when `datasets_at(..., "train")` is requested. The fitter does not call `PreparedData.target` outside train origins and does not use held-out values, but its `test_accessed: false` flag should be defined as **no held-out target use/accessor calls**, not as “test bytes/arrays were never read.” Collection-mode synthetic data is tighter: the train loader enumerates only `train_seed*.npz` files. File fingerprinting also hashes complete source files; it does not compute held-out statistics.
+
+The tests do not independently compare fitted coefficients and predictions against the legacy engine formula on the same toy data; add a deterministic parity assertion before treating exact legacy equivalence as tested. Failure receipts do record failed status and whole-process wall time, but omit exception type/message and the invoked command/config, which limits diagnosis; retain the failure receipt while adding those fields or a durable stderr reference.

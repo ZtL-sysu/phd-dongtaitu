@@ -1,0 +1,41 @@
+{
+  "dataset": {
+    "event_kind": "mooc",
+    "history_length": 24,
+    "hmax": 24,
+    "node_ids_sha256": "58b8e8054c706b441b6a0cff1e509bfbc6adefe0ce02755d6fd338569c02f4a1",
+    "partition": "chronological",
+    "shape_tnf": [
+      714,
+      78,
+      1
+    ],
+    "source_name": "SNAP act-mooc user action log",
+    "split_bounds_end_exclusive": 714,
+    "split_bounds_start_inclusive": 571
+  },
+  "ordered_collection": [
+    {
+      "archive_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+      "path": "data/processed/mooc/mooc.npz",
+      "trajectory_index": 0
+    }
+  ],
+  "schema": "edsgn.split-history-domain.v1",
+  "trajectories": [
+    {
+      "domain_bounds_end_exclusive": 690,
+      "domain_bounds_start_inclusive": 547,
+      "history_length": 24,
+      "history_union_end_exclusive": 690,
+      "history_union_start_inclusive": 547,
+      "origin_count": 120,
+      "origin_first": 570,
+      "origin_last": 689,
+      "source_input_mask_sha256": "8942e37832e538e8a11ef096737f10bca7eb877c770aa4e10cb2a88932a46bc6",
+      "source_trajectory_seed": 0,
+      "split": "test",
+      "trajectory_index": 0
+    }
+  ]
+}

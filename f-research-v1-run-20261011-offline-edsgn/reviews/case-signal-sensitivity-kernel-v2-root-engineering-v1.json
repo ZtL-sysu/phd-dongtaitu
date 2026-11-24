@@ -1,0 +1,38 @@
+{
+  "scope": "full_policy_focal_snn_signal_sensitivity_kernel_engineering_only",
+  "accepted_by": "root",
+  "verdict": "pass",
+  "evidence_sha256": {
+    "edsgn/staging/case_signal_sensitivity_kernel_v2.py": "a49f823cdae53a2f246dba7875a033ada470ab16bb05b8ffdfe811d9ac0c68b5",
+    "edsgn/tests/test_case_signal_sensitivity_kernel_v2.py": "84b4f39782b0255ffc407368b5560b2cec751d4d13772a265f48467118a17189",
+    "logs/case-signal-sensitivity-kernel-v2-tests.log": "6718a5abca2f8e98a791b0db71f7f9963f930ca9684ef3002c1d1f26dbd70ab9",
+    "edsgn/staging/h2_matched_graph_retention_v2.py": "2bb4d80f6f75a299bc56dce66283730646426004f86600692fdd3010fca35d91",
+    "logs/case-signal-kernel-independent-v2-tests.log": "6da04b49aae761c5923dc5e7b1853cee7464154ff2155b42d62061b433555a08",
+    "protocols/case-slices-and-signal-sensitivity-root-design-v1.md": "f79b25df17bff2928f36a3517b1fca4afa8d113a6c39526c0953744ee8565a8b",
+    "logs/case-signal-sensitivity-kernel-v2-tests.json": "ba36c2d98aca66f571dde64b26ae29dec0ce2849129c800b18f17f5d235d297f",
+    "reviews/case-signal-sensitivity-kernel-v2.md": "ab6d6665f14d918aec00cfc01e0077da605b6e45f5885b99e9119d7940cc254f",
+    "reviews/case-signal-sensitivity-kernel-independent-v2.md": "de2af9e0f5e37770a8da57cefbeb0e8af7f0b69042ab5ebcf462928d0c37a7ff",
+    "reviews/case-signal-sensitivity-kernel-independent-v2.json": "95b704183cc55b9da8f1388bd8f83d3084985206bc712007bf268ca23a7c80f3",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "edsgn/src/edsgn/scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42"
+  },
+  "writer_cpu_tests_passed": 6,
+  "independent_cpu_tests_passed": 6,
+  "root_source_review": [
+    "Strict built-in integer indices and directed nonself relation.",
+    "Excluded neighbor slot does not enlarge or refill the original candidate cap.",
+    "Only a row with blocked support is renormalized; untouched weights and validity remain bit-exact.",
+    "Actual aligned support change and deferred informative log-g are recomputed after graph intervention.",
+    "Retention arm consumes the original V4 teacher graph, weights, validity and full-policy actions; only focal neighbor-channel log-g is zeroed.",
+    "Temporary hooks/method overrides are restored and parameter bytes remain unchanged."
+  ],
+  "scientific_hypothesis_accepted": false,
+  "pipeline_advanced": false,
+  "actual_admission_accepted": false,
+  "actual_full_domain_execution_completed": false,
+  "limitations": [
+    "Full reference policy only; skipped graph/state policy semantics are not established by this kernel.",
+    "Downstream prediction/monitor feedback can change later other-node and local-channel values.",
+    "Validation-only node/neighbor selection, guarded real-domain driver, complete global admission and reports remain unfinished."
+  ]
+}

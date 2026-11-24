@@ -1,0 +1,7 @@
+# Root acceptance — completed bound mooc SeqSNN seed 0
+
+Accepted as a complete source-bound development training/validation result. All 452 training windows per epoch and 49 ordered validation origins were audited. Training used the preregistered maximum 100 epochs and patience 10, ran 11 epochs and selected epoch 1 on validation only. Recomputed mean raw MAE at the required horizons is 7.8213713592038; its agreement with the recorded selection score is within saved floating-point precision.
+
+Checkpoint SHA-256: `353460246ccef5d171ae85fac110edf77f7078e08f0b26aa1dc00ae74f06097c`. The independent review verifies configuration, safe train/validation source bindings, training logs and completed phase input/output digests. Checkpoint bytes were hashed; the independent reviewer did not load the model or decode test/oracle arrays. For chronological MOOC, the production loader's complete-array materialization remains explicitly distinguished from indexing or using test origins; the artifact review cannot retrospectively prove process behavior beyond its recorded provenance and accepted causal implementation.
+
+This is seed-0 validation evidence. P3 remains running; formal five-seed results, final tests, H1/H2/H3 and P3A acceptance remain pending. A weak result is retained without being promoted to a mechanism finding. Whole-process receipts and training timers are counted by their maximum once in the cumulative budget.

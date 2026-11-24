@@ -1,0 +1,46 @@
+{
+  "checked_date": "2026-10-11",
+  "scope": "bounded public-source discovery; no authentication, code installation, model execution, or dataset access",
+  "queries": [
+    "SpikeSTAG spiking neural network graph forecasting arXiv official code",
+    "SpikySpace spiking neural networks time series forecasting arXiv author code",
+    "SpikeSTAG forecasting github authors",
+    "site:github.com SpikeSTAG",
+    "site:github.com SpikySpace spiking forecasting"
+  ],
+  "papers": [
+    {
+      "name": "SpikeSTAG",
+      "primary_url": "https://arxiv.org/abs/2508.02069",
+      "fulltext_url": "https://arxiv.org/html/2508.02069",
+      "version_checked": "v2, revised 2025-08-18",
+      "task": "multivariate time-series forecasting",
+      "primary_page_publicly_readable": true,
+      "paper_explicit_author_code_url": null,
+      "bounded_github_search_author_repository_verified": false,
+      "code_status": "No author code URL appears in the arXiv full text; bounded exact-title GitHub search returned no author repository. This does not establish that no repository exists.",
+      "code_commit": null,
+      "code_license": "not verified",
+      "paper_license": "arXiv non-exclusive license to distribute; not a source-code license"
+    },
+    {
+      "name": "SpikySpace",
+      "primary_url": "https://arxiv.org/abs/2601.02411",
+      "fulltext_url": "https://arxiv.org/html/2601.02411",
+      "version_checked": "v2, 2026-02-10",
+      "task": "multivariate time-series forecasting",
+      "primary_page_publicly_readable": true,
+      "paper_explicit_author_code_url": "https://anonymous.4open.science/r/SpikySpace",
+      "author_code_link_present": true,
+      "archive_page_resolved_publicly": true,
+      "archive_content_readable_in_bounded_web_check": false,
+      "archive_status_detail": "Public anonymous archive URL resolved to an Anonymous Github page, but the web tool returned no repository/file listing; /contents was inaccessible. No login or bypass was attempted.",
+      "code_commit": null,
+      "code_license": "not verified; paper's CC BY 4.0 applies to the paper, not automatically to the code"
+    }
+  ],
+  "existing_comparator": {
+    "name": "SeqSNN iSpikformer",
+    "status": "Keep as the separate existing official SNN forecasting comparator; this review does not replace or relabel it."
+  }
+}

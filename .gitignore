@@ -1,0 +1,56 @@
+# Local agent & IDE state
+.workbuddy/
+.claude/
+.DS_Store
+Thumbs.db
+
+# Python caches & pytest artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+venv/
+
+# Large model checkpoints, tensor dumps & compressed archives
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npz
+*.npy
+*.bin
+*.onnx
+*.h5
+*.parquet
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.7z
+
+# Raw & processed datasets (keep only small dataset manifests for provenance)
+f-research-v1-run-20261011-offline-edsgn/data/*
+!f-research-v1-run-20261011-offline-edsgn/data/processed/
+f-research-v1-run-20261011-offline-edsgn/data/processed/*
+!f-research-v1-run-20261011-offline-edsgn/data/processed/*/
+f-research-v1-run-20261011-offline-edsgn/data/processed/*/*
+!f-research-v1-run-20261011-offline-edsgn/data/processed/*/manifest.json
+!f-research-v1-run-20261011-offline-edsgn/data/processed/*/data-manifest.json
+!f-research-v1-run-20261011-offline-edsgn/data/training-priors-v1/
+f-research-v1-run-20261011-offline-edsgn/data/training-priors-v1/*
+!f-research-v1-run-20261011-offline-edsgn/data/training-priors-v1/*.json
+
+# Third-party baseline upstream repositories (~850 MB; pinned commits documented in README.md)
+f-research-v1-run-20261011-offline-edsgn/sources/
+
+# Ephemeral hidden verification caches & raw text logs (structured JSON audit receipts are kept)
+f-research-v1-run-20261011-offline-edsgn/logs/.c06-*/
+*.log
+*.err
+*.tmp
+*.saved
+*.part
+*.bak

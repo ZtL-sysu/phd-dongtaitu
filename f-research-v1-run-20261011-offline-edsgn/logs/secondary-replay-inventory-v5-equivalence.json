@@ -1,0 +1,21 @@
+{
+  "comparison": "v4-v5 logical inventory rows/counts",
+  "rows_equal": true,
+  "row_count": 2446,
+  "category_counts": {
+    "case-signal-sensitivity": 8,
+    "count-loss-poisson": 2,
+    "count-or-event-perturbation": 78,
+    "graph-only-periodic-reference": 8,
+    "missingness": 624,
+    "quota-age-grid": 1536,
+    "simple-baseline-clean": 8,
+    "synthetic-clean-scenario": 104,
+    "synthetic-n256-clean": 18,
+    "trained-state-control": 60
+  },
+  "v4_sha256": "d283d86a5616b1397f28efab377a603161f417fab8477754c1491f91071b9e8e",
+  "v5_sha256": "598f8689b78ecf36f2b4c23ccb0e8ea0c81aa60b7b4787a602d4390259b59db8",
+  "generator_sha256": "816de39fa76cd7902de52c88a3c3bbfb9466e9055481760c8b10471f833b5a46",
+  "status": "metadata-only preparation; no arrays/model/GPU"
+}

@@ -1,0 +1,69 @@
+{
+  "review_type": "independent_read_only_prelaunch_review",
+  "review_scope": "metadata_and_source_only; no launch, no training, no arrays/checkpoints/oracle/test values decoded",
+  "reviewed_at_local": "2026-10-11",
+  "verdict": "preparation_matches; launch_blocked_until_root_acceptance",
+  "evidence": {
+    "queue": {
+      "path": "protocols/p3-coverage-recovery-queue-v1.json",
+      "sha256": "534bf70d79a50dbbd533681210a0e1056d802bcc9e32489b4699604e43af8c81",
+      "jobs": 68,
+      "ordered_source_queue_counts": [
+        6,
+        16,
+        6,
+        16,
+        24
+      ],
+      "order_and_identity_match": true,
+      "config_comparison": "all 68 match original; six recreated internal configs change output_dir only",
+      "output_dirs_absent": 68,
+      "preparation_source_bindings": 295,
+      "all_binding_hashes_match": true,
+      "job_input_links_config_and_original_queue_acceptance": true
+    },
+    "preparation_record": {
+      "path": "logs/p3-coverage-recovery-preparation-v1.json",
+      "sha256": "fb6c1002cfb2ca4368faf075836817b691b5c959bec0226a6bea83668ea86994",
+      "status": "prepared_pending_independent_and_root_review",
+      "actual_training_started": false,
+      "pipeline_advanced": false,
+      "test_access": false,
+      "stopped_attempt_preserved_seconds": 6331.621739299997,
+      "budget_spent_before_seconds": 27761.204501300013,
+      "budget_spent_after_seconds": 27821.204501300013,
+      "remaining_seconds": 231378.7954987,
+      "coverage_complete_after": true,
+      "stop_loss_reached_after": false,
+      "conservative_ledger_cover_seconds": 60
+    },
+    "launcher": {
+      "path": "edsgn/scripts/launch_p3_coverage_recovery_root_v1.py",
+      "sha256": "007427958e9519ced2e4f283f61c1165f686cff0b5abe3143185fca2f23368b4",
+      "source_controller_sha_pinned": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+      "shared_owned_process_scanner_sha_pinned": "c31e70671f3846cdd8b1fb61e06aab45c0110d9ad5c5f1f3823377ab6d267d06",
+      "official_before_P3_validator": true,
+      "leases_active_process_budget_job_gates_checked": true,
+      "post_validator_full_preflight": true,
+      "prelaunch_receipt_then_second_preflight_before_controller": true,
+      "controller_invocation_fixed_conda_shell_false": true,
+      "actual_execution_performed": false
+    },
+    "completed_prior_results": {
+      "preparation_summary_claims_12": true,
+      "independently_inspected_root_acceptance_records": 7,
+      "accepted_items": 12,
+      "strong_seed0_acceptance_rows": 6,
+      "episode_seed0_acceptance_rows": 2,
+      "internal_seed0_acceptance_rows": 4,
+      "all_acceptance_records_root_pass_and_pipeline_not_advanced": true,
+      "acceptance_records_explicitly_in_recovery_preparation_file_inputs": false,
+      "root_recovery_acceptance_file_exists": false
+    }
+  },
+  "blockers_or_conditions": [
+    "No reviews/p3-coverage-recovery-root-acceptance-v1.json currently exists; launcher therefore fails closed.",
+    "Preparation file pins original queue acceptances and per-job provenance, but does not pin the seven root acceptance records that substantiate the 12-result summary (one strong six-row aggregate + two episode + four internal); final root recovery acceptance must bind/revalidate these records and their evidence digests.",
+    "Do not interpret queue/preparation approval as scientific acceptance or test authorization."
+  ]
+}

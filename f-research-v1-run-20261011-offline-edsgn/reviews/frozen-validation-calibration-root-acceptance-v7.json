@@ -1,0 +1,18 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:11:04.970105+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/frozen_validation_calibration_v7.py": "d0212737ed0f02e6f9342f788efda73c8c3bba53d12662f15e734b96cb6d2d9e",
+    "edsgn/tests/test_frozen_validation_calibration_v7.py": "bfc01d7f96a0b91825cf0416c6b3644a87d4932ce24475a74a17c45cd828ad8b",
+    "reviews/frozen-validation-calibration-independent-v7.md": "7411c37a21e51b08033dc295bc592443c33d18779f26c6772f9d904c4041c185",
+    "reviews/frozen-validation-calibration-independent-v7.json": "3192e6a932f772590296402f83f5efba7df98adb9e55c25b7552984a022c1a1b",
+    "reviews/frozen-validation-calibration-v7-self-review.md": "e0540c69925d26349c186b453a8cbac585a51d644f9bd9283c2cd1b47e03ac1b",
+    "reviews/frozen-validation-calibration-v7-verdict.json": "029ec299c9ace58d75738237b38343a96acb96b3b0603c69d16f8b76b3731a8f"
+  },
+  "actual_calibration_run": false,
+  "real_policy_selected": false
+}

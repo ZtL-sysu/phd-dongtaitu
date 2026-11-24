@@ -1,0 +1,43 @@
+{
+  "schema": "edsgn.c06-domain-preflight.v1",
+  "split": "val",
+  "ordered_collection": [
+    {
+      "trajectory_index": 0,
+      "path": "data/processed/mooc/mooc.npz",
+      "archive_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+      "shape_tnf": [
+        714,
+        78,
+        1
+      ]
+    }
+  ],
+  "domain_manifest_path": "protocols\\c06-domain-preflight-v1\\mooc-val-domain.json",
+  "domain_manifest_sha256": "0bda9eddc34350dcf1fc85c8b88512ff631a64798d24650ef00148323fb29c21",
+  "source_sha256": {
+    "edsgn/staging/c06_domain_manifest_preflight_v1.py": "985d89b54ddfa0545d1312a7b18e79d96d4deadb0160041eb00642d84e04ccb5",
+    "edsgn/staging/split_history_robustness_v2.py": "2172d687017c09f531c1dc606c5c45c7e84d520a51cc3d5916fa893920e6aa2f",
+    "edsgn/staging/frozen_split_history_robustness_v1.py": "9688f2ea4c81485c3363a7ba1c24708dd4588bea0a57a49cada3defc886f41c3",
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "edsgn/src/edsgn/prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d"
+  },
+  "decoded_npz_members": [
+    "metadata_json",
+    "node_ids",
+    "input_mask"
+  ],
+  "header_only_npz_members": [
+    "values"
+  ],
+  "forbidden_decoded_members": [
+    "raw_values",
+    "values",
+    "targets",
+    "target_mask"
+  ],
+  "normalization_source": "checkpoint.statistics bound from training-only checkpoint",
+  "target_dataset_fingerprint_source": "engine.dataset_fingerprint hashes original archive bytes without decoding members"
+}

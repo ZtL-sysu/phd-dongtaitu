@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "scope": "standalone CPU candidate equivalence and resource probe",
+  "scientific_gpu_benchmark": false,
+  "optimizer_steps": 0,
+  "dataset_accessed": false,
+  "device": "cpu",
+  "threads": 2,
+  "python": "3.13.13",
+  "torch": "2.11.0+cu128",
+  "source_sha256": {
+    "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "script.py": "d7ec8fb276f740e5658dabbdfaf7656a7bd6fec69013b772998244eda87d3202"
+  },
+  "equivalence_cases": {
+    "full": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 336
+      },
+      "candidate_values_compared": 336,
+      "contact_setup_seconds": 0.0014285999932326376,
+      "query_seconds": 0.0014952000346966088
+    },
+    "partial": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 138
+      },
+      "candidate_values_compared": 138,
+      "contact_setup_seconds": 0.0010148999863304198,
+      "query_seconds": 0.0013540000072680414
+    },
+    "N1_K0": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 0,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 0,
+      "contact_setup_seconds": 5.2800023695454e-05,
+      "query_seconds": 0.0003032999811694026
+    },
+    "V0": {
+      "candidate_id_mismatches": 0,
+      "max_frequency_abs_diff": 0.0,
+      "counter_reference": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "counter_tensor": {
+        "candidate_exploration_checks": 84,
+        "candidate_prior_merge_checks": 0
+      },
+      "candidate_values_compared": 252,
+      "contact_setup_seconds": 0.0007346999773290008,
+      "query_seconds": 0.0003930999955628067
+    }
+  },
+  "benchmark": {
+    "shape": {
+      "B": 8,
+      "N": 986,
+      "K": 32,
+      "steps": 2
+    },
+    "contacts_per_nonempty_row": {
+      "sparse": 12,
+      "dense": 32
+    },
+    "repeats": 2,
+    "seconds": {
+      "12": {
+        "setup_s": [
+          0.1543093000072986,
+          0.19206129998201504
+        ],
+        "query_s": [
+          0.08457890001591295,
+          0.08433119999244809
+        ],
+        "combined_s": [
+          0.22541879999334924,
+          0.27739450000808574
+        ],
+        "reference_s": [
+          0.30966229998739436,
+          0.2747687000082806
+        ]
+      },
+      "32": {
+        "setup_s": [
+          0.21713189998990856,
+          0.23280139997950755
+        ],
+        "query_s": [
+          0.1002759000111837,
+          0.07294730001012795
+        ],
+        "combined_s": [
+          0.303005599998869,
+          0.33808919999864884
+        ],
+        "reference_s": [
+          0.36205490000429563,
+          0.31648210002458654
+        ]
+      }
+    }
+  },
+  "output_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\candidate-bounded-tensor-diagnostic-v1.json",
+  "task_duration_seconds": 8.440108700015116
+}

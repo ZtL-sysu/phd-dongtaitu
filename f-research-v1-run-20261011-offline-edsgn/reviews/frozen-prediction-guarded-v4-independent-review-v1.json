@@ -1,0 +1,27 @@
+{
+  "review_role": "independent reviewer",
+  "verdict": "revise_before_launch",
+  "bridge_v4": {
+    "blocker": "Final live budget guard precedes final post-guard output rehash and completed receipt; a CPU mock expiration after that guard still yields completed.",
+    "checks": {
+      "pre_loader_test_access_receipt": true,
+      "full_serialized_array_content_comparison": true,
+      "root_acceptance_false_flags_enforced": true,
+      "pipeline_source_binding_freeze_checkpoint_fences_present": true
+    },
+    "writer_tests_passed": 18,
+    "independent_tests_passed": 4,
+    "actual_data_or_gpu_used": false
+  },
+  "calibration_v9": {
+    "verdict": "source_only_chronology_consistent",
+    "p3a_validation_epsilon_and_queue_hash_bound": true,
+    "post_training_launch_binding_binds_checkpoint_config_queue_atlaunch_binding_authority_candidate_ids": true,
+    "unidentifiable_all_zero_email_preserves_null_epsilon_and_disables_ni": true,
+    "test_numeric_arrays_or_runtime_used": false
+  },
+  "hashes": {
+    "edsgn/staging/frozen_prediction_guarded_v4.py": "466D5629567EBC5EF27733FAC1621172B53D7E3D3E39BD3A36D0EA5E499E3823",
+    "edsgn/staging/frozen_validation_calibration_v9.py": "975505E0BF7CBFC80392D0C8259B7C8A1F79DE2B67284C32C63CF6F6DFB07554"
+  }
+}

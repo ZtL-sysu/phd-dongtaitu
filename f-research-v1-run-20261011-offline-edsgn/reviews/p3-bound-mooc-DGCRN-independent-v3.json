@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "scope": "independent_saved_validation_numeric_and_binding_review",
+  "method": "DGCRN",
+  "dataset": "mooc",
+  "seed": 0,
+  "config": {
+    "epochs_requested": 100,
+    "patience": 10,
+    "resolved_matches": true,
+    "epochs_executed": 55,
+    "early_stop_best_epoch": 45,
+    "best_val_mae": 3.98356302579244,
+    "stop_loss_reached": false
+  },
+  "origins": {
+    "train_metadata_recomputed": 452,
+    "validation_metadata_recomputed": 49,
+    "saved_prediction_origins": 49,
+    "saved_origin_ordered": true,
+    "saved_origin_shape": [
+      49,
+      2
+    ],
+    "manifest_train_val": [
+      452,
+      49
+    ]
+  },
+  "validation_metrics_recomputed_from_saved_npz": [
+    {
+      "horizon": 1,
+      "n_scored": 3822,
+      "mae": 3.6048563902350637,
+      "rmse": 7.163170121413789
+    },
+    {
+      "horizon": 6,
+      "n_scored": 3822,
+      "mae": 3.7644919774381513,
+      "rmse": 7.707307226438255
+    },
+    {
+      "horizon": 24,
+      "n_scored": 3822,
+      "mae": 4.581341018618588,
+      "rmse": 8.803286857060728
+    }
+  ],
+  "selection_mae_mean_required_horizons": 3.9835631287639344,
+  "summary_best_mae": 3.98356302579244,
+  "selection_matches_summary": true,
+  "hashes": {
+    "binding_rows_count": 25,
+    "code_source_count": 22,
+    "binding_all_hashes_match": true,
+    "data_sha256": "d708aacf817ee84030a19c003a29200cc887d46ffacf0c1d15222b2c4edc3ab5",
+    "checkpoint_file_sha256_matches_summary": true,
+    "phase_inputs_outputs_count": 32,
+    "phase_all_hashes_match": true,
+    "phase_status": "completed",
+    "phase_returncode": 0
+  },
+  "provenance": {
+    "scope": "full_protocol",
+    "test_accessed": false,
+    "manifest_selection": "required-horizon average validation MAE; no test access",
+    "phase_id": "baseline-bound-v3-mooc-DGCRN-seed0",
+    "phase_wall_seconds": 443.26066950001405,
+    "phase_outputs_verified": true
+  },
+  "limitations": [
+    "No checkpoint deserialization, model execution, optimizer, GPU, or test/oracle array decoding.",
+    "Original NPZ was read only for metadata_json split geometry and hashed as bytes; the pre-existing numeric audit provides source-target/mask correspondence check.",
+    "This audit verifies saved provenance and artifacts; it cannot independently prove the historical training process never attempted an undeclared test read."
+  ],
+  "existing_numeric_audit_status": "passed",
+  "existing_numeric_audit_required_horizons": [
+    1,
+    6,
+    24
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "source_sha256": {
+    "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "agcrn_checkpoint.py": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+    "baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "candidate_batch.py": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f",
+    "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "rp_baselines.py": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+    "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "dependency_source_sha256": {
+    "sources\\STID\\basicts\\__init__.py": "9e3a6c706881db3e906ec3e5120a80b78f262db7ad2a53d0bec96456226ecb73",
+    "sources\\STID\\basicts\\data\\__init__.py": "bfb8923ccb4cc8d309f5cc388d4f949240d1d53360ee083dbc27235cfbeb05fa",
+    "sources\\STID\\basicts\\data\\base_dataset.py": "bb78f8605f45974d6b03031bcf1d32c34a819b46b7c8b42c65ecbbffeab37351",
+    "sources\\STID\\basicts\\data\\simple_tsf_dataset.py": "10cb7e4acb30d67bbbf07c75f0b41ddb1ecf07cfa5ee277057f301b95edcadb5",
+    "sources\\STID\\basicts\\launcher.py": "2159989de1106edb16c7fd9a598a15aadc0e2c126b9abbd80cd57a979dad3ab7",
+    "sources\\STID\\basicts\\metrics\\__init__.py": "e4c0675031110802a649e5dfca505c00585f6a682209dfa20c703806492619f8",
+    "sources\\STID\\basicts\\metrics\\mae.py": "fef1e7a2de372d9836b2b004debaba4cee221b6702672c308d5b3293535e92a8",
+    "sources\\STID\\basicts\\metrics\\mape.py": "a821ab1edd67b7c9cd4bcaa641fa24b3116d532596af03b8e4c2389d978225c7",
+    "sources\\STID\\basicts\\metrics\\mse.py": "4becb599134f80087382d32c95277109a28c8b726f5c7225c301cded57418378",
+    "sources\\STID\\basicts\\metrics\\rmse.py": "a1c31709c6a90758d6a2de766d38c7d683aa627a4a847b44834b132eb3062cae",
+    "sources\\STID\\basicts\\metrics\\wape.py": "501da689f8f9c0e3b5fa30fa53107e2c89cc3379911781bb0ac2d5ad4959502e",
+    "sources\\STID\\basicts\\runners\\__init__.py": "975c15f15f0c812cba51f8240cb764f4dccbfed8908fc99863e1369fdd16f302",
+    "sources\\STID\\basicts\\runners\\base_runner.py": "f3fab12a14f140c22ab352b65c788f4eec42dd6ed75b9c0e03315e7003f74b40",
+    "sources\\STID\\basicts\\runners\\base_tsf_runner.py": "780d17ef2e4c1a9bc90efd450979f5e2cc1d33fafe48512b74418445898d7b60",
+    "sources\\STID\\basicts\\runners\\runner_zoo\\no_bp_runner.py": "637d1b7f48ef84eeacac15bb2df5c3cf800ea7d4b8a081670559e174d64315a9",
+    "sources\\STID\\basicts\\runners\\runner_zoo\\simple_tsf_runner.py": "c3be6d7035e69a2c697a7222b3a23c0f72002243b35653ac61378c0def2743bc",
+    "sources\\STID\\basicts\\scaler\\__init__.py": "56a4fa944313418807dd5fbfbe74d21588d2131517c02433a1afc657dc92bc79",
+    "sources\\STID\\basicts\\scaler\\base_scaler.py": "efb9d8fbe24c4eb69cbf0270d022564664b5d4bcf3562cd9f8243bb2ba47ad46",
+    "sources\\STID\\basicts\\scaler\\min_max_scaler.py": "8097eca236eb9cb5421a2f03ed67d8d2bce9089caca1b66618a4c334c9b83d83",
+    "sources\\STID\\basicts\\scaler\\z_score_scaler.py": "e87388925c34cbeb0a40a206a36a1a1d281c276b863598c9b6054403e050a705",
+    "sources\\STID\\basicts\\utils\\__init__.py": "6d42ff678c73a26e2ba98b89124e1cdfa1d2216653879ac4b2868e1ef2e9a35b",
+    "sources\\STID\\basicts\\utils\\adjacent_matrix_norm.py": "774987f158781ae0f55e5c72095e183346f5871825111dcc87fc87780907b493",
+    "sources\\STID\\basicts\\utils\\misc.py": "434da030c65910a8e4d1a88c9f8e54c6522d732007a51ec3e6336db182392168",
+    "sources\\STID\\basicts\\utils\\serialization.py": "3d7155794cc8f700f5f1a12201a6be00395a1504b95162a88039b0cfde847ad4",
+    "sources\\STID\\basicts\\utils\\xformer.py": "371afbb3fbf9b1efcaf2e91f927f57c1988b6c6006f14445878eb96a31934520",
+    "sources\\STID\\experiments\\evaluate.py": "ff79e023521c56c39587686b1233498d0e1ac89ffd8bae9e50b28818457b9700",
+    "sources\\STID\\experiments\\train.py": "3c9794f11089f648d7205ccc4cd81d0c9023a3d8a4f9c3541088d07ef9368b67",
+    "sources\\STID\\scripts\\data_preparation\\CA\\generate_training_data.py": "8735c637379589315175e3631d22eaeba5be75a5196c74f20c87709ca093475e",
+    "sources\\STID\\scripts\\data_preparation\\Electricity\\generate_training_data.py": "b7fb27de675c5f8411d60fbf6d06c72bb01bdd3afcb3858bbd52a9298831dcba",
+    "sources\\STID\\scripts\\data_preparation\\ETTh1\\generate_training_data.py": "95bcc6864adb918c625e5bb11494f9c8dc6cf14edcb4b2b1ace21efb36171216",
+    "sources\\STID\\scripts\\data_preparation\\ETTh2\\generate_training_data.py": "ece0a8e4b16df191f1a2fa1dfbd7a3d25a2d6a1040a7b785e411d9c6f4173fbc",
+    "sources\\STID\\scripts\\data_preparation\\ETTm1\\generate_training_data.py": "1127a2dfc61e8738c146f2ebd9e254abbd9075daf5e95348c2542f0c5fe3b3e5",
+    "sources\\STID\\scripts\\data_preparation\\ETTm2\\generate_training_data.py": "fd336dfe933cb7ccbc9c90d7be2d66d0a8f9ac6369fb8ff8ef96f40529ab1fcb",
+    "sources\\STID\\scripts\\data_preparation\\ExchangeRate\\generate_training_data.py": "f257fb3cd44e76238c8c7aad4a54fb41e95f937df01ddaf4adc7b3f54d851741",
+    "sources\\STID\\scripts\\data_preparation\\GBA\\generate_training_data.py": "55f54290aa12fa573146562e7f49586ffbf369fea6a6eb9363bcf6f13f49083b",
+    "sources\\STID\\scripts\\data_preparation\\GLA\\generate_training_data.py": "6b1b9a44791d7b4b77bb8e7bb9ed467ed30e9f171f7f3971898f43ab1aa5a1fa",
+    "sources\\STID\\scripts\\data_preparation\\Illness\\generate_training_data.py": "bfb7b1f4a764f18b81aae745e79b88ab95718c53b785619c5b99239ef6b7cb68",
+    "sources\\STID\\scripts\\data_preparation\\METR-LA\\generate_training_data.py": "f41a871b5e85a89759c838fef38fb1dce9f9d101192f398d968b67f441778620",
+    "sources\\STID\\scripts\\data_preparation\\PEMS-BAY\\generate_training_data.py": "bba16aaf5e6cd0e0a8c14a03a1ecd210a8f1c37c4782a0f8760ce3e9a69eef71",
+    "sources\\STID\\scripts\\data_preparation\\PEMS03\\generate_adj_mx.py": "b88c0d59c54a1bd7f33ac14309ea43192d3f0c5db6c302aa2e859eb7b5203114",
+    "sources\\STID\\scripts\\data_preparation\\PEMS03\\generate_training_data.py": "2552f483075df32c98a803fd536c19d5c78ccd845f9e3ebba6979ecd33ba970a",
+    "sources\\STID\\scripts\\data_preparation\\PEMS04\\generate_adj_mx.py": "34f338924afe682fc64eceabdf3c7331a769a9789a787643aa20d6d59ee300a3",
+    "sources\\STID\\scripts\\data_preparation\\PEMS04\\generate_training_data.py": "71493e1457edc00e5a88078f3f96f820a246113059bd4b31490047c1646435db",
+    "sources\\STID\\scripts\\data_preparation\\PEMS07\\generate_adj_mx.py": "065bd2e7d00f4f361d9c2dd1ff986590b030bca0615fa32300a931dc066ff08e",
+    "sources\\STID\\scripts\\data_preparation\\PEMS07\\generate_training_data.py": "30daebd15ae4952efefa84284c68df72b8210fc5b46d41d6174867954a89b10a",
+    "sources\\STID\\scripts\\data_preparation\\PEMS08\\generate_adj_mx.py": "c549b8bca8bc44b650c3b4b32c17cb3104a011fdb79a6132b314f80246f391a0",
+    "sources\\STID\\scripts\\data_preparation\\PEMS08\\generate_training_data.py": "765e8a16db9f84d8ca55492fe5b268788e7e26e154906d9c2893916dcf5a2abf",
+    "sources\\STID\\scripts\\data_preparation\\SD\\generate_training_data.py": "02454b42b6bf5926caf738b1b7396ae7aa93edbdb2ab12e0d1ce7a0e8a506bb5",
+    "sources\\STID\\scripts\\data_preparation\\Traffic\\generate_training_data.py": "c27b65e272fa66f1406b1fb3a07c5b49dfe6c9db566ad40e427b17399227ee03",
+    "sources\\STID\\scripts\\data_preparation\\Weather\\generate_training_data.py": "e5f2f39cb6adb15a21a3c5626e2b6e44a2f4d60e13f44267d9ba698642d05704",
+    "sources\\STID\\stid\\arch\\__init__.py": "fd893e930530cdbf06c4e639a90d211c248a966ea63236f387957e5772a432af",
+    "sources\\STID\\stid\\arch\\mlp.py": "19fff20c6fe8cc7fe8cdfd3f9cd97549c93fd5944054223857662f7af761d894",
+    "sources\\STID\\stid\\arch\\stid_arch.py": "dae3c35b2bb1cfd6aeb83a6c8d64bf973f95a69506c8e12ac84371836dd7533f",
+    "sources\\STID\\stid\\CA.py": "ba1f61da9c6b8c8e968690ec736a4908151cba388c4b9972603aa5591c3e0012",
+    "sources\\STID\\stid\\Electricity.py": "460b829e97729b4e23940db87771dca02fc7d0321bc7c6cdd82c8db14fa4bf75",
+    "sources\\STID\\stid\\ETTh1.py": "549965c5d945ec505c4a13e3cf49388e611c69489d94407fb274f320db51136a",
+    "sources\\STID\\stid\\ETTh2.py": "14feedd35994f1056fe41d2bc5afcbd9af601a26659d8fe6124ca2a42f4a5070",
+    "sources\\STID\\stid\\ETTm1.py": "86a9cd7a47ca5c529644023ceaed2707f758671f69020b488a3412b8fc494ee9",
+    "sources\\STID\\stid\\ETTm2.py": "dce4654e39b20ce32dc9f5375b1e43c779ecccb3a4458d5c96a6769214848c2e",
+    "sources\\STID\\stid\\ExchangeRate.py": "0276586b7d9729dcb87dabb2fe631523f228f1fd85cf62480da259edb94eb0f4",
+    "sources\\STID\\stid\\GBA.py": "b5c955bbf02b5d2ece9d917e6b94839abfe761797997d0f7914e572826ab935c",
+    "sources\\STID\\stid\\GLA.py": "773297c07ddeaf82c7260236cc66e145abc83a2be756cea9b5ac3dc7e63b367c",
+    "sources\\STID\\stid\\Illness.py": "904532964f81dcd459ca1e8c89483f0e1e6405270f5afc9ffd832b20526baad9",
+    "sources\\STID\\stid\\METR-LA.py": "5c2a8af2d133836486be81112fe11a0d1bd6cbca4a9fbcb7dca8056e3efcacc6",
+    "sources\\STID\\stid\\PEMS-BAY.py": "407aa4a82e0da4ec2cf548ee37b361c09f954c4e3d29651400ccb7f30e5e7b2f",
+    "sources\\STID\\stid\\PEMS03.py": "e91273cdd4e3f8a1a96879d6f1670e57244f3f4c41e6f92fdf3ade89062c9bfd",
+    "sources\\STID\\stid\\PEMS04.py": "79b4f65117fee9f4d761e60b59d6ddc18d53ae75ef98d5c532040ea4f38912bb",
+    "sources\\STID\\stid\\PEMS07.py": "05e72868a551cd458cfc96d6b20e755c31ef77d0a494f90551fe51e2ad3a57f5",
+    "sources\\STID\\stid\\PEMS08.py": "c9d8bd8a90bbd016d363119a1cb2136c5bf1962b9753e9fc5a6173e659b645f7",
+    "sources\\STID\\stid\\SD.py": "19713c46385f60c7c62f4ae626d8f072ae842a876025ba34f8e97935e079eddd",
+    "sources\\STID\\stid\\Traffic.py": "3a64283b1440d1c07a564e38c0cb366a33ef1655f60df90c3648715a8310a30f",
+    "sources\\STID\\stid\\Weather.py": "b803d2881fd057ba121e81430de7f60c6c6151dceddb811502243746a2be5e73"
+  },
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+  "model_statistics_train_only": {
+    "norm_mean": [
+      0.899565577507019
+    ],
+    "norm_std": [
+      1.356971263885498
+    ],
+    "residual_scale": [
+      [
+        15.5657320022583
+      ],
+      [
+        19.273799896240234
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        22.23900032043457
+      ],
+      [
+        20.756399154663086
+      ],
+      [
+        19.273799896240234
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        28.16939926147461
+      ],
+      [
+        37.064998626708984
+      ],
+      [
+        23.721599578857422
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        17.791200637817383
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ],
+      [
+        15.5657320022583
+      ]
+    ],
+    "output_scale": [
+      15.565732082848674
+    ],
+    "output_mean": [
+      6.832716715482246
+    ]
+  },
+  "train_windows": 452,
+  "val_windows": 49,
+  "scope": "full_protocol",
+  "selection": "required-horizon average validation MAE; no test access",
+  "command": [
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+    "--config",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-fresh-remaining-bound-v1\\mooc-STID-seed0.json"
+  ]
+}

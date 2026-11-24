@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-10-11T08:17:05.729754+00:00",
+  "files": [
+    {
+      "path": "edsgn/src/edsgn/baselines.py",
+      "sha256": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/src/edsgn/engine.py",
+      "sha256": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/scripts/bind_training_inputs.py",
+      "sha256": "2253630b2f9d8beac2bd333968cbc019ef44e8dfde37bc9921494c7cac4059f6",
+      "status": "original-bytes"
+    },
+    {
+      "path": "edsgn/src/edsgn/rp_baselines.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    },
+    {
+      "path": "edsgn/src/edsgn/dcrnn_baseline.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    },
+    {
+      "path": "edsgn/tests/test_rp_baseline_integration.py",
+      "sha256": "e44af843c74d81a4c4d00ed0410e9f184a0212603513b967f0a13b076a7c6de5",
+      "status": "absent-before"
+    }
+  ]
+}

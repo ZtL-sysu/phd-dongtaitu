@@ -1,0 +1,16 @@
+{
+  "scope": "staging_frozen_simple_evaluation_cpu_toy",
+  "scientific_result": false,
+  "actual_test_data_accessed": false,
+  "model_or_optimizer_run": false,
+  "gpu_used": false,
+  "pytest_command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/staging/test_simple_baseline_frozen_evaluation_v2.py",
+  "result": "passed",
+  "passed": 13,
+  "failed": 0,
+  "pytest_seconds": 3.96,
+  "evaluator_sha256": "160f5a27903264374079928995a5de0da34f3050789937be5419f8291a706d1a",
+  "test_sha256": "cbfecfc6eb2529eae1d80f2e67859d74096dcb649070974c780fb6c8531e5dc1",
+  "v1_sha256_unchanged": "62156171abedfc616b14ba00fdc130828d273d091023dd2dd6b94e1d8589686f",
+  "dispatcher_alias_global_completion": "pending"
+}

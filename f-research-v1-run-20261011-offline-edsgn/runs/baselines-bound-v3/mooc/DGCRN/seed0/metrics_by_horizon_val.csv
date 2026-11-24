@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+DGCRN,0,val,1,0,all,3.604856252670288,7.163170337677002,3822,49
+DGCRN,0,val,6,0,all,3.7644920349121094,7.7073073387146,3822,49
+DGCRN,0,val,24,0,all,4.581340789794922,8.8032865524292,3822,49

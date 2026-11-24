@@ -1,0 +1,32 @@
+{
+  "dataset_id": "weight",
+  "entries": [
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-stress-n64-weight30/oracle/test_seed200.oracle.npz",
+      "sha256": "01a10c97a3a958d7d98a08ffb630cfcdafe052820e639ef029d36092695275c6",
+      "trajectory_index": 0
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-stress-n64-weight30/oracle/test_seed201.oracle.npz",
+      "sha256": "466c764e5ce2d1297063b01e941b2913401d2906fcc56eed65ec69d85962e8e7",
+      "trajectory_index": 1
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-stress-n64-weight30/oracle/test_seed202.oracle.npz",
+      "sha256": "d3a6f41d3f6b995ccdfc397071aca8bf1f21b1c069250af73c95d5fe60aa66e3",
+      "trajectory_index": 2
+    },
+    {
+      "field": "switch_index",
+      "path": "data/processed/synthetic-stress-n64-weight30/oracle/test_seed203.oracle.npz",
+      "sha256": "d8a19ad774f96d66205bea5f9c59e581a0404bdd42922730e4e95a255ed52add",
+      "trajectory_index": 3
+    }
+  ],
+  "join_rule": "trajectory_index_exact_one",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "scope": "reporting_only_postrun"
+}

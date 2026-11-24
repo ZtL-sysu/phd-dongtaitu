@@ -1,0 +1,20 @@
+{
+  "review_role":"independent_attack_fixture_followup",
+  "verdict":"blocker_found",
+  "supersedes":"reviews/count-loss-training-controller-independent-v3.md",
+  "superseded_verdict":"pass_engineering_scope",
+  "controller":{"path":"edsgn/scripts/count_loss_training_controller_v3.py","sha256":"53decda89ed7548b0bbe2c37e65eff1a257d32450b9cf4b0691cdd26c4a26033"},
+  "tests":{"path":"edsgn/tests/test_count_loss_training_controller_v3.py","sha256":"3c559e4b8e009da3ef772c74abe951f014daf405fc2c560de531c93f2eb0b9b8","prior_result":"17 passed in 34.67s","coverage_gap":"no prefixed Python option or psutil ad_value=None fixture"},
+  "attack_log":{"path":"logs/count-loss-controller-independent-v3-scanner-attacks-v2.log","sha256":"7c131907c423857709fd8b7738d748e97c49d5971e3a5df34f62f64a3b0ff1af"},
+  "findings":{
+    "python_u_module_train":"MISSED",
+    "python_B_X_dev_module_profile":"MISSED",
+    "python_u_RUN_frozen_script":"MISSED",
+    "unprefixed_python_module_control":"DETECTED",
+    "psutil_accessdenied_fields_ad_value_none":"MISSED; did not fail closed",
+    "psutil_local_version":"7.2.2"
+  },
+  "psutil_semantics":"process_iter(attrs=...) uses Process.as_dict(attrs, ad_value=None); per-field AccessDenied/ZombieProcess becomes None, so proc.info need not raise",
+  "scope":{"source_mutated":false,"real_process_launched":false,"real_data_model_gpu_used":false},
+  "required_successor_properties":["parse valid interpreter prefixes before -m/script without scanning arbitrary argument text as a script","refuse when Python identity/ownership fields are unavailable such that RUN ownership cannot be established"]
+}

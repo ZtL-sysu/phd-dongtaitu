@@ -1,0 +1,69 @@
+{
+  "dataset_id": "synthetic",
+  "dataset_root": "data/processed/synthetic-stress-n64-nonlinear",
+  "oracle_npz_decoded": false,
+  "ordered_switch_refs": [
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/oracle/test_seed200.oracle.npz",
+        "sha256": "9061a03e2d705cf72c5a6fd2d0a4b003ddb41b710c72d238abb676102de8a626"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed200.npz",
+        "sha256": "2cd6f43ded0c5aa9da5011981a6b748483bd4990e796de0a8783a496bb122614"
+      },
+      "trajectory_index": 0,
+      "trajectory_seed_id": 200
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/oracle/test_seed201.oracle.npz",
+        "sha256": "5d07e1e93b66f0a4db39db4c6f138ce102bc327a2845f0affdea64f2faf887fd"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed201.npz",
+        "sha256": "3722734f3ad252167d620f8757e539d1cf71b4f41929a5307004955201b3518d"
+      },
+      "trajectory_index": 1,
+      "trajectory_seed_id": 201
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/oracle/test_seed202.oracle.npz",
+        "sha256": "4f15e5a75b2611a0dd74c5258e173a734cebd262724fef5ec92c505be336b76c"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed202.npz",
+        "sha256": "b1cb57ba78c836d1a60bc70a5a10def4406a7468dfe1a06fedf998c9e3257dca"
+      },
+      "trajectory_index": 2,
+      "trajectory_seed_id": 202
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/oracle/test_seed203.oracle.npz",
+        "sha256": "98fdf5b8a6420e76b4bd45b70b7a68bdf7b78714cc9d297aa260ac136002e0c4"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-stress-n64-nonlinear/test_seed203.npz",
+        "sha256": "2befdd074cd5fad0bdfdce969befd45ab5689a4bc5036a1d77342e55d7336153"
+      },
+      "trajectory_index": 3,
+      "trajectory_seed_id": 203
+    }
+  ],
+  "purpose": "post-global-test-reporting-only; never a model input",
+  "regime_id": "n64_nonlinear_identity30",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "source_manifest": {
+    "path": "data/processed/synthetic-stress-n64-nonlinear/manifest.json",
+    "sha256": "1ca098143e193bfcf71a0777f9a932146bd39bf1a04718713ff47de007549e23"
+  },
+  "split": "test",
+  "status": "prospective_metadata_only",
+  "value_decoded": false
+}

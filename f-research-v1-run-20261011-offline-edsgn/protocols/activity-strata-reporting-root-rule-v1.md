@@ -1,0 +1,11 @@
+# Training-derived activity strata for offline reporting
+
+Root pretest reporting decision; no training, model selection, test result or stage advancement is represented here.
+
+For email, MOOC and the separately fitted email episode, each node's activity score is the mean of its valid raw training observations over training time and input features. This uses only that regime's training slice and frozen training node order. For synthetic trajectories, use mean absolute valid raw training observations and label the strata by signal magnitude, rather than real-world activity. Independent synthetic training trajectories are concatenated only for this reporting fit.
+
+Nodes with no valid training cells form an explicit unobserved-training group. Observed nodes with zero training score form a separate zero-training group. Positive scores are partitioned by linear 1/3 and 2/3 quantiles: low is `(0,q1]`, middle is `(q1,q2]`, high is `(q2,infinity)`. Ties remain together. Empty groups remain visible and yield null metrics. Node IDs, valid cell counts, scores, cutpoints, groups, train-slice provenance and source hashes must be frozen in the actual pretest execution inputs before any test replay. No threshold is fitted from test observations, predictions or advantages.
+
+All methods use the same frozen grouping. Within each model seed, group and reported horizon, pool absolute and squared errors over all valid target cells in original units; then compute MAE and RMSE. Average the specified horizon metrics equally, then the five model seeds equally. Report each horizon, per-seed values, mean and seed sample SD separately. A zero-support group/horizon remains unidentifiable; do not remove it and redistribute horizon weights. These descriptive strata do not add primary H1/H2/H3 endpoints or change the frozen 49-row Holm families.
+
+The pure helper `edsgn/staging/activity_stratified_metrics_v1.py` accepts arrays already supplied by a guarded reporting caller. It neither establishes a training-only slice nor verifies node-order provenance itself; the future integration must enforce those bindings and pass an identical group vector to every method. Actual strata artifacts and final reporting integration are pending.

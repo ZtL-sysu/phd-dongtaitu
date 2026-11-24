@@ -1,0 +1,13 @@
+{
+  "status": "prepared_only",
+  "dispatcher": "edsgn/scripts/verified_frozen_dispatch_v5.py",
+  "dispatcher_sha256": "6c2b83797d1571b534db45a1ed9441bd6cddd8762a727c4eda4bd720d012486b",
+  "test_file": "edsgn/tests/test_verified_frozen_dispatch_v5.py",
+  "test_sha256": "ba3ea04c72f3e35805961a07516b635fad51e5bd17d75ba2aab97846229169a5",
+  "tests": 16,
+  "result": "passed",
+  "elapsed_seconds": 22.24,
+  "scope": "CPU mocks; no actual launch/data/model/GPU/optimizer",
+  "calibration_sidecar": "calibration-validation-dependence-v2.json",
+  "profile_driver": "frozen_profile_guarded_v5.py"
+}

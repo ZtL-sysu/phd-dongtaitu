@@ -1,0 +1,17 @@
+{
+  "verdict": "cpu_toy_acceptable_operational_not_accepted",
+  "tests_passed": 7,
+  "tests_failed": 0,
+  "real_data_loaded": false,
+  "real_checkpoint_loaded": false,
+  "training_started": false,
+  "gpu_used": false,
+  "formal_replay": false,
+  "implementation_sha256": "3f8150b164e83b34ddfcfc8083bac4bf1f274c74125eb61e245ae469076934fb",
+  "test_sha256": "eb0fd91ebd2ddbc6b3a1db1ce2c64f6281a1ae5c095919dd72e6465d73f2f876",
+  "review": "reviews/frozen-h2-matched-retention-independent-v2.md",
+  "limitations": [
+    "budget guard is not called during final archive/report serialization",
+    "no live-lock or full real-collection evidence"
+  ]
+}

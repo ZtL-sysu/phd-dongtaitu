@@ -1,0 +1,18 @@
+{
+  "verdict": "blocked_operational_schema_mismatch_and_gate_toc_tou",
+  "tests_passed": 17,
+  "tests_failed": 0,
+  "real_data_loaded": false,
+  "real_checkpoint_loaded": false,
+  "training_started": false,
+  "gpu_used": false,
+  "formal_replay": false,
+  "implementation_sha256": "0d50c92f11392b88e2bccea4ca0ded7f97d907e94c7b7f704d826b50e8807fd2",
+  "test_sha256": "849d29420c9a4b83b39af8a397b9c4b13000283666c456a48f7dc26207dbee07",
+  "review": "reviews/frozen-graph-state-diagnostic-independent-v4.md",
+  "blockers": [
+    "indexes history/hmax in config rather than checkpoint task",
+    "uses PreparedData.n_nodes/n_features instead of values.shape",
+    "does not revalidate canonical pipeline/evidence hashes after replay"
+  ]
+}

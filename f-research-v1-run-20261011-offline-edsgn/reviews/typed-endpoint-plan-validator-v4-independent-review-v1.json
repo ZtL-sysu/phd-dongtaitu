@@ -1,0 +1,15 @@
+{
+  "verdict": "acceptable_metadata_only_engineering_preparation",
+  "scientific_execution_or_inference": false,
+  "validator": "edsgn/staging/typed_endpoint_plan_validator_v4.py",
+  "validator_sha256": "9d099359bbbc4ea3bd97fbd015fbe9c7ddd95f79523d5fb0a278ef3154b4e032",
+  "author_test_file": "edsgn/tests/test_typed_endpoint_plan_validator_v4.py",
+  "author_test_sha256": "26a134b16b172bc30474c84e1079c71a272e60d455d1adffc2b14a92b7ebc4be",
+  "author_tests": "14 passed in 10.68s",
+  "independent_mutations": [
+    {"case": "H2 endpoint claim cross-wire to H1", "result": "rejected"},
+    {"case": "test_predictions added to pretest binding", "result": "rejected"}
+  ],
+  "data_access": "temporary opaque fixture bytes only; no actual data/checkpoint/model/prediction arrays",
+  "remaining_limit": "official canonical-ledger validation and actual dispatch not executed"
+}

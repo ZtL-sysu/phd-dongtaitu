@@ -1,0 +1,241 @@
+{
+  "scope": "metadata-only single-collection v5 artifact-cap preflight; no model/data-array/oracle payload read",
+  "method": "From each test NPZ, read/decode only metadata_json.npy and read the NumPy header for values.npy through the ZIP member stream. No values payload, input/target mask, target array, oracle NPZ, checkpoint, or model was accessed. Apply frozen v5 estimate_artifact_bytes using full-origin counts derived from split bounds and L/H; detailed-origin counts follow the v5 deterministic eight-per-trajectory rule. The free-space figure is an instantaneous disk metadata reading, not reservation.",
+  "code_sha256": "ffdf60273eb6dd2b45494df8f71ef57ecdbc9590ff63d75dc93001e963c02d45",
+  "results": [
+    {
+      "label": "N64",
+      "dataset_relative_path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support",
+      "test_trajectory_files": [
+        "test_seed200.npz",
+        "test_seed201.npz",
+        "test_seed202.npz",
+        "test_seed203.npz"
+      ],
+      "task_and_split_consistent_except_seed_metadata": true,
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 64,
+        "n_features": 1,
+        "count_data": false,
+        "event_kind": "synthetic",
+        "values_shape": [
+          2048,
+          64,
+          1
+        ],
+        "test_split": [
+          0,
+          2048
+        ]
+      },
+      "per_test_file": {
+        "test_seed200.npz": {
+          "metadata_json_sha256": "636ee372812e4b4a284633c7e678af01c1008819e9375cdf8c9d09aa0ff7d89e",
+          "values_npy_header_sha256": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "values_shape": [
+            2048,
+            64,
+            1
+          ],
+          "metadata_seed": 200,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed201.npz": {
+          "metadata_json_sha256": "5d73983a42ff86c4deeefd036b6da8922b285b67c852ad06c620623fbb70819b",
+          "values_npy_header_sha256": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "values_shape": [
+            2048,
+            64,
+            1
+          ],
+          "metadata_seed": 201,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed202.npz": {
+          "metadata_json_sha256": "6867f183ef14242258196f5fca70d85bb2c9f76353fc95a24d35b4e0de2dd3c3",
+          "values_npy_header_sha256": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "values_shape": [
+            2048,
+            64,
+            1
+          ],
+          "metadata_seed": 202,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed203.npz": {
+          "metadata_json_sha256": "d6956b50c736a7102c8689e1343e836e091a610e496d67108dcecfc0d93771ec",
+          "values_npy_header_sha256": "c3d8e9d77a47c9b4f33036a0d511b0b932e51d1629f64b1111323884001296ad",
+          "values_shape": [
+            2048,
+            64,
+            1
+          ],
+          "metadata_seed": 203,
+          "test_split": [
+            0,
+            2048
+          ]
+        }
+      },
+      "origins_per_trajectory": [
+        2014,
+        2014,
+        2014,
+        2014
+      ],
+      "frozen_detailed_origins_per_trajectory": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "origin_total": 8056,
+      "detailed_origin_total": 32,
+      "prediction_element_count": 3609088,
+      "d_total_bound": 64,
+      "artifact_cap_gib": 16.0,
+      "estimated_artifact_bytes": 13646155776,
+      "estimated_artifact_gib": 12.708972930908203,
+      "cap_bytes": 17179869184,
+      "cap_pass": true,
+      "cap_headroom_bytes": 3533713408,
+      "compact_trace_bytes": 13396934656,
+      "detailed_trace_bytes": 88080384,
+      "array_bytes": 144363520,
+      "current_free_disk_bytes_at_preflight": 430520033280,
+      "current_free_disk_gib_at_preflight": 400.9530258178711,
+      "single_run_1_25x_free_disk_check_pass": true
+    },
+    {
+      "label": "N256",
+      "dataset_relative_path": "data/processed/synthetic-stress-n256-identity30-scale",
+      "test_trajectory_files": [
+        "test_seed200.npz",
+        "test_seed201.npz",
+        "test_seed202.npz",
+        "test_seed203.npz"
+      ],
+      "task_and_split_consistent_except_seed_metadata": true,
+      "task": {
+        "history": 28,
+        "hmax": 7,
+        "n_nodes": 256,
+        "n_features": 1,
+        "count_data": false,
+        "event_kind": "synthetic",
+        "values_shape": [
+          2048,
+          256,
+          1
+        ],
+        "test_split": [
+          0,
+          2048
+        ]
+      },
+      "per_test_file": {
+        "test_seed200.npz": {
+          "metadata_json_sha256": "75ae419a194614a92f2ca0918578efe01d418640106c507528e59f7eab804461",
+          "values_npy_header_sha256": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "values_shape": [
+            2048,
+            256,
+            1
+          ],
+          "metadata_seed": 200,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed201.npz": {
+          "metadata_json_sha256": "290197a68a71d396b1b0c796fb724b3872210bfcd0cb8d83f1acd37328b1e133",
+          "values_npy_header_sha256": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "values_shape": [
+            2048,
+            256,
+            1
+          ],
+          "metadata_seed": 201,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed202.npz": {
+          "metadata_json_sha256": "b929b05c5b11629f9f1d0009b54397b0563608d02d8cc7731ff34017d46ffea0",
+          "values_npy_header_sha256": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "values_shape": [
+            2048,
+            256,
+            1
+          ],
+          "metadata_seed": 202,
+          "test_split": [
+            0,
+            2048
+          ]
+        },
+        "test_seed203.npz": {
+          "metadata_json_sha256": "35bee389eedbb9b1ce7f31f9b8a353a8eb18cdfd9eb8fcda749967253e4fc378",
+          "values_npy_header_sha256": "3830ac3f86f32e04f68966e2b589e043c38659c8eaa6e09636611d2210cc5963",
+          "values_shape": [
+            2048,
+            256,
+            1
+          ],
+          "metadata_seed": 203,
+          "test_split": [
+            0,
+            2048
+          ]
+        }
+      },
+      "origins_per_trajectory": [
+        2014,
+        2014,
+        2014,
+        2014
+      ],
+      "frozen_detailed_origins_per_trajectory": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "origin_total": 8056,
+      "detailed_origin_total": 32,
+      "prediction_element_count": 14436352,
+      "d_total_bound": 64,
+      "artifact_cap_gib": 64.0,
+      "estimated_artifact_bytes": 47340601344,
+      "estimated_artifact_gib": 44.08937072753906,
+      "cap_bytes": 68719476736,
+      "cap_pass": true,
+      "cap_headroom_bytes": 21378875392,
+      "compact_trace_bytes": 46658289664,
+      "detailed_trace_bytes": 88080384,
+      "array_bytes": 577454080,
+      "current_free_disk_bytes_at_preflight": 430520033280,
+      "current_free_disk_gib_at_preflight": 400.9530258178711,
+      "single_run_1_25x_free_disk_check_pass": true
+    }
+  ],
+  "limitations": [
+    "Single-run cap only; not whole-campaign capacity guarantee.",
+    "Metadata estimate does not guarantee in-memory fit or runtime.",
+    "Does not establish output size, checkpoint compatibility, oracle content, P3A/P4 authorization, or resource-probe acceptance.",
+    "The driver enforces cumulative budget at origin/analysis guard points and outer receipt records whole elapsed time, but there is no explicit stop-loss guard after final report serialization."
+  ]
+}

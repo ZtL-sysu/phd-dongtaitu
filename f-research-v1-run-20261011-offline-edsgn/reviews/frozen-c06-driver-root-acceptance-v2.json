@@ -1,0 +1,20 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T09:45:58.771412+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/c06_domain_manifest_preflight_v1.py": "985d89b54ddfa0545d1312a7b18e79d96d4deadb0160041eb00642d84e04ccb5",
+    "edsgn/staging/split_history_robustness_v2.py": "2172d687017c09f531c1dc606c5c45c7e84d520a51cc3d5916fa893920e6aa2f",
+    "edsgn/staging/frozen_split_history_robustness_v2.py": "1275be9681b296a1808f7dde0451ee88d051c181897b72f6184ba5979d7343eb",
+    "edsgn/tests/test_c06_domain_manifest_preflight_v1.py": "4ff03385e00374e70b2a39574aefd368d2c9952f45b66572dcdd707d977a769e",
+    "edsgn/tests/test_frozen_split_history_robustness_v2.py": "ff32f4157a77e67cfee8087d3d47b04e2f385c04d7d18357c6e20818e12b0d2d",
+    "reviews/frozen-split-history-robustness-v2.md": "3b7a1a98b04c6780232316d82c5466e575f7384e4a795354d7af82fbab251d4c",
+    "logs/frozen-c06-preflight-v2-toy-tests.log": "ec149dc498d0ce34ad1ebe1e62209626e8c8c019db64633a4057f95c840bd38d",
+    "logs/frozen-c06-preflight-v2-toy-tests.json": "ecca0dcd78b10486ef6504024e69db97a48b1f02463eef498ffedc96c57014d8"
+  },
+  "actual_robustness_replay_run": false,
+  "c06_experiment_closed": false
+}

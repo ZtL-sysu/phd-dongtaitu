@@ -1,0 +1,69 @@
+{
+  "dataset_id": "synthetic",
+  "dataset_root": "data/processed/synthetic-n64-identity-change0.3-miss0",
+  "oracle_npz_decoded": false,
+  "ordered_switch_refs": [
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed200.oracle.npz",
+        "sha256": "e2017d367198a84d42fd48d38b1571e79ad52832f510f8d80f88a610210ba823"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed200.npz",
+        "sha256": "56b11569d58c10c6a31b31404718edecdc3083acb2d03638c47dc223fb3c45a1"
+      },
+      "trajectory_index": 0,
+      "trajectory_seed_id": 200
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed201.oracle.npz",
+        "sha256": "b8154d4d3b573fc97eb06a7b23c229940a83c301253d2e184cbbaea0d858a5db"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed201.npz",
+        "sha256": "af353658b162a462b0ca3b73b41fd31d9125c7dfa9cd4f9194edfca7cf539db6"
+      },
+      "trajectory_index": 1,
+      "trajectory_seed_id": 201
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed202.oracle.npz",
+        "sha256": "a7f8b3d606f94f50c3b210e0b7392025d96e5f05ecd4beafa6b0ffe1f73a573d"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed202.npz",
+        "sha256": "43026ec411a9550e9f036b6ff35638a5b76423542073ef473edc6d97a31ff5e9"
+      },
+      "trajectory_index": 2,
+      "trajectory_seed_id": 202
+    },
+    {
+      "field": "switch_index",
+      "oracle": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/oracle/test_seed203.oracle.npz",
+        "sha256": "6a2c5d73c64054ebdd438495f9493adb90ae848dee98739de8461d0a281eb9fb"
+      },
+      "trajectory": {
+        "path": "data/processed/synthetic-n64-identity-change0.3-miss0/test_seed203.npz",
+        "sha256": "bd041b20152a8687a87a801dc6c90f7a473a368019cfa34cd130d59d8fb84785"
+      },
+      "trajectory_index": 3,
+      "trajectory_seed_id": 203
+    }
+  ],
+  "purpose": "post-global-test-reporting-only; never a model input",
+  "regime_id": "n64_identity_change30_main_reuse",
+  "schema": "edsgn.reporting-switch-authority.v1",
+  "source_manifest": {
+    "path": "data/processed/synthetic-n64-identity-change0.3-miss0/manifest.json",
+    "sha256": "d73bdc3044287d6503ff939234a464149121e820b61212aa47c2d437ba9eedd3"
+  },
+  "split": "test",
+  "status": "prospective_metadata_only",
+  "value_decoded": false
+}

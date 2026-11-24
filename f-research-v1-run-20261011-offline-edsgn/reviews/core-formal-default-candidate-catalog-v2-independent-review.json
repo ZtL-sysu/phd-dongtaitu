@@ -1,0 +1,26 @@
+{
+  "review_execution": "independent-metadata-review",
+  "scope": "catalog identity and preparation only; no model, arrays, checkpoint, training, validation, or test access",
+  "verdict": "pass_metadata_only",
+  "catalog_sha256": "d7ebd1328219cbc6f1bdbe0a3a27042bb5e34a3a9939a4592416ec7464881298",
+  "generator_sha256": "499d4d36a9d3ac5ffd81facb53f20a6f5b9472d00aa869e18f1d3b14c02d8d06",
+  "verifier_sha256": "958bc6964cc40741c324fbd49bf61a6fa016b66279c072e76a965225a8406f0e",
+  "counts": {
+    "rows": 90,
+    "unique_output_directories": 90,
+    "controls_v0_v1": 30,
+    "seed_output_only_clones": 48,
+    "exact_p4_seed0_templates": 12,
+    "input_blueprints": 60,
+    "singleton_pools": 12,
+    "generated_file_hashes_checked": 120
+  },
+  "all_config_and_generated_hashes_match": true,
+  "all_rows_unselected_unlaunched_test_unaccessed": true,
+  "root_metadata_receipt_consulted_as_secondary_evidence": true,
+  "limitations": [
+    "Does not authorize launch or validate scientific outcomes.",
+    "Seed-0 reuse still requires actual input-binding, numerical review, and root acceptance.",
+    "Does not establish global closure over ordinary baseline and secondary test jobs."
+  ]
+}

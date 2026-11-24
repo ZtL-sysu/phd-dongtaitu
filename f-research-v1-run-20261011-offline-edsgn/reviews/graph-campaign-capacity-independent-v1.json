@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "review_status": "metadata_only_review_not_admission",
+  "registry_path": "protocols/primary-endpoint-registry-root-preparation-v2.json",
+  "registry_sha256": "d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f",
+  "registry_artifact_status": "root_structural_preparation_not_frozen_not_executed",
+  "primary_rows": {
+    "total": 49,
+    "H1": 9,
+    "H2": 16,
+    "H3": 24,
+    "all_unbound": true,
+    "seed_count": 5
+  },
+  "unique_primary_replay_estimate": {
+    "basis": "deduplicated by checkpoint method × dataset/case × training seed and actual producer invocation; excludes all non-primary experiment grids",
+    "H1_full_graph_trace_runs": {
+      "V4_structural_response_cases": 20,
+      "noise_only_V4_and_V9": 10,
+      "total": 30,
+      "keys": [
+        {
+          "method": "V4",
+          "cases": [
+            "identity10",
+            "identity30",
+            "weight10",
+            "weight30",
+            "noise-only"
+          ],
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "method": "V9",
+          "cases": [
+            "noise-only"
+          ],
+          "seeds": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ]
+    },
+    "H2_matched_retention_replay_runs": 20,
+    "H2_replay_basis": "One V4-checkpoint replay per structural case and seed produces informative-teacher plus three counterfactual-arm outputs; the 16 contrast rows share those invocations. Current frozen H2 producer calls engine.predict/replays itself and does not consume frozen graph-diagnostic trace artifacts.",
+    "total_primary_full_graph_or_teacher_replay_invocations": 50,
+    "ordinary_prediction_only_runs_outside_graph_trace_count": {
+      "H1_V9_structural_forecasts": 20,
+      "H2_V3_baseline_forecasts": 20,
+      "total": 40
+    },
+    "reuse": {
+      "H1_V4_structural_prediction": "Included in the 20 H1 V4 graph diagnostic runs that also supply four-case pre/post TV; do not count a separate ordinary V4 forecast pass if producer saves/binds predictions.",
+      "H1_noise_prediction": "Already emitted with V4/V9 noise-only diagnostics.",
+      "H2_contrasts": "Four H2 contrasts share one H2 V4 replay per case/seed; current H2 producer performs a distinct replay, so not deducted against H1 trace runs.",
+      "H1_V9_structure": "No graph-state trace required by structural H1; V9 structural forecasts are ordinary predictions."
+    }
+  },
+  "capacity": {
+    "current_C_free_bytes": 435928350720,
+    "current_C_free_gib": 405.9899139404297,
+    "observed_when_root_preflight_ran_bytes": 430080192512,
+    "observed_current_delta_bytes": 5848158208,
+    "N64_single_collection_estimated_uncompressed_bytes": 13646155776,
+    "N64_single_collection_estimated_gib": 12.708972930908203,
+    "N64_v1_proposed_cap_gib": 14,
+    "N64_v6_example_cap_gib": 16.0,
+    "N64_v7_driver_default_cap_gib": 8.0,
+    "N64_v7_freeze_cap_must_explicitly_override_default": true,
+    "N64_estimated_bytes_for_30_full_trace_outputs": 409384673280,
+    "N64_estimated_gib_for_30_full_trace_outputs": 381.2691879272461,
+    "N64_cap_gib_times_30": 420,
+    "N64_cap_aggregate_exceeds_current_free_bytes": true,
+    "N64_raw_estimate_scenario_remaining_bytes": 26543677440,
+    "N64_raw_estimate_scenario_remaining_gib": 24.720726013183594,
+    "N64_per_replay_minimum_free_with_1_25_safety_bytes": 17057694720,
+    "N256_one_collection_estimated_gib": 44.08937072753906,
+    "N256_proposed_cap_gib": 49,
+    "N256_v6_example_cap_gib": 64.0,
+    "N256_five_seed_raw_scenario_gib": 220.4468536376953,
+    "N256_five_seed_cap_scenario_gib": 245,
+    "estimate_scope": "Per complete test collection; conservative uncompressed bound, not actual on-disk size. Compression is not assumed. 1.25× disk check is per replay, not campaign-wide reservation."
+  },
+  "secondary_scope": {
+    "N256_and_missingness_robustness_separate_from_primary": true,
+    "N256_full_trace_geometry": {
+      "origins": 8056,
+      "trajectories": 4,
+      "nodes": 256,
+      "estimated_gib_per_output": 44.08937072753906
+    },
+    "robustness_trace_count": "not inferable from primary registry; no bound pretest-selected method/case/seed trace queue found. N64 estimate applies only to same shape/history/origin count; real collections differ.",
+    "no_all_required_matrix_claim": true
+  },
+  "existing_artifact_check": {
+    "full_graph_trace_files_found": false,
+    "train_only_graph_trace_statistics_found": false,
+    "search": "runs/**/*.trace-rows.jsonl.gz and graph/train/trace-named files; no matches",
+    "metadata_preflight_only": true
+  },
+  "unknowns": [
+    "P4 checkpoints, policies, output paths/caps and per-job input plans are not bound in the structural registry.",
+    "Actual graph trace compression/file size and H2 output size are unknown.",
+    "The 30-trace count is the registry-defined four structural V4 responses plus noise-only V4/V9 traces, five model seeds.",
+    "N64 extrapolation assumes same per-collection bound across those 30 jobs; it is not an actual disk/runtime forecast.",
+    "C: free space is an instantaneous measurement. 30×14-GiB caps exceed current free space; raw-estimate scenario leaves about 24.7 GiB before H2/ordinary/other outputs and safety margin."
+  ],
+  "evidence_sha256": {
+    "protocols/primary-endpoint-operational-definitions-root-v1.md": "0f1bf0ec944701518882011964bc3aa42d9e136a7632059c7a319a03266c819e",
+    "protocols/primary-endpoint-registry-root-preparation-v2.json": "d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f",
+    "protocols/graph-artifact-capacity-root-preparation-v1.json": "4e3b9f4b2918535f8ff7b990b98599ce6898a5a47fcd49d3bc538f26b6650b7a",
+    "logs/frozen-graph-state-diagnostic-v6-cap-preflight.json": "63278a471ad9584dea8407065e75483f14a643e0d7685f3a5a025614ca47be8d",
+    "edsgn/staging/frozen_graph_state_diagnostic_v7.py": "ffddb21ad40206bdbbfa1d6b94d71ca38e694d6fe861e89648f15c2516feaa45",
+    "edsgn/staging/frozen_h2_matched_retention_v4.py": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "reviews/frozen-graph-state-diagnostic-root-acceptance-v7.json": "82600a2204788d96a838ebff04baaca5542ef8d1752d15d4f1a26feda5e3ea0c",
+    "reviews/frozen-h2-matched-retention-root-acceptance-v4.json": "a4be3d8c358f9fa0a34e0ff2a84eb1912d3b91c809ccbf2baa8ed03f0b3569e1"
+  }
+}

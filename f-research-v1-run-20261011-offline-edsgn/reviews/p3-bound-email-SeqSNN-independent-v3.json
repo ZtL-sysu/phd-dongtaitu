@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "independent_saved_validation_numeric_and_binding_review",
+  "dataset": "email",
+  "method": "SeqSNN",
+  "seed": 0,
+  "provenance": {
+    "test_accessed": false,
+    "test_origins_evaluated": false,
+    "combined_npz_source": true,
+    "test_target_array_may_have_been_materialized_in_memory": true,
+    "test_target_indices_used": false,
+    "checkpoint_deserialized": false,
+    "model_loaded": false
+  },
+  "config_sha256": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+  "phase_receipt_sha256": "15663a5204063b147e1cc26266699351160983f9408108bf5470e3d2dafab5cf",
+  "input_binding_sha256": "d56ff3c508dcd850526bc15a24552a6de77d5abcb2a858163714f57d794c39de",
+  "prediction_archive_sha256": "fbb3cb579ae9498a9f796b71c630ea6beef103825976509b58c3b323639e945a",
+  "checkpoint_sha256": "1ab8a105ff22cafb230b1f6ceedf5b3a71fd3ad0c8db0fd4fa8137e6d6207edb",
+  "dataset_sha256": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+  "manifest_sha256": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c",
+  "code_source_count": 22,
+  "code_sources_all_match_at_launch": true,
+  "phase_input_count": 25,
+  "phase_inputs_all_match": true,
+  "phase_output_count": 7,
+  "phase_output_hashes_all_match": true,
+  "phase": {
+    "status": "completed",
+    "returncode": 0,
+    "wall_seconds": 821.8236478000181,
+    "epochs_executed": 14,
+    "train_windows_per_epoch": 528,
+    "validation_origins": 74,
+    "train_origins_metadata_recomputed": 528,
+    "best_epoch": 4
+  },
+  "origin_target_alignment": {
+    "ordered_origins_exact": true,
+    "origin_first_last": [
+      561,
+      634
+    ],
+    "validation_targets_and_masks_exact_source_match": true,
+    "prediction_shape": [
+      74,
+      7,
+      986,
+      2
+    ]
+  },
+  "raw_unit_pooled_required_horizons": {
+    "n": 437784,
+    "mae": 0.4197174658377965,
+    "rmse": 0.48531561825167313
+  },
+  "per_horizon_feature_metrics": [
+    {
+      "horizon": 1,
+      "feature": 0,
+      "n": 72964,
+      "mae": 0.4581587612628937,
+      "rmse": 0.4581587612628937
+    },
+    {
+      "horizon": 1,
+      "feature": 1,
+      "n": 72964,
+      "mae": 0.8304711580276489,
+      "rmse": 0.8304711580276489
+    },
+    {
+      "horizon": 3,
+      "feature": 0,
+      "n": 72964,
+      "mae": 0.10843846201896667,
+      "rmse": 0.10843846201896667
+    },
+    {
+      "horizon": 3,
+      "feature": 1,
+      "n": 72964,
+      "mae": 0.19655853509902954,
+      "rmse": 0.19655853509902954
+    },
+    {
+      "horizon": 7,
+      "feature": 0,
+      "n": 72964,
+      "mae": 0.32875946164131165,
+      "rmse": 0.32875946164131165
+    },
+    {
+      "horizon": 7,
+      "feature": 1,
+      "n": 72964,
+      "mae": 0.5959184169769287,
+      "rmse": 0.5959184169769287
+    }
+  ],
+  "metric_csv_all_rows_match": true,
+  "summary_best_val_mae": 0.4197174720466137,
+  "summary_stop_loss_reached": false,
+  "train_log_best_val_mae": 0.4197174720466137,
+  "normalization_fit_partition": "train only",
+  "train_only_normalization_confirmed": true,
+  "disclosure": "Single chronological email.npz contains train/validation/test. NPZ targets/masks may be materialized as a whole in memory; only declared validation target rows [562,642) were indexed. No test origins/metrics were evaluated. This single-seed validation result does not establish generalization or a positive H3 epsilon.",
+  "normalization_independent_recomputation": {
+    "source_transform": "log1p(raw_values)",
+    "train_slice": [
+      0,
+      562
+    ],
+    "derived_mean_f64": [
+      0.24957383457877907,
+      0.1823661296486895
+    ],
+    "manifest_mean_f32": [
+      0.24957382678985596,
+      0.18236613273620605
+    ],
+    "derived_population_std_f64": [
+      0.5346317933773256,
+      0.5259515738240002
+    ],
+    "manifest_std_f32": [
+      0.5346317887306213,
+      0.5259515643119812
+    ],
+    "matches_float32_manifest_within_1e-7": true
+  },
+  "evidence_sha256": {
+    "config": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+    "phase_receipt": "15663a5204063b147e1cc26266699351160983f9408108bf5470e3d2dafab5cf",
+    "input_binding": "d56ff3c508dcd850526bc15a24552a6de77d5abcb2a858163714f57d794c39de",
+    "checkpoint_bytes_only": "1ab8a105ff22cafb230b1f6ceedf5b3a71fd3ad0c8db0fd4fa8137e6d6207edb",
+    "validation_predictions": "fbb3cb579ae9498a9f796b71c630ea6beef103825976509b58c3b323639e945a",
+    "training_summary": "7990c692abffe203af23b2fe96aa1ed46211eff4f1de5394fd718d230d4b4695",
+    "training_log": "cb5e1f0cd991022285caeb3392478583f9118b318dba5f79ea7e4313dfb6d6b6",
+    "validation_metrics_csv": "1fb0df59cb6910da10b5625bf50fb26e183a28724472329cf58aa810da523c53",
+    "dataset_npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+    "dataset_manifest": "3a4e112e0b8496bb2f8327572d5c0a1927e4b769ab4a6c61433ce8653ffa879c"
+  },
+  "phase_output_files_sha256": {
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/training_summary.json": "7990c692abffe203af23b2fe96aa1ed46211eff4f1de5394fd718d230d4b4695",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/checkpoint.pt": "1ab8a105ff22cafb230b1f6ceedf5b3a71fd3ad0c8db0fd4fa8137e6d6207edb",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/manifest.json": "3bdce33b3f32213306fd757280bfdbadf902363e228264eeb0113cafd7afb5c5",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/config_resolved.json": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/training_log.csv": "cb5e1f0cd991022285caeb3392478583f9118b318dba5f79ea7e4313dfb6d6b6",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/validation_predictions.npz": "fbb3cb579ae9498a9f796b71c630ea6beef103825976509b58c3b323639e945a",
+    "runs/baselines-bound-v3/email/SeqSNN/seed0/metrics_by_horizon_val.csv": "1fb0df59cb6910da10b5625bf50fb26e183a28724472329cf58aa810da523c53"
+  },
+  "source_files_sha256": {
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "edsgn/src/edsgn/__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "edsgn/src/edsgn/agcrn_checkpoint.py": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+    "edsgn/src/edsgn/baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "edsgn/src/edsgn/calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "edsgn/src/edsgn/candidate_batch.py": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f",
+    "edsgn/src/edsgn/common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "edsgn/src/edsgn/dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "edsgn/src/edsgn/external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "edsgn/src/edsgn/prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "edsgn/src/edsgn/prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "edsgn/src/edsgn/profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "edsgn/src/edsgn/rp_baselines.py": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+    "edsgn/src/edsgn/scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "edsgn/src/edsgn/statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "edsgn/src/edsgn/stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "edsgn/src/edsgn/train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "phase_input_files_sha256": {
+    "configs/baselines-bound-v3/email-SeqSNN-seed0.json": "db462d9c460e2be5f53962a6418c7ba55da917dad1b23c88d6450ef278f5bb59",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "edsgn/src/edsgn/__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "edsgn/src/edsgn/agcrn_checkpoint.py": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+    "edsgn/src/edsgn/baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "edsgn/src/edsgn/calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "edsgn/src/edsgn/candidate_batch.py": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f",
+    "edsgn/src/edsgn/common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "edsgn/src/edsgn/dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "edsgn/src/edsgn/external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "edsgn/src/edsgn/model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "edsgn/src/edsgn/prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "edsgn/src/edsgn/prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "edsgn/src/edsgn/profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "edsgn/src/edsgn/rp_baselines.py": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+    "edsgn/src/edsgn/scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "edsgn/src/edsgn/statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "edsgn/src/edsgn/stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "edsgn/src/edsgn/train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324",
+    "protocols/p3-bound-strong-baseline-queue-v3.json": "d93689af64b9f9744f9efc6f8b7177c97e236dfab904a117f2757a98114a0d9f",
+    "protocols/p3-training-resource-contract-v2.json": "9c4f901e0be5d2e3cfb5eb14eaf5516b844d8ce469f1ea2f13efadb707e05e4e"
+  },
+  "audit_script_sha256": null,
+  "extra_independent_checks": {
+    "binding_status": "verified",
+    "binding_dataset_files": 2,
+    "binding_code_files": 74,
+    "all_21_package_modules_match_phase_inputs": true,
+    "all_22_reported_sources_match_at_launch_binding": true,
+    "all_phase_input_hashes_match": true,
+    "all_phase_output_hashes_match": true,
+    "all_metric_csv_rows_match": true,
+    "targets_and_masks_source_match_val_only": true,
+    "ordered_origin_pairs_match_expected": true,
+    "summary_log_best_match": true,
+    "config_identity_match": true
+  }
+}

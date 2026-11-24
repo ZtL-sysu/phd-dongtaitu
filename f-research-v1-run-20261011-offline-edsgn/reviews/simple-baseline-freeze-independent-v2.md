@@ -1,0 +1,16 @@
+# Independent review: staged simple-baseline freeze v2
+
+**Disposition: conditionally ready for root recheck; not authorized/launched.** This is a staging-code and mocked-test review only. No real data, validation/test predictions, optimizer, or GPU was run. The canonical gate is still pending, and root is integrating package sources; engine-dependent parity evidence below is from the package state before that integration completed and must be rerun afterward.
+
+## Repairs observed
+
+- Fit provenance now records and self-checks the train-source fingerprint digest, canonical dataset path, source hashes and their digest, coefficient and statistics digests, and node-order digest. Frozen evaluation recomputes the current train-only fingerprint and rejects a changed source before loading held-out partitions; it also checks the accepted P3A source/fingerprint bindings and revalidates train statistics and node order.
+- Fit and evaluation require an owned launch-guard callback. The guard checks both shared lock locations, scans owned Python workers (including module and relative-script invocations; inspection errors fail closed), checks aggregate-budget coverage and the 72-hour limit before and during loops, updates a whole-process phase receipt, and releases only its own tokenized locks. Failed receipts include command/exception information. No mocked test claims that a live-process or resource-budget integration was exercised against production processes.
+- The single-NPZ caveat remains explicit: the existing loader materializes all `targets`/`target_mask` arrays in memory. Fitting makes no held-out target accessor calls and uses train origins only; this does not mean held-out bytes were never loaded. Synthetic collection fitting enumerates train files only.
+- P3A ordering is feasible without circularity: train-only coefficients can be fit first; P3A can bind those coefficients and existing baseline validation evidence; frozen evaluation remains blocked until P3A passes. No P3A artifact is accepted by this review.
+
+## Evidence and limits
+
+The exclusive prechange snapshots are `snapshots/simple-baseline-freeze-before-v2.py` (SHA-256 `523592524418E130303806E7BD712D8342201A8126007EEE3CEFF8A609757474`) and `snapshots/test-simple-baseline-freeze-before-v2.py` (SHA-256 `07C5EED1D7DA0D819DE3D30F5F70398771A83E8C8092DCA9BAA9772BADD9B1EB`). The Conda mock log `logs/simple-baseline-freeze-cli-tests-v4.log` reports 16 passed in 2.86 seconds. It includes deterministic persistence/ridge coefficient and prediction parity against `engine.simple_baselines`, train fingerprint tamper rejection, lock/budget/process-barrier and failure-receipt mocks. That parity run preceded root's current package/source integration; rerun the same focused test after root confirms integration is complete, because source hashes are collected dynamically and parity is engine-dependent.
+
+The fit command remains future-use only: package integration and canonical acceptance are not established here. Before launch, root should confirm the final engine/source hashes, acceptance fields (`source_hashes_sha256` and `training_source_fingerprint_sha256`), and that the guard's aggregate-budget/process scan observes the canonical driver and active jobs. No real fit/evaluation or test-set access was attempted.

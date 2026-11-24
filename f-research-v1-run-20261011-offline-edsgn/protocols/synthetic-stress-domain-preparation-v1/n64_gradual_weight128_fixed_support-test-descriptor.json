@@ -1,0 +1,85 @@
+{
+  "decoded_npz_members": [
+    "metadata_json",
+    "node_ids",
+    "input_mask",
+    "metadata_json",
+    "node_ids",
+    "input_mask",
+    "metadata_json",
+    "node_ids",
+    "input_mask",
+    "metadata_json",
+    "node_ids",
+    "input_mask"
+  ],
+  "domain_manifest_path": "protocols\\synthetic-stress-domain-preparation-v1\\n64_gradual_weight128_fixed_support-test-domain.json",
+  "domain_manifest_sha256": "72fe81314bfd766bd79160d4400c29e1e5140d4870b500caf75ee7e2e257b722",
+  "forbidden_decoded_members": [
+    "raw_values",
+    "values",
+    "targets",
+    "target_mask"
+  ],
+  "header_only_npz_members": [
+    "values"
+  ],
+  "normalization_source": "checkpoint.statistics bound from training-only checkpoint",
+  "ordered_collection": [
+    {
+      "archive_sha256": "dfafbea084956570d9e254ecb801847d063164a1b38f409e80d71275feec64ca",
+      "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed200.npz",
+      "shape_tnf": [
+        2048,
+        64,
+        1
+      ],
+      "trajectory_index": 0
+    },
+    {
+      "archive_sha256": "a7a496359b2ab6f536a6a54a02f1e9d7803a2afa10da8c7580caf2ce71138c9b",
+      "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed201.npz",
+      "shape_tnf": [
+        2048,
+        64,
+        1
+      ],
+      "trajectory_index": 1
+    },
+    {
+      "archive_sha256": "fee039232279824b3d55e4f2721c3447c9b8229690df40f0886a301f9bcd429e",
+      "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed202.npz",
+      "shape_tnf": [
+        2048,
+        64,
+        1
+      ],
+      "trajectory_index": 2
+    },
+    {
+      "archive_sha256": "bd42f42bb99715479b24f94d431cd224f44e72eeb556837b1fc34d4174b507b2",
+      "path": "data/processed/synthetic-stress-n64-gradual-weight128-fixed-support/test_seed203.npz",
+      "shape_tnf": [
+        2048,
+        64,
+        1
+      ],
+      "trajectory_index": 3
+    }
+  ],
+  "schema": "edsgn.c06-domain-preflight.v1",
+  "source_sha256": {
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "edsgn/src/edsgn/robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "edsgn/staging/blind_reference_cost_policy_v1.py": "2500f9687aa277ad5e67f3d4d41dde095d2e51761109da2f9dfceb6a68e3218d",
+    "edsgn/staging/c06_domain_manifest_preflight_v4.py": "919aa8b0ba27013e1489d86b7db440859f7c994ae763bbe1edecb132170266e4",
+    "edsgn/staging/frozen_split_history_robustness_v1.py": "9688f2ea4c81485c3363a7ba1c24708dd4588bea0a57a49cada3defc886f41c3",
+    "edsgn/staging/frozen_split_history_robustness_v5.py": "4886f02f4ad51035555154d10da4895dd459b50c2346f306793dd1e3328d8df4",
+    "edsgn/staging/split_history_robustness_v2.py": "2172d687017c09f531c1dc606c5c45c7e84d520a51cc3d5916fa893920e6aa2f",
+    "reviews/blind-reference-cost-policy-root-acceptance-v1.json": "08c1a080c913e9f3489b82a6aeca4f81a196ec804a8fec255e63dfd2e08ac570"
+  },
+  "split": "test",
+  "target_dataset_fingerprint_source": "engine.dataset_fingerprint hashes original archive bytes without decoding members"
+}

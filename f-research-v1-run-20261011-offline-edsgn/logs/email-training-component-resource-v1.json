@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "scope": "resource/functionality diagnostic",
+  "primary_scientific_timing": false,
+  "test_accessed": false,
+  "optimizer_steps": 0,
+  "max_passes": 3,
+  "passes_executed": 3,
+  "dataset": "email",
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+  "dataset_sha256": {
+    "email.npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1"
+  },
+  "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-resource-v4-email-V1-B8-cuda-config.json",
+  "config_sha256": "9a96f6a31c5404fbf518b27d89179d0990c5811bc03e9ad259d23b2f183d46eb",
+  "resolved_config_sha256": "39fbea731093c0ac57a85f23fc1eb33b26f2714266ccdbacf1af4c1d5510ef78",
+  "resolved_config": {
+    "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+    "variant": "V1",
+    "seed": 0,
+    "device": "cuda",
+    "threads": 2,
+    "batch_size": 8,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "epochs": 100,
+    "patience": 10,
+    "model": {
+      "d_total": 64,
+      "k": 8,
+      "candidate_cap": 32,
+      "tau_fast": 1.0,
+      "tau_slow": 8.0,
+      "beta_init": 1.0,
+      "lambda_temporal": 0.01,
+      "training_prior_cache": true,
+      "training_prior_cache_bytes": 1073741824
+    },
+    "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\core\\email\\V4\\seed0",
+    "diagnostic": {
+      "scope": "resource/functionality diagnostic",
+      "optimizer_steps": 0,
+      "test_accessed": false,
+      "max_passes": 3,
+      "training_prior_cache": true
+    }
+  },
+  "source_sha256": {
+    "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "baselines.py": "20fb4064a8ac0e71ad5f562d8e21f9ece20500c91cb31a8a54ca01d934e1e301",
+    "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+    "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "robustness.py": "3c33907e2b55600a0629a392eb0354dea6976cd1dd7eaebf24397a93fd7d8450",
+    "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "diagnostic_script_sha256": "221ce34104118fb6e5e0aca9f268022a0401d6102a43fb700d1c433178409118",
+  "variant": "V1",
+  "batch_size": 8,
+  "device": "cuda",
+  "train_pairs": [
+    [
+      0,
+      27
+    ],
+    [
+      0,
+      102
+    ],
+    [
+      0,
+      177
+    ],
+    [
+      0,
+      252
+    ],
+    [
+      0,
+      328
+    ],
+    [
+      0,
+      403
+    ],
+    [
+      0,
+      478
+    ],
+    [
+      0,
+      554
+    ]
+  ],
+  "train_window_count": 8,
+  "whole_pass_timing_rule": "synchronize immediately before and after complete forward+backward; direct warm pass (pass 2) is the least-instrumented warm measurement",
+  "component_timing_rule": "existing per-step component_host_ms aggregated from traced third pass; CUDA values are host enqueue/submission diagnostics, not device elapsed time; do not sum them as end-to-end GPU time",
+  "trace_overhead_included_in_pass3": true,
+  "profiler_overhead_included_in_pass3": false,
+  "profiler_overhead_warning": null,
+  "passes": [
+    {
+      "pass": 1,
+      "cache_state": "cold_build",
+      "trace_enabled": false,
+      "operator_profiler_enabled": false,
+      "whole_forward_backward_seconds_synchronized": 31.279771000001347,
+      "loss": 6.236179828643799,
+      "finite_predictions": true,
+      "finite_gradients": true,
+      "component_host_ms_sum": {},
+      "cache_timers_seconds": {
+        "prior_cache_key_seconds": 0.010165500018047169,
+        "prior_cache_build_seconds": 10.06368890000158,
+        "prior_cache_apply_seconds": 0.5233717996452469
+      },
+      "cache_counters": {
+        "prior_cache_hits": 0,
+        "prior_cache_misses": 8,
+        "prior_cache_oversize": 0,
+        "prior_cache_bypasses": 0,
+        "prior_cache_evictions": 0,
+        "prior_cache_build_events": 129057,
+        "prior_cache_build_pairs": 258114,
+        "prior_events_cache_replayed": 124198,
+        "prior_pairs_cache_replayed": 248396,
+        "prior_events_processed": 129057,
+        "prior_pairs_generated": 258114,
+        "prior_events_applied": 129057,
+        "prior_pairs_applied": 258114,
+        "prior_cache_bytes_used": 68958954,
+        "prior_cache_estimated_bytes": 10216
+      }
+    },
+    {
+      "pass": 2,
+      "cache_state": "warm_replay",
+      "trace_enabled": false,
+      "operator_profiler_enabled": false,
+      "whole_forward_backward_seconds_synchronized": 21.868252399988705,
+      "loss": 6.236179828643799,
+      "finite_predictions": true,
+      "finite_gradients": true,
+      "component_host_ms_sum": {},
+      "cache_timers_seconds": {
+        "prior_cache_key_seconds": 0.026226899994071573,
+        "prior_cache_build_seconds": 0.0,
+        "prior_cache_apply_seconds": 0.7486744998313952
+      },
+      "cache_counters": {
+        "prior_cache_hits": 8,
+        "prior_cache_misses": 0,
+        "prior_cache_oversize": 0,
+        "prior_cache_bypasses": 0,
+        "prior_cache_evictions": 0,
+        "prior_cache_build_events": 0,
+        "prior_cache_build_pairs": 0,
+        "prior_events_cache_replayed": 129057,
+        "prior_pairs_cache_replayed": 258114,
+        "prior_events_processed": 0,
+        "prior_pairs_generated": 0,
+        "prior_events_applied": 129057,
+        "prior_pairs_applied": 258114,
+        "prior_cache_bytes_used": 68958954,
+        "prior_cache_estimated_bytes": 10216
+      }
+    },
+    {
+      "pass": 3,
+      "cache_state": "warm_replay",
+      "trace_enabled": true,
+      "operator_profiler_enabled": false,
+      "whole_forward_backward_seconds_synchronized": 20.341386699990835,
+      "loss": 6.236179828643799,
+      "finite_predictions": true,
+      "finite_gradients": true,
+      "component_host_ms_sum": {
+        "monitor_ms": 70.83830013289116,
+        "policy_ms": 6.990299967583269,
+        "clock_decay_ms": 54.36510013532825,
+        "candidate_ms": 645.8472001249902,
+        "graph_ms": 16471.059400006197,
+        "encode_aggregate_state_ms": 117.11670004297048,
+        "readout_ms": 20.39300001342781
+      },
+      "cache_timers_seconds": {
+        "prior_cache_key_seconds": 0.046148399997036904,
+        "prior_cache_build_seconds": 0.0,
+        "prior_cache_apply_seconds": 0.5969406000804156
+      },
+      "cache_counters": {
+        "prior_cache_hits": 8,
+        "prior_cache_misses": 0,
+        "prior_cache_oversize": 0,
+        "prior_cache_bypasses": 0,
+        "prior_cache_evictions": 0,
+        "prior_cache_build_events": 0,
+        "prior_cache_build_pairs": 0,
+        "prior_events_cache_replayed": 129057,
+        "prior_pairs_cache_replayed": 258114,
+        "prior_events_processed": 0,
+        "prior_pairs_generated": 0,
+        "prior_events_applied": 129057,
+        "prior_pairs_applied": 258114,
+        "prior_cache_bytes_used": 68958954,
+        "prior_cache_estimated_bytes": 10216
+      }
+    }
+  ],
+  "top_operators_pass3": [],
+  "weights_before": "f2139067c10aca261cc97731f547dbe5a9e3d3cf92cf3e4aa736a9bef92a353f",
+  "weights_after": "f2139067c10aca261cc97731f547dbe5a9e3d3cf92cf3e4aa736a9bef92a353f",
+  "peak_cuda_allocated_bytes": 1970376192,
+  "wall_seconds": 75.07579060000717,
+  "process_wall_seconds": 75.07579060000717,
+  "wall_seconds_basis": "process wall from config/data/model preparation through three diagnostic passes and source/hash collection; no optimizer step",
+  "output_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\email-training-component-resource-v1.json",
+  "log_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\email-training-component-resource-v1.log"
+}

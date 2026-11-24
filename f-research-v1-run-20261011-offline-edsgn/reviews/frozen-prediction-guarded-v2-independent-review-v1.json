@@ -1,0 +1,49 @@
+{
+  "schema": "frozen-prediction-guarded-v2-independent-review-v1",
+  "review_role": "independent-review",
+  "verdict": "revise-before-authorized-use",
+  "scope": "registry-structure-and-CPU-engineering-review",
+  "production_prediction_run": false,
+  "scientific_inference": false,
+  "findings": [
+    {
+      "severity": "blocker",
+      "id": "prediction-archive-not-integrity-bound"
+    },
+    {
+      "severity": "blocker",
+      "id": "failed-receipt-underreports-test-access"
+    },
+    {
+      "severity": "blocker",
+      "id": "root-acceptance-non-scientific-flags-not-enforced"
+    },
+    {
+      "severity": "low",
+      "id": "final-receipt-budget-boundary"
+    }
+  ],
+  "registry": {
+    "primary_count": 49,
+    "unique_ids": 49,
+    "H1": 9,
+    "H2": 16,
+    "H3": 24,
+    "status": "structural-preparation-pending",
+    "test_access_authorized": false,
+    "secondary_work_waived": false
+  },
+  "tests": {
+    "writer_suite": "10 passed",
+    "independent_suite": "4 passed",
+    "evidence_sha256": {
+      "protocols/primary-endpoint-operational-definitions-root-v1.md": "0f1bf0ec944701518882011964bc3aa42d9e136a7632059c7a319a03266c819e",
+      "protocols/primary-endpoint-registry-root-preparation-v2.json": "d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f",
+      "edsgn/staging/frozen_prediction_guarded_v2.py": "fe0049f1eb5231b40da26187b4ab0a66d346914cffca86a14587ea4fca50f9a8",
+      "edsgn/tests/test_frozen_prediction_guarded_v2.py": "15bcf59697f6f31e7422ce0a546284ecf1a1759b49285d1c47afb41847ff4438",
+      "edsgn/tests/test_frozen_prediction_guarded_v2_independent_review.py": "da7b23028c3a0548226d80dce84e1294ac34639ad3035028127fee37fb12a58a",
+      "logs/frozen-prediction-guarded-v2-writer-tests.log": "7b731abd1fd938a77dd4fe7e2a0b130e72ccb02a6f76910a02fb9791acc5ecb3",
+      "logs/frozen-prediction-guarded-v2-independent-review-tests.log": "60d07cfae59c1a8463c244c08bfaceef8ddeab7321a4ea872644158cbfb18a3b"
+    }
+  }
+}

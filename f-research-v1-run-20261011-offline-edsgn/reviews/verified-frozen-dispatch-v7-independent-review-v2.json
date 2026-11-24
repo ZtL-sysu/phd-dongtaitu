@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "review_type": "independent_narrow_delta_review",
+  "verdict": "pass_delta",
+  "scope": "engineering_dispatch_preflight_only",
+  "actual_dispatch_performed": false,
+  "actual_endpoint_plan_binding_available": false,
+  "dispatcher_sha256": "1b95e9e9af3c6a28e009937148fd688ec361344c7865a7d857f7a3efec845f62",
+  "test_sha256": "850239eb5b264b9ecc6ad825ee1b278a94da684bedf9e09d6a6eadbe296fb68f",
+  "profile_driver_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+  "prediction_driver_sha256": "4798a08e59349adf6499d2352219b7721251c8a2beeb6b4803f2764116e216b4",
+  "cpu_tests": {
+    "command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest edsgn/tests/test_verified_frozen_dispatch_v7.py -q",
+    "passed": 9,
+    "failed": 0
+  },
+  "delta_checks": {
+    "profile_device_flag_required_before_child": true,
+    "profile_prediction_cli_accepts_only_cpu_or_cuda": true,
+    "cuda_and_cpu_match_declared_device": true,
+    "cuda_0_cuda_1_rejected_at_preflight": true,
+    "mock_fixture_does_not_claim_actual_child_cli_execution": true
+  },
+  "source_lines": {
+    "device_required": "edsgn/scripts/verified_frozen_dispatch_v7.py:20",
+    "device_cli_restriction": "edsgn/scripts/verified_frozen_dispatch_v7.py:97-98",
+    "plan_device_equivalence": "edsgn/scripts/verified_frozen_dispatch_v7.py:352-358",
+    "profile_cli": "edsgn/staging/frozen_profile_guarded_v5.py:424-427",
+    "prediction_cli": "edsgn/staging/frozen_prediction_guarded_v5.py:408-412"
+  },
+  "remaining_limit": "No generated P3A endpoint plan, accepted pretest binding, or dispatch job is available. The inspected root registry is structural preparation only. No actual job path association or experimental output is accepted."
+}

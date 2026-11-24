@@ -1,0 +1,1456 @@
+{
+  "title": "Robustness time-block metadata-only coverage preflight",
+  "recipe_seed": 2027,
+  "rates": [
+    0.0,
+    0.1,
+    0.3,
+    0.5
+  ],
+  "method": {
+    "stable_seed": "SHA256(colon-joined integer args), first 8 digest bytes little-endian",
+    "rng": "numpy.default_rng(_stable_seed(base_seed,0))",
+    "base_seed": "_stable_seed(recipe_seed, trajectory_index, metadata.seed)",
+    "time_block": "block_len=max(1,round(T*rate)); start=rng.integers(0,T-block_len+1); block is [start,start+block_len)",
+    "rate_zero": "visibility remains all true; no block draw",
+    "origins": "PreparedData.origins(split): first=max(L-1,split_start-1), last=split_stop-H-1 inclusive",
+    "history": "each origin input bins [origin-L+1,origin] inclusive; target arrays are not read"
+  },
+  "coverage_definitions": {
+    "requested_fulltrajectory_rate": "requested rate used to round block length; realized rate is rounded block_length/T",
+    "union_history_coverage_fraction": "fraction of unique bins in union of declared test-history windows overlapped by block",
+    "replayed_history_coverage_fraction": "blocked time-bin positions counted across every declared origin history window divided by origin_count*L; one bin may count repeatedly",
+    "zero_effect": "block does not intersect any declared test input history window"
+  },
+  "data_access": "Only NPZ metadata_json payload and NPY headers were read; no values/targets/input_mask/events payload arrays were accessed. No model/test evaluation was run.",
+  "results": [
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 803,
+      "test_split": [
+        642,
+        803
+      ],
+      "origin_count": 155,
+      "origin_first": 641,
+      "origin_last": 795,
+      "history_length": 28,
+      "history_union": [
+        614,
+        796
+      ],
+      "history_union_bins": 182,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 4340,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "shape": [
+        803,
+        986,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 80,
+      "block_start_inclusive": 284,
+      "block_end_exclusive": 364,
+      "realized_full_trajectory_rate": 0.099626400996264,
+      "trajectory_bins": 803,
+      "test_split": [
+        642,
+        803
+      ],
+      "origin_count": 155,
+      "origin_first": 641,
+      "origin_last": 795,
+      "history_length": 28,
+      "history_union": [
+        614,
+        796
+      ],
+      "history_union_bins": 182,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 4340,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "shape": [
+        803,
+        986,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 241,
+      "block_start_inclusive": 221,
+      "block_end_exclusive": 462,
+      "realized_full_trajectory_rate": 0.3001245330012453,
+      "trajectory_bins": 803,
+      "test_split": [
+        642,
+        803
+      ],
+      "origin_count": 155,
+      "origin_first": 641,
+      "origin_last": 795,
+      "history_length": 28,
+      "history_union": [
+        614,
+        796
+      ],
+      "history_union_bins": 182,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 4340,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "shape": [
+        803,
+        986,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 402,
+      "block_start_inclusive": 157,
+      "block_end_exclusive": 559,
+      "realized_full_trajectory_rate": 0.5006226650062267,
+      "trajectory_bins": 803,
+      "test_split": [
+        642,
+        803
+      ],
+      "origin_count": 155,
+      "origin_first": 641,
+      "origin_last": 795,
+      "history_length": 28,
+      "history_union": [
+        614,
+        796
+      ],
+      "history_union_bins": 182,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 4340,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+      "shape": [
+        803,
+        986,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 714,
+      "test_split": [
+        571,
+        714
+      ],
+      "origin_count": 120,
+      "origin_first": 570,
+      "origin_last": 689,
+      "history_length": 24,
+      "history_union": [
+        547,
+        690
+      ],
+      "history_union_bins": 143,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2880,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "mooc",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "shape": [
+        714,
+        78,
+        1
+      ]
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 71,
+      "block_start_inclusive": 252,
+      "block_end_exclusive": 323,
+      "realized_full_trajectory_rate": 0.09943977591036414,
+      "trajectory_bins": 714,
+      "test_split": [
+        571,
+        714
+      ],
+      "origin_count": 120,
+      "origin_first": 570,
+      "origin_last": 689,
+      "history_length": 24,
+      "history_union": [
+        547,
+        690
+      ],
+      "history_union_bins": 143,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2880,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "mooc",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "shape": [
+        714,
+        78,
+        1
+      ]
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 214,
+      "block_start_inclusive": 196,
+      "block_end_exclusive": 410,
+      "realized_full_trajectory_rate": 0.29971988795518206,
+      "trajectory_bins": 714,
+      "test_split": [
+        571,
+        714
+      ],
+      "origin_count": 120,
+      "origin_first": 570,
+      "origin_last": 689,
+      "history_length": 24,
+      "history_union": [
+        547,
+        690
+      ],
+      "history_union_bins": 143,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2880,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "mooc",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "shape": [
+        714,
+        78,
+        1
+      ]
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 357,
+      "block_start_inclusive": 140,
+      "block_end_exclusive": 497,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 714,
+      "test_split": [
+        571,
+        714
+      ],
+      "origin_count": 120,
+      "origin_first": 570,
+      "origin_last": 689,
+      "history_length": 24,
+      "history_union": [
+        547,
+        690
+      ],
+      "history_union_bins": 143,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2880,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "mooc",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\mooc\\mooc.npz",
+      "shape": [
+        714,
+        78,
+        1
+      ]
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 526,
+      "test_split": [
+        420,
+        526
+      ],
+      "origin_count": 100,
+      "origin_first": 419,
+      "origin_last": 518,
+      "history_length": 28,
+      "history_union": [
+        392,
+        519
+      ],
+      "history_union_bins": 127,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2800,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email-episode-v1",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+      "shape": [
+        526,
+        893,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 53,
+      "block_start_inclusive": 186,
+      "block_end_exclusive": 239,
+      "realized_full_trajectory_rate": 0.10076045627376426,
+      "trajectory_bins": 526,
+      "test_split": [
+        420,
+        526
+      ],
+      "origin_count": 100,
+      "origin_first": 419,
+      "origin_last": 518,
+      "history_length": 28,
+      "history_union": [
+        392,
+        519
+      ],
+      "history_union_bins": 127,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2800,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email-episode-v1",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+      "shape": [
+        526,
+        893,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 158,
+      "block_start_inclusive": 144,
+      "block_end_exclusive": 302,
+      "realized_full_trajectory_rate": 0.30038022813688214,
+      "trajectory_bins": 526,
+      "test_split": [
+        420,
+        526
+      ],
+      "origin_count": 100,
+      "origin_first": 419,
+      "origin_last": 518,
+      "history_length": 28,
+      "history_union": [
+        392,
+        519
+      ],
+      "history_union_bins": 127,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2800,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email-episode-v1",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+      "shape": [
+        526,
+        893,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 263,
+      "block_start_inclusive": 103,
+      "block_end_exclusive": 366,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 526,
+      "test_split": [
+        420,
+        526
+      ],
+      "origin_count": 100,
+      "origin_first": 419,
+      "origin_last": 518,
+      "history_length": 28,
+      "history_union": [
+        392,
+        519
+      ],
+      "history_union_bins": 127,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 2800,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "email-episode-v1",
+      "kind": "chronological",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 0,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+      "shape": [
+        526,
+        893,
+        2
+      ]
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 100,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 1806,
+      "block_end_exclusive": 2011,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 100,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 1405,
+      "block_end_exclusive": 2019,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17177,
+      "replayed_history_coverage_fraction": 0.30459994325436235,
+      "origins_with_any_blocked_history": 636,
+      "origin_fraction_affected": 0.3157894736842105,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 100,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 1003,
+      "block_end_exclusive": 2027,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28581,
+      "replayed_history_coverage_fraction": 0.5068272095332671,
+      "origins_with_any_blocked_history": 1038,
+      "origin_fraction_affected": 0.5153922542204568,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 100,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed100.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 101,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 1704,
+      "block_end_exclusive": 1909,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 101,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 1326,
+      "block_end_exclusive": 1940,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17192,
+      "replayed_history_coverage_fraction": 0.30486593843098314,
+      "origins_with_any_blocked_history": 641,
+      "origin_fraction_affected": 0.3182720953326713,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 101,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 947,
+      "block_end_exclusive": 1971,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28672,
+      "replayed_history_coverage_fraction": 0.5084409136047666,
+      "origins_with_any_blocked_history": 1051,
+      "origin_fraction_affected": 0.5218470705064548,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_validation",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 101,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\validation_seed101.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "validation"
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 200,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed200.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 1011,
+      "block_end_exclusive": 1216,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 200,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed200.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 786,
+      "block_end_exclusive": 1400,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17192,
+      "replayed_history_coverage_fraction": 0.30486593843098314,
+      "origins_with_any_blocked_history": 641,
+      "origin_fraction_affected": 0.3182720953326713,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 200,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed200.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 562,
+      "block_end_exclusive": 1586,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28672,
+      "replayed_history_coverage_fraction": 0.5084409136047666,
+      "origins_with_any_blocked_history": 1051,
+      "origin_fraction_affected": 0.5218470705064548,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 0,
+      "trajectory_seed_metadata": 200,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed200.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 201,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed201.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 827,
+      "block_end_exclusive": 1032,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 201,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed201.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 643,
+      "block_end_exclusive": 1257,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17192,
+      "replayed_history_coverage_fraction": 0.30486593843098314,
+      "origins_with_any_blocked_history": 641,
+      "origin_fraction_affected": 0.3182720953326713,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 201,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed201.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 459,
+      "block_end_exclusive": 1483,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28672,
+      "replayed_history_coverage_fraction": 0.5084409136047666,
+      "origins_with_any_blocked_history": 1051,
+      "origin_fraction_affected": 0.5218470705064548,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 1,
+      "trajectory_seed_metadata": 201,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed201.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 2,
+      "trajectory_seed_metadata": 202,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed202.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 1726,
+      "block_end_exclusive": 1931,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 2,
+      "trajectory_seed_metadata": 202,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed202.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 1343,
+      "block_end_exclusive": 1957,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17192,
+      "replayed_history_coverage_fraction": 0.30486593843098314,
+      "origins_with_any_blocked_history": 641,
+      "origin_fraction_affected": 0.3182720953326713,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 2,
+      "trajectory_seed_metadata": 202,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed202.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 959,
+      "block_end_exclusive": 1983,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28672,
+      "replayed_history_coverage_fraction": 0.5084409136047666,
+      "origins_with_any_blocked_history": 1051,
+      "origin_fraction_affected": 0.5218470705064548,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 2,
+      "trajectory_seed_metadata": 202,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed202.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.0,
+      "block_length_bins": 0,
+      "block_start_inclusive": null,
+      "block_end_exclusive": null,
+      "realized_full_trajectory_rate": 0.0,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 0,
+      "union_history_coverage_fraction": 0.0,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 0,
+      "replayed_history_coverage_fraction": 0.0,
+      "origins_with_any_blocked_history": 0,
+      "origin_fraction_affected": 0.0,
+      "zero_effect_on_declared_histories": true,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 3,
+      "trajectory_seed_metadata": 203,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed203.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.1,
+      "block_length_bins": 205,
+      "block_start_inclusive": 487,
+      "block_end_exclusive": 692,
+      "realized_full_trajectory_rate": 0.10009765625,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 205,
+      "union_history_coverage_fraction": 0.10044096031357178,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 5740,
+      "replayed_history_coverage_fraction": 0.10178748758689175,
+      "origins_with_any_blocked_history": 232,
+      "origin_fraction_affected": 0.11519364448857994,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 3,
+      "trajectory_seed_metadata": 203,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed203.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.3,
+      "block_length_bins": 614,
+      "block_start_inclusive": 379,
+      "block_end_exclusive": 993,
+      "realized_full_trajectory_rate": 0.2998046875,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 614,
+      "union_history_coverage_fraction": 0.3008329250367467,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 17192,
+      "replayed_history_coverage_fraction": 0.30486593843098314,
+      "origins_with_any_blocked_history": 641,
+      "origin_fraction_affected": 0.3182720953326713,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 3,
+      "trajectory_seed_metadata": 203,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed203.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    },
+    {
+      "requested_rate": 0.5,
+      "block_length_bins": 1024,
+      "block_start_inclusive": 270,
+      "block_end_exclusive": 1294,
+      "realized_full_trajectory_rate": 0.5,
+      "trajectory_bins": 2048,
+      "test_split": [
+        0,
+        2048
+      ],
+      "origin_count": 2014,
+      "origin_first": 27,
+      "origin_last": 2040,
+      "history_length": 28,
+      "history_union": [
+        0,
+        2041
+      ],
+      "history_union_bins": 2041,
+      "masked_history_union_bins": 1024,
+      "union_history_coverage_fraction": 0.5017148456638902,
+      "window_history_slots": 56392,
+      "masked_window_history_slots": 28672,
+      "replayed_history_coverage_fraction": 0.5084409136047666,
+      "origins_with_any_blocked_history": 1051,
+      "origin_fraction_affected": 0.5218470705064548,
+      "zero_effect_on_declared_histories": false,
+      "dataset": "synthetic-n64-identity-change0.3-miss0",
+      "kind": "independent_test",
+      "trajectory_index": 3,
+      "trajectory_seed_metadata": 203,
+      "source_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0\\test_seed203.npz",
+      "shape": [
+        2048,
+        64,
+        1
+      ],
+      "partition": "test"
+    }
+  ]
+}

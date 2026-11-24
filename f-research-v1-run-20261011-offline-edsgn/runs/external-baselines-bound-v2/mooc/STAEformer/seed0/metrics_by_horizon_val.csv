@@ -1,0 +1,4 @@
+method,seed,split,horizon,feature,stratum,mae,rmse,n_scored,n_windows
+STAEformer,0,val,1,0,all,3.058612108230591,6.336353302001953,3822,49
+STAEformer,0,val,6,0,all,3.385923147201538,7.052574634552002,3822,49
+STAEformer,0,val,24,0,all,4.429244518280029,8.657429695129395,3822,49

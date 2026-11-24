@@ -1,0 +1,14 @@
+{
+  "coefficient_exact": true,
+  "dataset": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+  "legacy_output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\baselines\\email-episode\\simple",
+  "manifest_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\simple-fit-verify-v4-email-episode-result.json\\simple-baseline-train-fit-verification.json",
+  "manifest_sha256": "33e881dde7a2d9695cafff54e571e6ed740386e80dd103215dd15557071be76a",
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "root_acceptance": "pending",
+  "schema_version": 1,
+  "scope": "train_only_simple_baseline_fit_verification",
+  "status": "completed",
+  "test_origins_evaluated": false
+}

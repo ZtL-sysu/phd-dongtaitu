@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "edsgn-offline"
+version = "0.1.0"
+description = "Causal offline event-driven spiking dynamic graph forecasting"
+requires-python = ">=3.11"
+dependencies = ["numpy", "torch", "scipy", "pandas", "pyyaml", "matplotlib", "psutil"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["pending_training: micro-overfit check executed after baseline-first setup"]

@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "scope": "root-authorized P3 primary strong-baseline seeds1-4 serial continuation",
+  "status": "failed",
+  "pid": 3960,
+  "queue_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\protocols\\p3-strong-replication-queue-v1.json",
+  "queue_sha256": "97d4bd4350b52d8f76595e806f65d656d15ff3fd18825f0da896fc4cbb9b10d9",
+  "root_acceptance_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\reviews\\p3-strong-replication-root-acceptance-v1.json",
+  "root_acceptance_sha256": "fcd742727244ffea151e98777468cd797d7ab5556bedb38cd53da30e3b2a4d71",
+  "root_pin_count": 112,
+  "seed0_numeric_acceptance_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\reviews\\p3-strong-seed0-numeric-root-acceptance-v1.json",
+  "seed0_coordinator_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-serial-continuation-v1.json",
+  "gru_coordinator_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\logs\\p3-gru-serial-continuation-v1.json",
+  "pinned_predecessor_coordinator_sources_sha256": {
+    "edsgn/scripts/continue_p3_baselines_serial_v1.py": "fabfa9b6c84cfb5625522fbed9ed5de5cdb632bfd9aa785fbecd055b71385c26",
+    "edsgn/scripts/continue_p3_gru_replication_serial_v1.py": "4bb2aa86c22a4e83de46933fb9f3005b14b9a3d0024a5c386b40e0b3fe921e40"
+  },
+  "source_sha256": "903b5015ad4ebd394e126493ea49f7b9b26712c62e7e08d73523ec18314488ab",
+  "bound_controller_sha256": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+  "job_count": 24,
+  "test_access": false,
+  "training_started": false,
+  "clock": "wait time is not charged; only the unchanged bound controller writes phase receipts against the shared cumulative 72-hour ledger",
+  "required_seed0_phase_receipts": 40,
+  "required_gru_phase_receipts": 16,
+  "seed0_numeric_acceptance_schema": "root six-row acceptance; each row pins independent review, original phase receipt, at-launch binding, config, and typed independent_review_verdict/scope/identity attestation. JSON review schemas are strict saved-validation or standardized verifier formats; Markdown must be nonempty and is accepted only under the typed root row attestation.",
+  "started_utc": "2026-10-11T11:50:41.377984+00:00",
+  "last_updated_utc": "2026-10-11T14:15:49.525645+00:00",
+  "predecessor_status": {
+    "seed0": "running_baseline_queue",
+    "gru": "awaiting_seed0_coordinator"
+  },
+  "error": "RuntimeError: a predecessor coordinator failed; preserve outputs and do not launch"
+}

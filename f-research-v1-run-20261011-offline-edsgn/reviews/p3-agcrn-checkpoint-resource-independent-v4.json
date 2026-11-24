@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "scope": "independent resource receipt audit; no launches",
+  "results": [
+    {
+      "dataset": "email",
+      "ledger_entry": "external-resource-email-AGCRN-abe684ce91254846b2319f0948f8fd33",
+      "child": "logs/external-resource-v1/email-AGCRN-seed0-checkpoint-B4-v4.json",
+      "child_peak_cuda_allocated_bytes": 485430784,
+      "actual_windows": 4,
+      "inactive_gradients": [],
+      "test_accessed": false,
+      "optimizer_steps": 0,
+      "parent_receipt": "logs/external-resource-v1/queue-attempts/email-AGCRN-B4.json",
+      "source_fence_match": true,
+      "parent_wall_seconds": 10.496254300000146,
+      "finite_predictions": true,
+      "config_sha256": "5751b9e0700358c07b9aacf242281dfd9a57de3749865fff2afbad60e77d84d1",
+      "finite_gradients": true
+    },
+    {
+      "dataset": "email-episode",
+      "ledger_entry": "external-resource-email-episode-AGCRN-840a058dde2e43bf92377feb89fb6f02",
+      "child": "logs/external-resource-v1/email-episode-AGCRN-seed0-checkpoint-B4-v4.json",
+      "child_peak_cuda_allocated_bytes": 438849024,
+      "actual_windows": 4,
+      "inactive_gradients": [],
+      "test_accessed": false,
+      "optimizer_steps": 0,
+      "parent_receipt": "logs/external-resource-v1/queue-attempts/email-episode-AGCRN-B4.json",
+      "source_fence_match": true,
+      "parent_wall_seconds": 10.453446500003338,
+      "finite_predictions": true,
+      "config_sha256": "f14f6b686209a8a240129fde4b239eb9dcc2a1e8277ff817e29f55a4eac59709",
+      "finite_gradients": true
+    }
+  ],
+  "ledger_dedup": "one ledger entry each; covers parent and child; duration=max(parent,child)",
+  "other_preC05_resource_passes": 14,
+  "applicability": "unchanged methods/default-off path only; probe evidence, not training",
+  "queue_manifest": "protocols/p3-external-bound-queue-v2.json",
+  "prepared_config_count": 16,
+  "queue_status": "prepared_not_accepted_not_launched",
+  "resource_contract_pending": "protocols/p3-external-training-resource-contract-v3.json",
+  "package_modified": false,
+  "training_or_validation_or_test_run": false
+}

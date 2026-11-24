@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "review_type": "independent_source_and_mock_test_review",
+  "verdict": "pass_with_conditional_cli_blocker",
+  "scope": "engineering_dispatch_preflight_only",
+  "actual_dispatch_performed": false,
+  "actual_endpoint_plan_binding_available": false,
+  "actual_experiment_authorized_or_completed": false,
+  "sources": {
+    "dispatcher_path": "edsgn/scripts/verified_frozen_dispatch_v7.py",
+    "dispatcher_sha256": "8cc2fbcd760aad7bc9354c6462dda3424963e2a87b339a925c0a6f9f6210a36a",
+    "test_path": "edsgn/tests/test_verified_frozen_dispatch_v7.py",
+    "test_sha256": "164cd7dbb3cd3cb9dde66339d7e22fe4efa56e44c2475386996cfd9f6b5f901d",
+    "profile_driver_path": "edsgn/staging/frozen_profile_guarded_v5.py",
+    "profile_driver_sha256": "4e873778a0ae8164bbc2e45cab0b42c753ed0e1dc20f7c1f68e54c931a138b6c",
+    "h2_driver_path": "edsgn/staging/frozen_h2_matched_retention_v4.py",
+    "h2_driver_sha256": "6c4ff121436990b8aaf97993525ed9d995f2ded40e252022c78518a49643c578",
+    "typed_plan_validator_v6_path": "edsgn/staging/typed_endpoint_plan_validator_v6.py",
+    "typed_plan_validator_v6_sha256": "4a2ae2ffd66d32449e6a90b881967e9701fc3d000c1cfb038d6ac3390f8ba110",
+    "registry_preparation_path": "protocols/primary-endpoint-registry-root-preparation-v2.json",
+    "registry_preparation_sha256": "d2686c9bf4f1f0574a60774284a77e033b9e25d973f691c2b3e822381fdb476f"
+  },
+  "tests": {
+    "command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest edsgn/tests/test_verified_frozen_dispatch_v7.py -q",
+    "passed": 6,
+    "failed": 0,
+    "test_hash_verified": true
+  },
+  "association_checks": {
+    "selected_driver_path_sha_bound_to_plan_side_and_producer_sources_and_job_sources": true,
+    "checkpoint_policy_freeze_data_config_output_phase_alias_checked_against_one_bound_side_seed": true,
+    "h2_policy_config_not_required_and_default_full_policy_checked_against_bound_policy_doc": true,
+    "reporting_switch_authority_and_source_hashed_in_snapshot_not_passed_as_cli": true,
+    "implicit_sibling_test_freeze_checked": true,
+    "child_output_schema_matches_driver_artifact_names_by_source_inspection": true
+  },
+  "blocker": {
+    "condition": "H3 profile job argv uses --device cuda:0",
+    "evidence": "Dispatcher normalizes cuda:0 to expected profile_device cuda, and a mock-child test reports accepted-output-pending-scientific-review; actual frozen_profile_guarded_v5 argparse only accepts cpu or cuda. Such a job passes preflight but its real child exits on argument parsing. Use --device cuda in the actual job or change the interface in a later accepted source successor.",
+    "dispatcher_lines": "verified_frozen_dispatch_v7.py:352-356",
+    "driver_lines": "frozen_profile_guarded_v5.py:424-427",
+    "test": "test_verified_frozen_dispatch_v7.py::test_v7_h3_cuda_zero_matches_predeclared_cuda"
+  },
+  "metadata_limit": "No concrete generated endpoint plan, pretest execution binding, or dispatch job exists in the inspected run tree. The available root registry is structural preparation only (artifact_status root_structural_preparation_not_frozen_not_executed). The six CPU tests use synthetic metadata fixtures. Therefore source-level association logic is reviewed, but no actual endpoint side/seed artifact paths can yet be independently matched.",
+  "no_data_or_model_arrays_read": true,
+  "no_gpu_training_or_dispatch": true
+}

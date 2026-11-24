@@ -1,0 +1,22 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "variant": "AGCRN",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 64,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-bound-v2\\synthetic\\AGCRN\\seed0",
+  "baseline": {
+    "training_checkpoint_cells": true,
+    "hidden_dim": 64,
+    "num_layers": 2,
+    "embed_dim": 10,
+    "cheb_k": 2
+  }
+}

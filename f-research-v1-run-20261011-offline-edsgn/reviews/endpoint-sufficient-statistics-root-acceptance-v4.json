@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:53:27.868722+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/endpoint_sufficient_statistics_v4.py": "afbbd2f459cc680f2689334fe69decc63f87d37308cbbe6956c62c3f994a2519",
+    "edsgn/tests/test_endpoint_sufficient_statistics_v4.py": "e9419dd7d910f6b4bb836f152c57c5b30384b1d8c6af9926f024ba7207c46d0e",
+    "reviews/endpoint-sufficient-statistics-v4-writer-evidence.md": "d1d3d3504e9a321e36777b1da7c080cd49ae53fdbb0fd6a79795f7afb6c4974a",
+    "reviews/endpoint-sufficient-statistics-v3-independent-review-v1.md": "00636aea19d69f464eb845971d3cc6bb47558a373b5f10bf88b770b1c16255d7",
+    "reviews/endpoint-sufficient-statistics-v3-independent-review-v1.json": "bd5b548ef935d740ac46c590068bb5ebe2b9ce5b3004995869723071e133b250",
+    "logs/typed-metadata-converter-root-cpu-v1.log": "b866a8c1ff9c00611cfa9d118a80b0cc4d66af17ed43b5b2802b46488df63bbe"
+  },
+  "actual_endpoint_conversion_run": false
+}

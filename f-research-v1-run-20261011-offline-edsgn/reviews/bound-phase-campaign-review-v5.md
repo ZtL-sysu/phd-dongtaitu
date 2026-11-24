@@ -1,0 +1,17 @@
+# Bounded execution audit v1: campaign stage gate and frozen synthetic stress
+
+## Controller change
+
+`bound_phase_campaign.py` previously treated every non-`formal` training scope as P3 work. That allowed proposed variants to enter the baseline phase, and it allowed a proposed pilot scope to pass the gate while P3 was still running. The controller now reads the variant from the uniquely supplied `--config`: while P3 is running it permits only V0/V1 and declared baseline families; proposed V2–V9 require P3A passed, P4 running, and scope `pilot` or `formal`. Missing/unreadable config is rejected. The controller does not change the prepared queue.
+
+The pre-change controller is preserved in [bound-phase-campaign-before-p3gate-fix-v1.py](../snapshots/bound-phase-campaign-before-p3gate-fix-v1.py), SHA-256 `a0619007c85cbea5ad4a8d46547efa0c133e2a9312a3360cb1d02f3ca05b73cb`. Controller SHA-256 after the change: `d7698668dc961d275b10c6a0bb90074d01ab00f2442f92509fb78f5cfd0a3bb8`.
+
+The controller tests now cover baseline acceptance during P3; rejection for every V2–V9 variant during P3; rejection while P3A is pending; rejection of development scope in P4; and acceptance of pilot/formal proposed training only in P4. Combined with the frozen-stress unit tests, local Conda CPU run passed **24 tests** in 4.09s ([log](../logs/bound-gate-and-frozen-stress-audit-v1.log), [JSON](../logs/bound-gate-and-frozen-stress-audit-v1.json)). No package/model/data/GPU/optimizer/replay was run.
+
+## Frozen synthetic stress read-only review
+
+The script binds the checkpoint through `engine.validate_freeze`, checks the frozen stress-script and normalizer hashes, and requires exact SHA-256 fingerprints of the direct `test_seed*.npz` collection. It loads only the stress test split for evaluation; the `oracle/` directory is not recursively included by either the fingerprint glob or synthetic split loader. The main checkpoint's training split is separately loaded to verify node ordering. Frozen normalization uses the checkpoint training mean/std and applies it to a shallow copy, leaving targets, original inputs, and metadata untouched. Task geometry/count mode and node IDs are checked, which refuses reusing the 64-node checkpoint for the 256-node stress task. Existing CPU toy tests exercise normalization/target identity, node-order and node-count refusals, and exact collection fingerprint changes; no actual test collection was opened.
+
+**Blocking execution issue:** `frozen_synthetic_stress.py` is a standalone CLI that writes an `offline-phase-wall` receipt but does not acquire `logs/model-resource.lock` or check remaining cumulative campaign budget before starting. The receipt alone does not serialize it against active model work and does not enforce the 72-hour budget. Add a managed launch/resource-and-budget guard before any real stress replay. The current pipeline ledger at review time was P2 passed, P3 running, P3A pending, P4 pending, so the script's own P3A/P4 check also correctly prevents execution now.
+
+This is an engineering/controller audit only. It is not a test result, stress robustness result, P3/P3A pass, or positive hypothesis evidence. The controller still depends on the root's stage ledger being maintained correctly; its variant classification assumes the current declared variant names. Frozen stress fingerprinting is a hash check at load start, not a defense against a concurrent file mutation after fingerprinting; managed exclusive resource/input locking should close that race before formal execution.

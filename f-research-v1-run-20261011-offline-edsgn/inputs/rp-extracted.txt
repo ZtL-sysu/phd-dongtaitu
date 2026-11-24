@@ -1,0 +1,892 @@
+=== PAGE 1 ===
+1 
+Event Driven Spiking Dynamic Graph Networks for 
+Nonstationary Temporal Graph Forecasting  
+Doctoral Research Proposal  
+Abstract 
+Digital interactions generate evolving networks in which predictive relationships change over time. 
+Communication patterns shift between groups, learners redistribute their attention across online course activities, 
+and trading relationships evolve between economies. Forecasting these processes requires models to revise 
+relationships, retain useful historical information, and allocate computation selectively. Updating every 
+relationship and hidden state at every observation can be wasteful; reusing them indiscriminately can leave a 
+model poorly prepared for abrupt changes. 
+This research will investigate event-driven spiking dynamic graph networks for nonstationary temporal graph 
+forecasting. It will develop sparse relationship learning that distinguishes credible changes from noise and 
+missing records, relation-conditioned spiking memory, and a lightweight scheduler for budgeted graph and state 
+updates. The central hypothesis is that coordinating these components improves adaptation and the accuracy–cost 
+trade-off. The project combines conditional approximation analysis, controlled simulations, and substantial 
+empirical evaluation using public datasets. Communication and online-learning records will support multistep 
+activity forecasting, while international trade will test future relationship distributions. Recommendation and 
+transaction networks will extend application coverage using their native prediction protocols. Evaluation will 
+isolate graph adaptation, spiking dynamics, and event gating, and measure complete software execution cost. The 
+intended outcome is a reproducible data science methodology explaining when selective computation improves 
+prediction and when it fails, supported by cross-domain case studies on historical data. 
+1 Research Background and Significance 
+Many data science problems concern interacting entities rather than isolated time series. Users, learning activities, 
+products, and countries can be represented as nodes, with timestamped interactions providing observed edges. 
+Graph forecasting can then predict future activity levels or the distribution of future relationships. An observed 
+interaction and a useful predictive dependency are distinct: a historical contact can inform a prior, while a learned 
+edge expresses how one entity's past contributes to another entity's forecast. In this proposal, relational structure 
+takes the role often called spatial dependence in spatiotemporal models; it need not describe geographic 
+proximity. 
+This distinction becomes important in nonstationary environments. Nonstationarity here means that the 
+distribution of observations or their predictive dependencies changes over time, so patterns learned from earlier 
+periods may become less reliable. It includes abrupt regime transitions, gradual changes, and recurring regimes, 
+consistent with the broader concept-drift literature [1]. Ordinary fluctuations and measurement noise do not 
+necessarily require structural adaptation. A useful forecasting model must identify changes that matter for 
+prediction while avoiding unnecessary responses to harmless variation. 
+The difficulty involves memory as well as spatial structure. When an influential neighbor changes, historical 
+information accumulated from that neighbor can become less useful. Nevertheless, deleting all history may 
+remove stable seasonal information or slowly varying system conditions. This creates a selective retention 
+problem: the model must preserve background context while adapting the parts of its state associated with 
+changed dependencies. A forecasting architecture that updates its graph without reconsidering the meaning of 
+stored information may therefore adapt incompletely. 
+Computation introduces a further constraint. Streaming systems require repeated forecasts even when only a 
+small part of the monitored network changes. The number of possible pairwise relationships grows quadratically 
+with the number of nodes, and repeated state updates can add substantial cost. Spiking neural networks offer 
+
+=== PAGE 2 ===
+2 
+temporal integration and sparse communication, but sparse activity alone does not establish practical efficiency. 
+A hybrid model can still incur expensive graph construction, continuous-valued projections, or dense execution. 
+The relevant research objective is to identify computations that can be avoided while preserving useful 
+predictions. 
+The doctoral project is positioned within data science, combining methodological and theoretical research with 
+reproducible experiments on public digital records. Its core task is multistep node-activity forecasting on a 
+defined entity set; a separate task-specific extension predicts future relationship distributions or interaction 
+rankings. The three work packages share relationship learning, memory coordination, and computation 
+scheduling, while each task retains its own output head and evaluation protocol. Empirical case studies will 
+establish practical relevance in communication analysis, online education, trade, recommendation, and 
+transaction networks. The research will explain both favorable and unfavorable conditions for adaptation under 
+computational constraints. 
+2 Related Research and the Proposed Research Gap 
+2.1 Graph methods for spatiotemporal forecasting 
+DCRNN combines diffusion on a directed graph with recurrent sequence modeling and provides an established 
+traffic forecasting formulation [2]. Graph WaveNet introduces an adaptive dependency matrix together with 
+dilated temporal convolutions [3], while AGCRN learns node-specific patterns and data-adaptive graph 
+relationships [4]. These methods show why forecasting can benefit from relations beyond a predefined physical 
+graph. However, learning an adjacency matrix during training does not necessarily mean that relationships are 
+updated in response to each new observation during inference. 
+DGCRN explicitly generates time-dependent graph structure from evolving node information and combines it 
+with predefined relations [5]. It is therefore a necessary comparison for a proposal concerned with changing 
+predictive dependencies. The proposed project must establish a benefit beyond the general idea of a dynamic 
+adjacency matrix. Specifically, it will examine whether selective relation updates and coordinated memory 
+adjustment improve adaptation at a comparable computational cost. 
+Complex graph architectures also need comparisons with efficient alternatives. STID demonstrates the strength of 
+relatively simple forecasting models supplied with spatial and temporal identity information [6]. STAEformer 
+shows the importance of suitable spatiotemporal embeddings within a Transformer [7]. These findings motivate a 
+baseline-first approach: performance gains must survive comparisons with strong, simpler models and cannot be 
+attributed automatically to architectural complexity. A selective state-space approach such as STG-Mamba will 
+provide an additional efficiency-oriented comparison when a compatible implementation is available [8]. 
+2.2 Spiking networks for dynamic graphs and forecasting 
+Surrogate-gradient learning provides a practical route for training networks with discrete spike events [9]. 
+SpikeNet already uses spiking neurons for dynamic graph representation learning [10]. Delay-DSGN introduces 
+learnable delays to model how historical information affects evolving graph representations [11]. ChronoSpike 
+further explores adaptive membrane dynamics, spatial aggregation, and temporal encoding [12]. These studies 
+rule out a broad novelty claim based simply on applying spiking neural networks to dynamic graphs or adding 
+adjustable temporal memory. 
+Forecasting is also represented in the recent literature. SpikeSTAG combines graph learning with spiking 
+temporal processing for multivariate prediction [13]. SpikySpace investigates a spiking state-space formulation 
+with selective temporal computation [14]. Both will be considered when assessing the contribution of the 
+proposed method. The cited versions of ChronoSpike, SpikeSTAG, SpikySpace, and STG-Mamba are preprints, 
+and their methodological claims will be assessed alongside established publications. Reported classification 
+results from graph representation studies will not be compared directly with forecasting errors. 
+The literature therefore motivates a narrower research question: can evidence of changing predictive relationships 
+jointly determine memory retention and computation refresh? Temporal Graph Networks provide an important 
+
+=== PAGE 3 ===
+3 
+memory-based model of timestamped interactions [22], while DyGFormer offers a strong interaction-history 
+architecture and a unified evaluation library [23]. These comparisons are especially relevant when moving 
+beyond regularly sampled forecasting. The proposed coordination must be assessed against these alternatives 
+with compatible tasks, equal information access, and explicit computation budgets. Merely adding another 
+temporal encoder or substituting spikes for continuous activations will not establish a contribution. 
+2.3 Missing observations and event-triggered computation 
+Missingness is relevant because incomplete event records can resemble a change in behavior. GRU-D 
+demonstrates the usefulness of observation masks and elapsed-time information in recurrent modeling [15]. This 
+project will incorporate comparable information into graph learning and update decisions. A zero event count 
+within a fully observed interval will remain distinct from an unavailable record. Robustness tests will simulate 
+missing time blocks and incomplete groups of entity histories without treating every absent interaction as missing 
+data. 
+Event-triggered control provides a conceptual precedent for executing an update when an error-related condition 
+requires it [16]. Its stability results do not transfer automatically to learned forecasting networks. Here, the 
+connection will guide the design of lightweight triggers and explicit approximation analysis. The research gap is 
+the coordinated treatment of relation revision, memory adaptation, and selective execution in the chosen 
+forecasting setting. Whether this combination provides a distinct and useful contribution remains an empirical 
+question, to be reassessed as the literature develops. 
+3 Research Aim Questions and Hypotheses 
+The overall aim is to develop and evaluate a forecasting framework that adapts to changing dependencies among 
+interacting entities while allocating computation according to current predictive need. The research will address 
+three questions, each with a mechanism-level hypothesis and a condition under which it would be rejected. 
+RQ1 asks how sparse predictive relationships can be updated without confusing noisy or incomplete records with 
+structural change. Hypothesis H1 is that confidence-aware graph updates, conditioned on observation masks and 
+elapsed time, reduce unnecessary edge variation while remaining responsive to genuine dependency changes. 
+This hypothesis will be weakened if matched static or periodically updated graphs perform equally well under 
+controlled relation shifts, or if the proposed learner changes edges mainly when inputs are corrupted. 
+RQ2 asks how historical memory should respond when predictive relationships change. Hypothesis H2 is that 
+conditioning memory retention on local relation changes will improve recovery after regime transitions compared 
+with memory and graph adaptation learned independently. Evidence must persist against parameter-matched 
+models with the same fast and slow states. If uncoupled memory performs equally well, or if improvements 
+disappear after controlling for capacity and lookback length, the proposed coordination mechanism will not be 
+supported. 
+RQ3 asks whether graph and state updates can be scheduled within a budget while keeping the additional 
+prediction error acceptable. Hypothesis H3 is that lightweight local triggers with bounded state age will provide a 
+better accuracy–cost trade-off than periodic or random updates with comparable budgets. The hypothesis fails if 
+trigger evaluation and sparse execution remove the expected savings, or if selective updates systematically miss 
+important transitions. The project will also determine whether any benefit depends on spiking dynamics by 
+applying comparable gates to a continuous-valued temporal model. 
+These questions define related but independently assessable contributions. A positive result in one component 
+will not be treated as evidence for all three. The thesis can therefore distinguish useful mechanisms from 
+unnecessary architectural additions and explain where their interaction is beneficial. 
+ 
+
+=== PAGE 4 ===
+4 
+4 Proposed Methodology 
+Figure 1 summarizes the proposed architecture and the coordination of the three work packages. 
+ 
+Figure 1. Proposed overall framework for the core activity-forecasting task. Dynamic relationships condition memory 
+retention. The scheduler gates graph and state updates using available observations, state age, and cached predictions. Solid  
+arrows indicate data flow; dashed black arrows indicate update control. Waveforms are schematic. Ranking extensions use 
+task-specific readouts and delayed feedback as detailed in Section 5.6.
+4.1 Forecasting formulation and information availability 
+Let Xt denote observed activity features at N entities, Mt the observation mask, and Dt elapsed time 
+since the last valid observation. Given a history of length L and an optional relation prior Aprior, the 
+model will predict H future feature vectors. Its information set contains only records, metadata, and 
+states available at forecast origin t. Calendar features may be used only when timestamps retain their 
+calendar meaning. Future realized interactions, full-period graph statistics, and retrospectively assigned 
+labels are excluded from inputs. For native ranking tasks, the same causal encoder will feed a separate 
+distribution or pair-scoring head, as specified in Section 5.6. 
+Ŷ𝑡+1:𝑡+𝐻  =  𝐹𝜃(𝑋𝑡−𝐿+1:𝑡, 𝑀𝑡−𝐿+1:𝑡, 𝐷𝑡−𝐿+1:𝑡, 𝐴𝑝𝑟𝑖𝑜𝑟) 
+The core formulation assumes a defined node set with changing edge weights and selected neighbors. 
+Observed interaction edges and learned predictive edges will be stored separately. Parameters initially 
+remain frozen during testing, while graph and neural states adapt causally. In event-ranking extensions, 
+entities first observed after training will receive an inductive initialization from available type and 
+activity features rather than a future-fitted identity embedding. Results for previously seen and new 
+entities will be separated. Any later online-learning experiment will update parameters only after target 
+labels become available, keeping state adaptation distinct from retraining. 
+4.2 Work package one on sparse changing relationships 
+The first work package will construct sparse predictive graphs from historical interaction priors and 
+bounded candidate neighborhoods. Candidates may include past communication partners, entities 
+sharing earlier interaction histories, and additional relations identified from training observations. Only 
+past edges may enter a prior at a given prediction origin. A less frequent exploration step will allow 
+previously excluded candidates to enter, reducing the risk that a permanently restricted neighborhood 
+
+
+=== PAGE 5 ===
+5 
+misses a new dependency. Candidate generation, exploration, and any conversion from an interaction 
+graph to an entity-level predictive graph will be included in execution cost. 
+For each candidate edge, a lightweight scoring function will combine recent node summaries, relative 
+observation age, and missingness indicators. A sparse selection operation will retain a bounded number 
+of neighbors. The training objective will penalize unnecessary changes in adjacency, with weaker 
+temporal smoothing when credible evidence of a transition is present. Confidence will be estimated 
+from currently available residuals and observation quality, rather than from future forecast errors. A 
+robust normalization rule will prevent a single corrupted measurement from dominating the change 
+score. 
+𝐿𝑔𝑟𝑎𝑝ℎ  =  𝐿𝑓𝑜𝑟𝑒𝑐𝑎𝑠𝑡  +  𝜆𝑠𝑅𝑠𝑝𝑎𝑟𝑠𝑒(𝐴𝑡) + 𝜆𝑡𝑤𝑡‖𝐴𝑡  − 𝐴𝑡−1‖₁ 
+Here, Rsparse penalizes excessive connectivity, while wt controls the strength of temporal consistency. 
+The functional form and calibration of wt will be validated against simpler fixed-smoothing alternatives. 
+Where rows are normalized, sparsity will be enforced through support size or gates rather than an 
+ineffective constant row-sum penalty. Self-information will remain available even when neighbor 
+observations are missing. 
+A concrete first implementation will keep at most k incoming predictive neighbors per node, together 
+with a self pathway. Candidate scores will use shared functions of source and destination summaries, 
+recent interaction frequency, masks, and elapsed time. The candidate pool will be capped at four times 
+k; the proposed pilot values appear in Table 1. Historical contact candidates and candidates obtained 
+from training-period activity similarity will be evaluated separately. Exploration will use a bounded 
+sampled pool, with a dense all-pairs search included only as a small-graph diagnostic. This makes the 
+cost of discovering a new relationship explicit. 
+Confidence will initially be computed from the proportion of valid recent observations and a clipped 
+residual standardized by training-period robust scale. The model will distinguish a large credible 
+residual from a large residual produced by very little observed history. Thresholds and clipping ranges 
+will be selected using validation data and frozen for final testing. An otherwise identical learner with 
+constant confidence will isolate the value of reliability weighting; equal candidate sets and exploration 
+schedules will prevent a larger search space from explaining the result. 
+The main mechanism experiment will use a switching dynamical system with known dependency 
+matrices. It will vary edge changes independently of observation noise, allowing measurement of 
+structural tracking delay and false changes. Recovery of the generating structure will be interpreted 
+only under explicitly stated identifiability conditions. On real communication, learning, and trade 
+records, graph visualizations will instead serve as diagnostics of learned predictive associations and will 
+be checked against out-of-time predictive performance. 
+4.3 Work package two on relation-conditioned spiking memory 
+The second work package will introduce fast and slow spiking states. Each state will integrate incoming 
+information with a decay factor determined by elapsed observation time. Fast states will be designed to 
+respond to recent deviations, while slow states retain persistent context. Initial experiments will use 
+only two timescales to make the mechanism interpretable and avoid unnecessary capacity. A 
+continuous-valued readout will map the resulting state representation to real-valued multistep 
+predictions. 
+𝛼𝑖
+𝑟(𝑡)  =  𝑒𝑥𝑝(−𝛥𝑡 / 𝜏𝑖
+𝑟),     𝑟 ∈  {𝑓𝑎𝑠𝑡, 𝑠𝑙𝑜𝑤} 
+𝑢𝑖
+𝑟(𝑡)  =  𝛼𝑖
+𝑟(𝑡)𝑢𝑖
+𝑟(𝑡 − 1) +  𝐼𝑖
+𝑟(𝑡)  −  𝑣𝑖
+𝑟𝑠𝑖
+𝑟(𝑡 − 1) 
+𝑠𝑖
+𝑟(𝑡)  =  1[𝑢𝑖
+𝑟(𝑡)  ≥  𝑣𝑖
+𝑟] 
+
+=== PAGE 6 ===
+6 
+The equations define a candidate leaky integrate-and-fire update with delayed reset. Positive time 
+constants and bounded input transformations will support numerical control. The same convention will 
+be used in full and selective execution. Actual observation time will remain distinct from any internal 
+spike simulation steps; increasing internal steps will be recorded as extra computation rather than 
+described as additional observed history. 
+The central mechanism will separate locally accumulated information from messages associated with 
+neighboring nodes. A relation-change signal will adjust how much neighbor-dependent memory is 
+retained or refreshed. Stable local context may therefore remain available when part of the 
+neighborhood changes. A learned mixture will determine the contribution of fast and slow states to 
+forecasting. Training will use surrogate gradients [9], with bounded parameterizations and diagnostics 
+for silent or excessively active neurons. 
+The initial retention rule will use the change between the old and newly refreshed normalized adjacency 
+rows. Let ai denote row i and let ci be half their L1 distance over the union of their supports, so ci lies 
+between zero and one. A positive sensitivity βi will map this change to a retention multiplier gi. The 
+candidate rule below preserves neighbor-dependent memory when a row is unchanged and reduces its 
+carry-over as the row changes. It is a design hypothesis to test, not an established optimal rule. 
+𝑐𝑖(𝑡)  =  0.5 ‖𝑎𝑖
+𝑛𝑒𝑤  −  𝑎𝑖
+𝑜𝑙𝑑‖₁,    𝑔𝑖(𝑡)  =  𝑒𝑥𝑝(−𝛽𝑖𝑐𝑖(𝑡)),    𝛽𝑖  >  0 
+Each fast or slow state will partition a fixed-width representation into local and neighbor-dependent 
+channels. The multiplier will act only on the neighbor-dependent channels; elapsed-time decay remains 
+active in both. If graph refresh occurs before an expensive state update, the multiplier will be stored and 
+accumulated until that update, with its bookkeeping included in cost. The initial implementation will 
+use a shared positive sensitivity, followed by a node-conditioned version only if justified. A shuffled 
+change signal, an unconditional reset, and a constant retention multiplier will test whether any gain 
+comes from informative coordination rather than generic forgetting. Controls will match total state 
+width, not merely the number of named state modules. 
+Input encoding will preserve both absolute levels and changes. A purely difference-based code could 
+become silent while a variable remains at a high, predictively important level. I will compare change-
+only encoding, periodic level refresh, and a hybrid level-and-change representation. The continuous 
+pathway will be counted as part of the model's computational cost. Its inclusion will be justified by 
+measured predictive value rather than hidden behind a claim of entirely spike-based processing. 
+Decisive ablations will remove relation-conditioned retention, freeze decay constants, replace spiking 
+states with continuous recurrent units, and preserve the same graph learner throughout. A parameter-
+matched uncoupled model will test whether gains come from coordination rather than additional state 
+dimensions. Recovery curves after known dependency switches will provide a more direct assessment 
+than average forecasting error alone. 
+4.4 Work package three on budgeted event-triggered execution 
+The third work package will decide when graph rows and neural states require expensive updates. At 
+each observation time, a small monitoring computation will inspect new measurements, masks, cached 
+predictions, and state age. A residual at time t can compare Xt with the one-step prediction issued at t-1; 
+it cannot use the unknown target at t+1. Separate gates will govern graph revision and state refresh, 
+allowing a state update to occur without reconstructing its neighborhood. 
+Initial triggers will be deterministic threshold rules, establishing an interpretable baseline before any 
+learned scheduler is introduced. Nodes with large reliable residuals, stale states, or substantial 
+observation-quality changes will receive higher priority. When several connected nodes trigger, their 
+updates can be grouped to reduce execution overhead. A maximum permitted age and periodic audits 
+
+=== PAGE 7 ===
+7 
+will protect against indefinitely stale representations. Mandatory refreshes will have an explicit cost and 
+reserve allocation. 
+𝑚𝑖𝑛𝑖𝑚𝑖𝑧𝑒  𝐸[𝐿𝑓𝑜𝑟𝑒𝑐𝑎𝑠𝑡]    𝑠𝑢𝑏𝑗𝑒𝑐𝑡 𝑡𝑜  𝐸[𝐶𝑡𝑜𝑡𝑎𝑙]  ≤  𝐵 
+The primary budget B will constrain average execution cost, with a separately reported per-step latency 
+requirement. If many nodes require updates simultaneously, the system may use a bounded full-refresh 
+mode and record the resulting budget overrun. An average budget does not establish a hard worst-case 
+guarantee. A later hard-budget variant will prioritize mandatory updates and state explicitly when both 
+refresh requirements and the budget cannot be satisfied. 
+Skipping an expensive update will still require coherent time evolution. Cached states will undergo 
+analytically computed decay where valid, with cheap monitoring information retained for future 
+decisions. Applying a zero mask after executing the full graph will not count as saved computation. The 
+implementation must avoid the associated operations through indexed execution, grouped active 
+neighborhoods, or another verifiable sparse path. A direct forecast readout will still run at every 
+required prediction origin, and its cost will be included. 
+Scheduler learning, if needed, will begin from the validated full-update model and use computation 
+penalties or constrained optimization. Training and inference costs will be reported separately. The 
+scheduler will also be applied to a matched nonspiking model. This comparison will establish whether 
+the advantage is attributable to event scheduling in general, the temporal state representation, or their 
+interaction. 
+The scheduler must not compute the expensive new graph merely to decide whether that graph should 
+be computed. Before refresh, it will use cheap activity summaries, already available residuals, and time 
+since the last graph or state update. The exact adjacency-change score will be computed only after an 
+authorized graph refresh and used for retention. Eligible actions will first include maximum-age 
+refreshes, followed by optional actions ranked by estimated benefit per unit cost. Measured action costs 
+will be calibrated on validation replay. If mandatory actions exceed the nominal budget, the excess will 
+be logged rather than hidden by dropping difficult queries. Graph and state budgets will also be swept 
+independently to reveal which action accounts for the trade-off. 
+4.5 Approximation analysis and its limits 
+The theoretical objective is to characterize the difference between selective and full execution of the 
+same trained model under identical observations and initialization. This execution-error analysis is 
+distinct from statistical generalization or the accuracy of the forecast itself. Under bounded inputs and 
+graph operators, and within regions where spike decisions agree, I will investigate the following 
+recurrence for state discrepancy et. 
+𝑒𝑡  ≤  𝜌𝑒𝑡−1  +  𝑐𝐴𝛿𝐴(𝑡) + 𝑐𝐼𝛿𝐼(𝑡) +  𝑐𝑆𝑞𝑡 
+Here, δA and δI describe differences caused by stale graph information and omitted input updates, while 
+qt accounts for mismatched spike events. Constants and norms will be derived for the implemented 
+update equations. A contraction-based argument will require the complete state transition to satisfy the 
+relevant bound; membrane leakage alone will not establish this property. A Lipschitz readout can then 
+translate state discrepancy into a bound on disagreement between predictions. 
+Threshold discontinuities are a substantive difficulty. If membrane potentials remain sufficiently far 
+from their thresholds, small perturbations may preserve spike decisions; near a threshold, this margin 
+argument fails. The analysis will therefore distinguish conditional deterministic bounds from empirical 
+behavior and investigate conservative refreshes near threshold crossings. With bounded perturbations 
+and rho below one, the recurrence suggests how discrepancy may be controlled. If these assumptions 
+
+=== PAGE 8 ===
+8 
+cannot be justified for the full architecture, the thesis will present a narrower result for a simplified 
+model and measure its relevance experimentally. 
+For the simplified fixed-node system, the analysis will first bound one graph-aggregation step and one 
+temporal-state step, then compose the two under a stated norm. Iterating the discrepancy recurrence 
+gives a weighted sum of past graph, input, and spike-decision errors; a time-uniform bound additionally 
+requires a contraction condition and bounded disturbance terms. Numerical diagnostics will estimate 
+local sensitivity and the frequency of threshold-margin violations on held-out inputs. These diagnostics 
+test the plausibility of the assumptions but do not replace a proof. The theory deliverable will state 
+which operators, parameter constraints, and time horizon are covered, alongside counterexamples or 
+observed violations. 
+4.6 Implementation training and computational scaling 
+The prototype will use a shared encoder, two temporal timescales, sparse message aggregation, and a 
+task-specific output head. Table 1 records a bounded starting configuration space. It is a pilot 
+specification rather than a claim that these settings are optimal. At most twelve deliberately selected 
+configurations per new component will be explored initially; the full Cartesian product will not be run. 
+Selection will use validation performance and measured execution cost. Baselines will receive a 
+comparable search allowance, while task-specific training conventions required for faithful 
+reproduction will be retained and documented. 
+Table 1. Proposed pilot settings and controls. Values are starting choices for validation, not established optima.  
+Component Starting specification Control or selection rule 
+State width d = 32 or 64; two timescales Match total width and report parameter 
+count 
+Sparse graph k = 8, 16 or 32; K ≤ 4k Cap at the number of eligible nodes; 
+include self pathway 
+Time constants Fast/slow initial pairs: (1, 8) or (2, 16) Units are data intervals; positive learned 
+values; compact trade model 
+Optimization AdamW; learning rate 0.001 or 
+0.0003; gradient norm cap 1 
+Initial cap 100 epochs; validation 
+patience 10; baseline conventions 
+recorded 
+Update fractions Nominal 25%, 50%, 75% and full 
+updates 
+Calibrate realized cost; report mandatory 
+budget overruns 
+State age Candidate caps: 2, 4 or 8 data intervals Tune on validation; keep graph age and 
+state age separate 
+Search and seeds At most 12 pilot configurations per 
+new component 
+One seed in pilots; one selected 
+configuration per comparison, five final 
+seeds 
+Training will begin with full updates and surrogate gradients, using chronological minibatches within 
+each sequence. Truncated backpropagation will detach retained states at segment boundaries, with the 
+same history allowance in matched models. A validation-selected checkpoint will then initialize 
+selective execution. Gate thresholds will be calibrated with frozen model weights before optional joint 
+fine-tuning, so savings caused by scheduling can be distinguished from a second round of training. 
+Comparisons will report both the frozen-weight intervention and any separately trained selective model. 
+Trade experiments will prioritize compact shared parameters because the number of independent annual 
+periods is limited. 
+
+=== PAGE 9 ===
+9 
+With N entities, hidden width d, candidate cap K, and selected degree k, a baseline implementation with 
+dense feature projections has approximate per-step work O(Nd²  + NKd + Nkd), before exploration and 
+readout. Sparse state storage is O(Nd + Nk); retaining candidate indices adds O(NK). If only fractions 
+of rows or states refresh, only the corresponding terms shrink. A dense all-pairs candidate search would 
+restore quadratic dependence on N and will be reported separately. Ranking-head cost also depends on 
+the number of scored candidates, so prediction queries and negative-candidate generation cannot be 
+excluded from efficiency comparisons. These estimates guide profiling, while complete measured time 
+remains the practical criterion. 
+5 Experimental Design and Evaluation 
+5.1 Data and controlled mechanisms 
+The primary suite will use public communication, online-education, and trade records. SNAP email-Eu-
+core-temporal supports daily incoming and outgoing activity prediction [18]; SNAP MOOC actions 
+support course-activity count forecasting [19]; and TGB tgbn-trade supports next-year trade-partner 
+distribution prediction [17,20]. Initial count-forecasting protocols will use 28 preceding daily bins for 
+email and 24 preceding hourly bins for MOOC, predicting respectively 1, 3, and 7 days and 1, 6, and 24 
+hours ahead. These aggregation choices are proposed research protocols, not official leaderboard tasks. 
+The native trade protocol will retain its annual resolution and official evaluation. Dataset versions, 
+temporal coverage, terms of use, and preprocessing will be recorded before baseline runs. 
+A complementary synthetic benchmark will use stable sparse vector autoregressive dynamics with 
+controlled regime changes. Simulations will separately manipulate edge weights, neighbor identities, 
+noise levels, local shocks, and gradual drift. Stability checks and bounded trajectories will prevent 
+artificial divergence from dominating the task. Additional nonlinear simulations will test whether 
+conclusions depend on matching the model to a linear generator. Known structural changes provide 
+ground truth for detection delay; ordinary shocks without structural changes provide a negative control. 
+The controlled study will begin with 64-node systems, extending to 256 nodes for scaling checks. 
+Stable sparse transition matrices will be rescaled to a common spectral-radius target of 0.8, with 
+bounded innovation variance and a discarded burn-in. Abrupt changes will replace 10 or 30 percent of 
+active dependencies; gradual changes will interpolate between stable endpoints while checking 
+intermediate stability. Noise-only shocks and missing-input rates of 0, 10, 30, and 50 percent provide 
+separate controls. Changing edge identities and changing edge weights will be tested separately. 
+Parameters, switch times, and random seeds will be released, and held-out simulations will use new 
+trajectories rather than reused training segments. 
+Recommendation and transaction data will broaden empirical coverage through tgbn-genre and tgbl-
+coin, with tgbl-wiki-v2 providing a smaller event-ranking development benchmark [20,21]. The 
+primary three-domain evaluation is a scheduled thesis deliverable; the larger extensions follow a 
+measured feasibility gate rather than replacing unfinished core experiments. Section 5.6 specifies entity 
+definitions, output targets, application questions, and limits for each domain. All real-world analyses 
+will use released historical datasets and reproducible chronological replay. The resulting application 
+evidence will concern predictive performance on recorded behavior, with prospective organizational 
+impact left as a separate question. 
+Table 2 fixes the role of each public dataset in the evidence plan. The unit of prediction, forecast 
+horizon, and official or custom protocol will be recorded before model selection. Input logs will be 
+sorted stably, exact duplicate records handled under a documented rule, and counts computed only from 
+events whose timestamps have already elapsed. Repeated interactions that are genuine events will be 
+retained. Time aggregation will use half-open intervals and record the treatment of the final incomplete 
+
+=== PAGE 10 ===
+10 
+interval. The data manifest will distinguish an absent event from an unobserved interval and preserve 
+the provenance of every constructed feature. 
+Table 2. Public dataset roles and prediction protocols. Official source descriptions are cited; activity aggregation 
+is proposed here [18–21]. 
+Dataset and role Prediction unit and target Time and scoring protocol 
+email-Eu-core-temporal 
+[18] 
+Core communication 
+Member-level incoming and outgoing 
+counts 
+Daily bins; 28-day history; 1/3/7-day 
+horizons; MAE and RMSE 
+MOOC actions [19] 
+Core online education 
+Course-activity action counts; past 
+shared-user prior 
+Hourly bins; 24-hour history; 1/6/24-hour 
+horizons; MAE and RMSE 
+tgbn-trade [20] 
+Core trade study 
+Country-to-partner trade-share 
+distribution 
+Next year; released split and labels; 
+NDCG@10 
+tgbn-genre [20] 
+Recommendation 
+extension 
+User-to-genre future preference 
+ranking 
+Next-week target; native label schedule 
+and NDCG@10 
+tgbl-wiki-v2 [21] 
+Event-scoring 
+development 
+User-to-page destination ranking Given query time; official candidates and 
+MRR 
+tgbl-coin [21] 
+Transaction extension Address-to-address destination ranking Given query time; official candidates and 
+MRR; profile scale first 
+5.2 Temporal protocols and leakage prevention 
+Custom activity-forecasting tasks will use chronological 70/10/20 percent train/validation/test partitions, 
+recording exact boundaries and requiring complete target windows within each partition. Native TGB 
+tasks will retain the released splits, label availability, and evaluation schedule. Earlier records may 
+supply causal context, but normalization, activity thresholds, graph candidates, and entity selection 
+must not use later observations. The core fixed-entity cohort will be defined from training information; 
+subsequent arrivals will enter a separately reported induction study. Zero counts will be assigned only 
+to intervals treated as fully observed; unavailable inputs will carry masks and unavailable targets will be 
+excluded consistently. 
+The primary window-based protocol will initialize each model using the same permitted history, with 
+selective state reuse occurring within that history. A second streaming protocol will process 
+observations once in chronological order and preserve state across forecast origins. This distinction 
+matters because persistent state provides a different effective history and cost profile. Methods will be 
+compared within each protocol; efficiency claims will identify which protocol they concern. Test states 
+will be initialized through a prescribed causal warm-up, and no future sequence will be processed in 
+advance. 
+Nonstationary evaluation will include controlled interventions, later-period performance, and 
+predefined high-change slices. On real data, changes identified from past activity or interaction 
+distributions will be treated as observable proxies rather than verified causal regime labels. Thresholds 
+will be set on training and validation data. Separate within-domain tests will examine low-activity 
+entities, new partners, and long inactive gaps. Cross-domain evidence will mean independently trained 
+evaluations under a common methodological protocol; any claim of direct model transfer will require 
+an additional experiment with explicit feature alignment and disjoint entities. 
+Figure 2 distinguishes two causal evaluation orders. In binned forecasting, a completed input interval 
+may update the model before future intervals are predicted. In event ranking, the current destination 
+
+=== PAGE 11 ===
+11 
+must be scored before the current edge enters memory. Queries sharing a timestamp will use the 
+released benchmark convention; a custom protocol will score the tied batch against the same pre-batch 
+state before applying its updates. Negative candidates, timestamp ties, and warm-up histories will be 
+identical across compared methods. Assertions will check maximum input time, target-partition 
+containment, and state reset boundaries, making information access independently auditable. 
+ 
+Figure 2. Planned causal evaluation order. Activity forecasting and event ranking use different update orders. The 
+test protocol freezes model-selection choices; feedback becomes usable only after its release. 
+5.3 Baselines and matched comparisons 
+Activity-forecasting baselines will include persistence, seasonal historical averages where periodicity is 
+justified, a linear predictor, and a compact recurrent model. Graph WaveNet, AGCRN, DGCRN, STID, 
+and STAEformer [3–7] will be adapted to the same count features and horizons; DCRNN [2] will use a 
+training-period interaction prior. These are adaptations from related forecasting settings, whose original 
+reported scores are not comparable to the proposed tasks. Native ranking comparisons will include 
+historical-frequency and recency baselines, TGB reference methods, TGN, and DyGFormer [17,22,23], 
+with matching output heads and official evaluators. Recent state-space and spiking methods [8,13,14] 
+will be assessed for compatible reruns. A maintained literature review will refresh strong task-specific 
+alternatives before the main studies. 
+SpikeNet, Delay-DSGN, and ChronoSpike [10–12] will serve as method-family context and potential 
+adaptation studies. Their original node-classification tasks require a forecasting head and an appropriate 
+input protocol before quantitative comparison. If adaptation is impractical, they will remain literature 
+comparisons with an explicit reason. Published scores from incompatible splits, preprocessing, or tasks 
+will not be mixed into a rerun results table. 
+Internal controls will cross graph type, temporal representation, and update policy. Important 
+comparisons are static versus dynamic graphs with the same temporal module; spiking versus 
+continuous states with the same graph learner; full versus selective updates within the same model; and 
+matched gating on both spiking and nonspiking networks. Periodic and random schedules will use 
+comparable realized budgets. An offline oracle with privileged change information may be used only as 
+a labeled upper-bound diagnostic on synthetic data, never as a deployable method. 
+
+
+=== PAGE 12 ===
+12 
+Figure 3 specifies the principal intervention matrix. V3 versus V4 isolates relation-conditioned 
+retention in a spiking model; V1 versus V2 tests the analogous change in a continuous model. V4 
+versus V9 isolates confidence weighting with full execution, while V7 is compared with V4, V5, and 
+V6 to assess adaptive scheduling. V7 versus V8 tests whether spikes add value under matched adaptive 
+gates. Candidate pools, state width, observation access, and readout type will be held constant wherever 
+the comparison permits. Periodic and random schedules will be calibrated on validation replay and their 
+realized test budgets reported, rather than assuming equal nominal rates imply equal cost. 
+ 
+Figure 3. Planned intervention matrix. ANN denotes continuous-valued neural states and SNN denotes spiking 
+states. Each row is a matched model variant; cells identify enabled components, not measured performance. V4 
+and V9 differ only in confidence weighting. 
+5.4 Metrics statistical evidence and decision rules 
+For count forecasts, primary accuracy measures will be mean absolute error and root mean squared 
+error in original count units, reported separately by domain, horizon, and activity stratum. Nonnegative 
+outputs and a count-appropriate loss will be compared with ordinary squared-error training; any log 
+transform will be inverted for primary scoring. Native node-distribution tasks will use NDCG@10, and 
+native link ranking will use MRR with the specified candidate protocol [20,21]. Scores from these task 
+families will remain separate. Transition-window degradation, recovery after controlled changes, and 
+error–runtime Pareto curves will connect accuracy to the adaptation hypotheses. 
+Robustness experiments will remove selected observed input records, contiguous time blocks, or 
+histories of related entity groups while preserving known targets for evaluation. Additional 
+perturbations will vary event timing and count noise within a documented range. All methods will 
+receive identical perturbations, with training augmentation separated from unseen test corruption. For 
+ranking tasks, history corruption will not silently change the official evaluation candidates or labels. 
+Noise-only experiments will measure false updates; relationship-change experiments will measure 
+missed or delayed responses. These tests will show whether savings arise from useful selectivity or 
+from neglecting difficult observations. 
+Each principal comparison will use five random seeds, with paired evaluation on the same splits and 
+perturbations. Confidence intervals will account for temporal dependence through block resampling of 
+forecast errors, with block length selected using training or validation dependence diagnostics. Seed 
+variation will be reported separately from uncertainty across time periods. Predefined primary 
+
+
+=== PAGE 13 ===
+13 
+comparisons will reduce selective emphasis on favorable horizons, and any broad multiple-comparison 
+analysis will report an appropriate correction or remain explicitly exploratory. 
+Success criteria will be calibrated after baseline reproduction and before final testing. The minimum 
+criterion for selective execution will be a validated accuracy tolerance accompanied by a measurable 
+reduction in total inference cost. Strong evidence will require a reproducible Pareto improvement 
+against both full execution and matched alternative schedules across the primary datasets, without 
+unacceptable transition degradation. The tolerance will be set using baseline variability and application 
+relevance rather than a desired headline percentage. If only operation estimates improve, the conclusion 
+will be restricted to algorithmic sparsity. 
+Table 3 links each research claim to its primary contrast, evidence, and rejection condition. For count 
+tasks, accuracy–cost curves will additionally be summarized at prespecified relative MAE tolerances of 
+0, 1, 2, and 5 percent above the full-update comparator; these are sensitivity reporting points, not 
+promised gains. Ranking tasks will retain their native score direction and report absolute score 
+differences. The primary acceptable tolerance will be justified and frozen using validation evidence 
+before final tests. A gain on one task family will not compensate for failure on another by averaging 
+incomparable metrics. 
+Table 3. Claim-to-evidence decisions. Comparisons refer to Figure 3; conclusions require both mechanism 
+evidence and task performance. 
+Claim and contrast Required evidence Condition weakening the claim 
+H1 reliable relation 
+changes 
+V4 vs V9; V0 vs V1 
+Lower false graph changes in noise 
+controls; timely response to known 
+switches; retained forecast quality 
+Confidence adds no benefit at matched 
+cost, or suppresses genuine shifts 
+H2 relation-conditioned 
+memory 
+V3 vs V4; V1 vs V2 
+Faster post-switch recovery at matched 
+state width; informative signal beats 
+shuffled or constant retention 
+Gain disappears under width control or 
+survives signal shuffling unchanged 
+H3 adaptive scheduling 
+V7 vs V4/V5/V6 
+Accuracy–cost improvement with 
+complete timing; acceptable high-
+change performance and explicit 
+overruns 
+Trigger/readout overhead removes 
+savings, or important transitions are 
+missed 
+Specific value of spikes 
+V4 vs V2; V7 vs V8 
+Benefit survives full-update and 
+matched-gate comparisons, with 
+parameter and history controls 
+Matched continuous states perform 
+equally well or better 
+Conditional 
+approximation claim 
+Explicit assumptions and proof for 
+stated operators; measured threshold-
+margin and sensitivity diagnostics 
+Assumptions fail for the full model; 
+retain only the proven restricted result 
+For sufficiently long activity series, paired block bootstrap intervals will resample contiguous forecast-
+origin blocks while retaining all nodes within each selected block. This preserves within-time cross-
+node dependence rather than treating every node–horizon pair as independent. The main count-task 
+summary will be horizon-wise MAE, with a separately declared aggregate for model selection. Seed 
+variability and temporal sampling uncertainty will remain separate. Annual trade results will emphasize 
+per-year paired differences and sensitivity to each test year; strong asymptotic significance claims will 
+be avoided when there are too few independent periods. Multiple primary contrasts within each 
+hypothesis family will use a declared correction, while exploratory slices will be labeled as such. 
+5.5 Efficiency measurement and reproducibility 
+Cost accounting will cover input encoding, candidate search, graph scoring, message propagation, 
+neural-state updates, monitoring, scheduling, and prediction readout. Measurements will include batch-
+
+=== PAGE 14 ===
+14 
+one end-to-end latency, throughput where relevant, peak memory, graph-row update fraction, state 
+refresh fraction, and spike activity. Warm-up runs, device synchronization, precision, and batch settings 
+will be standardized. CPU and GPU results will be distinguished because sparse workloads may have 
+different overheads on each platform. 
+Efficiency evidence will be based on reproducible software experiments: end-to-end runtime, peak 
+memory, processed events, and graph/state update counts. Operation counts will be reported as 
+algorithmic proxies alongside measured execution time. All local code will run in a documented Conda 
+environment, retaining package versions, seeds, data manifests, configurations, checkpoints, and 
+evaluation scripts. Dataset preparation and inference will be timed separately. The final package will 
+expose a common interface for chronological replay across domains and include unsuccessful ablations 
+that clarify the method's limits. 
+The reproducibility package will include a small smoke-test dataset, a single-command baseline run, 
+explicit configuration files, and a replay trace with prediction origin, input cutoff, state age, graph-
+refresh decision, state-refresh decision, and measured duration. Basic checks will verify causal feature 
+construction, equivalence of selective and full code paths when all gates are open, correct reuse when 
+gates are closed, and official-evaluator agreement. Runtime trials will repeat the same replay at least 
+five times after an explicitly stated warm-up, reporting median and tail latency as well as total elapsed 
+time. Compilation, data loading, and preprocessing will be itemized so that their inclusion is consistent 
+across methods. 
+5.6 Cross-domain application studies on public data 
+Communication analysis will use email-Eu-core-temporal, where directed timestamped messages 
+connect anonymized members of a research institution [18]. The proposed task aggregates incoming 
+and outgoing counts into daily entity features and learns changing predictive relationships from past 
+communication. Case studies will examine whether selective updates preserve forecasts during bursts 
+and shifting interaction patterns while avoiding excessive computation during quiet periods. Evaluation 
+will report errors by activity level and forecast horizon, as well as aggregate workload trajectories. The 
+dataset covers internal communication; conclusions will therefore concern the recorded network rather 
+than all organizational activity. Since timestamps are relative, periodic lags can be tested without 
+assigning unsupported calendar dates. 
+Online-education analysis will use the public MOOC action log, whose nodes represent users and 
+course activities and whose edges are timestamped actions [19]. The core task predicts future hourly 
+action counts for course-activity nodes. A rolling shared-user history will provide an optional relation 
+prior between activities, constructed solely from earlier actions. The study will compare stable 
+engagement periods with abrupt changes in activity demand and assess whether relation-conditioned 
+memory improves longer-horizon predictions. Dropout labels supplied with the dataset will not be used 
+as input because their meaning depends on subsequent behavior. Forecasting activity demand can 
+inform analysis of learning participation, but this retrospective experiment cannot establish that a 
+teaching intervention improves learning outcomes. 
+Trade analysis will retain the native tgbn-trade task: predicting the next annual distribution of 
+agricultural trade across partners [20]. A normalized nonnegative readout will convert the shared 
+temporal representation into partner scores, with the benchmark's NDCG@10 evaluator used for 
+comparison. Historical partner shares and persistence will be essential baselines. Case studies will 
+inspect whether coordinated updates track changing partner concentration without excessive turnover in 
+stable relationships. The limited number of annual observations makes this a complementary 
+distribution-prediction study rather than evidence for fine-timescale responsiveness. Uncertainty will be 
+reported conservatively; correlated country records and repeated random seeds will not be treated as 
+independent additional years. 
+
+=== PAGE 15 ===
+15 
+Recommendation analysis will use tgbn-genre to evaluate future user–genre preferences under the 
+official node-property protocol [20]. The same graph and memory modules will receive typed 
+interaction histories and feed a distribution head; normalization and training loss will be appropriate to 
+the benchmark labels. Historical preference frequency, recent preference frequency, and compatible 
+temporal graph baselines will test whether adaptive memory adds value beyond simple persistence. The 
+analysis will separate highly active and infrequent users and examine preference shifts observable from 
+past behavior. This extension evaluates the usefulness of the learned representation for recommendation 
+ranking, rather than converting recommendation scores into count-forecast errors. 
+Transaction analysis will use tgbl-coin for destination ranking from past address-to-address interactions, 
+with tgbl-wiki-v2 used first to validate the event-scoring implementation on a smaller public benchmark 
+[21]. A pairwise head will score source and candidate destination states at the query time. The 
+benchmark supplies the query setting; predicting which destination is selected does not itself predict 
+when an event occurs. Every query will be scored before its edge is inserted into memory, and all 
+methods will use the same official evaluation candidates and time ordering. MRR, new-partner 
+performance, and cost per scored query will be reported. The financial-domain case study will concern 
+evolving transaction relationships, without interpreting ranking accuracy as investment performance. 
+Task adaptation will preserve the distinction between recorded interaction structure and the sparse 
+graph used for message passing. The activity tasks use a continuous nonnegative forecast head, node-
+distribution tasks use a normalized score head, and event-ranking tasks use a source–destination head. 
+Losses and cached residuals will be task-specific: count residuals become available after an interval 
+closes, while ranking or distribution feedback is usable only when its label is released. Time-based and 
+activity-based triggers remain available before feedback arrives. The fixed-node approximation analysis 
+in Section 4.5 will not automatically be claimed for entity arrivals, changing output spaces, or ranking 
+metrics; those extensions require separate assumptions or empirical evidence. 
+Each application report will include the public data source, chronological split, task-specific baselines, 
+a full-versus-selective replay comparison, a matched update-budget sweep, and representative 
+successful and failed episodes selected by a predeclared rule. Plots will show forecast or ranking quality 
+alongside graph changes, memory retention, and actual update decisions. Large datasets will first be 
+profiled on a predefined time prefix for development; any sampled study will be identified as a subset 
+experiment, and official benchmark claims will require the complete prescribed test. Five-seed core 
+studies take priority over broad shallow coverage. A final comparison will relate benefits to event 
+density, relationship persistence, missingness, and timescale, yielding practical guidance about which 
+domains justify adaptive computation. 
+Application case selection will be fixed before inspecting final model advantages. For each domain, the 
+report will show a typical stable episode, a high-change episode identified from permitted past statistics, 
+and the worst predefined evaluation slice. Communication and education reports will emphasize 
+workload and participation trajectories; trade will show partner-share shifts; recommendation and 
+transaction reports will show ranking changes and new-partner cases. Each example will include a 
+strong baseline and the matched uncoupled or ungated control. Explanations will be checked by 
+removing the highlighted relationship or retention signal and rerunning the prediction, treating the 
+resulting change as model sensitivity rather than proof of a real-world causal effect. 
+6 Feasibility Risks and Research Integrity 
+My previous graph-learning and spiking-network work provides a foundation in representation learning, 
+model optimization, comparative evaluation, and scientific writing. Experience with P-SGCN supports 
+the design and analysis of graph-based models, while prior work on event gating and temporal 
+integration informs selective computation. The doctoral contribution will require substantial further 
+
+=== PAGE 16 ===
+16 
+development in dynamic relationship learning, coordinated memory, conditional error analysis, and 
+reproducible evaluation across distinct digital interaction domains. 
+Implementation will proceed from a small, runnable prototype. I will first reproduce a simple baseline 
+and a strong domain model, then add graph learning, memory coordination, and scheduling 
+incrementally. Initial trials will use a single benchmark, modest hidden dimensions, and short histories. 
+A pilot of at most twelve configurations per new component, using one seed, will identify viable 
+settings; shortlisted configurations will then receive multiseed evaluation. Actual runtime and memory 
+measurements will determine the full experimental schedule. The planning target is execution on a 
+single available accelerator where feasible, with CPU use for small synthetic tests; no particular local 
+accelerator is assumed to be available. 
+Several failure modes have clear responses. If candidate restriction misses new dependencies, periodic 
+exploration will be strengthened and its cost reassessed. If graph learning mainly follows noise, 
+smoothing and confidence estimation will be simplified before more modules are added. If spiking 
+memory offers no independent advantage, a continuous-state control can establish which part of the 
+adaptation mechanism remains useful. If sparse kernels are slower than dense execution, grouped 
+updates or coarser scheduling will be tested, and runtime claims will be narrowed if the limitation 
+persists. 
+The most consequential risk is that the coordination mechanism duplicates emerging work or fails 
+against strong independent adaptation. A maintained literature comparison and matched ablations will 
+address this early. Negative evidence will guide simpler explanations and clearly bounded contributions. 
+Theory will be stated under explicit assumptions, with experiments testing their empirical relevance. 
+Synthetic generating edges, recorded interactions, and learned predictive relationships will remain 
+distinct. Cross-domain variation will be analyzed as evidence about the method's limits rather than 
+averaged away. 
+All application studies will use publicly released datasets under their stated research and redistribution 
+conditions. Anonymized identifiers will be used only to construct the required temporal relationships, 
+without attempting re-identification. Educational and communication predictions will describe 
+aggregate recorded activity, while transaction analysis will concern interaction patterns. Historical 
+predictive accuracy will not be interpreted as evidence that a policy intervention would improve 
+outcomes. Reproducibility materials will provide lawful download instructions and derived protocols, 
+with raw data redistributed only where permitted. 
+7 Research Schedule and Expected Outcomes 
+The project will begin in September 2027 and conclude in June 2030. Method development, conditional 
+theoretical analysis, and public-data application experiments will proceed together. The core 
+communication, education, and trade studies are planned deliverables; larger recommendation and 
+transaction extensions will be scheduled after profiling their resource requirements. 
+Figure 4 maps the work packages to the project calendar. The August 2028 review requires a working 
+public-data pipeline, reproduced baselines, and a defensible decision on sparse relation adaptation. The 
+August 2029 review requires the core domain reports, matched memory controls, and a written 
+boundary for the theoretical claim. By February 2030, the main accuracy–cost comparisons and the 
+scope of larger extensions will be fixed. March and April 2030 are reserved for verification and 
+integration rather than adding another untested method component. These checkpoints provide concrete 
+criteria for deciding whether to refine, simplify, or conclude each contribution. 
+
+=== PAGE 17 ===
+17 
+ 
+Figure 4. Planned research calendar and review points, September 2027 to June 2030. Bars end at the completion 
+of the stated month. Larger extensions depend on resource profiling; the core domain studies remain scheduled 
+deliverables. 
+7.1 September 2027 to August 2028 
+September–November 2027: establish the literature map, acquire public email, MOOC, and trade data, 
+and freeze causal preprocessing and task definitions. December 2027–February 2028: reproduce simple 
+and strong baselines and construct controlled switching systems. March–May 2028: implement sparse 
+candidate selection and confidence-aware relation updates, beginning the communication forecasting 
+case study. June–August 2028: complete first-stage communication and education comparisons, assess 
+graph stability and construction cost, and pilot the native trade evaluator. The August 2028 review will 
+assess value beyond static and periodic alternatives. Deliverables are the public-data protocol suite, 
+baseline results, and a first methodological study if supported by evidence. 
+7.2 September 2028 to August 2029 
+September–November 2028: establish full-update fast and slow temporal models with spiking and 
+continuous controls. December 2028–February 2029: develop relation-conditioned retention and 
+compare input encodings across the activity tasks. March–May 2029: complete transition-recovery 
+studies in communication and education and the main trade-distribution experiments. June–August 
+2029: complete matched ablations, refine conditional analysis, and profile tgbn-genre and tgbl-coin 
+using the smaller tgbl-wiki-v2 development task where appropriate. The August 2029 review will check 
+whether coordination survives capacity and information controls. Deliverables include three core 
+application reports, a tested memory mechanism, failure analyses, and a second study where warranted. 
+
+
+=== PAGE 18 ===
+18 
+7.3 September 2029 to June 2030 
+September–November 2029: develop deterministic event schedules, maximum-age safeguards, and 
+selective software execution, then integrate them into the three core domain studies. December 2029–
+February 2030: complete accuracy–cost comparisons, test conditional bounds, and run the feasible 
+recommendation and transaction extensions under frozen protocols. The February 2030 review will 
+verify coverage of the primary experiments and close the scope of larger-scale studies. March–April 
+2030: consolidate chronological-replay case studies, runtime and memory measurements, cross-domain 
+failure analysis, and independent reproducibility reruns. May–June 2030: finalize the research package, 
+integrate and revise the thesis, and prepare dissemination and examination materials. Research and 
+thesis preparation will conclude by June 2030; formal examination arrangements will follow 
+institutional requirements. 
+Expected contributions are sparse relationship adaptation under incomplete records, relation-
+conditioned temporal retention, and budget-aware updates with explicit approximation assumptions. 
+Deliverables will include a controlled benchmark, a reproducible public-data evaluation suite, and 
+substantive application reports explaining when the approach is useful across domains. Evidence will 
+combine conditional mathematical results, matched computational experiments, and analysis of real 
+historical cases. Publications will depend on the findings. The thesis will explain which computations 
+require refresh, which memories remain useful, and the predictive cost of deferred updates. 
+
+=== PAGE 19 ===
+19 
+References 
+[1] Gama, J., Zliobaite, I., Bifet, A., Pechenizkiy, M., and Bouchachia, A. (2014). A survey on concept drift 
+adaptation. ACM Computing Surveys, 46(4), Article 44. https://doi.org/10.1145/2523813 
+[2] Li, Y., Yu, R., Shahabi, C., and Liu, Y. (2018). Diffusion Convolutional Recurrent Neural Network: Data -
+Driven Traffic Forecasting. ICLR. https://arxiv.org/abs/1707.01926 
+[3] Wu, Z., Pan, S., Long, G., Jiang, J., and Zhang, C. (2019). Graph WaveNet for Deep Spatial -Temporal Graph 
+Modeling. IJCAI, 1907–1913. https://doi.org/10.24963/ijcai.2019/264 
+[4] Bai, L., Yao, L., Li, C., Wang, X., and Wang, C. (2020). Adaptive Graph Convolutional Recurrent Network 
+for Traffic Forecasting. NeurIPS. https://arxiv.org/abs/2007.02842 
+[5] Li, F., et al. (2023). Dynamic Graph Convolutional Recurrent Network for Traffic Prediction: Benchmark and 
+Solution. ACM Transactions on Knowledge Discovery from Data, 17(1), Article 9. 
+https://doi.org/10.1145/3532611 
+[6] Shao, Z., Zhang, Z., Wang, F., Wei, W., and Xu, Y. (2022). Spatial-Temporal Identity: A Simple yet Effective 
+Baseline for Multivariate Time Series Forecasting. CIKM. https://arxiv.org/abs/2208.05233 
+[7] Liu, H., et al. (2023). Spatio-Temporal Adaptive Embedding Makes Vanilla Transformer SOTA for Traffic 
+Forecasting. CIKM. https://arxiv.org/abs/2308.10425 
+[8] Li, L., et al. (2024). STG-Mamba: Spatial-Temporal Graph Learning via Selective State Space Model. arXiv 
+preprint, 2403.12418. https://arxiv.org/abs/2403.12418 
+[9] Neftci, E. O., Mostafa, H., and Zenke, F. (2019). Surrogate Gradient Learning in Spiking Neural Networks: 
+Bringing the Power of Gradient-Based Optimization to Spiking Neural Networks. IEEE Signal Processing 
+Magazine, 36(6), 51–63. https://arxiv.org/abs/1901.09948 
+[10] Li, J., et al. (2023). Scaling Up Dynamic Graph Representation Learning via Spiking Neural Networks. 
+AAAI, 37(7), 8588–8596. https://doi.org/10.1609/aaai.v37i7.26034 
+[11] Wang, Z., Wen, J., and Liang, J. (2025). Delay-DSGN: A Dynamic Spiking Graph Neural Network with 
+Delay Mechanisms for Evolving Graph. ICML, PMLR 267, 64880–64894. 
+https://proceedings.mlr.press/v267/wang25dm.html 
+[12] Jahin, M. A., Fuad, T. R., Pujara, J., and Knoblock, C. (2026). ChronoSpike: An Adaptive Spiking Graph 
+Neural Network for Dynamic Graphs. arXiv preprint, 2602.01124, version 3. 
+https://arxiv.org/abs/2602.01124 
+[13] Hu, B., et al. (2025). SpikeSTAG: Spatial-Temporal Forecasting via GNN-SNN Collaboration. arXiv 
+preprint, 2508.02069. https://arxiv.org/abs/2508.02069 
+[14] Tang, K., et al. (2026). SpikySpace: A Spiking State Space Model for Energy -Efficient Time Series 
+Forecasting. arXiv preprint, 2601.02411, version 2. https://arxiv.org/abs/2601.02411 
+[15] Che, Z., Purushotham, S., Cho, K., Sontag, D., and Liu, Y. (2018). Recurrent Neural Networks for 
+Multivariate Time Series with Missing Values. Scientific Reports, 8, Article 6085. 
+https://pmc.ncbi.nlm.nih.gov/articles/PMC5904216/ 
+[16] Tabuada, P. (2007). Event-Triggered Real-Time Scheduling of Stabilizing Control Tasks. IEEE Transactions 
+on Automatic Control, 52(9), 1680–1685. https://doi.org/10.1109/TAC.2007.904277 
+[17] Huang, S., et al. (2023). Temporal Graph Benchmark for Machine Learning on Temporal Graphs. NeurIPS 
+Datasets and Benchmarks. https://arxiv.org/abs/2307.01026 
+[18] Stanford Network Analysis Project. email-Eu-core temporal network. Dataset associated with Paranjape, 
+Benson, and Leskovec, Motifs in Temporal Networks, WSDM 2017. Accessed 14 September 2026. 
+https://snap.stanford.edu/data/email-Eu-core-temporal.html 
+
+=== PAGE 20 ===
+20 
+[19] Stanford Network Analysis Project. MOOC User Action Dataset. Dataset associated with Kumar, Zhang, and 
+Leskovec, Predicting Dynamic Embedding Trajectory in Temporal Interaction Networks, KDD 2019. 
+Accessed 14 September 2026. https://snap.stanford.edu/data/act-mooc.html 
+[20] Temporal Graph Benchmark. Dynamic Node Property Prediction. Dataset descriptions, native tasks, and 
+evaluators for tgbn-trade and tgbn-genre. Accessed 14 September 2026. 
+https://tgb.complexdatalab.com/docs/nodeprop/ 
+[21] Temporal Graph Benchmark. Dynamic Link Property Prediction. Dataset descriptions, native tasks, and 
+evaluators for tgbl-coin and tgbl-wiki-v2. Accessed 14 September 2026. 
+https://tgb.complexdatalab.com/docs/linkprop/ 
+[22] Rossi, E., Chamberlain, B., Frasca, F., Eynard, D., Monti, F., and Bronstein, M. (2020). Temporal Graph 
+Networks for Deep Learning on Dynamic Graphs. arXiv preprint, 2006.10637. 
+https://arxiv.org/abs/2006.10637 
+[23] Yu, L., Sun, L., Du, B., and Lv, W. (2023). Towards Better Dynamic Graph Learning: New Architecture and 
+Unified Library. NeurIPS. https://arxiv.org/abs/2303.13047 

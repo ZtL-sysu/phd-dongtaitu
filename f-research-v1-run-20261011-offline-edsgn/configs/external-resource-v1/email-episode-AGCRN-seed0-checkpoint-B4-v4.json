@@ -1,0 +1,28 @@
+{
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email-episode-v1\\email-episode.npz",
+  "variant": "AGCRN",
+  "seed": 0,
+  "device": "cuda",
+  "threads": 2,
+  "batch_size": 4,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "epochs": 100,
+  "patience": 10,
+  "model": {},
+  "output_dir": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\runs\\external-baselines-v1\\email-episode\\AGCRN\\seed0",
+  "resource_proposal": {
+    "batch_status": "accepted_for_resource_probe_only",
+    "batch_size_proposal": 4,
+    "training_checkpoint_cells": true,
+    "purpose": "one train-only forward/backward, zero optimizer and held-out windows"
+  },
+  "baseline": {
+    "hidden_dim": 64,
+    "embed_dim": 10,
+    "num_layers": 2,
+    "cheb_k": 2,
+    "training_checkpoint_cells": true
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "scope": "temporary-metadata-and-mocked-child-controller-tests",
+  "test_command": "C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\python.exe -m pytest -q edsgn/tests/test_count_loss_training_controller_v2.py",
+  "tests_passed": 5,
+  "tests_failed": 0,
+  "public_validate_queue_positive_datasets": [
+    "email",
+    "mooc"
+  ],
+  "public_run_queue_mocked_child_jobs": 2,
+  "mocked_official_validator": true,
+  "actual_model_or_optimizer_started": false,
+  "actual_archive_or_checkpoint_read": false,
+  "gpu_used": false,
+  "source_sha256": {
+    "edsgn/scripts/count_loss_training_controller_v2.py": "bff6e993ead515f281716c8c4591a8a33e14067988aa84ebb7acac8ca2033250",
+    "edsgn/tests/test_count_loss_training_controller_v2.py": "b5d32be16574fddaa564bc70af8ca2319b5e4f925c44b987ea7689c62eca72a2",
+    "logs/count-loss-controller-v2-tests.log": "930d7bcdf02957d733e9f8802e33f09c43b13970a0b1a1907a2e453468323937"
+  },
+  "actual_numeric_schema_checked": {
+    "scope": "full_bound_validation_numeric_audit",
+    "config_path": "absolute path",
+    "run_dir": "absolute path",
+    "dataset_path": "dataset identity; no dataset field",
+    "binding.status": "verified",
+    "checkpoint_sha256": "matches original checkpoint bytes",
+    "training.summary_test_accessed": false,
+    "training.checkpoint_metadata_loaded": false
+  },
+  "limitations": [
+    "Selection, numeric-root acceptance, and passed phase records are schema-faithful temporary mocks, not actual approval or selection.",
+    "Official before-P4 validator execution was mocked; no canonical RUN state was changed.",
+    "No campaign job ran outside pytest temporary directories."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "P3 baseline recovery prelaunch metadata check",
+  "status": "pass",
+  "created_utc": "2026-10-11T14:34:59.020960+00:00",
+  "queue_sha256": "534bf70d79a50dbbd533681210a0e1056d802bcc9e32489b4699604e43af8c81",
+  "acceptance_sha256": "38de1003b09928454ff498354879d25a893e574cce97acd563b208aa52dc6178",
+  "source_sha256": "007427958e9519ced2e4f283f61c1165f686cff0b5abe3143185fca2f23368b4",
+  "job_count": 68,
+  "active_owned_jobs": [],
+  "scientific_source_changed": false,
+  "test_access": false,
+  "spent_seconds": 27821.204501300013,
+  "remaining_seconds": 231378.7954987
+}

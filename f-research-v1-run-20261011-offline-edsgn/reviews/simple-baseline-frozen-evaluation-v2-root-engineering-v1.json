@@ -1,0 +1,38 @@
+{
+  "scope": "frozen_simple_no_refit_evaluator_local_engineering_only",
+  "accepted_by": "root",
+  "verdict": "pass",
+  "evidence_sha256": {
+    "edsgn/staging/simple_baseline_frozen_evaluation_v2.py": "160f5a27903264374079928995a5de0da34f3050789937be5419f8291a706d1a",
+    "edsgn/staging/test_simple_baseline_frozen_evaluation_v2.py": "cbfecfc6eb2529eae1d80f2e67859d74096dcb649070974c780fb6c8531e5dc1",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "logs/simple-baseline-frozen-evaluation-v2-independent-tests.log": "684bb60efb5a1354660fe78a830b646c444a7d82a1c268363c25dbbe9253924e",
+    "reviews/simple-baseline-frozen-evaluation-v2-independent-v2.json": "d770eac5c8cc39dc147d0e9f87e20f350c656d7d4d58bb8e8ee580e2b8ebc2ac",
+    "reviews/simple-baseline-frozen-evaluation-v2-independent-v2.md": "ecd5d7a47df547f64059506f47b1d300a58c22b7c07e4a185281f9df37d3bd79",
+    "reviews/simple-baseline-frozen-evaluation-v2-self-review.md": "cfddba574079f16097243099c00fb27275e993a21674d5bc3ab437938057ff09",
+    "logs/simple-baseline-frozen-evaluation-v2-tests.json": "a760c8bb7c94503492555b541ab147fee228580243d1af91a991eb912c1826ed",
+    "logs/simple-baseline-frozen-evaluation-v2-root-focused-v1.log": "ab6f73dab3c5b269a5f12ca861a0108509017b27cc5a72ab9f6fec9dc06815a1",
+    "edsgn/staging/c06_domain_manifest_preflight_v4.py": "919aa8b0ba27013e1489d86b7db440859f7c994ae763bbe1edecb132170266e4",
+    "edsgn/staging/simple_baseline_freeze_v1.py": "1a5cb9d66f6e09c57779965fc7e6b44088bfc7acec2d73ba80ed4cf1046c1ad6",
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff"
+  },
+  "writer_cpu_tests_passed": 13,
+  "independent_cpu_tests_passed": 13,
+  "root_focused_cpu_tests_passed": 2,
+  "root_review": [
+    "Original persistence and frozen linear prediction semantics; test route has no fitter.",
+    "C06 descriptor is reconstructed from metadata-only current collection and exact strict domain.",
+    "Owned guard, canonical P3/P3A evidence and official before-P4 validator precede loading.",
+    "Full source/input/collection snapshot after final budget callback immediately precedes test loading.",
+    "Complete ordered origins, array task/mask/node/normalization bindings and raw horizon metrics are verified."
+  ],
+  "scientific_hypothesis_accepted": false,
+  "pipeline_advanced": false,
+  "actual_test_authorized": false,
+  "actual_execution_completed": false,
+  "limitations": [
+    "Current-source train-only reconstruction and root acceptance of all four preserved legacy fits are pending.",
+    "Managed dispatcher, stable phase aliases, global simple driver contract and whole-campaign closure are pending.",
+    "Production integration must bind and recheck final output/source/phase closure before a completed child receipt."
+  ]
+}

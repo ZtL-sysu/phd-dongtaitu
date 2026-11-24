@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "status": "root-frozen-before-core-seed0-optimizer-launch",
+  "scope": "P3 development full train/validation only; final five-seed protocol remains required",
+  "variants": ["V3", "V4", "V2", "V9"],
+  "trial": "default g00/m00; no validation-selected changes",
+  "resource_basis": "p3-training-resource-contract-v2.json and genuine V4 finite-gradient probes",
+  "batch_sizes": {"synthetic": 128, "email": 8, "mooc": 128, "email-episode": 8},
+  "device": "cuda",
+  "threads": 2,
+  "training_prior_cache": true,
+  "training_prior_cache_bytes": 1073741824,
+  "cache_scope": "gradient-enabled training only; no caching in evaluation or profiling",
+  "optimizer": {"name": "AdamW", "lr": 0.001, "weight_decay": 0.0001, "grad_clip": 1.0},
+  "max_epochs": 100,
+  "early_stopping_patience": 10,
+  "selection": "mean raw validation MAE at preregistered required horizons",
+  "complete_origins_required": true,
+  "genuine_SNN": "V3 and V4 keep local/neighbor fast-slow LIF, surrogate gradients and delayed reset; V2 and V9 are the specified controls",
+  "unchanged": ["d_total64", "k8", "candidate_cap32", "tau1/8", "one internal step", "all nodes", "all train/validation windows", "history and future horizons"],
+  "budget": "same cumulative 72-hour envelope; failed probes and earlier development runs remain charged"
+}

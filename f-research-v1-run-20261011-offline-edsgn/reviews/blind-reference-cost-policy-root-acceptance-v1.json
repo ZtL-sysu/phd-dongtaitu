@@ -1,0 +1,17 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "engineering-staging-only",
+  "created_utc": "2026-10-11T10:14:48.864573+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/blind_reference_cost_policy_v1.py": "2500f9687aa277ad5e67f3d4d41dde095d2e51761109da2f9dfceb6a68e3218d",
+    "edsgn/tests/test_blind_reference_cost_policy_v1.py": "5de9480763af7dfabbb8449c0b5d827c67dac9331d086ba979f5293021f573ee",
+    "reviews/blind-reference-cost-policy-independent-v1.md": "4c8033aaeadcf4ee08107d7a4acf3440732924011d67be168931c572dcdb42eb",
+    "reviews/blind-reference-cost-policy-independent-v1.json": "81cd2c61652b26a4c61b3f8ebb0b0be28b7dcc0a3fe68d5bd04f5bc6c5475628",
+    "protocols/c07-blind-reference-cost-fitting-correction-v1.md": "726703a038060abdda19ba7d0599d1081f1ac4d1b641f5f259197a1fc56d70c7"
+  },
+  "actual_blind_control_run": false,
+  "c07_experiment_closed": false
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "engineering-only",
+  "status": "passed",
+  "wall_seconds": 10.6840675,
+  "process_wall_seconds": 10.6840675,
+  "whole_command_wall_seconds": 10.6840675,
+  "command": "Conda dyg-cold pytest -q test_global_frozen_test_completion_v4.py test_global_frozen_test_completion_v4_all_drivers.py",
+  "result": "65 passed",
+  "new_regressions": ["simple_v3 and case_v3 missing phase output map rejected after receipt/hash resealing", "prediction_v5 duplicate normalized paths rejected with same and different SHA"],
+  "mixed_driver_fixture": "all seven supported contracts in one queue; opaque artifacts; no NPZ decoding",
+  "source_sha256": "E05EA055BE0852AECC3B9A0113B177C54A3567AD8ADF5C7BBB34AA08A887A5C3",
+  "base_test_sha256": "CAD154C3778D6DEC2311438955C0351438B86C89AB96FBAF8AA2439397BDCECB",
+  "mixed_test_sha256": "07E8A7DA83BE37E56A81BBF8C2F979AD03251D10770FB7FF6118D0BE7B7C3DAD",
+  "limitations": ["engineering-only metadata and opaque-byte fixtures", "no actual test data, model, checkpoint, GPU, phase dispatch, or scientific acceptance"]
+}

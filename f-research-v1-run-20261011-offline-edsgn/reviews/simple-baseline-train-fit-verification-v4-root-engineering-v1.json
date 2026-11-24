@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "scope": "train_only_simple_fit_verification_local_engineering_only",
+  "accepted_by": "root",
+  "verdict": "pass",
+  "accepted_utc": "2026-10-11T15:00:49.689670+00:00",
+  "evidence_sha256": {
+    "edsgn/staging/simple_baseline_train_fit_verification_v4.py": "ef3c91e9ffa75134298d6888d2c6b52ca13e746efd707366ebc01ecb155b7e1c",
+    "edsgn/tests/test_simple_baseline_train_fit_verification_v4.py": "844e51d932479f0250c7080efaa6ef0c7af0d3e8bfda9efc57ece90b4d31a28c",
+    "edsgn/scripts/owned_python_job_inventory_v1.py": "c31e70671f3846cdd8b1fb61e06aab45c0110d9ad5c5f1f3823377ab6d267d06",
+    "reviews/count-loss-training-controller-v5-root-engineering-v1.json": "348b2e085cf7677010140e9c73cdd98f136c1a245b70bcd24ac007a9e7d548ea",
+    "reviews/simple-baseline-train-fit-verification-v4-engineering.md": "30b784472bee2485a54faa9a5693bdf7fe28af25179802488d9f261b7c3e5eed",
+    "reviews/simple-baseline-train-fit-verification-v4-engineering.json": "58d948b7d4c313eb23cf2e7a2c1d5752e6139206bf9a1c906270fbc1255e704f",
+    "reviews/simple-baseline-train-fit-verification-v4-independent-review-v1.md": "82efe7b8f9feb33bebfd297b41323ca779396d265c98c0d7e5f66eef893d3873",
+    "reviews/simple-baseline-train-fit-verification-v4-independent-review-v1.json": "53f5e993bc0afba1c1510ca55e3f048570fa6c5393a40c5dd8142347825ee8b2",
+    "edsgn/src/edsgn/engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "edsgn/src/edsgn/data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "protocols/simple-baseline-train-fit-verification-root-design-v1.md": "117ae08368a06fc1c7f4cb95a772729f06f26924bb4f3578f328b15c8e3f5f48",
+    "logs/simple-baseline-train-fit-verification-v4-tests.log": "31f89af3cd3963c04206f53d1f3a75a80c0a98015f5b1b3cc13693e72b22ee8f",
+    "logs/simple-baseline-train-fit-verification-v4-root-tests-v1.log": "934b8af8ead7ec9f57b42b206e28417e1ceb624403d172d5d828ae16f5020f24"
+  },
+  "root_review": [
+    "Independently reconstructs train-only float64 Gram/rhs/ridge coefficients and compares preserved bytes without rewriting legacy coefficients.",
+    "Replays all ordered validation origins and required raw horizon/feature metrics; declares possible combined-source member materialization without scoring test origins.",
+    "Binds the canonical 21 package modules plus verifier, strict source/input membership, official before-P3 validation and final serialization fences.",
+    "Actual Guard checkpoint rejects a nonempty accepted owned-process inventory; CLI fixture tests verify refusal before loading and failed receipt with owned leases released.",
+    "CLI holds both leases until completed receipt; coefficient mismatch fails and preserves evidence."
+  ],
+  "writer_cpu_tests_passed": 20,
+  "independent_cpu_tests_passed": 20,
+  "root_cpu_tests_passed": 20,
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "actual_test_authorized": false,
+  "actual_execution_completed": false,
+  "limitations": [
+    "All tests use small CPU fixtures or process mocks; the four actual train-only fit audits remain unexecuted.",
+    "Actual audit requires the serial model resource, remaining single72-hour budget and separate independent numeric/root acceptance.",
+    "No historical launch provenance, actual fit acceptance, P3 pass or test authorization is conferred."
+  ]
+}

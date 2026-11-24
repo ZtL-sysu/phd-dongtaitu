@@ -1,0 +1,223 @@
+{
+  "schema_version": 2,
+  "scope": "resource/functionality diagnostic",
+  "status": "failed",
+  "wall_seconds": 11.394194200023776,
+  "device": "cuda",
+  "B": 8,
+  "N": 986,
+  "optimizer_steps": 0,
+  "test_accessed": false,
+  "validation_accessed": false,
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz",
+  "config_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\email-V1.json",
+  "arms": {
+    "reference": {
+      "passes": [
+        {
+          "arm": "reference",
+          "pass": 1,
+          "warmup": true,
+          "whole_forward_backward_seconds": 6.563631400000304,
+          "loss": 6.236179828643799,
+          "counters": {
+            "graph_calls": 28,
+            "state_calls": 28,
+            "graph_rows_updated": 220864,
+            "states_updated": 220864,
+            "candidate_edges_scored": 7067648,
+            "source_nodes_encoded": 220864,
+            "message_edges_aggregated": 1766912.0,
+            "candidate_exploration_checks": 1009664,
+            "candidate_prior_merge_checks": 7067648,
+            "prior_events_processed": 129057,
+            "prior_pairs_generated": 258114,
+            "prior_events_applied": 129057,
+            "prior_pairs_applied": 258114,
+            "prior_events_cache_replayed": 124198,
+            "prior_pairs_cache_replayed": 248396,
+            "prior_cache_hits": 0,
+            "prior_cache_misses": 8,
+            "prior_cache_oversize": 0,
+            "prior_cache_bypasses": 0,
+            "prior_cache_evictions": 0,
+            "prior_cache_bytes_used": 68958954,
+            "prior_cache_estimated_bytes": 10216,
+            "prior_cache_key_seconds": 0.006389499991200864,
+            "prior_cache_build_seconds": 1.9808333000109997,
+            "prior_cache_apply_seconds": 0.159636599564692,
+            "prior_cache_build_events": 129057,
+            "prior_cache_build_pairs": 258114,
+            "readout_calls": 28,
+            "spikes_fast": 0.0,
+            "spikes_slow": 0.0,
+            "spike_cells_updated": 7067648,
+            "graph_rows_eligible": 220864,
+            "states_eligible": 220864,
+            "mandatory_actions": 15776.0,
+            "graph_quota_overrun": 0,
+            "state_quota_overrun": 0,
+            "estimated_mandatory_cost": 15776.0,
+            "runtime_budget_overrun_ms": 0.0,
+            "estimated_cost": 441728.0,
+            "graph_age_max": 0.0,
+            "state_age_max": 0.0,
+            "effective_graph_age_max": 1.0,
+            "effective_state_age_max": 1.0
+          }
+        }
+      ],
+      "parameter_sha256_before": "f2139067c10aca261cc97731f547dbe5a9e3d3cf92cf3e4aa736a9bef92a353f"
+    }
+  },
+  "passes_completed": [
+    {
+      "arm": "reference",
+      "pass": 1,
+      "warmup": true,
+      "whole_forward_backward_seconds": 6.563631400000304,
+      "loss": 6.236179828643799,
+      "counters": {
+        "graph_calls": 28,
+        "state_calls": 28,
+        "graph_rows_updated": 220864,
+        "states_updated": 220864,
+        "candidate_edges_scored": 7067648,
+        "source_nodes_encoded": 220864,
+        "message_edges_aggregated": 1766912.0,
+        "candidate_exploration_checks": 1009664,
+        "candidate_prior_merge_checks": 7067648,
+        "prior_events_processed": 129057,
+        "prior_pairs_generated": 258114,
+        "prior_events_applied": 129057,
+        "prior_pairs_applied": 258114,
+        "prior_events_cache_replayed": 124198,
+        "prior_pairs_cache_replayed": 248396,
+        "prior_cache_hits": 0,
+        "prior_cache_misses": 8,
+        "prior_cache_oversize": 0,
+        "prior_cache_bypasses": 0,
+        "prior_cache_evictions": 0,
+        "prior_cache_bytes_used": 68958954,
+        "prior_cache_estimated_bytes": 10216,
+        "prior_cache_key_seconds": 0.006389499991200864,
+        "prior_cache_build_seconds": 1.9808333000109997,
+        "prior_cache_apply_seconds": 0.159636599564692,
+        "prior_cache_build_events": 129057,
+        "prior_cache_build_pairs": 258114,
+        "readout_calls": 28,
+        "spikes_fast": 0.0,
+        "spikes_slow": 0.0,
+        "spike_cells_updated": 7067648,
+        "graph_rows_eligible": 220864,
+        "states_eligible": 220864,
+        "mandatory_actions": 15776.0,
+        "graph_quota_overrun": 0,
+        "state_quota_overrun": 0,
+        "estimated_mandatory_cost": 15776.0,
+        "runtime_budget_overrun_ms": 0.0,
+        "estimated_cost": 441728.0,
+        "graph_age_max": 0.0,
+        "state_age_max": 0.0,
+        "effective_graph_age_max": 1.0,
+        "effective_state_age_max": 1.0
+      }
+    }
+  ],
+  "inference_speedup_claim": false,
+  "energy_claim": false,
+  "budget_before_seconds": 7164.305863600055,
+  "input_sha256_before": {
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\email-V1.json": "481c766a12a75a13dbf5500e94ee402461dff722d28d5c1ad379e3398f1992f3",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_bounded_tensor_diagnostic_v2.py": "e261a34a75f93357be72d3260bf084dd6a41135b2f4dcf68d5396782e4631333",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_campaign.py": "34eb5fa057ac5d7d7f358a899e7dd178472926ebbe89275c310067a33d48df9e",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+  },
+  "preparation": {
+    "dataset_load_seconds": 0.08551190001890063,
+    "training_statistics_seconds": 0.045534700009739026,
+    "training_window_selection_seconds": 0.0004927999980282038,
+    "batch_assembly_and_host_to_device_seconds": 0.11670309997862205,
+    "template_model_construction_seconds": 0.0036106999905314296,
+    "shared_preparation_total_seconds": 0.30493789998581633
+  },
+  "train_window_pairs": [
+    [
+      0,
+      27
+    ],
+    [
+      0,
+      102
+    ],
+    [
+      0,
+      177
+    ],
+    [
+      0,
+      252
+    ],
+    [
+      0,
+      328
+    ],
+    [
+      0,
+      403
+    ],
+    [
+      0,
+      478
+    ],
+    [
+      0,
+      554
+    ]
+  ],
+  "source_sha256_before": {
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\email-V1.json": "481c766a12a75a13dbf5500e94ee402461dff722d28d5c1ad379e3398f1992f3",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_bounded_tensor_diagnostic_v2.py": "e261a34a75f93357be72d3260bf084dd6a41135b2f4dcf68d5396782e4631333",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_campaign.py": "34eb5fa057ac5d7d7f358a899e7dd178472926ebbe89275c310067a33d48df9e",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+  },
+  "effective_model_config": {
+    "training_prior_cache": true,
+    "training_prior_cache_bytes": 1073741824
+  },
+  "error": "TypeError: JSONEncoder.__init__() got an unexpected keyword argument 'flush'",
+  "traceback": "Traceback (most recent call last):\n  File \"C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_gpu_fullpath_probe_v2.py\", line 178, in run\n    print(json.dumps({'arm':arm,**{k:record[k] for k in ('pass','warmup','whole_forward_backward_seconds','loss')}},flush=True))\n          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\xhf\\miniconda3\\envs\\dyg-cold\\Lib\\json\\__init__.py\", line 238, in dumps\n    return cls(\n           ~~~^\n        skipkeys=skipkeys, ensure_ascii=ensure_ascii,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        check_circular=check_circular, allow_nan=allow_nan, indent=indent,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        separators=separators, default=default, sort_keys=sort_keys,\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n        **kw).encode(obj)\n        ^^^^^\nTypeError: JSONEncoder.__init__() got an unexpected keyword argument 'flush'\n",
+  "input_sha256_after": {
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\email-V1.json": "481c766a12a75a13dbf5500e94ee402461dff722d28d5c1ad379e3398f1992f3",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\email\\email.npz": "6f8c3e2fa5ae41d66eb49717acae8abe36b22e80d05d4305b82347d39d5a61e1",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_gpu_fullpath_probe_v2.py": "d2e5543ba24716ff9189059b93054a4b1b786e477ecba2342a063d5ffd83140f",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\candidate_bounded_tensor_diagnostic_v2.py": "e261a34a75f93357be72d3260bf084dd6a41135b2f4dcf68d5396782e4631333",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\aggregate_budget.py": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\scripts\\baseline_campaign.py": "34eb5fa057ac5d7d7f358a899e7dd178472926ebbe89275c310067a33d48df9e",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\model.py": "b60c7e3c4c961ed87ba9b4d9fac604f63f7c9b2aef351bba18741921f6b97d9c",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\engine.py": "e4c4faa2bd13babdbf4281cd4aa8adc390420077f9c4fb9afa7bb36711a0104d",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c"
+  }
+}

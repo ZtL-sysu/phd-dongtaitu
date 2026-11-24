@@ -1,0 +1,41 @@
+{
+  "verdict": "needs-repair-before-any-real-test-execution",
+  "scope": "independent CPU source review and temporary/toy tests only; no actual model/data/coefficient arrays/GPU/launch",
+  "tests": {
+    "command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest -q edsgn/staging/test_simple_baseline_frozen_evaluation_v1.py",
+    "passed": 7,
+    "failed": 0,
+    "wall_seconds": 3.02,
+    "test_sha256": "a4a2eabe63da3a9491a28939b1995e2069f7e368371c4232b658c61f3185b313"
+  },
+  "source_sha256": "62156171abedfc616b14ba00fdc130828d273d091023dd2dd6b94e1d8589686f",
+  "engine_sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+  "guard_sha256": "1a5cb9d66f6e09c57779965fc7e6b44088bfc7acec2d73ba80ed4cf1046c1ad6",
+  "design_sha256": "c984a1e4102b4bc1724517bb4d1da4bd79cb31067377171de25284fcfb256c06",
+  "source_pin_matches_requested": true,
+  "test_pin_matches_requested": true,
+  "attack_reproduction": {
+    "method": "temporary toy fixture; second owned-guard checkpoint mutates opaque dataset source immediately before loader callback",
+    "observed_exception": "FrozenSimpleError: inputs changed before test replay",
+    "loader_called_before_rejection": true,
+    "implication": "the only dataset snapshot comparison occurs after loader returns, so a changed archive can be decoded before detection"
+  },
+  "positive_findings": [
+    "Persistence and linear prediction formulas agree exactly with unchanged engine.simple_baselines on toy data, including clean targets/masks, persistence raw last observation, shared normalized-history/intercept linear calculation, count clipping and signed synthetic non-clipping.",
+    "Linear evaluator receives only a frozen coefficient file and has no fit path; train fit authorization binds fit manifest, coefficient bytes, train fingerprint, training statistics/node order, P3/P3A references and current evaluator/engine/data SHA.",
+    "Metadata gate checks P2/P3/P3A passed/pass and P4 running, verifies owned dual lock callback and runs cumulative budget/process checks through callback; positive temporary path runs official-gate mock before loader.",
+    "All legal test origins are obtained through engine.index_origins and predictions retain masks and origin pairs; complete NPZ/CSV output is written exclusively and output bytes checked against manifest hashes.",
+    "No-overwrite behavior and mutation/output-integrity refusals have toy coverage."
+  ],
+  "material_blockers": [
+    "TOCTOU before data load: frozen_test_evaluate lines 351-362 snapshots after the validator, loads coefficient, invokes checkpoint, then calls datasets_at/loader; the second snapshot is after that call. Reproduction confirms loader runs after a source mutation and only then errors. Recheck inputs after the final callback and immediately before loader, and record test access before the loader attempt.",
+    "The pretest domain descriptor is checked by path/hash at lines 200-204 but its schema/domain/split/ordered-origin content is not parsed or matched against loaded PreparedData; verify_result lines 308-317 checks only window counts and output hashes, not exact ordered pairs or expected target/mask shape/content. A frozen descriptor therefore does not itself establish complete intended-domain coverage.",
+    "This revision has no original UUID phase receipt, immutable alias, final root dispatcher receipt, or global completion binding; docstring lines 339-343 and return line 387 explicitly leave these pending. It must remain unlaunchable until a managed successor supplies them.",
+    "Passed-stage refs in _passed_refs/stage_refs lines 73-83 and 146-150 are resolved and hashed without explicit RUN-containment checks. The official validator may reject malformed canonical state, but the helper should itself reject any out-of-root stage input/evidence path before snapshotting it."
+  ],
+  "legacy_fit_status": "The seven tests include metadata-only inspection of the four existing P3 simple outputs; each remains admission_ready=false with missing fit bindings. No raw dataset array or linear coefficient array was loaded (the legacy inventory reads only the NPY header and hashes bytes). This review does not treat those outputs as frozen/admissible.",
+  "limitations": [
+    "No real PreparedData/archive, coefficient array, model/checkpoint, oracle, GPU, optimizer or campaign was executed.",
+    "The current toy positive path uses temporary acceptance/state and a mocked official validator; it proves helper mechanics only, not root acceptance or P3A evidence."
+  ]
+}

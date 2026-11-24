@@ -1,0 +1,29 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T13:08:35.974697+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "configs/p3-internal-bound-v4/email-episode-STID-seed0.json": "1078e53ef1b2bd2a9f3e8c5ca73f73c10a239b4c9c6911201c7d30c0e27ba066",
+    "logs/offline-phase-wall/internal-bound-v4-email-episode-STID-seed0.json": "fa6f8a94311126c9b1078e355fcc906837f78e9118907a175d55bfe8778b91fe",
+    "logs/p3-internal-email-episode-STID-numeric-v3.json": "76eb2e3668b38ebee8e1e0350422415daf4d970ecdd49e7d2e8334edfa28248e",
+    "runs/internal-bound-v4/email-episode/STID/seed0/input-binding-at-launch.json": "a688b82e0bd2e4c5117f68862eb47e159e15f20dd795c129dd6ee86eaa54aa06",
+    "runs/internal-bound-v4/email-episode/STID/seed0/training_summary.json": "e7069284854534a6e831f5d5f9065a362d6484399ca98f929a36a2e4d7e09b67",
+    "runs/internal-bound-v4/email-episode/STID/seed0/checkpoint.pt": "27b26409472153568f8d6e5651b481f05c81dc199fb786af90264c7fe41f577d",
+    "runs/internal-bound-v4/email-episode/STID/seed0/manifest.json": "e6ce2433dd4d9f285c913592e27211be69a323f96c72b5cc95e80d7d3059cc9e",
+    "runs/internal-bound-v4/email-episode/STID/seed0/config_resolved.json": "1078e53ef1b2bd2a9f3e8c5ca73f73c10a239b4c9c6911201c7d30c0e27ba066",
+    "runs/internal-bound-v4/email-episode/STID/seed0/training_log.csv": "ada99191d0edcfb1298cc6dbc3a638893a97312400e71fb87453230a0a463ef0",
+    "runs/internal-bound-v4/email-episode/STID/seed0/validation_predictions.npz": "de2afd8812a24e26fa996ec392ef7913714a8aa2ce3bb2d323fb18622dd8d464",
+    "runs/internal-bound-v4/email-episode/STID/seed0/metrics_by_horizon_val.csv": "5441270bb573fe5ae4832bfc8d020967a636357cee702ce89cc5cbab03eda514",
+    "reviews/p3-internal-four-numeric-independent-v1.md": "0e95ad05f76058e204636c9d301f50c22f3a2f380404b8922e25f9cfc6313705",
+    "logs/p3-internal-four-numeric-independent-v1.json": "057b14fb72f60bb5b472c047c4d5ecaa5d467af612bd66f12c59446b61d5fb12"
+  },
+  "dataset": "email-episode",
+  "variant": "STID",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.6565308858215679,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

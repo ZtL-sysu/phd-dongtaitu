@@ -1,0 +1,29 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "scope": "completed-development-seed-validation",
+  "created_utc": "2026-10-11T13:08:35.809966+00:00",
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "configs/p3-internal-bound-v4/email-STID-seed0.json": "3b03ee02b528e2bfb8577f74df37c0f0fec96ec6a905ef4e588ddd83a0fff820",
+    "logs/offline-phase-wall/internal-bound-v4-email-STID-seed0.json": "8d3d8d3142b6c9d93398a2f9853ec6c61cce85284123f4fc910241d03fe2c307",
+    "logs/p3-internal-email-STID-numeric-v3.json": "82a7efe4ff1fb123f5fd09ee3dc46b2fb5f60aa3a3ec2d15ebd34f531c015f60",
+    "runs/internal-bound-v4/email/STID/seed0/input-binding-at-launch.json": "51a28020a78517858870ecb1f29ae03998947cf30d6cf1e767b44bf272280cc0",
+    "runs/internal-bound-v4/email/STID/seed0/training_summary.json": "4b11bb6ffbc96b2dbb695d19eee3bca9cddb3b6a6af6a6779791afa023cff69b",
+    "runs/internal-bound-v4/email/STID/seed0/checkpoint.pt": "646caf73422bd617cd135d3d09c811926d1e42a2da7270a4baba0c2f75bad3f3",
+    "runs/internal-bound-v4/email/STID/seed0/manifest.json": "a22b45b35a4db00d1b404ba92694c3000cad16635b50cbc8dfba64550b806382",
+    "runs/internal-bound-v4/email/STID/seed0/config_resolved.json": "3b03ee02b528e2bfb8577f74df37c0f0fec96ec6a905ef4e588ddd83a0fff820",
+    "runs/internal-bound-v4/email/STID/seed0/training_log.csv": "d61b70ec932d2393d598147903e7e218f1a250eea1fa86437ac161195a968606",
+    "runs/internal-bound-v4/email/STID/seed0/validation_predictions.npz": "9d051a5f4a975634b441c2f4bfc1fae82db270b3ce8bc4d2b3b877132089b122",
+    "runs/internal-bound-v4/email/STID/seed0/metrics_by_horizon_val.csv": "3f17939a37628cd3c2002fc2f24a5e21d6600d2ff9b922eced95df6c7326e9e2",
+    "reviews/p3-internal-four-numeric-independent-v1.md": "0e95ad05f76058e204636c9d301f50c22f3a2f380404b8922e25f9cfc6313705",
+    "logs/p3-internal-four-numeric-independent-v1.json": "057b14fb72f60bb5b472c047c4d5ecaa5d467af612bd66f12c59446b61d5fb12"
+  },
+  "dataset": "email",
+  "variant": "STID",
+  "model_seed": 0,
+  "required_horizon_mean_mae": 0.0547726234784095,
+  "formal_five_seed_result": false,
+  "final_test_result": false
+}

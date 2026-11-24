@@ -1,0 +1,154 @@
+{
+  "accepted_by": "root",
+  "verdict": "pass",
+  "accepted": true,
+  "scope": "prepared-pilot-configuration-identity-only",
+  "queue_sha256": "017119437d59358fbd6f47cd2662d8a7de323d2024793ed8fb1a3721534c021f",
+  "queue_path": "protocols\\p4-core-pilot-queue-v3.json",
+  "created_utc": "2026-10-11T09:48:30.082637+00:00",
+  "scientific_configuration_changed": false,
+  "training_started": false,
+  "actual_launch_authorized_by_this_record": false,
+  "dataset_arrays_loaded_or_hashed": false,
+  "candidate_slots": {
+    "graph": 1,
+    "memory": 1
+  },
+  "jobs": [
+    {
+      "config_path": "configs/core-development-bound-v3/synthetic-V3-seed0.json",
+      "config_sha256": "dbec283cbf7b56ffc16d3506ed48486f59a583afa010e75dc4478c4842adcd7b",
+      "reference_sha256": "67f1d6bf9b4cb94d920e4a6f8c5a5ab0ade21632335601ffc63f08564a012941",
+      "variant": "V3",
+      "dataset": "synthetic",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/synthetic-V4-seed0.json",
+      "config_sha256": "5b3eb961fd467463100df7d30d6c274bb3bb06ff594a4b5042b3247ee8b75394",
+      "reference_sha256": "176fd6ac42b2876668b92600d6b16c29a5f582c4bedfcb1437297627c7193713",
+      "variant": "V4",
+      "dataset": "synthetic",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/synthetic-V2-seed0.json",
+      "config_sha256": "0358b29657d9173f6bed9fe521d21a319ad4b274acf1a5475942e0af47163a33",
+      "reference_sha256": "a453b19cb5119650fdfcc79f5d6d6312bfae6d4535c692c3f6cd8cd882ff3ef2",
+      "variant": "V2",
+      "dataset": "synthetic",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/synthetic-V9-seed0.json",
+      "config_sha256": "3d2b061704e7d92b0cbe6e1907a48c64fd3ccba72611c9854584089f5731b724",
+      "reference_sha256": "3daca069ced8dab21ab2558bb8d199f5664992d31733952b22c170aafc0f6536",
+      "variant": "V9",
+      "dataset": "synthetic",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/mooc-V3-seed0.json",
+      "config_sha256": "8b0213150aeae187add26d71c6252eb7c05201afcb7586c70baaf9bed4d88329",
+      "reference_sha256": "50e97959789190a6f939830402ec4e883a264ed01069850d4e371a781b113fdf",
+      "variant": "V3",
+      "dataset": "mooc",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/mooc-V4-seed0.json",
+      "config_sha256": "dbfaf35330a6ac2c34e4fb9c26fc3a018254216e11bfab227a5e6b722f84c603",
+      "reference_sha256": "13b7536205b10cc3c33aa61f0eb209a572733542c24258da6f50761e71bb5a21",
+      "variant": "V4",
+      "dataset": "mooc",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/mooc-V2-seed0.json",
+      "config_sha256": "c89771b77acfcaf924a5c847cc2a23ba9fd2ce76912a599174f664b72a32590b",
+      "reference_sha256": "8bf4ea112408b18f8201f5a9b0be2e1e344ad1113df85cecd5d1edd158c823f4",
+      "variant": "V2",
+      "dataset": "mooc",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/mooc-V9-seed0.json",
+      "config_sha256": "7d0dd4ae5acfdeaa304cc1a6efea55f6d8aeb7fbde8952e39ec9295b6dffb852",
+      "reference_sha256": "a299457f6c8c7f485292c4ee463f4ab5e2546b135c091bd01aec049e864a77d6",
+      "variant": "V9",
+      "dataset": "mooc",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-V3-seed0.json",
+      "config_sha256": "fad772bec02a7a1c5c5c1eb22e586292f2f8dc1a2ada6a75aefe92b86d45b213",
+      "reference_sha256": "361c99cef5141f8d54fdd911fb1fcc70286057c9b7b6bfd6a55a2e7d0ca987ef",
+      "variant": "V3",
+      "dataset": "email",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-V4-seed0.json",
+      "config_sha256": "f7d71e2a333e57457e38ad2dbba78cf2cab1f57c4956361eaecf1397d132b16e",
+      "reference_sha256": "61b14c3a08029a3e8fccfc974eb25ca66c41b0ea4e3c3f67c3af76b1d813883c",
+      "variant": "V4",
+      "dataset": "email",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-V2-seed0.json",
+      "config_sha256": "a9eddba71efc3eff2b4d78f16f12b5e6344eabc3a798fe10d476a154bc6b75ef",
+      "reference_sha256": "3cd8417277cdf02696fe6205b5c7747d4b352303eed19d25d10ee23941a531c4",
+      "variant": "V2",
+      "dataset": "email",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-V9-seed0.json",
+      "config_sha256": "0502d2e06591fd228f2da7ca2263c32049084b8ad69e5d21086e10e6b53e96fb",
+      "reference_sha256": "68434f5c1ac1c95beb116f31f642c21569434d646fb1c298d8f2fbdde4ca34f1",
+      "variant": "V9",
+      "dataset": "email",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-episode-V3-seed0.json",
+      "config_sha256": "fb166f069bfb5c6c226c884400830f29d6f4ae3305fd0dd6072405368be3bb4a",
+      "reference_sha256": "4d39ec2f4cca631a5ca77c1629926491655d9a6d846a24f1f99621266ee5b0f5",
+      "variant": "V3",
+      "dataset": "email-episode",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-episode-V4-seed0.json",
+      "config_sha256": "f4899052b34b51f5511415b0425b814772ac830af18bea982e110333b143931b",
+      "reference_sha256": "4ae890b6dd13003a7b87d78e4268ac5c0a2004522b7a560a2b7ddc1238c4955e",
+      "variant": "V4",
+      "dataset": "email-episode",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-episode-V2-seed0.json",
+      "config_sha256": "49ec4c055ef844f38a23f72a9143ac509199d2724ec4b9c08fe9b800d4e03043",
+      "reference_sha256": "f4f09b52a7c8067fae65f3356e1e49a1ea7aaf74ea935df5e183e2908600b6e1",
+      "variant": "V2",
+      "dataset": "email-episode",
+      "output_exclusive_at_preflight": true
+    },
+    {
+      "config_path": "configs/core-development-bound-v3/email-episode-V9-seed0.json",
+      "config_sha256": "ad8687ced24b733bbade08e7f5139a22631b818fda86edb86674f64d2315eb18",
+      "reference_sha256": "ce1600b3a01fdca72ed3c642db37e7ccd4d04159b46a78fcdf21966c5d2b1c19",
+      "variant": "V9",
+      "dataset": "email-episode",
+      "output_exclusive_at_preflight": true
+    }
+  ],
+  "required_before_actual_launch": [
+    "canonical P3A passed/pass and P4 running",
+    "accepted variant/dataset resource preflight",
+    "at-launch binding of source/config/actual data bytes",
+    "single resource lease and owned-process guard",
+    "complete cumulative 72-hour budget coverage and available wall time"
+  ]
+}

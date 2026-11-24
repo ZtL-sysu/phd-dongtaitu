@@ -1,0 +1,14 @@
+{
+  "reviewer": "root",
+  "verdict": "blocked",
+  "scope": "engineering-staging-only",
+  "actual_experiment_run": false,
+  "pipeline_advanced": false,
+  "scientific_hypothesis_accepted": false,
+  "evidence_sha256": {
+    "edsgn/staging/typed_endpoint_producer_v2.py": "e848d1116a1b867bb6622dc8a84335e3eb2d947932eba7f842a972b05d4e0dbe",
+    "edsgn/staging/typed_endpoint_plan_validator_v5.py": "bb77c06c780079d825bcb43bdfffbf2f2ebe3e267080ed629415c0d56cca5e15",
+    "edsgn/tests/test_typed_endpoint_producer_v2.py": "46687e9d1a3c5ba6237d98caf56d84e4967101d01b67483c9c4c5fd693e6ed40",
+    "reviews/typed-endpoint-producer-v2-writer-self-review.md": "8cd0b6fd6cb87e608003418cd1d0252591330e1cfa9aa0b4f3a563521267acc7"
+  }
+}

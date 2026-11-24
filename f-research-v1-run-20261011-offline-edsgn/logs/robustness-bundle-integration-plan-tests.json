@@ -1,0 +1,12 @@
+{
+  "scope": "staging plan/mock tests only; no package mutation, dataset, model, GPU, or optimizer",
+  "result": "passed",
+  "pytest": "5 passed in 3.18s",
+  "source_sha256": {
+    "edsgn/staging/integrate_robustness_bundle_v1.py": "0e57219fe50746261280644671d18934c13fd12b3edc92a4b5c40e8306c08546",
+    "edsgn/staging/extend_robustness_freeze_bundle_v1.py": "c0703b35c1586ce027fc703de56022953a292754f56afcc25b4344205fae03b3",
+    "edsgn/src/edsgn/robustness.py": "3c33907e2b55600a0629a392eb0354dea6976cd1dd7eaebf24397a93fd7d8450",
+    "snapshots/robustness-before-bundle-integration-v1.py": "3c33907e2b55600a0629a392eb0354dea6976cd1dd7eaebf24397a93fd7d8450",
+    "edsgn/tests/test_robustness_bundle_integration_plan.py": "1617f5dee249574e3a769e7bc01cbd693b8a8a4e8229e6ff8a03c0f814763a7e"
+  }
+}

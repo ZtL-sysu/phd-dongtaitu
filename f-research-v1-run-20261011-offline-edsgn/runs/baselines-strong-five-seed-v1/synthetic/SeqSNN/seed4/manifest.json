@@ -1,0 +1,297 @@
+{
+  "source_sha256": {
+    "__init__.py": "3cfc4cefed40ea637caef91896945ebea478d544bed0c11901c52a7e80383a21",
+    "agcrn_checkpoint.py": "be8a1ba64c212c4643d1bfb2145b62c9bb787fdb18bf53d19ac909585dc2fb73",
+    "baselines.py": "5576c3d6528403eda4ecef567997e218eb447f3b2a9e1c3b1cce8029b911c867",
+    "calibrate.py": "30b53f40dd86265a8b41d44c0e09c2a6b65a4b771d6109f251c74ba9ca3a24ac",
+    "candidate_batch.py": "3775a33f48888be947235c2d97555b00314990a84a7588b94362f2a66c18cf0f",
+    "common.py": "7b5af5e502323a58ab835e11bdc080455de2f8d1039ccb5a41ba85a2b273d710",
+    "data.py": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff",
+    "dcrnn_baseline.py": "12740aad422e0bc8467d812db674bc262e80eba6d8b4a77c3cfd7ca76a15e931",
+    "engine.py": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3",
+    "evaluate.py": "c8ea18a8635ac53198593cee5ae0ebe14b4a84e29e0841f2e4a4bca43557e36c",
+    "external_baselines.py": "72d5722d6ea1f0657751c984bd1aa7fe4f9f4a81ffa37a954851f4d00d81d4f0",
+    "model.py": "1ab46873f3ed8c16e8b50e40fa8a5ec44b1a3bac32d8a3fd1f4d2facbf42992f",
+    "prepare.py": "af1908d1417c0857c60e0f0ca3ece2f43054c14197f43f36cc471cdb620e403d",
+    "prior_cache.py": "00f386dcf08f4fec9b1397b83de4fa49846b770afb194159dea9b5d30439060c",
+    "profile.py": "02e5b5f95dad55c0e369277be5bd62de782474c167601227eb7bb649baf5b95e",
+    "robustness.py": "1e8b345534eafe8db5713bc0ea0be4af6a2a457845b61b81046fba447f9bbb06",
+    "rp_baselines.py": "77b0cec404b1ceb9db10fc4b2e81f97d99e6ff54b51e03d65642eb71e3e56494",
+    "scheduling.py": "544941a6bbe5717e3a7f1aca20d578725c3722a180ae78838578f5f465f07d42",
+    "statistics.py": "ea49b355ae069d9c7e8e810a3be689e66c6b7b7cfaf1cd4828cb73e89b6b2bc6",
+    "stid_baseline.py": "2d85364241b08788631c0d34a4e0b1fc8f817f2b967f62b8a3e7c1cb1b0a98a4",
+    "train.py": "aa754894f7dbf13ab053cac188b539000f9dee844c1b460379fd6f73333dd324"
+  },
+  "dependency_source_sha256": {
+    "sources\\SeqSNN\\SeqSNN\\__init__.py": "af2e4ee525bbe2e83039430a495dbf2db5a361af01d0812f526ed2fa51cf0367",
+    "sources\\SeqSNN\\SeqSNN\\common\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources\\SeqSNN\\SeqSNN\\common\\function.py": "bc149076fc722777b8c68b6ae0cb2c00ff47007bd1a76eba6a4e455c651134b2",
+    "sources\\SeqSNN\\SeqSNN\\common\\utils.py": "2d02f26f37c12f035e5151ffe1a2f3c5d6ff3ba1880860662e4c8adca88d0237",
+    "sources\\SeqSNN\\SeqSNN\\dataset\\__init__.py": "6d0c5e257f9bf3dcc54a437f3acff27a3d726894c7c514f81e9e6e014145a699",
+    "sources\\SeqSNN\\SeqSNN\\dataset\\ts.py": "cce679671f04c505a79941479a2a20c81adbf89fd1fbc852cd576f790387297f",
+    "sources\\SeqSNN\\SeqSNN\\dataset\\tsforecast.py": "05400e5e3b8843c34b449c978a28e833e51a1cc50ba87fa52c59187b28b7e623",
+    "sources\\SeqSNN\\SeqSNN\\dataset\\utils.py": "44d198f67e3d69897875c8a71b9b53c38f1b7e70d776a6d7f66d9ea01dd1d184",
+    "sources\\SeqSNN\\SeqSNN\\entry\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources\\SeqSNN\\SeqSNN\\entry\\tsforecast.py": "9b53c06530907a68e16c069d94ccfcb48cead2acfb91c43e289aff8c3b985199",
+    "sources\\SeqSNN\\SeqSNN\\module\\__init__.py": "048d658dcac3f0e731317f8ecae0822dcf839b4f47b86b2ea6002f4e1b5d24ec",
+    "sources\\SeqSNN\\SeqSNN\\module\\basic_transform.py": "aae85b8882b584d5ecff31801969ac5ff8b6c1aa2241b62ad30d82293313932b",
+    "sources\\SeqSNN\\SeqSNN\\module\\CPG.py": "c22ee0790dac42821f4cee6f6a584aef0e9e5a346fb54487ea7f080f56537415",
+    "sources\\SeqSNN\\SeqSNN\\module\\encoding\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources\\SeqSNN\\SeqSNN\\module\\encoding\\snntorch\\__init__.py": "e7d99018e5dd4df89eebbd07a471e6c04994511c27b346bea8efde90bc039d9a",
+    "sources\\SeqSNN\\SeqSNN\\module\\encoding\\snntorch\\encoder.py": "b11b38394f9497cd15071bba284b41018bc933399c2a159b32cbebac19b05a17",
+    "sources\\SeqSNN\\SeqSNN\\module\\encoding\\spikingjelly\\__init__.py": "e7d99018e5dd4df89eebbd07a471e6c04994511c27b346bea8efde90bc039d9a",
+    "sources\\SeqSNN\\SeqSNN\\module\\encoding\\spikingjelly\\encoder.py": "236be68ff17fb19ae7b030b3a238f0309c0b6525949592ae8d884fa595f0b8df",
+    "sources\\SeqSNN\\SeqSNN\\module\\positional_encoding.py": "581d02858963abea641b820f9bc373b709251a6d4faa782fbc1582a2a18f20ec",
+    "sources\\SeqSNN\\SeqSNN\\module\\spike_attention.py": "6b7734c5b7322f1ed7596d8ec68686170e4e8581348e333a5312ad373c3b42d8",
+    "sources\\SeqSNN\\SeqSNN\\module\\spike_encoding.py": "575c5c9c580c5b59c7fa9edaac136db656d27a2f2a706f7e0d8091bccf459b76",
+    "sources\\SeqSNN\\SeqSNN\\module\\utils.py": "82e5e86c306e268662b93838e1edd7d935297a5076dc1cb24845209f844bcc38",
+    "sources\\SeqSNN\\SeqSNN\\network\\__init__.py": "e4e53a3497655a09de120910f6418ddf547be8a7b21e3a0a7399d8707cc0eb1a",
+    "sources\\SeqSNN\\SeqSNN\\network\\ann\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources\\SeqSNN\\SeqSNN\\network\\ann\\itransformer.py": "9bcbcbfb52629e81e66b07c6e93d30be23b0b8a32bea6a5bde707af44d9e065d",
+    "sources\\SeqSNN\\SeqSNN\\network\\ann\\tcn2d.py": "79df2077e51a4acb97eab9b9dbe3cf283ed1223570ee68db5f5a81960db7b3f0",
+    "sources\\SeqSNN\\SeqSNN\\network\\ann\\tsrnn.py": "7c25a432382ca535619f38667fbefe22b726597d784ea903c771502bc73f56c9",
+    "sources\\SeqSNN\\SeqSNN\\network\\base.py": "efcf28a733d4e465d8b49db49a9cc35b8c900881e7c9f2bc710e3f3f5e098ce5",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\ispikformer.py": "20389416574cff40457a1279dd2f0c4816b00a1e9f9374cde316752ea35b6899",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\qkformer.py": "18cfbb53ac5262e670232f43c7efb4778b40ff7995f240aedd3bd893949cd9ee",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\qkformer_xnor_gray.py": "06fff39b71d80bce5daeb2e4a87f2ee0a0128a173ea0f369f5510e978516e33f",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\qkformer_xnor_log.py": "59d1e7cc2a6b05c5672c3a76780905fdf840433e769ff9ed405379671a648580",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\snn.py": "faaa51098bf7e5b85d9db437b4eab7dbe58e4205aa0797bdbaa0897d332634fb",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spike_tcn.py": "18675d828c15a420a02be0255103d95fbc9d35525db8874c48a2fa40ba535ff0",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikegru.py": "a5f600b092daf4fd14ec357ab0f02676eceb81fad01dbe7bfc6c9599fca5e50f",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikernn.py": "6d696aa88ff37178cd566989e11c315af16c127ba2694a5b94c958397fb94b04",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikformer.py": "5d0796ad4359ff32ff7543bf95cb81d00abfc8d5f1b812060b9ae4819e6ad5da",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikformer_CPG.py": "f09d91723042c7f8f1cd3487cdf30ad7d917f48f9740a999118f0a0ed2e9640f",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikformer_xnor.py": "8b8bc408d3b0779e19f92e37362d51ee66515fadc57dc5e14c69525babc069ea",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikformer_xnor_gray.py": "f9f37ae4fc3e71ec09b3deced9257857af98d025f5f6935d317982578cb22ec3",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikformer_xnor_log.py": "72a78497808eaafe09ac39a5191f74f521e79bfcf19cc9e1921297555b147cc9",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikingformer.py": "e36fa6599237b4f21dfb77bbca95be16f2578b2023e3ea1f3942e3e97a48fc7f",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikingformer_xnor.py": "e6d06edcc497243ffe6a62ec54739943257fb2f9a7bab66452d96657307e7067",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikingformer_xnor_gray.py": "3248b5f20dfe25adbdba018932cfe223bccd590944ae6198106ff4ac770f5c2f",
+    "sources\\SeqSNN\\SeqSNN\\network\\snn\\spikingformer_xnor_log.py": "17d6fb895b84d0fd9017a6513ca35838ada0ce7e14a4670c32ff3cc8d90e3c2d",
+    "sources\\SeqSNN\\SeqSNN\\runner\\__init__.py": "9d0aeeb628ac3d99a78bbe1d0bc75a3731faa09778c788910e389308ceb3a119",
+    "sources\\SeqSNN\\SeqSNN\\runner\\base.py": "6114f3cd9ded05a1712b08021b22d257434f37b7419e2d06dc7eac18eba13f8b",
+    "sources\\SeqSNN\\SeqSNN\\runner\\snnvsts.py": "2cc5773314f7d7c5c881c54bbba5f600e8b07ed24ae09ba78311f662eb9e31df",
+    "sources\\SeqSNN\\SeqSNN\\runner\\timeseries.py": "d3b9dbab611a9eaa38296e986df14c3d84af23f362eb9d8baf97b5cb322b2121",
+    "sources\\SeqSNN\\SeqSNN\\runner\\vsts.py": "807a55577686b8b09eecf1c6d34ae36cbc1d7cf5c1554afd6c3651ab348a7dc2",
+    "sources\\SeqSNN\\setup.py": "2a9078935c7c78fd8ab6a1bb0136f9f955604245ba2819e9b1021c555b26d3b0"
+  },
+  "dataset_path": "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\data\\processed\\synthetic-n64-identity-change0.3-miss0",
+  "model_statistics_train_only": {
+    "norm_mean": [
+      9.977167064789683e-05
+    ],
+    "norm_std": [
+      0.030507726594805717
+    ],
+    "residual_scale": [
+      [
+        0.03703285753726959
+      ],
+      [
+        0.037113647907972336
+      ],
+      [
+        0.03745446726679802
+      ],
+      [
+        0.0373624786734581
+      ],
+      [
+        0.03702418878674507
+      ],
+      [
+        0.0369342602789402
+      ],
+      [
+        0.0372573621571064
+      ],
+      [
+        0.03723983094096184
+      ],
+      [
+        0.03733302280306816
+      ],
+      [
+        0.036609094589948654
+      ],
+      [
+        0.036450739949941635
+      ],
+      [
+        0.03735911846160889
+      ],
+      [
+        0.03705400973558426
+      ],
+      [
+        0.037283238023519516
+      ],
+      [
+        0.03705785796046257
+      ],
+      [
+        0.03716319426894188
+      ],
+      [
+        0.03713645040988922
+      ],
+      [
+        0.03693707659840584
+      ],
+      [
+        0.0371706560254097
+      ],
+      [
+        0.03673561289906502
+      ],
+      [
+        0.03710304573178291
+      ],
+      [
+        0.036839284002780914
+      ],
+      [
+        0.03672285005450249
+      ],
+      [
+        0.03731650486588478
+      ],
+      [
+        0.03717665746808052
+      ],
+      [
+        0.03751331940293312
+      ],
+      [
+        0.0368150994181633
+      ],
+      [
+        0.03733821213245392
+      ],
+      [
+        0.037104830145835876
+      ],
+      [
+        0.03683708608150482
+      ],
+      [
+        0.03693168982863426
+      ],
+      [
+        0.036954615265131
+      ],
+      [
+        0.03700766712427139
+      ],
+      [
+        0.03730444610118866
+      ],
+      [
+        0.03688614442944527
+      ],
+      [
+        0.03703569248318672
+      ],
+      [
+        0.03700767084956169
+      ],
+      [
+        0.03679216280579567
+      ],
+      [
+        0.03743517026305199
+      ],
+      [
+        0.037577930837869644
+      ],
+      [
+        0.03685522451996803
+      ],
+      [
+        0.03722671419382095
+      ],
+      [
+        0.03732303902506828
+      ],
+      [
+        0.03665453568100929
+      ],
+      [
+        0.03659132868051529
+      ],
+      [
+        0.03698931261897087
+      ],
+      [
+        0.03707220405340195
+      ],
+      [
+        0.03754637390375137
+      ],
+      [
+        0.036957211792469025
+      ],
+      [
+        0.037051115185022354
+      ],
+      [
+        0.036774892359972
+      ],
+      [
+        0.037098053842782974
+      ],
+      [
+        0.036631036549806595
+      ],
+      [
+        0.0370020866394043
+      ],
+      [
+        0.03715905174612999
+      ],
+      [
+        0.03731117397546768
+      ],
+      [
+        0.0370648093521595
+      ],
+      [
+        0.03712853416800499
+      ],
+      [
+        0.0369083397090435
+      ],
+      [
+        0.03672899305820465
+      ],
+      [
+        0.0366646833717823
+      ],
+      [
+        0.03706303983926773
+      ],
+      [
+        0.036490973085165024
+      ],
+      [
+        0.037320178002119064
+      ]
+    ],
+    "output_scale": [
+      0.030507726142088572
+    ],
+    "output_mean": [
+      9.977167121622238e-05
+    ]
+  },
+  "train_windows": 16112,
+  "val_windows": 4028,
+  "scope": "full_protocol",
+  "selection": "required-horizon average validation MAE; no test access",
+  "command": [
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\edsgn\\src\\edsgn\\train.py",
+    "--config",
+    "C:\\code\\phd-dongtaitu\\f-research-v1-run-20261011-offline-edsgn\\configs\\p3-strong-replication-v1\\synthetic-SeqSNN-seed4.json"
+  ]
+}

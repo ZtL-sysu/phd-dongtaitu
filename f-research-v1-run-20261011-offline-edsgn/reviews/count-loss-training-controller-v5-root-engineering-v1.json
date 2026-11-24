@@ -1,0 +1,49 @@
+{
+  "scope": "paired_count_loss_controller_and_owned_process_inventory_engineering_only",
+  "accepted_by": "root",
+  "verdict": "pass",
+  "evidence_sha256": {
+    "edsgn/scripts/count_loss_training_controller_v5.py": "7e60b6993ab4437fa8f907d7e63e52ec220c2726c3a13888886fa3c0acd025f0",
+    "edsgn/scripts/owned_python_job_inventory_v1.py": "c31e70671f3846cdd8b1fb61e06aab45c0110d9ad5c5f1f3823377ab6d267d06",
+    "edsgn/tests/test_count_loss_training_controller_v5.py": "b2096a5951a2979cbc74a429ddc07d0e608807fb2eebde058cd876f55c398cff",
+    "logs/count-loss-controller-v5-tests.log": "5d04e388ea6eeffa9e8edff1a65be30f2fe6d35927a27632313b6e6ede713622",
+    "edsgn/scripts/root_native_process_metadata_v1.py": "c77d9aac94170c83df96c09e366392bffdebe1f0ca8951df3703d0796beaa548",
+    "logs/count-loss-controller-v5-live-scan.json": "c8c903954ced5626888fba70dad14ae1581d0c62f4df4f495cf75b9e70a2ab83",
+    "edsgn/scripts/count_loss_training_controller_v4.py": "11399b3e30e31b7a7b1252deb617d1ae92f53b62a9fda3e6fbc328ec702862bd",
+    "edsgn/tests/test_count_loss_training_controller_v4.py": "2ff19cb4e7383048b4a10621db22b883a04adfb6334f5fbc59e074dc319f9bd5",
+    "logs/count-loss-controller-v4-independent-tests.log": "62ccd2e0ecee0fe65e72672f5593cd500ab9efb2f10a780a845474d5217c410d",
+    "reviews/count-loss-training-controller-v5-engineering-v1.json": "f602577912022cb85552ef103e6b5d4c9222020c7bce693695207dd60dfac478",
+    "reviews/count-loss-training-controller-v5-engineering-v1.md": "d95af4d92242161adf62a293133bd91740cae9623c736c6545b4a207654a0416",
+    "reviews/count-loss-training-controller-v4-independent-v1.json": "b57de03a9c83d9abf010c44350db152de0867d28c11c38e8e6ae6955ef38372d",
+    "logs/count-loss-controller-v5-root-tests-v1.log": "e37d7050022dc42885882e9cfcadc039f3fe1669976983128ccc6cef462ee7bd",
+    "edsgn/scripts/bound_phase_campaign.py": "12ccfce1a6c9df0341ede4df14e37c8be04ac2cee78c96b4f75dde6d13d68bd3",
+    "edsgn/scripts/bind_training_inputs.py": "028750be3b3f4ca9feba9c93fde176fb7a212aa3e2cb9c0e830c38ba94c4aa59",
+    "edsgn/staging/count_loss_training_adapter_v1.py": "d1daa9d1fc74ceb7aac25ed0320630742a366ca709e728766b3ca838ef34e7f7",
+    "reviews/count-loss-training-adapter-root-engineering-v1.json": "1b2f1bd9ca4e8d13f19baef322416a12949ad63cafc911f545a234d77533c631",
+    "logs/count-loss-controller-v5-root-live-scan-v1.json": "127f868aac680470f97b36337b816257e1963977f1b6825ea12974cc076b24cc"
+  },
+  "writer_cpu_tests_passed": 34,
+  "root_independent_cpu_tests_passed": 34,
+  "prior_v4_independent_cpu_tests_passed": 26,
+  "normalized_changed_functions_from_v4": [
+    "_owned_processes",
+    "_validate_job"
+  ],
+  "root_review": [
+    "Unchanged reviewed bound runner, exact adapter child command, complete source/input and phase fences.",
+    "Trusted Toolhelp32 name fallback classifies Secure System without hardcoded PID exceptions.",
+    "Native failure, empty names and unavailable Python command-line/ownership metadata refuse launch.",
+    "Python prefix flags identify actual script/module; command text and non-Python launcher strings are not job targets.",
+    "Shared inventory and diagnostic source are mandatory bound child inputs.",
+    "Actual full read-only scan detects the active training child and controller; no training was started."
+  ],
+  "scientific_hypothesis_accepted": false,
+  "pipeline_advanced": false,
+  "actual_training_completed": false,
+  "actual_test_authorized": false,
+  "limitations": [
+    "Exactly matched original-email/MOOC V4 seed0 g00/m00 controls only; a different selected formal policy requires a versioned matched pair.",
+    "Actual candidate selection, MSE numeric/root evidence, accepted queue, P3/P3A gates and cumulative resource admission remain required.",
+    "Current owned training jobs prohibit launching this controller."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "best_val_mae": 0.013439020297179619,
+  "epochs_executed": 40,
+  "training_wall_seconds": 3804.7014805999934,
+  "checkpoint_sha256": "dad96526db62c23d94d2615844dc8dd0efbf210b51474811ba6fa64313491abf",
+  "parameters_sha256": "320d5f7463f523153008a278a7ec00d1621baadc6f6ffa60cce9ff699d6804c6",
+  "scope": "full_protocol",
+  "test_accessed": false,
+  "stop_loss_reached": false
+}

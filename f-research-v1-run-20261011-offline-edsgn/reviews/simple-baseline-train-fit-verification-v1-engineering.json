@@ -1,0 +1,68 @@
+{
+  "artifacts": {
+    "budget": {
+      "path": "edsgn/scripts/aggregate_budget.py",
+      "sha256": "b427e873652617f93f37ce36f9fd0fea63f099376965bd4c9dddad3cf27bde72"
+    },
+    "data": {
+      "path": "edsgn/src/edsgn/data.py",
+      "sha256": "97fc2ab6a442f4b55b5c65ca065f6ebc5badfecbf08e00fc5c84e1e6aad638ff"
+    },
+    "design": {
+      "path": "protocols/simple-baseline-train-fit-verification-root-design-v1.md",
+      "sha256": "117ae08368a06fc1c7f4cb95a772729f06f26924bb4f3578f328b15c8e3f5f48"
+    },
+    "engine": {
+      "path": "edsgn/src/edsgn/engine.py",
+      "sha256": "491da67e3c23d412003b838e3b44d0c732e4378c1b23bf7b29494768b97febb3"
+    },
+    "fit_helper": {
+      "path": "edsgn/staging/simple_baseline_freeze_v1.py",
+      "sha256": "1a5cb9d66f6e09c57779965fc7e6b44088bfc7acec2d73ba80ed4cf1046c1ad6"
+    },
+    "review": {
+      "path": "reviews/simple-baseline-train-fit-verification-v1-engineering.md",
+      "sha256": "137bac9a01ffdb007c073b976aca339a89835a66da33a2d5835ea7004b4809bc"
+    },
+    "source": {
+      "path": "edsgn/staging/simple_baseline_train_fit_verification_v1.py",
+      "sha256": "90908c857758b0edc136de522737d803605c01763c7128f0bf9e03acc570e969"
+    },
+    "test_log": {
+      "path": "logs/simple-baseline-train-fit-verification-v1-tests.log",
+      "sha256": "b88bd42b5f5740fe899dc261e1b2c1c9d5a1b0b62840666912962e6a9a1e9f8a"
+    },
+    "tests": {
+      "path": "edsgn/tests/test_simple_baseline_train_fit_verification_v1.py",
+      "sha256": "d5fe7306080fa6d8978d3165a4399d2e30b0abc8c4a317d25b1b212ef2d0b0ce"
+    },
+    "validator": {
+      "path": "edsgn/scripts/frozen-pipeline-validator/scripts/pipeline_state.py",
+      "sha256": "5e88f56801955ded32e00fbc1b916ba4e9237b4c3eb76d70ac4c2cc6fba62525"
+    }
+  },
+  "limitations": [
+    "No actual legacy coefficient, P3 numeric output, real data array, model, optimizer, GPU or test/oracle values were loaded.",
+    "Official before-P3 validator was not invoked; the CPU fixture used a visibly labeled mocked callback.",
+    "The actual four train-only reconstruction and legacy validation-parity audits remain pending, and no root acceptance or P3 status is asserted.",
+    "Combined chronological NPZ loaders may materialize held-out members; only train and validation origins are inspected by the verifier."
+  ],
+  "schema_version": 1,
+  "scope": "train-only reconstruction verifier toy tests only",
+  "status": "engineering_preparation_only",
+  "tested_controls": [
+    "independent float64 ridge sufficient-statistic reconstruction and exact toy legacy parity",
+    "validation-only origin/output/metric parity and no test split request",
+    "P2/P3 chronology rejection before loader",
+    "preload/mid-run collection byte mutation rejection",
+    "dual-lease ownership, foreign lease preservation, budget coverage and 72-hour stop-loss",
+    "mocked-before-P3 callback ordering precedes train/validation loaders",
+    "Python model runner scanner recognizes -u/-B/-X flags before -m and known frozen scripts"
+  ],
+  "tests": {
+    "command": "C:/Users/xhf/miniconda3/envs/dyg-cold/python.exe -m pytest -q edsgn/tests/test_simple_baseline_train_fit_verification_v1.py",
+    "py_compile": "passed",
+    "result": "10 passed",
+    "test_log": "logs/simple-baseline-train-fit-verification-v1-tests.log"
+  }
+}

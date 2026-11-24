@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0",
+  "title": "Offline EDSGN required experiment matrix extraction",
+  "scope": {
+    "source_docs": [
+      {"path": "inputs/implementation-plan.md", "sha256": "62c2e6279cc2692bfa3e079352822a120504ea6323e5ad05840dde296a172466", "sections": "§1-16"},
+      {"path": "execution-contract-v1.md", "sha256": "6585b6b25155a8ac929854bed3be42a0928444c933b0ba6df820f56bb64bda21", "sections": "Scope and invariants; Scientific acceptance; Resource/search; Delivery"},
+      {"path": "protocols/experiment-design-v1.md", "status": "missing"}
+    ],
+    "included": "Offline implementation and evidence, M0-M6; retain negative/null outcomes.",
+    "excluded_from_this_version": ["native trade-distribution prediction", "recommendation/trade ranking", "continuous state across forecast origins", "learned/RL scheduler", "theoretical proof", "deployment/service"],
+    "acceptance_axes": ["engineering completion", "hypothesis outcome", "measured acceleration"],
+    "positive_effect_threshold_required": false,
+    "source_refs": ["implementation-plan.md §1.1, §12.2", "execution-contract-v1.md §Scientific acceptance"]
+  },
+  "mandatory_matrix": [
+    {
+      "id": "DATA-REAL-01", "area": "real-data forecasting", "status": "mandatory",
+      "comparison_or_run": "Run the frozen model/baselines on email-Eu-core-temporal and MOOC activity as separate tasks; email predicts member incoming/outgoing counts; MOOC predicts course/target activity counts (not dropout).",
+      "minimum_coverage": {"email": {"bin": "daily", "history": 28, "horizons": [1,3,7], "features": ["incoming_count","outgoing_count"]}, "mooc": {"bin": "hourly", "history": 24, "horizons": [1,6,24], "features": ["activity_count"]}, "real_split": "chronological 70/10/20; exact boundaries recorded; all targets stay within split; val/test may use only past history", "node_cohort": "train-defined fixed nodes"},
+      "measurement": "Per-required-horizon, per-feature raw-unit MAE/RMSE; report node-activity strata. Inputs use train-only log1p normalization; prediction heads return nonnegative raw counts. Preserve input missingness/true-zero distinction.",
+      "leakage_and_provenance": ["record official source page, download time, bytes, SHA256, format", "half-open bins; exclude possibly incomplete final bin", "preserve email duplicate triples; audit same ACTIONID duplicates in MOOC", "do not load dropout labels or derive calendar features from relative time", "do not claim released events represent all real-world behavior", "train-only nodes and statistics; record excluded nodes/events"],
+      "source_refs": ["implementation-plan.md §2.1-2.5", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "DATA-SYN-01", "area": "synthetic semantics and core forecasting", "status": "mandatory",
+      "comparison_or_run": "Core controlled simulation plus a separate N=256 scale check; do not expose oracle matrices, switches, or clean masked inputs to model/scheduler.",
+      "minimum_coverage": {"core_N": 64, "scale_N": 256, "train_trajectory_seeds": "0-7", "validation_trajectory_seeds": "100-101", "test_trajectory_seeds": "200-203", "effective_steps_per_trajectory": 2048, "burn_in": 256, "test_unit": "independent unseen trajectories", "generator": "x[t]=W[t]x[t-1]+epsilon[t]; P nonnegative, zero diagonal, row-stochastic, <=8 non-self neighbors/row; W=.2I+.6P, row sum/infinity norm <=.8", "scenarios": ["identity/support change", "fixed-support edge-weight change", "noise-only/non-structural shock", "gradual 128-step transition", "nonlinear tanh dynamics"], "change_fraction": [0.1,0.3], "missing_rate": [0,0.1,0.3,0.5]},
+      "required_readouts": ["forecast error", "graph-row change intensity", "error recovery after known change", "graph/state refresh ratios", "graph/state ages", "noise-only graph-change intensity"],
+      "interpretation_limit": "Structural recovery is a constrained simulation diagnostic, not evidence of real causal edges.",
+      "source_refs": ["implementation-plan.md §3.1-3.3", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "BASE-01", "area": "baseline-first comparisons", "status": "mandatory",
+      "comparison_or_run": "Run persistence, linear, compact GRU, then V0/V1; add an official DGCRN adaptation as an external strong baseline.",
+      "minimum_coverage": {"tasks": ["synthetic", "email", "MOOC as applicable to frozen protocol"], "training_protocol": "same target/history/objective and an explicitly comparable parameter/search budget; record each baseline's source/commit, adaptation differences, and hyperparameter budget", "formal_seeds": "five-seed coverage for formal core comparisons; the docs do not state an independent seed minimum for every external baseline"},
+      "source_refs": ["implementation-plan.md §10", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "ABL-V0-V9", "area": "complete internal ablation matrix", "status": "mandatory",
+      "comparison_or_run": "Execute all V0-V9, retaining ANN controls and SNN method.",
+      "variants": {
+        "V0": "static graph; confidence off; ANN; relation-memory off; full updates",
+        "V1": "dynamic graph; confidence on; ANN; relation-memory off; full updates",
+        "V2": "dynamic; confidence on; ANN; relation-memory on; full updates",
+        "V3": "dynamic; confidence on; SNN; relation-memory off; full updates",
+        "V4": "dynamic; confidence on; SNN; relation-memory on; full updates",
+        "V5": "V4 scheduler with periodic updates; same frozen V4 checkpoint",
+        "V6": "V4 scheduler with random updates; same frozen V4 checkpoint",
+        "V7": "V4 scheduler with adaptive updates; same frozen V4 checkpoint",
+        "V8": "V2/ANN adaptive updates; same frozen V2 checkpoint",
+        "V9": "dynamic; confidence off; SNN; relation-memory on; full updates"
+      },
+      "minimum_coverage": {"formal_seed_count": 5, "ANN_SNN_width": "matched total state width", "policy_checkpoint_sharing": "V5/V6/V7 share frozen V4 checkpoint; V8 uses frozen V2 checkpoint"},
+      "source_refs": ["implementation-plan.md §6, §10", "execution-contract-v1.md §Scope and invariants, §Scientific acceptance"]
+    },
+    {
+      "id": "HYP-01", "area": "H1 dynamic confidence/noise control", "status": "mandatory",
+      "comparison_or_run": "V4 vs V9; static/dynamic reference V0 vs V1; dynamic fixed-periodic refresh reference. Include synthetic known-change and noise-only scenarios.",
+      "minimum_coverage": "Use formal five-seed core comparison; report raw-unit horizon metrics, graph change intensity, response/recovery, update/age and measured cost.",
+      "decision": "Apply the frozen H1 rule; null/negative is reportable, not a failure of evidence completion.",
+      "source_refs": ["implementation-plan.md §10, §12.2", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "HYP-02", "area": "H2 relation-conditioned fast/slow spiking memory", "status": "mandatory",
+      "comparison_or_run": "V3 vs V4 and V1 vs V2; add shuffled-c, constant-g, and unconditional-neighbor-reset controls. Keep graph, refresh counts and effect times matched when changing memory signal.",
+      "minimum_coverage": "Formal five-seed comparison; matched total width; include c/g semantics and fast/slow rates/ages; report raw-unit accuracy and cost.",
+      "decision": "Apply frozen H2 rule; c must provide evidence beyond shuffled c to accept the relation-specific claim.",
+      "source_refs": ["implementation-plan.md §6, §10, §12.2", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "HYP-03", "area": "H3 selective scheduling and actual acceleration", "status": "mandatory",
+      "comparison_or_run": "V7 vs V4/V5/V6 at validation-calibrated measured costs; V7 vs V8 for the independent SNN value. Execute each selective policy as a real sequential replay; do not infer skipped-update predictions from full-track priority simulation.",
+      "minimum_coverage": {"G_S_branches": ["G0S0", "G0S1", "G1S0", "G1S1"], "nominal_action_ratios": [0.25,0.5,0.75,1.0], "default_max_age": 4, "default_target_action_ratio": 0.5, "policy_calibration": "validation only; frozen parameters and rules before test", "cost": "end-to-end measured; mandatory overrun retained"},
+      "required_cost_and_trace_fields": ["end_to_end_ms_per_window", "median_ms", "p95_ms", "peak_memory", "graph rows updated/eligible", "states updated/eligible", "candidate edges scored", "source nodes encoded", "message edges aggregated", "monitor/candidate/graph/encode_aggregate/clock_decay/state/readout/policy time", "mandatory actions/cost/budget overrun", "max graph/state age", "fast/slow spike rate", "window ID/origin/input cutoff/quality/residual-valid/G-S/c/pending_g"],
+      "interpretation": "Operation-count reduction is not speedup. Include all causal prior/candidate/encoding/cache costs; report preprocessing separately. Report the error-vs-measured-runtime curve, including no-advantage results.",
+      "source_refs": ["implementation-plan.md §7, §10-11, §12.2", "execution-contract-v1.md §Scientific acceptance"]
+    },
+    {
+      "id": "ROBUST-01", "area": "stress and missingness", "status": "mandatory",
+      "comparison_or_run": "After clean N64 semantic smoke, run declared synthetic missingness and generator stress cases; do not start with the full Cartesian product.",
+      "minimum_coverage": {"missing_rates": [0,0.1,0.3,0.5], "generator_stresses": ["identity/support", "weight-only", "noise-only", "gradual", "nonlinear"], "test_split": "held-out independent trajectories", "oracle_access": "evaluation-only"},
+      "source_refs": ["implementation-plan.md §3", "execution-contract-v1.md §Scientific acceptance, §Resource and search contract"]
+    },
+    {
+      "id": "STAT-01", "area": "statistical evidence and decision", "status": "mandatory",
+      "comparison_or_run": "For formal core comparisons, report five-seed uncertainty and explicit frozen decision for each H1/H2/H3; retain per-horizon and feature metrics and negative findings.",
+      "minimum_coverage": {"seed_count": 5, "selection": "mean validation MAE at required horizons; test is not used to select configurations", "primary_units": "raw target units", "test": "single frozen final evaluation; no post-test tuning"},
+      "source_refs": ["implementation-plan.md §9-12", "execution-contract-v1.md §Scientific acceptance, §Delivery"]
+    },
+    {
+      "id": "REPRO-01", "area": "reproducibility package", "status": "mandatory",
+      "comparison_or_run": "Each formal run must be reconstructible from data provenance, resolved config, environment, exact commands, checkpoint, logs, predictions, metrics, profile and trace.",
+      "minimum_artifacts": ["config_resolved.yaml", "manifest.json", "environment.txt", "split_boundaries.json", "checkpoint.pt", "training_log.csv", "metrics_by_horizon.csv", "runtime_summary.csv", "parameter_count.json", "trace.jsonl", "predictions.npz", "report.md", "actual command/log/test report"],
+      "test_freeze": "hash model parameters before and after final test; runtime cache excluded from weight hash; trace c=null except actual graph refresh", "source_refs": ["implementation-plan.md §9.4, §11.3, §15", "execution-contract-v1.md §Delivery"]
+    },
+    {
+      "id": "TEST-T01-T26", "area": "engineering correctness tests", "status": "mandatory",
+      "comparison_or_run": "All 26 tests in implementation-plan §12.1 must pass; reference_semantics coverage alone is explicitly insufficient.",
+      "minimum_coverage": ["T01 past prediction invariant to future input", "T02 reject target out-of-bounds", "T03 distinguish true zero and missing", "T04 temporal candidate/node leakage", "T05 sparse support/candidate cap/direction", "T06 ID-aligned c invariant to row order", "T07 disjoint support c=1", "T08 first graph/no-neighbor finite", "T09 g=1 or beta near zero", "T10 local memory unaffected by g", "T11 accumulate and consume deferred g once", "T12 delayed reset consumed once over skips", "T13 positive ordered taus/multistep consistency", "T14 indexed all-open equals full reference", "T15 all-off skips expensive modules but reads out", "T16 graph-on/state-off", "T17 graph-off/state-on", "T18 constant high level retained by mixed encoder", "T19 frozen weight hash", "T20 no new adjacency before monitor", "T21 mandatory action/max-age/budget overrun", "T22 empty active set does not call expensive module and calls scale with activity", "T23 reset state between disjoint windows", "T24 all policies share windows/perturbations/targets/readout", "T25 finite gradients to selected edge score/tau/beta/encoder", "T26 fixed tiny-sample full-update overfit reduces loss without divergence"],
+      "source_refs": ["implementation-plan.md §12.1"]
+    }
+  ],
+  "execution_constraints": {
+    "training": "AdamW; lr 0.001 or 0.0003; clip norm 1; weight decay 1e-4; max 100 epochs; patience 10; float32; first update full; max 12 preregistered pilot configs per new module.",
+    "resource": "Local Conda only; initial smoke tranche <=2 hours; campaign ceiling 72 aggregate training/profile hours; no changes to other running jobs; record resource feasibility and unfinished rows.",
+    "timing": "CPU and GPU separately where available; eager float32 B1 correctness; 10 consecutive warmup windows; at least five repeated full replays with device synchronization as applicable; same replay and random-policy seeds; report median/tail/total. Profile diagnostics must not be stitched into E2E timing.",
+    "test": "Freeze preprocessing, nodes, checkpoint, policy, threshold, budget and evaluation slice before one final ordered test replay; no target input to scheduler; no selection/tuning from test.",
+    "source_refs": ["implementation-plan.md §7, §9, §11, §14", "execution-contract-v1.md §Resource and search contract"]
+  },
+  "suggested_or_nonblocking": [
+    {"item": "Five suggested figure types: prediction curves, post-change recovery, graph/state refresh timeline, c vs retention, MAE vs measured runtime.", "source": "implementation-plan.md §11.3", "status": "suggested visualization; not experiment-row substitute"},
+    {"item": "Activity-similarity candidate source is permitted by RP but deferred; first version uses history contacts plus bounded exploration. A later similarity study must use a declared training-calibrated prefix or causal rolling summary, never a full-data correlation matrix.", "source": "implementation-plan.md §2.5", "status": "follow-up option; not part of first-version required candidate implementation"},
+    {"item": "No website; custom graph kernels/extensions only after profiling identifies a bottleneck.", "source": "implementation-plan.md §1.2, §7.5", "status": "explicitly not required"}
+  ],
+  "existing_artifacts_and_evidence_scope": [
+    {"artifact_group": "data/processed main email/MOOC/synthetic and synthetic stress/episode bundles; prepare scripts/manifests/QC", "classification": "data preparation/provenance evidence only", "matrix_credit": "satisfies data-generation/preprocessing readiness only; not model training, baseline, hypothesis, stress evaluation, or five-seed experiment rows"},
+    {"artifact_group": "runs/baselines/*/simple persistence/linear validation artifacts", "classification": "executed simple baseline development evidence", "matrix_credit": "does not complete formal five-seed model comparisons, external baseline, frozen test, or efficiency matrix"},
+    {"artifact_group": "runs/baselines/{synthetic,mooc}/{GRU,STID}/seed0 validation artifacts (some combinations only)", "classification": "executed seed0 development/validation runs", "matrix_credit": "seed0/validation evidence only; not formal five-seed core; not final test; existing legacy runs lack at-launch source binding and therefore cannot pass strict formal provenance gate without explicitly eligible replacement runs"},
+    {"artifact_group": "edsgn/src interfaces, robustness/statistics/profile modules and their unit/integration logs", "classification": "implementation/interface/test evidence", "matrix_credit": "does not establish measured H1/H2/H3, five-seed statistics, or full CPU/GPU replay timing"},
+    {"artifact_group": "resource probes/profile diagnostics", "classification": "feasibility/diagnostic evidence", "matrix_credit": "not formal repeated full-replay CPU+GPU E2E profiles and not model-quality experiments"},
+    {"artifact_group": "baseline and pilot queue/config files", "classification": "planned configurations", "matrix_credit": "not executed experiment evidence"}
+  ],
+  "ambiguities_for_root": [
+    {"id": "AMB-01", "issue": "protocols/experiment-design-v1.md is absent. Although execution contract requires a frozen decision rule for each hypothesis, requested canonical sources do not fully specify the statistical estimator/CI, contrast family, multiplicity correction, or exact numerical accept/reject boundary.", "action": "Root should choose/point to the already accepted statistical/claim protocol; do not invent a result threshold. Preserve five-seed uncertainty and report nulls."},
+    {"id": "AMB-02", "issue": "The canonical docs require synthetic missing rates 0/10/30/50 and list multiple generator stresses, while also forbidding an initial full Cartesian product. They do not fully enumerate the later stress cross-product (which rates must pair with which generator/missingness mechanism).", "action": "Use the frozen robustness recipes/accepted preparation evidence to select exact required rows; do not infer that prepared scenarios have been evaluated."},
+    {"id": "AMB-03", "issue": "Formal core comparisons explicitly require five seeds, but the number of seeds for every external baseline, N=256 scale check, and each stress cell is not independently specified; synthetic trajectory seed sets are distinct from model-initialization seeds.", "action": "Root should define matched external-baseline and stress repetitions in a frozen matrix; do not count trajectory seeds as model seeds."},
+    {"id": "AMB-04", "issue": "The plan says final test is frozen and single-use, but the exact unit of the five-seed test evaluation (one frozen test replay per seed versus other aggregation) and the permitted number of selected checkpoints/policies should be stated in the formal matrix before test access.", "action": "Freeze checkpoint/policy set and evaluation protocol before any test evaluation; no test-driven selection."}
+  ],
+  "non_claims": ["No test-set metrics were opened or computed for this extraction.", "No code, training, or tests were run.", "Prepared data, implemented APIs, test suites, validation seed0 runs, and resource probes are not interchangeable evidence and do not imply completion of a matrix row.", "H1/H2/H3 may be null or negative; no minimum percent gain/speedup is imposed by the source plan."]
+}
+
